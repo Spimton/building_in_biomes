@@ -12,6 +12,18 @@
 				"texture.default",
 				"texture.enchanted"
 			]
+		},
+		"controller.render.grand_flame_entity": {
+			"uv_anim": {
+				"offset": [
+					0,
+					"math.mod(math.floor(q.life_time * 12.25), 8) / 8"
+				],
+				"scale": [
+					1,
+					"1 / 8"
+				]
+			}
 		}
 	}
 }

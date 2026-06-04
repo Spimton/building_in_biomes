@@ -1647,6 +1647,12 @@
 		},
 		"overgrown_dungeon_torch": {
 			"textures": "textures/blocks/agold/overgrown_dungeon_torch"
+		},
+		"chiseled_cut_lead": {
+			"textures": "textures/blocks/lead/chiseled_cut_lead"
+		},
+		"chiseled_cut_lead_nermal": {
+			"textures": "textures/blocks/lead/chiseled_cut_lead_nermal"
 		}
 	}
 }

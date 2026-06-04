@@ -2271,6 +2271,22 @@
 		"textures": "lead_bulb_off",
 		"sound": "iron"
 	},
+	"spimton:chiseled_cut_lead": {
+		"sound": "iron",
+		"textures": {
+			"up": "cut_lead_nermal",
+			"south": "cut_lead_nermal",
+			"side": "chiseled_cut_lead_nermal"
+		}
+	},
+		"spimton:chiseled_ht_cut_lead": {
+		"sound": "iron",
+		"textures": {
+			"up": "cut_lead",
+			"south": "cut_lead",
+			"side": "chiseled_cut_lead"
+		}
+	},
 	///DECO BLOCKS///
 	"spimton:amethyst_block": {
 		"sound": "amethyst_block",

@@ -78,6 +78,8 @@
                 "queue_command": {
                     "command": [
                         "execute at @s run damage @e[r=1.225] 8 magic entity @n[type=spimton:goulden_guard]",
+                        "execute at @s run effect @e[r=1.225] blindness 5 0 true",
+                        "execute at @s run effect @e[r=1.225] mining_fatigue 5 1 true",
                         "execute if block ~ ~ ~ minecraft:carved_pumpkin run summon spimton:goulden_boi",
                         "execute if block ~ ~ ~ minecraft:carved_pumpkin run fill ~ ~ ~ ~ ~ ~ air replace carved_pumpkin"
                     ]

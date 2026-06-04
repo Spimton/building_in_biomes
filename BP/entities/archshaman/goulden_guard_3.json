@@ -58,6 +58,11 @@
                         0,
                         64
                     ],
+                    "target_offset": [
+                        0,
+                        1.225,
+                        0
+                    ],
                     "attack_cooldown": 0.25,
                     "ranged_fov": 360
                 },
@@ -178,7 +183,7 @@
                     },
                     {
                         "cause": "entity_attack",
-                        "damage_modifier": -5
+                        "damage_modifier": -3
                     },
                     {
                         "cause": "mace_smash",
@@ -288,7 +293,7 @@
                 "queue_command": {
                     "command": [
                         //"say melee",
-                        "damage @e[family=!spimton:archshaman,type=!item,dx=30,dy=5.67, dz=30,x=~-15,y=~-5,z=~-15] 30 entity_attack entity @n[type=spimton:goulden_guard_3]"
+                        "damage @e[family=!spimton:archshaman,type=!item,dx=30,dy=5.225, dz=30,x=~-15,y=~-5,z=~-15] 30 entity_attack entity @n[type=spimton:goulden_guard_3]"
                     ]
                 }
             },

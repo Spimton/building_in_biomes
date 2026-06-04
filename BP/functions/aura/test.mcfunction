@@ -21,4 +21,5 @@ execute as @e[type=spimton:bronze_golem] if entity @s[scores={bronze_ammo=0}] ru
 execute as @e[type=spimton:bronze_golem] unless entity @s[scores={bronze_ammo=0}] run event entity @s spimton:has_ammo
 execute at @e[type=spimton:goulden_laser] run particle minecraft:dragon_breath_trail ~ ~ ~
 execute at @e[type=spimton:obliterator_laser] run particle spimton:green_flame_burst ~ ~ ~
+execute at @e[type=spimton:obliterator_shooter] run particle spimton:green_flame_burst ~ ~ ~
 execute at @e[type=spimton:obliterator_flame] run particle minecraft:basic_flame_particle ~ ~ ~

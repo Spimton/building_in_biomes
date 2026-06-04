@@ -872,6 +872,8 @@ tile.spimton:mossy_granite_bricks_slab.name=Mossy Granite Bricks Slab
 tile.spimton:mossy_granite_bricks_stairs.name=Mossy Granite Bricks Stairs
 tile.spimton:studded_polished_granite_2.name=Studded Polished Granite
 tile.spimton:overgrown_dungeon_torch.name=Overgrown Dungeon Torch
+tile.spimton:chiseled_cut_lead.name=Chiseled Cut Lead
+tile.spimton:chiseled_ht_cut_lead.name=Chiseled High Toxicity Cut Lead
 
 
 
