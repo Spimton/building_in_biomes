@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_lantern"
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "sea_lantern"
+			},
+			"@": {
+				"item": "spimton:bismuth_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_lantern",
+			"count": 8
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

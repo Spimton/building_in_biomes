@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:defrosted_cobbled_chillstone_stairs"
+		},
+		"tags": [
+			"blast_furnace"
+		],
+		"input": "spimton:cobbled_chillstone_stairs",
+		"output": "spimton:defrosted_cobbled_chillstone_stairs"
+	}
+}

@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:red_limestone"
+        },
+        "pattern": [
+            "ab",
+            "cd"
+        ],
+        "key": {
+            "a": {
+                "item": "minecraft:tuff"
+            },
+            "b": {
+                "item": "minecraft:quartz"
+            },
+            "c": {
+                "item": "minecraft:calcite"
+            },
+            "d": {
+                "item": "granite"
+            }
+        },
+        "result": {
+            "item": "spimton:red_limestone",
+            "count": 4
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

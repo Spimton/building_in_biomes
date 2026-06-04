@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chillwood_mosaic"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "assume_symmetry": true,
+        "key": {
+            "#": {
+                "item": "spimton:chillwood_slab"
+            }
+        },
+        "pattern": [
+            "#",
+            "#"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "result": {
+            "item": "spimton:chillwood_mosaic",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:obsidian_bricks_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:obsidian_bricks"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:obsidian_bricks_stairs",
+			"count": 4
+		}
+	}
+}

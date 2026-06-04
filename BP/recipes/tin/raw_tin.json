@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:raw_tin"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:raw_tin_block"
+			}
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:raw_tin",
+			"count": 9
+		}
+	}
+}

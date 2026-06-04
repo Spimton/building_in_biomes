@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:record_backwaters"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:crynil"
+            },
+            "@": {
+                "item": "spimton:ancient_golden_carrot"
+            }
+        },
+        "result": {
+            "item": "spimton:record_equestrian",
+            "count": 1
+        }
+    }
+}

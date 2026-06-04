@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cobbled_emberock_slab"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:cobbled_emberock"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:cobbled_emberock_slab",
+			"count": 6
+		}
+	}
+}

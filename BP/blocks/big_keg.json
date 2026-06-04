@@ -1,0 +1,253 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:big_keg",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            },
+            "states": {
+                "spimton:wheat": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14
+                ],
+                "spimton:sugar": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "spimton:fermented": [
+                    false,
+                    true
+                ],
+                "spimton:part": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "spimton:erature_big": [
+                    "none",
+                    "cold",
+                    "temperate",
+                    "hot"
+                ]
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:item_visual": {
+                "geometry": "geometry.keg",
+                "material_instances": {
+                    "*": {
+                        "texture": "keg",
+                        "render_method": "alpha_test"
+                    }
+                }
+            },
+            "minecraft:movable": {
+                "sticky": "none",
+                "movement_type": "immovable"
+            },
+            "minecraft:geometry": "geometry.big_keg_b1",
+            "minecraft:map_color": "#584214",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "big_keg",
+                    "render_method": "alpha_test"
+                }
+            },
+            "spimton:biggu_keggu": {},
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 4
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "tag:minecraft:is_axe_item_destructible": {}
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('spimton:part') == 0 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_b1",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:tick": {
+                        "interval_range": [
+                            10,
+                            20
+                        ],
+                        "looping": true
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 1 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_b2",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 2 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_b3",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 3 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_b4",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 4 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_t1",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 5 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_t2",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 6 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_t3",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:part') == 7 ",
+                "components": {
+                    "minecraft:geometry": "geometry.big_keg_t4",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "big_keg",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            270,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,118 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:juandice_altar",
+			"menu_category": {
+				"category": "items",
+				"is_hidden_in_commands": false
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"spimton:activated": [
+					true,
+					false
+				]
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.altar_jungle",
+			"minecraft:map_color": "#584214",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "juandice_altar",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1997
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1997
+			},
+			"minecraft:custom_components": [
+				"spimton:overgrown_act",
+				"spimton:juandice_boss"
+			],
+			"minecraft:loot": "loot_tables/empty.json"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:activated') == true",
+				"components": {
+					"minecraft:light_emission": 5,
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "juandice_altar"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:activated') == false",
+				"components": {
+					"minecraft:light_emission": 0,
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "juandice_altar_off"
+						}
+					}
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:bluestone_feature"
+		},
+		"count": 3,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:bluestone_ore",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "stone"
+					}
+				]
+			}
+		]
+	}
+}

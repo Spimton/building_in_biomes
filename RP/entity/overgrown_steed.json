@@ -1,0 +1,50 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:overgrown_steed",
+            "min_engine_version": "1.17.10",
+            "scripts": {
+                "animate": [
+                    {
+                        "jump": "query.is_jumping"
+                    },
+                    "controller_melee_attack",
+                    "controller_walk",
+                    "look_at_player"
+                ],
+                "initialize": [
+                    "variable.eat_anim = 0.0;"
+                ],
+                "pre_animation": [
+                    "variable.eat_anim = math.clamp(variable.eat_anim + (query.is_grazing ? ((1.0 - variable.eat_anim) * 0.4 + 0.05) : -variable.eat_anim * 0.4 - 0.05) * query.delta_time * 20.0, 0.0, 1.0);",
+                    "variable.head_x_rot = query.target_x_rotation + (query.modified_move_speed > 0.2 ? (math.cos(query.modified_distance_moved * 11.46) * 11.46 * query.modified_move_speed + query.modified_move_speed * 11.46) : 0.0);",
+                    "variable.inverse_max_stand_eat = (1.0 - math.max(variable.stand_anim, variable.eat_anim));",
+                    "variable.leg_stand_factor = math.cos((query.modified_distance_moved * 38.38) + 180.0);",
+                    "variable.leg_x_rot_anim = variable.leg_stand_factor * 45.8 * query.modified_move_speed;"
+                ]
+            },
+            "animations": {
+                "walk": "animation.undead_horse.walk",
+                "jump": "animation.undead_horse.jump",
+                "melee_attack": "animation.undead_horse.attack",
+                "controller_melee_attack": "controller.animation.undead_horse.melee_attack",
+                "controller_walk": "controller.animation.undead_horse.move",
+                "look_at_player": "animation.horse.v3.look_at_player"
+            },
+            "materials": {
+                "default": "horse",
+                "armor": "horse"
+            },
+            "textures": {
+                "default": "textures/entity/overgrown_skeleton_horse"
+            },
+            "geometry": {
+                "default": "geometry.overgrown_steed"
+            },
+            "render_controllers": [
+                "controller.render.undead_horse"
+            ]
+        }
+    }
+}

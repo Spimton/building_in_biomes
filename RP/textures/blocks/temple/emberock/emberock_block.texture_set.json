@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "emberock_block",
+		"metalness_emissive_roughness": "emberock_block_mer"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "weeper_death",
+		"metalness_emissive_roughness": "weeper_death_mer"
+	}
+}

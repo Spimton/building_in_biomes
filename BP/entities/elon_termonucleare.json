@@ -1,0 +1,68 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:elon_termonucleare",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"breaks_blocks": true,
+					"destroy_affected_by_griefing": true,
+					"fire_affected_by_griefing": true,
+					"power": 500,
+					"causes_fire": true,
+					"fuse_lit": true,
+					"fuse_length": {
+						"range_max": 1,
+						"range_min": 1
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:spawn"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:spawn": {
+				"queue_command": {
+					"command": [
+						"summon spimton:elon_2 ~30 ~ ~",
+						"summon spimton:elon_2 ~-30 ~ ~",
+						"summon spimton:elon_2 ~-30 ~ ~30",
+						"summon spimton:elon_2 ~-30 ~ ~-30",
+						"summon spimton:elon_2 ~30 ~ ~30",
+						"summon spimton:elon_2 ~30 ~ ~-30",
+						"summon spimton:elon_2 ~ ~ ~-30",
+						"summon spimton:elon_2 ~ ~ ~30"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			}
+		}
+	}
+}

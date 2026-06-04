@@ -1,0 +1,88 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Spimton G. Spimton"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		},
+		"url": "https://www.curseforge.com/minecraft-bedrock/addons/building-in-biomes"
+	},
+	"header": {
+		"name": "Building in Biomes [BP]",
+		"description": "Blocks with a chance of bosses",
+		"min_engine_version": [
+			1,
+			26,
+			20
+		],
+		"uuid": "3fd891cc-10a5-4d20-8653-ec11fa01c47c",
+		"version": [
+			1,
+			1,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "0a8dee98-3dfb-4d13-80c1-1808ab1de1b9",
+			"version": [
+				1,
+				1,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "88fd4ab0-9999-40cf-8c82-be885b913562",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				1,
+				0
+			]
+		}
+	],
+	"capabilities": [
+		"script_eval",
+		"pbr"
+	],
+	"dependencies": [
+		{
+			"uuid": "758b77af-fb70-4b03-bced-a82052d6e08b",
+			"version": [
+				1,
+				1,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.5.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	],
+	"subpacks": [
+		{
+			"folder_name": "no_music",
+			"memory_tier": 0,
+			"name": "Boss Music Disabled"
+		},
+		{
+			"folder_name": "yes_music",
+			"memory_tier": 1,
+			"name": "Boss Music Enabled"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "cut_chillgem_bricks",
+		"metalness_emissive_roughness": "cut_chillgem_bricks_mer"
+	}
+}

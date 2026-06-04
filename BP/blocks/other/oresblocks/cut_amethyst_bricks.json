@@ -1,0 +1,66 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:cut_amethyst_bricks",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.35
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:wood_tier')"
+						},
+						"destroy_speed": 1.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.1
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:map_color": "#1C0E0E",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"minecraft:custom_components": [],
+			"minecraft:friction": 0.4,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:amethyst": {},
+			"tag:stone": {},
+			"tag:minecraft:wooden_tier_destructible": {}
+		}
+	}
+}

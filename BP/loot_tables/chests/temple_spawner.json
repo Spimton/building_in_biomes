@@ -1,0 +1,51 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:temple_fragment",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 2,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 50
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:permafrost_essence",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 2,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 25
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:silver_nugget",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 3
+                            }
+                        }
+                    ],
+                    "weight": 25
+                }
+            ]
+        }
+    ]
+}

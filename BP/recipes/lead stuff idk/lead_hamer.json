@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:lead_hamer"
+		},
+		"pattern": [
+			"@@@",
+			" # ",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "stick"
+			},
+			"@": {
+				"item": "spimton:lead_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:hammer"
+		}
+	}
+}

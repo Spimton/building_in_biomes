@@ -1,0 +1,163 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:silver_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 4,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:empty_totem",
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:permafrost_essence",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 3
+                            }
+                        }
+                    ],
+                    "weight": 7
+                },
+                {
+                    "type": "item",
+                    "name": "iron_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 4
+                            }
+                        }
+                    ],
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "diamond",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 3,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "enchanted_book",
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "max": 30,
+                                "min": 20
+                            }
+                        }
+                    ],
+                    "weight": 8
+                },
+                {
+                    "type": "item",
+                    "name": "enchanted_book",
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "max": 20,
+                                "min": 10
+                            }
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "enchanted_book",
+                    "functions": [
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "frost_walker",
+                                    "level": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:temple_rock_item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 16,
+                                "min": 4
+                            }
+                        }
+                    ],
+                    "weight": 17
+                },
+                {
+                    "type": "item",
+                    "name": "name_tag",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "gold_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:asriel_dust",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 12,
+                                "min": 25
+                            }
+                        }
+                    ],
+                    "weight": 10
+                }
+            ]
+        }
+    ]
+}

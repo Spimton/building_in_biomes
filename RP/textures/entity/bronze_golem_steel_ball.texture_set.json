@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "bronze_golem_steel_ball",
+		"metalness_emissive_roughness": "bronze_golem_steel_ball_mer"
+	}
+}

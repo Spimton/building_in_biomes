@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "radioactive_gloomy_tiles_cooldown",
+		"metalness_emissive_roughness": "radioactive_gloomy_tiles_cooldown_mer"
+	}
+}

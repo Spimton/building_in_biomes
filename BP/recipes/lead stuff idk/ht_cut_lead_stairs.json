@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ht_cut_lead_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ht_cut_lead"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:ht_cut_lead_stairs",
+			"count": 4
+		}
+	}
+}

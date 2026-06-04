@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:processor_list": {
+        "description": {
+            "identifier": "spimton:end_volcano_water"
+        },
+        "processors": [
+            {
+                "processor_type": "minecraft:rule",
+                "rules": [
+                    {
+                        "input_predicate": {
+                            "predicate_type": "minecraft:random_block_match",
+                            "block": "spimton:end_basalt",
+                            "probability": 0.1
+                        },
+                        "output_state": {
+                            "name": "minecraft:water"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

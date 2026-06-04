@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:packed_guano_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:packed_guano"
+			}
+		},
+		"result": {
+			"item": "spimton:packed_guano_slab",
+			"count": 6
+		}
+	}
+}

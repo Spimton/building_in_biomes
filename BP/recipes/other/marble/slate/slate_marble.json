@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": false,
+        "description": {
+            "identifier": "spimton:slate_marble"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "key": {
+            "#": {
+                "item": "spimton:marble"
+            },
+            "@": {
+                "item": "spimton:shale"
+            }
+        },
+        "pattern": [
+            "@#",
+            "#@"
+        ],
+        "result": {
+            "count": 4,
+            "item": "spimton:slate_marble"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:nether_cloth",
+			"menu_category": {
+				"category": "items"
+			},
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:icon": "nether_cloth",
+			"minecraft:should_despawn": true,
+			"minecraft:tags": {
+				"tags": []
+			},
+			"minecraft:fuel": {
+				"duration": 12.25
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:mead"
+		},
+		"tags": [
+			"spimton:keg"
+		],
+		"key": {
+			"x": {
+				"item": "minecraft:honey_bottle"
+			},
+			"y": {
+				"item": "spimton:mug"
+			},
+			"z": {
+				"item": "sweet_berries"
+			}
+		},
+		"pattern": [
+			"xzx",
+			"yyy"
+		],
+		"result": [
+			{
+				"item": "spimton:mead"
+			},
+			{
+				"item": "spimton:mead"
+			},
+			{
+				"item": "spimton:mead"
+			}
+		]
+	}
+}

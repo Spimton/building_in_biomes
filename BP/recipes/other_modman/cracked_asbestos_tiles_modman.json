@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:cracked_asbestos_tiles_modman"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:asbestos_tiles",
+		"output": "spimton:cracked_asbestos_tiles"
+	}
+}

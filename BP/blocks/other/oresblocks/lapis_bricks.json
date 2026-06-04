@@ -1,0 +1,27 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:lapis_bricks",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:map_color": "#1C0E0E",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"minecraft:custom_components": [],
+			"minecraft:friction": 0.4,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:minecraft:wooden_tier_destructible": {}
+		}
+	}
+}

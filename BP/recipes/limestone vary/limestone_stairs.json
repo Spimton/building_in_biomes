@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:limestone_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:limestone"
+			}
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"result": {
+			"item": "spimton:limestone_stairs",
+			"count": 4
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:limestone_bricks_slab_stonecutter"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:limestone_bricks"
+			}
+		],
+		"result": {
+			"item": "spimton:limestone_bricks_slab",
+			"count": 2
+		}
+	}
+}

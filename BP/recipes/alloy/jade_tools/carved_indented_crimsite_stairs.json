@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:carved_indented_crimsite_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:carved_indented_crimsite"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:carved_indented_crimsite_stairs",
+			"count": 4
+		}
+	}
+}

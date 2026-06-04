@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:alloy_forge"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"wyw",
+			"xzx",
+			"wyw"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:bluestone"
+			},
+			"y": {
+				"item": "lava_bucket"
+			},
+			"w": {
+				"item": "deepslate_bricks"
+			},
+			"z": {
+				"item": "blast_furnace"
+			}
+		},
+		"result": {
+			"item": "spimton:alloy_forge"
+		}
+	}
+}

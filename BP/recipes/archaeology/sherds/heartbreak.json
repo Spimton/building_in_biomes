@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"spimton:archaeology_table"
+		],
+		"description": {
+			"identifier": "spimton:heartbreak"
+		},
+		"ingredients": [
+			{
+				"item": "brick"
+			},
+			{
+				"item": "heartbreak_pottery_sherd"
+			}
+		],
+		"result": {
+			"item": "heartbreak_pottery_sherd",
+			"count": 2
+		}
+	}
+}

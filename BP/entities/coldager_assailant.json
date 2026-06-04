@@ -1,0 +1,338 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:coldager_assailant",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:raid_configuration": {
+				"minecraft:dweller": {
+					"dwelling_type": "village",
+					"dweller_role": "hostile",
+					"update_interval_base": 60,
+					"update_interval_variant": 40,
+					"can_find_poi": false,
+					"can_migrate": false,
+					"first_founding_reward": 0
+				},
+				"minecraft:behavior.move_to_village": {
+					"priority": 6,
+					"speed_multiplier": 0.7
+				},
+				"minecraft:ambient_sound_interval": {
+					"value": 2,
+					"range": 4,
+					"event_name": "ambient.in.raid"
+				}
+			},
+			"spimton:ranged": {
+				"minecraft:is_sheared": {},
+				"minecraft:shooter": {
+					"def": "spimton:spike_projectile",
+					"aux_val": 18,
+					"power": 2.5
+				},
+				"minecraft:behavior.ranged_attack": {
+					"burst_interval": 0.2,
+					"burst_shots": 10,
+					"charge_shoot_trigger": 0.2,
+					"set_persistent": true,
+					"ranged_fov": 360,
+					"attack_radius": 32,
+					"attack_interval": 0.2,
+					"priority": 1,
+					"swing": false,
+					"speed_multiplier": 1.2
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 2,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:walk"
+					}
+				}
+			},
+			"spimton:walk": {
+				"minecraft:behavior.random_stroll": {
+					"interval": 120,
+					"priority": 1,
+					"speed_multiplier": 1
+				},
+				"minecraft:behavior.look_at_target": {
+					"look_time": [
+						2,
+						3
+					],
+					"probability": 1,
+					"priority": 1
+				}
+			},
+			"spimton:wait": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 3.6,
+					"time_down_event": {
+						"event": "spimton:ranged"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				},
+				"despawn_from_simulation_edge": true,
+				"despawn_from_inactivity": true
+			},
+			"minecraft:experience_reward": {
+				"on_death": "10"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"evocation_illager",
+					"monster",
+					"illager",
+					"mob"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/chillager.json"
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/entities/coldager_eq.json"
+			},
+			"minecraft:health": {
+				"value": 24,
+				"max": 24
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "freezing",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 0.26
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 5,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 8,
+						"walk_speed_multiplier": 0.6,
+						"sprint_speed_multiplier": 1
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1.225
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 5,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "spimton:chillager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "squid"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								}
+							]
+						},
+						"max_dist": 20
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_baby"
+								}
+							]
+						},
+						"max_dist": 20
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 3,
+				"probability": 1
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 10,
+				"look_distance": 8,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 32
+			},
+			"minecraft:on_target_acquired": {
+				"event": "minecraft:become_aggro",
+				"target": "self"
+			},
+			"minecraft:on_target_escape": {
+				"event": "minecraft:stop_aggro",
+				"target": "self"
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spimton:walk"
+					]
+				}
+			},
+			"spimton:walk": {
+				"add": {
+					"component_groups": [
+						"spimton:walk",
+						"spimton:wait"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:ranged"
+					]
+				}
+			},
+			"minecraft:spawn_for_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_configuration"
+					]
+				}
+			},
+			"spimton:ranged": {
+				"add": {
+					"component_groups": [
+						"spimton:ranged"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:walk"
+					]
+				}
+			},
+			"minecraft:become_aggro": {
+				"add": {
+					"component_groups": [
+						"spimton:wait"
+					]
+				}
+			},
+			"minecraft:stop_aggro": {
+				"remove": {
+					"component_groups": [
+						"spimton:wait",
+						"spimton:ranged"
+					]
+				}
+			}
+		}
+	}
+}

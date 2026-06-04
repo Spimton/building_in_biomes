@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_endstone_tiles"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:endstone_tiles"
+			},
+			"@": {
+				"item": "popped_chorus_fruit"
+			}
+		},
+		"pattern": [
+			"#@#",
+			"@#@",
+			"#@#"
+		],
+		"result": {
+			"item": "spimton:decorated_endstone_tiles",
+			"count": 6
+		}
+	}
+}

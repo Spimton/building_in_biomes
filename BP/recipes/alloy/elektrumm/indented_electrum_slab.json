@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:indented_electrum_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:indented_electrum"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"result": [
+			{
+				"item": "spimton:indented_electrum_slab",
+				"count": 6
+			}
+		]
+	}
+}

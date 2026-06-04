@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chilling_necklace"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:permafrost_essence"
+			},
+			"@": {
+				"item": "spimton:empty_necklace"
+			}
+		},
+		"pattern": [
+			" #",
+			"#@#",
+			" #"
+		],
+		"result": {
+			"item": "spimton:chilling_necklace"
+		}
+	}
+}

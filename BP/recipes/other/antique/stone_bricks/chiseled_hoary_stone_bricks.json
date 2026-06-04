@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:chiseled_hoary_stone_bricks"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 1,
+        "pattern": [
+            "#",
+            "#"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:hoary_stone_bricks_slab"
+            }
+        },
+        "result": {
+            "item": "spimton:chiseled_hoary_stone_bricks",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:sudden_cardiac_arrest",
+            "materials": {
+                "default": "entity_emissive_alpha"
+            },
+            "textures": {
+                "default": "textures/entity/sudden_cardiac_arrest_v2",
+                "parachute": "textures/entity/parachute"
+            },
+            "geometry": {
+                "default": "geometry.scav2",
+                "parachute": "geometry.parachute"
+            },
+            "scripts": {
+                "animate": [
+                    "look_at_controller"
+                ],
+                "should_update_effects_offscreen": "1.0"
+            },
+            "animations": {
+                "look_at": "animation.common.look_at_target",
+                "look_at_controller": "controller.animation.breeze.look_at"
+            },
+            "render_controllers": [
+                "controller.render.nopara",
+                "controller.render.parachute"
+            ]
+        }
+    }
+}

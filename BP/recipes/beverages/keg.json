@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:keg"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"---",
+			"X#X",
+			"---"
+		],
+		"key": {
+			"#": {
+				"item": "minecraft:water_bucket"
+			},
+			"-": {
+				"item": "minecraft:wooden_slab"
+			},
+			"X": {
+				"item": "minecraft:iron_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:keg_v1",
+			"count": 1
+		}
+	}
+}

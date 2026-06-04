@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_basalt_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:gilded_basalt_tiles"
+			},
+			"@": {
+				"item": "spimton:basalt_tiles"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"@#",
+			"#@"
+		],
+		"result": {
+			"item": "spimton:decorated_basalt_tiles",
+			"count": 4
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:steel_toe_stout"
+		},
+		"tags": [
+			"spimton:keg_cold"
+		],
+		"pattern": [
+			"zxz",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "nether_wart"
+			},
+			"y": {
+				"item": "spimton:beetroot_ale"
+			},
+			"z": {
+				"item": "spimton:steel_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:steel_toe_stout"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:bronze_lantern"
+		},
+		"pattern": [
+			"@@@",
+			"@#@",
+			"@@@"
+		],
+		"key": {
+			"#": {
+				"item": "torch"
+			},
+			"@": {
+				"item": "spimton:bronze_nugget"
+			}
+		},
+		"result": {
+			"item": "spimton:bronze_lantern",
+			"count": 1
+		}
+	}
+}

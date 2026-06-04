@@ -1,0 +1,34 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:void_liquid",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": false,
+			"minecraft:destructible_by_explosion": false,
+			"minecraft:selection_box": true,
+			"minecraft:collision_box": false,
+			"minecraft:map_color": "#1E1340",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 0,
+			"minecraft:geometry": {
+				"culling": "spimton:culling.custom_glass",
+				"identifier": "geometry.custom_glass"
+			},
+			"minecraft:custom_components": [
+				"spimton:void_liquid"
+			],
+			"minecraft:replaceable": {},
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "blend",
+					"texture": "void_liquid"
+				}
+			}
+		}
+	}
+}

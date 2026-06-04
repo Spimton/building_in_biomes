@@ -1,0 +1,49 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:unbreakable_necklace",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:rarity": "rare",
+            "minecraft:icon": "unbreakable_necklace",
+            "minecraft:wearable": {
+                "slot": "slot.armor.chest",
+                "protection": 5
+            },
+            "minecraft:enchantable": {
+                "slot": "armor_torso",
+                "value": 7
+            },
+            "minecraft:durability": {
+                "max_durability": 480,
+                "damage_chance": {
+                    "min": 50,
+                    "max": 100
+                }
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "spimton:steel_ingot"
+                        ],
+                        "repair_amount": 250
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:netherite_tier",
+                    "spimton:steel",
+                    "minecraft:trimmable_armors",
+                    "novelty:is_neckless"
+                ]
+            }
+        }
+    }
+}

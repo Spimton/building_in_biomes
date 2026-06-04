@@ -1,0 +1,24 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:iridescent_concrete",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4
+			},
+			"minecraft:map_color": "#621D13",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 5,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {}
+		}
+	}
+}

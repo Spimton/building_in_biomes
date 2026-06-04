@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:smooth_marble"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:polished_marble",
+		"output": "spimton:smooth_marble"
+	}
+}

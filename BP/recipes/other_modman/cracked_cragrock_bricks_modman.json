@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:cracked_cragrock_bricks_modman"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:cragrock_bricks",
+		"output": "spimton:cracked_cragrock_bricks"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:lapis_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "lapis_block"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": {
+			"item": "spimton:lapis_bricks",
+			"count": 4
+		}
+	}
+}

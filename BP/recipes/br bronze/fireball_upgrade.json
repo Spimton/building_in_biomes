@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "tags": [
+            "crafting_table"
+        ],
+        "description": {
+            "identifier": "spimton:fireball_upgrade"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@#@",
+            "#i#",
+            "@#@"
+        ],
+        "key": {
+            "#": {
+                "item": "ghast_tear"
+            },
+            "@": {
+                "item": "fire_charge"
+            },
+            "i": {
+                "item": "spimton:bronze_block"
+            }
+        },
+        "result": {
+            "item": "spimton:fireball_upgrade"
+        }
+    }
+}

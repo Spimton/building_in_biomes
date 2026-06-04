@@ -1,0 +1,161 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:dice",
+			"menu_category": {
+				"category": "items",
+				"is_hidden_in_commands": false
+			},
+			"traits": {},
+			"states": {
+				"spimton:die": {
+					"values": {
+						"min": 1,
+						"max": 6
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:map_color": "#EAEAEA",
+			"minecraft:material_instances": {
+				"up": {
+					"texture": "dice_1",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "dice_6",
+					"render_method": "opaque"
+				},
+				"north": {
+					"texture": "dice_2",
+					"render_method": "opaque"
+				},
+				"south": {
+					"texture": "dice_5",
+					"render_method": "opaque"
+				},
+				"west": {
+					"texture": "dice_3",
+					"render_method": "opaque"
+				},
+				"east": {
+					"texture": "dice_4",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1
+			},
+			"minecraft:redstone_producer": {
+				"connected_faces": [],
+				"power": 1
+			},
+			"tag:minecraft:is_axe_item_destructible": {},
+			"spimton:dice": {}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('spimton:die') == 1 ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					},
+					"minecraft:redstone_producer": {
+						"connected_faces": [],
+						"power": 1
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:die') == 2 ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					},
+					"minecraft:redstone_producer": {
+						"connected_faces": [],
+						"power": 2
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:die') == 3 ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							-90
+						]
+					},
+					"minecraft:redstone_producer": {
+						"connected_faces": [],
+						"power": 3
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:die') == 4 ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					},
+					"minecraft:redstone_producer": {
+						"connected_faces": [],
+						"power": 4
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:die') == 5 ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							-90,
+							0,
+							0
+						]
+					},
+					"minecraft:redstone_producer": {
+						"connected_faces": [],
+						"power": 5
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:die') == 6 ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							180,
+							0,
+							0
+						]
+					},
+					"minecraft:redstone_producer": {
+						"connected_faces": [],
+						"power": 6
+					}
+				}
+			}
+		]
+	}
+}

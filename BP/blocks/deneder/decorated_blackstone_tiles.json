@@ -1,0 +1,67 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:decorated_blackstone_tiles",
+			"menu_category": {
+				"category": "construction",
+				"group": "itemGroup.name.stoneBrick",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:iron_tier')"
+						},
+						"destroy_speed": 1.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.6
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:wood_tier')"
+						},
+						"destroy_speed": 2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.8
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.1
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#A6A6A6",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:decorated_blackstone": {},
+			"tag:is_pickaxe_item_destructible": {}
+		}
+	}
+}

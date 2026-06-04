@@ -1,0 +1,19 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:baleful_steel_bars",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.bars"
+            }
+        },
+        "components": {
+            "minecraft:icon": "baleful_steel_bars",
+            "minecraft:block_placer": {
+                "block": "spimton:baleful_steel_bars",
+                "replace_block_item": true
+            }
+        }
+    }
+}

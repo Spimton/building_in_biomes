@@ -1,0 +1,22 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:canned_rabbit"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:can"
+			},
+			{
+				"item": "rabbit"
+			}
+		],
+		"result": {
+			"item": "spimton:canned_rabbit"
+		}
+	}
+}

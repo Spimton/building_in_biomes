@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:weeping_structure"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "weeper_structure"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

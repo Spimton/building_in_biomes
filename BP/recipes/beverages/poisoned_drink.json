@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:poisoned_drink"
+		},
+		"tags": [
+			"spimton:keg"
+		],
+		"pattern": [
+			"xzx",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "spimton:cancerous_tooth"
+			},
+			"y": {
+				"item": "spimton:vodka"
+			},
+			"z": {
+				"item": "spimton:ht_lead_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:poisoned_drink"
+		}
+	}
+}

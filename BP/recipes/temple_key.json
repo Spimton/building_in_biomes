@@ -1,0 +1,34 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:temple_key"
+        },
+        "assume_symmetry": false,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " a ",
+            "bcb",
+            " c "
+        ],
+        "key": {
+            "b": {
+                "item": "spimton:temple_fragment"
+            },
+            "c": {
+                "item": "spimton:permafrost_essence"
+            },
+            "a": {
+                "item": "spimton:temple_rock"
+            }
+        },
+        "result": {
+            "item": "spimton:temple_key"
+        }
+    }
+}

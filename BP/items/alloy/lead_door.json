@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:lead_door",
+			"menu_category": {
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.door"
+			}
+		},
+		"components": {
+			"minecraft:icon": "lead_door_nermal",
+			"minecraft:block_placer": {
+				"block": "spimton:lead_door",
+				"replace_block_item": true
+			}
+		}
+	}
+}

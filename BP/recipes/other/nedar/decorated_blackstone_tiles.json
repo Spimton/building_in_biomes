@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_blackstone_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:gilded_blackstone_tiles"
+			},
+			"@": {
+				"item": "gilded_blackstone"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"@#",
+			"#@"
+		],
+		"result": {
+			"item": "spimton:decorated_blackstone_tiles",
+			"count": 4
+		}
+	}
+}

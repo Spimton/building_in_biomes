@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_stairs"
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bismuth_block"
+			}
+		},
+		"result": {
+			"item": "spimton:bismuth_stairs",
+			"count": 4
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

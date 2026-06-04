@@ -1,0 +1,72 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:jade_helmet",
+					"functions": [
+						{
+							"function": "enchant_with_levels",
+							"levels": {
+								"max": 30,
+								"min": 20
+							},
+							"treasure": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:jade_boots",
+					"functions": [
+						{
+							"function": "enchant_with_levels",
+							"levels": {
+								"max": 30,
+								"min": 20
+							},
+							"treasure": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:jade_spear",
+					"functions": [
+						{
+							"function": "set_lore",
+							"lore": [
+								"§r§7If your horse survived this battle,",
+								"§r§7it deserves a medal of honor."
+							]
+						},
+						{
+							"function": "enchant_with_levels",
+							"levels": {
+								"max": 30,
+								"min": 20
+							},
+							"treasure": true
+						},
+						{
+							"function": "set_name",
+							"name": "Overgrown Equestrian's Lance"
+						}
+					]
+				}
+			]
+		}
+	]
+}

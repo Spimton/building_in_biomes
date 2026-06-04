@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:jade_cladding_3"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:jade",
+				"count": 2
+			},
+			{
+				"item": "spimton:imperial_jade",
+				"count": 2
+			},
+			{
+				"item": "iron_ingot",
+				"count": 2
+			},
+			{
+				"item": "spimton:ancient_gold_ingot",
+				"count": 2
+			}
+		],
+		"tags": [
+			"spimton:alloy_forge_3"
+		],
+		"result": {
+			"item": "spimton:jade_cladding",
+			"count": 4
+		}
+	}
+}

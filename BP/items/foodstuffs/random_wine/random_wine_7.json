@@ -1,0 +1,30 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:random_wine_7",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "wine_7",
+            "minecraft:display_name": {
+                "value": "item.spimton:random_wine.name"
+            },
+            "minecraft:durability": {
+                "max_durability": 1
+            },
+            "minecraft:damage": {
+                "value": 10
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "spimton:red_wine"
+                ]
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:max_stack_size": 1
+        }
+    }
+}

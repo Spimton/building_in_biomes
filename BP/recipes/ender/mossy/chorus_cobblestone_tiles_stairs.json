@@ -1,0 +1,25 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chorus_cobblestone_tiles_stairs"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:chorus_cobblestone_tiles"
+            }
+        },
+        "pattern": [
+            "#",
+            "##",
+            "###"
+        ],
+        "result": {
+            "item": "spimton:chorus_cobblestone_tiles_stairs",
+            "count": 4
+        }
+    }
+}

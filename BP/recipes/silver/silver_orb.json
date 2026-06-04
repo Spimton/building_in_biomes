@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:silver_orb"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:silver_ingot"
+			},
+			"y": {
+				"item": "lapis_lazuli"
+			}
+		},
+		"pattern": [
+			"yyy",
+			"yxy",
+			"yyy"
+		],
+		"result": {
+			"item": "spimton:silver_orb",
+			"count": 1
+		}
+	}
+}

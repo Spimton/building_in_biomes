@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:indestructibility_tiara"
+		},
+		"pattern": [
+			" # ",
+			"]@]",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:metallicore_ingot"
+			},
+			"@": {
+				"item": "spimton:empty_tiara"
+			},
+			"]": {
+				"item": "spimton:metallicore_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:indestructibility_tiara"
+		}
+	}
+}

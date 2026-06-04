@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cellar"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"---",
+			"X X",
+			"---"
+		],
+		"key": {
+			"-": {
+				"item": "minecraft:wooden_slab"
+			},
+			"X": {
+				"item": "minecraft:iron_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:cellar",
+			"count": 1
+		}
+	}
+}

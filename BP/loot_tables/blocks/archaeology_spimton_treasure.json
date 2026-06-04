@@ -1,0 +1,39 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:ancient_tablet",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:bronze_ingot",
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:rune_pottery_sherd",
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:record_creative",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:cross_pottery_sherd",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:treasure_pottery_sherd",
+                    "weight": 20
+                }
+            ]
+        }
+    ]
+}

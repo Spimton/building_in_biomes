@@ -1,0 +1,30 @@
+                            "condition": [
+                                {
+                                    "condition": "match_tool",
+                                    "item": "spimton:iron_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "spimton:steel_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "bronze_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "diamond_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "netherite_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "stone_pickaxe"
+                                },
+                                                                {
+                                    "condition": "match_tool",
+                                    "item": "wood_pickaxe"
+                                }
+                            ]

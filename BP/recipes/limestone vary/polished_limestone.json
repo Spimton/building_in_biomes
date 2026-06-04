@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_limestone"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:limestone"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": {
+			"item": "spimton:polished_limestone",
+			"count": 4
+		}
+	}
+}

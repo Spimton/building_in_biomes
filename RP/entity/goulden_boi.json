@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:goulden_boi",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/goulden_boi",
+				"spawn": "textures/entity/rune"
+			},
+			"geometry": {
+				"default": "geometry.goulden_boi",
+				"spawn": "geometry.rune_geo"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move",
+					"controller_attack",
+					{
+						"rune_spin": "query.is_sheared"
+					}
+				]
+			},
+			"animations": {
+				"rune_spin": "animation.rune.normal",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.goulden_boi.walk",
+				"attack": "animation.goulden_boi.attack",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"controller_attack": "controller.animation.skirmisher.attack"
+			},
+			"render_controllers": [
+				"controller.render.goulden_boi",
+				"controller.render.goulden_boi_rune"
+			],
+			"spawn_egg": {
+				"texture": "goulden_guard_egg"
+			}
+		}
+	}
+}

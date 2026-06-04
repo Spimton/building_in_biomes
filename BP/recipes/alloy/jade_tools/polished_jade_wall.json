@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_jade_wall"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:polished_jade"
+			}
+		},
+		"pattern": [
+			"###",
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:polished_jade_wall",
+			"count": 6
+		}
+	}
+}

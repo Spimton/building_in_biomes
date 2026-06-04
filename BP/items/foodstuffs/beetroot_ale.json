@@ -1,0 +1,26 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:beetroot_ale",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "beetroot_ale",
+			"minecraft:use_modifiers": {
+				"use_duration": 2,
+				"movement_modifier": 0.3
+			},
+			"minecraft:food": {
+				"nutrition": 1,
+				"saturation_modifier": 2,
+				"can_always_eat": true,
+				"using_converts_to": "spimton:mug"
+			},
+			"minecraft:use_animation": "drink",
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

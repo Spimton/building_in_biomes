@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_smoothener"
+		},
+		"pattern": [
+			"  #",
+			"@#@",
+			"@  "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bismuth_ingot"
+			},
+			"@": {
+				"item": "rabbit_hide"
+			}
+		},
+		"result": {
+			"item": "spimton:bismuth_smoothener",
+			"count": 1
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

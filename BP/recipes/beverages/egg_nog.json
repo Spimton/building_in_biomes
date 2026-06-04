@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:egg_nog"
+		},
+		"tags": [
+			"spimton:keg",
+			"spimton:keg_hot"
+		],
+		"pattern": [
+			"xzx",
+			"yyy"
+		],
+		"key": {
+			"x": {
+				"item": "egg"
+			},
+			"y": {
+				"item": "spimton:mug"
+			},
+			"z": {
+				"item": "wheat"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:egg_nog"
+			},
+			{
+				"item": "spimton:egg_nog"
+			},
+			{
+				"item": "spimton:egg_nog"
+			}
+		]
+	}
+}

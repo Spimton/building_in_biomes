@@ -1,0 +1,269 @@
+{
+    "animation_controllers": {
+        "controller.animation.archshaman.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+    
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.horseman.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+    
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.ratt.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.weeper.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+           
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+        
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.wshaman.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+           
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+        
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.juandice.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+          
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+             
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "format_version": "1.21.40"
+}

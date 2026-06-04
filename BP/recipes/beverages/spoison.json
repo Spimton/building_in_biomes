@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:spoison"
+		},
+		"tags": [
+			"spimton:keg_cold"
+		],
+		"pattern": [
+			"xzx",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "spimton:very_cancerous_tooth"
+			},
+			"y": {
+				"item": "spimton:poisoned_drink"
+			},
+			"z": {
+				"item": "spimton:the_dealbreaker"
+			}
+		},
+		"result": {
+			"item": "spimton:spoison"
+		}
+	}
+}

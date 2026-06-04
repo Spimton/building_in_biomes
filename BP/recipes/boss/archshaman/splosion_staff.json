@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:splosion_staff"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"x",
+			"y",
+			"z"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:overgrown_orb"
+			},
+			"y": {
+				"item": "blaze_rod"
+			},
+			"z": {
+				"item": "spimton:ancient_gold_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:splosion_staff"
+		}
+	}
+}

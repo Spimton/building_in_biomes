@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "shadowcrystal_block_full",
+		"metalness_emissive_roughness": "shadowcrystal_block_full_mer"
+	}
+}

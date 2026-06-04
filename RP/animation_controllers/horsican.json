@@ -1,0 +1,51 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.undead_horse.melee_attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time > 0.0"
+                        }
+                    ]
+                },
+                "attack": {
+                    "animations": [
+                        "melee_attack"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "variable.attack_time <= 0.0"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.undead_horse.move": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "blend_transition": 0.15,
+                    "transitions": [
+                        {
+                            "walk": "query.modified_move_speed > 0.01"
+                        }
+                    ]
+                },
+                "walk": {
+                    "animations": [
+                        "walk"
+                    ],
+                    "blend_transition": 0.1,
+                    "transitions": [
+                        {
+                            "default": "!query.ground_speed"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

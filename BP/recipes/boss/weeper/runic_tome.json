@@ -1,0 +1,40 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:runic_tome"
+        },
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "spimton:creeper_spores"
+            }
+        ],
+        "pattern": [
+            "aaa",
+            "bcb",
+            "dbd"
+        ],
+        "key": {
+            "a": {
+                "item": "totem_of_undying"
+            },
+            "b": {
+                "item": "spimton:creeper_spores"
+            },
+            "c": {
+                "item": "enchanted_book"
+            },
+            "d": {
+                "item": "spimton:glowing_dye"
+            }
+        },
+        "result": {
+            "item": "spimton:runic_tome"
+        }
+    }
+}

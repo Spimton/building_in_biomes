@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:charge_shield_td",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:allow_off_hand": true,
+			"minecraft:can_destroy_in_creative": true,
+			"minecraft:durability": {
+				"max_durability": 300,
+				"damage_chance": {
+					"min": 50,
+					"max": 100
+				}
+			},
+			"minecraft:hover_text_color": "gold",
+			"minecraft:rarity": "epic",
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 5
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:steel_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"spimton:charge_shield_td"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:icon": "charge_targe_td",
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true
+		}
+	}
+}

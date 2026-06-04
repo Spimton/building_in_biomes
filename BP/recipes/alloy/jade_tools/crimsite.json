@@ -1,0 +1,21 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:crimsite"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:crimsite_block",
+				"count": 1
+			}
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:crimsite",
+			"count": 9
+		}
+	}
+}

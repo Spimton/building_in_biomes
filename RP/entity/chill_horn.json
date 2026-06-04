@@ -1,0 +1,20 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:chill_horn",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/chill_horn_entity"
+			},
+			"geometry": {
+				"default": "geometry.chill_horn"
+			},
+			"render_controllers": [
+				"controller.render.chill_horn"
+			]
+		}
+	}
+}

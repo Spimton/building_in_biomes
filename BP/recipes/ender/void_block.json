@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:void_block"
+        },
+        "key": {
+            "#": {
+                "item": "spimton:void_bottle"
+            }
+        },
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "result": [
+            {
+                "item": "spimton:void_block"
+            },
+            {
+                "item": "glass_bottle",
+                "count": 4
+            }
+        ]
+    }
+}

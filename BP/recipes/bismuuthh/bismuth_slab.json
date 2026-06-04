@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_slab"
+		},
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bismuth_block"
+			}
+		},
+		"result": {
+			"item": "spimton:bismuth_slab",
+			"count": 6
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

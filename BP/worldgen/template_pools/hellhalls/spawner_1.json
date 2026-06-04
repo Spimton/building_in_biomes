@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:spawner_1"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_blackstone"
+                },
+                "weight": 25
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_basalt"
+                },
+                "weight": 25
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_bihlin"
+                },
+                "weight": 35
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_pyhlin"
+                },
+                "weight": 15
+            }
+        ]
+    }
+}

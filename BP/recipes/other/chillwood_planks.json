@@ -1,0 +1,23 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:chillwood_planks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"tag": "spimton:chillwood_plank_maker"
+			}
+		],
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"result": {
+			"item": "spimton:chillwood_planks",
+			"count": 4
+		}
+	}
+}

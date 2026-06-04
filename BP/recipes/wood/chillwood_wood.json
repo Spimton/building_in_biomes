@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chillwood_wood"
+        },
+        "assume_symmetry": true,
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "key": {
+            "#": {
+                "item": "spimton:chillwood_log"
+            }
+        },
+        "result": {
+            "item": "spimton:chillwood_wood",
+            "count": 3
+        }
+    }
+}

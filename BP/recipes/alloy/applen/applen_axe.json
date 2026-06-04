@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:applen_axe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"assume_symmetry": true,
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"pattern": [
+			"##",
+			"@#",
+			"@ "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:applen_ingot"
+			},
+			"@": {
+				"item": "stick"
+			}
+		},
+		"result": {
+			"item": "spimton:applen_axe"
+		}
+	}
+}

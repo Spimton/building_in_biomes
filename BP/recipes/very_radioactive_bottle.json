@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "spimton:very_radioactive_bottle"
+		},
+		"tags": [
+			"brewing_stand"
+		],
+		"reagent": "spimton:very_cancerous_tooth",
+		"input": "minecraft:potion_type:mundane",
+		"output": "spimton:very_radioactive_bottle"
+	}
+}

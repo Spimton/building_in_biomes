@@ -1,0 +1,44 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:runic_tome",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:hand_equipped": false,
+            "minecraft:icon": "runic_tome",
+            "minecraft:max_stack_size": 1,
+            "minecraft:custom_components": [
+                "spimton:codex"
+            ],
+            "minecraft:durability": {
+                "max_durability": 250
+            },
+            "minecraft:rarity": "uncommon",
+            "minecraft:hover_text_color": "red",
+            "minecraft:cooldown": {
+                "duration": 1,
+                "category": "tome"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "totem_of_undying"
+                        ],
+                        "repair_amount": "query.max_durability*0.67"
+                    },
+                    {
+                        "items": [
+                            "spimton:runic_tome"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    }
+                ]
+            }
+        }
+    }
+}

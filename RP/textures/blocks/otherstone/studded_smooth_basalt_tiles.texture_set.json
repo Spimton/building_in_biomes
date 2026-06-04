@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "studded_smooth_basalt_tiles",
+		"metalness_emissive_roughness": "studded_smooth_basalt_tiles_mer"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "temple_altar",
+		"metalness_emissive_roughness": "temple_altar_mer"
+	}
+}

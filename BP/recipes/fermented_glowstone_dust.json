@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:fermented_glowstone_dust"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"y": {
+				"item": "glowstone_dust"
+			},
+			"x": {
+				"item": "slime_block"
+			}
+		},
+		"pattern": [
+			" y ",
+			"yxy",
+			" y "
+		],
+		"result": {
+			"item": "spimton:fermented_glowstone_dust"
+		}
+	}
+}

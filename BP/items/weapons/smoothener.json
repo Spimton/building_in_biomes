@@ -1,0 +1,48 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:smoothener",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:use_modifiers": {
+				"use_duration": 3
+			},
+			"minecraft:icon": "smoothener",
+			"minecraft:use_animation": "bow",
+			"minecraft:max_stack_size": 1,
+			"minecraft:custom_components": [
+				"spimton:smoothener",
+				"spimton:ham_dur"
+			],
+			"minecraft:tags": {
+				"tags": [
+					"spimton:smoothener"
+				]
+			},
+			"minecraft:hand_equipped": true,
+			"minecraft:durability": {
+				"max_durability": 300
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:tin_ingot"
+						],
+						"repair_amount": "query.max_durability*0.1"
+					},
+					{
+						"items": [
+							"spimton:smoothener"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			}
+		}
+	}
+}

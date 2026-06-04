@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:indented_gold"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "gold_block"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": [
+			{
+				"item": "spimton:indented_gold",
+				"count": 4
+			}
+		]
+	}
+}

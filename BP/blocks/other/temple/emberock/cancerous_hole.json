@@ -1,0 +1,22 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:cancerous_hole",
+            "menu_category": {
+                "category": "items",
+                "is_hidden_in_commands": false
+            }
+        },
+        "components": {
+            "minecraft:map_color": "#584214",
+            "minecraft:destructible_by_mining": false,
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:custom_components": [
+                "spimton:rodent_spawner"
+            ],
+            "minecraft:loot": "loot_tables/empty.json"
+        },
+        "permutations": []
+    }
+}

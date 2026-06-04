@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "goulden_boi",
+		"metalness_emissive_roughness": "goulden_boi_mer",
+		"heightmap": "goulden_boi_height"
+	}
+}

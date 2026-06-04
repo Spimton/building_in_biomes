@@ -1,0 +1,19 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:item": {
+        "description": {
+            "menu_category": {
+                "category": "items",
+                "group": "minecraft:itemGroup.name.chains"
+            },
+            "identifier": "spimton:large_gold_chain"
+        },
+        "components": {
+            "minecraft:icon": "biggu_gold_chain",
+            "minecraft:block_placer": {
+                "block": "spimton:large_gold_chain",
+                "replace_block_item": true
+            }
+        }
+    }
+}

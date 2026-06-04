@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:crimsite_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:crimsite"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:crimsite_tiles"
+		}
+	}
+}

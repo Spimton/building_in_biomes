@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:record_ward"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:crynil"
+            },
+            "@": {
+                "item": "resin_clump"
+            }
+        },
+        "result": {
+            "item": "minecraft:music_disc_ward",
+            "count": 1
+        }
+    }
+}

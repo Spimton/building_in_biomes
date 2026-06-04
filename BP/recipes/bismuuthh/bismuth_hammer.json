@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_hammer"
+		},
+		"pattern": [
+			"###",
+			" @ ",
+			" @ "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bismuth_ingot"
+			},
+			"@": {
+				"item": "stick"
+			}
+		},
+		"result": {
+			"item": "spimton:bismuth_hammer",
+			"count": 1
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

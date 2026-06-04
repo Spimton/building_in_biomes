@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "strength_nethengic_runestone",
+		"metalness_emissive_roughness": "strength_hoary_runestone_mer"
+	}
+}

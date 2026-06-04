@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:radioactive_gloom_tiles_cooldown",
+			"menu_category": {
+				"category": "construction",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 20
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#CDCDCD",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:is_pickaxe_item_destructible": {},
+			"minecraft:custom_components": [
+				"spimton:turn_radio"
+			],
+			"minecraft:tick": {
+				"looping": false,
+				"interval_range": [
+					20,
+					40
+				]
+			}
+		},
+		"permutations": []
+	}
+}

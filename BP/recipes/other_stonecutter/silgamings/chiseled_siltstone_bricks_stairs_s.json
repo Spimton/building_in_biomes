@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"stonecutter"
+		],
+		"description": {
+			"identifier": "spimton:chiseled_siltstone_bricks_stairs_s"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:chiseled_siltstone_bricks"
+			}
+		],
+		"result": {
+			"item": "spimton:chiseled_siltstone_bricks_stairs",
+			"count": 1
+		}
+	}
+}

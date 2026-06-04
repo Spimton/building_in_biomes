@@ -1,0 +1,45 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:feature_rules": {
+        "description": {
+            "identifier": "spimton:guano_den_rule",
+            "places_feature": "spimton:guano_den_feature"
+        },
+        "conditions": {
+            "placement_pass": "first_pass",
+            "minecraft:biome_filter": {
+                "test": "has_biome_tag",
+                "operator": "==",
+                "value": "overworld"
+            }
+        },
+        "distribution": {
+            "iterations": 1,
+            "x": {
+                "extent": [
+                    0,
+                    16
+                ],
+                "distribution": "uniform"
+            },
+            "y": {
+                "extent": [
+                    -60,
+                    0 //Makes the structure generate between y11 and y50
+                ],
+                "distribution": "uniform"
+            },
+            "z": {
+                "extent": [
+                    0,
+                    16
+                ],
+                "distribution": "uniform"
+            },
+            "scatter_chance": {
+                "numerator": 1,
+                "denominator": 20
+            }
+        }
+    }
+}

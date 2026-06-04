@@ -1,0 +1,65 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "spimton:ancient_gold_shield",
+            "render_controllers": [
+                "controller.render.item_default"
+            ],
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/entity/attachable/ancient_gold_targe",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.targe"
+            },
+            "animations": {
+                "first_person_hold": "controller.animation.targe.wield_fp",
+                "third_person_hold": "controller.animation.targe.wield_tp",
+                "wield_main_hand_first_person": "animation.targe.first_person_hold",
+                "wield_off_hand_first_person": "animation.targe.first_person_hold_offhand",
+                "wield_main_hand_third_person": "animation.targe.third_person_hold",
+                "wield_off_hand_third_person": "animation.targe.third_person_hold_offhand",
+                "wield_main_hand_third_person_block": "animation.targe.third_person_sneak",
+                "wield_off_hand_third_person_block": "animation.targe.third_person_sneak_offhand",
+                "wield_main_hand_first_person_block": "animation.targe.first_person_sneak",
+                "wield_off_hand_first_person_block": "animation.targe.first_person_sneak_offhand"
+            },
+            "scripts": {
+                "initialize": [
+                    "variable.item_id = 'spimton:ancient_gold_shield';",
+                    "variable.main_hand_first_person_pos_x =  5.3;",
+                    "variable.main_hand_first_person_pos_y = 26.0;",
+                    "variable.main_hand_first_person_pos_z = 0.4;",
+                    "variable.main_hand_first_person_rot_x = 91.0;",
+                    "variable.main_hand_first_person_rot_y = 65.0;",
+                    "variable.main_hand_first_person_rot_z = -43.0;",
+                    "variable.off_hand_first_person_pos_x = -13.5;",
+                    "variable.off_hand_first_person_pos_y = -5.8;",
+                    "variable.off_hand_first_person_pos_z = 5.1;",
+                    "variable.off_hand_first_person_with_bow_pos_z = -25.0;",
+                    "variable.off_hand_first_person_rot_x = 1.0;",
+                    "variable.off_hand_first_person_rot_y = 176.0;",
+                    "variable.off_hand_first_person_rot_z = -2.5;"
+                ],
+                "pre_animation": [
+                    "variable.is_blocking_main_hand = query.blocking && !query.is_item_name_any('slot.weapon.offhand', v.item_id) && query.is_item_name_any('slot.weapon.mainhand', v.item_id) && query.cooldown_time_remaining <= 0;",
+                    "variable.is_blocking_off_hand = query.blocking && query.is_item_name_any('slot.weapon.offhand', v.item_id) && query.cooldown_time_remaining <= 0;",
+                    "variable.is_using_bow = (query.get_equipped_item_name == 'bow') && (query.main_hand_item_use_duration > 0.0f);"
+                ],
+                "animate": [
+                    {
+                        "first_person_hold": "c.is_first_person"
+                    },
+                    {
+                        "third_person_hold": "!c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

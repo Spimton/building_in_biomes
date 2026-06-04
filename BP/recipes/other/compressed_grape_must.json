@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:compressed_grape_must"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:compressed_grape_must"
+			}
+		},
+		"pattern": [
+			"#"
+		],
+		"result": {
+			"item": "spimton:grape_must_block",
+			"count": 1
+		}
+	}
+}

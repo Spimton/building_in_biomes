@@ -1,0 +1,2 @@
+tellraw @a[r=30] {"rawtext": [{"text": "§r<§9Champion of Justice, Michael Bay Devotee§r> Diamond is Unbreakable!"}]}
+tellraw @a[r=30] {"rawtext": [{"text": "§r<§9Champion of Justice, Micheal Bay Devotee§r> Shine on me, §9Crazy Diamond§r!"}]}

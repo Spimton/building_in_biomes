@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:crimsite_crafting"
+		},
+		"pattern": [
+			"@#",
+			"#@"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:jade"
+			},
+			"@": {
+				"item": "nether_wart"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:crimsite",
+			"count": 2
+		}
+	}
+}

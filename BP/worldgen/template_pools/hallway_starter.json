@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:hallway_starter"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "temple/hallway_starter"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

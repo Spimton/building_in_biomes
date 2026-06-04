@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:applen_gold_1"
+		},
+		"tags": [
+			"spimton:alloy_forge_1"
+		],
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "apple"
+			},
+			"@": {
+				"item": "gold_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:applen_ingot",
+			"count": 2
+		}
+	}
+}

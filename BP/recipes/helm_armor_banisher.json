@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:helm_armor_banisher"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bluestone"
+			}
+		},
+		"pattern": [
+			"###",
+			"# #"
+		],
+		"result": {
+			"item": "spimton:dummy_armor_head"
+		}
+	}
+}

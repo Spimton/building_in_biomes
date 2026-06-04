@@ -1,0 +1,58 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:ragebait_fireball",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"remove_on_hit": {},
+					"impact_damage": {
+						"destroy_on_hit": true,
+						"knockback": true,
+						"damage": 12
+					},
+					"particle_on_hit": {
+						"particle_type": "lava",
+						"num_particles": 6,
+						"on_entity_hit": true,
+						"on_other_hit": true
+					}
+				},
+				"anchor": 1,
+				"power": 1.2,
+				"gravity": 0.025,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"spimton:purify": {
+				"queue_command": {
+					"command": [
+						"execute at @s run particle minecraft:sonic_explosion ~ ~ ~",
+						"execute at @s run effect @e[r=2] clear"
+					]
+				}
+			}
+		}
+	}
+}

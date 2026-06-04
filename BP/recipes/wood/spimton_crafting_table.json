@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:spimton_crafting_table"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "assume_symmetry": true,
+        "key": {
+            "#": {
+                "item": "spimton:chillwood_planks"
+            }
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "result": {
+            "item": "crafting_table",
+            "count": 1
+        }
+    }
+}

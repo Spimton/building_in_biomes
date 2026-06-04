@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:frost_cutter"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:permafrost_essence"
+			},
+			"y": {
+				"item": "spimton:silver_orb"
+			},
+			"z": {
+				"item": "spimton:silver_ingot"
+			}
+		},
+		"pattern": [
+			" x ",
+			"zyz",
+			" z "
+		],
+		"result": {
+			"item": "spimton:frost_cutter",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,140 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:grapes",
+			"menu_category": {
+				"category": "none"
+			},
+			"states": {
+				"spimton:growth": {
+					"values": {
+						"min": 0,
+						"max": 7
+					}
+				},
+				"spimton:part": {
+					"values": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:movable": {
+				"movement_type": "popped" // Block is broken when pushed by a piston.
+			},
+			"minecraft:flammable": true,
+			"minecraft:collision_box": false,
+			"minecraft:geometry": "minecraft:geometry.cross",
+			"minecraft:light_dampening": 0,
+			"spimton:grapegrowth": {
+				"iden": "spimton:grapes"
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"can_contain_liquid": true,
+						"on_liquid_touches": "popped",
+						"liquid_type": "water"
+					}
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "grape_0",
+					"render_method": "alpha_test",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('spimton:growth') < 7 && q.block_state('spimton:part') == 0",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "grape_bottom_0",
+							"render_method": "alpha_test",
+							"ambient_occlusion": false,
+							"face_dimming": false
+						}
+					},
+					"minecraft:loot": "loot_tables/blocks/grape_young.json",
+					"minecraft:geometry": "minecraft:geometry.cross"
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:growth') < 7 && q.block_state('spimton:part') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "grape_top_0",
+							"render_method": "alpha_test",
+							"ambient_occlusion": false,
+							"face_dimming": false
+						}
+					},
+					"minecraft:loot": "loot_tables/blocks/grape_young.json",
+					"minecraft:geometry": "minecraft:geometry.cross"
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:growth') == 7 && q.block_state('spimton:part') == 0",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "grape_bottom_1",
+							"render_method": "alpha_test",
+							"ambient_occlusion": false,
+							"face_dimming": false
+						}
+					},
+					"minecraft:geometry": "minecraft:geometry.cross",
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:loot": "loot_tables/blocks/grape_mature.json"
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:growth') == 7 && q.block_state('spimton:part') == 1",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "grape_top_1",
+							"render_method": "alpha_test",
+							"ambient_occlusion": false,
+							"face_dimming": false
+						}
+					},
+					"minecraft:geometry": "minecraft:geometry.cross",
+					"minecraft:selection_box": {
+						"origin": [
+							-8,
+							0,
+							-8
+						],
+						"size": [
+							16,
+							16,
+							16
+						]
+					},
+					"minecraft:loot": "loot_tables/blocks/grape_mature.json"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:xp_dialog",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:type_family": {
+				"family": [
+					"spimton:creeper"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire_tick",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.2,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:dils"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:dils": {
+				"queue_command": {
+					"command": [
+						"function mob/weeper/xp_dialog",
+						"kill @s"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

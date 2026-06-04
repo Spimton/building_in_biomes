@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:mossy_cobblestone_tiles"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "moss_block"
+			},
+			{
+				"item": "spimton:cobblestone_tiles"
+			}
+		],
+		"result": {
+			"item": "spimton:mossy_cobblestone_tiles",
+			"count": 1
+		}
+	}
+}

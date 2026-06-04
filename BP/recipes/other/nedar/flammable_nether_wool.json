@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:flammable_nether_wool"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:nether_wool"
+			},
+			"@": {
+				"item": "spimton:ectoplasm"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"@#",
+			"#@"
+		],
+		"result": {
+			"item": "spimton:flammable_nether_wool",
+			"count": 2
+		}
+	}
+}

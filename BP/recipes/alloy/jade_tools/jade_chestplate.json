@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:jade_chestplate"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:jade_cladding"
+			},
+			"@": {
+				"item": "spimton:ancient_gold_ingot"
+			}
+		},
+		"pattern": [
+			"# #",
+			"@#@",
+			"#@#"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:jade_chestplate"
+		}
+	}
+}

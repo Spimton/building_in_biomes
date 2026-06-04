@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ecto_block_phase"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ecto_block"
+			},
+			"@": {
+				"item": "phantom_membrane"
+			}
+		},
+		"pattern": [
+			"@#",
+			"#@"
+		],
+		"result": {
+			"item": "spimton:ecto_block_phase",
+			"count": 4
+		}
+	}
+}

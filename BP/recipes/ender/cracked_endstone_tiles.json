@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:cracked_endstone_tiles"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "output": "spimton:cracked_endstone_tiles",
+        "input": "spimton:endstone_tiles"
+    }
+}

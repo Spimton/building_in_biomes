@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:silver_smelt"
+		},
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		],
+		"input": "spimton:raw_silver",
+		"output": "spimton:silver_ingot"
+	}
+}

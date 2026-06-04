@@ -1,0 +1,17 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:brute_template_c",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "crimstone_template",
+			"minecraft:max_stack_size": 64,
+			"minecraft:rarity": "uncommon",
+			"minecraft:hover_text_color": "yellow"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:pocket_bomb_bayhem"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" x ",
+			"xyx",
+			" x "
+		],
+		"key": {
+			"y": {
+				"item": "spimton:pocket_bomb"
+			},
+			"x": {
+				"item": "creeper_head"
+			}
+		},
+		"result": {
+			"item": "spimton:pocket_bomb_bayhem",
+			"count": 2
+		}
+	}
+}

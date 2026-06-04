@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:emberock_item",
+			"menu_category": {
+				"category": "items"
+			},
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:icon": "emberock",
+			"minecraft:should_despawn": true,
+			"minecraft:tags": {
+				"tags": []
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:silver_nuggets"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:silver_ingot"
+			}
+		],
+		"result": [
+			{
+				"item": "spimton:silver_nugget",
+				"count": 9
+			}
+		]
+	}
+}

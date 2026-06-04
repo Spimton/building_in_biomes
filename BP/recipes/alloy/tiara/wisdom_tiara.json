@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:wisdom_tiara"
+		},
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "experience_bottle"
+			},
+			"@": {
+				"item": "spimton:empty_tiara"
+			}
+		},
+		"result": {
+			"item": "spimton:wisdom_tiara"
+		}
+	}
+}

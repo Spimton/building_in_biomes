@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:crimstone_mosaic"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##",
+			"##"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:crimstone_tiles"
+			}
+		},
+		"result": {
+			"item": "spimton:crimstone_mosaic",
+			"count": 4
+		}
+	}
+}

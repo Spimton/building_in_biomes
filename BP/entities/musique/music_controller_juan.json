@@ -1,0 +1,175 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:music_controller_juan",
+			"is_summonable": true,
+			"is_experimental": false,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"spimton:music": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 264,
+					"time_down_event": {
+						"event": "spimton:hastarget_true"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"max": 2,
+				"value": 2
+			},
+			"minecraft:knockback_resistance": {
+				"value": 50,
+				"max": 50
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:physics": {},
+			"minecraft:movement": {
+				"value": 0,
+				"max": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"spimton:archshaman",
+					"creeper",
+					"spimton:creeper",
+					"juandice",
+					"spimton:juandice"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					},
+					{
+						"cause": "projectile",
+						"deals_damage": false
+					},
+					{
+						"cause": "block_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "magic",
+						"deals_damage": false
+					},
+					{
+						"cause": "mace_smash",
+						"deals_damage": false
+					},
+					{
+						"cause": "ram_attack",
+						"deals_damage": false
+					},
+					{
+						"cause": "fireworks",
+						"deals_damage": false
+					},
+					{
+						"cause": "lava",
+						"deals_damage": false
+					},
+					{
+						"cause": "lightning",
+						"deals_damage": false
+					},
+					{
+						"cause": "freezing",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "anvil",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						},
+						"max_dist": 16
+					}
+				],
+				"must_see": false
+			},
+			"minecraft:on_death": {
+				"event": "spimton:music_end"
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:tick_world": {
+				"radius": 1
+			}
+		},
+		"events": {
+			"spimton:music_end": {
+				"remove": {
+					"component_groups": [
+						"spimton:music"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"stopsound @a music.juandice_boss"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spimton:music"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"playsound music.juandice_boss @a",
+						"effect @s invisibility 10000 1 true"
+					]
+				}
+			},
+			"spimton:hastarget_true": {
+				"queue_command": {
+					"command": [
+						"playsound music.juandice_boss @a"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:music"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"spimton:music"
+					]
+				}
+			}
+		}
+	}
+}

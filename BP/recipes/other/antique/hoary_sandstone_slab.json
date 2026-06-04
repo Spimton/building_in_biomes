@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:hoary_sandstone_slab"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:hoary_sandstone"
+            }
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "###"
+        ],
+        "priority": 3,
+        "result": {
+            "count": 6,
+            "item": "spimton:hoary_sandstone_slab"
+        }
+    }
+}

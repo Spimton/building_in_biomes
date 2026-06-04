@@ -1,0 +1,57 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:temple_altar",
+            "menu_category": {
+                "category": "items",
+                "is_hidden_in_commands": false
+            }
+        },
+        "components": {
+            "minecraft:geometry": "geometry.temple_altar",
+            "minecraft:map_color": "#584214",
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1997
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    14,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    14,
+                    16
+                ]
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "temple_altar",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1997
+            },
+            "minecraft:custom_components": [
+                "spimton:temple_altar"
+            ],
+            "minecraft:loot": "loot_tables/empty.json"
+        },
+        "permutations": []
+    }
+}

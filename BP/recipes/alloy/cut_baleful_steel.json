@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cut_baleful_steel"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##",
+			"##"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:baleful_steel_slab"
+			}
+		},
+		"result": {
+			"item": "spimton:cut_baleful_steel",
+			"count": 2
+		}
+	}
+}

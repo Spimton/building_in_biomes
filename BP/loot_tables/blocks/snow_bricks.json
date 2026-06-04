@@ -1,0 +1,43 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:snow_bricks"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "match_tool",
+                    "item": "stone_shovel"
+                },
+                {
+                    "condition": "match_tool",
+                    "item": "iron_shovel"
+                },
+                {
+                    "condition": "match_tool",
+                    "item": "diamond_shovel"
+                },
+                {
+                    "condition": "match_tool",
+                    "item": "gold_shovel"
+                },
+                {
+                    "condition": "match_tool",
+                    "item": "netherite_shovel"
+                },
+                {
+                    "condition": "match_tool",
+                    "item": "wood_shovel"
+                },
+                {
+                    "condition": "match_tool",
+                    "item": "spimton:drill"
+                }
+            ]
+        }
+    ]
+}

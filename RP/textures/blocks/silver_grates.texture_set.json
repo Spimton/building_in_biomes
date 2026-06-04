@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "silver_grates",
+		"metalness_emissive_roughness": "silver_grates_mer"
+	}
+}

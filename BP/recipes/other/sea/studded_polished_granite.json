@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:studded_polished_granite"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " @",
+            "@#@",
+            " @ "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:indented_prismarine_bricks"
+            },
+            "@": {
+                "item": "polished_granite"
+            }
+        },
+        "result": {
+            "item": "spimton:studded_polished_granite",
+            "count": 5
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

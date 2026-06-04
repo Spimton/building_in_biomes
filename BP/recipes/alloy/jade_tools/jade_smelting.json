@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:jade_smelting"
+		},
+		"input": "spimton:jade_ore",
+		"output": "spimton:jade",
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		]
+	}
+}

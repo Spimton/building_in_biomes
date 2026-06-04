@@ -1,0 +1,85 @@
+		"modules":
+		{
+			"type": "data",
+			"uuid": "88fd4ab0-9999-40cf-8c82-be885b913562",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+
+			"dependencies": [
+		{
+			"uuid": "758b77af-fb70-4b03-bced-a82052d6e08b",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+
+
+
+
+
+
+
+
+
+
+
+
+	{
+	"format_version": "1.20.80",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "spimton:end_basalt_rule",
+			"places_feature": "spimton:end_basalt_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "the_end"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 5,
+			"coordinate_eval_order": "zyx",
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					128
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"scatter_chance": {
+				"denominator": 100,
+				"numerator": 1
+			}
+		}
+	}
+}

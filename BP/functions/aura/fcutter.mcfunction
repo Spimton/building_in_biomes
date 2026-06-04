@@ -1,0 +1,2 @@
+execute at @a[hasitem={location=slot.weapon.mainhand,item=spimton:frost_cutter}] run effect @e[r=2] slowness 1 4 true
+execute as @a[hasitem={location=slot.weapon.mainhand,item=spimton:frost_cutter}] run effect @s clear slowness

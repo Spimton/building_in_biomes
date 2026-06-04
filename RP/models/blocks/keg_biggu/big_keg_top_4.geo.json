@@ -1,0 +1,35 @@
+/*{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.big_keg_t4",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "top_4",
+					"pivot": [0, -16, 0],
+					"rotation": [0, -90, 0],
+					"cubes": [
+						{
+							"origin": [-21, 0, -7],
+							"size": [15, 16, 15],
+							"pivot": [-7, 0, -6],
+							"rotation": [0, 90, 0],
+							"uv": {
+								"south": {"uv": [30, 30], "uv_size": [15, 16]},
+								"west": {"uv": [15, 30], "uv_size": [15, 16]},
+								"up": {"uv": [60, 15], "uv_size": [-15, -15], "uv_rotation": 180}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}*/

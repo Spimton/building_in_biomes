@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cobbled_emberock_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:cobbled_emberock"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:cobbled_emberock_stairs",
+			"count": 4
+		}
+	}
+}

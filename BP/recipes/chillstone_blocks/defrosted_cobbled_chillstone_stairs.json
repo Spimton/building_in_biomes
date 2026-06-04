@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:defrosted_cobbled_chillstone_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:defrosted_cobbled_chillstone"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:defrosted_cobbled_chillstone_stairs",
+			"count": 4
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:heavy_metal_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##",
+			"##"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:metallicore_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:heavy_metal_block",
+			"count": 2
+		}
+	}
+}

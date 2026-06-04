@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:tin_grates"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:tin_ingot"
+			}
+		},
+		"pattern": [
+			" # ",
+			"# #",
+			" # "
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:tin_grates",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:nether_wool",
+			"menu_category": {
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.wool"
+			}
+		},
+		"components": {
+			"minecraft:flammable": false,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.5,
+				"item_specific_speeds": [
+					{
+						"destroy_speed": 0.1,
+						"item": "shears"
+					}
+				]
+			},
+			"minecraft:light_dampening": 15,
+			"minecraft:map_color": "#ff0000",
+			"tag:minecraft:wool": {},
+			"tag:wool": {},
+			"tag:minecraft:is_shears_item_destuctible": {}
+		}
+	}
+}

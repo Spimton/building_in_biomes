@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:chillstone_diamond_ore",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.ore",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 6
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#73F1EF",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"minecraft:loot": "loot_tables/blocks/chillstonediamondloot.json",
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:minecraft:wooden_tier_destructible": {}
+		}
+	}
+}

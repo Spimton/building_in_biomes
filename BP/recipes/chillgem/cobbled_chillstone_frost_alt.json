@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cobbled_chillstone_frost_alt"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "cobblestone"
+			},
+			"y": {
+				"item": "spimton:chillgem_shard"
+			}
+		},
+		"pattern": [
+			"xxx",
+			"xyx",
+			"xxx"
+		],
+		"result": {
+			"item": "spimton:cobbled_chillstone",
+			"count": 8
+		}
+	}
+}

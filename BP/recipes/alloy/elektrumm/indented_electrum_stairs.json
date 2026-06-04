@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:indented_electrum_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:indented_electrum"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": [
+			{
+				"item": "spimton:indented_electrum_stairs",
+				"count": 4
+			}
+		]
+	}
+}

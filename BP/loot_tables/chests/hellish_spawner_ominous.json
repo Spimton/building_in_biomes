@@ -1,0 +1,87 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:ominous_hellish_key",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 40
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:emberock_item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 3
+                            }
+                        }
+                    ],
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:splash_potion",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1
+                            }
+                        },
+                        {
+                            "function": "set_potion",
+                            "id": "strong_healing"
+                        }
+                    ],
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:splash_potion",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1
+                            }
+                        },
+                        {
+                            "function": "set_potion",
+                            "id": "strong_turtle_master"
+                        }
+                    ],
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "cooked_porkchop",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 3
+                            }
+                        }
+                    ],
+                    "weight": 10
+                }
+            ]
+        }
+    ]
+}

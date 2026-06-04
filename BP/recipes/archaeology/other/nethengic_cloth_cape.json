@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:nethengic_cloth_cape"
+        },
+        "tags": [
+            "spimton:archaeology_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "# #",
+            "###",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:nether_cloth"
+            }
+        },
+        "result": {
+            "item": "spimton:nethengic_cloth_cape"
+        }
+    }
+}

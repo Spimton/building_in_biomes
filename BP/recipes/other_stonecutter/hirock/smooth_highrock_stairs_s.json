@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"stonecutter"
+		],
+		"description": {
+			"identifier": "spimton:smooth_highrock_stairs_s"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:smooth_highrock"
+			}
+		],
+		"result": {
+			"item": "spimton:smooth_highrock_stairs",
+			"count": 1
+		}
+	}
+}

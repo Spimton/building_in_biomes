@@ -1,0 +1,21 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:applen_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:applen_ingot",
+				"count": 9
+			}
+		],
+		"result": {
+			"item": "spimton:applen_block",
+			"count": 1
+		}
+	}
+}

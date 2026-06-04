@@ -1,0 +1,19 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:permafrost_essence",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "chillgem_shard",
+			"minecraft:max_stack_size": 16,
+			"minecraft:hover_text_color": "white",
+			"minecraft:damage": 3,
+			"minecraft:glint": true,
+			"minecraft:hand_equipped": true
+		}
+	}
+}

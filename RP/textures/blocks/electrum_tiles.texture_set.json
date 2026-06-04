@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "electrum_tiles",
+		"metalness_emissive_roughness": "electrum_tiles_mer"
+	}
+}

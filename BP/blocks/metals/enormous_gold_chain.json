@@ -1,0 +1,119 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:enormous_gold_chain",
+            "menu_category": {
+                "category": "none",
+                "group": "none",
+                "is_hidden_in_commands": true
+            },
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:block_face"
+                    ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            -90,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            -90,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            -90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            -90
+                        ]
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:geometry": "geometry.gureter_biggu_chains",
+            "minecraft:map_color": "#967444",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "gureter_biggu_gold_chain",
+                    "render_method": "alpha_test",
+                    "ambient_occlusion": false,
+                    "face_dimming": false
+                }
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 6
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 12
+            },
+            "minecraft:collision_box": {
+                "size": [
+                    8,
+                    16,
+                    8
+                ],
+                "origin": [
+                    -4,
+                    0,
+                    -4
+                ]
+            },
+            "minecraft:selection_box": {
+                "size": [
+                    8,
+                    16,
+                    8
+                ],
+                "origin": [
+                    -4,
+                    0,
+                    -4
+                ]
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:loot": "loot_tables/blocks/chains/enormous_gold_chain.json",
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "tag:stone": {},
+            "tag:spimton:pickaxe": {},
+            "tag:spimton:stone_tier_destructible": {},
+            "tag:spimton:silk_touch_stone": {}
+        }
+    }
+}

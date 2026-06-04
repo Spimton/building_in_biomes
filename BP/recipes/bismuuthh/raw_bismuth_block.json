@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:raw_bismuth_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:raw_bismuth",
+				"count": 9
+			}
+		],
+		"result": {
+			"item": "spimton:raw_bismuth_block"
+		}
+	}
+}

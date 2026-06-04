@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:electrum_spear"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" z ",
+			"zyz",
+			" x "
+		],
+		"key": {
+			"x": {
+				"item": "stick"
+			},
+			"y": {
+				"item": "spimton:limestone_spear"
+			},
+			"z": {
+				"item": "spimton:electrum_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:electrum_spear",
+			"count": 3
+		}
+	}
+}

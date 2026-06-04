@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:imperial_jade_grates"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:imperial_jade_block"
+			}
+		},
+		"pattern": [
+			" # ",
+			"# #",
+			" # "
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:imperial_jade_grates",
+			"count": 8
+		}
+	}
+}

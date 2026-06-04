@@ -1,0 +1,27 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "weight": 1,
+                    "type": "item",
+                    "name": "sand",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 2,
+                                "min": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 19
+                }
+            ]
+        }
+    ]
+}

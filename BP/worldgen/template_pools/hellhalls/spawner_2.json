@@ -1,0 +1,45 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:spawner_2"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_pihlin"
+                },
+                "weight": 30
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_magmacube"
+                },
+                "weight": 25
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_cultist"
+                },
+                "weight": 15
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_witherskel"
+                },
+                "weight": 20
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/spawner_pyhlin"
+                },
+                "weight": 10
+            }
+        ]
+    }
+}

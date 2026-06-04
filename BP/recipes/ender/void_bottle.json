@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "spimton:void_bottle"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": [
+            {
+                "item": "spimton:void_bottle"
+            }
+        ],
+        "ingredients": [
+            {
+                "count": 4,
+                "item": "glass_bottle"
+            },
+            {
+                "count": 1,
+                "item": "spimton:void_block"
+            }
+        ],
+        "result": {
+            "count": 4,
+            "item": "spimton:void_bottle"
+        }
+    }
+}

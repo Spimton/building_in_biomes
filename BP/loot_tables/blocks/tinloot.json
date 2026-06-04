@@ -1,0 +1,52 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:raw_tin",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 3,
+                                "min": 1
+                            },
+                            "condition": [
+                                {
+                                    "condition": "match_tool",
+                                    "item": "spimton:iron_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "spimton:steel_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "bronze_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "diamond_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "netherite_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "stone_pickaxe"
+                                },
+                                {
+                                    "condition": "match_tool",
+                                    "item": "spimton:drill"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

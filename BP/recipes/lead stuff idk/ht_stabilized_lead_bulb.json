@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ht_stabilizedlead_bulb"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:bluestone"
+			},
+			"y": {
+				"item": "spimton:ht_lead_bulb"
+			}
+		},
+		"pattern": [
+			" x ",
+			"xyx",
+			" x "
+		],
+		"result": {
+			"item": "spimton:ht_stabilized_lead_bulb"
+		}
+	}
+}

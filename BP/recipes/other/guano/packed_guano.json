@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:packed_guano"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#@",
+			"@#"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:guano_block"
+			},
+			"@": {
+				"item": "wheat"
+			}
+		},
+		"result": {
+			"item": "spimton:packed_guano",
+			"count": 2
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:nether_carpet"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:nether_wool"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##"
+		],
+		"result": {
+			"item": "spimton:nether_carpet",
+			"count": 3
+		}
+	}
+}

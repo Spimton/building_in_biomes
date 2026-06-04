@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:smooth_hoary_sandstone"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": "spimton:hoary_sandstone",
+        "output": "spimton:smooth_hoary_sandstone"
+    }
+}

@@ -1,0 +1,78 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "spimton:overworld_underground_silver",
+			"places_feature": "spimton:silver_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "frozen"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "ice_plains"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "frozen_peaks"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "jagged_peaks"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "extreme_hills"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "cold"
+						},
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "snowy_slopes"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 6,
+			"coordinate_eval_order": "zyx",
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					64
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			}
+		}
+	}
+}

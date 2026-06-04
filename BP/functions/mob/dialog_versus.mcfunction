@@ -1,0 +1,1 @@
+tellraw @a[r=30] {"rawtext": [{"text": "§r<§aOvergrown Dualliste§r> En garde!"}]}

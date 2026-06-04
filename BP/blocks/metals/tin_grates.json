@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:tin_grates",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:map_color": "#9DB8C9",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:gold": {},
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "blend",
+					"texture": "tin_grates"
+				}
+			}
+		}
+	}
+}

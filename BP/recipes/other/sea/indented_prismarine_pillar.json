@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:indented_prismarine_pillar"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@#@",
+            "@#@",
+            "@#@"
+        ],
+        "key": {
+            "@": {
+                "item": "spimton:indented_prismarine"
+            },
+            "#": {
+                "item": "spimton:granite_pillar"
+            }
+        },
+        "result": {
+            "item": "spimton:indented_prismarine_pillar",
+            "count": 9
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

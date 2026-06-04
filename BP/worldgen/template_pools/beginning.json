@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:beginning"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "temple/temple_main"
+                },
+                "weight": 1
+            }
+        ],
+        "fallback": "spimton:fallback"
+    }
+}

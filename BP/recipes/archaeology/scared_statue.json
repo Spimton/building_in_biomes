@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:scared_statue"
+		},
+		"tags": [
+			"spimton:archaeology_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:bronze_block"
+			},
+			{
+				"item": "spimton:scared_template"
+			}
+		],
+		"priority": 1,
+		"unlock": [
+			{
+				"item": "spimton:ancient_tablet"
+			}
+		],
+		"result": {
+			"item": "spimton:scared_bronze_statue"
+		}
+	}
+}

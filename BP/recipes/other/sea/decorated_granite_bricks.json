@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:decorated_granite_bricks"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "#@",
+            "@#"
+        ],
+        "assume_symmetry": true,
+        "key": {
+            "@": {
+                "item": "spimton:granite_bricks"
+            },
+            "#": {
+                "item": "spimton:indented_prismarine_bricks"
+            }
+        },
+        "result": {
+            "item": "spimton:decorated_granite_bricks",
+            "count": 4
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

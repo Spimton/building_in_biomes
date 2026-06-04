@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:cracked_marble"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:marble",
+		"output": "spimton:cracked_marble"
+	}
+}

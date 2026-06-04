@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:coaster"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"zzz",
+			"---"
+		],
+		"key": {
+			"z": {
+				"item": "carpet"
+			},
+			"-": {
+				"item": "minecraft:wooden_slab"
+			}
+		},
+		"result": {
+			"item": "spimton:coaster",
+			"count": 6
+		}
+	}
+}

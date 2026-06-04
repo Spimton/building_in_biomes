@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:end_basalt_feature"
+		},
+		"count": 167,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:endsoil",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "end_stone"
+					}
+				]
+			}
+		]
+	}
+}

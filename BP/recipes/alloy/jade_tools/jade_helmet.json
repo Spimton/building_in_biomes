@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:jade_helmet"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:jade_cladding"
+			},
+			"@": {
+				"item": "spimton:ancient_gold_ingot"
+			},
+			"P": {
+				"item": "spimton:overgrown_orb"
+			}
+		},
+		"pattern": [
+			"@P@",
+			"# #"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:jade_helmet"
+		}
+	}
+}

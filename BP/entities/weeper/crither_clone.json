@@ -1,0 +1,292 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:crither_clone",
+            "runtime_identifier": "skeleton",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:de": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:timer": {
+                "looping": false,
+                "time": 8,
+                "time_down_event": {
+                    "event": "desp",
+                    "target": "self"
+                }
+            },
+            "minecraft:behavior.fire_at_target": {
+                "projectile_def": "spimton:shadowp",
+                "priority": 1,
+                "attack_range": [
+                    2,
+                    32
+                ],
+                "attack_cooldown": 0.2,
+                "pre_shoot_delay": 0.25,
+                "post_shoot_delay": 0.2,
+                "ranged_fov": 360,
+                "owner_anchor": 2,
+                "owner_offset": [
+                    0,
+                    0,
+                    0
+                ],
+                "target_anchor": 0,
+                "target_offset": [
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "minecraft:behavior.jump_around_target": {
+                "priority": 1,
+                "filters": {
+                    "all_of": [
+                        {
+                            "any_of": [
+                                {
+                                    "test": "in_water",
+                                    "value": true
+                                },
+                                {
+                                    "test": "on_ground",
+                                    "value": true
+                                }
+                            ]
+                        },
+                        {
+                            "test": "is_riding",
+                            "value": false
+                        },
+                        {
+                            "test": "in_lava",
+                            "value": false
+                        }
+                    ]
+                },
+                "jump_cooldown_duration": 0.5,
+                "jump_cooldown_when_hurt_duration": 0.1,
+                "last_hurt_duration": 2,
+                "prepare_jump_duration": 0.5,
+                "max_jump_velocity": 1.4,
+                "check_collision": false,
+                "entity_bounding_box_scale": 0.7,
+                "line_of_sight_obstruction_height_ignore": 4,
+                "valid_distance_to_target": [
+                    4,
+                    20
+                ],
+                "landing_position_spread_degrees": 90,
+                "landing_distance_from_target": [
+                    4,
+                    8
+                ],
+                "required_vertical_space": 4,
+                "snap_to_surface_block_range": 10,
+                "jump_angles": [
+                    40,
+                    55,
+                    60,
+                    75,
+                    80
+                ]
+            },
+            "minecraft:reflect_projectiles": {
+                "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+                "reflected_projectiles": [
+                    "xp_bottle",
+                    "thrown_trident",
+                    "shulker_bullet",
+                    "dragon_fireball",
+                    "arrow",
+                    "snowball",
+                    "egg",
+                    "fireball",
+                    "splash_potion",
+                    "ender_pearl",
+                    "wither_skull",
+                    "wither_skull_dangerous",
+                    "small_fireball",
+                    "lingering_potion",
+                    "llama_spit",
+                    "fireworks_rocket",
+                    "fishing_hook"
+                ],
+                "reflection_scale": "0.5"
+            },
+            "minecraft:spell_effects": {
+                "add_effects": [
+                    {
+                        "visible": false,
+                        "amplifier": 5,
+                        "effect": "resistance",
+                        "display_on_screen_animation": false,
+                        "duration": 8
+                    },
+                    {
+                        "visible": false,
+                        "amplifier": 5,
+                        "effect": "invisibility",
+                        "display_on_screen_animation": false,
+                        "duration": 8
+                    }
+                ]
+            },
+            "minecraft:mob_effect": {
+                "cooldown_time": 1,
+                "effect_time": 5,
+                "effect_range": 4,
+                "mob_effect": "blindness"
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player?50:0"
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "creeper",
+                    "wither",
+                    "skeleton",
+                    "undead",
+                    "spimton:weeper"
+                ]
+            },
+            "minecraft:burns_in_daylight": {},
+            "minecraft:knockback_resistance": {
+                "value": 0.8
+            },
+            "minecraft:behavior.move_around_target": {
+                "priority": 3,
+                "destination_position_range": [
+                    4,
+                    8
+                ],
+                "movement_speed": 1.5,
+                "destination_pos_spread_degrees": 360,
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "on_ground",
+                            "value": true
+                        },
+                        {
+                            "test": "target_distance",
+                            "subject": "self",
+                            "value": 24,
+                            "operator": "<="
+                        }
+                    ]
+                }
+            },
+            "minecraft:follow_range": {
+                "value": 32
+            },
+            "minecraft:breathable": {
+                "total_supply": 11111,
+                "generates_bubbles": false,
+                "breathes_water": true,
+                "suffocate_time": 0
+            },
+            "minecraft:nameable": {},
+            "minecraft:collision_box": {
+                "width": 0.8,
+                "height": 1.8
+            },
+            "minecraft:movement": {
+                "value": 0.33
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:health": {
+                "value": 66,
+                "max": 66
+            },
+            "minecraft:attack": {
+                "damage": 3
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 5,
+                "speed_multiplier": 1
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 6,
+                "look_distance": 8
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 6
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 1,
+                "must_see": true,
+                "must_see_forget_duration": 3,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "creeper"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "spimton:weeper"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "inanimate"
+                                }
+                            ]
+                        },
+                        "max_dist": 16
+                    }
+                ]
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 2
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:de"
+                    ]
+                }
+            }
+        }
+    }
+}

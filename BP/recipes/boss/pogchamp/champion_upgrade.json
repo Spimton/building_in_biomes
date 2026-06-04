@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:champion_upgrade"
+		},
+		"key": {
+			"@": {
+				"item": "spimton:pure_diamond"
+			},
+			"#": {
+				"item": "spimton:steel_ingot"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"result": {
+			"item": "spimton:champion_upgrade",
+			"count": 1
+		}
+	}
+}

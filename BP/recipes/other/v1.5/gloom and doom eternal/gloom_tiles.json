@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:gloom_tiles"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:stone_tiles"
+			},
+			"@": {
+				"item": "phantom_membrane"
+			}
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"result": {
+			"item": "spimton:gloom_tiles",
+			"count": 8
+		}
+	}
+}

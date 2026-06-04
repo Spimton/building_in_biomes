@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:emberocks"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": "spimton:cobbled_emberock",
+        "output": "spimton:emberock"
+    }
+}

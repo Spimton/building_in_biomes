@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:tin_chisel"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:tin_ingot"
+			},
+			"@": {
+				"item": "rabbit_hide"
+			}
+		},
+		"result": {
+			"item": "spimton:smoothener"
+		},
+		"pattern": [
+			"  #",
+			"@#@",
+			"@  "
+		],
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

@@ -1,0 +1,185 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.chillgolem",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						90,
+						0
+					]
+				},
+				{
+					"name": "leg1",
+					"parent": "body",
+					"pivot": [
+						0,
+						5,
+						-3
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								0,
+								-5
+							],
+							"size": [
+								4,
+								7,
+								4
+							],
+							"uv": [
+								32,
+								34
+							]
+						}
+					]
+				},
+				{
+					"name": "leg2",
+					"parent": "body",
+					"pivot": [
+						0,
+						5,
+						3
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								0,
+								1
+							],
+							"size": [
+								4,
+								7,
+								4
+							],
+							"uv": [
+								32,
+								23
+							]
+						}
+					]
+				},
+				{
+					"name": "upperbody",
+					"parent": "body",
+					"pivot": [
+						0,
+						3,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								4,
+								4,
+								-1
+							],
+							"size": [
+								2,
+								4,
+								2
+							],
+							"uv": [
+								0,
+								36
+							]
+						},
+						{
+							"origin": [
+								-4,
+								2,
+								-6
+							],
+							"size": [
+								8,
+								11,
+								12
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "arm1",
+					"parent": "upperbody",
+					"pivot": [
+						0,
+						11,
+						-6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								4,
+								-10
+							],
+							"size": [
+								4,
+								9,
+								4
+							],
+							"uv": [
+								16,
+								23
+							]
+						}
+					]
+				},
+				{
+					"name": "arm2",
+					"parent": "upperbody",
+					"pivot": [
+						0,
+						11,
+						6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								4,
+								6
+							],
+							"size": [
+								4,
+								9,
+								4
+							],
+							"uv": [
+								0,
+								23
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

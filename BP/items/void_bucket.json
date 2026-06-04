@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:void_bucket",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "void_bucket",
+			"minecraft:max_stack_size": 1,
+			"minecraft:block_placer": {
+				"replace_block_item": false,
+				"block": "spimton:void_liquid",
+				"use_on": []
+			},
+			"minecraft:custom_components": [
+				"spimton:void_bucket"
+			],
+			"minecraft:hand_equipped": false
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:canned_mushroom_stew"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "brown_mushroom",
+				"count": 1
+			},
+			{
+				"item": "red_mushroom",
+				"count": 1
+			},
+			{
+				"item": "spimton:can",
+				"count": 1
+			}
+		],
+		"result": {
+			"item": "spimton:canned_mushroom_stew"
+		}
+	}
+}

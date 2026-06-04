@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:limestone_spear"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "minecraft:stick"
+			},
+			"y": {
+				"item": "spimton:limestone"
+			}
+		},
+		"pattern": [
+			" y ",
+			"yxy",
+			" x "
+		],
+		"result": {
+			"item": "spimton:limestone_spear",
+			"count": 4
+		}
+	}
+}

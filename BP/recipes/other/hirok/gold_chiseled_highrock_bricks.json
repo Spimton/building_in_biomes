@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:gold_chiseled_highrock_bricks"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:highrock_bricks"
+			},
+			"@": {
+				"item": "spimton:indented_gold"
+			}
+		},
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"assume_symmetry": true,
+		"priority": 1,
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"@@@",
+			"###"
+		],
+		"result": [
+			{
+				"item": "spimton:gold_chiseled_highrock_bricks",
+				"count": 9
+			}
+		]
+	}
+}

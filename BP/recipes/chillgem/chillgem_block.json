@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chillgem_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:chillgem_shard"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": {
+			"item": "spimton:chillgem_block"
+		}
+	}
+}

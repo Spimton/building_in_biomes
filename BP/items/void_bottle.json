@@ -1,0 +1,16 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:void_bottle",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "void_bottle",
+			"minecraft:max_stack_size": 64,
+			"minecraft:hand_equipped": false
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:record_wait"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:crynil"
+            },
+            "@": {
+                "item": "heart_of_the_sea"
+            }
+        },
+        "result": {
+            "item": "minecraft:music_disc_wait",
+            "count": 1
+        }
+    }
+}

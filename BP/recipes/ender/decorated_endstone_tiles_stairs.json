@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_endstone_tiles_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:decorated_endstone_tiles"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:decorated_endstone_tiles_stairs",
+			"count": 4
+		}
+	}
+}

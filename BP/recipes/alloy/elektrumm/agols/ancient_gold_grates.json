@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ancient_gold_grates"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" # ",
+			"# #",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ancient_gold_block"
+			}
+		},
+		"result": {
+			"item": "spimton:ancient_gold_grates",
+			"count": 8
+		}
+	}
+}

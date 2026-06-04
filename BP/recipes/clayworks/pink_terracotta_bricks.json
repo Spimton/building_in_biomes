@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:pink_terracotta_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "pink_terracotta"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": {
+			"item": "spimton:pink_terracotta_bricks",
+			"count": 4
+		}
+	}
+}

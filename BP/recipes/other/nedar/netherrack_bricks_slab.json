@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:netherrack_bricks_slab"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:netherrack_bricks"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:netherrack_bricks_slab",
+			"count": 6
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:vanguard_chestplate",
+					"weight": 100
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:vanguard_helmet"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "shield",
+					"functions": [
+						{
+							"function": "set_banner_details",
+							"type": "default",
+							"base_color": "brown",
+							"patterns": [
+								{
+									"color": "brown",
+									"pattern": "small_stripes"
+								},
+								{
+									"color": "yellow",
+									"pattern": "border"
+								},
+								{
+									"color": "yellow",
+									"pattern": "rhombus"
+								},
+								{
+									"color": "silver",
+									"pattern": "circle"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "iron_spear"
+				}
+			]
+		}
+	]
+}

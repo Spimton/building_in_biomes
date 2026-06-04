@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:netherite_ingot_alt"
+		},
+		"tags": [
+			"spimton:alloy_forge_3"
+		],
+		"ingredients": [
+			{
+				"item": "gold_ingot",
+				"count": 4
+			},
+			{
+				"item": "netherite_scrap",
+				"count": 4
+			}
+		],
+		"result": [
+			{
+				"item": "netherite_ingot",
+				"count": 2
+			}
+		]
+	}
+}

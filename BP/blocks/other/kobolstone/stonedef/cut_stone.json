@@ -1,0 +1,58 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:cut_stone",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"tag:stone": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.35
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:wood_tier')"
+						},
+						"destroy_speed": 1.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.1
+					}
+				]
+			},
+			"minecraft:light_dampening": 15,
+			"minecraft:map_color": "#919191"
+		}
+	}
+}

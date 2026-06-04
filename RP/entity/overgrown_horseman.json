@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:overgrown_horseman",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/overgrown_soldier"
+			},
+			"geometry": {
+				"default": "geometry.skeleton"
+			},
+			"spawn_egg": {
+				"texture": "dualliste_spawn_egg"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move",
+					"ride_controller"
+				]
+			},
+			"animations": {
+				"shoot": "animation.overgrown_soldier.throw",
+				"ride_controller": "controller.animation.humanoid.riding",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.skirmisher.walk",
+				"celebrating": "animation.humanoid.celebrating",
+				"attack": "animation.skirmisher.attack",
+				"melee_attack": "animation.skirmisher.attack",
+				"vindicator_attack": "animation.skirmisher.attack",
+				"entity_attack": "animation.skirmisher.attack",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"controller_attack": "controller.animation.skirmisher.attack",
+				"charge": "animation.overgrown_skirmisher.charge"
+			},
+			"render_controllers": [
+				"controller.render.overgrown"
+			],
+			"enable_attachables": true
+		}
+	}
+}

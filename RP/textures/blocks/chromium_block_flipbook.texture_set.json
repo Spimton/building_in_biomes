@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chromium_block_flipbook",
+		"metalness_emissive_roughness": "chromium_block_flipbook_mer"
+	}
+}

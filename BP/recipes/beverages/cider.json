@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cider"
+		},
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"assume_symmetry": true,
+		"priority": 1,
+		"tags": [
+			"spimton:keg",
+			"spimton:keg_hot"
+		],
+		"pattern": [
+			"xxx",
+			"yyy"
+		],
+		"key": {
+			"x": {
+				"item": "apple"
+			},
+			"y": {
+				"item": "spimton:mug"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:cider"
+			},
+			{
+				"item": "spimton:cider"
+			},
+			{
+				"item": "spimton:cider"
+			}
+		]
+	}
+}

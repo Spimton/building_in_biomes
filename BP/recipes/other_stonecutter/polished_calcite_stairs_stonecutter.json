@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:polished_calcite_stairs_stonecutter"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:polished_calcite"
+			}
+		],
+		"result": {
+			"item": "spimton:polished_calcite_stairs",
+			"count": 1
+		}
+	}
+}

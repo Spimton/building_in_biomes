@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "spimton:marble"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "ingredients": [
+            {
+                "item": "spimton:limestone"
+            },
+            {
+                "item": "calcite",
+                "count": 2
+            },
+            {
+                "item": "quartz"
+            },
+            {
+                "item": "clay"
+            }
+        ],
+        "result": {
+            "item": "spimton:marble",
+            "count": 4
+        }
+    }
+}

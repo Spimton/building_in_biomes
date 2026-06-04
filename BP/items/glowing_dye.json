@@ -1,0 +1,20 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:glowing_dye",
+			"menu_category": {
+				"category": "items"
+			},
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:icon": "glow_dye",
+			"minecraft:should_despawn": true,
+			"minecraft:tags": {
+				"tags": []
+			},
+			"minecraft:allow_off_hand": true
+		}
+	}
+}

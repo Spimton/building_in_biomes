@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:crynil_bar"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:creeper_spores"
+            },
+            "@": {
+                "item": "spimton:crither_skull"
+            }
+        },
+        "result": {
+            "item": "spimton:crynil",
+            "count": 8
+        }
+    }
+}

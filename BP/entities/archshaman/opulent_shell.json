@@ -1,0 +1,84 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:opulent_shell",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"spimton:desp": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 6,
+				"max": 6
+			},
+			"minecraft:type_family": {
+				"family": [
+					"spimton:archshaman",
+					"inanimate"
+				]
+			},
+			"minecraft:reflect_projectiles": {
+				"azimuth_angle": "180.0",
+				"reflection_scale": 0.6,
+				"reflected_projectiles": [
+					"arrow",
+					"snowball",
+					"fireball",
+					"small_fireball",
+					"splash_potion",
+					"lingering_potion",
+					"egg",
+					"thrown_trident",
+					"wither_skull",
+					"wither_skull_dangerous",
+					"spimton:thrown_limestone_spear",
+					"spimton:hunter_red_limestone_spear",
+					"spimton:thrown_agold_spear",
+					"spimton:thrown_electrum_spear",
+					"spimton:thrown_imperial_jade_spear",
+					"spimton:thrown_red_limestone_spear",
+					"spimton:thrown_obsidian_spear"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.5,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:firee"
+				}
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:collision_box": {
+				"width": 6,
+				"height": 6
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:firee": {
+				"queue_command": {
+					"command": [
+						"particle spimton:opulent_shell ~ ~ ~",
+						"execute unless entity @n[type=spimton:goulden_guard_2] run kill @s"
+					]
+				}
+			}
+		}
+	}
+}

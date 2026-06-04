@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:dice"
+        },
+        "pattern": [
+            "###",
+            "#@#",
+            "###"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "key": {
+            "#": {
+                "item": "bone_block"
+            },
+            "@": {
+                "item": "spimton:bluestone"
+            }
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "result": {
+            "count": 8,
+            "item": "spimton:dice"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:vanguard_chestplate",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:wearable": {
+				"slot": "slot.armor.chest",
+				"protection": 7
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_torso",
+				"value": 15
+			},
+			"minecraft:durability": {
+				"max_durability": 455
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:bottled_time",
+							"iron_ingot"
+						],
+						"repair_amount": "query.max_durability*0.2"
+					},
+					{
+						"items": [
+							"spimton:vanguard_chestplate",
+							"iron_chestplate"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:icon": "vanguard_chestplate"
+		}
+	}
+}

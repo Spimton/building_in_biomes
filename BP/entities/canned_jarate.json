@@ -1,0 +1,85 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:canned_jarate",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"component_groups": {
+			"spimton:d": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"splash_area": 2,
+						"affect_projectile": true,
+						"affect_shooter": false,
+						"affect_splash_area": true,
+						"affect_target": true,
+						"event_trigger": {
+							"target": "self",
+							"event": "spimton:purify"
+						}
+					},
+					"particle_on_hit": {
+						"particle_type": "hugeexplosion",
+						"num_particles": 1,
+						"on_entity_hit": true,
+						"on_other_hit": true
+					},
+					"stick_in_ground": {
+						"shake_time": 0
+					},
+					"impact_damage": {
+						"damage": 0
+					}
+				},
+				"anchor": 1,
+				"power": 0.67,
+				"gravity": 0.05,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"spimton:purify": {
+				"queue_command": {
+					"command": [
+						"scoreboard objectives add cannate dummy",
+						"scoreboard players add @e[r=3] cannate 200",
+						"effect @e[r=3] nausea 5 1",
+						"particle spimton:piss ~ ~1 ~",
+						"camera @e[r=3,type=player, scores={spimton:sandals=0}] fade time 0.1 0.1 10 color 160 140 20",
+						"event entity @s spimton:kira"
+					]
+				}
+			},
+			"spimton:kira": {
+				"add": {
+					"component_groups": [
+						"spimton:d"
+					]
+				}
+			}
+		}
+	}
+}

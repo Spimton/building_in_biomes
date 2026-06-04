@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:chillstone_silver_feature"
+		},
+		"count": 9,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:chillstone_silver",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "spimton:chillstone"
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:justice_hammer",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": "hammer",
+			"minecraft:max_stack_size": 1,
+			"minecraft:rarity": "epic",
+			"minecraft:hover_text_color": "blue",
+			"minecraft:custom_components": [
+				"spimton:justice_hammer"
+			],
+			"minecraft:durability": {
+				"max_durability": 1500
+			}
+		}
+	}
+}

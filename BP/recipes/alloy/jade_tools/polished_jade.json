@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_jade"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:jade_cladding"
+			}
+		},
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"result": [
+			{
+				"item": "spimton:polished_jade",
+				"count": 9
+			}
+		]
+	}
+}

@@ -1,0 +1,345 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:goulden_guard",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:not_attacking": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "spimton:ranged_laser": {
+                "minecraft:timer": {
+                    "time": 5,
+                    "time_down_event": {
+                        "event": "spimton:switch_charge"
+                    }
+                },
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:behavior.fire_at_target": {
+                    "attack_cooldown": 0.8,
+                    "attack_range": [
+                        0,
+                        64
+                    ],
+                    "projectile_def": "spimton:goulden_laser",
+                    "owner_offset": [
+                        0,
+                        1.67,
+                        0
+                    ],
+                    "priority": 0,
+                    "ranged_fov": 360
+                }
+            },
+            "spimton:prepare_charge": {
+                "minecraft:timer": {
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "spimton:charge_acti"
+                    }
+                },
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "spimton:charge": {
+                "minecraft:timer": {
+                    "time": 5,
+                    "time_down_event": {
+                        "event": "spimton:switch_ranged"
+                    }
+                },
+                "minecraft:mark_variant": {
+                    "value": 2
+                },
+                "minecraft:attack_damage": {
+                    "value": 14
+                },
+                "minecraft:attack": {
+                    "damage": 14
+                },
+                /* "minecraft:behavior.charge_attack": {
+                    "max_distance": 32,
+                    "min_distance": 0,
+                    "priority": 0,
+                    "speed_multiplier": 3.5,
+                    "success_rate": 1
+                }*/
+                "minecraft:behavior.melee_attack": {
+                    "cooldown_time": 0.1225,
+                    "melee_fov": 360,
+                    "priority": 1,
+                    "speed_multiplier": 3.225,
+                    "track_target": true,
+                    "max_path_time": 6,
+                    "path_fail_time_increase": 0.1225,
+                    "require_complete_path": false,
+                    "min_path_time": 4,
+                    "x_max_rotation": 90
+                }
+            }
+        },
+        "components": {
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player?12+(query.equipment_count*math.random(1,3)):0"
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": -1,
+                "breathes_water": true
+            },
+            "minecraft:equip_item": {},
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "height": 1.225,
+                        "width": 1.225,
+                        "pivot": [
+                            0,
+                            3,
+                            0
+                        ]
+                    }
+                    /*,{
+                        "height": 4.5,
+                        "width": 1.5,
+                        "pivot": [
+                            -1.5,
+                            2.25,
+                            0
+                        ]
+                    },
+                    {
+                        "height": 4.5,
+                        "width": 1.5,
+                        "pivot": [
+                            1.5,
+                            2.25,
+                            0
+                        ]
+                    },
+                    {
+                        "height": 4.5,
+                        "width": 1.5,
+                        "pivot": [
+                            0,
+                            2.25,
+                            0
+                        ]
+                    }*/
+                ]
+            },
+            "minecraft:nameable": {},
+            "minecraft:navigation.walk": {
+                "is_amphibious": true,
+                "can_pass_doors": true,
+                "can_open_doors": true,
+                "avoid_water": true,
+                "avoid_portals": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:fire_immune": {},
+            "minecraft:type_family": {
+                "family": [
+                    "spimton:archshaman",
+                    "golem",
+                    "monster",
+                    "mob"
+                ]
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/goulden_guard.json"
+            },
+            "minecraft:health": {
+                "value": 50,
+                "max": 50
+            },
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison"
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "projectile",
+                        "damage_multiplier": 1.225
+                    },
+                    {
+                        "cause": "entity_attack",
+                        "damage_multiplier": 0.67
+                    },
+                    {
+                        "cause": "mace_smash",
+                        "damage_multiplier": 1.225
+                    },
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "drowning",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "entity_explosion",
+                        "damage_multiplier": 1.225
+                    },
+                    {
+                        "cause": "block_explosion",
+                        "damage_multiplier": 1.225
+                    }
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0.1225
+            },
+            "minecraft:knockback_resistance": {
+                "max": 1,
+                "value": 1
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "within_radius": 12,
+                "must_see_forget_duration": 40,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "inanimate"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "spimton:archshaman",
+                                    "operator": "!="
+                                }
+                            ]
+                        },
+                        "max_dist": 36
+                    }
+                ]
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 7,
+                "speed_multiplier": 1
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:on_target_escape": {
+                "event": "spimton:lost_target",
+                "target": "self"
+            },
+            "minecraft:on_target_acquired": {
+                "event": "spimton:switch_ranged",
+                "target": "self"
+            },
+            "minecraft:follow_range": {
+                "max": 32,
+                "value": 40
+            },
+            "minecraft:attack": {
+                "damage": 0
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "spimton:switch_charge": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:not_attacking",
+                        "spimton:ranged_laser"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        //"say SWITCH CHARGE",
+                        "playanimation @s animation.goulden_guard.armready none 0"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:prepare_charge"
+                    ]
+                }
+            },
+            "spimton:charge_acti": {
+                "queue_command": {
+                    //"command": "say CHARGE ACTI"
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:prepare_charge"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:charge"
+                    ]
+                }
+            },
+            "spimton:switch_ranged": {
+                "queue_command": {
+                    // "command": "say SWITCH RANGED"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:ranged_laser"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:not_attacking",
+                        "spimton:charge"
+                    ]
+                }
+            },
+            "spimton:lost_target": {
+                "queue_command": {
+                    //"command": "say LOST TARGET"
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:charge",
+                        "spimton:prepare_charge",
+                        "spimton:ranged_laser"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:not_attacking"
+                    ]
+                }
+            }
+        }
+    }
+}

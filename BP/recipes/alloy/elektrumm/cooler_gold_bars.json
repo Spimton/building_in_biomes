@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cooler_gold_bars"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "gold_block"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:cooler_gold_bars",
+				"count": 54
+			}
+		]
+	}
+}

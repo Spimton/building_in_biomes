@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:chromium"
+		},
+		"tags": [
+			"spimton:alloy_forge_1"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:applen_ingot",
+				"count": 4
+			},
+			{
+				"item": "spimton:bismuth_ingot",
+				"count": 4
+			}
+		],
+		"result": [
+			{
+				"item": "spimton:chromium_ingot",
+				"count": 2
+			}
+		]
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:antique_sandstone_feature"
+		},
+		"count": 100,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:hoary_sandstone",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "sandstone"
+					}
+				]
+			}
+		]
+	}
+}

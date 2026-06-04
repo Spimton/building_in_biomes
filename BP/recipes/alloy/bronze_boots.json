@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bronze_boots"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"# #",
+			"# #"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bronze_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:bronze_boots"
+		}
+	}
+}

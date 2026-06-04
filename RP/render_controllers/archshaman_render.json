@@ -1,0 +1,67 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.overgrown": {
+            "is_hurt_color": {
+                "r": 0.11,
+                "g": 0.74,
+                "b": 0.0,
+                "a": 0.25
+            },
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.default"
+                    ]
+                }
+            },
+            "geometry": "geometry.default",
+            "part_visibility": [
+                {
+                    "*": "query.variant == 0"
+                }
+            ],
+            "materials": [
+                {
+                    "*": "material.default"
+                }
+            ],
+            "textures": [
+                "array.skins[query.variant]"
+            ]
+        },
+        "controller.render.goulden_boi": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "part_visibility": [
+                {
+                    "*": "!query.is_sheared"
+                }
+            ]
+        },
+        "controller.render.goulden_boi_rune": {
+            "geometry": "Geometry.spawn",
+            "materials": [
+                {
+                    "*": "Material.spawn"
+                }
+            ],
+            "part_visibility": [
+                {
+                    "*": "query.is_sheared"
+                }
+            ],
+            "textures": [
+                "Texture.spawn"
+            ],
+            "ignore_lighting": false
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:thefatrat",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/thefatrat"
+			},
+			"geometry": {
+				"default": "geometry.fatrat"
+			},
+			"render_controllers": [
+				"controller.render.arrow"
+			],
+			"animations": {
+				"rotate": "animation.arrow.move"
+			},
+			"scripts": {
+				"animate": [
+					"rotate"
+				],
+				"should_update_bones_and_effects_offscreen": false
+			},
+			"particle_effects": {
+				"delta": "spimton:deltarune_explosion"
+			}
+		}
+	}
+}

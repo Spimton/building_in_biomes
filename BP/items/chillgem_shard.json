@@ -1,0 +1,19 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:chillgem_shard",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "chillgem_shard",
+			"minecraft:max_stack_size": 64,
+			"minecraft:projectile": {
+				"minimum_critical_power": 0,
+				"projectile_entity": "spimton:spike_projectile"
+			}
+		}
+	}
+}

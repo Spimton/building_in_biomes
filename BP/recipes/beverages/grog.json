@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:grog"
+		},
+		"tags": [
+			"spimton:keg"
+		],
+		"pattern": [
+			"zxz",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "egg"
+			},
+			"y": {
+				"item": "spimton:egg_nog"
+			},
+			"z": {
+				"item": "sugar"
+			}
+		},
+		"result": {
+			"item": "spimton:grog"
+		}
+	}
+}

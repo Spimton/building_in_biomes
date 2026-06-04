@@ -1,0 +1,455 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                "category_name": "equipment",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:boss.name",
+                            "icon": "spimton:shadowcrystal"
+                        },
+                        "items": [
+                            "spimton:shadowcrystal",
+                            "spimton:blackknife",
+                            "spimton:overgrown_orb",
+                            "spimton:chronos_staff",
+                            "spimton:splosion_staff",
+                            "spimton:tasty_bone",
+                            "spimton:overgrown_amulet",
+                            "spimton:overgrown_amulet_fragment",
+                            "spimton:platinum_star",
+                            "spimton:platinum_gauntlet",
+                            "spimton:celerity_gauntlet",
+                            "spimton:king_cannon",
+                            "spimton:storm_horn",
+                            "spimton:weeper_soul",
+                            "spimton:pure_diamond",
+                            "spimton:justice_hammer",
+                            "spimton:meat_mallet",
+                            "spimton:diamond_relic"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:totem.name",
+                            "icon": "spimton:empty_totem"
+                        },
+                        "items": [
+                            "spimton:empty_totem",
+                            "spimton:totem_of_bulwark",
+                            "spimton:totem_of_poison",
+                            "spimton:totem_of_resonance",
+                            "spimton:totem_of_vision",
+                            "spimton:totem_of_enfeeblement",
+                            "spimton:totem_of_flight",
+                            "spimton:totem_of_vitality",
+                            "spimton:empty_totem_ag",
+                            "spimton:totem_of_combustion",
+                            "spimton:totem_of_devotion",
+                            "spimton:totem_of_luxury"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:necklace.name",
+                            "icon": "spimton:empty_necklace"
+                        },
+                        "items": [
+                            "spimton:empty_necklace",
+                            "spimton:galena_necklace",
+                            "spimton:ghostly_necklace",
+                            "spimton:might_necklace",
+                            "spimton:chilling_necklace",
+                            "spimton:iridescence_necklace",
+                            "spimton:unbreakable_necklace",
+                            "spimton:overgrown_necklace",
+                            "spimton:overgrown_necklace_c"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:tiara.name",
+                            "icon": "spimton:empty_tiara"
+                        },
+                        "items": [
+                            "spimton:empty_tiara",
+                            "spimton:wisdom_tiara",
+                            "spimton:creeping_tiara",
+                            "spimton:nautilus_tiara",
+                            "spimton:indestructibility_tiara",
+                            "spimton:iridescence_tiara",
+                            "spimton:unbreakable_tiara",
+                            "spimton:overgrown_tiara",
+                            "spimton:overgrown_tiara_c"
+                        ]
+                    }
+                ]
+            },
+            {
+                "category_name": "construction",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:jade.name",
+                            "icon": "spimton:jade_block"
+                        },
+                        "items": [
+                            "spimton:jade_block",
+                            "spimton:indented_jade",
+                            "spimton:indented_jade_slab",
+                            "spimton:indented_jade_stairs",
+                            "spimton:jade_tiles",
+                            "spimton:jade_tiles_slab",
+                            "spimton:jade_tiles_stairs",
+                            "spimton:jade_bricks",
+                            "spimton:jade_bricks_slab",
+                            "spimton:jade_bricks_stairs",
+                            "spimton:jade_grates",
+                            "spimton:jade_pillar",
+                            "spimton:imperial_jade_block",
+                            "spimton:indented_imperial_jade",
+                            "spimton:indented_imperial_jade_slab",
+                            "spimton:indented_imperial_jade_stairs",
+                            "spimton:imperial_jade_tiles",
+                            "spimton:imperial_jade_tiles_slab",
+                            "spimton:imperial_jade_tiles_stairs",
+                            "spimton:polished_imperial_jade",
+                            "spimton:polished_imperial_jade_slab",
+                            "spimton:polished_imperial_jade_stairs",
+                            "spimton:imperial_jade_grates",
+                            "spimton:polished_jade",
+                            "spimton:polished_jade_slab",
+                            "spimton:polished_jade_stairs",
+                            "spimton:polished_jade_wall",
+                            "spimton:crimsite_block",
+                            "spimton:indented_crimsite",
+                            "spimton:indented_crimsite_slab",
+                            "spimton:indented_crimsite_stairs",
+                            "spimton:crimsite_tiles",
+                            "spimton:crimsite_tiles_slab",
+                            "spimton:crimsite_tiles_stairs",
+                            "spimton:carved_indented_crimsite",
+                            "spimton:carved_indented_crimsite_slab",
+                            "spimton:carved_indented_crimsite_stairs",
+                            "spimton:chiseled_indented_crimsite",
+                            "spimton:crimsite_grates",
+                            "spimton:crimsite_pillar"
+                        ]
+                    }
+                ]
+            },
+            {
+                "category_name": "construction",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:agold.name",
+                            "icon": "spimton:ancient_gold_block"
+                        },
+                        "items": [
+                            "spimton:ancient_gold_block",
+                            "spimton:indented_ancient_gold",
+                            "spimton:indented_ancient_gold_slab",
+                            "spimton:indented_ancient_gold_stairs",
+                            "spimton:ancient_gold_tiles",
+                            "spimton:ancient_gold_tiles_slab",
+                            "spimton:ancient_gold_tiles_stairs",
+                            "spimton:polished_ancient_gold",
+                            "spimton:polished_ancient_gold_slab",
+                            "spimton:polished_ancient_gold_stairs",
+                            "spimton:ancient_gold_pillar",
+                            "spimton:ancient_gold_grates",
+                            "spimton:decorated_ancient_gold_tiles",
+                            "spimton:decorated_ancient_gold_tiles_slab",
+                            "spimton:decorated_ancient_gold_tiles_stairs",
+                            "spimton:decorated_ancient_gold_tiles_c",
+                            "spimton:decorated_ancient_gold_tiles_slab_c",
+                            "spimton:decorated_ancient_gold_tiles_stairs_c"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:compressed.name",
+                            "icon": "spimton:compressed_resin"
+                        },
+                        "items": [
+                            "spimton:compressed_resin",
+                            "spimton:resin_tiles",
+                            "spimton:resin_tiles_slab",
+                            "spimton:resin_tiles_stairs",
+                            "spimton:compressed_honey",
+                            "spimton:honey_tiles",
+                            "spimton:honey_tiles_slab",
+                            "spimton:honey_tiles_stairs",
+                            "spimton:compressed_slime",
+                            "spimton:slime_tiles",
+                            "spimton:slime_tiles_slab",
+                            "spimton:slime_tiles_stairs",
+                            "spimton:compressed_grape_must",
+                            "spimton:grape_must_tiles",
+                            "spimton:grape_must_tiles_slab",
+                            "spimton:grape_must_tiles_stairs",
+                            "spimton:compressed_ectoplasm",
+                            "spimton:ectoplasm_tiles",
+                            "spimton:ectoplasm_tiles_slab",
+                            "spimton:ectoplasm_tiles_stairs"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:crystal.name",
+                            "icon": "spimton:amethyst_block"
+                        },
+                        "items": [
+                            "spimton:amethyst_block",
+                            "spimton:amethyst_slab",
+                            "spimton:amethyst_stairs",
+                            "spimton:cut_amethyst",
+                            "spimton:cut_amethyst_slab",
+                            "spimton:cut_amethyst_stairs",
+                            "spimton:cut_amethyst_bricks",
+                            "spimton:cut_amethyst_bricks_slab",
+                            "spimton:cut_amethyst_bricks_stairs",
+                            "spimton:chillgem_block_full",
+                            "spimton:chillgem_slab",
+                            "spimton:chillgem_stairs",
+                            "spimton:cut_chillgem",
+                            "spimton:cut_chillgem_slab",
+                            "spimton:cut_chillgem_stairs",
+                            "spimton:cut_chillgem_bricks",
+                            "spimton:cut_chillgem_bricks_slab",
+                            "spimton:cut_chillgem_bricks_stairs",
+                            "spimton:shadowcrystal_block",
+                            "spimton:shadowcrystal_slab",
+                            "spimton:shadowcrystal_stairs",
+                            "spimton:cut_shadowcrystal",
+                            "spimton:cut_shadowcrystal_slab",
+                            "spimton:cut_shadowcrystal_stairs",
+                            "spimton:cut_shadowcrystal_bricks",
+                            "spimton:cut_shadowcrystal_bricks_slab",
+                            "spimton:cut_shadowcrystal_bricks_stairs"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "itemGroup.spimton:metals.name",
+                            "icon": "spimton:steel_block"
+                        },
+                        "items": [
+                            "spimton:steel_block",
+                            "spimton:steel_bricks",
+                            "spimton:steel_bricks_slab",
+                            "spimton:steel_bricks_stairs",
+                            "spimton:polished_steel",
+                            "spimton:polished_steel_slab",
+                            "spimton:polished_steel_stairs",
+                            "spimton:polished_steel_wall",
+                            "spimton:bronze_block",
+                            "spimton:cut_bronze",
+                            "spimton:cut_bronze_slab",
+                            "spimton:cut_bronze_stairs",
+                            "spimton:chiseled_bronze",
+                            "spimton:bronze_lamp",
+                            "spimton:bronze_grates",
+                            "spimton:bronze_trapdoor",
+                            "spimton:electrum_block",
+                            "spimton:electrum_tiles",
+                            "spimton:electrum_tiles_slab",
+                            "spimton:electrum_tiles_stairs",
+                            "spimton:indented_electrum",
+                            "spimton:indented_electrum_slab",
+                            "spimton:indented_electrum_stairs",
+                            "spimton:electrum_grates",
+                            "spimton:applen_block",
+                            "spimton:cut_applen_block",
+                            "spimton:cut_applen_slab",
+                            "spimton:cut_applen_stairs",
+                            "spimton:chiseled_applen_block",
+                            "spimton:applen_grates",
+                            "spimton:applen_trapdoor",
+                            "spimton:chromium_block",
+                            "spimton:cut_chromium",
+                            "spimton:cut_chromium_slab",
+                            "spimton:cut_chromium_stairs",
+                            "spimton:indented_chromium",
+                            "spimton:indented_chromium_slab",
+                            "spimton:indented_chromium_stairs",
+                            "spimton:polished_chromium",
+                            "spimton:polished_chromium_slab",
+                            "spimton:polished_chromium_stairs",
+                            "spimton:chromium_pillar",
+                            "spimton:chromium_grates"
+                        ]
+                    }
+                ]
+            },
+            {
+                "category_name": "items",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "spimton:mug",
+                            "name": "itemGroup.spimton:beverages.name"
+                        },
+                        "items": [
+                            "spimton:keg_v1",
+                            "spimton:coaster",
+                            "spimton:mug",
+                            "spimton:wine",
+                            "spimton:red_wine",
+                            "spimton:white_wine",
+                            "spimton:ale",
+                            "spimton:mead",
+                            "spimton:cider",
+                            "spimton:vodka",
+                            "spimton:grog",
+                            "spimton:egg_nog",
+                            "spimton:dread_grog",
+                            "spimton:red_rum",
+                            "spimton:beetroot_ale",
+                            "spimton:steel_toe_stout",
+                            "spimton:poisoned_drink",
+                            "spimton:goblin_beer",
+                            "spimton:spoison",
+                            "spimton:void_liquor",
+                            "spimton:snareling_drink",
+                            "spimton:random_bottle",
+                            "spimton:cellar",
+                            "spimton:random_wine_1",
+                            "spimton:random_wine_2",
+                            "spimton:random_wine_3",
+                            "spimton:random_wine_4",
+                            "spimton:random_wine_5",
+                            "spimton:random_wine_6",
+                            "spimton:random_wine_7",
+                            "spimton:random_wine_8",
+                            "spimton:random_wine_9",
+                            "spimton:random_wine_w1",
+                            "spimton:random_wine_w2",
+                            "spimton:random_wine_w3",
+                            "spimton:random_wine_w4",
+                            "spimton:random_wine_w5",
+                            "spimton:random_wine_f1",
+                            "spimton:scrumpy_1",
+                            "spimton:scrumpy_2",
+                            "spimton:scrumpy_3",
+                            "spimton:exploded_beverage",
+                            "spimton:crude_ale",
+                            "spimton:random_ale_1",
+                            "spimton:random_ale_2",
+                            "spimton:random_ale_3",
+                            "spimton:random_ale_4",
+                            "spimton:random_ale_5",
+                            "spimton:random_ale_6",
+                            "spimton:crude_lager",
+                            "spimton:random_lager_1",
+                            "spimton:random_lager_2",
+                            "spimton:random_lager_3",
+                            "spimton:crude_vodka",
+                            "spimton:random_vodka"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "spimton:lootbox_stronghold",
+                            "name": "itemGroup.spimton:lootboxx.name"
+                        },
+                        "items": [
+                            "spimton:lootbox_blacksmith",
+                            "spimton:lootbox_mineshaft",
+                            "spimton:lootbox_dungeon",
+                            "spimton:lootbox_jungle_temple",
+                            "spimton:lootbox_stronghold",
+                            "spimton:lootbox_pillager_outpost",
+                            "spimton:lootbox_vault",
+                            "spimton:lootbox_desert_temple",
+                            "spimton:lootbox_woodland_mansion",
+                            "spimton:lootbox_buried_treasure",
+                            "spimton:lootbox_shipwreck",
+                            "spimton:lootbox_ruined_portal",
+                            "spimton:lootbox_ancient_city",
+                            "spimton:lootbox_ominous_vault"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "spimton:can",
+                            "name": "itemGroup.spimton:cannato.name"
+                        },
+                        "items": [
+                            "spimton:canned_chicken",
+                            "spimton:canned_mutton",
+                            "spimton:canned_rabbit",
+                            "spimton:canned_beef",
+                            "spimton:canned_porkchop",
+                            "spimton:canned_salmon",
+                            "spimton:canned_cod",
+                            "spimton:canned_c_chicken",
+                            "spimton:canned_c_mutton",
+                            "spimton:canned_c_rabbit",
+                            "spimton:canned_c_beef",
+                            "spimton:canned_c_porkchop",
+                            "spimton:canned_c_salmon",
+                            "spimton:canned_c_cod",
+                            "spimton:canned_rabbit_stew",
+                            "spimton:canned_mushroom_stew",
+                            "spimton:canned_beetroot_soup",
+                            "spimton:canned_sus_stew_blindness",
+                            "spimton:canned_sus_stew_fireres",
+                            "spimton:canned_sus_stew_jboost",
+                            "spimton:canned_sus_stew_nausea",
+                            "spimton:canned_sus_stew_nightvis",
+                            "spimton:canned_sus_stew_poison",
+                            "spimton:canned_sus_stew_regeneration",
+                            "spimton:canned_sus_stew_satur",
+                            "spimton:canned_sus_stew_weakness",
+                            "spimton:canned_sus_stew_wither"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "spimton:sit_template",
+                            "name": "itemGroup.spimton:statue.name"
+                        },
+                        "items": [
+                            "spimton:sit_template",
+                            "spimton:dance_template",
+                            "spimton:creeper_template",
+                            "spimton:scared_template",
+                            "spimton:player_template",
+                            "spimton:wryyy_template",
+                            "spimton:calm_template",
+                            "spimton:curious_template",
+                            "spimton:tough_template",
+                            "spimton:brute_template",
+                            "spimton:healthy_template",
+                            "spimton:calm_template_c",
+                            "spimton:curious_template_c",
+                            "spimton:tough_template_c",
+                            "spimton:brute_template_c",
+                            "spimton:healthy_template_c",
+                            "spimton:sit_bronze_statue",
+                            "spimton:dance_bronze_statue",
+                            "spimton:creeper_bronze_statue",
+                            "spimton:scared_bronze_statue",
+                            "spimton:player_bronze_statue",
+                            "spimton:wryyy_bronze_statue",
+                            "spimton:calm_mud_statue",
+                            "spimton:curious_mud_statue",
+                            "spimton:tough_mud_statue",
+                            "spimton:brute_mud_statue",
+                            "spimton:healthy_mud_statue",
+                            "spimton:calm_crimstone_statue",
+                            "spimton:curious_crimstone_statue",
+                            "spimton:tough_crimstone_statue",
+                            "spimton:brute_crimstone_statue",
+                            "spimton:healthy_crimstone_statue"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

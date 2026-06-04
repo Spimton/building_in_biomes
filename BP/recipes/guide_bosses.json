@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "spimton:guide_bosses"
+        },
+        "ingredients": [
+            {
+                "item": "spimton:shadowcrystal"
+            },
+            {
+                "tag": "minecraft:bookshelf_books"
+            }
+        ],
+        "priority": 1,
+        "result": {
+            "item": "spimton:boss_guide",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        }
+    }
+}

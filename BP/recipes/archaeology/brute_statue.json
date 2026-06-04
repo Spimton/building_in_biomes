@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:brute_statue"
+		},
+		"tags": [
+			"spimton:archaeology_table"
+		],
+		"ingredients": [
+			{
+				"item": "mud_bricks"
+			},
+			{
+				"item": "spimton:brute_template"
+			}
+		],
+		"priority": 1,
+		"unlock": [
+			{
+				"item": "spimton:ancient_tablet"
+			}
+		],
+		"result": {
+			"item": "spimton:brute_mud_statue"
+		}
+	}
+}

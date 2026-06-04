@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cut_lead_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:cut_lead"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:cut_lead_slab",
+			"count": 6
+		}
+	}
+}

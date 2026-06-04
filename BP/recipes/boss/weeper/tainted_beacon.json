@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:tainted_beacon"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"ywy",
+			"wzw",
+			"ywy"
+		],
+		"key": {
+			"y": {
+				"item": "obsidian"
+			},
+			"z": {
+				"item": "spimton:platinum_star"
+			},
+			"w": {
+				"item": "spimton:iridescent_glass"
+			}
+		},
+		"result": {
+			"item": "spimton:tainted_beacon"
+		}
+	}
+}

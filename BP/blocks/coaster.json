@@ -1,0 +1,363 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:coaster",
+			"menu_category": {
+				"category": "items"
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"spimton:has_beverage": [
+					false,
+					true
+				],
+				"spimton:array_beverage_1": [
+					"false",
+					"spimton:mug",
+					"spimton:ale",
+					"spimton:beetroot_ale",
+					"spimton:cider",
+					"spimton:dread_grog",
+					"spimton:egg_nog",
+					"spimton:grog",
+					"spimton:goblin_beer",
+					"spimton:mead",
+					"spimton:poisoned_drink",
+					"spimton:red_rum",
+					"spimton:spoison",
+					"spimton:steel_toe_stout"
+				],
+				"spimton:array_beverage_2": [
+					"false",
+					"spimton:vodka",
+					"spimton:void_liquor",
+					"spimton:snareling_drink",
+					"spimton:wine",
+					"spimton:white_wine",
+					"spimton:red_wine"
+				]
+			}
+		},
+		"components": {
+			"minecraft:geometry": {
+				"identifier": "geometry.coasters",
+				"bone_visibility": {
+					"mug": false,
+					"liquid": false
+				}
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					8,
+					14
+				]
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-7,
+					0,
+					-7
+				],
+				"size": [
+					14,
+					2,
+					14
+				]
+			},
+			"minecraft:map_color": "#584214",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "coaster_empty",
+					"render_method": "alpha_test"
+				}
+			},
+			"spimton:coaster": {},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1
+			},
+			"tag:minecraft:is_axe_item_destructible": {}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			//Has Beverages
+			{
+				"condition": "q.block_state('spimton:has_beverage') == true",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.coasters",
+						"bone_visibility": {
+							"mug": true,
+							"liquid": true
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:has_beverage') == false",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "geometry.coasters",
+						"bone_visibility": {
+							"mug": false,
+							"liquid": false
+						}
+					}
+				}
+			},
+			//Beverages of Array 1
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:empty_mug'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_empty"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:ale'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_ale"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:beetroot_ale'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_beetroot_ale"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:cider'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_cider"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:dread_grog'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_dread_grog"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:egg_nog'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_egg_nog"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:goblin_beer'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_goblin_beer"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:grog'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_grog"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:mead'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_mead"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:poisoned_drink'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_poisoned_drink"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:red_rum'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_red_rum"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:spoison'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_spoison"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_1') == 'spimton:steel_toe_stout'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_stoe_stout"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_2') == 'spimton:vodka'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_vodka"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_2') == 'spimton:void_liquor'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_void_liquor"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_2') == 'spimton:snareling_drink'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_void_liquor_snare"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_2') == 'spimton:wine'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_wine"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_2') == 'spimton:red_wine'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_wine_red"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:array_beverage_2') == 'spimton:white_wine'",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "coaster_wine_white"
+						}
+					}
+				}
+			}
+		]
+	}
+}

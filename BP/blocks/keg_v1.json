@@ -1,0 +1,186 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:keg_v1",
+			"menu_category": {
+				"category": "items",
+				"is_hidden_in_commands": false
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					]
+				}
+			},
+			"states": {
+				"spimton:erature": {
+					"values": {
+						"min": 0,
+						"max": 2
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:geometry": "geometry.keg",
+			"minecraft:map_color": "#584214",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "keg",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:custom_components": [
+				"spimton:kegg"
+			],
+			"minecraft:collision_box": {
+				"origin": [
+					-6,
+					0,
+					-6
+				],
+				"size": [
+					14,
+					14,
+					14
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 10
+			},
+			"minecraft:crafting_table": {
+				"crafting_tags": [
+					"spimton:keg"
+				],
+				"table_name": "Keg",
+				"grid_size": 3
+			},
+			"tag:minecraft:is_axe_item_destructible": {},
+			"minecraft:tick": {
+				"looping": true,
+				"interval_range": [
+					10,
+					20
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('spimton:erature') == 0",
+				"components": {
+					"minecraft:crafting_table": {
+						"crafting_tags": [
+							"spimton:keg_cold"
+						],
+						"grid_size": 3,
+						"table_name": "Keg (Cold)"
+					},
+					"minecraft:tick": {
+						"looping": true,
+						"interval_range": [
+							10,
+							20
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:erature') == 1",
+				"components": {
+					"minecraft:crafting_table": {
+						"crafting_tags": [
+							"spimton:keg"
+						],
+						"grid_size": 3,
+						"table_name": "Keg (Temperate)"
+					},
+					"minecraft:custom_components": [
+						"spimton:kegg"
+					],
+					"minecraft:tick": {
+						"looping": true,
+						"interval_range": [
+							10,
+							20
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:erature') == 2",
+				"components": {
+					"minecraft:crafting_table": {
+						"crafting_tags": [
+							"spimton:keg_hot"
+						],
+						"grid_size": 3,
+						"table_name": "Keg (Hot)"
+					},
+					"minecraft:custom_components": [
+						"spimton:kegg"
+					],
+					"minecraft:tick": {
+						"looping": true,
+						"interval_range": [
+							10,
+							20
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			}
+		]
+	}
+}

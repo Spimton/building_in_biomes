@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:silver_feature"
+		},
+		"count": 9,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:silver_ore",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "stone"
+					}
+				]
+			}
+		]
+	}
+}

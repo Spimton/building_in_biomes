@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_chromium_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:polished_chromium"
+			}
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"result": {
+			"item": "spimton:polished_chromium_stairs",
+			"count": 4
+		}
+	}
+}

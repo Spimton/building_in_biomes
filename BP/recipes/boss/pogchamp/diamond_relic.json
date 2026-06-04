@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:diamond_relic"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"assume_symmetry": true,
+		"priority": 10,
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"pattern": [
+			" @ ",
+			"@#@",
+			" @ "
+		],
+		"key": {
+			"@": {
+				"item": "spimton:nether_cloth"
+			},
+			"#": {
+				"item": "diamond"
+			}
+		},
+		"result": [
+			{
+				"count": 1,
+				"item": "spimton:diamond_relic"
+			}
+		]
+	}
+}

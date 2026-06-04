@@ -1,0 +1,257 @@
+if (source?.isSneaking) {
+                if (block.typeId === 'minecraft:stone_bricks') {
+                    block.setType('minecraft:chiseled_stone_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_stone_bricks replace stone_bricks')
+                    HamDur(source, item, 1)
+                }
+                else if (block.typeId === 'minecraft:deepslate') {
+                    block.setType('minecraft:chiseled_deepslate')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_deepslate replace deepslate')
+                }
+                else if (block.typeId === 'minecraft:tuff') {
+                    block.setType('minecraft:chiseled_tuff')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_tuff replace tuff')
+                }
+                else if (block.typeId === 'minecraft:tuff_bricks') {
+                    block.setType('minecraft:chiseled_tuff_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_tuff_bricks replace tuff_bricks')
+                }
+                else if (block.typeId === 'minecraft:polished_blackstone') {
+                    block.setType('minecraft:chiseled_polished_blackstone')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_polished_blackstone replace polished_blackstone')
+                }
+                else if (block.typeId === 'minecraft:nether_bricks') {
+                    block.setType('minecraft:chiseled_nether_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_nether_bricks replace nether_bricks')
+                }
+                else if (block.typeId === 'minecraft:resin_bricks') {
+                    block.setType('minecraft:chiseled_resin_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_resin_bricks replace resin_bricks')
+                }
+                else if (block.typeId === 'minecraft:copper_block') {
+                    block.setType('minecraft:chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_copper replace copper_block')
+                }
+                else if (block.typeId === 'minecraft:exposed_copper') {
+                    block.setType('minecraft:exposed_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 exposed_chiseled_copper replace exposed_copper')
+                }
+                else if (block.typeId === 'minecraft:weathered_copper') {
+                    block.setType('minecraft:weathered_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 weathered_chiseled_copper replace weathered_copper')
+                }
+                else if (block.typeId === 'minecraft:oxidized_copper') {
+                    block.setType('minecraft:oxidized_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 oxidized_chiseled_copper replace oxidized_copper')
+                }
+                else if (block.typeId === 'minecraft:waxed_copper') {
+                    block.setType('minecraft:waxed_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 waxed_chiseled_copper replace waxed_copper')
+                }
+                else if (block.typeId === 'minecraft:waxed_exposed_copper') {
+                    block.setType('minecraft:waxed_exposed_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 waxed_exposed_chiseled_copper replace waxed_exposed_copper')
+                }
+                else if (block.typeId === 'minecraft:waxed_weathered_copper') {
+                    block.setType('minecraft:waxed_weathered_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 waxed_weathered_chiseled_copper replace waxed_weathered_copper')
+                }
+                else if (block.typeId === 'minecraft:waxed_oxidized_copper') {
+                    block.setType('minecraft:waxed_oxidized_chiseled_copper')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 waxed_oxidized_chiseled_copper replace waxed_oxidized_copper')
+                }
+                else if (block.typeId === 'minecraft:sandstone') {
+                    block.setType('minecraft:chiseled_sandstone')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_sandstone replace sandstone')
+                }
+                else if (block.typeId === 'minecraft:red_sandstone') {
+                    block.setType('minecraft:chiseled_red_sandstone')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_red_sandstone replace red_sandstone')
+                }
+                else if (block.typeId === 'minecraft:nether_brick') {
+                    block.setType('minecraft:chiseled_nether_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_nether_bricks replace nether_bricks')
+                }
+                else if (block.typeId === 'minecraft:quartz_block') {
+                    block.setType('minecraft:chiseled_quartz_block')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 quartz_block replace chiseled_quartz_block')
+                }
+                else if (block.typeId === 'spimton:smooth_chillstone') {
+                    block.setType('spimton:chiseled_chillstone')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 chiseled_chillstone replace spimton:smooth_chillstone')
+                }
+                else if (block.typeId === 'spimton:ice_bricks') {
+                    block.setType('spimton:chiseled_ice_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_ice_bricks replace spimton:ice_bricks')
+                }
+                else if (block.typeId === 'spimton:blue_ice_bricks') {
+                    block.setType('spimton:chiseled_blue_ice_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_blue_ice_bricks replace spimton:blue_ice_bricks')
+                }
+                else if (block.typeId === 'spimton:snow_bricks') {
+                    block.setType('spimton:chiseled_snow_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_snow_bricks replace spimton:snow_bricks')
+                }
+                else if (block.typeId === 'minecraft:brick_block') {
+                    block.setType('spimton:chiseled_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_bricks replace brick_block')
+                }
+                else if (block.typeId === 'spimton:cobblestone_bricks') {
+                    block.setType('spimton:chiseled_cobblestone_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_cobblestone_bricks replace spimton:cobblestone_bricks')
+                }
+                else if (block.typeId === 'spimton:sandstone_pillar') {
+                    block.setType('spimton:chiseled_sandstone_pillar')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_sandstone_pillar replace spimton:sandstone_pillar')
+                }
+                else if (block.typeId === 'spimton:red_sandstone_pillar') {
+                    block.setType('spimton:chiseled_red_sandstone_pillar')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_red_sandstone_pillar replace spimton:red_sandstone_pillar')
+                }
+                else if (block.typeId === 'spimton:calcite_bricks') {
+
+                    block.setType('spimton:chiseled_calcite')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_calcite replace spimton:calcite_bricks')
+                }
+                else if (block.typeId === 'spimton:bronze_block') {
+
+                    block.setType('spimton:chiseled_bronze')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_bronze replace spimton:bronze_block')
+                }
+                else if (block.typeId === 'spimton:siltstone') {
+
+                    block.setType('spimton:chiseled_siltstone')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_siltstone replace spimton:siltstone')
+                }
+                else if (block.typeId === 'spimton:gloom_tiles') {
+
+                    block.setType('spimton:chiseled_gloom_tiles')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    HamDur(source, item, 1)
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_gloom_tiles replace spimton:gloom_tiles')
+                }
+                else if (block.typeId === 'spimton:siltstone_bricks') {
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_siltstone_bricks replace spimton:siltstone_bricks')
+                    block.setType('spimton:chiseled_siltstone_bricks')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                }
+                else if (block.typeId === 'spimton:applen_block') {
+                    block.setType('spimton:chiseled_applen_block')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_applen_block replace spimton:applen_block')
+                }
+
+                else if (block.typeId === 'spimton:cobblestone_tiles') {
+                    block.setType('spimton:chiseled_cobblestone_tiles')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_cobblestone_tiles replace spimton:cobblestone_tiles')
+                    HamDur(source, item, 1)
+                }
+                else if (block.typeId === 'spimton:sanctuarium_tiles') {
+                    block.setType('spimton:chiseled_sanctuarium_tiles')
+                    source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                    source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:chiseled_sanctuarium_tiles replace spimton:sanctuarium_tiles')
+                    HamDur(source, item, 1)
+                }
+            }
+            if (block.typeId === 'minecraft:stone_bricks') {
+                block.setType('minecraft:cracked_stone_bricks')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 cracked_stone_bricks replace stone_bricks')
+            }
+            else if (block.typeId === 'minecraft:deepslate_bricks') {
+                block.setType('minecraft:cracked_deepslate_bricks')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 cracked_deepslate_bricks replace deepslate_bricks')
+            }
+            else if (block.typeId === 'minecraft:deepslate_tiles') {
+                block.setType('minecraft:cracked_deepslate_tiles')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 cracked_deepslate_tiles replace deepslate_tiles')
+            }
+            else if (block.typeId === 'minecraft:nether_brick') {
+                block.setType('minecraft:cracked_nether_bricks')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 cracked_nether_bricks replace nether_bricks')
+            }
+            else if (block.typeId === 'minecraft:polished_blackstone_bricks') {
+                block.setType('minecraft:cracked_polished_blackstone_bricks')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 cracked_polished_blackstone_bricks replace polished_blackstone_bricks')
+            }
+            else if (block.typeId === 'spimton:asbestos_tiles') {
+                block.setType('spimton:cracked_asbestos_tiles')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:cracked_asbestos_tiles replace spimton:asbestos_tiles')
+            }
+            else if (block.typeId === 'spimton:cragrock_bricks') {
+
+                block.setType('spimton:cracked_cragrock_bricks')
+                source.runCommand('playsound hit.iron @a[r=5] ~ ~ ~')
+                source.runCommand('execute at @p positioned ^ ^1 ^1 run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 spimton:cracked_cragrock_bricks replace spimton:cragrock_bricks')
+
+            }
+            else {
+
+                source.runCommand("title @p actionbar This block doesn't have a Chiseled or a Cracked variant!")
+                source.runCommand('playsound random.break @a[r=3]')
+            }

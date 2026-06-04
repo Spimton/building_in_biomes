@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_red_limestone_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:polished_red_limestone"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:polished_red_limestone_slab",
+			"count": 6
+		}
+	}
+}

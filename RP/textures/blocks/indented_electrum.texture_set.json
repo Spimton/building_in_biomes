@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "indented_electrum",
+		"metalness_emissive_roughness": "indented_electrum_mer"
+	}
+}

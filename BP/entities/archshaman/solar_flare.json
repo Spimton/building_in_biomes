@@ -1,0 +1,158 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:solar_flare",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"runtime_identifier": "minecraft:shulker"
+		},
+		"component_groups": {
+			"spimton:desp": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:despawn": {
+				"despawn_from_chance": true,
+				"despawn_from_simulation_edge": true,
+				"min_range_random_chance": 800
+			},
+			"minecraft:health": {
+				"value": 6,
+				"max": 6
+			},
+			"minecraft:type_family": {
+				"family": [
+					"spimton:archshaman",
+					"inanimate"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire_tick",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_attack",
+						"deals_damage": false
+					},
+					{
+						"cause": "attack",
+						"deals_damage": false
+					},
+					{
+						"cause": "projectile",
+						"deals_damage": false
+					},
+					{
+						"cause": "magic",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "in_water_or_rain",
+							"subject": "self",
+							"value": true
+						},
+						"target": "self",
+						"event": "spimton:kira"
+					}
+				]
+			},
+			"minecraft:area_attack": {
+				"cause": "fire_tick",
+				"damage_per_tick": 2,
+				"damage_range": 0.2,
+				"entity_filter": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "spimton:archshaman",
+					"operator": "!="
+				}
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.1,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:firee"
+				}
+			},
+			"minecraft:damage_over_time": {
+				"time_between_hurt": 10,
+				"damage_per_hurt": 1
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 2
+			},
+			"minecraft:on_death": {
+				"event": "spimton:healesser"
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:firee": {
+				"queue_command": {
+					"command": [
+						"fill ~ ~ ~ ~ ~1 ~ fire replace air"
+					],
+					"target": "self"
+				}
+			},
+			"spimton:kira": {
+				"add": {
+					"component_groups": [
+						"spimton:desp"
+					]
+				}
+			},
+			"spimton:heal": {
+				"queue_command": {
+					"command": [
+						"effect @e[type=spimton:overgrown_archshaman] instant_damage 1 3 true",
+						"scoreboard players add @n[type=spimton:overgrown_archshaman] mih_time 10",
+						"title @a[r=30] actionbar The Archshaman used up its flames and healed!",
+						"event entity @s spimton:kira"
+					],
+					"target": "self"
+				}
+			},
+			"spimton:heal_sun": {
+				"queue_command": {
+					"command": [
+						"effect @e[type=spimton:overgrown_archshaman] absorption 1 3 true",
+						"scoreboard players remove @n[type=spimton:overgrown_archshaman] mih_treshold 5",
+						"title @a[r=30] actionbar The Archshaman used up its flames summoned the SUN!",
+						"event entity @s spimton:kira"
+					],
+					"target": "self"
+				}
+			},
+			"spimton:healesser": {
+				"queue_command": {
+					"command": [
+						"effect @e[type=spimton:overgrown_archshaman] instant_damage 1 1 true",
+						"title @a[r=30] actionbar The Archshaman used up its flames and healed!",
+						"event entity @s spimton:kira"
+					],
+					"target": "self"
+				}
+			}
+		}
+	}
+}

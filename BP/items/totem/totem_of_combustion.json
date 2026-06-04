@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:totem_of_combustion",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "totem_combustion",
+			"minecraft:max_stack_size": 1,
+			"minecraft:hover_text_color": "red",
+			"minecraft:allow_off_hand": true,
+			"minecraft:cooldown": {
+				"category": "combustion",
+				"duration": 2
+			},
+			"minecraft:custom_components": [
+				"spimton:totem_combustion"
+			]
+		}
+	}
+}

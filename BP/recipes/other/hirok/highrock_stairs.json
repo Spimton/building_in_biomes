@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:highrock_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:highrock"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:highrock_stairs",
+			"count": 4
+		}
+	}
+}

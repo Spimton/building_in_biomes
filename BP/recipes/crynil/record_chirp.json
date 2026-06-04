@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:record_chirp"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:crynil"
+            },
+            "@": {
+                "item": "spimton:ht_lead_ingot"
+            }
+        },
+        "result": {
+            "item": "music_disc_chirp",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chorus_chiseled_endstone"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:chiseled_endstone"
+			},
+			"@": {
+				"item": "popped_chorus_fruit"
+			}
+		},
+		"pattern": [
+			" @ ",
+			"@#@",
+			" @ "
+		],
+		"result": {
+			"item": "spimton:chorus_chiseled_endstone",
+			"count": 2
+		}
+	}
+}

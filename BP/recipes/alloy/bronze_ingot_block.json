@@ -1,0 +1,22 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:bronze_ingot_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:bronze_block"
+			}
+		],
+		"result": [
+			{
+				"item": "spimton:bronze_ingot",
+				"count": 9
+			}
+		]
+	}
+}

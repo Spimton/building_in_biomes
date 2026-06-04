@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:storm_horn",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.goatHorn"
+			}
+		},
+		"components": {
+			"minecraft:icon": "storm_horn",
+			"minecraft:max_stack_size": 1,
+			"minecraft:rarity": "rare",
+			"minecraft:hover_text_color": "red",
+			"minecraft:display_name": {
+				"value": "Storm Horn"
+			},
+			"minecraft:durability": {
+				"max_durability": 30
+			},
+			"minecraft:custom_components": [
+				"spimton:stormhornwin"
+			],
+			"minecraft:interact_button": true,
+			"minecraft:use_modifiers": {
+				"use_duration": 1
+			},
+			"minecraft:cooldown": {
+				"category": "goatHorn",
+				"duration": 100
+			}
+		}
+	}
+}

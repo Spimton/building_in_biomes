@@ -1,0 +1,36 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:steel_ball"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "w@w",
+            "@#@",
+            "w@w"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:steel_ingot"
+            },
+            "@": {
+                "item": "iron_ingot"
+            },
+            "w": {
+                "item": "coal"
+            }
+        },
+        "priority": 1,
+        "result": {
+            "item": "spimton:steel_ball",
+            "count": 1
+        }
+    }
+}

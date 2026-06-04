@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:red_rum"
+		},
+		"tags": [
+			"spimton:keg_hot"
+		],
+		"pattern": [
+			"xzw",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "fermented_spider_eye"
+			},
+			"y": {
+				"item": "spimton:vodka"
+			},
+			"z": {
+				"item": "shroomlight"
+			},
+			"w": {
+				"item": "nether_wart_block"
+			}
+		},
+		"result": {
+			"item": "spimton:red_rum"
+		}
+	}
+}

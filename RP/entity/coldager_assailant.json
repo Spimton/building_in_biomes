@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:coldager_assailant",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/chillager_attacker"
+			},
+			"geometry": {
+				"default": "geometry.chillagers"
+			},
+			"enable_attachables": true,
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move"
+				]
+			},
+			"animations": {
+				"general": "animation.chillager.general",
+				"casting": "animation.chillager.casting",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.chillager.move",
+				"shoot": "animation.chillager.shoot2",
+				"celebrating": "animation.chillager.casting3",
+				"controller_general": "controller.animation.coldager.general",
+				"controller_move": "controller.animation.villager.move"
+			},
+			"particle_effects": {
+				"spell": "minecraft:knockback_roar_particle"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "assailant_spawn_egg"
+			}
+		}
+	}
+}

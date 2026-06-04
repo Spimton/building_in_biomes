@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:chillgolem",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/chillgolem"
+			},
+			"geometry": {
+				"default": "geometry.chillgolem"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move",
+					"vindicator_attack"
+				]
+			},
+			"animations": {
+				"general": "animation.chillgolem.general",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.chillgolem.move",
+				"vindicator_attack": "animation.chillgolem.attacc",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "chillgolem_spawn_egg"
+			}
+		}
+	}
+}

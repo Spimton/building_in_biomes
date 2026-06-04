@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:snowy_highrock_bricks_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:snowy_highrock_bricks"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"result": {
+			"item": "spimton:snowy_highrock_bricks_stairs",
+			"count": 4
+		}
+	}
+}

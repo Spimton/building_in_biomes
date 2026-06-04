@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_wool"
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "wool"
+			},
+			"@": {
+				"item": "spimton:bismuth_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_wool",
+			"count": 8
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

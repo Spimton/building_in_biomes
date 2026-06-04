@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:netherrack_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:netherrack_bricks"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": {
+			"item": "spimton:netherrack_tiles",
+			"count": 4
+		}
+	}
+}

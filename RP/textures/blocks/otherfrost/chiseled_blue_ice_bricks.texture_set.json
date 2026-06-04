@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chiseled_blue_ice_bricks",
+		"metalness_emissive_roughness": "chiseled_blue_ice_bricks_mer",
+		"heightmap": "chiseled_blue_ice_bricks_height"
+	}
+}

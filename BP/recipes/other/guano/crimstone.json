@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:crimstone"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"key": {
+			"@": {
+				"item": "spimton:crimsite"
+			},
+			"#": {
+				"item": "packed_mud"
+			}
+		},
+		"result": {
+			"item": "spimton:crimstone",
+			"count": 4
+		}
+	}
+}

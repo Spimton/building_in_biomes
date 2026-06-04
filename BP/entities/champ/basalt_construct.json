@@ -1,0 +1,221 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:basalt_construct",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spimton:roar": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.67,
+					"duration": 1,
+					"knockback_damage": 15,
+					"cooldown_time": 1,
+					"priority": 1,
+					"knockback_horizontal_strength": 2,
+					"knockback_vertical_strength": 1,
+					"knockback_range": 2.5,
+					"damage_filters": [
+						{
+							"test": "is_target",
+							"subject": "other",
+							"value": true
+						}
+					],
+					"knockback_filters": [
+						{
+							"test": "is_target",
+							"subject": "other",
+							"value": true
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?12+(query.equipment_count*math.random(1,3)):0"
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"breathes_water": true
+			},
+			"minecraft:equip_item": {},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 2.5
+			},
+			"minecraft:nameable": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true,
+				"avoid_portals": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": {},
+			"minecraft:type_family": {
+				"family": [
+					"juandice",
+					"piglin",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/basalt_construct.json"
+			},
+			"minecraft:health": {
+				"value": 50,
+				"max": 50
+			},
+			"minecraft:movement": {
+				"value": 0.13
+			},
+			"minecraft:knockback_resistance": {
+				"max": 1,
+				"value": 0.9
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"within_radius": 12,
+				"must_see_forget_duration": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "juandice",
+									"operator": "!="
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "piglin",
+									"operator": "!="
+								}
+							]
+						},
+						"max_dist": 12
+					}
+				]
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.mount_pathing": {
+				"priority": 2,
+				"speed_multiplier": 1.25,
+				"target_dist": 0,
+				"track_target": true
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 7,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:follow_range": {
+				"max": 32,
+				"value": 20
+			},
+			"minecraft:attack": {
+				"damage": 0
+			},
+			"minecraft:reflect_projectiles": {
+				"reflected_projectiles": [
+					"xp_bottle",
+					"thrown_trident",
+					"shulker_bullet",
+					"dragon_fireball",
+					"arrow",
+					"snowball",
+					"egg",
+					"fireball",
+					"splash_potion",
+					"ender_pearl",
+					"wither_skull",
+					"wither_skull_dangerous",
+					"small_fireball",
+					"lingering_potion",
+					"llama_spit",
+					"fireworks_rocket",
+					"fishing_hook"
+				],
+				"azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+				"reflection_scale": "0.1"
+			},
+			"minecraft:behavior.melee_attack": {
+				"cooldown_time": 2,
+				"priority": 3,
+				"reach_multiplier": 0,
+				"speed_multiplier": 2
+			},
+			"minecraft:target_nearby_sensor": {
+				"inside_range": 2.5,
+				"outside_range": 4,
+				"must_see": true,
+				"on_inside_range": {
+					"event": "spimton:roar",
+					"target": "self"
+				},
+				"on_outside_range": {
+					"event": "spimton:stop_roar",
+					"target": "self"
+				},
+				"on_vision_lost_inside_range": {
+					"event": "spimton:roar",
+					"target": "self"
+				}
+			},
+			"minecraft:on_target_escape": {
+				"event": "spimton:stop_roar",
+				"target": "self"
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"spimton:roar": {
+				"add": {
+					"component_groups": [
+						"spimton:roar"
+					]
+				}
+			},
+			"spimton:stop_roar": {
+				"remove": {
+					"component_groups": [
+						"spimton:roar"
+					]
+				}
+			}
+		}
+	}
+}

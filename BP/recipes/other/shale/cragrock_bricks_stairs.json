@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:cragrock_bricks_stairs"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "pattern": [
+            "#  ",
+            "## ",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:cragrock_bricks"
+            }
+        },
+        "result": {
+            "item": "spimton:cragrock_bricks_stairs",
+            "count": 4
+        }
+    }
+}

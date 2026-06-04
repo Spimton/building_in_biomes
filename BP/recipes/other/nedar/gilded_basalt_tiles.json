@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:gilded_basalt_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:polished_basalt_tiles"
+			},
+			"@": {
+				"item": "gold_ingot"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"result": {
+			"item": "spimton:gilded_basalt_tiles",
+			"count": 4
+		}
+	}
+}

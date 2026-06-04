@@ -1,0 +1,20 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:lead_bolt_ht",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 64,
+            "minecraft:hand_equipped": false,
+            "minecraft:icon": "lead_bolt_ht",
+            "minecraft:projectile": {
+                "minimum_critical_power": 0,
+                "projectile_entity": "spimton:lead_bolt_ht"
+            }
+        }
+    }
+}

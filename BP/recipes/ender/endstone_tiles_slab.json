@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:endstone_tiles_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:endstone_tiles"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:endstone_tiles_slab",
+			"count": 6
+		}
+	}
+}

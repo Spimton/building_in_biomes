@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:treasure_pottery_sherd",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.potterySherds"
+			}
+		},
+		"components": {
+			"minecraft:icon": "treasure_pottery_sherd",
+			"minecraft:display_name": {
+				"value": "item.spimton:treasure_pottery_sherd"
+			},
+			"minecraft:max_stack_size": 64,
+			"minecraft:rarity": "uncommon",
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:decorated_pot_sherds"
+				]
+			}
+		}
+	}
+}

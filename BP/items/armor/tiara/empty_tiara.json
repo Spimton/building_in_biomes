@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:empty_tiara",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "empty_tiara",
+			"minecraft:wearable": {
+				"slot": "slot.armor.head"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:rarity": "common",
+			"minecraft:durability": {
+				"max_durability": 70
+			},
+			"minecraft:tags": {
+				"tags": [
+					"novelty:is_hat"
+				]
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:electrum_ingot"
+						],
+						"repair_amount": "query.max_durability*0.15"
+					},
+					{
+						"items": [
+							"spimton:empty_tiara"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 10
+			}
+		}
+	}
+}

@@ -1,0 +1,201 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:ratt",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:explode": {
+                "minecraft:explode": {
+                    "breaks_blocks": true,
+                    "power": 3,
+                    "fuse_length": 2,
+                    "causes_fire": true,
+                    "destroy_affected_by_griefing": true,
+                    "fuse_lit": true
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                }
+            },
+            "minecraft:default_targeting": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "must_see_forget_duration": 40,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "none_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "inanimate"
+                                    },
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "ratto",
+                                    }
+                                ]
+                            },
+                            "max_dist": 24
+                        }
+                    ]
+                }
+            },
+            "spimton:range": {}
+        },
+        "components": {
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player?(query.is_baby?1225:5)+(math.die_roll(query.equipment_count,1,3)):0"
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:nameable": {},
+            "minecraft:type_family": {
+                "family": [
+                    "monster",
+                    "mob",
+                    "ratto"
+                ]
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0
+            },
+            "minecraft:collision_box": {
+                "width": 0.6,
+                "height": 1.4
+            },
+            "minecraft:health": {
+                "value": 25,
+                "max": 30
+            },
+            "minecraft:behavior.ranged_attack": {
+                "attack_radius": 24,
+                "burst_shots": 3,
+                "priority": 2,
+                "swing": false,
+                "target_in_sight_time": 0.1,
+                "burst_interval": 2,
+                "attack_interval": 1,
+                "ranged_fov": 1
+            },
+            "minecraft:shooter": {
+                "def": "spimton:ratto_darto"
+            },
+            "minecraft:navigation.walk": {
+                "can_path_from_air": false
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 10,
+                "time_down_event": {
+                    "event": "minecraft:entity_spawned",
+                    "target": "self"
+                }
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:movement.basic": {
+                "max_turn": 45
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "attack",
+                        "on_damage": {
+                            "target": "self",
+                            "event": "spimton:boom"
+                        }
+                    },
+                    {
+                        "cause": "projectile",
+                        "on_damage": {
+                            "target": "self",
+                            "event": "spimton:boom"
+                        }
+                    }
+                ]
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:follow_range": {
+                "value": 32
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 10,
+                "look_distance": 8,
+                "probability": 0.02
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "randomize": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "minecraft:default_targeting"
+                            ]
+                        },
+                        "queue_command": {
+                            "target": "self",
+                            "command": [
+                                "spreadplayers ~ ~ 5 15 @s ~5"
+                            ]
+                        },
+                        "weight": 4
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "spimton:explode"
+                            ]
+                        },
+                        "weight": 1
+                    }
+                ]
+            },
+            "spimton:boom": {
+                "add": {
+                    "component_groups": [
+                        "spimton:explode"
+                    ]
+                }
+            }
+        }
+    }
+}

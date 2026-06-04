@@ -1,0 +1,1 @@
+tellraw @a[r=30] {"rawtext": [{"translate": "§f<§cThe Weeper, Michael Bay Connoisseur§r> You dare use my own spells against me, %%1?", "with":{"rawtext": [{"selector":"@p"}]}}]}

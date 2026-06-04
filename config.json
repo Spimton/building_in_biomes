@@ -1,0 +1,50 @@
+{
+	"type": "minecraftBedrock",
+	"name": "Building in Biomes",
+	"namespace": "spimton",
+	"authors": [
+		"spimton"
+	],
+	"targetVersion": "1.26.10",
+	"description": "not biomes",
+	"experimentalGameplay": {
+		"creationOfCustomBiomes": true,
+		"upcomingCreatorFeatures": true,
+		"enableGameTestFramework": true,
+		"focusTargetCamera": false,
+		"aimAssist": false,
+		"educationEdition": false,
+		"customComponentsV2": true
+	},
+	"bdsProject": false,
+	"packs": {
+		"resourcePack": "./RP",
+		"behaviorPack": "./BP"
+	},
+	"worlds": [
+		"./worlds/*"
+	],
+	"compiler": {
+		"plugins": [
+			"generatorScripts",
+			"typeScript",
+			"entityIdentifierAlias",
+			"customEntityComponents",
+			"customItemComponents",
+			"customBlockComponents",
+			"customCommands",
+			"moLang",
+			"formatVersionCorrection",
+			[
+				"simpleRewrite",
+				{
+					"packName": "biomes"
+				}
+			]
+		]
+	},
+	"bridge": {
+		"darkTheme": "bridge.default.dark",
+		"lightTheme": "bridge.old_default.light_theme"
+	}
+}

@@ -1,0 +1,171 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:lead_bulb",
+			"menu_category": {
+				"category": "construction"
+			},
+			"states": {
+				"spimton:power": {
+					"values": {
+						"min": 0,
+						"max": 15
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:map_color": "#1E1340",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:iron": {},
+			"tag:metal": {},
+			"minecraft:custom_components": [
+				"spimton:leadbulb"
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "lead_bulb_on_nermal",
+					"render_method": "opaque",
+					"ambient_occlusion": true,
+					"face_dimming": true
+				}
+			},
+			"minecraft:loot": "loot_tables/blocks/lead_bulb_off.json",
+			"minecraft:geometry": "minecraft:geometry.full_block"
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('spimton:power') == 0",
+				"components": {
+					"minecraft:light_emission": 15
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 1",
+				"components": {
+					"minecraft:light_emission": 14
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 2",
+				"components": {
+					"minecraft:light_emission": 13
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 3",
+				"components": {
+					"minecraft:light_emission": 12
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 4",
+				"components": {
+					"minecraft:light_emission": 11
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 5",
+				"components": {
+					"minecraft:light_emission": 10
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 6",
+				"components": {
+					"minecraft:light_emission": 9
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 7",
+				"components": {
+					"minecraft:light_emission": 8
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 8",
+				"components": {
+					"minecraft:light_emission": 7
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 9",
+				"components": {
+					"minecraft:light_emission": 6
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 10",
+				"components": {
+					"minecraft:light_emission": 5
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 11",
+				"components": {
+					"minecraft:light_emission": 4
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 12",
+				"components": {
+					"minecraft:light_emission": 3
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 13",
+				"components": {
+					"minecraft:light_emission": 2
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') == 14",
+				"components": {
+					"minecraft:light_emission": 1
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') >= 15",
+				"components": {
+					"minecraft:light_emission": 0
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:power') >= 15",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "lead_bulb_off_nermal",
+							"render_method": "opaque",
+							"ambient_occlusion": false,
+							"face_dimming": false
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:power') < 15",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "lead_bulb_on_nermal",
+							"render_method": "opaque",
+							"ambient_occlusion": false,
+							"face_dimming": false
+						}
+					},
+					"minecraft:geometry": "minecraft:geometry.full_block"
+				}
+			}
+		]
+	}
+}

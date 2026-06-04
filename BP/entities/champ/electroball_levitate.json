@@ -1,0 +1,128 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:electroball_levitate",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spimton:kill": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 3,
+					"causes_fire": false,
+					"breaks_blocks": true,
+					"destroy_affected_by_griefing": true,
+					"fire_affected_by_griefing": true
+				}
+			},
+			"spimton:boomer": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "spimton:bolt"
+							}
+						},
+						"impact_damage": {
+							"damage": [
+								10,
+								9
+							],
+							"knockback": false,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": true
+						}
+					},
+					"power": 2,
+					"gravity": 0.8,
+					"inertia": 1,
+					"liquid_inertia": 1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 1,
+					"anchor": 1,
+					"offset": [
+						0,
+						-0.5,
+						0
+					],
+					"reflect_on_hurt": true,
+					"catch_fire": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": false,
+				"time": 1,
+				"time_down_event": {
+					"event": "spimton:boomer",
+					"target": "self"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				},
+				"despawn_from_simulation_edge": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"spimton:bolt": {
+				"queue_command": {
+					"command": "summon lightning_bolt",
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"spimton:kill"
+					]
+				}
+			},
+			"spimton:boomer": {
+				"add": {
+					"component_groups": [
+						"spimton:boomer"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"effect @s levitation 2 15 true"
+					]
+				}
+			}
+		}
+	}
+}

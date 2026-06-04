@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "tags": [
+            "crafting_table"
+        ],
+        "description": {
+            "identifier": "spimton:dragon_fireball_upgrade"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@#@",
+            "#i#",
+            "@#@"
+        ],
+        "key": {
+            "#": {
+                "item": "dragon_breath"
+            },
+            "@": {
+                "item": "dragon_breath"
+            },
+            "i": {
+                "item": "spimton:fireball_upgrade"
+            }
+        },
+        "result": {
+            "item": "spimton:dragon_fireball_upgrade"
+        }
+    }
+}

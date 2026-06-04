@@ -1,0 +1,1 @@
+tellraw @a[r=32] {"rawtext": [{"text": "§r<§9Champion of Justice, Michael Bay Devotee§r> Succumb to the power of... idk anymore just roll the attack"}]}

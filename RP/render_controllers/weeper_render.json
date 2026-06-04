@@ -1,0 +1,75 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.weeper": {
+            "is_hurt_color": {
+                "r": 0.88,
+                "g": 0.11,
+                "b": 0.0,
+                "a": 0.25
+            },
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.default",
+                        "Texture.transient",
+                        "Texture.death"
+                    ]
+                }
+            },
+            "geometry": "geometry.default",
+            "part_visibility": [
+                {
+                    "*": "query.mark_variant == 0 || query.mark_variant == 1 || query.mark_variant == 2"
+                }
+            ],
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.skins[query.mark_variant]"
+            ]
+        },
+        "controller.render.nopara": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "is_hurt_color": {
+                "r": 0.88,
+                "g": 0.11,
+                "b": 0.0,
+                "a": 0.25
+            },
+            "part_visibility": [
+                {
+                    "*": true
+                }
+            ]
+        },
+        "controller.render.parachute": {
+            "geometry": "Geometry.parachute",
+            "materials": [
+                {
+                    "*": "Material.parachute"
+                }
+            ],
+            "part_visibility": [
+                {
+                    "*": "query.is_sheared"
+                }
+            ],
+            "textures": [
+                "Texture.parachute"
+            ],
+            "ignore_lighting": true
+        }
+    }
+}

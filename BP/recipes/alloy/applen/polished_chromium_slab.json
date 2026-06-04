@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_chromium_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:polished_chromium"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:polished_chromium_slab",
+			"count": 6
+		}
+	}
+}

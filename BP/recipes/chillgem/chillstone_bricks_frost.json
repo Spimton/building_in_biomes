@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chillstone_bricks_frost"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:defrosted_chillstone_bricks"
+			},
+			"y": {
+				"item": "spimton:chillgem_shard"
+			}
+		},
+		"pattern": [
+			"xxx",
+			"xyx",
+			"xxx"
+		],
+		"result": {
+			"item": "spimton:chillstone_bricks",
+			"count": 8
+		}
+	}
+}

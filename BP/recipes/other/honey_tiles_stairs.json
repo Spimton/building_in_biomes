@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:honey_tiles_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:honey_tiles"
+			}
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"result": {
+			"item": "spimton:honey_tiles_stairs",
+			"count": 4
+		}
+	}
+}

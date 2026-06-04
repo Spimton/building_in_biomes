@@ -1,0 +1,32 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:obsidian_spear",
+					"weight": 100
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:overgrown_tiara"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "spimton:overgrown_necklace"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:canned_beef"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:can"
+			},
+			{
+				"item": "beef"
+			}
+		],
+		"result": {
+			"item": "spimton:canned_beef"
+		}
+	}
+}

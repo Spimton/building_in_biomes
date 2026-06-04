@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:nether_reactor_core"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "iron_ingot"
+			},
+			"y": {
+				"item": "diamond"
+			}
+		},
+		"pattern": [
+			"xyx",
+			"xyx",
+			"xyx"
+		],
+		"result": {
+			"item": "netherreactor"
+		}
+	}
+}

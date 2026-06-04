@@ -1,0 +1,69 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:bronze_lamp",
+			"menu_category": {
+				"category": "construction"
+			},
+			"states": {
+				"spimton:lit": [
+					false,
+					true
+				]
+			}
+		},
+		"components": {
+			"minecraft:map_color": "#967444",
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 6
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7
+			},
+			"minecraft:redstone_consumer": {
+				"min_power": 0
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "bronze_lamp"
+				}
+			},
+			"spimton:bronze_lamp": {},
+			"minecraft:light_dampening": 15,
+			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('spimton:lit') == false",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bronze_lamp",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:geometry": "minecraft:geometry.full_block"
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:lit') == true",
+				"components": {
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "bronze_lamp_lit",
+							"render_method": "opaque"
+						}
+					},
+					"minecraft:geometry": "minecraft:geometry.full_block",
+					"minecraft:light_emission": 15
+				}
+			}
+		]
+	}
+}

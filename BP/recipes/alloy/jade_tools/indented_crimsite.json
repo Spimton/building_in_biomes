@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:indented_crimsite"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:crimsite_block"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:indented_crimsite",
+			"count": 8
+		}
+	}
+}

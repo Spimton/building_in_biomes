@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:compressed_slime"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:compressed_slime"
+			}
+		},
+		"pattern": [
+			"#"
+		],
+		"result": {
+			"item": "slime",
+			"count": 1
+		}
+	}
+}

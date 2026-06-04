@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:overgrown_archshaman",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/overgrown_archshaman"
+			},
+			"geometry": {
+				"default": "geometry.archshaman"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move"
+				]
+			},
+			"animations": {
+				"general": "animation.archshaman.idle",
+				"casting": "animation.archshaman.casting",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.archshaman.walk",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"shoot": "animation.archshaman.casting",
+				"roaring": "animation.archshaman.roaring"
+			},
+			"particle_effects": {
+				"spell": "minecraft:trial_spawner_detection",
+				"shoot": "minecraft:knockback_roar_particle"
+			},
+			"render_controllers": [
+				"controller.render.overgrown"
+			],
+			"spawn_egg": {
+				"texture": "archshaman_spawn_egg"
+			}
+		}
+	}
+}

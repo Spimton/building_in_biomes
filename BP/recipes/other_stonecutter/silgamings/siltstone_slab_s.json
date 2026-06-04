@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"stonecutter"
+		],
+		"description": {
+			"identifier": "spimton:siltatone_slab_s"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:siltstone"
+			}
+		],
+		"result": {
+			"item": "spimton:siltstone_slab",
+			"count": 2
+		}
+	}
+}

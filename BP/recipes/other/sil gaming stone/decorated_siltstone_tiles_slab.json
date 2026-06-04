@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_siltstone_tiles_slab"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:decorated_siltstone_tiles"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:decorated_siltstone_tiles_slab",
+			"count": 6
+		}
+	}
+}

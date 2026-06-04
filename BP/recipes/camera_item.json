@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:camera_item"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"z": {
+				"item": "copper_ingot"
+			},
+			"y": {
+				"item": "glass"
+			},
+			"x": {
+				"item": "gold_ingot"
+			}
+		},
+		"pattern": [
+			"zxz",
+			"xyx",
+			"zxz"
+		],
+		"result": {
+			"item": "camera"
+		}
+	}
+}

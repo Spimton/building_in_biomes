@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:jade_feature"
+		},
+		"count": 4,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:jade_ore",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "stone"
+					}
+				]
+			}
+		]
+	}
+}

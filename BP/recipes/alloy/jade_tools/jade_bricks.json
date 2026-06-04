@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:jade_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:jade_cladding"
+			}
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": [
+			{
+				"item": "spimton:jade_bricks",
+				"count": 1
+			}
+		]
+	}
+}

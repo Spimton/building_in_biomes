@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:end_moss"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "moss_block"
+			},
+			"@": {
+				"item": "chorus_fruit"
+			}
+		},
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"result": {
+			"item": "spimton:end_moss",
+			"count": 4
+		}
+	}
+}

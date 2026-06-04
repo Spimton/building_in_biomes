@@ -1,0 +1,28 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:ecto_block",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 420
+			},
+			"minecraft:map_color": "#1E1340",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 0,
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "blend",
+					"texture": "ecto_block"
+				}
+			}
+		}
+	}
+}

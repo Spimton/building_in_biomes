@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:empty_totem_ag"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:ancient_gold_ingot"
+			},
+			"y": {
+				"item": "spimton:ectoplasm"
+			}
+		},
+		"pattern": [
+			"xxx",
+			"yxy",
+			" x "
+		],
+		"result": {
+			"item": "spimton:empty_totem_ag",
+			"count": 1
+		}
+	}
+}

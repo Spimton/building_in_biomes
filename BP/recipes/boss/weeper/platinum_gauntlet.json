@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:platinum_gauntlet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"wxw",
+			"yzy",
+			"vvv"
+		],
+		"key": {
+			"v": {
+				"item": "tnt"
+			},
+			"y": {
+				"item": "spimton:siltstone"
+			},
+			"z": {
+				"item": "spimton:platinum_star"
+			},
+			"w": {
+				"item": "spimton:creeper_spores"
+			},
+			"x": {
+				"item": "redstone_block"
+			}
+		},
+		"result": {
+			"item": "spimton:platinum_gauntlet"
+		}
+	}
+}

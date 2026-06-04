@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:baleful_steel_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:baleful_steel_block"
+			}
+		},
+		"result": {
+			"item": "spimton:baleful_steel_stairs",
+			"count": 4
+		}
+	}
+}

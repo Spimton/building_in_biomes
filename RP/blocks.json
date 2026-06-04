@@ -1,0 +1,3325 @@
+{
+	"format_version": "1.21.40",
+	///CHILLSTONE///
+	"spimton:cobbled_chillstone": {
+		"textures": "cobbled_chillstone",
+		"sound": "stone"
+	},
+	"spimton:chillstone": {
+		"textures": "chillstone",
+		"sound": "stone"
+	},
+	"spimton:chillstone_bricks": {
+		"textures": "chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:polished_chillstone": {
+		"textures": "polished_chillstone",
+		"sound": "stone"
+	},
+	"spimton:defrosted_chillstone_bricks": {
+		"textures": "defrosted_chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:defrosted_cobbled_chillstone": {
+		"textures": "defrosted_cobbled_chillstone",
+		"sound": "stone"
+	},
+	"spimton:chillstone_diamond_ore": {
+		"textures": "chillstone_diamond_ore",
+		"sound": "stone"
+	},
+	"spimton:cobbled_chillstone_slab": {
+		"textures": "cobbled_chillstone_slab",
+		"sound": "stone"
+	},
+	"spimton:chillgem_block": {
+		"sound": "amethyst_block",
+		"textures": "chillgem_block"
+	},
+	"spimton:defrosted_cobbled_chillstone_slab": {
+		"textures": "defrosted_cobbled_chillstone_slab",
+		"sound": "stone"
+	},
+	"spimton:chillstone_bricks_slab": {
+		"textures": "chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:defrosted_chillstone_bricks_slab": {
+		"textures": "defrosted_chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:cobbled_chillstone_stairs": {
+		"textures": "cobbled_chillstone",
+		"sound": "stone"
+	},
+	"spimton:defrosted_cobbled_chillstone_stairs": {
+		"textures": "defrosted_cobbled_chillstone",
+		"sound": "stone"
+	},
+	"spimton:defrosted_chillstone_bricks_stairs": {
+		"textures": "defrosted_chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:chillstone_bricks_stairs": {
+		"textures": "chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:smooth_chillstone": {
+		"textures": "smooth_chillstone",
+		"sound": "stone"
+	},
+	"spimton:smooth_chillstone_bricks": {
+		"textures": "smooth_chillstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:chiseled_chillstone": {
+		"textures": "chiseled_chillstone",
+		"sound": "stone"
+	},
+	"spimton:chillstone_slab": {
+		"textures": "chillstone",
+		"sound": "stone"
+	},
+	///ENDER///
+	"spimton:obsidian_bricks": {
+		"sound": "stone",
+		"textures": "obsidian_bricks"
+	},
+	"spimton:obsidian_bricks_stairs": {
+		"sound": "stone",
+		"textures": "obsidian_bricks"
+	},
+	"spimton:obsidian_bricks_slab": {
+		"sound": "stone",
+		"textures": "obsidian_bricks"
+	},
+	"spimton:obsidian_tiles": {
+		"sound": "stone",
+		"textures": "obsidian_tiles"
+	},
+	"spimton:endstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"up": "endstone_pillar_top",
+			"down": "endstone_pillar_top",
+			"side": "endstone_pillar"
+		}
+	},
+	"spimton:void_lantern": {
+		"sound": "glass",
+		"textures": {
+			"up": "void_lantern_top",
+			"down": "void_lantern_top",
+			"side": "void_lantern"
+		}
+	},
+	"spimton:endstone_tiles": {
+		"sound": "stone",
+		"textures": "endstone_tiles"
+	},
+	"spimton:endstone_tiles_slab": {
+		"sound": "stone",
+		"textures": "endstone_tiles"
+	},
+	"spimton:endstone_tiles_stairs": {
+		"sound": "stone",
+		"textures": "endstone_tiles"
+	},
+	"spimton:cracked_endstone_tiles": {
+		"sound": "stone",
+		"textures": "cracked_endstone_tiles"
+	},
+	"spimton:decorated_endstone_tiles": {
+		"sound": "stone",
+		"textures": "decorated_endstone_tiles"
+	},
+	"spimton:decorated_endstone_tiles_slab": {
+		"sound": "stone",
+		"textures": "decorated_endstone_tiles"
+	},
+	"spimton:decorated_endstone_tiles_stairs": {
+		"sound": "stone",
+		"textures": "decorated_endstone_tiles"
+	},
+	"spimton:endstone_tiles_pillar": {
+		"sound": "stone",
+		"textures": {
+			"up": "endstone_tiles_pillar_top",
+			"down": "endstone_tiles_pillar_top",
+			"side": "endstone_tiles_pillar"
+		}
+	},
+	"spimton:chorus_endstone_tiles_pillar": {
+		"sound": "stone",
+		"textures": {
+			"up": "chorus_endstone_tiles_pillar_top",
+			"down": "chorus_endstone_tiles_pillar_top",
+			"side": "chorus_endstone_tiles_pillar"
+		}
+	},
+	"spimton:chiseled_endstone": {
+		"sound": "stone",
+		"textures": "chiseled_endstone"
+	},
+	"spimton:chorus_chiseled_endstone": {
+		"sound": "stone",
+		"textures": "chorus_chiseled_endstone"
+	},
+	"spimton:chiseled_endstone_bricks": {
+		"sound": "stone",
+		"textures": "chiseled_endstone_bricks"
+	},
+	"spimton:endstone_mosaic": {
+		"sound": "stone",
+		"textures": "endstone_mosaic"
+	},
+	"spimton:endstone_mosaic_slab": {
+		"sound": "stone",
+		"textures": "endstone_mosaic"
+	},
+	"spimton:endstone_mosaic_stairs": {
+		"sound": "stone",
+		"textures": "endstone_mosaic"
+	},
+	"spimton:endsoil": {
+		"sound": "grass",
+		"textures": "endsoil"
+	},
+	"spimton:grassy_endsoil": {
+		"sound": "grass",
+		"textures": {
+			"up": "grassy_endsoil_top",
+			"down": "endsoil",
+			"side": "grassy_endsoil_side"
+		}
+	},
+	"spimton:end_moss": {
+		"sound": "moss_block",
+		"textures": "grassy_endsoil_top"
+	},
+	"spimton:end_moss_carpet": {
+		"sound": "moss_block",
+		"textures": "grassy_endsoil_top"
+	},
+	"spimton:end_basalt": {
+		"sound": "basalt",
+		"textures": "end_basalt"
+	},
+	"spimton:end_basalt_slab": {
+		"sound": "basalt",
+		"textures": "end_basalt"
+	},
+	"spimton:end_basalt_stairs": {
+		"sound": "basalt",
+		"textures": "end_basalt"
+	},
+	"spimton:end_basalt_bricks": {
+		"sound": "basalt",
+		"textures": "end_basalt_bricks"
+	},
+	"spimton:end_basalt_bricks_slab": {
+		"sound": "basalt",
+		"textures": "end_basalt_bricks"
+	},
+	"spimton:end_basalt_bricks_stairs": {
+		"sound": "basalt",
+		"textures": "end_basalt_bricks"
+	},
+	"spimton:end_basalt_bricks_wall": {
+		"sound": "basalt",
+		"textures": "end_basalt_bricks"
+	},
+	"spimton:chiseled_end_basalt": {
+		"sound": "basalt",
+		"textures": "chiseled_end_basalt"
+	},
+	"spimton:void_liquid": {
+		"sound": "powder_snow",
+		"textures": "void_liquid"
+	},
+	"spimton:void_block": {
+		"sound": "honey_block",
+		"textures": "void_block"
+	},
+	"spimton:void_barrel": {
+		"sound": "glass"
+	},
+	"spimton:chorus_cobblestone": {
+		"textures": "chorus_cobblestone",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_slab": {
+		"textures": "chorus_cobblestone",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_stairs": {
+		"textures": "chorus_cobblestone",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_tiles": {
+		"textures": "chorus_cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_tiles_slab": {
+		"textures": "chorus_cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_tiles_stairs": {
+		"textures": "chorus_cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_mosaic": {
+		"textures": "chorus_cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_mosaic_slab": {
+		"textures": "chorus_cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:chorus_cobblestone_mosaic_stairs": {
+		"textures": "chorus_cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:chorus_stone_bricks": {
+		"textures": "chorus_stone_bricks",
+		"sound": "stone"
+	},
+	"spimton:chorus_stone_bricks_slab": {
+		"textures": "chorus_stone_bricks",
+		"sound": "stone"
+	},
+	"spimton:chorus_stone_bricks_stairs": {
+		"textures": "chorus_stone_bricks",
+		"sound": "stone"
+	},
+	"spimton:chorus_cragrock_bricks": {
+		"textures": "chorus_cragrock_bricks",
+		"sound": "stone"
+	},
+	"spimton:chorus_cragrock_bricks_slab": {
+		"textures": "chorus_cragrock_bricks",
+		"sound": "stone"
+	},
+	"spimton:chorus_cragrock_bricks_stairs": {
+		"textures": "chorus_cragrock_bricks",
+		"sound": "stone"
+	},
+	///STONE///
+	"spimton:chiseled_cobblestone_bricks": {
+		"textures": "chiseled_cobblestone_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:cobblestone_bricks_stairs": {
+		"textures": "cobblestone_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:cobblestone_bricks_slab": {
+		"textures": "cobblestone_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:cobblestone_bricks": {
+		"textures": "cobblestone_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:smooth_stone_bricks": {
+		"textures": "smooth_stone_bricks",
+		"sound": "stone"
+	},
+	"spimton:smooth_stone_bricks_slab": {
+		"textures": "smooth_stone_bricks",
+		"sound": "stone"
+	},
+	"spimton:smooth_stone_bricks_stairs": {
+		"textures": "smooth_stone_bricks",
+		"sound": "stone"
+	},
+	"spimton:deepslate_bricks": {
+		"sound": "deepslate_bricks",
+		"textures": "deepslate_tiles_spimton"
+	},
+	"spimton:stone_tiles": {
+		"sound": "stone",
+		"textures": "stone_tiles"
+	},
+	"spimton:stone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"side": "stone_pillar",
+			"up": "stone_pillar_top",
+			"down": "stone_pillar_top"
+		}
+	},
+	"spimton:granite_pillar": {
+		"sound": "stone",
+		"textures": {
+			"side": "granite_pillar",
+			"up": "granite_pillar_top",
+			"down": "granite_pillar_top"
+		}
+	},
+	"spimton:andesite_pillar": {
+		"sound": "stone",
+		"textures": {
+			"side": "andesite_pillar",
+			"up": "andesite_pillar_top",
+			"down": "andesite_pillar_top"
+		}
+	},
+	"spimton:indented_prismarine_pillar": {
+		"sound": "stone",
+		"textures": {
+			"side": "indented_prismarine_pillar",
+			"up": "indented_prismarine",
+			"down": "indented_prismarine"
+		}
+	},
+	"spimton:granite_bricks": {
+		"sound": "stone",
+		"textures": "granite_bricks"
+	},
+	"spimton:granite_bricks_slab": {
+		"sound": "stone",
+		"textures": "granite_bricks"
+	},
+	"spimton:granite_bricks_stairs": {
+		"sound": "stone",
+		"textures": "granite_bricks"
+	},
+	"spimton:mossy_granite_bricks": {
+		"sound": "stone",
+		"textures": "mossy_granite_bricks"
+	},
+	"spimton:mossy_granite_bricks_slab": {
+		"sound": "stone",
+		"textures": "mossy_granite_bricks"
+	},
+	"spimton:mossy_granite_bricks_stairs": {
+		"sound": "stone",
+		"textures": "mossy_granite_bricks"
+	},
+	"spimton:studded_polished_granite": {
+		"sound": "stone",
+		"textures": "studded_polished_granite"
+	},
+	"spimton:studded_polished_granite_2": {
+		"sound": "stone",
+		"textures": "studded_polished_granite_2"
+	},
+	"spimton:decorated_granite_bricks": {
+		"sound": "stone",
+		"textures": "decorated_granite_bricks"
+	},
+	"spimton:decorated_granite_bricks_slab": {
+		"sound": "stone",
+		"textures": "decorated_granite_bricks"
+	},
+	"spimton:decorated_granite_bricks_stairs": {
+		"sound": "stone",
+		"textures": "decorated_granite_bricks"
+	},
+	"spimton:andesite_bricks": {
+		"sound": "stone",
+		"textures": "andesite_bricks"
+	},
+	"spimton:andesite_bricks_slab": {
+		"sound": "stone",
+		"textures": "andesite_bricks"
+	},
+	"spimton:andesite_bricks_stairs": {
+		"sound": "stone",
+		"textures": "andesite_bricks"
+	},
+	"spimton:mossy_andesite_bricks": {
+		"sound": "stone",
+		"textures": "mossy_andesite_bricks"
+	},
+	"spimton:mossy_andesite_bricks_slab": {
+		"sound": "stone",
+		"textures": "mossy_andesite_bricks"
+	},
+	"spimton:mossy_andesite_bricks_stairs": {
+		"sound": "stone",
+		"textures": "mossy_andesite_bricks"
+	},
+	"spimton:studded_polished_andesite": {
+		"sound": "stone",
+		"textures": "studded_polished_andesite"
+	},
+	"spimton:studded_polished_andesite_2": {
+		"sound": "stone",
+		"textures": "studded_polished_andesite_2"
+	},
+	"spimton:indented_prismarine_bricks": {
+		"sound": "stone",
+		"textures": "indented_prismarine_bricks"
+	},
+	"spimton:indented_prismarine_bricks_slab": {
+		"sound": "stone",
+		"textures": "indented_prismarine_bricks"
+	},
+	"spimton:indented_prismarine_bricks_stairs": {
+		"sound": "stone",
+		"textures": "indented_prismarine_bricks"
+	},
+	"spimton:indented_prismarine": {
+		"sound": "stone",
+		"textures": "indented_prismarine"
+	},
+	"spimton:indented_prismarine_slab": {
+		"sound": "stone",
+		"textures": "indented_prismarine"
+	},
+	"spimton:indented_prismarine_stairs": {
+		"sound": "stone",
+		"textures": "indented_prismarine"
+	},
+	"spimton:sandstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"down": "sandstone_pillar_top",
+			"up": "sandstone_pillar_top",
+			"side": "sandstone_pillar"
+		}
+	},
+	"spimton:chiseled_sandstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"down": "chiseled_sandstone_pillar_top",
+			"up": "chiseled_sandstone_pillar_top",
+			"side": "chiseled_sandstone_pillar"
+		}
+	},
+	"spimton:red_sandstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"down": "red_sandstone_pillar_top",
+			"up": "red_sandstone_pillar_top",
+			"side": "red_sandstone_pillar"
+		}
+	},
+	"spimton:chiseled_red_sandstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"down": "chiseled_red_sandstone_pillar_top",
+			"up": "chiseled_red_sandstone_pillar_top",
+			"side": "chiseled_red_sandstone_pillar"
+		}
+	},
+	"spimton:sandstone_bricks": {
+		"sound": "stone",
+		"textures": "sandstone_bricks"
+	},
+	"spimton:red_sandstone_bricks": {
+		"sound": "stone",
+		"textures": "red_sandstone_bricks"
+	},
+	"spimton:blackstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"side": "blackstone_pillar",
+			"up": "blackstone_pillar_top",
+			"down": "blackstone_pillar_top"
+		}
+	},
+	"spimton:blackstone_tiles": {
+		"sound": "stone",
+		"textures": "blackstone_tiles"
+	},
+	"spimton:blackstone_tiles_slab": {
+		"sound": "stone",
+		"textures": "blackstone_tiles"
+	},
+	"spimton:blackstone_tiles_stairs": {
+		"sound": "stone",
+		"textures": "blackstone_tiles"
+	},
+	"spimton:chiseled_blackstone_tiles": {
+		"sound": "stone",
+		"textures": "chiseled_blackstone_tiles"
+	},
+	"spimton:studded_blackstone_tiles": {
+		"sound": "stone",
+		"textures": "studded_blackstone_tiles"
+	},
+	"spimton:decorated_blackstone_tiles": {
+		"sound": "stone",
+		"textures": "decorated_blackstone_tiles"
+	},
+	"spimton:decorated_blackstone_tiles_slab": {
+		"sound": "stone",
+		"textures": "decorated_blackstone_tiles"
+	},
+	"spimton:decorated_blackstone_tiles_stairs": {
+		"sound": "stone",
+		"textures": "decorated_blackstone_tiles"
+	},
+	"spimton:gilded_blackstone_tiles": {
+		"sound": "stone",
+		"textures": "gilded_blackstone_tiles"
+	},
+	"spimton:gilded_blackstone_tiles_slab": {
+		"sound": "stone",
+		"textures": "gilded_blackstone_tiles"
+	},
+	"spimton:gilded_blackstone_tiles_stairs": {
+		"sound": "stone",
+		"textures": "gilded_blackstone_tiles"
+	},
+	"spimton:hoary_sandstone": {
+		"textures": {
+			"up": "smooth_hoary_sandstone",
+			"side": "hoary_sandstone",
+			"down": "hoary_sandstone"
+		},
+		"sound": "stone"
+	},
+	"spimton:hoary_sandstone_slab": {
+		"textures": {
+			"up": "smooth_hoary_sandstone",
+			"side": "hoary_sandstone",
+			"down": "hoary_sandstone"
+		},
+		"sound": "stone"
+	},
+	"spimton:hoary_sandstone_stairs": {
+		"textures": {
+			"up": "smooth_hoary_sandstone",
+			"side": "hoary_sandstone",
+			"down": "hoary_sandstone"
+		},
+		"sound": "stone"
+	},
+	"spimton:cut_hoary_sandstone": {
+		"textures": {
+			"up": "smooth_hoary_sandstone",
+			"side": "cut_hoary_sandstone",
+			"down": "hoary_sandstone"
+		},
+		"sound": "stone"
+	},
+	"spimton:smooth_hoary_sandstone": {
+		"textures": "smooth_hoary_sandstone",
+		"sound": "stone"
+	},
+	"spimton:smooth_hoary_sandstone_slab": {
+		"textures": "smooth_hoary_sandstone",
+		"sound": "stone"
+	},
+	"spimton:smooth_hoary_sandstone_stairs": {
+		"textures": "smooth_hoary_sandstone",
+		"sound": "stone"
+	},
+	"spimton:chiseled_hoary_sandstone": {
+		"textures": {
+			"up": "smooth_hoary_sandstone",
+			"side": "chiseled_hoary_sandstone",
+			"down": "hoary_sandstone"
+		},
+		"sound": "stone"
+	},
+	"spimton:hoary_sandstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"down": "hoary_sandstone_pillar_top",
+			"up": "hoary_sandstone_pillar_top",
+			"side": "hoary_sandstone_pillar"
+		}
+	},
+	"spimton:chiseled_hoary_sandstone_pillar": {
+		"sound": "stone",
+		"textures": {
+			"down": "chiseled_hoary_sandstone_pillar_top",
+			"up": "chiseled_hoary_sandstone_pillar_top",
+			"side": "chiseled_hoary_sandstone_pillar"
+		}
+	},
+	"spimton:hoary_sandstone_bricks": {
+		"textures": "hoary_sandstone_bricks",
+		"sound": "stone"
+	},
+	"spimton:hoary_stone_bricks": {
+		"sound": "stone",
+		"textures": "hoary_stone_bricks"
+	},
+	"spimton:sandy_hoary_stone_bricks": {
+		"sound": "stone",
+		"textures": "sandy_hoary_stone_bricks"
+	},
+	"spimton:chiseled_hoary_stone_bricks": {
+		"sound": "stone",
+		"textures": "chiseled_hoary_stone_bricks"
+	},
+	"spimton:chiseled_sandy_hoary_stone_bricks": {
+		"sound": "stone",
+		"textures": "chiseled_sandy_hoary_stone_bricks"
+	},
+	"spimton:cracked_hoary_stone_bricks": {
+		"sound": "stone",
+		"textures": "cracked_hoary_stone_bricks"
+	},
+	"spimton:cracked_sandy_hoary_stone_bricks": {
+		"sound": "stone",
+		"textures": "cracked_sandy_hoary_stone_bricks"
+	},
+	"spimton:calcite_bricks": {
+		"sound": "calcite",
+		"textures": "calcite_bricks"
+	},
+	"spimton:calcite_bricks_slab": {
+		"sound": "calcite",
+		"textures": "calcite_bricks"
+	},
+	"spimton:calcite_bricks_stairs": {
+		"sound": "calcite",
+		"textures": "calcite_bricks"
+	},
+	"spimton:polished_calcite": {
+		"sound": "calcite",
+		"textures": "polished_calcite"
+	},
+	"spimton:polished_calcite_slab": {
+		"sound": "calcite",
+		"textures": "polished_calcite"
+	},
+	"spimton:polished_calcite_stairs": {
+		"sound": "calcite",
+		"textures": "polished_calcite"
+	},
+	"spimton:chiseled_calcite": {
+		"sound": "calcite",
+		"textures": "chiseled_calcite"
+	},
+	"spimton:cut_stone": {
+		"sound": "stone",
+		"textures": "cut_stone"
+	},
+	"spimton:cut_stone_slab": {
+		"sound": "stone",
+		"textures": "cut_stone"
+	},
+	"spimton:cut_stone_stairs": {
+		"sound": "stone",
+		"textures": "cut_stone"
+	},
+	"spimton:highrock": {
+		"textures": "highrock",
+		"sound": "basalt"
+	},
+	"spimton:highrock_slab": {
+		"textures": "highrock",
+		"sound": "basalt"
+	},
+	"spimton:highrock_stairs": {
+		"textures": "highrock",
+		"sound": "basalt"
+	},
+	"spimton:highrock_bricks": {
+		"textures": "highrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:highrock_bricks_slab": {
+		"textures": "highrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:highrock_bricks_stairs": {
+		"textures": "highrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:smooth_highrock": {
+		"textures": "smooth_highrock",
+		"sound": "basalt"
+	},
+	"spimton:smooth_highrock_slab": {
+		"textures": "smooth_highrock",
+		"sound": "basalt"
+	},
+	"spimton:smooth_highrock_stairs": {
+		"textures": "smooth_highrock",
+		"sound": "basalt"
+	},
+	"spimton:polished_highrock": {
+		"textures": "polished_highrock",
+		"sound": "basalt"
+	},
+	"spimton:polished_highrock_slab": {
+		"textures": "polished_highrock",
+		"sound": "basalt"
+	},
+	"spimton:polished_highrock_stairs": {
+		"textures": "polished_highrock",
+		"sound": "basalt"
+	},
+	"spimton:siltstone": {
+		"textures": "siltstone",
+		"sound": "deepslate"
+	},
+	"spimton:siltstone_slab": {
+		"textures": "siltstone",
+		"sound": "deepslate"
+	},
+	"spimton:siltstone_stairs": {
+		"textures": "siltstone",
+		"sound": "deepslate"
+	},
+	"spimton:siltstone_bricks": {
+		"sound": "deepslate",
+		"textures": "siltstone_bricks"
+	},
+	"spimton:siltstone_bricks_slab": {
+		"sound": "deepslate",
+		"textures": "siltstone_bricks"
+	},
+	"spimton:siltstone_bricks_stairs": {
+		"sound": "deepslate",
+		"textures": "siltstone_bricks"
+	},
+	"spimton:chiseled_siltstone": {
+		"sound": "deepslate",
+		"textures": "chiseled_siltstone"
+	},
+	"spimton:chiseled_siltstone_bricks": {
+		"sound": "deepslate",
+		"textures": "chiseled_siltstone_bricks"
+	},
+	"spimton:chiseled_siltstone_bricks_slab": {
+		"sound": "deepslate",
+		"textures": "chiseled_siltstone_bricks"
+	},
+	"spimton:chiseled_siltstone_bricks_stairs": {
+		"sound": "deepslate",
+		"textures": "chiseled_siltstone_bricks"
+	},
+	"spimton:marble": {
+		"sound": "calcite",
+		"textures": "marble"
+	},
+	"spimton:marble_slab": {
+		"sound": "calcite",
+		"textures": "marble"
+	},
+	"spimton:marble_stairs": {
+		"sound": "calcite",
+		"textures": "marble"
+	},
+	"spimton:polished_marble": {
+		"sound": "calcite",
+		"textures": "polished_marble"
+	},
+	"spimton:polished_marble_slab": {
+		"sound": "calcite",
+		"textures": "polished_marble"
+	},
+	"spimton:polished_marble_stairs": {
+		"sound": "calcite",
+		"textures": "polished_marble"
+	},
+	"spimton:smooth_marble": {
+		"sound": "calcite",
+		"textures": "smooth_marble"
+	},
+	"spimton:smooth_marble_slab": {
+		"sound": "calcite",
+		"textures": "smooth_marble"
+	},
+	"spimton:smooth_marble_stairs": {
+		"sound": "calcite",
+		"textures": "smooth_marble"
+	},
+	"spimton:chiseled_marble": {
+		"sound": "calcite",
+		"textures": "chiseled_marble"
+	},
+	"spimton:chiseled_smooth_marble": {
+		"sound": "calcite",
+		"textures": "chiseled_smooth_marble"
+	},
+	"spimton:marble_bricks": {
+		"sound": "calcite",
+		"textures": "marble_bricks"
+	},
+	"spimton:marble_bricks_slab": {
+		"sound": "calcite",
+		"textures": "marble_bricks"
+	},
+	"spimton:marble_bricks_stairs": {
+		"sound": "calcite",
+		"textures": "marble_bricks"
+	},
+	"spimton:slate_marble": {
+		"sound": "calcite",
+		"textures": "slate_marble"
+	},
+	"spimton:slate_marble_slab": {
+		"sound": "calcite",
+		"textures": "slate_marble"
+	},
+	"spimton:slate_marble_stairs": {
+		"sound": "calcite",
+		"textures": "slate_marble"
+	},
+	"spimton:polished_slate_marble": {
+		"sound": "calcite",
+		"textures": "polished_slate_marble"
+	},
+	"spimton:polished_slate_marble_slab": {
+		"sound": "calcite",
+		"textures": "polished_slate_marble"
+	},
+	"spimton:polished_slate_marble_stairs": {
+		"sound": "calcite",
+		"textures": "polished_slate_marble"
+	},
+	"spimton:smooth_slate_marble": {
+		"sound": "calcite",
+		"textures": "smooth_slate_marble"
+	},
+	"spimton:smooth_slate_marble_slab": {
+		"sound": "calcite",
+		"textures": "smooth_slate_marble"
+	},
+	"spimton:smooth_slate_marble_stairs": {
+		"sound": "calcite",
+		"textures": "smooth_slate_marble"
+	},
+	"spimton:chiseled_slate_marble": {
+		"sound": "calcite",
+		"textures": "chiseled_slate_marble"
+	},
+	"spimton:chiseled_smooth_slate_marble": {
+		"sound": "calcite",
+		"textures": "chiseled_smooth_slate_marble"
+	},
+	"spimton:slate_marble_bricks": {
+		"sound": "calcite",
+		"textures": "slate_marble_bricks"
+	},
+	"spimton:slate_marble_bricks_slab": {
+		"sound": "calcite",
+		"textures": "slate_marble_bricks"
+	},
+	"spimton:slate_marble_bricks_stairs": {
+		"sound": "calcite",
+		"textures": "slate_marble_bricks"
+	},
+	"spimton:cracked_marble": {
+		"textures": "cracked_marble",
+		"sound": "calcite"
+	},
+	"spimton:cobblestone_tiles": {
+		"textures": "cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:cobblestone_tiles_slab": {
+		"textures": "cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:cobblestone_tiles_stairs": {
+		"textures": "cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:cobblestone_mosaic": {
+		"textures": "cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:cobblestone_mosaic_slab": {
+		"textures": "cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:cobblestone_mosaic_stairs": {
+		"textures": "cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:gloom_tiles": {
+		"textures": "gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:gloom_tiles_slab": {
+		"textures": "gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:gloom_tiles_stairs": {
+		"textures": "gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:runed_gloom_tiles": {
+		"textures": "runed_gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:radioactive_gloom_tiles": {
+		"textures": "runed_gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:runed_gloom_tiles_p": {
+		"textures": "runed_gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:radioactive_gloom_tiles_p": {
+		"textures": "runed_gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:runed_gloom_tiles_cooldown": {
+		"textures": "runed_gloom_tiles_cooldown",
+		"sound": "bone_block"
+	},
+	"spimton:radioactive_gloom_tiles_cooldown": {
+		"textures": "radioactive_gloomy_tiles_cooldown",
+		"sound": "bone_block"
+	},
+	"spimton:mossy_cobblestone_tiles": {
+		"textures": "mossy_cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:mossy_cobblestone_tiles_slab": {
+		"textures": "mossy_cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:mossy_cobblestone_tiles_stairs": {
+		"textures": "mossy_cobblestone_tiles",
+		"sound": "stone"
+	},
+	"spimton:mossy_cobblestone_mosaic": {
+		"textures": "mossy_cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:mossy_cobblestone_mosaic_slab": {
+		"textures": "mossy_cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:mossy_cobblestone_mosaic_stairs": {
+		"textures": "mossy_cobblestone_mosaic",
+		"sound": "stone"
+	},
+	"spimton:chiseled_gloom_tiles": {
+		"textures": "chiseled_gloom_tiles",
+		"sound": "bone_block"
+	},
+	"spimton:shale": {
+		"textures": "shale",
+		"sound": "tuff"
+	},
+	"spimton:shale_slab": {
+		"textures": "shale",
+		"sound": "tuff"
+	},
+	"spimton:shale_stairs": {
+		"textures": "shale",
+		"sound": "tuff"
+	},
+	"spimton:polished_shale": {
+		"textures": "polished_shale",
+		"sound": "polished_tuff"
+	},
+	"spimton:polished_shale_slab": {
+		"textures": "polished_shale",
+		"sound": "polished_tuff"
+	},
+	"spimton:polished_shale_stairs": {
+		"textures": "polished_shale",
+		"sound": "polished_tuff"
+	},
+	"spimton:shale_bricks": {
+		"textures": "shale_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:shale_bricks_slab": {
+		"textures": "shale_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:shale_bricks_stairs": {
+		"textures": "shale_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:cut_shale": {
+		"textures": "cut_shale",
+		"sound": "polished_tuff"
+	},
+	"spimton:cut_shale_slab": {
+		"textures": "cut_shale",
+		"sound": "polished_tuff"
+	},
+	"spimton:cut_shale_stairs": {
+		"textures": "cut_shale",
+		"sound": "polished_tuff"
+	},
+	"spimton:chiseled_shale_bricks": {
+		"textures": "chiseled_shale_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:chiseled_shale_bricks_slab": {
+		"textures": "chiseled_shale_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:chiseled_shale_bricks_stairs": {
+		"textures": "chiseled_shale_bricks",
+		"sound": "tuff_bricks"
+	},
+	"spimton:galena": {
+		"sound": "iron",
+		"textures": "galena"
+	},
+	"spimton:galena_slab": {
+		"sound": "iron",
+		"textures": "galena"
+	},
+	"spimton:galena_stairs": {
+		"sound": "iron",
+		"textures": "galena"
+	},
+	"spimton:galena_bricks": {
+		"sound": "iron",
+		"textures": "galena_bricks"
+	},
+	"spimton:galena_bricks_slab": {
+		"sound": "iron",
+		"textures": "galena_bricks"
+	},
+	"spimton:galena_bricks_stairs": {
+		"sound": "iron",
+		"textures": "galena_bricks"
+	},
+	"spimton:polished_galena": {
+		"sound": "iron",
+		"textures": "polished_galena"
+	},
+	"spimton:polished_galena_slab": {
+		"sound": "iron",
+		"textures": "polished_galena"
+	},
+	"spimton:polished_galena_stairs": {
+		"sound": "iron",
+		"textures": "polished_galena"
+	},
+	"spimton:galena_pillar": {
+		"sound": "iron",
+		"textures": {
+			"side": "galena_pillar",
+			"up": "galena_pillar_top",
+			"down": "galena_pillar_top"
+		}
+	},
+	"spimton:galena_tiles": {
+		"sound": "iron",
+		"textures": {
+			"side": "galena_tiles",
+			"up": "galena_tiles_top",
+			"down": "galena_tiles_top"
+		}
+	},
+	"spimton:galena_tiles_slab": {
+		"sound": "iron",
+		"textures": {
+			"side": "galena_tiles",
+			"up": "galena_tiles_top",
+			"down": "galena_tiles_top"
+		}
+	},
+	"spimton:galena_tiles_stairs": {
+		"sound": "iron",
+		"textures": {
+			"side": "galena_tiles",
+			"up": "galena_tiles_top",
+			"down": "galena_tiles_top"
+		}
+	},
+	"spimton:chiseled_galena_tiles": {
+		"sound": "iron",
+		"textures": {
+			"side": "chiseled_galena_tiles",
+			"up": "galena_tiles_top",
+			"down": "galena_tiles_top"
+		}
+	},
+	"spimton:studded_galena_tiles": {
+		"sound": "iron",
+		"textures": "studded_galena_tiles"
+	},
+	"spimton:cragrock": {
+		"textures": "cragrock",
+		"sound": "basalt"
+	},
+	"spimton:polished_cragrock": {
+		"textures": "polished_cragrock",
+		"sound": "basalt"
+	},
+	"spimton:polished_cragrock_slab": {
+		"textures": "polished_cragrock",
+		"sound": "basalt"
+	},
+	"spimton:polished_cragrock_stairs": {
+		"textures": "polished_cragrock",
+		"sound": "basalt"
+	},
+	"spimton:cragrock_bricks": {
+		"textures": "cragrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:cragrock_bricks_slab": {
+		"textures": "cragrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:cragrock_bricks_stairs": {
+		"textures": "cragrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:cragrock_tiles": {
+		"textures": "cragrock_tiles",
+		"sound": "basalt"
+	},
+	"spimton:cragrock_tiles_slab": {
+		"textures": "cragrock_tiles",
+		"sound": "basalt"
+	},
+	"spimton:cragrock_tiles_stairs": {
+		"textures": "cragrock_tiles",
+		"sound": "basalt"
+	},
+	"spimton:studded_cragrock_tiles": {
+		"textures": "studded_cragrock_tiles",
+		"sound": "basalt"
+	},
+	"spimton:mossy_cragrock_bricks": {
+		"textures": "mossy_cragrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:mossy_cragrock_bricks_slab": {
+		"textures": "mossy_cragrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:mossy_cragrock_bricks_stairs": {
+		"textures": "mossy_cragrock_bricks",
+		"sound": "basalt"
+	},
+	"spimton:siltstone_tiles": {
+		"sound": "deepslate",
+		"textures": "siltstone_tiles"
+	},
+	"spimton:siltstone_tiles_slab": {
+		"sound": "deepslate",
+		"textures": "siltstone_tiles"
+	},
+	"spimton:siltstone_tiles_stairs": {
+		"sound": "deepslate",
+		"textures": "siltstone_tiles"
+	},
+	"spimton:decorated_siltstone_tiles": {
+		"sound": "deepslate",
+		"textures": "decorated_siltstone_tiles"
+	},
+	"spimton:decorated_siltstone_tiles_slab": {
+		"sound": "deepslate",
+		"textures": "decorated_siltstone_tiles"
+	},
+	"spimton:decorated_siltstone_tiles_stairs": {
+		"sound": "deepslate",
+		"textures": "decorated_siltstone_tiles"
+	},
+	"spimton:snowy_highrock_bricks": {
+		"sound": "basalt",
+		"textures": "snowy_highrock_bricks"
+	},
+	"spimton:snowy_highrock_bricks_slab": {
+		"sound": "basalt",
+		"textures": "snowy_highrock_bricks"
+	},
+	"spimton:snowy_highrock_bricks_stairs": {
+		"sound": "basalt",
+		"textures": "snowy_highrock_bricks"
+	},
+	"spimton:gold_chiseled_highrock_bricks": {
+		"sound": "basalt",
+		"textures": {
+			"up": "highrock_bricks",
+			"down": "highrock_bricks",
+			"side": "gold_chiseled_highrock_bricks"
+		}
+	},
+	"spimton:cracked_cragrock_bricks": {
+		"sound": "basalt",
+		"textures": "cracked_cragrock_bricks"
+	},
+	"spimton:temple_rock": {
+		"sound": "deepslate",
+		"textures": "temple_rock"
+	},
+	"spimton:cobbled_temple_rock": {
+		"sound": "deepslate",
+		"textures": "cobbled_temple_rock"
+	},
+	"spimton:cobbled_temple_rock_slab": {
+		"sound": "deepslate",
+		"textures": "cobbled_temple_rock"
+	},
+	"spimton:cobbled_temple_rock_stairs": {
+		"sound": "deepslate",
+		"textures": "cobbled_temple_rock"
+	},
+	"spimton:temple_tiles": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "temple_tiles_2",
+			"down": "temple_tiles_2",
+			"north": "temple_tiles",
+			"south": "temple_tiles",
+			"east": "temple_tiles_2",
+			"west": "temple_tiles_2"
+		}
+	},
+	"spimton:temple_tiles_slab": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "temple_tiles_2",
+			"down": "temple_tiles_2",
+			"north": "temple_tiles",
+			"south": "temple_tiles",
+			"east": "temple_tiles_2",
+			"west": "temple_tiles_2"
+		}
+	},
+	"spimton:temple_tiles_stairs": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "temple_tiles_2",
+			"down": "temple_tiles_2",
+			"north": "temple_tiles",
+			"south": "temple_tiles",
+			"east": "temple_tiles_2",
+			"west": "temple_tiles_2"
+		}
+	},
+	"spimton:decorated_temple_tiles": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "decorated_temple_tiles_2",
+			"down": "decorated_temple_tiles_2",
+			"north": "decorated_temple_tiles",
+			"south": "decorated_temple_tiles",
+			"east": "decorated_temple_tiles_2",
+			"west": "decorated_temple_tiles_2"
+		}
+	},
+	"spimton:decorated_temple_tiles_slab": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "decorated_temple_tiles_2",
+			"down": "decorated_temple_tiles_2",
+			"north": "decorated_temple_tiles",
+			"south": "decorated_temple_tiles",
+			"east": "decorated_temple_tiles_2",
+			"west": "decorated_temple_tiles_2"
+		}
+	},
+	"spimton:decorated_temple_tiles_stairs": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "decorated_temple_tiles_2",
+			"down": "decorated_temple_tiles_2",
+			"north": "decorated_temple_tiles",
+			"south": "decorated_temple_tiles",
+			"east": "decorated_temple_tiles_2",
+			"west": "decorated_temple_tiles_2"
+		}
+	},
+	"spimton:temple_altar": {
+		"sound": "metal",
+		"textures": "temple_altar"
+	},
+	"spimton:temple_pillar": {
+		"sound": "deepslate",
+		"textures": {
+			"side": "temple_pillar_side",
+			"up": "temple_pillar_top",
+			"down": "temple_pillar_top"
+		}
+	},
+	"spimton:crimsite_block": {
+		"textures": "crimsite_block",
+		"sound": "stone"
+	},
+	"spimton:crimsite_tiles": {
+		"textures": "crimsite_tiles",
+		"sound": "stone"
+	},
+	"spimton:crimsite_tiles_slab": {
+		"textures": "crimsite_tiles",
+		"sound": "stone"
+	},
+	"spimton:crimsite_tiles_stairs": {
+		"textures": "crimsite_tiles",
+		"sound": "stone"
+	},
+	"spimton:indented_crimsite": {
+		"textures": "indented_crimsite",
+		"sound": "stone"
+	},
+	"spimton:indented_crimsite_slab": {
+		"textures": "indented_crimsite",
+		"sound": "stone"
+	},
+	"spimton:indented_crimsite_stairs": {
+		"textures": "indented_crimsite",
+		"sound": "stone"
+	},
+	"spimton:carved_indented_crimsite": {
+		"textures": "carved_indented_crimsite",
+		"sound": "stone"
+	},
+	"spimton:carved_indented_crimsite_slab": {
+		"textures": "carved_indented_crimsite",
+		"sound": "stone"
+	},
+	"spimton:carved_indented_crimsite_stairs": {
+		"textures": "carved_indented_crimsite",
+		"sound": "stone"
+	},
+	"spimton:chiseled_indented_crimsite": {
+		"textures": {
+			"down": "indented_crimsite",
+			"up": "indented_crimsite",
+			"side": "chiseled_indented_crimsite"
+		},
+		"sound": "stone"
+	},
+	"spimton:crimsite_grates": {
+		"textures": "crimsite_grates",
+		"sound": "stone"
+	},
+	"spimton:crimsite_pillar": {
+		"textures": {
+			"side": "crimsite_pillar",
+			"down": "crimsite_pillar_top",
+			"up": "crimsite_pillar_top"
+		},
+		"sound": "stone"
+	},
+	"spimton:crimstone": {
+		"textures": "crimstone",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_slab": {
+		"textures": "crimstone",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_stairs": {
+		"textures": "crimstone",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_bricks": {
+		"textures": "crimstone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_bricks_slab": {
+		"textures": "crimstone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_bricks_stairs": {
+		"textures": "crimstone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_tiles": {
+		"textures": "crimstone_tiles",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_tiles_slab": {
+		"textures": "crimstone_tiles",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_tiles_stairs": {
+		"textures": "crimstone_tiles",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_mosaic": {
+		"textures": "crimstone_mosaic",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_mosaic_slab": {
+		"textures": "crimstone_mosaic",
+		"sound": "dripstone_block"
+	},
+	"spimton:crimstone_mosaic_stairs": {
+		"textures": "crimstone_mosaic",
+		"sound": "dripstone_block"
+	},
+	"spimton:smooth_crimstone": {
+		"textures": "smooth_crimstone",
+		"sound": "dripstone_block"
+	},
+	"spimton:smooth_crimstone_slab": {
+		"textures": "smooth_crimstone",
+		"sound": "dripstone_block"
+	},
+	"spimton:smooth_crimstone_stairs": {
+		"textures": "smooth_crimstone",
+		"sound": "dripstone_block"
+	},
+	"spimton:cancerous_hole": {
+		"sound": "deepslate",
+		"textures": "cancerous_hole"
+	},
+	"spimton:emberock": {
+		"sound": "deepslate",
+		"textures": "emberock"
+	},
+	"spimton:cobbled_emberock": {
+		"sound": "deepslate",
+		"textures": "cobbled_emberock"
+	},
+	"spimton:cobbled_emberock_slab": {
+		"sound": "deepslate",
+		"textures": "cobbled_emberock"
+	},
+	"spimton:cobbled_emberock_stairs": {
+		"sound": "deepslate",
+		"textures": "cobbled_emberock"
+	},
+	"spimton:emberock_tiles": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "emberock_tiles_2",
+			"down": "emberock_tiles_2",
+			"north": "emberock_tiles",
+			"south": "emberock_tiles",
+			"east": "emberock_tiles_2",
+			"west": "emberock_tiles_2"
+		}
+	},
+	"spimton:emberock_tiles_slab": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "emberock_tiles_2",
+			"down": "emberock_tiles_2",
+			"north": "emberock_tiles",
+			"south": "emberock_tiles",
+			"east": "emberock_tiles_2",
+			"west": "emberock_tiles_2"
+		}
+	},
+	"spimton:emberock_tiles_stairs": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "emberock_tiles_2",
+			"down": "emberock_tiles_2",
+			"north": "emberock_tiles",
+			"south": "emberock_tiles",
+			"east": "emberock_tiles_2",
+			"west": "emberock_tiles_2"
+		}
+	},
+	"spimton:decorated_emberock_tiles": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "decorated_emberock_tiles_2",
+			"down": "decorated_emberock_tiles_2",
+			"north": "decorated_emberock_tiles",
+			"south": "decorated_emberock_tiles",
+			"east": "decorated_emberock_tiles_2",
+			"west": "decorated_emberock_tiles_2"
+		}
+	},
+	"spimton:decorated_emberock_tiles_slab": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "decorated_emberock_tiles_2",
+			"down": "decorated_emberock_tiles_2",
+			"north": "decorated_emberock_tiles",
+			"south": "decorated_emberock_tiles",
+			"east": "decorated_emberock_tiles_2",
+			"west": "decorated_emberock_tiles_2"
+		}
+	},
+	"spimton:decorated_emberock_tiles_stairs": {
+		"sound": "deepslate",
+		"textures": {
+			"up": "decorated_emberock_tiles_2",
+			"down": "decorated_emberock_tiles_2",
+			"north": "decorated_emberock_tiles",
+			"south": "decorated_emberock_tiles",
+			"east": "decorated_emberock_tiles_2",
+			"west": "decorated_emberock_tiles_2"
+		}
+	},
+	"spimton:emberock_pillar": {
+		"sound": "deepslate",
+		"textures": {
+			"side": "emberock_pillar_side",
+			"up": "emberock_pillar_top",
+			"down": "emberock_pillar_top"
+		}
+	},
+	///CLAYWORKS///
+	"spimton:chiseled_bricks": {
+		"sound": "stone",
+		"textures": "chiseled_bricks"
+	},
+	"spimton:terracotta_bricks": {
+		"sound": "stone",
+		"textures": "terracotta_bricks"
+	},
+	"spimton:white_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "white_terracotta_bricks"
+	},
+	"spimton:yellow_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "yellow_terracotta_bricks"
+	},
+	"spimton:orange_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "orange_terracotta_bricks"
+	},
+	"spimton:red_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "red_terracotta_bricks"
+	},
+	"spimton:brown_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "brown_terracotta_bricks"
+	},
+	"spimton:black_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "black_terracotta_bricks"
+	},
+	"spimton:gray_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "gray_terracotta_bricks"
+	},
+	"spimton:light_gray_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "light_gray_terracotta_bricks"
+	},
+	"spimton:lime_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "lime_terracotta_bricks"
+	},
+	"spimton:light_blue_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "light_blue_terracotta_bricks"
+	},
+	"spimton:cyan_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "cyan_terracotta_bricks"
+	},
+	"spimton:green_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "green_terracotta_bricks"
+	},
+	"spimton:blue_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "blue_terracotta_bricks"
+	},
+	"spimton:purple_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "purple_terracotta_bricks"
+	},
+	"spimton:pink_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "pink_terracotta_bricks"
+	},
+	"spimton:magenta_terracotta_bricks": {
+		"sound": "stone",
+		"textures": "magenta_terracotta_bricks"
+	},
+	///ICE AND SNOW///
+	"spimton:ice_bricks": {
+		"textures": "ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:blue_ice_bricks": {
+		"textures": "blue_ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:ice_bricks_slab": {
+		"textures": "ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:ice_bricks_stairs": {
+		"textures": "ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:blue_ice_bricks_slab": {
+		"textures": "blue_ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:blue_ice_bricks_stairs": {
+		"textures": "blue_ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:chiseled_ice_bricks": {
+		"textures": "chiseled_ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:chiseled_blue_ice_bricks": {
+		"textures": "chiseled_blue_ice_bricks",
+		"sound": "glass"
+	},
+	"spimton:snow_bricks": {
+		"textures": "snow_bricks",
+		"sound": "snow"
+	},
+	"spimton:snow_bricks_slab": {
+		"textures": "snow_bricks",
+		"sound": "snow"
+	},
+	"spimton:snow_bricks_stairs": {
+		"textures": "snow_bricks",
+		"sound": "snow"
+	},
+	"spimton:chiseled_snow_bricks": {
+		"textures": "chiseled_snow_bricks",
+		"sound": "snow"
+	},
+	"spimton:ice_tiles": {
+		"textures": "ice_tiles",
+		"sound": "glass"
+	},
+	"spimton:blue_ice_tiles": {
+		"textures": "blue_ice_tiles",
+		"sound": "glass"
+	},
+	///SILVER///
+	"spimton:chillstone_silver": {
+		"sound": "stone",
+		"textures": "chillstone_silver_ore"
+	},
+	"spimton:silver_ore": {
+		"sound": "stone",
+		"textures": "silver_ore"
+	},
+	"spimton:raw_silver_block": {
+		"sound": "metal",
+		"textures": "raw_silver_block"
+	},
+	"spimton:silver_block": {
+		"sound": "metal",
+		"textures": "silver_block"
+	},
+	"spimton:silver_grates": {
+		"sound": "metal",
+		"textures": "silver_grates"
+	},
+	///CHILLWOOD///
+	"spimton:chillwood_log": {
+		"sound": "wood",
+		"textures": {
+			"up": "chillwood_top",
+			"down": "chillwood_top",
+			"side": "chillwood_wood"
+		}
+	},
+	"spimton:stripped_chillwood_log": {
+		"sound": "wood",
+		"textures": {
+			"up": "stripped_chillwood_top",
+			"down": "stripped_chillwood_top",
+			"side": "stripped_chillwood_wood"
+		}
+	},
+	"spimton:chillwood_planks": {
+		"sound": "wood",
+		"textures": "chillwood_planks"
+	},
+	"spimton:chillwood_planks_slab": {
+		"sound": "wood",
+		"textures": "chillwood_planks"
+	},
+	"spimton:chillwood_planks_stairs": {
+		"sound": "wood",
+		"textures": "chillwood_planks"
+	},
+	"spimton:chillwood_mosaic": {
+		"sound": "wood",
+		"textures": "chillwood_mosaic"
+	},
+	"spimton:chillwood_mosaic_slab": {
+		"sound": "wood",
+		"textures": "chillwood_mosaic"
+	},
+	"spimton:chillwood_mosaic_stairs": {
+		"sound": "wood",
+		"textures": "chillwood_mosaic"
+	},
+	"spimton:chillwood_wood": {
+		"sound": "wood",
+		"textures": "chillwood_wood"
+	},
+	"spimton:stripped_chillwood_wood": {
+		"sound": "wood",
+		"textures": "stripped_chillwood_wood"
+	},
+	"spimton:chillwood_fence": {
+		"sound": "wood"
+	},
+	"spimton:chillwood_trampoline": {
+		"sound": "wood"
+	},
+	"spimton:chillwood_trapdoor": {
+		"sound": "wood"
+	},
+	"spimton:chillwood_door": {
+		"sound": "wood"
+	},
+	///LIMESTONE///
+	"spimton:limestone": {
+		"sound": "dripstone_block",
+		"textures": "limestone"
+	},
+	"spimton:limestone_bricks": {
+		"textures": "limestone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:limestone_pillar": {
+		"sound": "dripstone_block",
+		"textures": {
+			"up": "limestone_pillar_top",
+			"down": "limestone_pillar_top",
+			"side": "limestone_pillar"
+		}
+	},
+	"spimton:limestone_slab": {
+		"sound": "dripstone_block",
+		"textures": "limestone"
+	},
+	"spimton:limestone_bricks_slab": {
+		"sound": "dripstone_block",
+		"textures": "limestone_bricks"
+	},
+	"spimton:limestone_stairs": {
+		"sound": "dripstone_block",
+		"textures": "limestone"
+	},
+	"spimton:limestone_bricks_stairs": {
+		"sound": "dripstone_block",
+		"textures": "limestone_bricks"
+	},
+	"spimton:polished_limestone": {
+		"textures": "polished_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:polished_limestone_slab": {
+		"textures": "polished_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:polished_limestone_stairs": {
+		"textures": "polished_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone": {
+		"textures": "red_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone_slab": {
+		"textures": "red_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone_stairs": {
+		"textures": "red_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:polished_red_limestone": {
+		"textures": "polished_red_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:polished_red_limestone_slab": {
+		"textures": "polished_red_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:polished_red_limestone_stairs": {
+		"textures": "polished_red_limestone",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone_bricks": {
+		"textures": "red_limestone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone_bricks_slab": {
+		"textures": "red_limestone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone_bricks_stairs": {
+		"textures": "red_limestone_bricks",
+		"sound": "dripstone_block"
+	},
+	"spimton:red_limestone_pillar": {
+		"textures": {
+			"side": "red_limestone_pillar",
+			"up": "red_limestone_pillar_top",
+			"down": "red_limestone_pillar_top"
+		},
+		"sound": "dripstone_block"
+	},
+	///extras///
+	"spimton:nether_reactor_core": {
+		"sound": "metal",
+		"textures": "nether_reactor_core"
+	},
+	"spimton:keg": {
+		"sound": "wood",
+		"textures": "keg"
+	},
+	"spimton:cellar": {
+		"sound": "wood",
+		"textures": "cellar"
+	},
+	"spimton:tainted_beacon": {
+		"sound": "glass"
+	},
+	"spimton:overgrown_altar": {
+		"sound": "dripstone_block",
+		"textures": "overgrown_altar"
+	},
+	"spimton:grapes": {
+		"sound": "firefly_bush"
+	},
+	"spimton:bluestone_ore": {
+		"sound": "stone",
+		"textures": "bluestone_ore"
+	},
+	"spimton:deepslate_bluestone_ore": {
+		"sound": "deepslate",
+		"textures": "deep_bluestone_ore"
+	},
+	"spimton:bluestone_block": {
+		"sound": "stone",
+		"textures": "bluestone_block"
+	},
+	"spimton:alloy_forge": {
+		"sound": "deepslate",
+		"textures": {
+			"side": "alloy_forge_side",
+			"up": "alloy_forge_top",
+			"down": "alloy_forge_bottom"
+		}
+	},
+	"spimton:hampter_block": {
+		"textures": {
+			"side": "hampter_block",
+			"down": "crate_bottom",
+			"up": "crate_bottom"
+		}
+	},
+	"spimton:lootbox_dungeon": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_mineshaft": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_blacksmith": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_stronghold": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_jungle_temple": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_pillager_outpost": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_desert_temple": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_vault": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_woodland_mansion": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_shipwreck": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_buried_treasure": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_ruined_portal": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_ancient_city": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:lootbox_ominous_vault": {
+		"textures": {
+			"side": "crate_side",
+			"down": "crate_bottom",
+			"up": "crate_top"
+		}
+	},
+	"spimton:grape_must_block": {
+		"sound": "slime"
+	},
+	///GUANO///
+	"spimton:guano_block": {
+		"sound": "resin",
+		"textures": "guano_block"
+	},
+	"spimton:packed_guano": {
+		"sound": "resin_brick",
+		"textures": "packed_guano"
+	},
+	"spimton:packed_guano_slab": {
+		"sound": "resin_brick",
+		"textures": "packed_guano"
+	},
+	"spimton:packed_guano_stairs": {
+		"sound": "resin_brick",
+		"textures": "packed_guano"
+	},
+	"spimton:guano_bricks": {
+		"sound": "resin_brick",
+		"textures": "guano_bricks"
+	},
+	"spimton:guano_bricks_slab": {
+		"sound": "resin_brick",
+		"textures": "guano_bricks"
+	},
+	"spimton:guano_bricks_stairs": {
+		"sound": "resin_brick",
+		"textures": "guano_bricks"
+	},
+	"spimton:guanostone": {
+		"sound": "mud",
+		"textures": "guanostone"
+	},
+	"spimton:guanostone_slab": {
+		"sound": "mud",
+		"textures": "guanostone"
+	},
+	"spimton:guanostone_stairs": {
+		"sound": "mud",
+		"textures": "guanostone"
+	},
+	"spimton:guanostone_bricks": {
+		"sound": "mud",
+		"textures": "guanostone_bricks"
+	},
+	"spimton:guanostone_bricks_slab": {
+		"sound": "mud",
+		"textures": "guanostone_bricks"
+	},
+	"spimton:guanostone_bricks_stairs": {
+		"sound": "mud",
+		"textures": "guanostone_bricks"
+	},
+	"spimton:guanostone_tiles": {
+		"sound": "mud",
+		"textures": "guanostone_tiles"
+	},
+	"spimton:guanostone_tiles_slab": {
+		"sound": "mud",
+		"textures": "guanostone_tiles"
+	},
+	"spimton:guanostone_tiles_stairs": {
+		"sound": "mud",
+		"textures": "guanostone_tiles"
+	},
+	///TIN///
+	"spimton:tin_ore": {
+		"sound": "stone",
+		"textures": "tin_ore"
+	},
+	"spimton:deepslate_tin_ore": {
+		"sound": "stone",
+		"textures": "deepslate_tin_ore"
+	},
+	"spimton:tin_block": {
+		"sound": "metal",
+		"textures": "tin_block"
+	},
+	"spimton:raw_tin_block": {
+		"sound": "metal",
+		"textures": "raw_tin_block"
+	},
+	"spimton:tin_grates": {
+		"sound": "metal",
+		"textures": "tin_grates"
+	},
+	///LEAD///
+	"spimton:lead_block": {
+		"sound": "iron",
+		"textures": "lead_block_nermal"
+	},
+	"spimton:lead_bricks": {
+		"sound": "iron",
+		"textures": "lead_bricks_nermal"
+	},
+	"spimton:lead_bricks_slab": {
+		"sound": "iron",
+		"textures": "lead_bricks_nermal"
+	},
+	"spimton:lead_bricks_stairs": {
+		"sound": "iron",
+		"textures": "lead_bricks_nermal"
+	},
+	"spimton:cut_lead": {
+		"sound": "iron",
+		"textures": "cut_lead_nermal"
+	},
+	"spimton:cut_lead_slab": {
+		"sound": "iron",
+		"textures": "cut_lead_nermal"
+	},
+	"spimton:cut_lead_stairs": {
+		"sound": "iron",
+		"textures": "cut_lead_nermal"
+	},
+	"spimton:lead_bulb": {
+		"sound": "iron"
+	},
+	"spimton:stabilized_lead_bulb": {
+		"sound": "iron",
+		"textures": "lead_bulb_on_nermal"
+	},
+	"spimton:raw_lead_block": {
+		"sound": "iron",
+		"textures": "raw_lead_block"
+	},
+	"spimton:lead_ore": {
+		"textures": "lead_ore",
+		"sound": "stone"
+	},
+	"spimton:deepslate_lead_ore": {
+		"textures": "deep_lead_ore",
+		"sound": "deepslate"
+	},
+	"spimton:lead_pillar": {
+		"sound": "iron",
+		"textures": {
+			"side": "lead_pillar_nermal",
+			"up": "lead_pillar_top_nermal",
+			"down": "lead_pillar_top_nermal"
+		}
+	},
+	"spimton:lead_grates": {
+		"sound": "iron",
+		"textures": "lead_grates_nermal"
+	},
+	"spimton:ht_lead_block": {
+		"sound": "iron",
+		"textures": "lead_block"
+	},
+	"spimton:ht_lead_bricks": {
+		"sound": "iron",
+		"textures": "lead_bricks"
+	},
+	"spimton:ht_lead_bricks_slab": {
+		"sound": "iron",
+		"textures": "lead_bricks"
+	},
+	"spimton:ht_lead_bricks_stairs": {
+		"sound": "iron",
+		"textures": "lead_bricks"
+	},
+	"spimton:ht_cut_lead": {
+		"sound": "iron",
+		"textures": "cut_lead"
+	},
+	"spimton:ht_cut_lead_slab": {
+		"sound": "iron",
+		"textures": "cut_lead"
+	},
+	"spimton:ht_cut_lead_stairs": {
+		"sound": "iron",
+		"textures": "cut_lead"
+	},
+	"spimton:ht_lead_bulb": {
+		"sound": "iron"
+	},
+	"spimton:ht_stabilized_lead_bulb": {
+		"sound": "iron",
+		"textures": "lead_bulb_on"
+	},
+	"spimton:ht_lead_pillar": {
+		"sound": "iron",
+		"textures": {
+			"side": "lead_pillar",
+			"up": "lead_pillar_top",
+			"down": "lead_pillar_top"
+		}
+	},
+	"spimton:ht_lead_grates": {
+		"sound": "iron",
+		"textures": "lead_grates"
+	},
+	"spimton:black_lead_glass": {
+		"sound": "glass",
+		"textures": "black_lead_glass"
+	},
+	"spimton:gray_lead_glass": {
+		"sound": "glass",
+		"textures": "gray_lead_glass"
+	},
+	"spimton:light_gray_lead_glass": {
+		"sound": "glass",
+		"textures": "light_gray_lead_glass"
+	},
+	"spimton:white_lead_glass": {
+		"sound": "glass",
+		"textures": "white_lead_glass"
+	},
+	"spimton:yellow_lead_glass": {
+		"sound": "glass",
+		"textures": "yellow_lead_glass"
+	},
+	"spimton:orange_lead_glass": {
+		"sound": "glass",
+		"textures": "orange_lead_glass"
+	},
+	"spimton:red_lead_glass": {
+		"sound": "glass",
+		"textures": "red_lead_glass"
+	},
+	"spimton:brown_lead_glass": {
+		"sound": "glass",
+		"textures": "brown_lead_glass"
+	},
+	"spimton:lime_lead_glass": {
+		"sound": "glass",
+		"textures": "lime_lead_glass"
+	},
+	"spimton:green_lead_glass": {
+		"sound": "glass",
+		"textures": "green_lead_glass"
+	},
+	"spimton:cyan_lead_glass": {
+		"sound": "glass",
+		"textures": "cyan_lead_glass"
+	},
+	"spimton:light_blue_lead_glass": {
+		"sound": "glass",
+		"textures": "light_blue_lead_glass"
+	},
+	"spimton:blue_lead_glass": {
+		"sound": "glass",
+		"textures": "blue_lead_glass"
+	},
+	"spimton:purple_lead_glass": {
+		"sound": "glass",
+		"textures": "purple_lead_glass"
+	},
+	"spimton:pink_lead_glass": {
+		"sound": "glass",
+		"textures": "pink_lead_glass"
+	},
+	"spimton:magenta_lead_glass": {
+		"sound": "glass",
+		"textures": "magenta_lead_glass"
+	},
+	"spimton:lead_trapdoor": {
+		"sound": "iron",
+		"textures": "lead_trapdoor_nermal"
+	},
+	"spimton:off_lead_bulb": {
+		"textures": "lead_bulb_off_nermal",
+		"sound": "iron"
+	},
+	"spimton:ht_lead_trapdoor": {
+		"sound": "iron",
+		"textures": "lead_trapdoor"
+	},
+	"spimton:ht_off_lead_bulb": {
+		"textures": "lead_bulb_off",
+		"sound": "iron"
+	},
+	///DECO BLOCKS///
+	"spimton:amethyst_block": {
+		"sound": "amethyst_block",
+		"textures": "amethyst_block_full"
+	},
+	"spimton:amethyst_slab": {
+		"sound": "amethyst_block",
+		"textures": "amethyst_block_full"
+	},
+	"spimton:amethyst_stairs": {
+		"sound": "amethyst_block",
+		"textures": "amethyst_block_full"
+	},
+	"spimton:cut_amethyst": {
+		"sound": "amethyst_block",
+		"textures": "cut_amethyst"
+	},
+	"spimton:cut_amethyst_slab": {
+		"sound": "amethyst_block",
+		"textures": "cut_amethyst"
+	},
+	"spimton:cut_amethyst_stairs": {
+		"sound": "amethyst_block",
+		"textures": "cut_amethyst"
+	},
+	"spimton:cut_amethyst_bricks": {
+		"sound": "amethyst_block",
+		"textures": "cut_amethyst_bricks"
+	},
+	"spimton:cut_amethyst_bricks_slab": {
+		"sound": "amethyst_block",
+		"textures": "cut_amethyst_bricks"
+	},
+	"spimton:cut_amethyst_bricks_stairs": {
+		"sound": "amethyst_block",
+		"textures": "cut_amethyst_bricks"
+	},
+	"spimton:lapis_bricks": {
+		"textures": "lapis_bricks",
+		"sound": "stone"
+	},
+	"spimton:lapis_bricks_slab": {
+		"textures": "lapis_bricks",
+		"sound": "stone"
+	},
+	"spimton:lapis_bricks_stairs": {
+		"textures": "lapis_bricks",
+		"sound": "stone"
+	},
+	"spimton:lapis_pillar": {
+		"textures": {
+			"up": "lapis_pillar_top",
+			"down": "lapis_pillar_top",
+			"side": "lapis_pillar_side"
+		},
+		"sound": "stone"
+	},
+	"spimton:lapis_lantern": {
+		"textures": {
+			"up": "lapis_lantern_top",
+			"down": "lapis_lantern_top",
+			"side": "lapis_lantern_side"
+		},
+		"sound": "stone"
+	},
+	"spimton:ecto_block": {
+		"textures": "ecto_block",
+		"sound": "snow"
+	},
+	"spimton:ecto_block_phase": {
+		"textures": "ecto_block",
+		"sound": "snow"
+	},
+	"spimton:ecto_block_plat": {
+		"textures": "ecto_block",
+		"sound": "snow"
+	},
+	"spimton:compressed_resin": {
+		"sound": "resin",
+		"textures": "compressed_resin"
+	},
+	"spimton:resin_tiles": {
+		"sound": "resin",
+		"textures": "resin_tiles"
+	},
+	"spimton:resin_tiles_slab": {
+		"sound": "resin",
+		"textures": "resin_tiles"
+	},
+	"spimton:resin_tiles_stairs": {
+		"sound": "resin",
+		"textures": "resin_tiles"
+	},
+	"spimton:compressed_honey": {
+		"sound": "honey_block",
+		"textures": "compressed_honey"
+	},
+	"spimton:honey_tiles": {
+		"sound": "honey_block",
+		"textures": "honey_tiles"
+	},
+	"spimton:honey_tiles_slab": {
+		"sound": "honey_block",
+		"textures": "honey_tiles"
+	},
+	"spimton:honey_tiles_stairs": {
+		"sound": "honey_block",
+		"textures": "honey_tiles"
+	},
+	"spimton:compressed_slime": {
+		"sound": "slime",
+		"textures": "compressed_slime"
+	},
+	"spimton:slime_tiles": {
+		"sound": "slime",
+		"textures": "slime_tiles"
+	},
+	"spimton:slime_tiles_slab": {
+		"sound": "slime",
+		"textures": "slime_tiles"
+	},
+	"spimton:slime_tiles_stairs": {
+		"sound": "slime",
+		"textures": "slime_tiles"
+	},
+	"spimton:ratt_jelly": {
+		"sound": "slime",
+		"textures": "ratt_jelly"
+	},
+	"spimton:compressed_grape_must": {
+		"sound": "slime",
+		"textures": "compressed_grape_must"
+	},
+	"spimton:grape_must_tiles": {
+		"sound": "slime",
+		"textures": "grape_must_tiles"
+	},
+	"spimton:grape_must_tiles_slab": {
+		"sound": "slime",
+		"textures": "grape_must_tiles"
+	},
+	"spimton:grape_must_tiles_stairs": {
+		"sound": "slime",
+		"textures": "grape_must_tiles"
+	},
+	"spimton:compressed_ectoplasm": {
+		"sound": "snow",
+		"textures": "compressed_ectoplasm"
+	},
+	"spimton:ectoplasm_tiles": {
+		"sound": "snow",
+		"textures": "ectoplasm_tiles"
+	},
+	"spimton:ectoplasm_tiles_slab": {
+		"sound": "snow",
+		"textures": "ectoplasm_tiles"
+	},
+	"spimton:ectoplasm_tiles_stairs": {
+		"sound": "snow",
+		"textures": "ectoplasm_tiles"
+	},
+	"spimton:shadowcrystal_block": {
+		"sound": "amethyst_block",
+		"textures": "shadowcrystal_block"
+	},
+	"spimton:shadowcrystal_block_slab": {
+		"sound": "amethyst_block",
+		"textures": "shadowcrystal_block"
+	},
+	"spimton:shadowcrystal_block_stairs": {
+		"sound": "amethyst_block",
+		"textures": "shadowcrystal_block"
+	},
+	"spimton:cut_shadowcrystal": {
+		"sound": "amethyst_block",
+		"textures": "cut_shadowcrystal"
+	},
+	"spimton:cut_shadowcrystal_slab": {
+		"sound": "amethyst_block",
+		"textures": "cut_shadowcrystal"
+	},
+	"spimton:cut_shadowcrystal_stairs": {
+		"sound": "amethyst_block",
+		"textures": "cut_shadowcrystal"
+	},
+	"spimton:cut_shadowcrystal_bricks": {
+		"sound": "amethyst_block",
+		"textures": "cut_shadowcrystal_bricks"
+	},
+	"spimton:cut_shadowcrystal_bricks_slab": {
+		"sound": "amethyst_block",
+		"textures": "cut_shadowcrystal_bricks"
+	},
+	"spimton:cut_shadowcrystal_bricks_stairs": {
+		"sound": "amethyst_block",
+		"textures": "cut_shadowcrystal_bricks"
+	},
+	"spimton:chillgem_block_full": {
+		"sound": "amethyst_block",
+		"textures": "chillgem_block_full"
+	},
+	"spimton:chillgem_slab": {
+		"sound": "amethyst_block",
+		"textures": "chillgem_block_full"
+	},
+	"spimton:chillgem_stairs": {
+		"sound": "amethyst_block",
+		"textures": "chillgem_block_full"
+	},
+	"spimton:cut_chillgem": {
+		"sound": "amethyst_block",
+		"textures": "cut_chillgem"
+	},
+	"spimton:cut_chillgem_slab": {
+		"sound": "amethyst_block",
+		"textures": "cut_chillgem"
+	},
+	"spimton:cut_chillgem_stairs": {
+		"sound": "amethyst_block",
+		"textures": "cut_chillgem"
+	},
+	"spimton:cut_chillgem_bricks": {
+		"sound": "amethyst_block",
+		"textures": "cut_chillgem_bricks"
+	},
+	"spimton:cut_chillgem_bricks_slab": {
+		"sound": "amethyst_block",
+		"textures": "cut_chillgem_bricks"
+	},
+	"spimton:cut_chillgem_bricks_stairs": {
+		"sound": "amethyst_block",
+		"textures": "cut_chillgem_bricks"
+	},
+	"spimton:shadow_block": {
+		"sound": "amethyst_block",
+		"textures": "shadow_block"
+	},
+	///ALLOYS///
+	"spimton:steel_block": {
+		"sound": "iron",
+		"textures": "steel_block"
+	},
+	"spimton:steel_bricks": {
+		"textures": "steel_bricks",
+		"sound": "iron"
+	},
+	"spimton:steel_bricks_slab": {
+		"textures": "steel_bricks",
+		"sound": "iron"
+	},
+	"spimton:steel_bricks_stairs": {
+		"textures": "steel_bricks",
+		"sound": "iron"
+	},
+	"spimton:polished_steel": {
+		"textures": "polished_steel",
+		"sound": "iron"
+	},
+	"spimton:polished_steel_wall": {
+		"textures": "polished_steel",
+		"sound": "iron"
+	},
+	"spimton:heavy_metal_block": {
+		"textures": "heavy_metal_block",
+		"sound": "heavy_core"
+	},
+	"spimton:heavy_metal_block_slab": {
+		"textures": "heavy_metal_block",
+		"sound": "heavy_core"
+	},
+	"spimton:heavy_metal_block_stairs": {
+		"textures": "heavy_metal_block",
+		"sound": "heavy_core"
+	},
+	"spimton:chiseled_heavy_metal_block": {
+		"textures": "chiseled_heavy_metal",
+		"sound": "heavy_core"
+	},
+	"spimton:cut_heavy_metal": {
+		"textures": {
+			"down": "cut_heavy_metal_top",
+			"up": "cut_heavy_metal_top",
+			"side": "cut_heavy_metal"
+		},
+		"sound": "heavy_core"
+	},
+	"spimton:heavy_metal_bars": {
+		"sound": "heavy_core"
+	},
+	"spimton:cut_heavy_metal_slab": {
+		"sound": "heavy_core"
+	},
+	"spimton:cut_heavy_metal_stairs": {
+		"sound": "heavy_core"
+	},
+	"spimton:baleful_steel_block": {
+		"textures": "baleful_steel_block",
+		"sound": "heavy_core"
+	},
+	"spimton:baleful_steel_block_slab": {
+		"textures": "baleful_steel_block",
+		"sound": "heavy_core"
+	},
+	"spimton:baleful_steel_block_stairs": {
+		"textures": "baleful_steel_block",
+		"sound": "heavy_core"
+	},
+	"spimton:chiseled_baleful_steel_block": {
+		"textures": "chiseled_baleful_steel",
+		"sound": "heavy_core"
+	},
+	"spimton:cut_baleful_steel": {
+		"textures": {
+			"down": "cut_baleful_steel_top",
+			"up": "cut_baleful_steel_top",
+			"side": "cut_baleful_steel"
+		},
+		"sound": "heavy_core"
+	},
+	"spimton:baleful_steel_bars": {
+		"sound": "heavy_core"
+	},
+	"spimton:cut_baleful_steel_slab": {
+		"sound": "heavy_core"
+	},
+	"spimton:cut_baleful_steel_stairs": {
+		"sound": "heavy_core"
+	},
+	"spimton:gold_bars": {
+		"sound": "metal"
+	},
+	"spimton:cooler_gold_bars": {
+		"sound": "metal"
+	},
+	"spimton:electrum_block": {
+		"sound": "metal",
+		"textures": "electrum_block"
+	},
+	"spimton:electrum_tiles": {
+		"sound": "metal",
+		"textures": "electrum_tiles"
+	},
+	"spimton:electrum_tiles_slab": {
+		"sound": "metal",
+		"textures": "electrum_tiles"
+	},
+	"spimton:electrum_tiles_stairs": {
+		"sound": "metal",
+		"textures": "electrum_tiles"
+	},
+	"spimton:applen_block": {
+		"sound": "metal",
+		"textures": "applen_block"
+	},
+	"spimton:applen_grates": {
+		"sound": "metal",
+		"textures": "applen_grates"
+	},
+	"spimton:chiseled_applen_block": {
+		"sound": "metal",
+		"textures": "chiseled_applen_block"
+	},
+	"spimton:cut_applen_block": {
+		"sound": "metal",
+		"textures": "cut_applen_block"
+	},
+	"spimton:cut_applen_stairs": {
+		"sound": "metal",
+		"textures": "cut_applen_block"
+	},
+	"spimton:cut_applen_slab": {
+		"sound": "metal",
+		"textures": "cut_applen_block"
+	},
+	"spimton:indented_electrum": {
+		"sound": "metal",
+		"textures": "indented_electrum"
+	},
+	"spimton:indented_electrum_slab": {
+		"sound": "metal",
+		"textures": "indented_electrum"
+	},
+	"spimton:indented_electrum_stairs": {
+		"sound": "metal",
+		"textures": "indented_electrum"
+	},
+	"spimton:electrum_grates": {
+		"textures": "electrum_grates",
+		"sound": "copper_grate"
+	},
+	"spimton:indented_gold": {
+		"sound": "metal",
+		"textures": "indented_gold"
+	},
+	"spimton:indented_gold_slab": {
+		"sound": "metal",
+		"textures": "indented_gold"
+	},
+	"spimton:indented_gold_stairs": {
+		"sound": "metal",
+		"textures": "indented_gold"
+	},
+	"spimton:indented_gold_grates": {
+		"sound": "copper_grate",
+		"textures": "gold_grates"
+	},
+	"spimton:carved_indented_gold": {
+		"textures": "carved_indented_gold",
+		"sound": "metal"
+	},
+	"spimton:carved_indented_gold_slab": {
+		"textures": "carved_indented_gold",
+		"sound": "metal"
+	},
+	"spimton:carved_indented_gold_stairs": {
+		"textures": "carved_indented_gold",
+		"sound": "metal"
+	},
+	"spimton:chiseled_indented_gold": {
+		"textures": {
+			"side": "chiseled_indented_gold",
+			"up": "indented_gold",
+			"down": "indented_gold"
+		},
+		"sound": "metal"
+	},
+	"spimton:gold_trapdoor": {
+		"sound": "metal",
+		"textures": "gold_trapdoor"
+	},
+	"spimton:ancient_gold_block": {
+		"sound": "metal",
+		"textures": "ancient_gold_block"
+	},
+	"spimton:ancient_gold_pillar": {
+		"sound": "metal",
+		"textures": {
+			"up": "ancient_gold_pillar_top",
+			"side": "ancient_gold_pillar_side",
+			"down": "ancient_gold_pillar_top"
+		}
+	},
+	"spimton:ancient_gold_tiles": {
+		"sound": "metal",
+		"textures": "ancient_gold_tiles"
+	},
+	"spimton:ancient_gold_tiles_slab": {
+		"sound": "metal",
+		"textures": "ancient_gold_tiles"
+	},
+	"spimton:ancient_gold_tiles_stairs": {
+		"sound": "metal",
+		"textures": "ancient_gold_tiles"
+	},
+	"spimton:polished_ancient_gold": {
+		"sound": "metal",
+		"textures": "polished_ancient_gold"
+	},
+	"spimton:polished_ancient_gold_slab": {
+		"sound": "metal",
+		"textures": "polished_ancient_gold"
+	},
+	"spimton:polished_ancient_gold_stairs": {
+		"sound": "metal",
+		"textures": "polished_ancient_gold"
+	},
+	"spimton:ancient_gold_grates": {
+		"sound": "copper_grate",
+		"textures": "ancient_gold_grates"
+	},
+	"spimton:indented_ancient_gold": {
+		"textures": "indented_ancient_gold",
+		"sound": "metal"
+	},
+	"spimton:indented_ancient_gold_slab": {
+		"textures": "indented_ancient_gold",
+		"sound": "metal"
+	},
+	"spimton:indented_ancient_gold_stairs": {
+		"textures": "indented_ancient_gold",
+		"sound": "metal"
+	},
+	"spimton:decorated_ancient_gold_tiles": {
+		"textures": "decorated_ancient_gold_tiles",
+		"sound": "metal"
+	},
+	"spimton:decorated_ancient_gold_tiles_slab": {
+		"textures": "decorated_ancient_gold_tiles",
+		"sound": "metal"
+	},
+	"spimton:decorated_ancient_gold_tiles_stairs": {
+		"textures": "decorated_ancient_gold_tiles",
+		"sound": "metal"
+	},
+	"spimton:decorated_ancient_gold_tiles_c": {
+		"textures": "decorated_ancient_gold_tiles_c",
+		"sound": "metal"
+	},
+	"spimton:decorated_ancient_gold_tiles_slab_c": {
+		"textures": "decorated_ancient_gold_tiles_c",
+		"sound": "metal"
+	},
+	"spimton:decorated_ancient_gold_tiles_stairs_c": {
+		"textures": "decorated_ancient_gold_tiles_c",
+		"sound": "metal"
+	},
+	"spimton:chromium_block": {
+		"sound": "metal",
+		"textures": "chromium_block"
+	},
+	"spimton:cut_chromium": {
+		"sound": "metal",
+		"textures": "cut_chromium"
+	},
+	"spimton:chromium_pillar": {
+		"sound": "metal",
+		"textures": {
+			"side": "chromium_pillar_side",
+			"down": "chromium_pillar_top",
+			"up": "chromium_pillar_top"
+		}
+	},
+	"spimton:polished_chromium": {
+		"sound": "metal",
+		"textures": "polished_chromium"
+	},
+	"spimton:polished_chromium_slab": {
+		"sound": "metal",
+		"textures": "polished_chromium"
+	},
+	"spimton:polished_chromium_stairs": {
+		"sound": "metal",
+		"textures": "polished_chromium"
+	},
+	"spimton:indented_chromium": {
+		"sound": "metal",
+		"textures": "indented_chromium"
+	},
+	"spimton:indented_chromium_slab": {
+		"sound": "metal",
+		"textures": "indented_chromium"
+	},
+	"spimton:indented_chromium_stairs": {
+		"sound": "metal",
+		"textures": "indented_chromium"
+	},
+	///JADE///
+	"spimton:jade_ore": {
+		"textures": "jade_ore",
+		"sound": "stone"
+	},
+	"spimton:jade_block": {
+		"textures": "jade_block",
+		"sound": "metal"
+	},
+	"spimton:jade_tiles": {
+		"textures": "jade_tiles",
+		"sound": "metal"
+	},
+	"spimton:jade_tiles_slab": {
+		"textures": "jade_tiles",
+		"sound": "metal"
+	},
+	"spimton:jade_tiles_stairs": {
+		"textures": "jade_tiles",
+		"sound": "metal"
+	},
+	"spimton:indented_jade": {
+		"textures": "indented_jade",
+		"sound": "metal"
+	},
+	"spimton:indented_jade_slab": {
+		"textures": "indented_jade",
+		"sound": "metal"
+	},
+	"spimton:indented_jade_stairs": {
+		"textures": "indented_jade",
+		"sound": "metal"
+	},
+	"spimton:jade_grates": {
+		"textures": "jade_grates",
+		"sound": "copper_grate"
+	},
+	"spimton:jade_bricks": {
+		"textures": "jade_bricks",
+		"sound": "iron"
+	},
+	"spimton:jade_bricks_slab": {
+		"textures": "jade_bricks",
+		"sound": "iron"
+	},
+	"spimton:jade_bricks_stairs": {
+		"textures": "jade_bricks",
+		"sound": "iron"
+	},
+	"spimton:polished_jade": {
+		"textures": "polished_jade",
+		"sound": "iron"
+	},
+	"spimton:imperial_jade_block": {
+		"textures": "imperial_jade",
+		"sound": "metal"
+	},
+	"spimton:imperial_jade_tiles": {
+		"textures": "imperial_jade_tiles",
+		"sound": "metal"
+	},
+	"spimton:imperial_jade_tiles_slab": {
+		"textures": "imperial_jade_tiles",
+		"sound": "metal"
+	},
+	"spimton:imperial_jade_tiles_stairs": {
+		"textures": "imperial_jade_tiles",
+		"sound": "metal"
+	},
+	"spimton:indented_imperial_jade": {
+		"textures": "indented_imperial_jade",
+		"sound": "metal"
+	},
+	"spimton:indented_imperial_jade_slab": {
+		"textures": "indented_imperial_jade",
+		"sound": "metal"
+	},
+	"spimton:indented_imperial_jade_stairs": {
+		"textures": "indented_imperial_jade",
+		"sound": "metal"
+	},
+	"spimton:polished_imperial_jade": {
+		"sound": "metal",
+		"textures": "polished_imperial_jade"
+	},
+	"spimton:polished_imperial_jade_slab": {
+		"sound": "metal",
+		"textures": "polished_imperial_jade"
+	},
+	"spimton:polished_imperial_jade_stairs": {
+		"sound": "metal",
+		"textures": "polished_imperial_jade"
+	},
+	"spimton:imperial_jade_grates": {
+		"textures": "imperial_jade_grates",
+		"sound": "copper_grate"
+	},
+	"spimton:jade_pillar": {
+		"textures": {
+			"side": "jade_pillar",
+			"up": "jade_pillar_top",
+			"down": "jade_pillar_top"
+		},
+		"sound": "metal"
+	},
+	///BRONZE///
+	"spimton:bronze_lamp": {
+		"sound": "copper"
+	},
+	"spimton:bronze_block": {
+		"sound": "copper",
+		"textures": "bronze_block"
+	},
+	"spimton:bronze_grates": {
+		"textures": "bronze_grates",
+		"sound": "copper_grate"
+	},
+	"spimton:cut_bronze": {
+		"textures": "cut_bronze",
+		"sound": "copper"
+	},
+	"spimton:cut_bronze_stairs": {
+		"textures": "cut_bronze",
+		"sound": "copper"
+	},
+	"spimton:cut_bronze_slab": {
+		"textures": "cut_bronze",
+		"sound": "copper"
+	},
+	"spimton:chiseled_bronze": {
+		"textures": "chiseled_bronze",
+		"sound": "copper"
+	},
+	"spimton:bronze_trapdoor": {
+		"textures": "bronze_trapdoor"
+	},
+	"spimton:bronze_chain": {
+		"sound": "chain"
+	},
+	"spimton:bronze_lantern": {
+		"sound": "lantern"
+	},
+	"spimton:large_gold_chain": {
+		"sound": "chain"
+	},
+	"spimton:enormous_gold_chain": {
+		"sound": "chain"
+	},
+	///BISMUTH///
+	"spimton:nether_bismuth_ore": {
+		"sound": "nether_gold_ore",
+		"textures": "nether_bismuth"
+	},
+	"spimton:raw_bismuth_block": {
+		"sound": "metal",
+		"textures": "raw_bismuth_block"
+	},
+	"spimton:bismuth_block": {
+		"sound": "metal",
+		"textures": "bismuth_block"
+	},
+	"spimton:bismuth_stairs": {
+		"sound": "metal",
+		"textures": "bismuth_block"
+	},
+	"spimton:bismuth_slab": {
+		"sound": "metal",
+		"textures": "bismuth_block"
+	},
+	"spimton:iridescent_glass": {
+		"sound": "glass",
+		"textures": "iridescent_glass"
+	},
+	"spimton:iridescent_lantern": {
+		"sound": "glass",
+		"textures": "iridescent_lantern"
+	},
+	"spimton:iridescent_wool": {
+		"sound": "cloth",
+		"textures": "iridescent_wool"
+	},
+	"spimton:iridescent_concrete": {
+		"sound": "stone",
+		"textures": "iridescent_concrete"
+	},
+	"spimton:iridescent_terracotta": {
+		"sound": "stone",
+		"textures": "iridescent_terracotta"
+	},
+	"spimton:iridescent_glazed_terracotta": {
+		"sound": "stone",
+		"textures": "iridescent_glazed_terracotta"
+	},
+	"spimton:bismuth_deco_block": {
+		"sound": "stone",
+		"textures": "bismuth_deco_block"
+	},
+	///ASBESTOS///
+	"spimton:asbestos_block": {
+		"sound": "terracotta",
+		"textures": "asbestos_block"
+	},
+	"spimton:asbestos_stairs": {
+		"sound": "terracotta",
+		"textures": "asbestos_block"
+	},
+	"spimton:asbestos_slab": {
+		"sound": "terracotta",
+		"textures": "asbestos_block"
+	},
+	"spimton:asbestos_bricks": {
+		"sound": "terracotta",
+		"textures": "asbestos_bricks"
+	},
+	"spimton:asbestos_bricks_slab": {
+		"sound": "terracotta",
+		"textures": "asbestos_bricks"
+	},
+	"spimton:asbestos_bricks_stairs": {
+		"sound": "terracotta",
+		"textures": "asbestos_bricks"
+	},
+	"spimton:asbestos_concrete": {
+		"sound": "terracotta",
+		"textures": "asbestos_concrete"
+	},
+	"spimton:asbestos_concrete_slab": {
+		"sound": "terracotta",
+		"textures": "asbestos_concrete"
+	},
+	"spimton:asbestos_concrete_stairs": {
+		"sound": "terracotta",
+		"textures": "asbestos_concrete"
+	},
+	"spimton:asbestos_ore": {
+		"sound": "stone",
+		"textures": "asbestos_ore"
+	},
+	"spimton:deepslate_asbestos_ore": {
+		"sound": "deepslate",
+		"textures": "deep_asbestos_ore"
+	},
+	"spimton:asbestos_tiles": {
+		"sound": "terracotta",
+		"textures": "asbestos_tiles"
+	},
+	"spimton:cracked_asbestos_tiles": {
+		"sound": "terracotta",
+		"textures": "cracked_asbestos_tiles"
+	},
+	"spimton:asbestos_tiles_slab": {
+		"sound": "terracotta",
+		"textures": "asbestos_tiles"
+	},
+	"spimton:asbestos_tiles_stairs": {
+		"sound": "terracotta",
+		"textures": "asbestos_tiles"
+	},
+	"spimton:asbestos_roof": {
+		"sound": "terracotta",
+		"textures": "asbestos_roof"
+	},
+	"spimton:insulator": {
+		"sound": "cloth",
+		"textures": {
+			"side": "insulator_side",
+			"up": "insulator_top",
+			"down": "insulator_top"
+		}
+	},
+	///THE NETHER///
+	"spimton:basalt_tiles": {
+		"sound": "basalt",
+		"textures": "basalt_tiles"
+	},
+	"spimton:basalt_tiles_slab": {
+		"sound": "basalt",
+		"textures": "basalt_tiles"
+	},
+	"spimton:basalt_tiles_stairs": {
+		"sound": "basalt",
+		"textures": "basalt_tiles"
+	},
+	"spimton:soul_slate": {
+		"sound": "mud",
+		"textures": "soul_slate"
+	},
+	"spimton:soul_slate_slab": {
+		"sound": "mud",
+		"textures": "soul_slate"
+	},
+	"spimton:soul_slate_bricks": {
+		"sound": "mud",
+		"textures": "soul_slate_bricks"
+	},
+	"spimton:soul_slate_bricks_slab": {
+		"sound": "mud",
+		"textures": "soul_slate_bricks"
+	},
+	"spimton:soul_slate_bricks_stairs": {
+		"sound": "mud",
+		"textures": "soul_slate_bricks"
+	},
+	"spimton:soul_slate_stairs": {
+		"sound": "mud",
+		"textures": "soul_slate"
+	},
+	"spimton:netherrack_tiles": {
+		"sound": "netherrack",
+		"textures": "netherrack_tiles"
+	},
+	"spimton:netherrack_tiles_slab": {
+		"sound": "netherrack",
+		"textures": "netherrack_tiles"
+	},
+	"spimton:netherrack_tiles_stairs": {
+		"sound": "netherrack",
+		"textures": "netherrack_tiles"
+	},
+	"spimton:netherrack_bricks": {
+		"sound": "netherrack",
+		"textures": "netherrack_bricks"
+	},
+	"spimton:netherrack_bricks_slab": {
+		"sound": "netherrack",
+		"textures": "netherrack_bricks"
+	},
+	"spimton:netherrack_bricks_stairs": {
+		"sound": "netherrack",
+		"textures": "netherrack_bricks"
+	},
+	"spimton:sanctuarium_tiles": {
+		"sound": "netherite",
+		"textures": "sanctuarium_tiles"
+	},
+	"spimton:sanctuarium_tiles_slab": {
+		"sound": "netherite",
+		"textures": "sanctuarium_tiles"
+	},
+	"spimton:sanctuarium_tiles_stairs": {
+		"sound": "netherite",
+		"textures": "sanctuarium_tiles"
+	},
+	"spimton:studded_sanctuarium_tiles": {
+		"sound": "netherite",
+		"textures": "studded_sanctuarium_tiles"
+	},
+	"spimton:polished_basalt_tiles": {
+		"textures": "polished_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:polished_basalt_tiles_slab": {
+		"textures": "polished_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:polished_basalt_tiles_stairs": {
+		"textures": "polished_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:gilded_basalt_tiles": {
+		"textures": "gilded_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:gilded_basalt_tiles_slab": {
+		"textures": "gilded_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:gilded_basalt_tiles_stairs": {
+		"textures": "gilded_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:smooth_basalt_tiles": {
+		"textures": "smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:smooth_basalt_tiles_slab": {
+		"textures": "smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:smooth_basalt_tiles_stairs": {
+		"textures": "smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:studded_smooth_basalt_tiles": {
+		"textures": "studded_smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:decorated_basalt_tiles": {
+		"textures": "decorated_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:decorated_basalt_tiles_slab": {
+		"textures": "decorated_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:decorated_basalt_tiles_stairs": {
+		"textures": "decorated_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:chiseled_smooth_basalt_tiles": {
+		"textures": "chiseled_smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:chiseled_smooth_basalt_tiles_slab": {
+		"textures": "chiseled_smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:chiseled_smooth_basalt_tiles_stairs": {
+		"textures": "chiseled_smooth_basalt_tiles",
+		"sound": "basalt"
+	},
+	"spimton:red_sanctuarium_tiles": {
+		"textures": "red_sanctuarium_tiles",
+		"sound": "netherite"
+	},
+	"spimton:blue_sanctuarium_tiles": {
+		"textures": "blue_sanctuarium_tiles",
+		"sound": "netherite"
+	},
+	"spimton:black_sanctuarium_tiles": {
+		"textures": "black_sanctuarium_tiles",
+		"sound": "netherite"
+	},
+	"spimton:lavalamp": {
+		"sound": "glass"
+	},
+	"spimton:encased_glowstone": {
+		"sound": "netherite",
+		"textures": {
+			"side": "encased_glowstone",
+			"up": "sanctuarium_tiles",
+			"down": "sanctuarium_tiles"
+		}
+	},
+	"spimton:bricked_glowstone": {
+		"sound": "glass",
+		"textures": "bricked_glowstone"
+	},
+	"spimton:nether_wool": {
+		"sound": "cloth",
+		"textures": "nether_wool"
+	},
+	"spimton:flammable_nether_wool": {
+		"sound": "cloth",
+		"textures": "nether_wool"
+	},
+	"spimton:nether_carpet": {
+		"sound": "cloth",
+		"textures": "nether_wool"
+	},
+	"spimton:bone_pile": {
+		"sound": "spimton:bone_pile",
+		"textures": {
+			"side": "bone_pile_side",
+			"up": "bone_pile_top",
+			"down": "bone_pile_top"
+		}
+	},
+	"spimton:juandice_altar": {
+		"sound": "soul_sand",
+		"textures": "juandice_altar"
+	},
+	"spimton:feral_soulsand": {
+		"textures": "feral_soulsand",
+		"sound": "suspicious_gravel"
+	},
+	"spimton:netherrack_pillar": {
+		"textures": {
+			"side": "netherrack_pillar_side",
+			"up": "netherrack_pillar_top",
+			"down": "netherrack_pillar_top"
+		},
+		"sound": "netherrack"
+	},
+	"spimton:chiseled_sanctuarium_tiles": {
+		"sound": "netherite",
+		"textures": {
+			"up": "sanctuarium_tiles",
+			"down": "sanctuarium_tiles",
+			"side": "chiseled_sanctuarium_tiles"
+		}
+	},
+	"spimton:nether_brick_pillar": {
+		"textures": {
+			"side": "nether_brick_pillar",
+			"up": "nether_brick_pillar_top",
+			"down": "nether_brick_pillar_top"
+		},
+		"sound": "nether_brick"
+	},
+	//'OLOGY//
+	"spimton:archaeology_table": {
+		"sound": "wood",
+		"textures": {
+			"side": "archaeology_table_side",
+			"up": "archaeology_table_top",
+			"down": "acacia_planks"
+		}
+	},
+	//aaaaa
+	"spimton:tut_block": {
+		"sound": "amethyst_block", ///suono
+		"textures": "acacia_leaves" ///texture del blocco, definita in textures/terrain_texture.json
+		///sto usando una texture vanilla, non definita nel file
+	}
+}

@@ -1,0 +1,48 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:storm_horn",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0.3,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:storm"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			}
+		},
+		"events": {
+			"spimton:storm": {
+				"queue_command": {
+					"command": [
+						"summon lightning_bolt",
+						"weather thunder",
+						"kill @s",
+						"playsound item.storm_horn @a"
+					]
+				}
+			}
+		}
+	}
+}

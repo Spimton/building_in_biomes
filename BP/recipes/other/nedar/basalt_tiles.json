@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:basalt_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "basalt"
+			},
+			"@": {
+				"item": "smooth_basalt"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#@",
+			"@#"
+		],
+		"result": {
+			"item": "spimton:basalt_tiles",
+			"count": 4
+		}
+	}
+}

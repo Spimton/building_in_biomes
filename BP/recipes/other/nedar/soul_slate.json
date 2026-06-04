@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:soul_slate"
+		},
+		"key": {
+			"#": {
+				"item": "soul_soil"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##",
+			"##"
+		],
+		"result": {
+			"item": "spimton:soul_slate",
+			"count": 1
+		}
+	}
+}

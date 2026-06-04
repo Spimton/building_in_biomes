@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bronze_shovel"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#",
+			"@",
+			"@"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bronze_ingot"
+			},
+			"@": {
+				"item": "stick"
+			}
+		},
+		"result": {
+			"item": "spimton:bronze_shovel"
+		}
+	}
+}

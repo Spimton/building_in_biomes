@@ -1,0 +1,848 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:overgrown_archshaman",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "skeleton",
+			"scripts": {
+				"animate": [
+					"music",
+					"health"
+				]
+			},
+			"animations": {
+				"music": "controller.animation.archshaman.music",
+				"health": "controller.animation.archshaman.health"
+			}
+		},
+		"component_groups": {
+			"spimton:33": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "entity_explosion",
+							"deals_damage": false
+						},
+						{
+							"cause": "magic",
+							"deals_damage": false
+						},
+						{
+							"cause": "attack",
+							"on_damage": {
+								"target": "self",
+								"event": "spimton:try_randomize_33"
+							}
+						},
+						{
+							"cause": "projectile",
+							"on_damage": {
+								"target": "self",
+								"event": "spimton:try_randomize_33"
+							}
+						}
+					]
+				}
+			},
+			"spimton:23": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "entity_explosion",
+							"deals_damage": false
+						},
+						{
+							"cause": "magic",
+							"deals_damage": false
+						},
+						{
+							"cause": "attack",
+							"on_damage": {
+								"target": "self",
+								"event": "spimton:try_randomize_23"
+							}
+						},
+						{
+							"cause": "projectile",
+							"on_damage": {
+								"target": "self",
+								"event": "spimton:try_randomize_23"
+							}
+						}
+					]
+				}
+			},
+			"spimton:13": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "entity_explosion",
+							"deals_damage": false
+						},
+						{
+							"cause": "magic",
+							"deals_damage": false
+						},
+						{
+							"cause": "attack",
+							"on_damage": {
+								"target": "self",
+								"event": "spimton:try_randomize_13"
+							}
+						},
+						{
+							"cause": "projectile",
+							"on_damage": {
+								"target": "self",
+								"event": "spimton:try_randomize_13"
+							}
+						}
+					]
+				}
+			},
+			"spimton:roor": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.5,
+					"duration": 1,
+					"damage_filters": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "spimton:archshaman"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "inanimate"
+						},
+						{
+							"test": "has_tag",
+							"subject": "other",
+							"operator": "!=",
+							"value": "novelty:spimton:alliance_ring_overgrown"
+						}
+					],
+					"knockback_filters": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "spimton:archshaman"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "inanimate"
+						},
+						{
+							"test": "has_tag",
+							"subject": "other",
+							"operator": "!=",
+							"value": "novelty:spimton:alliance_ring_overgrown"
+						}
+					],
+					"on_roar_end": {
+						"event": "spimton:randomize",
+						"target": "self"
+					},
+					"knockback_range": 5,
+					"knockback_damage": 6,
+					"knockback_strength": 8,
+					"priority": 1,
+					"cooldown_time": 10
+				}
+			},
+			"minecraft:default_targeting": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"within_radius": 12,
+					"must_see_forget_duration": 40,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "spimton:archshaman"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "inanimate"
+									},
+									{
+										"test": "has_tag",
+										"subject": "other",
+										"operator": "!=",
+										"value": "novelty:spimton:alliance_ring_overgrown"
+									}
+								]
+							},
+							"max_dist": 30
+						}
+					]
+				}
+			},
+			"spimton:shootah": {
+				"minecraft:shooter": {
+					"def": "spimton:fireball_friendly"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"burst_shots": 10,
+					"burst_interval": 0.9,
+					"attack_interval": 1,
+					"attack_radius": 32,
+					"ranged_fov": 180,
+					"charge_shoot_trigger": 0.1
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 5,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:change"
+					}
+				}
+			},
+			"spimton:gooners": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 5,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:change"
+					}
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"min_activation_range": 1,
+							"max_activation_range": 50,
+							"cooldown_time": 3,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 3,
+									"entity_type": "spimton:overgrown_warlock",
+									"size": 2,
+									"entity_lifespan": 30
+								}
+							]
+						},
+						{
+							"min_activation_range": 1,
+							"max_activation_range": 50,
+							"cooldown_time": 3,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0.2,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:overgrown_skirmisher",
+									"size": 15,
+									"entity_lifespan": 30
+								}
+							]
+						}
+					]
+				}
+			},
+			"spimton:summonahh": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 3,
+					"summon_choices": [
+						{
+							"min_activation_range": 1,
+							"max_activation_range": 3,
+							"cooldown_time": 3,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:mby_dialog",
+									"size": 1,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.5,
+									"num_entities_spawned": 5,
+									"entity_type": "spimton:fireball_spawner",
+									"size": 2.5,
+									"entity_lifespan": 6,
+									"sound_event": "prepare.attack"
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 8,
+									"entity_type": "spimton:fireball_spawner",
+									"size": 5,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 12,
+									"entity_type": "spimton:fireball_spawner",
+									"size": 10,
+									"entity_lifespan": 6
+								}
+							]
+						},
+						{
+							"min_activation_range": 1,
+							"max_activation_range": 11,
+							"cooldown_time": 3,
+							"weight": 2,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:mby_dialog",
+									"size": 1,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.5,
+									"num_entities_spawned": 15,
+									"entity_type": "spimton:fireball_spawner",
+									"size": 12,
+									"entity_lifespan": 6,
+									"sound_event": "prepare.attack"
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 1,
+									"num_entities_spawned": 10,
+									"entity_type": "spimton:fireball_spawner",
+									"size": 6,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 10,
+									"entity_type": "spimton:fireball_spawner",
+									"size": 6,
+									"entity_lifespan": 10
+								}
+							]
+						},
+						{
+							"min_activation_range": 3,
+							"weight": 3,
+							"cooldown_time": 1,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:solar_flare",
+									"size": 5,
+									"summon_cap": 100,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"summon_cap": 100,
+									"entity_type": "spimton:solar_flare",
+									"size": 20,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"min_activation_range": 5,
+							"weight": 2,
+							"cooldown_time": 2,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 16,
+									"summon_cap": 100,
+									"entity_type": "spimton:solar_flare",
+									"size": 6,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"summon_cap": 100,
+									"entity_type": "spimton:solar_flare",
+									"size": 10,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"summon_cap": 100,
+									"entity_type": "spimton:solar_flare",
+									"size": 14,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"summon_cap": 100,
+									"entity_type": "spimton:solar_flare",
+									"size": 18,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"min_activation_range": 5,
+							"weight": 5,
+							"cooldown_time": 5,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "jojoref",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:tp_dialog",
+									"size": 1,
+									"entity_lifespan": 1
+								},
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"size": 3,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:fireball_spawner",
+									"entity_lifespan": 6
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 25,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:change"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": 500
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"skeleton",
+					"undead",
+					"monster",
+					"mob",
+					"spimton:archshaman"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.7,
+				"height": 1.9
+			},
+			"minecraft:health": {
+				"value": 200,
+				"max": 200
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:knockback_resistance": {
+				"max": 1,
+				"value": 1
+			},
+			"minecraft:movement": {
+				"value": 0.15
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:follow_range": {
+				"value": 66
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/overgrown_archshaman.json"
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 9,
+				"speed_multiplier": 1
+			},
+			"minecraft:boss": {
+				"should_darken_sky": true,
+				"hud_range": 66,
+				"name": "  §aOvergrown Archshaman§r "
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 10,
+				"look_distance": 8,
+				"probability": 0.02
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:on_death": {
+				"event": "spimton:end_dialog"
+			}
+		},
+		"events": {
+			"spimton:try_randomize": {
+				"randomize": [
+					{
+						"weight": 95
+					},
+					{
+						"weight": 5,
+						"trigger": "spimton:randomize"
+					}
+				]
+			},
+			"spimton:try_randomize_33": {
+				"randomize": [
+					{
+						"weight": 20,
+						"trigger": "spimton:try_randomize"
+					},
+					{
+						"weight": 10,
+						"trigger": "spimton:try_randomize",
+						"queue_command": {
+							"target": "self",
+							"command": "effect @s resistance 1 5 true"
+						}
+					}
+				]
+			},
+			"spimton:try_randomize_23": {
+				"randomize": [
+					{
+						"weight": 10,
+						"trigger": "spimton:try_randomize"
+					},
+					{
+						"weight": 20,
+						"trigger": "spimton:try_randomize",
+						"queue_command": {
+							"target": "self",
+							"command": "effect @s resistance 1 5 true"
+						}
+					}
+				]
+			},
+			"spimton:try_randomize_13": {
+				"trigger": "spimton:try_randomize",
+				"queue_command": {
+					"target": "self",
+					"command": "effect @s resistance 1 5 true"
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"minecraft:default_targeting",
+						"spimton:33"
+					]
+				},
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"scoreboard objectives add mih_treshold dummy",
+						"scoreboard objectives add mih_time dummy",
+						"scoreboard players set @s mih_treshold 900",
+						"scoreboard players set @s mih_time 0",
+						"scoreboard objectives add modearch dummy"
+					]
+				},
+				"trigger": "spimton:change"
+			},
+			"spimton:end_dialog": {
+				"queue_command": {
+					"command": [
+						"function mob/overgrown/endialog",
+						"kill @e[type=spimton:solar_flare]"
+					],
+					"target": "self"
+				}
+			},
+			"spimton:change": {
+				"add": {
+					"component_groups": [
+						"spimton:roor"
+					]
+				},
+				"queue_command": {
+					"target": "self",
+					"command": "playanimation @s animation.archshaman.roaring none 3"
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:shootah",
+						"spimton:summonahh",
+						"spimton:gooners"
+					]
+				}
+			},
+			"spimton:accelerate_time": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_target",
+							"value": true
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"scoreboard players add @s mih_treshold 300",
+								"scoreboard players set @s mih_time 0",
+								"effect @s instant_damage 4 5 true",
+								"function mob/overgrown/dialog_mih"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_target",
+							"value": false
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @a actionbar The time for heaven has arrived..."
+							]
+						}
+					}
+				]
+			},
+			"spimton:randomize": {
+				"sequence": [
+					{
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"execute if score @s mih_time >= @s mih_treshold run event entity @s spimton:accelerate_time"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"spimton:roor"
+							]
+						}
+					},
+					{
+						"randomize": [
+							{
+								"add": {
+									"component_groups": [
+										"spimton:shootah"
+									]
+								},
+								"queue_command": {
+									"command": [
+										"function mob/overgrown/dialog_doom",
+										"playanimation @s animation.archshaman.casting none 5",
+										"scoreboard players set @s modearch 1"
+									],
+									"target": "self"
+								},
+								"weight": 1
+							},
+							{
+								"add": {
+									"component_groups": [
+										"spimton:summonahh"
+									]
+								},
+								"queue_command": {
+									"command": [
+										"execute if entity @s[scores={modearch=1}] run function mob/overgrown/dialog_spamm",
+										"execute if entity @s[scores={modearch=1}] run scoreboard players set @s modearch 0",
+										"execute as @e[type=spimton:overgrown_skirmisher] run event entity @s spimton:heal",
+										"execute as @e[type=spimton:overgrown_warlock] run event entity @s spimton:heal",
+										"kill @e[type=spimton:overgrown_skirmisher]",
+										"kill @e[type=spimton:overgrown_warlock]"
+									],
+									"target": "self"
+								},
+								"weight": 7
+							},
+							{
+								"add": {
+									"component_groups": [
+										"spimton:gooners"
+									]
+								},
+								"queue_command": {
+									"command": [
+										"function mob/overgrown/gooner_dialog",
+										"execute as @e[type=spimton:solar_flare] run event entity @s spimton:heal",
+										"kill @e[type=spimton:solar_flare]"
+									],
+									"target": "self"
+								},
+								"weight": 2
+							}
+						]
+					}
+				]
+			},
+			"spimton:health_3": {
+				"add": {
+					"component_groups": [
+						"spimton:33"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:23",
+						"spimton:13"
+					]
+				}
+			},
+			"spimton:health_2": {
+				"add": {
+					"component_groups": [
+						"spimton:23"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:33",
+						"spimton:13"
+					]
+				}
+			},
+			"spimton:health_1": {
+				"add": {
+					"component_groups": [
+						"spimton:13"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:23",
+						"spimton:33"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:sfire",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire_tick",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:sfiree"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:sfiree": {
+				"queue_command": {
+					"command": [
+						"fill ~1 ~1 ~1 ~-1 ~-1 ~-1 soul_fire replace air",
+						"fill ~1 ~1 ~1 ~-1 ~-1 ~-1 fire replace air"
+					]
+				}
+			}
+		}
+	}
+}

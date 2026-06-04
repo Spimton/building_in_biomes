@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:red_wine"
+		},
+		"tags": [
+			"spimton:keg",
+			"spimton:keg_hot"
+		],
+		"pattern": [
+			"zzz",
+			"yyy"
+		],
+		"key": {
+			"z": {
+				"item": "nether_wart"
+			},
+			"y": {
+				"item": "spimton:wine"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:red_wine"
+			},
+			{
+				"item": "spimton:red_wine"
+			},
+			{
+				"item": "spimton:red_wine"
+			}
+		]
+	}
+}

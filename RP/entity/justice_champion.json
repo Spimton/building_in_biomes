@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:justice_champion",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/champion"
+			},
+			"geometry": {
+				"default": "geometry.champion"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_move",
+					"controller_general",
+					"controller_attacks"
+				]
+			},
+			"animations": {
+				"general": "animation.archshaman.idle",
+				"casting": "animation.champion.summon",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.archshaman.walk",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"shoot": "animation.champion.shoot",
+				"tyre": "animation.champion.tyre",
+				"controller_attacks": "controller.animation.juandice.general"
+			},
+			"particle_effects": {
+				"spell": "minecraft:trial_omen_ambient",
+				"shoot": "minecraft:knockback_roar_particle"
+			},
+			"render_controllers": [
+				"controller.render.juandice"
+			],
+			"spawn_egg": {
+				"texture": "champion_spawn_egg"
+			}
+		}
+	}
+}

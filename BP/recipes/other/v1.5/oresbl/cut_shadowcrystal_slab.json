@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cut_shadowcrystal_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:cut_shadowcrystal"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:cut_shadowcrystal_slab",
+			"count": 6
+		}
+	}
+}

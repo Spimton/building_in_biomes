@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chorus_endstone_tiles_pillar"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:endstone_tiles_pillar"
+			},
+			"@": {
+				"item": "popped_chorus_fruit"
+			}
+		},
+		"pattern": [
+			" @ ",
+			"@#@",
+			" @ "
+		],
+		"result": {
+			"item": "spimton:chorus_endstone_tiles_pillar",
+			"count": 2
+		}
+	}
+}

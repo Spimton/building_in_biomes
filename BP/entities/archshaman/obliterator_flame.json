@@ -1,0 +1,88 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:obliterator_flame",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "component_groups": {
+            "spimton:despawn": {}
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 1
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "definition_event": {
+                        "splash_area": 2,
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "target": "self",
+                            "event": "spimton:phire"
+                        }
+                    },
+                    "remove_on_hit": {},
+                    "stick_in_ground": {}
+                },
+                "anchor": 1,
+                "power": 2,
+                "inertia": 1,
+                "gravity": 0.01225,
+                "uncertainty_base": 1.225,
+                "angle_offset": 0,
+                "offset": [
+                    0,
+                    -0.5,
+                    -1
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true,
+                "despawn_from_distance": {
+                    "max_distance": 128,
+                    "min_distance": 32
+                }
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 0.01,
+                "time_down_event": {
+                    "target": "self",
+                    "event": "spimton:phire"
+                }
+            }
+        },
+        "events": {
+            "desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            },
+            "spimton:phire": {
+                "queue_command": {
+                    "command": [
+                        "execute at @s run damage @e[r=1.225] 4 fire entity @n[type=spimton:goulden_guard_3]"
+                    ]
+                }
+            }
+        }
+    }
+}

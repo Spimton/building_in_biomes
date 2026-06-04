@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:cut_bronze_slab"
+		},
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:cut_bronze"
+			}
+		},
+		"result": {
+			"item": "spimton:cut_bronze_slab",
+			"count": 6
+		}
+	}
+}

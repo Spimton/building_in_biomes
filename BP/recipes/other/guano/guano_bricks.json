@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:guano_bricks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"##",
+			"##"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:packed_guano"
+			}
+		},
+		"result": {
+			"item": "spimton:guano_bricks",
+			"count": 4
+		}
+	}
+}

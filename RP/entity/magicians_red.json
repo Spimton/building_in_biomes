@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:magicians_red",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "spider_invisible"
+			},
+			"textures": {},
+			"geometry": {
+				"default": "geometry.ball"
+			},
+			"scripts": {},
+			"animations": {
+				"creeper_head": "animation.common.look_at_target",
+				"creeper_legs": "animation.creeper.legs",
+				"creeper_swelling": "animation.creeper.swelling",
+				"general": "animation.crystalball.idle",
+				"idle": "animation.crystalball.idle"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.evoker.general"
+				}
+			],
+			"render_controllers": [
+				"controller.render.enderman"
+			]
+		}
+	}
+}

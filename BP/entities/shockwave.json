@@ -1,0 +1,70 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:shockwave",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:shockwave"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 0.8,
+						"height": 0.4,
+						"pivot": [
+							0,
+							0.1,
+							0
+						]
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:persistent": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1,
+				"max": 1
+			}
+		},
+		"events": {
+			"spimton:shockwave": {
+				"queue_command": {
+					"command": [
+						"damage @e [type=!spimton:chillager_assailant,type=!spimton:chillager,type=!spimton:chillager_summoner,type=!spimton:shockwave,r=3,type=!item] 8 entity_explosion",
+						"effect @e [type=!spimton:chillager_assailant,r=4] slowness 4 3 true",
+						"particle spimton:seismic ~ ~1 ~"
+					]
+				}
+			}
+		}
+	}
+}

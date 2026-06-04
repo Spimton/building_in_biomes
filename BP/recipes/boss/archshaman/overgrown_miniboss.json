@@ -1,0 +1,33 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:overgrown_miniboss"
+        },
+        "pattern": [
+            "zyz",
+            "wxw",
+            "wxw"
+        ],
+        "key": {
+            "w": {
+                "item": "spimton:red_limestone_bricks"
+            },
+            "x": {
+                "item": "spimton:jade_tiles"
+            },
+            "y": {
+                "item": "spimton:overgrown_orb"
+            },
+            "z": {
+                "item": "spimton:ancient_gold_tiles"
+            }
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "result": {
+            "item": "spimton:overgrown_miniboss"
+        }
+    }
+}

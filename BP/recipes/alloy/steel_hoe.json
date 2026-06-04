@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:steel_hoe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"assume_symmetry": true,
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"pattern": [
+			"##",
+			"@ ",
+			"@ "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:steel_ingot"
+			},
+			"@": {
+				"item": "stick"
+			}
+		},
+		"result": {
+			"item": "spimton:steel_hoe"
+		}
+	}
+}

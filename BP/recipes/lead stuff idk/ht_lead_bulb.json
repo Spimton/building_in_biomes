@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ht_lead_bulb"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:ht_lead_block"
+			},
+			"y": {
+				"item": "spimton:bluestone"
+			},
+			"z": {
+				"item": "minecraft:glow_ink_sac"
+			}
+		},
+		"pattern": [
+			" x ",
+			"xyx",
+			" z "
+		],
+		"priority": 1,
+		"result": {
+			"item": "spimton:ht_lead_bulb",
+			"count": 3
+		}
+	}
+}

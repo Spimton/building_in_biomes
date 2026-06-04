@@ -1,0 +1,19 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:calcite_bricks_stonecutter"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "calcite"
+			}
+		],
+		"result": {
+			"item": "spimton:calcite_bricks"
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:void_barrel"
+        },
+        "key": {
+            "#": {
+                "item": "spimton:void_block"
+            },
+            "@": {
+                "item": "tinted_glass"
+            },
+            "x": {
+                "item": "spimton:end_basalt_bricks"
+            },
+            "y": {
+                "item": "spimton:bluestone"
+            }
+        },
+        "pattern": [
+            "xyx",
+            "@#@",
+            "xyx"
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "result": [
+            {
+                "item": "spimton:void_barrel",
+                "count": 1
+            }
+        ]
+    }
+}

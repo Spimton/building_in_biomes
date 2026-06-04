@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:temple_tiles_slab"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:temple_tiles"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"result": {
+			"item": "spimton:temple_tiles_slab",
+			"count": 6
+		}
+	}
+}

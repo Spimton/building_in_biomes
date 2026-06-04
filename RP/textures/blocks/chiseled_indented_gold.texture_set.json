@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chiseled_indented_gold",
+		"metalness_emissive_roughness": "chiseled_indented_gold_mer"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "minecraft:decorated_pot",
+			"textures": {
+				"cross_pottery_sherd": "textures/blocks/pottery_pattern/cross_pottery_pattern",
+				"treasure_pottery_sherd": "textures/blocks/pottery_pattern/treasure_pottery_pattern",
+				"rune_pottery_sherd": "textures/blocks/pottery_pattern/rune_pottery_pattern"
+			}
+		}
+	}
+}

@@ -1,0 +1,2 @@
+execute at @e[hasitem={location=slot.armor.head,item=spimton:nautilus_tiara}] as @e[hasitem={location=slot.armor.head,item=spimton:nautilus_tiara}] run execute anchored eyes if block ~ ~ ~ air run effect @s conduit_power 20 0 true
+execute at @e[tag=novelty:spimton:nautilus_tiara] run execute anchored eyes if block ~ ~ ~ air run effect @s conduit_power 20 0 true

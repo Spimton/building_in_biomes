@@ -1,0 +1,51 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:jade_grates",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.custom_glass",
+				"culling": "spimton:culling.custom_glass"
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"can_contain_liquid": true,
+						"liquid_type": "water",
+						"stops_liquid_flowing_from_direction": [
+							"east",
+							"north",
+							"south",
+							"east"
+						]
+					}
+				]
+			},
+			"minecraft:map_color": "#4F8540",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:iron": {},
+			"tag:metal": {},
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "blend",
+					"texture": "jade_grates",
+					"ambient_occlusion": false
+				}
+			}
+		}
+	}
+}

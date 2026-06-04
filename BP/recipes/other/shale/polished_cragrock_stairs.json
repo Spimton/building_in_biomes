@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:polished_cragrock_stairs"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "pattern": [
+            "#  ",
+            "## ",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:polished_cragrock"
+            }
+        },
+        "result": {
+            "item": "spimton:polished_cragrock_stairs",
+            "count": 4
+        }
+    }
+}

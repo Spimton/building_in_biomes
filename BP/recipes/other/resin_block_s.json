@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:resin_block_s"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:compressed_resin"
+			}
+		},
+		"pattern": [
+			"#"
+		],
+		"result": {
+			"item": "resin_block",
+			"count": 1
+		}
+	}
+}

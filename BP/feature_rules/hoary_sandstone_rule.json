@@ -1,0 +1,52 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "spimton:hoary_sandstone_rule",
+			"places_feature": "spimton:antique_sandstone_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "desert"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 5,
+			"coordinate_eval_order": "zyx",
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "gaussian",
+				"extent": [
+					20,
+					60
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"scatter_chance": {
+				"denominator": 3,
+				"numerator": 1
+			}
+		}
+	}
+}

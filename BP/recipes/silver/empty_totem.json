@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:empty_totem"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:silver_ingot"
+			},
+			"y": {
+				"item": "spimton:silver_orb"
+			}
+		},
+		"pattern": [
+			"xxx",
+			"yxy",
+			" x "
+		],
+		"result": {
+			"item": "spimton:empty_totem",
+			"count": 1
+		}
+	}
+}

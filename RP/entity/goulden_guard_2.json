@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:goulden_guard_2",
+            "materials": {
+                "default": "entity"
+            },
+            "textures": {
+                "default": "textures/entity/goulden_guard_2"
+            },
+            "geometry": {
+                "default": "geometry.goulden_guard_2"
+            },
+            "animations": {
+                "walk": "animation.goulden_guard_2.walk",
+                "look_at_target": "animation.common.look_at_target",
+                "protecc_ready": "animation.goulden_guard_2.protecc_ready",
+                "protecc": "animation.goulden_guard_2.protecc",
+                "blackstone_construct_roar": "animation.goulden_guard_2.smash",
+                "move_controller": "controller.animation.iron_golem.move",
+                "smash_controller": "controller.animation.blackstone_golem.roar"
+            },
+            "render_controllers": [
+                "controller.render.iron_golem"
+            ],
+            "scripts": {
+                "pre_animation": [
+                    "variable.modified_tcos0 = Math.clamp(((Math.cos(query.modified_distance_moved * 13.5) * Math.min(query.modified_move_speed, 0.6) / variable.gliding_speed_value) * 25.0), -12.5, 12.5);"
+                ],
+                "animate": [
+                    {
+                        "protecc": "query.mark_variant == 2"
+                    },
+                    {
+                        "walk": "query.is_moving"
+                    },
+                    "smash_controller",
+                    "look_at_target",
+                    "move_controller"
+                ]
+            },
+            "spawn_egg": {
+                "texture": "goulden_guard_egg"
+            }
+        }
+    }
+}

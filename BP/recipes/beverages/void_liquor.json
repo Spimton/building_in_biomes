@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:void_liquor"
+		},
+		"tags": [
+			"spimton:keg_hot"
+		],
+		"assume_symmetry": true,
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"priority": 1,
+		"pattern": [
+			"xxx",
+			"yyy"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:void_bucket"
+			},
+			"y": {
+				"item": "spimton:mug"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:void_liquor"
+			},
+			{
+				"item": "spimton:void_liquor"
+			},
+			{
+				"item": "spimton:void_liquor"
+			},
+			{
+				"item": "bucket",
+				"count": 3
+			}
+		]
+	}
+}

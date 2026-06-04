@@ -1,0 +1,71 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:end_moss_carpet",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.woolCarpet"
+            }
+        },
+        "components": {
+            "minecraft:flammable": false,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.2,
+                "item_specific_speeds": [
+                    {
+                        "destroy_speed": 0.01225,
+                        "item": "shears"
+                    }
+                ]
+            },
+            "minecraft:light_dampening": 0,
+            "minecraft:map_color": "#AAC815",
+            "tag:minecraft:wool": {},
+            "tag:wool": {},
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    1,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    1,
+                    16
+                ]
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.scarpet"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "grassy_endsoil_top",
+                    "render_method": "opaque"
+                }
+            },
+            "tag:minecraft:is_shears_item_destuctible": {},
+            "tag:minecraft:is_wool": {},
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "on_liquid_touches": "popped",
+                        "liquid_type": "water"
+                    }
+                ]
+            }
+        }
+    }
+}

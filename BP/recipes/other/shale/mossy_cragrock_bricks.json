@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "spimton:mossy_cragrock_bricks"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "ingredients": [
+            {
+                "item": "vine"
+            },
+            {
+                "item": "spimton:cragrock_bricks"
+            }
+        ],
+        "result": {
+            "item": "spimton:mossy_cragrock_bricks",
+            "count": 1
+        }
+    }
+}

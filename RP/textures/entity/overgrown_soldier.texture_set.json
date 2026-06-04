@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "overgrown_soldier",
+		"metalness_emissive_roughness": "overgrown_soldier_mer"
+	}
+}

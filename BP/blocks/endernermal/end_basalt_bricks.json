@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:end_basalt_bricks",
+			"menu_category": {
+				"category": "construction",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 7
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#100c1c",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:obsidian": {},
+			"tag:minecraft:diamond_tier_destructible": {}
+		}
+	}
+}

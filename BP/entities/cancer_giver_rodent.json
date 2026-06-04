@@ -1,0 +1,52 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:cancer_giver_rodent",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"spimton:dsp": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0.1,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:kll"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"execute at @e[type=spimton:cancer_giver_rodent] run scoreboard players add @e[r=3,family=!ratto] asbestos 40",
+						"execute at @e[type=spimton:cancer_giver_rodent] run particle spimton:lungcancer ~ ~1 ~"
+					]
+				}
+			},
+			"spimton:kll": {
+				"add": {
+					"component_groups": [
+						"spimton:dsp"
+					]
+				}
+			}
+		}
+	}
+}

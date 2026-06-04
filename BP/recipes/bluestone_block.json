@@ -1,0 +1,24 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "spimton:bluestone_block"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "ingredients": [
+            {
+                "item": "spimton:bluestone",
+                "count": 9
+            }
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "result": {
+            "count": 1,
+            "item": "spimton:bluestone_block"
+        }
+    }
+}

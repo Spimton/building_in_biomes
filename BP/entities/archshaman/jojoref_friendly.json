@@ -1,0 +1,71 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:jojoref_friendly",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"spimton:start_kill": {
+				"minecraft:timer": {
+					"time": 5,
+					"time_down_event": {
+						"event": "spimton:kill"
+					},
+					"looping": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:type_family": {
+				"family": [
+					"spimton:archshaman"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire_tick",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:mihf"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:mihf": {
+				"queue_command": {
+					"command": [
+						"time add 800"
+					]
+				}
+			},
+			"spimton:kill": {
+				"queue_command": {
+					"command": "kill @s"
+				}
+			}
+		}
+	}
+}

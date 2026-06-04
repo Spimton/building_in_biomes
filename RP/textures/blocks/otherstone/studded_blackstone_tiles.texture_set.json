@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "studded_blackstone_tiles",
+		"metalness_emissive_roughness": "studded_blackstone_tiles_mer"
+	}
+}

@@ -1,0 +1,19 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/blocks/archaeology_spimton_common.json",
+                    "weight": 8
+                },
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/blocks/archaeology_spimton_treasure.json",
+                    "weight": 2
+                }
+            ]
+        }
+    ]
+}

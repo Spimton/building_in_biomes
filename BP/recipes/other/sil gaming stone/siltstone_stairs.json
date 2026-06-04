@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:siltstone_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:siltstone"
+			}
+		},
+		"pattern": [
+			"#",
+			"## ",
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:siltstone_stairs",
+			"count": 4
+		}
+	}
+}

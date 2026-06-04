@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:bronze_grates"
+		},
+		"pattern": [
+			" # ",
+			"# #",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bronze_block"
+			}
+		},
+		"result": {
+			"item": "spimton:bronze_grates",
+			"count": 8
+		}
+	}
+}

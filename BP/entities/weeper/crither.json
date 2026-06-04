@@ -1,0 +1,644 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:crither",
+			"runtime_identifier": "skeleton",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spimton:cloud": {
+				"minecraft:mob_effect": {
+					"effect_range": 11,
+					"effect_time": 25,
+					"mob_effect": "slow_falling"
+				},
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.5,
+					"cooldown_time": 10,
+					"knockback_damage": 0,
+					"knockback_horizontal_strength": 0,
+					"knockback_vertical_strength": 6,
+					"knockback_height_cap": 10,
+					"priority": 1,
+					"knockback_range": 10,
+					"duration": 1,
+					"on_roar_end": {
+						"event": "spimton:switch",
+						"target": "self"
+					}
+				}
+			},
+			"spimton:melee": {
+				"minecraft:behavior.charge_attack": {
+					"priority": 1,
+					"success_rate": 1,
+					"max_distance": 20,
+					"min_distance": 0.5,
+					"speed_multiplier": 2
+				},
+				"minecraft:attack": {
+					"damage": 6,
+					"effect_name": "wither",
+					"effect_duration": 3
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:kqclose": {
+				"minecraft:behavior.jump_around_target": {
+					"priority": 1,
+					"filters": {
+						"all_of": [
+							{
+								"any_of": [
+									{
+										"test": "in_water",
+										"value": true
+									},
+									{
+										"test": "on_ground",
+										"value": true
+									}
+								]
+							},
+							{
+								"test": "is_riding",
+								"value": false
+							},
+							{
+								"test": "in_lava",
+								"value": false
+							}
+						]
+					},
+					"jump_cooldown_duration": 0.5,
+					"jump_cooldown_when_hurt_duration": 0.1,
+					"last_hurt_duration": 2,
+					"prepare_jump_duration": 0.5,
+					"max_jump_velocity": 1.4,
+					"check_collision": false,
+					"entity_bounding_box_scale": 0.7,
+					"line_of_sight_obstruction_height_ignore": 4,
+					"valid_distance_to_target": [
+						4,
+						20
+					],
+					"landing_position_spread_degrees": 90,
+					"landing_distance_from_target": [
+						4,
+						8
+					],
+					"required_vertical_space": 4,
+					"snap_to_surface_block_range": 10,
+					"jump_angles": [
+						40,
+						55,
+						60,
+						75,
+						80
+					]
+				},
+				"minecraft:reflect_projectiles": {
+					"azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+					"reflected_projectiles": [
+						"xp_bottle",
+						"thrown_trident",
+						"shulker_bullet",
+						"dragon_fireball",
+						"arrow",
+						"snowball",
+						"egg",
+						"fireball",
+						"splash_potion",
+						"ender_pearl",
+						"wither_skull",
+						"wither_skull_dangerous",
+						"small_fireball",
+						"lingering_potion",
+						"llama_spit",
+						"fireworks_rocket",
+						"fishing_hook"
+					],
+					"reflection_scale": "0.5"
+				},
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"visible": false,
+							"amplifier": 5,
+							"effect": "resistance",
+							"display_on_screen_animation": false,
+							"duration": 8
+						},
+						{
+							"visible": false,
+							"amplifier": 5,
+							"effect": "invisibility",
+							"display_on_screen_animation": false,
+							"duration": 8
+						}
+					]
+				},
+				"minecraft:mob_effect": {
+					"cooldown_time": 1,
+					"effect_time": 5,
+					"effect_range": 8,
+					"mob_effect": "blindness"
+				},
+				"minecraft:timer": {
+					"time": 8,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:killerqueen": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"cast_duration": 1,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"start_sound_event": "boom",
+							"cooldown_time": 10,
+							"weight": 1,
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"sound_event": "boom",
+									"entity_type": "spimton:sudden_cardiac_arrest",
+									"size": 6,
+									"delay_per_summon": 0.3,
+									"num_entities_spawned": 3,
+									"summon_event": "spimton:parachute"
+								},
+								{
+									"base_delay": 0.3,
+									"shape": "circle",
+									"target": "self",
+									"sound_event": "boom",
+									"delay_per_summon": 0.1225,
+									"entity_type": "spimton:sudden_cardiac_arrest",
+									"size": 14,
+									"num_entities_spawned": 6,
+									"summon_event": "spimton:parachute"
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 8,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:skullshot": {
+				"minecraft:spell_effects": {
+					"add_effects": {
+						"duration": 15,
+						"effect": "invisibility",
+						"visible": false,
+						"display_on_screen_animation": true,
+						"amplifier": 1
+					}
+				},
+				"minecraft:behavior.fire_at_target": {
+					"projectile_def": "spimton:shadowp",
+					"priority": 1,
+					"attack_range": [
+						7,
+						32
+					],
+					"attack_cooldown": 0.2,
+					"pre_shoot_delay": 0.25,
+					"post_shoot_delay": 0.2,
+					"ranged_fov": 360,
+					"owner_anchor": 2,
+					"owner_offset": [
+						0,
+						0,
+						0
+					],
+					"target_anchor": 0,
+					"target_offset": [
+						0,
+						0,
+						0
+					]
+				},
+				"minecraft:timer": {
+					"time": 8,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:skulld": {
+				"minecraft:behavior.fire_at_target": {
+					"projectile_def": "wither_skull_dangerous",
+					"priority": 1,
+					"attack_range": [
+						4,
+						32
+					],
+					"attack_cooldown": 1,
+					"pre_shoot_delay": 0.75,
+					"post_shoot_delay": 0.2,
+					"ranged_fov": 90,
+					"owner_anchor": 2,
+					"owner_offset": [
+						0,
+						0.3,
+						0
+					],
+					"target_anchor": 0,
+					"target_offset": [
+						0,
+						0.5,
+						0
+					]
+				},
+				"minecraft:timer": {
+					"time": 4,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?50:0"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"creeper",
+					"wither",
+					"skeleton",
+					"undead",
+					"spimton:weeper"
+				]
+			},
+			"minecraft:burns_in_daylight": {},
+			"minecraft:knockback_resistance": {
+				"value": 0.8
+			},
+			"minecraft:on_hurt_by_player": {
+				"target": "self",
+				"event": "spimton:res"
+			},
+			"minecraft:behavior.move_around_target": {
+				"priority": 3,
+				"destination_position_range": [
+					4,
+					8
+				],
+				"movement_speed": 1.225,
+				"destination_pos_spread_degrees": 360,
+				"filters": {
+					"all_of": [
+						{
+							"test": "on_ground",
+							"value": true
+						},
+						{
+							"test": "target_distance",
+							"subject": "self",
+							"value": 24,
+							"operator": "<="
+						}
+					]
+				}
+			},
+			"minecraft:follow_range": {
+				"value": 32
+			},
+			"minecraft:breathable": {
+				"total_supply": 11111,
+				"generates_bubbles": false,
+				"breathes_water": true,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 1.8
+			},
+			"minecraft:movement": {
+				"value": 0.33
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:on_death": {
+				"event": "spimton:kill_sca",
+				"target": "self"
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/crither.json"
+			},
+			"minecraft:health": {
+				"value": 66,
+				"max": 66
+			},
+			"minecraft:attack": {
+				"damage": 3
+			},
+			"minecraft:boss": {
+				"hud_range": 35,
+				"name": "§cRazziator§r",
+				"should_darken_sky": true
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 5,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"look_distance": 8
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 6
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"must_see": true,
+				"must_see_forget_duration": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "creeper"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "spimton:weeper"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								}
+							]
+						},
+						"max_dist": 16
+					}
+				]
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 2
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "entity_explosion",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "drowning",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "wither",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "fall",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "fire_tick",
+						"damage_multiplier": 3
+					},
+					{
+						"cause": "lightning",
+						"damage_multiplier": 5
+					},
+					{
+						"cause": "attack",
+						"damage_modifier": -4
+					}
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"trigger": "spimton:switch",
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"effect @s fire_resistance 5 5 true",
+						"time set night"
+					]
+				}
+			},
+			"spimton:switch": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"spimton:cloud"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:killerqueen",
+								"spimton:skullshot",
+								"spimton:skulld",
+								"spimton:kqclose",
+								"spimton:melee"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @p[r=6] actionbar The Razziator opens the §eHeaven's Door§r...",
+								"tag @s remove hidden"
+							]
+						},
+						"weight": 15
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:melee"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:killerqueen",
+								"spimton:skullshot",
+								"spimton:skulld",
+								"spimton:kqclose",
+								"spimton:cloud"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @p[r=32] actionbar The Razziator lounges from a distance!",
+								"tag @s remove hidden"
+							]
+						},
+						"weight": 15
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:kqclose"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:killerqueen",
+								"spimton:skullshot",
+								"spimton:skulld",
+								"spimton:cloud",
+								"spimton:melee"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @p[r=32] actionbar The Razziator hides itself in the shadows...",
+								"tag @s add hidden"
+							]
+						},
+						"weight": 25
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:killerqueen"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:cloud",
+								"spimton:skullshot",
+								"spimton:skulld",
+								"spimton:kqclose",
+								"spimton:melee"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @p[r=32] actionbar The Attack of the Killer Queen is fast approaching..!",
+								"effect @e[r=20] darkness 15 6 true",
+								"tag @s remove hidden"
+							]
+						},
+						"weight": 20
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:skullshot"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:killerqueen",
+								"spimton:skulld",
+								"spimton:melee",
+								"spimton:kqclose",
+								"spimton:cloud"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @p[r=32] actionbar The Razziator disperds in the shadows...",
+								"effect @s invisibility 15 6 true",
+								"effect @e[r=20] darkness 15 6 true",
+								"summon spimton:crither_clone",
+								"summon spimton:crither_clone",
+								"tag @s remove hidden"
+							]
+						},
+						"weight": 15
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:skulld"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:killerqueen",
+								"spimton:kqclose",
+								"spimton:skullshot",
+								"spimton:cloud",
+								"spimton:melee"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @p[r=32] actionbar The Razziator gains power from the Wither",
+								"tag @s add hidden",
+								"playsound sfx.deltarune_boom @a[r=10] ~ ~ ~"
+							]
+						},
+						"weight": 10
+					}
+				]
+			},
+			"spimton:res": {
+				"queue_command": {
+					"command": "effect @s resistance 1 2 true",
+					"target": "self"
+				}
+			},
+			"spimton:kill_sca": {
+				"queue_command": {
+					"command": [
+						"execute as @e[type=spimton:sudden_cardiac_arrest] run event entity @s spimton:desp"
+					]
+				}
+			}
+		}
+	}
+}

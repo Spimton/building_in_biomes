@@ -1,0 +1,141 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.archshaman.health": {
+            "initial_state": "33",
+            "states": {
+                "33": {
+                    "on_entry": [
+                        "/event entity @s spimton:health_3"
+                    ],
+                    "transitions": [
+                        {
+                            "23": "query.health<134 && query.health>=67"
+                        },
+                        {
+                            "13": "query.health<67"
+                        }
+                    ]
+                },
+                "23": {
+                    "on_entry": [
+                        "/fog @a[r=48] push spimton:archie_fog_1",
+                        "/summon spimton:sun ~ ~2 ~",
+                        "/event entity @e[type=spimton:solar_flare] spimton:heal_sun",
+                        "/event entity @s spimton:health_2"
+                    ],
+                    "transitions": [
+                        {
+                            "13": "query.health<67"
+                        }
+                    ]
+                },
+                "13": {
+                    "on_entry": [
+                        "/scoreboard players remove @s mih_treshold 300",
+                        "/fog @a[r=48] push spimton:archie_fog_2",
+                        "/summon spimton:sun ~ ~3 ~",
+                        "/summon spimton:sun ~ ~2 ~",
+                        "/event entity @e[type=spimton:solar_flare] spimton:heal_sun",
+                        "/event entity @s spimton:health_1"
+                    ],
+                    "transitions": []
+                }
+            }
+        },
+        "controller.animation.weeper.health": {
+            "initial_state": "above_hh",
+            "states": {
+                "above_hh": {
+                    "on_entry": [
+                        "/event entity @s spimton:phase_1",
+                        "/event entity @s spimton:detrans"
+                    ],
+                    "transitions": [
+                        {
+                            "below_hh": "query.health<150"
+                        }
+                    ]
+                },
+                "below_hh": {
+                    "on_entry": [
+                        "/event entity @s spimton:phase_2",
+                        "/event entity @s spimton:detrans"
+                    ],
+                    "transitions": [
+                        {
+                            "above_hh": "query.health>=150"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.juandice.health": {
+            "initial_state": "alive",
+            "states": {
+                "alive": {
+                    "transitions": [
+                        {
+                            "ded": "query.health==1"
+                        }
+                    ]
+                },
+                "ded": {
+                    "on_entry": [
+                        "/event entity @s spimton:stand"
+                    ]
+                }
+            }
+        },
+        "controller.animation.weeper.transience": {
+            "initial_state": "not",
+            "states": {
+                "not": {
+                    "on_entry": [
+                        "/event entity @s spimton:detrans"
+                    ],
+                    "transitions": [
+                        {
+                            "yes": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "yes": {
+                    "on_entry": [
+                        "/event entity @s spimton:trans"
+                    ],
+                    "transitions": [
+                        {
+                            "yes": "query.mark_variant == 0"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.equestrian.health": {
+            "initial_state": "above_third",
+            "states": {
+                "above_third": {
+                    "transitions": [
+                        {
+                            "below_third": "query.health < 50"
+                        }
+                    ]
+                },
+                "below_third": {
+                    "on_entry": [
+                        "/event entity @s spimton:below_third"
+                    ],
+                    "transitions": [
+                        {
+                            "above_third": "query.health >=50"
+                        }
+                    ],
+                    "on_exit": [
+                        "/event entity @s spimton:above_third"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_ancient_gold_tiles_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:decorated_ancient_gold_tiles"
+			}
+		},
+		"result": {
+			"item": "spimton:decorated_ancient_gold_tiles_slab",
+			"count": 6
+		}
+	}
+}

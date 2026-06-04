@@ -1,0 +1,66 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:blue_terracotta_bricks",
+			"menu_category": {
+				"category": "construction",
+				"group": "itemGroup.name.stainedClay",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 6,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:stone_tier')"
+						},
+						"destroy_speed": 1.35
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:wood_tier')"
+						},
+						"destroy_speed": 1.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.3
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.1
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#3A2E82",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:terracotta": {}
+		}
+	}
+}

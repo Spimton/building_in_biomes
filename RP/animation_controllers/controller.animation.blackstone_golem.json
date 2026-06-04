@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "animation_controllers": {
+        "controller.animation.blackstone_golem.roar": {
+            "initial_state": "not_roaring",
+            "states": {
+                "not_roaring": {
+                    "transitions": [
+                        {
+                            "roaring": "query.is_roaring"
+                        }
+                    ]
+                },
+                "roaring": {
+                    "animations": [
+                        "blackstone_construct_roar",
+                        "basalt_construct_roar"
+                    ],
+                    "transitions": [
+                        {
+                            "not_roaring": "!query.is_roaring"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,760 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "spimton:chillager": {
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.chillager.hurt",
+                    "ambient": "mob.chillager.idle",
+                    "death": "mob.chillager.death",
+                    "prepare.attack": "mob.evocation_illager.prepare_attack",
+                    "cast.spell": "mob.evocation_illager.cast_spell"
+                }
+            },
+            "spimton:chillager_summoner": {
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.chillager.hurt",
+                    "ambient": "mob.chillager.idle",
+                    "death": "mob.chillager.death",
+                    "prepare.attack": "mob.evocation_illager.prepare_attack",
+                    "cast.spell": "mob.evocation_illager.cast_spell"
+                }
+            },
+            "spimton:chillager_assailant": {
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.chillager.hurt",
+                    "ambient": "mob.chillager.idle",
+                    "death": "mob.chillager.death",
+                    "prepare.attack": "mob.evocation_illager.prepare_attack",
+                    "cast.spell": "mob.evocation_illager.cast_spell"
+                }
+            },
+            "spimton:coldager": {
+                "pitch": [
+                    0.6,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.chillager.hurt",
+                    "ambient": "mob.chillager.idle",
+                    "death": "mob.chillager.death",
+                    "prepare.attack": "mob.evocation_illager.prepare_attack",
+                    "shoot": "firework.launch"
+                }
+            },
+            "spimton:coldager_assailant": {
+                "pitch": [
+                    0.6,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.chillager.hurt",
+                    "ambient": "mob.chillager.idle",
+                    "death": "mob.chillager.death",
+                    "prepare.attack": "mob.evocation_illager.prepare_attack",
+                    "shoot": "firework.launch"
+                }
+            },
+            "spimton:coldager_summoner": {
+                "pitch": [
+                    0.6,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.chillager.hurt",
+                    "ambient": "mob.chillager.idle",
+                    "death": "mob.chillager.death",
+                    "prepare.attack": "mob.evocation_illager.prepare_attack",
+                    "shoot": "firework.launch"
+                }
+            },
+            "spimton:spike_projectile": {
+                "pitch": [
+                    0.99,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "freezer": "mob.player.hurt_freeze"
+                }
+            },
+            "spimton:chillgolem": {
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "random.glass",
+                    "death": "random.glass"
+                }
+            },
+            "spimton:spike": {
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "use.snow",
+                    "death": "use.snow"
+                }
+            },
+            "spimton:chill_horn": {
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1,
+                "events": {
+                    "death": "shriek.sculk_shrieker"
+                }
+            },
+            "spimton:overgrown_skirmisher": {
+                "pitch": [
+                    0.5,
+                    1.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "attack": "item.trident.hit"
+                }
+            },
+            "spimton:overgrown_horseman": {
+                "pitch": [
+                    0.5,
+                    1.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "attack": "item.trident.hit"
+                }
+            },
+            "spimton:overgrown_steed": {
+                "pitch": [
+                    0.5,
+                    1.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.horse.skeleton.hit",
+                    "death": "mob.horse.skeleton.death",
+                    "ambient": "mob.horse.skeleton.idle",
+                    "walk": "mob.horse.gallop",
+                    "attack": "mob.horse.idle"
+                }
+            },
+            "spimton:overgrown_hunter": {
+                "pitch": [
+                    0.5,
+                    1.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "attack": "item.trident.hit",
+                    "shoot": "item.trident.throw"
+                }
+            },
+            "spimton:overgrown_warlock": {
+                "pitch": [
+                    0.5,
+                    1.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "attack": "item.trident.hit"
+                }
+            },
+            "spimton:overgrown_archshaman": {
+                "pitch": [
+                    0.3,
+                    0.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "shoot": "firework.launch",
+                    "cast.spell": "portal.travel",
+                    "jojoref": "beacon.activate"
+                }
+            },
+            "spimton:sun": {
+                "events": {
+                    "ambient": "mob.blaze.breathe",
+                    "death": "mob.blaze.death",
+                    "hurt": "mob.blaze.hit",
+                    "shoot": "mob.blaze.shoot"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 2.0
+            },
+            "spimton:jojoref_friendly": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "death": "beacon.deactivate"
+                }
+            },
+            "spimton:cancer_giver": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "death": "mob.silverfish.step"
+                }
+            },
+            "spimton:pbd": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "death": "mob.silverfish.step"
+                }
+            },
+            "spimton:mby_dialog": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "death": "sfx.deltarune_boom"
+                }
+            },
+            "spimton:tp_dialog": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "death": "sfx.nothingpersonel"
+                }
+            },
+            "spimton:goulden_guard": {
+                "volume": 1,
+                "pitch": 0.67,
+                "events": {
+                    "death": "mob.irongolem.death",
+                    "hurt": "mob.irongolem.hit",
+                    "shoot": {
+                        "sound": "sfx.deltarune_boom",
+                        "pitch": 12.25,
+                        "volume": 2
+                    },
+                    "attack": "mob.irongolem.throw",
+                    "walk": "mob.irongolem.walk"
+                }
+            },
+            "spimton:goulden_guard_2": {
+                "volume": 1,
+                "pitch": 0.67,
+                "events": {
+                    "death": "mob.irongolem.death",
+                    "hurt": "mob.irongolem.hit",
+                    "shoot": {
+                        "sound": "sfx.deltarune_boom",
+                        "pitch": 12.25,
+                        "volume": 2
+                    },
+                    "attack": "mob.irongolem.throw",
+                    "walk": "mob.irongolem.walk"
+                }
+            },
+            "spimton:goulden_guard_3": {
+                "volume": 1,
+                "pitch": 0.67,
+                "events": {
+                    "death": "mob.irongolem.death",
+                    "hurt": "mob.irongolem.hit",
+                    "shoot": {
+                        "sound": "sfx.deltarune_boom",
+                        "pitch": 1.225,
+                        "volume": 1.225
+                    },
+                    "attack": "mob.irongolem.throw",
+                    "walk": "mob.irongolem.walk"
+                }
+            },
+            "spimton:goulden_boi": {
+                "volume": 1,
+                "pitch": 0.67,
+                "events": {
+                    "death": "mob.copper_golem.death",
+                    "hurt": "mob.copper_golem.hurt",
+                    "attack": "mob.copper_golem.spin",
+                    "walk": "mob.copper_golem.step"
+                }
+            },
+            "spimton:rune_fire": {
+                "volume": 1,
+                "pitch": 1,
+                "events": {
+                    "death": "portal.travel"
+                }
+            },
+            "spimton:wraith": {
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.wraith.hurt",
+                    "death": "mob.wraith.death",
+                    "ambient": "mob.wraith.say"
+                },
+                "pitch": 1
+            },
+            "spimton:antique_wraith": {
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.wraith.hurt",
+                    "death": "mob.wraith.death",
+                    "ambient": "mob.wraith.say"
+                },
+                "pitch": 1
+            },
+            "spimton:hellish_wraith": {
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.wraith.hurt",
+                    "death": "mob.wraith.death",
+                    "ambient": "mob.wraith.say"
+                },
+                "pitch": 1
+            },
+            "spimton:craith": {
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.wraith.hurt",
+                    "death": "mob.wraith.death",
+                    "ambient": "mob.wraith.say"
+                },
+                "pitch": 1
+            },
+            "spimton:creepie": {
+                "volume": 1,
+                "pitch": 2,
+                "events": {
+                    "death": "mob.creeper.death",
+                    "hurt": "mob.creeper.say",
+                    "fuse": {
+                        "pitch": 0.5,
+                        "sound": "random.fuse",
+                        "volume": 1
+                    }
+                }
+            },
+            "spimton:creepie_hostile": {
+                "volume": 1,
+                "pitch": 2,
+                "events": {
+                    "death": "mob.creeper.death",
+                    "hurt": "mob.creeper.say",
+                    "fuse": {
+                        "pitch": 0.5,
+                        "sound": "random.fuse",
+                        "volume": 1
+                    }
+                }
+            },
+            "spimton:weeper": {
+                "volume": 1,
+                "pitch": 0.5,
+                "events": {
+                    "death": "mob.creeper.death",
+                    "hurt": "mob.creeper.say",
+                    "jojref": "sfx.deltarune_boom",
+                    "fuse": {
+                        "pitch": 0.5,
+                        "sound": "random.fuse",
+                        "volume": 1
+                    },
+                    "deathb": {
+                        "sound": "sfx.deltarune_boom",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                }
+            },
+            "spimton:justice_champion": {
+                "volume": 1,
+                "pitch": 0.3,
+                "events": {
+                    "death": "mob.irongolem.death",
+                    "hurt": "mob.irongolem.hit",
+                    "cast_spell": "block.bell.hit",
+                    "transfoma": {
+                        "sound": "item.trident.hit",
+                        "pitch": 1,
+                        "volume": 1
+                    }
+                }
+            },
+            "spimton:unbreakable_diamond": {
+                "volume": 1,
+                "pitch": 0.5,
+                "events": {
+                    "death": "mob.irongolem.death",
+                    "hurt": "random.anvil_land",
+                    "cast_spell": "block.bell.hit",
+                    "transfoma": {
+                        "sound": "item.trident.hit",
+                        "pitch": 1,
+                        "volume": 1
+                    }
+                }
+            },
+            "spimton:cultist": {
+                "volume": 1,
+                "pitch": 0.6,
+                "events": {
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:red_magician": {
+                "volume": 1,
+                "pitch": 0.6,
+                "events": {
+                    "magiciansred": "mob.ghast.scream",
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:magicians_red": {
+                "volume": 1,
+                "pitch": 1,
+                "events": {
+                    "magiciansred": "mob.ghast.scream",
+                    "death": "mob.ghast.death",
+                    "hurt": "mob.ghast.moan",
+                    "ambient": "mob.ghast.scream",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:magicians_red_ally": {
+                "volume": 1,
+                "pitch": 1,
+                "events": {
+                    "magiciansred": "mob.ghast.scream",
+                    "death": "mob.ghast.death",
+                    "hurt": "mob.ghast.moan",
+                    "ambient": "mob.ghast.scream",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:hollering_chevalier": {
+                "volume": 1,
+                "pitch": 0.4,
+                "events": {
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:drug_dealer": {
+                "volume": 0.9,
+                "pitch": 0.8,
+                "events": {
+                    "death": "mob.villager.death",
+                    "hurt": "mob.villager.hit",
+                    "ambient": "mob.villager.idle",
+                    "trade": "mob.villager.yes"
+                }
+            },
+            "spimton:overgrown_dualliste": {
+                "volume": 1,
+                "pitch": 0.8,
+                "events": {
+                    "death": "mob.skeleton.death",
+                    "hurt": "mob.skeleton.hurt",
+                    "ambient": "mob.skeleton.say",
+                    "attack": "item.trident.hit_ground"
+                }
+            },
+            "spimton:crither": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "boom": "sfx.deltarune_boom"
+                }
+            },
+            "spimton:sudden_cardiac_arrest": {
+                "pitch": [
+                    1,
+                    1
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.irongolem.hit",
+                    "death": "mob.irongolem.death",
+                    "boom": "sfx.deltarune_boom"
+                }
+            },
+            "spimton:sudden_cardiac_arrest_biggu": {
+                "pitch": [
+                    0.66,
+                    0.66
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.irongolem.hit",
+                    "death": "mob.irongolem.death",
+                    "boom": "sfx.deltarune_boom"
+                }
+            },
+            "spimton:blackstone_construct": {
+                "pitch": [
+                    0.66,
+                    0.66
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.irongolem.hit",
+                    "death": "mob.irongolem.death"
+                }
+            },
+            "spimton:basalt_construct": {
+                "pitch": [
+                    0.66,
+                    0.66
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.irongolem.hit",
+                    "death": "mob.irongolem.death"
+                }
+            },
+            "spimton:crimson_king": {
+                "pitch": [
+                    0.5,
+                    0.6
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.endermen.hit",
+                    "death": "mob.endermen.death",
+                    "ambient": "mob.wraith.say",
+                    "walk": "mob.skeleton.step",
+                    "boom": "sfx.deltarune_boom"
+                }
+            },
+            "spimton:pale_walker": {
+                "events": {
+                    "ambient": "mob.zombie.say",
+                    "death": "mob.zombie.death",
+                    "hurt": "mob.zombie.hurt",
+                    "step": {
+                        "pitch": 1,
+                        "sound": "mob.zombie.step",
+                        "volume": 0.45
+                    }
+                },
+                "pitch": [
+                    0.4,
+                    0.6
+                ],
+                "volume": 1
+            },
+            "spimton:bronze_golem": {
+                "volume": 1,
+                "pitch": [
+                    0.4,
+                    0.5
+                ],
+                "events": {
+                    "ambient": "mob.copper_golem.spin",
+                    "death": "mob.copper_golem.death",
+                    "hurt": "mob.copper_golem.oxidized.hurt",
+                    "step": {
+                        "pitch": 0.6,
+                        "sound": "mob.copper_golem.step",
+                        "volume": 0.4
+                    },
+                    "shoot": {
+                        "pitch": 1,
+                        "sound": "crossbow.shoot",
+                        "volume": 0.7
+                    },
+                    "boost": {
+                        "sound": "sfx.deltarune_boom",
+                        "pitch": 1
+                    },
+                    "upgrade": {
+                        "sound": "smithing_table.use",
+                        "pitch": 1
+                    }
+                }
+            },
+            "spimton:cancerous_rodent": {
+                "volume": 1,
+                "pitch": 0.3,
+                "events": {
+                    "death": "mob.hoglin.death",
+                    "hurt": "mob.hoglin.hurt",
+                    "ambient": "mob.hoglin.ambient",
+                    "hit": "mob.hoglin.attack"
+                }
+            },
+            "spimton:very_cancerous_rodent": {
+                "volume": 1,
+                "pitch": 0.1225,
+                "events": {
+                    "death": "mob.hoglin.death",
+                    "hurt": "mob.hoglin.hurt",
+                    "ambient": "mob.hoglin.ambient",
+                    "hit": "mob.hoglin.attack"
+                }
+            },
+            "spimton:ratt": {
+                "volume": 1,
+                "pitch": 0.1225,
+                "events": {
+                    "death": "mob.irongolem.death",
+                    "hurt": "mob.irongolem.hit",
+                    "walk": "mob.irongolem.walk",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:thefatrat": {
+                "volume": 1,
+                "pitch": 1,
+                "events": {
+                    "hit_boom": "sfx.deltarune_boom",
+                    "hurt": "hit.iron"
+                }
+            },
+            "spimton:piglin_commando": {
+                "events": {
+                    "ambient": "mob.piglin_brute.ambient",
+                    "angry": "mob.piglin_brute.angry",
+                    "death": "mob.piglin_brute.death",
+                    "hurt": "mob.piglin_brute.hurt",
+                    "step": {
+                        "sound": "mob.piglin_brute.step",
+                        "volume": 0.350
+                    }
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
+            },
+            "spimton:pseudomolotov": {
+                "events": {
+                    "glass": "random.glass"
+                },
+                "volume": 1.1,
+                "pitch": [
+                    0.9,
+                    1.1
+                ]
+            },
+            "spimton:piglin_pyro": {
+                "events": {
+                    "ambient": "mob.zombiepig.zpig",
+                    "death": "mob.zombiepig.zpigdeath",
+                    "hurt": "mob.zombiepig.zpighurt",
+                    "mad": {
+                        "pitch": [
+                            1.440,
+                            2.160
+                        ],
+                        "sound": "mob.zombiepig.zpigangry",
+                        "volume": 2.0
+                    }
+                },
+                "pitch": [
+                    0.70,
+                    1.10
+                ],
+                "volume": 1.0
+            }
+        }
+    },
+    "block_sounds": {
+        "spimton:bone_pile": {
+            "volume": 1,
+            "pitch": [
+                0.5,
+                1.5
+            ],
+            "events": {
+                "break": "block.bone_pile.break",
+                "hit": "block.bone_pile.break",
+                "place": "block.bone_pile.step"
+            }
+        }
+    },
+    "interactive_sounds": {
+        "block_sounds": {
+            "spimton:bone_pile": {
+                "pitch": [
+                    0.5,
+                    1.5
+                ],
+                "volume": 1,
+                "events": {
+                    "step": "block.bone_pile.step"
+                }
+            }
+        }
+    }
+}

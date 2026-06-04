@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_furnace": {
+        "tags": [
+            "furnace"
+        ],
+        "description": {
+            "identifier": "spimton:cracked_sandy_hoary_stone_bricks"
+        },
+        "input": "spimton:sandy_hoary_stone_bricks",
+        "output": "spimton:cracked_sandy_hoary_stone_bricks"
+    }
+}

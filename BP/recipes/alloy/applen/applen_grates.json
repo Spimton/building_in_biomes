@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:applen_grates"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" # ",
+			"# #",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:applen_block"
+			}
+		},
+		"result": {
+			"item": "spimton:applen_grates",
+			"count": 4
+		}
+	}
+}

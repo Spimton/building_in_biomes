@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:deep_asbestos_feature"
+		},
+		"count": 2,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:deepslate_asbestos_ore",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "deepslate"
+					}
+				]
+			}
+		]
+	}
+}

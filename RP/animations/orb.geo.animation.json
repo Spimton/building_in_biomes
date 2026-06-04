@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.orb.rote": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"SUN": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							-362.48327,
+							-2.49764,
+							360.10996
+						]
+					}
+				}
+			}
+		}
+	}
+}

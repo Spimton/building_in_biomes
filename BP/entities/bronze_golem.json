@@ -1,0 +1,859 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:bronze_golem",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "properties": {
+                "spimton:ammo": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [
+                        0,
+                        4
+                    ]
+                }
+            }
+        },
+        "component_groups": {
+            "spimton:untame": {
+                "minecraft:tameable": {
+                    "probability": 0.9,
+                    "tame_items": "spimton:bronze_ingot",
+                    "tame_event": {
+                        "event": "spimton:taming",
+                        "target": "self"
+                    }
+                }
+            },
+            "spimton:tame": {
+                "minecraft:is_tamed": {},
+                "minecraft:healable": {
+                    "items": [
+                        {
+                            "item": "spimton:bronze_ingot",
+                            "heal_amount": 30
+                        }
+                    ]
+                },
+                "minecraft:behavior.owner_hurt_target": {
+                    "priority": 0,
+                    "entity_types": {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "bronze_golem"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "spimton:attackmode": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "must_see": true,
+                    "reselect_targets": true,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "monster"
+                            },
+                            "max_dist": 16
+                        }
+                    ]
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": [
+                        12,
+                        24
+                    ],
+                    "time_down_event": {
+                        "target": "self",
+                        "event": "spimton:remove_ammo"
+                    }
+                },
+                "minecraft:behavior.hurt_by_target": {
+                    "priority": 1,
+                    "entity_types": {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "monster"
+                        }
+                    }
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 3,
+                    "charge_charged_trigger": 0,
+                    "charge_shoot_trigger": 0.4,
+                    "attack_radius": 32,
+                    "attack_radius_min": 1,
+                    "burst_shots": 1,
+                    "burst_interval": 0.01,
+                    "ranged_fov": 30,
+                    "speed_multiplier": 1.2
+                }
+            },
+            "spimton:standmode": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                },
+                "minecraft:behavior.follow_owner": {
+                    "priority": 4,
+                    "can_teleport": true,
+                    "speed_multiplier": 1.3,
+                    "start_distance": 8,
+                    "stop_distance": 3
+                },
+                "minecraft:pushable": {
+                    "is_pushable": true,
+                    "is_pushable_by_piston": true
+                },
+                "minecraft:knockback_resistance": {
+                    "value": 0
+                },
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:interact": {
+                    "interactions": [
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "!=",
+                                            "value": "spimton:bronze_ingot"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:sit"
+                            },
+                            "use_item": false,
+                            "interact_text": "action.interact.sit"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:bluestone"
+                                        },
+                                        {
+                                            "test": "has_component",
+                                            "value": "minecraft:behavior.ranged_attack",
+                                            "subject": "self",
+                                            "operator": "not"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:add_ammo"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "boost"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:steel_ball_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:steel_ball"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:fireball_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:fireball"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:purify_orb_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:purify_orb"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:dragon_fireball_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:dragon_fireball"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        }
+                    ]
+                }
+            },
+            "spimton:sitmode": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:pushable": {
+                    "is_pushable": false,
+                    "is_pushable_by_piston": false
+                },
+                "minecraft:knockback_resistance": {
+                    "value": 1
+                },
+                "minecraft:behavior.pickup_items": {
+                    "priority": 3,
+                    "max_dist": 1.5,
+                    "goal_radius": 2,
+                    "speed_multiplier": 1,
+                    "can_pickup_to_hand_or_equipment": false
+                },
+                "minecraft:movement": {
+                    "value": 0
+                },
+                "minecraft:interact": {
+                    "interactions": [
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": true
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "!=",
+                                            "value": "spimton:bronze_ingot"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:stand"
+                            },
+                            "use_item": false,
+                            "interact_text": "action.interact.stand"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:bluestone"
+                                        },
+                                        {
+                                            "test": "has_component",
+                                            "value": "minecraft:behavior.ranged_attack",
+                                            "subject": "self",
+                                            "operator": "not"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:add_ammo"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.sit",
+                            "play_sounds": "boost"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:steel_ball_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:steel_ball"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:fireball_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:fireball"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:purify_orb_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:purify_orb"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        },
+                        {
+                            "on_interact": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "is_sneaking",
+                                            "subject": "player",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "player",
+                                            "operator": "!=",
+                                            "value": "lead"
+                                        },
+                                        {
+                                            "test": "is_leashed",
+                                            "value": false
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "domain": "hand",
+                                            "subject": "other",
+                                            "operator": "==",
+                                            "value": "spimton:dragon_fireball_upgrade"
+                                        }
+                                    ]
+                                },
+                                "event": "spimton:dragon_fireball"
+                            },
+                            "use_item": true,
+                            "interact_text": "action.interact.boost",
+                            "play_sounds": "upgrade"
+                        }
+                    ]
+                }
+            },
+            "spimton:steelball": {
+                "minecraft:shooter": {
+                    "def": "spimton:steel_ball_projectile",
+                    "aux_val": 0
+                }
+            },
+            "spimton:normal": {
+                "minecraft:shooter": {
+                    "def": "spimton:cannonball",
+                    "aux_val": 0
+                }
+            },
+            "spimton:purify_orb": {
+                "minecraft:shooter": {
+                    "def": "spimton:purify_orb",
+                    "aux_val": 0
+                }
+            },
+            "spimton:fireball": {
+                "minecraft:shooter": {
+                    "def": "fireball",
+                    "aux_val": 0
+                }
+            },
+            "spimton:dragon_fireball": {
+                "minecraft:shooter": {
+                    "def": "dragon_fireball",
+                    "aux_val": 0
+                }
+            }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:nameable": {},
+            "minecraft:loot": {
+                "table": "loot_tables/entities/bronze_golem.json"
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "mob",
+                    "bronze_golem"
+                ]
+            },
+            "minecraft:balloonable": {
+                "mass": 1.0
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 5,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 6,
+                "look_distance": 6.0,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 7
+            },
+            "minecraft:collision_box": {
+                "width": 0.9,
+                "height": 1.3
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": false,
+                "avoid_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:health": {
+                "value": 45,
+                "max": 45
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "projectile",
+                        "on_damage": {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "bronze_golem"
+                                    },
+                                    {
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        },
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:behavior.tempt": {
+                "priority": 5,
+                "speed_multiplier": 1.3,
+                "can_tempt_vertically": true,
+                "items": [
+                    "spimton:bronze_ingot"
+                ]
+            },
+            "minecraft:leashable": {
+                "soft_distance": 4.0,
+                "hard_distance": 6.0,
+                "max_distance": 10.0
+            },
+            "minecraft:leashable_to": {},
+            "minecraft:persistent": {},
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "spimton:normal",
+                        "spimton:standmode",
+                        "spimton:untame"
+                    ]
+                }
+            },
+            "spimton:taming": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:untame"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:tame"
+                    ]
+                }
+            },
+            "spimton:sit": {
+                "add": {
+                    "component_groups": [
+                        "spimton:sitmode"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:standmode"
+                    ]
+                }
+            },
+            "spimton:stand": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:sitmode"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:standmode"
+                    ]
+                }
+            },
+            "spimton:remove_ammo": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:attackmode"
+                    ]
+                }
+            },
+            "spimton:add_ammo": {
+                "add": {
+                    "component_groups": [
+                        "spimton:attackmode"
+                    ]
+                }
+            },
+            "spimton:steel_ball": {
+                "queue_command": {
+                    "target": "self",
+                    "command": "title @a[r=4] actionbar The Bronze Golem now shoots Steel Balls!"
+                },
+                "set_property": {
+                    "spimton:ammo": 1
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:steelball"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:normal",
+                        "spimton:dragon_fireball",
+                        "spimton:fireball",
+                        "spimton:purify_orb"
+                    ]
+                }
+            },
+            "spimton:purify_orb": {
+                "queue_command": {
+                    "target": "self",
+                    "command": "title @a[r=4] actionbar The Bronze Golem now shoots Purify Orbs!"
+                },
+                "set_property": {
+                    "spimton:ammo": 2
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:purify_orb"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:normal",
+                        "spimton:dragon_fireball",
+                        "spimton:fireball",
+                        "spimton:steelball"
+                    ]
+                }
+            },
+            "spimton:dragon_fireball": {
+                "queue_command": {
+                    "target": "self",
+                    "command": "title @a[r=4] actionbar The Bronze Golem now shoots Dragon Fireballs!"
+                },
+                "set_property": {
+                    "spimton:ammo": 4
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:dragon_fireball"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:normal",
+                        "spimton:steelball",
+                        "spimton:fireball",
+                        "spimton:purify_orb"
+                    ]
+                }
+            },
+            "spimton:fireball": {
+                "queue_command": {
+                    "target": "self",
+                    "command": "title @a[r=4] actionbar The Bronze Golem now shoots Fireballs!"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:fireball"
+                    ]
+                },
+                "set_property": {
+                    "spimton:ammo": 3
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:normal",
+                        "spimton:dragon_fireball",
+                        "spimton:steelball",
+                        "spimton:purify_orb"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:emberock_graft_1"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:temple_rock"
+			},
+			"y": {
+				"item": "spimton:radioactive_bottle"
+			}
+		},
+		"pattern": [
+			"xxx",
+			"xyx",
+			"xxx"
+		],
+		"result": {
+			"item": "spimton:emberock",
+			"count": 8
+		}
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:jojoref_dialog",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:type_family": {
+				"family": [
+					"spimton:archshaman"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire_tick",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:di"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:di": {
+				"queue_command": {
+					"command": [
+						"kill @e[type=spimton:solar_flare]",
+						"function mob/overgrown/dialog_mih",
+						"kill @s"
+					]
+				}
+			}
+		}
+	}
+}

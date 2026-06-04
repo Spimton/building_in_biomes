@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cobblestone_mosaic_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:cobblestone_mosaic"
+			}
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"result": {
+			"item": "spimton:cobblestone_mosaic_stairs",
+			"count": 4
+		}
+	}
+}

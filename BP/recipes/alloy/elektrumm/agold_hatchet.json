@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:agold_hatchet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"zw",
+			"yz",
+			"x "
+		],
+		"key": {
+			"x": {
+				"item": "stick"
+			},
+			"y": {
+				"item": "spimton:red_limestone_hatchet"
+			},
+			"z": {
+				"item": "spimton:ancient_gold_ingot"
+			},
+			"w": {
+				"item": "fire_charge"
+			}
+		},
+		"result": {
+			"item": "spimton:agold_hatchet"
+		}
+	}
+}

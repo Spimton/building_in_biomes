@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:smooth_crimstone"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:crimstone",
+		"output": "spimton:smooth_crimstone"
+	}
+}

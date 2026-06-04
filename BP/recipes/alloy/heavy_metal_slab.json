@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:heavy_metal_slab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:heavy_metal_block"
+			}
+		},
+		"result": {
+			"item": "spimton:heavy_metal_slab",
+			"count": 6
+		}
+	}
+}

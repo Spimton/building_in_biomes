@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"spimton:alloy_forge_1"
+		],
+		"description": {
+			"identifier": "spimton:ht_lead_ingot_1"
+		},
+		"pattern": [
+			" @",
+			"@#@",
+			" @ "
+		],
+		"key": {
+			"#": {
+				"item": "cocoa_beans"
+			},
+			"@": {
+				"item": "spimton:lead_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:ht_lead_ingot",
+			"count": 2
+		}
+	}
+}

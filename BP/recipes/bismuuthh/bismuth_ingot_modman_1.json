@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:bismuth_ingot_modman_1"
+		},
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		],
+		"input": "spimton:raw_bismuth",
+		"output": "spimton:bismuth_ingot"
+	}
+}

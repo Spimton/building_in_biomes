@@ -1,0 +1,62 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:blackknife",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:icon": "BLACKKNIFE",
+			"minecraft:damage": {
+				"value": 6
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:hover_text_color": "dark_purple",
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool"
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 25
+			},
+			"minecraft:cooldown": {
+				"category": "knife",
+				"duration": 1
+			},
+			"minecraft:custom_components": [
+				"spimton:SWORD"
+			],
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:shadowcrystal"
+						],
+						"repair_amount": 66
+					},
+					{
+						"items": [
+							"spimton:blackknife"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:durability": {
+				"max_durability": 1997,
+				"damage_chance": {
+					"max": 0,
+					"min": 0
+				}
+			}
+		}
+	}
+}

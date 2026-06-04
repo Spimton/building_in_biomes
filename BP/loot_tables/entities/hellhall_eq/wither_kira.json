@@ -1,0 +1,81 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "iron_sword",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "vanishing",
+                                    "level": 1
+                                },
+                                {
+                                    "id": "sharpness",
+                                    "level": 2
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "iron_helmet",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "set_armor_trim",
+                            "material": "gold",
+                            "pattern": "rib"
+                        },
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "vanishing",
+                                    "level": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "iron_chestplate",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "set_armor_trim",
+                            "material": "gold",
+                            "pattern": "rib"
+                        },
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "vanishing",
+                                    "level": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

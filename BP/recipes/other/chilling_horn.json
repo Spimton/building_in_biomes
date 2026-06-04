@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chilling_horn"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "spimton:permafrost_essence"
+			},
+			"y": {
+				"item": "echo_shard"
+			},
+			"z": {
+				"item": "goat_horn"
+			}
+		},
+		"pattern": [
+			"xzx",
+			" y "
+		],
+		"result": {
+			"item": "spimton:chilling_horn"
+		}
+	}
+}

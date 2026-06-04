@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:splosion_ammo"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "fire_charge"
+			},
+			{
+				"item": "gunpowder"
+			},
+			{
+				"item": "spimton:ancient_gold_ingot"
+			}
+		],
+		"result": {
+			"item": "spimton:small_splosion_ammo",
+			"count": 16
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "spimton:ruins_savannah"
+		},
+		"structure_name": "mystructure:ruins_savannah",
+		"adjustment_radius": 16,
+		"facing_direction": "random",
+		"constraints": {
+			"block_intersection": {
+				"block_allowlist": [
+					"dirt",
+					"grass_block",
+					"stone",
+					"gravel"
+				]
+			},
+			"grounded": {}
+		}
+	}
+}

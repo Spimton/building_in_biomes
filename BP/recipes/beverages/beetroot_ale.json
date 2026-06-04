@@ -1,0 +1,37 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:beetroot_ale"
+		},
+		"assume_symmetry": true,
+		"priority": 1,
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"tags": [
+			"spimton:keg",
+			"spimton:keg_cold"
+		],
+		"pattern": [
+			"zxz",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "brown_mushroom"
+			},
+			"y": {
+				"item": "spimton:ale"
+			},
+			"z": {
+				"item": "beetroot"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:beetroot_ale"
+			}
+		]
+	}
+}

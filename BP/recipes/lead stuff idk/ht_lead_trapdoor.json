@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ht_lead_trapdoor"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ht_lead_ingot"
+			}
+		},
+		"pattern": [
+			"###",
+			"###"
+		],
+		"result": {
+			"item": "spimton:ht_lead_trapdoor",
+			"count": 3
+		}
+	}
+}

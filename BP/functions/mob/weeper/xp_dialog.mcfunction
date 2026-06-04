@@ -1,0 +1,1 @@
+tellraw @a[r=30] {"rawtext": [{"text": "§r<§cThe Weeper, Michael Bay Connoisseur§r> Succumb to the power of Michael Bay!"}]}

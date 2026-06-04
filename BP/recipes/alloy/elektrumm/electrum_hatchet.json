@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:electrum_hatchet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"zz",
+			"yz",
+			"x "
+		],
+		"key": {
+			"x": {
+				"item": "stick"
+			},
+			"y": {
+				"item": "spimton:limestone_hatchet"
+			},
+			"z": {
+				"item": "spimton:electrum_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:electrum_hatchet"
+		}
+	}
+}

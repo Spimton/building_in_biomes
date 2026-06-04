@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.any.targe": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						-46.58994,
+						-20.71501,
+						-18.50097
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						4.61563,
+						-40.01754,
+						-69.4317
+					],
+					"position": [
+						0,
+						-2,
+						-3
+					]
+				}
+			}
+		}
+	}
+}

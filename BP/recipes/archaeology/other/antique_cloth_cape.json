@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:antique_cloth_cape"
+        },
+        "tags": [
+            "spimton:archaeology_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "# #",
+            "###",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:antique_cloth"
+            }
+        },
+        "result": {
+            "item": "spimton:antique_cloth_cape"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:steel_shield",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:allow_off_hand": true,
+			"minecraft:can_destroy_in_creative": true,
+			"minecraft:durability": {
+				"max_durability": 450,
+				"damage_chance": {
+					"min": 50,
+					"max": 100
+				}
+			},
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 5
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:steel_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"spimton:steel_shield"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:icon": "steel_shield",
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true
+		}
+	}
+}

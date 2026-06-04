@@ -1,0 +1,17 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "spimton:champion_boots"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": "spimton:champion_upgrade",
+		"base": "spimton:steel_boots",
+		"addition": "netherite_ingot",
+		"result": {
+			"item": "spimton:champion_boots"
+		}
+	}
+}

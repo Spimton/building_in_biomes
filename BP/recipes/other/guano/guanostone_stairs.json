@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:guanostone_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:guanostone"
+			}
+		},
+		"result": {
+			"item": "spimton:guanostone_stairs",
+			"count": 4
+		}
+	}
+}

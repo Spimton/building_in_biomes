@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:chainmail_boots"
+        },
+        "tags": [
+            "spimton:archaeology_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@ @",
+            "# #"
+        ],
+        "key": {
+            "#": {
+                "item": "iron_ingot"
+            },
+            "@": {
+                "item": "spimton:tin_ingot"
+            }
+        },
+        "result": {
+            "item": "chainmail_boots"
+        }
+    }
+}

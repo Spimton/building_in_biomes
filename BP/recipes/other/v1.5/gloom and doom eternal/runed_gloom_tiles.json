@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:runed_gloom_tiles"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:gloom_tiles"
+			},
+			"@": {
+				"item": "spimton:ectoplasm"
+			}
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"result": {
+			"item": "spimton:runed_gloom_tiles",
+			"count": 8
+		}
+	}
+}

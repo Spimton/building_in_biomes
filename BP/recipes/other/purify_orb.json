@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:purify_orb"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "echo_shard"
+			},
+			"y": {
+				"item": "spimton:silver_orb"
+			},
+			"z": {
+				"item": "spimton:permafrost_essence"
+			}
+		},
+		"pattern": [
+			"yzy",
+			"yxy",
+			"yzy"
+		],
+		"result": {
+			"item": "spimton:purify_orb",
+			"count": 6
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_terracotta"
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "hardened_clay"
+			},
+			"@": {
+				"item": "spimton:bismuth_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_terracotta",
+			"count": 8
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

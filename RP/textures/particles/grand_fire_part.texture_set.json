@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "grand_fire_part",
+		"metalness_emissive_roughness": "grand_fire_part_mer"
+	}
+}

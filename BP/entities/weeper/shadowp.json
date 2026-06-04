@@ -1,0 +1,114 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:shadowp",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "snowball"
+		},
+		"component_groups": {
+			"spimton:desp": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"target": "self",
+							"event": "spimton:de"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							1,
+							1
+						],
+						"knockback": false,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": true,
+						"should_bounce": true
+					},
+					"particle_on_hit": {
+						"num_particles": 3,
+						"on_entity_hit": false,
+						"on_other_hit": true,
+						"particle_type": "witchspell"
+					},
+					"spawn_aoe_cloud": {
+						"duration": 2,
+						"potion": 36,
+						"particle": "mobspell",
+						"reapplication_delay": 0.5,
+						"radius": 2
+					},
+					"arrow_effect": {},
+					"mob_effect": {
+						"effect": "blindness",
+						"amplifier": 2,
+						"duration": 10
+					},
+					"stick_in_ground": {}
+				},
+				"shoot_sound": "boom",
+				"power": 2.5,
+				"gravity": 0.67,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"uncertainty_base": 15,
+				"uncertainty_multiplier": 2,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.3,
+					0
+				],
+				"reflect_on_hurt": true,
+				"catch_fire": false
+			},
+			"minecraft:despawn": {
+				"despawn_from_chance": true,
+				"min_range_random_chance": 100
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"spimton:de": {
+				"add": {
+					"component_groups": [
+						"spimton:desp"
+					]
+				}
+			}
+		}
+	}
+}

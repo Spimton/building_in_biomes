@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "basalt_construct",
+		"metalness_emissive_roughness": "blackstone_construct_mer"
+	}
+}

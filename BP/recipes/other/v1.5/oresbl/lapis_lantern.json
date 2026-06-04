@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:lapis_lantern"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:lapis_bricks_slab"
+			},
+			"@": {
+				"item": "sea_lantern"
+			}
+		},
+		"pattern": [
+			"#",
+			"@",
+			"#"
+		],
+		"result": {
+			"item": "spimton:lapis_lantern",
+			"count": 2
+		}
+	}
+}

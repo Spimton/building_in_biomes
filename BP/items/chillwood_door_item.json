@@ -1,0 +1,19 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:chillwood_door",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.door"
+            }
+        },
+        "components": {
+            "minecraft:icon": "chillwood_door",
+            "minecraft:block_placer": {
+                "block": "spimton:chillwood_door",
+                "replace_block_item": true
+            }
+        }
+    }
+}

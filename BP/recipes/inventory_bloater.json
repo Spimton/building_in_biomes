@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:inventory_bloater"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bluestone"
+			},
+			"@": {
+				"item": "light_gray_stained_glass_pane"
+			}
+		},
+		"result": {
+			"item": "spimton:inventory_bloater"
+		}
+	}
+}

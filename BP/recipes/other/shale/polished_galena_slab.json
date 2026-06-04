@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:polished_galena_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:polished_galena"
+            }
+        },
+        "result": {
+            "item": "spimton:polished_galena_slab",
+            "count": 6
+        }
+    }
+}

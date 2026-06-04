@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "lead_pillar_side_nermal",
+		"metalness_emissive_roughness": "lead_pillar_side_mer"
+	}
+}

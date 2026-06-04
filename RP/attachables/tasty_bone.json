@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "spimton:tasty_bone",
+            "materials": {
+                "default": "stray"
+            },
+            "textures": {
+                "default": "textures/entity/attachable/tasty_bone"
+            },
+            "geometry": {
+                "default": "geometry.tasty_bone"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

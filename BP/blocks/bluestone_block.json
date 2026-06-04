@@ -1,0 +1,152 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:bluestone_block",
+			"menu_category": {
+				"category": "construction"
+			},
+			"states": {
+				"spimton:powaa": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14,
+					15
+				]
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 10
+			},
+			"minecraft:redstone_conductivity": {
+				"allows_wire_to_step_down": true,
+				"redstone_conductor": true
+			},
+			"minecraft:redstone_consumer": {
+				"propogates_power": false,
+				"min_power": 0
+			},
+			"spimton:bluestone_block": {},
+			"minecraft:map_color": "#000EA8",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:minecraft:iron_tier_destructible": {}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('spimton:powaa') == 0",
+				"components": {
+					"minecraft:light_emission": 0
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 1",
+				"components": {
+					"minecraft:light_emission": 1
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 2",
+				"components": {
+					"minecraft:light_emission": 2
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 3",
+				"components": {
+					"minecraft:light_emission": 3
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 4",
+				"components": {
+					"minecraft:light_emission": 4
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 5",
+				"components": {
+					"minecraft:light_emission": 5
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 6",
+				"components": {
+					"minecraft:light_emission": 6
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 7",
+				"components": {
+					"minecraft:light_emission": 7
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 8",
+				"components": {
+					"minecraft:light_emission": 8
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 9",
+				"components": {
+					"minecraft:light_emission": 9
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 10",
+				"components": {
+					"minecraft:light_emission": 10
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 11",
+				"components": {
+					"minecraft:light_emission": 11
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 12",
+				"components": {
+					"minecraft:light_emission": 12
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 13",
+				"components": {
+					"minecraft:light_emission": 13
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 14",
+				"components": {
+					"minecraft:light_emission": 14
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:powaa') == 15",
+				"components": {
+					"minecraft:light_emission": 15
+				}
+			}
+		]
+	}
+}

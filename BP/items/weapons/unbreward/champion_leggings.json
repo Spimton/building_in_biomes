@@ -1,0 +1,50 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:champion_leggings",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.leggings"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": "champion_leggings",
+			"minecraft:wearable": {
+				"slot": "slot.armor.legs",
+				"protection": 6
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_legs",
+				"value": 1
+			},
+			"minecraft:durability": {
+				"max_durability": 500,
+				"damage_chance": {
+					"min": 50,
+					"max": 100
+				}
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"netherite_ingot"
+						],
+						"repair_amount": 150
+					}
+				]
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:hover_text_color": "blue",
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:netherite_tier",
+					"minecraft:trimmable_armors",
+					"minecraft:transformable_items"
+				]
+			}
+		}
+	}
+}

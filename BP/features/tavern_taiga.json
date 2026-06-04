@@ -1,0 +1,10 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "spimton:tavern_taiga"
+		},
+		"structure_name": "tavern_taiga",
+		"facing_direction": "random"
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:hoary_stone_bricks"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 1,
+        "pattern": [
+            "###",
+            "#@#",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "stone_bricks"
+            },
+            "@": {
+                "item": "spimton:bottled_time"
+            }
+        },
+        "result": {
+            "item": "spimton:hoary_stone_bricks",
+            "count": 8
+        }
+    }
+}

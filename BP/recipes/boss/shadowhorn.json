@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"assume_symmetry": true,
+		"description": {
+			"identifier": "spimton:shadowhorn"
+		},
+		"priority": 1,
+		"tags": [
+			"crafting_table"
+		],
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"key": {
+			"#": {
+				"item": "goat_horn"
+			},
+			"@": {
+				"item": "spimton:shadowcrystal"
+			}
+		},
+		"pattern": [
+			" @ ",
+			"@#@",
+			" @ "
+		],
+		"result": {
+			"item": "spimton:shadowhorn",
+			"count": 1
+		}
+	}
+}

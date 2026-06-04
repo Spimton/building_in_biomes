@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:ht_lead_bulb_rehab"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:ht_off_lead_bulb"
+			},
+			{
+				"item": "glow_ink_sac"
+			}
+		],
+		"priority": 5,
+		"result": {
+			"item": "spimton:ht_lead_bulb",
+			"count": 1
+		}
+	}
+}

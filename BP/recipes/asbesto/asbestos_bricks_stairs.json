@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:asbestos_bricks_stairs"
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:asbestos_bricks"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:asbestos_bricks_stairs",
+			"count": 4
+		}
+	}
+}

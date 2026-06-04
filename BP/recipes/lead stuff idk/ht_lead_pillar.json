@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ht_lead_pillar"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ht_lead_bricks_slab"
+			}
+		},
+		"pattern": [
+			"#",
+			"#"
+		],
+		"result": {
+			"item": "spimton:ht_lead_pillar",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,523 @@
+{
+    "tiers": [
+        {
+            "total_exp_required": 0,
+            "groups": [
+                {
+                    "num_to_select": 5,
+                    "trades": [
+                        {
+                            "max_uses": 5,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 2
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:ht_lead_ingot",
+                                    "quantity": 3
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 3,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 6
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:guano",
+                                    "quantity": {
+                                        "max": 15,
+                                        "min": 9
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 7,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 4
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:chillgem_shard",
+                                    "quantity": {
+                                        "max": 6,
+                                        "min": 2
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 5,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 8,
+                                        "min": 6
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:asbestos_sheet",
+                                    "quantity": {
+                                        "max": 8,
+                                        "min": 4
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 10
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "leather_chestplate",
+                                    "quantity": 1,
+                                    "functions": [
+                                        {
+                                            "function": "random_dye"
+                                        },
+                                        {
+                                            "function": "set_name",
+                                            "name": "§rForbidden Jacket"
+                                        },
+                                        {
+                                            "function": "specific_enchants",
+                                            "enchants": [
+                                                {
+                                                    "id": "binding",
+                                                    "level": 1
+                                                },
+                                                {
+                                                    "id": "mending",
+                                                    "level": 1
+                                                },
+                                                {
+                                                    "id": "protection",
+                                                    "level": 4
+                                                },
+                                                {
+                                                    "id": "vanishing",
+                                                    "level": 1
+                                                },
+                                                {
+                                                    "id": "unbreaking",
+                                                    "level": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 5,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 10,
+                                        "min": 2
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:fermented_glowstone_dust",
+                                    "quantity": {
+                                        "max": 5,
+                                        "min": 1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 100,
+                                        "min": 1
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "iron_sword",
+                                    "quantity": 2,
+                                    "functions": [
+                                        {
+                                            "function": "set_damage",
+                                            "damage": 250
+                                        },
+                                        {
+                                            "function": "set_name",
+                                            "name": "§rBroken Sword"
+                                        },
+                                        {
+                                            "function": "set_lore",
+                                            "lore": [
+                                                "§r§7Cut anything! Two Pieces! Criminal!"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 5,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 2
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "num_to_select": 1,
+                    "trades": [
+                        {
+                            "reward_exp": true,
+                            "trader_exp": 1997,
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 1225,
+                                        "min": 100
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:the_dealbreaker",
+                                    "quantity": 1,
+                                    "functions": [
+                                        {
+                                            "function": "set_lore",
+                                            "lore": [
+                                                "§r§7Fashionable green and blue glasses"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "trader_exp": 10,
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 40,
+                                        "min": 2
+                                    }
+                                },
+                                {
+                                    "item": "spimton:charge_shield",
+                                    "quantity": {
+                                        "max": 1,
+                                        "min": 1
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:charge_shield_td",
+                                    "quantity": {
+                                        "max": 1,
+                                        "min": 1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "trader_exp": 12.5,
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 100
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 1
+                                }
+                            ]
+                        },
+                        {
+                            "trader_exp": 12.5,
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 25,
+                                        "min": 12
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "enchanted_book",
+                                    "quantity": 1,
+                                    "functions": [
+                                        {
+                                            "function": "enchant_with_levels",
+                                            "treasure": true,
+                                            "levels": {
+                                                "max": 30,
+                                                "min": 30
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "trader_exp": 12.5,
+                            "max_uses": 5,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 60,
+                                        "min": 12
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "ominous_bottle",
+                                    "quantity": 1,
+                                    "functions": [
+                                        {
+                                            "function": "set_ominous_bottle_amplifier",
+                                            "amplifier": {
+                                                "min": 1,
+                                                "max": 5
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "trader_exp": 1225,
+                            "max_uses": 1,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 60
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "fire",
+                                    "quantity": 1
+                                }
+                            ]
+                        },
+                        {
+                            "max_uses": 6,
+                            "trader_exp": 12.5,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 25,
+                                        "min": 12
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "item": "spimton:asriel_dust",
+                                    "quantity": {
+                                        "max": 25,
+                                        "min": 12
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "trader_exp": 12.5,
+                            "max_uses": 6,
+                            "wants": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 25,
+                                        "min": 12
+                                    }
+                                }
+                            ],
+                            "gives": [
+                                {
+                                    "choice": [
+                                        {
+                                            "item": "potion",
+                                            "quantity": 1,
+                                            "functions": [
+                                                {
+                                                    "function": "set_potion",
+                                                    "id": "wither"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "item": "splash_potion",
+                                            "quantity": 1,
+                                            "functions": [
+                                                {
+                                                    "function": "set_potion",
+                                                    "id": "wither"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "num_to_select": 1,
+                    "trades": [
+                        {
+                            "wants": [
+                                {
+                                    "item": "spimton:shadowcrystal",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": -1,
+                            "gives": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": {
+                                        "max": 30,
+                                        "min": 10
+                                    }
+                                }
+                            ],
+                            "reward_exp": true,
+                            "trader_exp": 25
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "spimton:overgrown_orb",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": -1,
+                            "gives": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 65
+                                }
+                            ],
+                            "reward_exp": true,
+                            "trader_exp": 50
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "spimton:platinum_star",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": -1,
+                            "gives": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 70
+                                }
+                            ],
+                            "reward_exp": true,
+                            "trader_exp": 50
+                        },
+                        {
+                            "wants": [
+                                {
+                                    "item": "spimton:pure_diamond",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": -1,
+                            "gives": [
+                                {
+                                    "item": "spimton:kromer",
+                                    "quantity": 60
+                                }
+                            ],
+                            "reward_exp": true,
+                            "trader_exp": 50
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "total_exp_required": 50,
+            "groups": [
+                {
+                    "trades": [
+                        {
+                            "gives": [
+                                {
+                                    "item": "spimton:blackknife",
+                                    "quantity": 1
+                                }
+                            ],
+                            "max_uses": 1,
+                            "reward_exp": true,
+                            "trader_exp": 1225,
+                            "wants": [
+                                {
+                                    "item": "spimton:shadowcrystal",
+                                    "quantity": 32
+                                },
+                                {
+                                    "item": "netherite_sword",
+                                    "quantity": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

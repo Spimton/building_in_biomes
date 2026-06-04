@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:white_wine"
+		},
+		"tags": [
+			"spimton:keg",
+			"spimton:keg_cold"
+		],
+		"pattern": [
+			"zzz",
+			"yyy"
+		],
+		"key": {
+			"z": {
+				"item": "fermented_spider_eye"
+			},
+			"y": {
+				"item": "spimton:wine"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:white_wine"
+			},
+			{
+				"item": "spimton:white_wine"
+			},
+			{
+				"item": "spimton:white_wine"
+			}
+		]
+	}
+}

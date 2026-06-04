@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:splosion_ammo_antigravity"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "fire_charge"
+			},
+			{
+				"item": "gunpowder",
+				"count": 1
+			},
+			{
+				"item": "spimton:ancient_gold_ingot"
+			},
+			{
+				"item": "ender_pearl"
+			}
+		],
+		"result": {
+			"item": "spimton:antigravity_splosion_ammo",
+			"count": 16
+		}
+	}
+}

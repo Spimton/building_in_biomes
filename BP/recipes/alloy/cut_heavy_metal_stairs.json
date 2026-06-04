@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:cut_heavy_metal_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:cut_heavy_metal"
+			}
+		},
+		"result": {
+			"item": "spimton:cut_heavy_metal_stairs",
+			"count": 4
+		}
+	}
+}

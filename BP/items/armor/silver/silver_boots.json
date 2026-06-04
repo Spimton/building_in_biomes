@@ -1,0 +1,51 @@
+{
+    "format_version": "1.21.110",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:silver_boots",
+            "menu_category": {
+                "category": "equipment",
+                "group": "minecraft:itemGroup.name.boots"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:wearable": {
+                "slot": "slot.armor.feet",
+                "protection": 1
+            },
+            "minecraft:enchantable": {
+                "slot": "armor_feet",
+                "value": 25
+            },
+            "minecraft:icon": "silver_boots",
+            "minecraft:durability": {
+                "max_durability": 390,
+                "damage_chance": {
+                    "min": 50,
+                    "max": 100
+                }
+            },
+            "minecraft:damage_absorption": {
+                "absorbable_causes": [
+                    "fall"
+                ]
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "spimton:silver_ingot"
+                        ],
+                        "repair_amount": 250
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:iron_tier"
+                ]
+            }
+        }
+    }
+}

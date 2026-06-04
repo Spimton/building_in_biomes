@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:indented_prismarine_stairs"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@  ",
+            "@@ ",
+            "@@@"
+        ],
+        "key": {
+            "@": {
+                "item": "spimton:indented_prismarine"
+            }
+        },
+        "result": {
+            "item": "spimton:indented_prismarine_stairs",
+            "count": 4
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

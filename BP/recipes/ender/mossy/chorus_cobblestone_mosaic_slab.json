@@ -1,0 +1,23 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chorus_cobblestone_mosaic_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:chorus_cobblestone_mosaic"
+            }
+        },
+        "pattern": [
+            "###"
+        ],
+        "result": {
+            "item": "spimton:chorus_cobblestone_mosaic_slab",
+            "count": 6
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:shale_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:shale"
+            }
+        },
+        "result": {
+            "item": "spimton:shale_slab",
+            "count": 6
+        }
+    }
+}

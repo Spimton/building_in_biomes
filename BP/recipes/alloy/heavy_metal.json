@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:heavy_metal"
+		},
+		"tags": [
+			"spimton:alloy_forge_3"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:steel_ingot",
+				"count": 8
+			},
+			{
+				"item": "heavy_core",
+				"count": 1
+			}
+		],
+		"result": [
+			{
+				"item": "spimton:metallicore_ingot",
+				"count": 24
+			}
+		]
+	}
+}

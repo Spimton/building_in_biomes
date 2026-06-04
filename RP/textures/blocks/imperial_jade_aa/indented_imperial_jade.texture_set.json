@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "indented_imperial_jade",
+		"metalness_emissive_roughness": "indented_imperial_jade_mer"
+	}
+}

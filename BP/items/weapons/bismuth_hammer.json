@@ -1,0 +1,50 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:bismuth_hammer",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:use_modifiers": {
+				"use_duration": 3
+			},
+			"minecraft:icon": "bismuth_hammer",
+			"minecraft:use_animation": "bow",
+			"minecraft:max_stack_size": 1,
+			"minecraft:custom_components": [
+				"spimton:b_hamer",
+				"spimton:ham_dur"
+			],
+			"minecraft:rarity": "uncommon",
+			"minecraft:tags": {
+				"tags": [
+					"spimton:hamer"
+				]
+			},
+			"minecraft:glint": false,
+			"minecraft:hand_equipped": true,
+			"minecraft:durability": {
+				"max_durability": 500
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:bismuth_ingot"
+						],
+						"repair_amount": "query.max_durability*0.1"
+					},
+					{
+						"items": [
+							"spimton:bismuth_hammer"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			}
+		}
+	}
+}

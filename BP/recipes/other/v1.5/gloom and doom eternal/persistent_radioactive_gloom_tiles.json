@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:persistent_radioactive_gloom_tiles"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:gloom_tiles"
+			},
+			"@": {
+				"item": "spimton:very_cancerous_tooth"
+			}
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"result": {
+			"item": "spimton:radioactive_gloom_tiles_p",
+			"count": 8
+		}
+	}
+}

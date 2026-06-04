@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "tin_grates",
+		"metalness_emissive_roughness": "tin_grates_mer"
+	}
+}

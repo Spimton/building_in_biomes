@@ -1,0 +1,34 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:imperial_jade_spear"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" w ",
+			"zyz",
+			" x "
+		],
+		"key": {
+			"x": {
+				"item": "stick"
+			},
+			"y": {
+				"item": "spimton:limestone_spear"
+			},
+			"z": {
+				"item": "spimton:imperial_jade"
+			},
+			"w": {
+				"item": "spimton:ht_lead_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:imperial_jade_spear",
+			"count": 3
+		}
+	}
+}

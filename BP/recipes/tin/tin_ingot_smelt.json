@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:tin_ingot_smelt"
+		},
+		"tags": [
+			"blast_furnace",
+			"furnace"
+		],
+		"input": "spimton:raw_tin",
+		"output": "spimton:tin_ingot"
+	}
+}

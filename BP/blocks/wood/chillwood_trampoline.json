@@ -1,0 +1,85 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:chillwood_trampoline",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.pressurePlate"
+            },
+            "states": {
+                "spimton:active": [
+                    true,
+                    false
+                ]
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    16
+                ]
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 5
+            },
+            "tag:minecraft:is_axe_item_destructible": {},
+            "tag:wood": {},
+            "minecraft:geometry": {
+                "identifier": "minecraft:geometry.full_block"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "chillwood_trampoline",
+                    "render_method": "opaque"
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('spimton:active') == true",
+                "components": {
+                    "spimton:trampoline": {},
+                    "minecraft:entity_fall_on": {
+                        "min_fall_distance": 0.1
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:active') == false",
+                "components": {
+                    "minecraft:tick": {
+                        "interval_range": [
+                            20,
+                            40
+                        ],
+                        "looping": false
+                    },
+                    "spimton:turn_trampoline": {}
+                }
+            }
+        ]
+    }
+}

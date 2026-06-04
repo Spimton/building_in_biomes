@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:iridescence_tiara"
+		},
+		"pattern": [
+			" # ",
+			"]@]",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bismuth_ingot"
+			},
+			"@": {
+				"item": "spimton:empty_tiara"
+			},
+			"]": {
+				"item": "nether_wart"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescence_tiara"
+		}
+	}
+}

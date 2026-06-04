@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chiseled_applen_gold",
+		"metalness_emissive_roughness": "chiseled_applen_gold_mer"
+	}
+}

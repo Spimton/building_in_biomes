@@ -1,0 +1,70 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:pyroglin_proj",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:snowball"
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.15,
+				"height": 0.15
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"remove_on_hit": {},
+					"definition_event": {
+						"splash_area": 2,
+						"affect_projectile": true,
+						"event_trigger": {
+							"target": "self",
+							"event": "spimton:phire"
+						}
+					}
+				},
+				"anchor": 1,
+				"power": 1,
+				"gravity": 0.067,
+				"uncertainty_base": 15,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					-0.5,
+					-1
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 0.01,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:phire"
+				}
+			}
+		},
+		"events": {
+			"spimton:phire": {
+				"queue_command": {
+					"command": [
+						"execute at @s run particle spimton:soulflame_emitter ~ ~ ~",
+						"execute at @s run damage @e[r=2] 5 fire"
+					]
+				}
+			}
+		}
+	}
+}

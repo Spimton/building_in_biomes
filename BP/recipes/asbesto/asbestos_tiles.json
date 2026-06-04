@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:asbestos_tiles"
+		},
+		"pattern": [
+			"##",
+			"##"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:asbestos_bricks"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:asbestos_tiles",
+			"count": 8
+		}
+	}
+}

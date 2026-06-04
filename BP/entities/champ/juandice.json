@@ -1,0 +1,75 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:juandice",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spimton:time": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 5,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:summon"
+					}
+				}
+			},
+			"spimton:shine": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:type_family": {
+				"family": [
+					"juandice"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			}
+		},
+		"events": {
+			"spimton:summon": {
+				"queue_command": {
+					"command": [
+						"summon spimton:justice_champion ~ ~ ~",
+						"function mob/js_dialog",
+						"stopsound @a sfx.ringing",
+						"playsound mob.wither.spawn"
+					],
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"spimton:shine"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spimton:time"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chiseled_hoary_sandstone_pillar"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:chiseled_hoary_sandstone"
+            }
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "#",
+            "#"
+        ],
+        "priority": 3,
+        "result": {
+            "count": 2,
+            "item": "spimton:chiseled_hoary_sandstone_pillar"
+        }
+    }
+}

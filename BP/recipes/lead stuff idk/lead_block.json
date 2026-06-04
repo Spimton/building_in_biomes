@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:lead_block"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:lead_ingot",
+				"count": 9
+			}
+		],
+		"result": {
+			"item": "spimton:lead_block"
+		}
+	}
+}

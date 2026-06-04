@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:temple_pillar"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "unlock": [
+            {
+                "item": "spimton:temple_tiles_slab"
+            }
+        ],
+        "pattern": [
+            "#",
+            "#"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:temple_tiles_slab"
+            }
+        },
+        "result": {
+            "count": 1,
+            "item": "spimton:temple_pillar"
+        }
+    }
+}

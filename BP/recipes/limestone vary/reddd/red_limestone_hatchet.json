@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:red_limestone_hatchet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "minecraft:stick"
+			},
+			"y": {
+				"item": "spimton:red_limestone"
+			}
+		},
+		"pattern": [
+			"yy",
+			"yx",
+			"x"
+		],
+		"result": {
+			"item": "spimton:red_limestone_hatchet",
+			"count": 1
+		}
+	}
+}

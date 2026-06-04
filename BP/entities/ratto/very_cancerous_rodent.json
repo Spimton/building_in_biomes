@@ -1,0 +1,382 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:very_cancerous_rodent",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "scripts": {
+                "animate": [
+                    "music"
+                ]
+            },
+            "animations": {
+                "music": "controller.animation.ratt.music"
+            }
+        },
+        "component_groups": {
+            "spimton:summoner": {
+                "minecraft:behavior.summon_entity": {
+                    "priority": 2,
+                    "summon_choices": [
+                        {
+                            "cast_duration": 1,
+                            "cooldown_time": 4,
+                            "do_casting": false,
+                            "weight": 40,
+                            "max_activation_range": 32,
+                            "min_activation_range": 1,
+                            "sequence": [
+                                {
+                                    "target": "self",
+                                    "entity_type": "spimton:ratt",
+                                    "shape": "circle",
+                                    "size": 3,
+                                    "summon_cap": 10,
+                                    "summon_cap_radius": 20,
+                                    "num_entities_spawned": 4
+                                }
+                            ]
+                        },
+                        {
+                            "cast_duration": 1,
+                            "cooldown_time": 4,
+                            "do_casting": false,
+                            "weight": 30,
+                            "max_activation_range": 32,
+                            "min_activation_range": 1,
+                            "sequence": [
+                                {
+                                    "target": "self",
+                                    "entity_type": "spimton:thefatrat",
+                                    "shape": "line",
+                                    "size": 30,
+                                    "delay_per_summon": 0,
+                                    "num_entities_spawned": 15
+                                }
+                            ]
+                        },
+                        {
+                            "cast_duration": 1,
+                            "cooldown_time": 4,
+                            "do_casting": false,
+                            "weight": 30,
+                            "max_activation_range": 32,
+                            "min_activation_range": 1,
+                            "sequence": [
+                                {
+                                    "target": "self",
+                                    "entity_type": "spimton:thefatrat",
+                                    "shape": "circle",
+                                    "size": 10,
+                                    "delay_per_summon": 0,
+                                    "num_entities_spawned": 15
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 3,
+                    "time_down_event": {
+                        "target": "self",
+                        "event": "spimton:poisonp"
+                    }
+                }
+            },
+            "spimton:melee": {
+                "minecraft:behavior.charge_attack": {
+                    "max_distance": 30,
+                    "min_distance": 4,
+                    "priority": 2,
+                    "speed_multiplier": 2,
+                    "success_rate": 0.67
+                },
+                "minecraft:behavior.melee_box_attack": {
+                    "cooldown_time": 0.1,
+                    "on_kill": {
+                        "event": "spimton:consume",
+                        "target": "self"
+                    },
+                    "priority": 2,
+                    "speed_multiplier": 1.225
+                },
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 3,
+                    "time_down_event": {
+                        "target": "self",
+                        "event": "spimton:poisonp"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:walk_animation_speed": {
+                "value": 10
+            },
+            "minecraft:knockback_resistance": {
+                "max": 1,
+                "value": 0.7
+            },
+            "minecraft:nameable": {},
+            "minecraft:type_family": {
+                "family": [
+                    "monster",
+                    "mob",
+                    "ratto"
+                ]
+            },
+            "minecraft:experience_reward": {
+                "on_death": 500
+            },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 1
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:navigation.walk": {
+                "is_amphibious": true,
+                "can_pass_doors": true,
+                "can_walk": true,
+                "can_break_doors": true
+            },
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:health": {
+                "value": 120,
+                "max": 120
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "freezing",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fire",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "wither",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "entity_explosion",
+                        "damage_multiplier": 0.67
+                    },
+                    {
+                        "cause": "any",
+                        "on_damage": {
+                            "event": "spimton:reflect",
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
+            "minecraft:movement": {
+                "max": 1,
+                "value": {
+                    "range_max": 0.3,
+                    "range_min": 0.1
+                }
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0,
+                "breathes_air": true,
+                "breathes_water": true
+            },
+            "minecraft:attack": {
+                "damage": 20,
+                "effect_name": "wither",
+                "effect_duration": 10
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/zombie.json"
+            },
+            "minecraft:behavior.stomp_turtle_egg": {
+                "priority": 4,
+                "speed_multiplier": 1,
+                "search_range": 10,
+                "search_height": 2,
+                "goal_radius": 1.14,
+                "interval": 20
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 7,
+                "speed_multiplier": 1
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison",
+                    "wither"
+                ]
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "reselect_targets": true,
+                "within_radius": 25,
+                "must_see_forget_duration": 17,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "none_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "ratto"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "inanimate"
+                                }
+                            ]
+                        },
+                        "max_dist": 35
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:mob_effect": {
+                "effect_range": 6.7,
+                "effect_time": 40,
+                "entity_filter": {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "ratto"
+                },
+                "mob_effect": "poison"
+            },
+            "minecraft:boss": {
+                "hud_range": 60,
+                "name": "  §r§6Very Cancerous Rodent§r "
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "trigger": "spimton:poisonp"
+            },
+            "spimton:switch": {},
+            "spimton:poisonp": {
+                "sequence": [
+                    {
+                        "queue_command": {
+                            "command": [
+                                "effect @e[r=25,family=!ratto] poison 12 2 true",
+                                "effect @e[r=12,family=!ratto] fatal_poison 25 4 true",
+                                "particle spimton:poisson ~ ~1 ~",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1",
+                                "scoreboard players add @e[r=10,family=!ratto] asbestos 1"
+                            ]
+                        }
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:melee"
+                                    ]
+                                },
+                                "remove": {
+                                    "component_groups": [
+                                        "spimton:summoner"
+                                    ]
+                                },
+                                "weight": 60
+                            },
+                            {
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:summoner"
+                                    ]
+                                },
+                                "remove": {
+                                    "component_groups": [
+                                        "spimton:melee"
+                                    ]
+                                },
+                                "weight": 40
+                            }
+                        ]
+                    }
+                ]
+            },
+            "spimton:consume": {
+                "queue_command": {
+                    "target": "self",
+                    "command": "effect @s regeneration 1 4 true"
+                }
+            },
+            "spimton:reflect": {
+                "randomize": [
+                    {
+                        "queue_command": {
+                            "target": "target",
+                            "command": [
+                                "effect @s wither 5 4 true",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1",
+                                "scoreboard players add @s asbestos 1"
+                            ]
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "weight": 10
+                    }
+                ]
+            }
+        }
+    }
+}

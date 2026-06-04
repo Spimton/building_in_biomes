@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:crimstone_mosaic_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:crimstone_mosaic"
+			}
+		},
+		"result": {
+			"item": "spimton:crimstone_mosaic_stairs",
+			"count": 4
+		}
+	}
+}

@@ -1,0 +1,140 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:chorus_cobblestone_mosaic_slab",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:vertical_half"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 7,
+                "item_specific_speeds": [
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:iron_tier')"
+                        },
+                        "destroy_speed": 0.4
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:stone_tier')"
+                        },
+                        "destroy_speed": 0.6
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:copper_tier')"
+                        },
+                        "destroy_speed": 0.45
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:wood_tier')"
+                        },
+                        "destroy_speed": 1.15
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:diamond_tier')"
+                        },
+                        "destroy_speed": 0.3
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:netherite_tier')"
+                        },
+                        "destroy_speed": 0.25
+                    },
+                    {
+                        "item": {
+                            "tags": "query.all_tags('minecraft:is_pickaxe','minecraft:golden_tier')"
+                        },
+                        "destroy_speed": 0.2
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    8,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    8,
+                    16
+                ]
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 8
+            },
+            "minecraft:geometry": "geometry.defrosted_cobbled_chillstone_slab",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "chorus_cobblestone_mosaic",
+                    "render_method": "alpha_test"
+                }
+            },
+            "tag:stone": {}
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' ",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

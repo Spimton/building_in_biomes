@@ -1,0 +1,60 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:imperial_jade_hatchet",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": true,
+			"minecraft:icon": "imperial_jade_hatchet",
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_tool",
+					"spimton:has_durability"
+				]
+			},
+			"minecraft:custom_components": [
+				"spimton:imphatchet"
+			],
+			"minecraft:enchantable": {
+				"slot": "axe",
+				"value": 4
+			},
+			"minecraft:durability": {
+				"max_durability": 20
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "bamboo",
+						"speed": 20
+					},
+					{
+						"block": "bed",
+						"speed": 20
+					},
+					{
+						"block": "ladder",
+						"speed": 20
+					},
+					{
+						"block": "spimton:keg_v1",
+						"speed": 20
+					},
+					{
+						"block": {
+							"tags": "query.all_tags('minecraft:is_axe_item_destructible')"
+						},
+						"speed": 6
+					}
+				]
+			}
+		}
+	}
+}

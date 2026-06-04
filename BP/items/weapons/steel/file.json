@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:file",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:hand_equipped": true,
+			"minecraft:icon": "file",
+			"minecraft:max_stack_size": 1,
+			"minecraft:custom_components": [
+				"spimton:file",
+				"spimton:ham_dur"
+			],
+			"minecraft:durability": {
+				"max_durability": 1997
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:steel_ingot"
+						],
+						"repair_amount": "query.max_durability*0.1"
+					},
+					{
+						"items": [
+							"spimton:file"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			}
+		}
+	}
+}

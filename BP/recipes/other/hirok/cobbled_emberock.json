@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:cobbled_emberock"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "unlock": [
+            {
+                "item": "spimton:emberock_item"
+            }
+        ],
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:emberock_item"
+            }
+        },
+        "result": {
+            "count": 1,
+            "item": "spimton:cobbled_emberock"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:runed_gloom_tiles",
+			"menu_category": {
+				"category": "construction",
+				"is_hidden_in_commands": false
+			},
+			"states": {
+				"spimton:stood_on": [
+					false,
+					true
+				]
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 20
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#CDCDCD",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:is_pickaxe_item_destructible": {},
+			"minecraft:custom_components": [
+				"spimton:treader_detection"
+			]
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('spimton:stood_on')",
+				"components": {
+					"minecraft:custom_components": [
+						"spimton:treader_detection",
+						"spimton:rune"
+					],
+					"minecraft:tick": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": true
+					}
+				}
+			}
+		]
+	}
+}

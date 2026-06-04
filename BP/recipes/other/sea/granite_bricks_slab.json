@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:granite_bricks_slab"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@@@"
+        ],
+        "key": {
+            "@": {
+                "item": "spimton:granite_bricks"
+            }
+        },
+        "result": {
+            "item": "spimton:granite_bricks_slab",
+            "count": 6
+        },
+        "tags": [
+            "crafting_table"
+        ]
+    }
+}

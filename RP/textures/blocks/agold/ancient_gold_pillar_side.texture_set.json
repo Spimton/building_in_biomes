@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "ancient_gold_pillar_side",
+		"metalness_emissive_roughness": "ancient_gold_pillar_side_mer"
+	}
+}

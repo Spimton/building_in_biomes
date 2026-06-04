@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:overgrown_amulet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:overgrown_amulet_fragment"
+			},
+			"@": {
+				"item": "spimton:imperial_jade"
+			}
+		},
+		"pattern": [
+			" # ",
+			"#@#",
+			" # "
+		],
+		"result": {
+			"item": "spimton:overgrown_amulet"
+		}
+	}
+}

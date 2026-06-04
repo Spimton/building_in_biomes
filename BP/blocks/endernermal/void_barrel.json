@@ -1,0 +1,127 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:void_barrel",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "spimton:prime": [
+                    true,
+                    false
+                ]
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:facing_direction"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    16
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2
+            },
+            "minecraft:destructible_by_explosion": false,
+            "minecraft:geometry": "geometry.void_barrel",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "void_barrel",
+                    "render_method": "blend"
+                }
+            },
+            "minecraft:custom_components": [
+                "spimton:void_barrel"
+            ],
+            "minecraft:map_color": "#5f4a2b"
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'west' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'east' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'south' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'north' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:prime') == false",
+                "components": {
+                    "minecraft:tick": {
+                        "looping": false,
+                        "interval_range": [
+                            20,
+                            20
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

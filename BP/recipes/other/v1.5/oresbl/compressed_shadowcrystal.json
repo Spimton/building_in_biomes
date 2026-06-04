@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:compressed_shadowcrystal"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:shadowcrystal"
+			}
+		},
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"result": {
+			"item": "spimton:shadowcrystal_block",
+			"count": 2
+		}
+	}
+}

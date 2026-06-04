@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:unbreakable_tiara"
+		},
+		"pattern": [
+			" # ",
+			"]@]",
+			" [ "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:pure_diamond"
+			},
+			"@": {
+				"item": "spimton:empty_tiara"
+			},
+			"]": {
+				"item": "spimton:steel_ingot"
+			},
+			"[": {
+				"item": "netherite_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:unbreakable_tiara"
+		}
+	}
+}

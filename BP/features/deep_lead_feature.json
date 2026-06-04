@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:deep_lead_feature"
+		},
+		"count": 1,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:deepslate_lead_ore",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "deepslate"
+					}
+				]
+			}
+		]
+	}
+}

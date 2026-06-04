@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:meat_mallet",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:hand_equipped": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:rarity": "epic",
+			"minecraft:hover_text_color": "blue",
+			"minecraft:custom_components": [
+				"spimton:meat_mallet"
+			],
+			"minecraft:icon": "hammer",
+			"minecraft:enchantable": {
+				"slot": "sword",
+				"value": 1
+			},
+			"minecraft:durability": {
+				"max_durability": 400
+			}
+		}
+	}
+}

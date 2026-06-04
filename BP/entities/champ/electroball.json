@@ -1,0 +1,96 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:electroball",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "arrow"
+		},
+		"component_groups": {
+			"spimton:kill": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "spimton:bolt"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							3,
+							1
+						],
+						"knockback": false,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": true
+					}
+				},
+				"power": 2,
+				"gravity": 0,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 1,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.5,
+					0
+				],
+				"reflect_on_hurt": true,
+				"catch_fire": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				},
+				"despawn_from_simulation_edge": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"spimton:bolt": {
+				"queue_command": {
+					"command": "summon lightning_bolt",
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"spimton:kill"
+					]
+				}
+			}
+		}
+	}
+}

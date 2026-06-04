@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chiseled_siltstone_bricks_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:chiseled_siltstone_bricks"
+			}
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:chiseled_siltstone_bricks_stairs",
+			"count": 4
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:lootbox_jungle_temple",
+			"menu_category": {
+				"category": "items",
+				"is_hidden_in_commands": false
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 0
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#9A4F0D",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"minecraft:loot": "loot_tables/chests/jungle_temple.json",
+			"tag:minecraft:is_axe_item_destructible": {}
+		}
+	}
+}

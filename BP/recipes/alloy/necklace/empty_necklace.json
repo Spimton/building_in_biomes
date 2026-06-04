@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:empty_necklace"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:electrum_ingot"
+			},
+			"@": {
+				"item": "spimton:silver_orb"
+			}
+		},
+		"pattern": [
+			"# #",
+			"# #",
+			"#@#"
+		],
+		"result": {
+			"item": "spimton:empty_necklace"
+		}
+	}
+}

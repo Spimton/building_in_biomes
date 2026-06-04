@@ -1,0 +1,95 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:antique_wraith_dummy",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"spimton:sp": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:kll"
+					}
+				}
+			},
+			"spimton:dsp": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "clock_time",
+									"operator": ">=",
+									"value": 0.2
+								},
+								{
+									"test": "clock_time",
+									"operator": "<=",
+									"value": 0.3
+								}
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": "summon spimton:antique_wraith ~ ~ ~"
+						},
+						"add": {
+							"component_groups": [
+								"spimton:sp"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "clock_time",
+									"operator": ">",
+									"value": 0.29
+								},
+								{
+									"test": "clock_time",
+									"operator": "<",
+									"value": 0.21
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:dsp"
+							]
+						}
+					}
+				]
+			},
+			"spimton:kll": {
+				"add": {
+					"component_groups": [
+						"spimton:dsp"
+					]
+				}
+			}
+		}
+	}
+}

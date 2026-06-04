@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:bronze_lamp"
+		},
+		"pattern": [
+			" # ",
+			"#@#",
+			" #"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bronze_ingot"
+			},
+			"@": {
+				"item": "redstone_lamp"
+			}
+		},
+		"result": {
+			"item": "spimton:bronze_lamp",
+			"count": 1
+		}
+	}
+}

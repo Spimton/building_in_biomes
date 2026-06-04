@@ -1,0 +1,1344 @@
+//ripped off Alylica's dungeons, idk how this works
+{
+    "boss_health_panel": {
+        "type": "panel",
+        "size": [
+            182,
+            20
+        ],
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "$progress_bar_collection": "boss_bars",
+        "controls": [
+            {
+                "boss_name@boss_name_panel": {}
+            },
+            {
+                "progress_bar_for_collections@common.progress_bar_for_collections": {
+                    "offset": [
+                        0,
+                        12.5
+                    ]
+                }
+            },
+            //Binding BossName
+            {
+                "archshaman_health@archshaman_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §aOvergrown Archshaman§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "dualliste_health@dualliste_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '§aOvergrown Dualliste§r')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "horseman_health@horseman_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §aOvergrown Equestrian§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "weeper_health@weeper_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §cThe Weeper§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "weeper_i_health@weeper_i_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §dThe Weeper§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "crither_health@crither_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '§cRazziator§r')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "wshaman_health@wshaman_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §cWilted Shaman§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "wshaman_i_health@wshaman_i_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §dWilted Shaman§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "juandice_health@juandice_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §9Champion of Justice§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "crazyd_health@crazyd_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §9[Unbreakable Crazy Diamond]§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "crimsonk_health@crimsonk_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '§9Crimson King§r')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "rodent_health@rodent_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '§r§6Cancerous Rodent§r')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "very_rodent_health@very_rodent_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §r§6Very Cancerous Rodent§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#bar_visible",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            },
+            {
+                "binding_name": "#bossName",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars"
+            }
+        ]
+    },
+    // Archshaman
+    "archshaman_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §aOvergrown Archshaman§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_archshaman_bossbar@filled_archshaman_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_archshaman_bossbar@overlay_archshaman_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "dualliste_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '§aOvergrown Dualliste§r')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_dualliste_bossbar@filled_dualliste_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_dualliste_bossbar@overlay_dualliste_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "horseman_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §aOvergrown Equestrian§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_horseman_bossbar@filled_horseman_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_horseman_bossbar@overlay_horseman_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    //Weeper
+    "weeper_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §cThe Weeper§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_weeper_bossbar@filled_weeper_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_weeper_bossbar@overlay_weeper_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "weeper_i_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §dThe Weeper§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_weeper_i_bossbar@filled_weeper_i_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_weeper_i_bossbar@overlay_weeper_i_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "crither_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '§cRazziator§r')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_crither_bossbar@filled_crither_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_crither_bossbar@overlay_crither_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "wshaman_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §cWilted Shaman§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_wshaman_bossbar@filled_wshaman_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_wshaman_bossbar@overlay_wshaman_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "wshaman_i_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §dWilted Shaman§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_wshaman_i_bossbar@filled_wshaman_i_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_wshaman_i_bossbar@overlay_wshaman_i_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    //Juandice
+    "juandice_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §9Champion of Justice§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_juandice_bossbar@filled_juandice_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_juandice_bossbar@overlay_juandice_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "crazyd_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §9[Unbreakable Crazy Diamond]§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_crazyd_bossbar@filled_crazyd_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_crazyd_bossbar@overlay_crazyd_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "crimsonk_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '§9Crimson King§r')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_crimsonk_bossbar@filled_crimsonk_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_crimsonk_bossbar@overlay_crimsonk_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    //Rodent
+    "rodent_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '§r§6Cancerous Rodent§r')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_rodent_bossbar@filled_rodent_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_rodent_bossbar@overlay_rodent_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "very_rodent_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §r§6Very Cancerous Rodent§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_very_rodent_bossbar@filled_very_rodent_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_very_rodent_bossbar@overlay_very_rodent_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    //Health Bar
+    "filled_archshaman_bossbar@filled_archshaman_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_dualliste_bossbar@filled_dualliste_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_horseman_bossbar@filled_horseman_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_weeper_bossbar@filled_weeper_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_weeper_i_bossbar@filled_weeper_i_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_crither_bossbar@filled_crither_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_wshaman_bossbar@filled_wshaman_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_wshaman_i_bossbar@filled_wshaman_i_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_juandice_bossbar@filled_juandice_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_crazyd_bossbar@filled_crazyd_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_crimsonk_bossbar@filled_crimsonk_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_rodent_bossbar@filled_rodent_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_very_rodent_bossbar@filled_very_rodent_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    //Archshaman BossBar Images
+    "filled_archshaman_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_dualliste_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_horseman_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "overlay_dualliste_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/dualliste_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_horseman_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/horseman_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_archshaman_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/archshaman_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    //Weeper BossBar Images
+    "filled_weeper_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_weeper_i_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/full_invincible",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_crither_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_wshaman_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_wshaman_i_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/full_invincible",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "overlay_weeper_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/weeper_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_weeper_i_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/weeper_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_crither_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/crither_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_wshaman_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/shaman_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_wshaman_i_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/shaman_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    ///Juandice
+    "filled_juandice_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/juandice/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_crazyd_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/juandice/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_crimsonk_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/juandice/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    //Rodent
+    "filled_rodent_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/rodent/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_very_rodent_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/rodent/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "overlay_juandice_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/juandice/juandice_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_crazyd_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/juandice/crazyd_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_crimsonk_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/juandice/crimsonk_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_rodent_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/rodent/rodent_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "overlay_very_rodent_bossbar": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/rodent/cancerousrodent_bar_overlay",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            188,
+            9
+        ]
+    },
+    "empty_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/empty",
+        "size": [
+            182,
+            5
+        ]
+    }
+}

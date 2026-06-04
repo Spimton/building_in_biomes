@@ -1,0 +1,49 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mann.attack": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"rightarm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							-107.5,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							-45,
+							0,
+							0
+						],
+						"1.0": [
+							2.5,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

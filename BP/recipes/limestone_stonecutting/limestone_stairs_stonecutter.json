@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:limestone_stairs_stonecutter"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:limestone"
+			}
+		],
+		"result": {
+			"item": "spimton:limestone_stairs",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:steel_3"
+		},
+		"tags": [
+			"spimton:alloy_forge_3"
+		],
+		"ingredients": [
+			{
+				"item": "iron_ingot",
+				"count": 4
+			},
+			{
+				"item": "coal",
+				"count": 4
+			}
+		],
+		"result": [
+			{
+				"item": "spimton:steel_ingot",
+				"count": 4
+			}
+		]
+	}
+}

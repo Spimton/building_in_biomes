@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:galena_necklace"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ht_lead_ingot"
+			},
+			"@": {
+				"item": "spimton:empty_necklace"
+			}
+		},
+		"pattern": [
+			" #",
+			"#@#",
+			" #"
+		],
+		"result": {
+			"item": "spimton:galena_necklace"
+		}
+	}
+}

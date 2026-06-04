@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "champion_leggings_attachable",
+		"metalness_emissive_roughness": "champion_leggings_attachable_mer"
+	}
+}

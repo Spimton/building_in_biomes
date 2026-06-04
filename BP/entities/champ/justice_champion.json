@@ -1,0 +1,1073 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:justice_champion",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"music",
+					"health"
+				]
+			},
+			"animations": {
+				"health": "controller.animation.juandice.health",
+				"music": "controller.animation.juandice.music"
+			}
+		},
+		"component_groups": {
+			"spimton:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"spimton:tform": {
+				"minecraft:transformation": {
+					"add": {
+						"component_groups": [
+							"spimton:transformer"
+						]
+					},
+					"into": "spimton:unbreakable_diamond",
+					"transformation_sound": "transfoma",
+					"delay": 2
+				}
+			},
+			"spimton:ranged": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:shooter": {
+					"def": "spimton:electroball",
+					"aux_val": 12
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"burst_shots": 12,
+					"burst_interval": 0.1,
+					"attack_interval": 1,
+					"attack_radius": 30,
+					"ranged_fov": 180,
+					"charge_shoot_trigger": 0.5
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 40,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:rangedscat": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:shooter": {
+					"def": "spimton:electroball",
+					"aux_val": 12
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"burst_shots": 6,
+					"burst_interval": 0.1,
+					"attack_interval": 0.5,
+					"attack_radius": 30,
+					"ranged_fov": 180,
+					"charge_shoot_trigger": 0.5
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 40,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:rangedbay": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:shooter": {
+					"def": "spimton:boomball",
+					"aux_val": 18
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"burst_shots": 1,
+					"burst_interval": 1,
+					"attack_interval": 1,
+					"attack_radius": 30,
+					"charge_shoot_trigger": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 30,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:rangedbay_delayed": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:shooter": {
+					"def": "spimton:boomball_delayed",
+					"aux_val": 18
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"burst_shots": 5,
+					"burst_interval": 0.5,
+					"attack_interval": 2,
+					"attack_radius": 22,
+					"x_max_rotation": 180,
+					"charge_shoot_trigger": 1
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 10,
+					"time_down_event": {
+						"event": "spimton:delayboom"
+					}
+				}
+			},
+			"spimton:blitzard": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"cast_duration": 1,
+							"do_casting": true,
+							"weight": 1,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"cooldown_time": 4,
+							"sequence": [
+								{
+									"base_delay": 0,
+									"entity_type": "spimton:blitzer",
+									"target": "target",
+									"shape": "circle",
+									"size": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 1,
+									"entity_lifespan": -1
+								},
+								{
+									"base_delay": 2,
+									"entity_type": "lightning_bolt",
+									"target": "self",
+									"shape": "circle",
+									"size": 3,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 9,
+									"entity_lifespan": 2
+								},
+								{
+									"base_delay": 2,
+									"entity_type": "lightning_bolt",
+									"target": "target",
+									"shape": "circle",
+									"size": 3,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 9,
+									"entity_lifespan": 2
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 27,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:blitzardbay": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"cast_duration": 1,
+							"do_casting": true,
+							"weight": 1,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"cooldown_time": 4,
+							"sequence": [
+								{
+									"base_delay": 0,
+									"entity_type": "spimton:blitzer",
+									"target": "target",
+									"shape": "circle",
+									"size": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 1,
+									"entity_lifespan": -1
+								},
+								{
+									"base_delay": 1.5,
+									"entity_type": "spimton:electroball_levitate",
+									"target": "self",
+									"shape": "circle",
+									"size": 6,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 4,
+									"entity_lifespan": 10
+								},
+								{
+									"base_delay": 1.5,
+									"entity_type": "spimton:electroball_levitate",
+									"target": "target",
+									"shape": "circle",
+									"size": 6,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 4,
+									"entity_lifespan": 10
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 18,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:heavenfallingdown": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"cast_duration": 1,
+							"do_casting": true,
+							"weight": 1,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"cooldown_time": 6,
+							"sequence": [
+								{
+									"base_delay": 0,
+									"entity_type": "spimton:electroball_levitate",
+									"target": "self",
+									"shape": "circle",
+									"size": 5,
+									"delay_per_summon": 0.3,
+									"num_entities_spawned": 3,
+									"entity_lifespan": 10
+								},
+								{
+									"base_delay": 0,
+									"entity_type": "spimton:electroball_levitate",
+									"target": "self",
+									"shape": "circle",
+									"size": 10,
+									"delay_per_summon": 0.3,
+									"num_entities_spawned": 6,
+									"entity_lifespan": 10
+								},
+								{
+									"base_delay": 0,
+									"entity_type": "spimton:electroball_levitate",
+									"target": "self",
+									"shape": "circle",
+									"size": 15,
+									"delay_per_summon": 0.3,
+									"num_entities_spawned": 9,
+									"entity_lifespan": 10
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 18,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:summoner": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"cast_duration": 1,
+							"do_casting": true,
+							"weight": 1,
+							"max_activation_range": 24,
+							"min_activation_range": 1,
+							"cooldown_time": 2,
+							"sequence": [
+								{
+									"base_delay": 0,
+									"entity_type": "lightning_bolt",
+									"target": "self",
+									"shape": "line",
+									"size": 32,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.5,
+									"entity_type": "lightning_bolt",
+									"target": "self",
+									"shape": "line",
+									"size": 32,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.5,
+									"entity_type": "lightning_bolt",
+									"target": "self",
+									"shape": "line",
+									"size": 32,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.6,
+									"entity_type": "lightning_bolt",
+									"target": "self",
+									"shape": "circle",
+									"size": 5,
+									"num_entities_spawned": 4,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.2,
+									"entity_type": "lightning_bolt",
+									"target": "self",
+									"shape": "circle",
+									"size": 6,
+									"num_entities_spawned": 16,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 2,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 6,
+									"shape": "circle",
+									"num_entities_spawned": 18,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 8,
+									"shape": "circle",
+									"num_entities_spawned": 21,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 10,
+									"shape": "circle",
+									"num_entities_spawned": 24,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 12,
+									"shape": "circle",
+									"num_entities_spawned": 27,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 16,
+									"shape": "circle",
+									"num_entities_spawned": 33,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 18,
+									"shape": "circle",
+									"num_entities_spawned": 36,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 20,
+									"shape": "circle",
+									"num_entities_spawned": 39,
+									"entity_lifespan": 4
+								}
+							]
+						},
+						{
+							"cast_duration": 0.5,
+							"do_casting": true,
+							"weight": 1,
+							"max_activation_range": 24,
+							"min_activation_range": 1,
+							"cooldown_time": 2,
+							"sequence": [
+								{
+									"base_delay": 2,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 6,
+									"shape": "circle",
+									"num_entities_spawned": 18,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 8,
+									"shape": "circle",
+									"num_entities_spawned": 21,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 10,
+									"shape": "circle",
+									"num_entities_spawned": 24,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 12,
+									"shape": "circle",
+									"num_entities_spawned": 27,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 16,
+									"shape": "circle",
+									"num_entities_spawned": 33,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 18,
+									"shape": "circle",
+									"num_entities_spawned": 36,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 20,
+									"shape": "circle",
+									"num_entities_spawned": 39,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 26,
+									"shape": "circle",
+									"num_entities_spawned": 40,
+									"entity_lifespan": 4
+								},
+								{
+									"base_delay": 0.1,
+									"entity_type": "lightning_bolt",
+									"delay_per_summon": 0,
+									"target": "self",
+									"size": 30,
+									"shape": "circle",
+									"num_entities_spawned": 40,
+									"entity_lifespan": 4
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 45,
+					"time_down_event": {
+						"event": "spimton:tyre"
+					}
+				}
+			},
+			"spimton:tired": {
+				"minecraft:mark_variant": {
+					"value": 2
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5,
+					"time_down_event": {
+						"event": "spimton:switch",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "500"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"juandice",
+					"mob"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 1997
+			},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:health": {
+				"value": 250,
+				"max": 250,
+				"min": 1
+			},
+			"minecraft:navigation.generic": {
+				"can_path_over_lava": true,
+				"can_walk_in_lava": true,
+				"can_walk": true,
+				"can_jump": true
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "block_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "lightning",
+						"deals_damage": false
+					},
+					{
+						"cause": "projectile",
+						"damage_multiplier": 0.75,
+						"damage_modifier": -2.5
+					},
+					{
+						"cause": "entity_attack",
+						"damage_multiplier": 0.75
+					},
+					{
+						"cause": "mace_smash",
+						"damage_multiplier": 2
+					},
+					{
+						"cause": "magic",
+						"damage_multiplier": 5,
+						"damage_modifier": 1
+					},
+					{
+						"cause": "freezing",
+						"damage_multiplier": 20
+					},
+					{
+						"cause": "wither",
+						"damage_multiplier": 3
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1.5,
+				"height": 3.5
+			},
+			"minecraft:movement": {
+				"value": 0.67
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					40,
+					60
+				],
+				"time_down_event": {
+					"event": "spimton:switch",
+					"target": "self"
+				}
+			},
+			"minecraft:jump.static": {},
+			"minecraft:navigation.walk": {},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"must_see": false,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "juandice"
+								}
+							]
+						},
+						"max_dist": 40
+					}
+				]
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 3,
+				"probability": 1
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 10,
+				"look_distance": 8,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 32
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:boss": {
+				"hud_range": 55,
+				"name": "  §9Champion of Justice§r "
+			},
+			"minecraft:knockback_resistance": {
+				"value": 10
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"trigger": "spimton:switch"
+			},
+			"spimton:delayboom": {
+				"trigger": "spimton:switch",
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"event entity @e[type=spimton:boomball_delayed] minecraft:explode"
+					]
+				}
+			},
+			"spimton:switch": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"spimton:ranged"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:summoner",
+								"spimton:tired",
+								"spimton:rangedbay",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"weight": 10,
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/dialog_phulmini",
+								"playanimation @e[type=spimton:justice_champion] animation.champion.shoot none 5"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:blitzard"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:summoner",
+								"spimton:tired",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"weight": 10,
+						"queue_command": {
+							"command": [
+								"function mob/juandice/dialog_blitz"
+							],
+							"target": "target"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:blitzardbay"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:summoner",
+								"spimton:tired",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzard"
+							]
+						},
+						"weight": 7,
+						"queue_command": {
+							"command": [
+								"function mob/juandice/dialog_blitz"
+							],
+							"target": "target"
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:rangedscat"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:summoner",
+								"spimton:tired",
+								"spimton:rangedbay",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:ranged",
+								"spimton:blitzardbay"
+							]
+						},
+						"weight": 10,
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/dialog_phtesla",
+								"playanimation @e[type=spimton:justice_champion,c=1] animation.champion.shoot none 5"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:rangedbay"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:summoner",
+								"spimton:tired",
+								"spimton:ranged",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"weight": 10,
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/bigprojectile",
+								"playanimation @e[type=spimton:justice_champion,c=1] animation.champion.shoot none 5"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:rangedbay_delayed"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:summoner",
+								"spimton:tired",
+								"spimton:ranged",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"weight": 10,
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/bigprojectile",
+								"playanimation @e[type=spimton:justice_champion,c=1] animation.champion.shoot none 5"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:summoner"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:tired",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/dialog_summoner"
+							]
+						},
+						"weight": 10
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:summoner"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:tired",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/dialog_smtesla"
+							]
+						},
+						"weight": 5
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:heavenfallingdown"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:tired",
+								"spimton:blitzard",
+								"spimton:summoner",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/dialog_summoner"
+							]
+						},
+						"weight": 5
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:heavenfallingdown"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:tired",
+								"spimton:blitzard",
+								"spimton:summoner",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": [
+								"function mob/juandice/dialog_smtesla"
+							]
+						},
+						"weight": 10
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"spimton:ranged",
+								"spimton:rangedbay",
+								"spimton:summoner",
+								"spimton:blitzard",
+								"spimton:heavenfallingdown",
+								"spimton:rangedbay_delayed",
+								"spimton:rangedscat",
+								"spimton:blitzardbay"
+							]
+						},
+						"queue_command": {
+							"command": [
+								"function mob/juandice/jhammer",
+								"playanimation @e[type=spimton:justice_champion,c=1] animation.champion.posse none 5"
+							],
+							"target": "target"
+						},
+						"weight": 13,
+						"add": {
+							"component_groups": [
+								"spimton:tired"
+							]
+						}
+					}
+				]
+			},
+			"spimton:tyre": {
+				"add": {
+					"component_groups": [
+						"spimton:tired"
+					]
+				},
+				"queue_command": {
+					"target": "self",
+					"command": "playanimation @s animation.champion.tyre none 5"
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:ranged",
+						"spimton:rangedbay",
+						"spimton:summoner",
+						"spimton:blitzard",
+						"spimton:heavenfallingdown",
+						"spimton:rangedscat",
+						"spimton:blitzardbay"
+					]
+				}
+			},
+			"spimton:stand": {
+				"add": {
+					"component_groups": [
+						"spimton:tform"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"function mob/juandice/h_dialog",
+						"effect @s instant_health infinite 1"
+					],
+					"target": "self"
+				}
+			},
+			"spimton:kill": {
+				"add": {
+					"component_groups": [
+						"spimton:despawn"
+					]
+				}
+			}
+		}
+	}
+}

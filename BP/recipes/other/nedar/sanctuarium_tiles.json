@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:sanctuarium_tiles"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:soul_slate_bricks"
+			},
+			"@": {
+				"item": "spimton:netherrack_tiles"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#@",
+			"@#"
+		],
+		"result": {
+			"item": "spimton:sanctuarium_tiles",
+			"count": 4
+		}
+	}
+}

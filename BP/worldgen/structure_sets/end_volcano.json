@@ -1,0 +1,20 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:structure_set": {
+        "description": {
+            "identifier": "spimton:end_volcano"
+        },
+        "placement": {
+            "type": "minecraft:random_spread",
+            "salt": 16062025,
+            "separation": 26,
+            "spacing": 59
+        },
+        "structures": [
+            {
+                "structure": "spimton:end_volcano",
+                "weight": 1
+            }
+        ]
+    }
+}

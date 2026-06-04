@@ -1,0 +1,41 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:meat_mallet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"assume_symmetry": true,
+		"priority": 10,
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"pattern": [
+			"#@#",
+			" v ",
+			" x "
+		],
+		"key": {
+			"#": {
+				"tag": "minecraft:is_meat"
+			},
+			"@": {
+				"item": "spimton:metallicore_ingot"
+			},
+			"v": {
+				"item": "spimton:pure_diamond"
+			},
+			"x": {
+				"item": "netherite_ingot"
+			}
+		},
+		"result": [
+			{
+				"count": 1,
+				"item": "spimton:meat_mallet"
+			}
+		]
+	}
+}

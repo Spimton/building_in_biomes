@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_blackstone_tiles_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:decorated_blackstone_tiles"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"result": {
+			"item": "spimton:decorated_blackstone_tiles_stairs",
+			"count": 4
+		}
+	}
+}

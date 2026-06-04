@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:canned_rabbit_stew"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "cooked_rabbit",
+				"count": 1
+			},
+			{
+				"item": "baked_potato"
+			},
+			{
+				"item": "brown_mushroom"
+			},
+			{
+				"item": "carrot"
+			},
+			{
+				"item": "spimton:can",
+				"count": 1
+			}
+		],
+		"result": {
+			"item": "spimton:canned_rabbit_stew"
+		}
+	}
+}

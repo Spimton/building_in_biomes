@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:asbestos_sheet_modman_d"
+		},
+		"input": "spimton:deepslate_asbestos_ore",
+		"tags": [
+			"furnace",
+			"blast_furnace"
+		],
+		"output": "spimton:asbestos_sheet"
+	}
+}

@@ -1,0 +1,682 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:overgrown_horseman",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "skeleton",
+			"scripts": {
+				"animate": [
+					"music",
+					"health"
+				]
+			},
+			"animations": {
+				"music": "controller.animation.horseman.music",
+				"health": "controller.animation.equestrian.health"
+			}
+		},
+		"component_groups": {
+			"minecraft:default_targeting": {
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 2,
+					"must_see": true,
+					"within_radius": 12,
+					"must_see_forget_duration": 40,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "inanimate"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "spimton:archshaman",
+										"operator": "!="
+									},
+									{
+										"test": "has_tag",
+										"subject": "other",
+										"operator": "!=",
+										"value": "novelty:spimton:alliance_ring_overgrown"
+									}
+								]
+							},
+							"max_dist": 48
+						}
+					]
+				},
+				"minecraft:wants_jockey": {}
+			},
+			"spimton:melee": {
+				"minecraft:behavior.melee_attack": {
+					"cooldown_time": 1,
+					"melee_fov": 360,
+					"max_path_time": 0.55,
+					"min_path_time": 0.1,
+					"priority": 4,
+					"reach_multiplier": 3,
+					"require_complete_path": false,
+					"speed_multiplier": 1.5
+				},
+				"minecraft:behavior.use_kinetic_weapon": {
+					"priority": 1,
+					"track_target": true,
+					"approach_distance": 10.0,
+					"reposition_distance": {
+						"min": 6.0,
+						"max": 10.0
+					},
+					"cooldown_distance": {
+						"min": 4.0,
+						"max": 6.0
+					},
+					"cooldown_time": 0.25,
+					"melee_fov": 360,
+					"speed_multiplier": 2,
+					"weapon_reach_multiplier": 1,
+					"weapon_min_speed_multiplier": 0.2,
+					"hijack_mount_navigation": true
+				},
+				"minecraft:attack": {
+					"damage": {
+						"range_max": 3,
+						"range_min": 2
+					}
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:melee_below": {
+				"minecraft:behavior.melee_attack": {
+					"cooldown_time": 1,
+					"melee_fov": 360,
+					"max_path_time": 0.55,
+					"min_path_time": 0.1,
+					"priority": 4,
+					"reach_multiplier": 3,
+					"require_complete_path": false,
+					"speed_multiplier": 1.5
+				},
+				"minecraft:behavior.use_kinetic_weapon": {
+					"priority": 1,
+					"track_target": true,
+					"approach_distance": 10.0,
+					"reposition_distance": {
+						"min": 3.0,
+						"max": 5.0
+					},
+					"cooldown_distance": {
+						"min": 3.0,
+						"max": 5.0
+					},
+					"cooldown_time": 0.1225,
+					"melee_fov": 360,
+					"speed_multiplier": 2,
+					"weapon_reach_multiplier": 1,
+					"weapon_min_speed_multiplier": 0.2,
+					"hijack_mount_navigation": true
+				},
+				"minecraft:attack": {
+					"damage": {
+						"range_max": 5,
+						"range_min": 4
+					}
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:potion": {
+				"minecraft:shooter": {
+					"def": "splash_potion",
+					"power": 0,
+					"aux_val": 26
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_interval": 1,
+					"speed_multiplier": 1.5,
+					"swing": true,
+					"attack_radius": 12,
+					"burst_shots": 4,
+					"burst_interval": 0.4,
+					"priority": 1
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:potion_finish": {
+				"minecraft:shooter": {
+					"def": "splash_potion",
+					"power": 0,
+					"aux_val": 23
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_interval": 1,
+					"speed_multiplier": 1.5,
+					"swing": true,
+					"attack_radius": 12,
+					"burst_shots": 4,
+					"burst_interval": 0.4,
+					"priority": 1
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:potion_undead": {
+				"minecraft:shooter": {
+					"def": "splash_potion",
+					"power": 0,
+					"aux_val": 21
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_interval": 1,
+					"speed_multiplier": 1.5,
+					"swing": true,
+					"attack_radius": 12,
+					"burst_shots": 4,
+					"burst_interval": 0.4,
+					"priority": 1
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:spear1": {
+				"minecraft:shooter": {
+					"def": "spimton:thrown_agold_spear",
+					"power": 0
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_interval": 1.5,
+					"speed_multiplier": 0.5,
+					"swing": false,
+					"attack_radius": 64,
+					"burst_shots": 1,
+					"burst_interval": 1.5,
+					"priority": 1
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:spear2": {
+				"minecraft:shooter": {
+					"def": "spimton:thrown_imperial_jade_spear",
+					"power": 0
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_interval": 1.5,
+					"speed_multiplier": 0.5,
+					"swing": false,
+					"attack_radius": 64,
+					"burst_shots": 1,
+					"burst_interval": 1.5,
+					"priority": 1
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:gooners": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"do_casting": true,
+							"cast_duration": 1,
+							"weight": 1,
+							"cooldown_time": 4,
+							"min_activation_range": 1,
+							"max_activation_range": 32,
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"target": "self",
+									"base_delay": 0,
+									"delay_per_summon": 0,
+									"entity_type": "spimton:overgrown_hunter",
+									"summon_cap": 5,
+									"summon_cap_radius": 60,
+									"size": 4,
+									"shape": "circle",
+									"entity_lifespan": 20,
+									"num_entities_spawned": 2
+								}
+							]
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"looping": false,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:above_third": {
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"spimton:below_third": {
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?(query.is_baby?120:50)+(math.die_roll(query.equipment_count,1,3)):0"
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"skeleton",
+					"undead",
+					"monster",
+					"mob",
+					"spimton:archshaman"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:health": {
+				"value": 150,
+				"max": 150
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "projectile",
+						"damage_multiplier": 0.67
+					},
+					{
+						"cause": "entity_explosion",
+						"damage_multiplier": 0.5
+					},
+					{
+						"cause": "block_explosion",
+						"damage_multiplier": 0.5
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/overgrown_horseman_loot.json"
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/entities/overgrown_eq_horseman.json"
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 9,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 10,
+				"look_distance": 8,
+				"probability": 0.02
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:knockback_resistance": {
+				"max": 1,
+				"value": 1
+			},
+			"minecraft:boss": {
+				"hud_range": 45,
+				"name": "  §aOvergrown Equestrian§r "
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:on_death": {
+				"target": "self",
+				"event": "spimton:kill_ride"
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"minecraft:default_targeting",
+						"spimton:above_third"
+					]
+				},
+				"queue_command": {
+					"target": "self",
+					"command": "ride @s summon_ride spimton:overgrown_steed"
+				},
+				"trigger": "spimton:switch"
+			},
+			"spimton:kill_ride": {
+				"queue_command": {
+					"target": "self",
+					"command": "event entity @e[type=spimton:overgrown_steed,r=1] spimton:kill_steed"
+				}
+			},
+			"spimton:switch": {
+				"randomize": [
+					{
+						"sequence": [
+							{
+								"add": {
+									"component_groups": [
+										"spimton:melee"
+									]
+								},
+								"queue_command": {
+									"target": "self",
+									"command": [
+										"playanimation @s animation.overgrown_skirmisher.charge",
+										"ride @s start_riding @n[type=spimton:overgrown_steed]"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:melee_below",
+										"spimton:potion_finish",
+										"spimton:potion_undead",
+										"spimton:potion",
+										"spimton:gooners",
+										"spimton:spear1",
+										"spimton:spear2"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_mark_variant",
+									"value": 1
+								},
+								"add": {
+									"component_groups": [
+										"spimton:melee_below"
+									]
+								},
+								"queue_command": {
+									"target": "self",
+									"command": [
+										"playanimation @s animation.overgrown_skirmisher.charge",
+										"ride @s start_riding @n[type=spimton:overgrown_steed]"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:melee",
+										"spimton:potion_finish",
+										"spimton:potion_undead",
+										"spimton:potion",
+										"spimton:gooners",
+										"spimton:spear1",
+										"spimton:spear2"
+									]
+								}
+							}
+						],
+						"weight": 30
+					},
+					{
+						"sequence": [
+							{
+								"add": {
+									"component_groups": [
+										"spimton:potion"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:melee_below",
+										"spimton:potion_finish",
+										"spimton:potion_undead",
+										"spimton:melee",
+										"spimton:gooners",
+										"spimton:spear1",
+										"spimton:spear2"
+									]
+								}
+							},
+							{
+								"filters": {
+									"all_of": [
+										{
+											"test": "actor_health",
+											"subject": "target",
+											"value": 10,
+											"operator": "<="
+										}
+									]
+								},
+								"add": {
+									"component_groups": [
+										"spimton:potion_finish"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:melee_below",
+										"spimton:potion",
+										"spimton:potion_undead",
+										"spimton:melee",
+										"spimton:gooners",
+										"spimton:spear1",
+										"spimton:spear2"
+									]
+								}
+							},
+							{
+								"filters": {
+									"test": "is_family",
+									"subject": "target",
+									"value": "undead"
+								},
+								"add": {
+									"component_groups": [
+										"spimton:potion_undead"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:melee_below",
+										"spimton:potion",
+										"spimton:potion_finish",
+										"spimton:melee",
+										"spimton:gooners",
+										"spimton:spear1",
+										"spimton:spear2"
+									]
+								}
+							}
+						],
+						"weight": 25
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:gooners"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:melee_below",
+								"spimton:potion",
+								"spimton:potion_finish",
+								"spimton:potion_undead",
+								"spimton:melee",
+								"spimton:spear1",
+								"spimton:spear2"
+							]
+						},
+						"weight": 10
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:spear1"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"playanimation @s animation.overgrown_soldier.throw",
+								"ride @s start_riding @n[type=spimton:overgrown_steed]"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:potion",
+								"spimton:melee_below",
+								"spimton:potion_finish",
+								"spimton:potion_undead",
+								"spimton:melee",
+								"spimton:gooners",
+								"spimton:spear2"
+							]
+						},
+						"weight": 20
+					},
+					{
+						"add": {
+							"component_groups": [
+								"spimton:spear2"
+							]
+						},
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"playanimation @s animation.overgrown_soldier.throw",
+								"ride @s start_riding @n[type=spimton:overgrown_steed]"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:potion",
+								"spimton:melee_below",
+								"spimton:potion_finish",
+								"spimton:potion_undead",
+								"spimton:melee",
+								"spimton:gooners",
+								"spimton:spear1"
+							]
+						},
+						"weight": 15
+					}
+				]
+			},
+			"spimton:above_third": {
+				"add": {
+					"component_groups": [
+						"spimton:above_third"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:below_third"
+					]
+				}
+			},
+			"spimton:below_third": {
+				"add": {
+					"component_groups": [
+						"spimton:below_third"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:above_third"
+					]
+				}
+			}
+		}
+	}
+}

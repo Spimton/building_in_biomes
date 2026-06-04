@@ -1,0 +1,49 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "brick",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "egg",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:bone_pile",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:asriel_dust",
+                    "weight": 18
+                },
+                {
+                    "type": "item",
+                    "name": "copper_ingot",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:terracotta_bricks",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:guano",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "book",
+                    "weight": 10
+                }
+            ]
+        }
+    ]
+}

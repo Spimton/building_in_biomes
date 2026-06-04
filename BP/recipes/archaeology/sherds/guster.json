@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"spimton:archaeology_table"
+		],
+		"description": {
+			"identifier": "spimton:guster"
+		},
+		"ingredients": [
+			{
+				"item": "brick"
+			},
+			{
+				"item": "guster_pottery_sherd"
+			}
+		],
+		"result": {
+			"item": "guster_pottery_sherd",
+			"count": 2
+		}
+	}
+}

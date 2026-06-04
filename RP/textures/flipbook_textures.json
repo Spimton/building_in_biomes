@@ -1,0 +1,460 @@
+[
+    {
+        "atlas_tile": "bismuth_block",
+        "flipbook_texture": "textures/blocks/bismuth/bismuth_block",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "iridescent_glass",
+        "flipbook_texture": "textures/blocks/bismuth/iridescent_glass",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "iridescent_lantern",
+        "flipbook_texture": "textures/blocks/bismuth/iridescent_lantern",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "iridescent_terracotta",
+        "flipbook_texture": "textures/blocks/bismuth/iridescent_terracotta",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "iridescent_concrete",
+        "flipbook_texture": "textures/blocks/bismuth/iridescent_concrete",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "iridescent_wool",
+        "flipbook_texture": "textures/blocks/bismuth/iridescent_wool",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "iridescent_glazed_terracotta",
+        "flipbook_texture": "textures/blocks/bismuth/iridescent_glazed_terracotta",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "bismuth_deco_block",
+        "flipbook_texture": "textures/blocks/bismuth/bismuth_deco_block",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "chromium_block",
+        "flipbook_texture": "textures/blocks/chromium_block_flipbook",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "chromium_grates",
+        "flipbook_texture": "textures/blocks/chromium_grates",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "cut_chromium",
+        "flipbook_texture": "textures/blocks/cut_chromium",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "chromium_pillar_side",
+        "flipbook_texture": "textures/blocks/chromium_pillar_side",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "chromium_pillar_top",
+        "flipbook_texture": "textures/blocks/chromium_pillar_top",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "polished_chromium",
+        "flipbook_texture": "textures/blocks/polished_chromium",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "indented_chromium",
+        "flipbook_texture": "textures/blocks/indented_chromium",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "purple_haze",
+        "flipbook_texture": "textures/blocks/purple_haze",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "bismuth_bars",
+        "flipbook_texture": "textures/blocks/bismuth_bars",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "flipbook_texture": "textures/blocks/bronze/bronze_lantern",
+        "atlas_tile": "bronze_lantern",
+        "frames": [
+            0,
+            1,
+            2
+        ],
+        "ticks_per_frame": 8
+    },
+    {
+        "atlas_tile": "artistry_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/artistry_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "celerity_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/celery_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "infighting_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/infighting_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "infighting_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/infighting_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "union_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/union_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "tarnish_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/tarnish_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "strength_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/strength_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "peculiarity_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/peculiarity_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "range_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/range_hoary_rune",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "oblivion_hoary_runestone",
+        "flipbook_texture": "textures/blocks/otherstone/hoary/antique_stone/oblivion_hoary_runestone",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "void_lantern",
+        "flipbook_texture": "textures/blocks/void_lantern",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "void_lantern_top",
+        "flipbook_texture": "textures/blocks/void_lantern_top",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 5,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "lavalamp_inner",
+        "flipbook_texture": "textures/blocks/lavalamp_inner",
+        "frames": [
+            1,
+            2
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "void_liquid",
+        "flipbook_texture": "textures/blocks/otherstone/endstone/void_liquid",
+        "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+        ],
+        "ticks_per_frame": 6,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "void_block",
+        "flipbook_texture": "textures/blocks/otherstone/endstone/void_block",
+        "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "ticks_per_frame": 10,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "void_barrel",
+        "flipbook_texture": "textures/blocks/otherstone/endstone/void_barrel",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 6.7,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "lavalamp_inner",
+        "flipbook_texture": "textures/blocks/lavalamp_inner",
+        "frames": [
+            1,
+            2
+        ],
+        "ticks_per_frame": 15,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "radioactive_embers",
+        "flipbook_texture": "textures/items/radioactive_embers",
+        "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ],
+        "ticks_per_frame": 2,
+        "blend_frames": true
+    }
+]

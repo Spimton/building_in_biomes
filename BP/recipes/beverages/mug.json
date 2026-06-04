@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:mug"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"x x",
+			"y y",
+			"xyx"
+		],
+		"key": {
+			"x": {
+				"item": "iron_ingot"
+			},
+			"y": {
+				"item": "minecraft:planks"
+			}
+		},
+		"result": {
+			"item": "spimton:mug",
+			"count": 3
+		}
+	}
+}

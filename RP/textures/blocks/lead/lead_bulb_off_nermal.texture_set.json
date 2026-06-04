@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "lead_bulb_off_nermal",
+		"metalness_emissive_roughness": "lead_bulb_off_mer"
+	}
+}

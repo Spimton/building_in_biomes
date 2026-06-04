@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:chillstone_slab_stonecutter"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:chillstone"
+			}
+		},
+		"pattern": [
+			"#"
+		],
+		"result": {
+			"item": "spimton:chillstone_slab",
+			"count": 2
+		}
+	}
+}

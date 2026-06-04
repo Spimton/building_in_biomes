@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "spimton:guide_default"
+        },
+        "ingredients": [
+            {
+                "item": "stone_bricks"
+            },
+            {
+                "tag": "minecraft:bookshelf_books"
+            }
+        ],
+        "priority": 1,
+        "result": {
+            "item": "spimton:guide_book",
+            "count": 1
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        }
+    }
+}

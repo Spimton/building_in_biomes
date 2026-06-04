@@ -1,0 +1,81 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "max": 1,
+                "min": 1
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:radioactive_embers",
+                    "functions": [
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§r§7Radioactive embers.\nMight be used to reveal something"
+                            ]
+                        }
+                    ],
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:metallicore_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 15,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "dried_ghast",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 25
+                },
+                {
+                    "type": "item",
+                    "name": "ominous_bottle",
+                    "functions": [
+                        {
+                            "function": "set_ominous_bottle_amplifier",
+                            "amplifier": {
+                                "max": 5,
+                                "min": 4
+                            }
+                        }
+                    ],
+                    "weight": 30
+                },
+                {
+                    "type": "item",
+                    "name": "netherite_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 3,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 15
+                }
+            ]
+        }
+    ]
+}

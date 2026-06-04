@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": false,
+        "description": {
+            "identifier": "spimton:smooth_slate_marble_stairs"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "key": {
+            "#": {
+                "item": "spimton:smooth_slate_marble"
+            }
+        },
+        "pattern": [
+            "#  ",
+            "## ",
+            "###"
+        ],
+        "result": {
+            "count": 4,
+            "item": "spimton:smooth_slate_marble_stairs"
+        }
+    }
+}

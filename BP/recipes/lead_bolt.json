@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:lead_bolt"
+        },
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "assume_symmetry": true,
+        "pattern": [
+            "#",
+            "#"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:lead_ingot"
+            }
+        },
+        "result": {
+            "item": "spimton:lead_bolt",
+            "count": 8
+        }
+    }
+}

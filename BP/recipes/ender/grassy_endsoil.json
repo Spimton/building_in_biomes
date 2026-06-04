@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:grassy_endsoil"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"@": {
+				"item": "spimton:end_moss"
+			},
+			"#": {
+				"item": "spimton:endsoil"
+			}
+		},
+		"pattern": [
+			"@@",
+			"##"
+		],
+		"result": {
+			"item": "spimton:grassy_endsoil",
+			"count": 3
+		}
+	}
+}

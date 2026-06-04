@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chillwood_stairs"
+        },
+        "assume_symmetry": false,
+        "pattern": [
+            "#  ",
+            "## ",
+            "###"
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "key": {
+            "#": {
+                "item": "spimton:chillwood_planks"
+            }
+        },
+        "result": {
+            "item": "spimton:chillwood_stairs",
+            "count": 4
+        }
+    }
+}

@@ -1,0 +1,45 @@
+/*{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.big_keg_b3",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bottom_3",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0],
+					"cubes": [
+						{
+							"origin": [-8, 4, -7],
+							"size": [15, 12, 15],
+							"uv": {
+								"north": {"uv": [45, 46], "uv_size": [15, 12]},
+								"west": {"uv": [0, 80], "uv_size": [15, 12]},
+								"down": {"uv": [15, 30], "uv_size": [-15, -15]}
+							}
+						},
+						{
+							"origin": [-8, 0, -5],
+							"size": [17, 4, 3],
+							"uv": {
+								"north": {"uv": [42, 99], "uv_size": [17, 4]},
+								"east": {"uv": [61, 99], "uv_size": [3, 4]},
+								"south": {"uv": [42, 99], "uv_size": [17, 4]},
+								"west": {"uv": [61, 99], "uv_size": [3, 4]},
+								"up": {"uv": [59, 106], "uv_size": [-17, -3]},
+								"down": {"uv": [59, 99], "uv_size": [-17, -3]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}*/

@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chillwood_trampoline"
+        },
+        "assume_symmetry": false,
+        "pattern": [
+            "###",
+            "@z@",
+            "www"
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "key": {
+            "#": {
+                "item": "wool"
+            },
+            "z": {
+                "item": "spimton:bluestone"
+            },
+            "w": {
+                "item": "spimton:chillwood_planks"
+            },
+            "@": {
+                "item": "spimton:breeze_rod"
+            }
+        },
+        "result": {
+            "item": "spimton:chillwood_trampoline",
+            "count": 4
+        }
+    }
+}

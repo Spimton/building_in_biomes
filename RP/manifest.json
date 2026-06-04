@@ -1,0 +1,64 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"spimton"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		},
+		"url": "https://www.curseforge.com/minecraft-bedrock/addons/building-in-biomes"
+	},
+	"header": {
+		"name": "Building in Biomes [RP]",
+		"description": "Blocks with a chance of bosses",
+		"min_engine_version": [
+			1,
+			26,
+			20
+		],
+		"uuid": "758b77af-fb70-4b03-bced-a82052d6e08b",
+		"version": [
+			1,
+			1,
+			0
+		]
+	},
+	"capabilities": [
+		"pbr"
+	],
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "249650ab-2798-4d7e-8f40-7c415a89ef53",
+			"version": [
+				1,
+				1,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "3fd891cc-10a5-4d20-8653-ec11fa01c47c",
+			"version": [
+				1,
+				1,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.5.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	]
+}

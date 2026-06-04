@@ -1,0 +1,22 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:overgrown_orb",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.spimton:boss.name"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:hover_text_color": "green",
+			"minecraft:icon": "overgrown_orb_item",
+			"minecraft:block_placer": {
+				"block": "spimton:overgrown_orb",
+				"use_on": []
+			},
+			"minecraft:rarity": "epic"
+		}
+	}
+}

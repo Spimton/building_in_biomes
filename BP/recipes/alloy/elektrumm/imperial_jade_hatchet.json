@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:imperial_jade_hatchet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"zw",
+			"yz",
+			"x "
+		],
+		"key": {
+			"x": {
+				"item": "stick"
+			},
+			"y": {
+				"item": "spimton:limestone_hatchet"
+			},
+			"z": {
+				"item": "spimton:imperial_jade"
+			},
+			"w": {
+				"item": "tnt"
+			}
+		},
+		"result": {
+			"item": "spimton:imperial_jade_hatchet"
+		}
+	}
+}

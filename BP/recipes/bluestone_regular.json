@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:bluestone_regular"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:bluestone_ore",
+		"output": "spimton:bluestone"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:pseudomolotov_2",
+			"materials": {
+				"default": "snowball"
+			},
+			"textures": {
+				"default": "textures/items/bottled_beverages/beer/lager/random_lager_3"
+			},
+			"geometry": {
+				"default": "geometry.item_sprite"
+			},
+			"render_controllers": [
+				"controller.render.item_sprite"
+			],
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"sound_effects": {
+				"glass": "mob.psmlt.hit"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			}
+		}
+	}
+}

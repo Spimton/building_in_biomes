@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:deocrated_temple_tiles"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "#@",
+            "@#"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:temple_tiles"
+            },
+            "@": {
+                "item": "spimton:silver_ingot"
+            }
+        },
+        "result": {
+            "count": 2,
+            "item": "spimton:decorated_temple_tiles"
+        }
+    }
+}

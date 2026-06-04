@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"spimton:archaeology_table"
+		],
+		"description": {
+			"identifier": "spimton:archer"
+		},
+		"ingredients": [
+			{
+				"item": "brick"
+			},
+			{
+				"item": "archer_pottery_sherd"
+			}
+		],
+		"result": {
+			"item": "archer_pottery_sherd",
+			"count": 2
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.scav2",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0],
+					"cubes": [
+						{"origin": [-5, 2, -4], "size": [10, 1, 11], "uv": [0, 17]},
+						{"origin": [-4.5, 3, -3.5], "size": [9, 7, 10], "uv": [0, 0]},
+						{"origin": [-4, 10, -3], "size": [8, 1, 8], "uv": [-1, 29]},
+						{"origin": [-3, 3.5, 4.1], "size": [6, 6, 3], "uv": [38, 0]}
+					]
+				},
+				{
+					"name": "tire1",
+					"parent": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 0, -3], "size": [2, 2, 9], "uv": [30, 29]}
+					]
+				},
+				{
+					"name": "tire2",
+					"parent": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [2, 0, -3], "size": [2, 2, 9], "uv": [0, 38]}
+					]
+				}
+			]
+		}
+	]
+}

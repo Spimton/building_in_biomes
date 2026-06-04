@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "sudden_cardiac_arrest_v2",
+		"metalness_emissive_roughness": "sudden_cardiac_arrest_v2_mer"
+	}
+}

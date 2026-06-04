@@ -1,0 +1,39 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:vanguard_chestplate"
+        },
+        "tags": [
+            "spimton:archaeology_table"
+        ],
+        "unlock": [
+            {
+                "item": "spimton:bottled_time"
+            }
+        ],
+        "pattern": [
+            "zwz",
+            "xyx",
+            "xxx"
+        ],
+        "key": {
+            "w": {
+                "item": "spimton:bottled_time"
+            },
+            "x": {
+                "item": "spimton:tin_ingot"
+            },
+            "y": {
+                "item": "iron_chestplate"
+            },
+            "z": {
+                "item": "leather"
+            }
+        },
+        "result": {
+            "item": "spimton:vanguard_chestplate"
+        }
+    }
+}

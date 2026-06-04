@@ -1,0 +1,190 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"mob.chillager.hurt": {
+			"sounds": [
+				"sounds/mob/chillager/hurt1"
+			]
+		},
+		"mob.chillager.idle": {
+			"sounds": [
+				"sounds/mob/chillager/ambient1",
+				"sounds/mob/chillager/ambient2",
+				"sounds/mob/chillager/ambient3"
+			],
+			"category": "hostile"
+		},
+		"mob.chillager.death": {
+			"sounds": [
+				"sounds/mob/chillager/death1"
+			],
+			"category": "hostile"
+		},
+		"item.chilling_horn.shriek": {
+			"sounds": [
+				"sounds/item/chilling_horn_shriek",
+				"sounds/item/chilling_horn_shriek_2",
+				"sounds/item/chilling_horn_shriek_3"
+			]
+		},
+		"item.storm_horn": {
+			"sounds": [
+				"sounds/item/storm_horn"
+			]
+		},
+		"moogcity": {
+			"sounds": [
+				"sounds/game/moogcity"
+			],
+			"max_distance": 30,
+			"min_distance": 3,
+			"category": "music"
+		},
+		"record.petiole": {
+			"sounds": [
+				"sounds/game/petiole"
+			],
+			"max_distance": 60
+		},
+		"sfx.deltarune_boom": {
+			"sounds": [
+				"sounds/sfx/bomb"
+			],
+			"max_distance": 20
+		},
+		"sfx.nothingpersonel": {
+			"sounds": [
+				"sounds/sfx/teleport"
+			],
+			"max_distance": 30
+		},
+		"mob.wraith.say": {
+			"sounds": [
+				"sounds/mob/wraith/idle1",
+				"sounds/mob/wraith/idle2",
+				"sounds/mob/wraith/idle3",
+				"sounds/mob/wraith/idle4",
+				"sounds/mob/wraith/idle5",
+				"sounds/mob/wraith/idle6"
+			],
+			"category": "hostile"
+		},
+		"mob.wraith.death": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mob/wraith/death1",
+				"sounds/mob/wraith/death2"
+			]
+		},
+		"mob.wraith.hurt": {
+			"category": "hostile",
+			"sounds": [
+				"sounds/mob/wraith/hurt1",
+				"sounds/mob/wraith/hurt2",
+				"sounds/mob/wraith/hurt3"
+			]
+		},
+		"sfx.ringing": {
+			"category": "music",
+			"sounds": [
+				"sounds/sfx/bell_ambience"
+			]
+		},
+		"block.bone_pile.break": {
+			"category": "block",
+			"sounds": [
+				"sounds/blocks/bone_pile_break_0",
+				"sounds/blocks/bone_pile_break_1",
+				"sounds/blocks/bone_pile_break_2",
+				"sounds/blocks/bone_pile_break_3",
+				"sounds/blocks/bone_pile_break_4"
+			]
+		},
+		"block.bone_pile.step": {
+			"category": "block",
+			"sounds": [
+				"sounds/blocks/bone_pile_step_0",
+				"sounds/blocks/bone_pile_step_1",
+				"sounds/blocks/bone_pile_step_2",
+				"sounds/blocks/bone_pile_step_3"
+			]
+		},
+		"music.overgrown_boss": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.8,
+					"stream": true,
+					"name": "sounds/music/boss/overgrownmusic"
+				}
+			]
+		},
+		"music.weeper_boss": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.7,
+					"stream": true,
+					"name": "sounds/music/boss/weepermusic"
+				}
+			]
+		},
+		"music.juandice_boss": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.7,
+					"stream": true,
+					"name": "sounds/music/boss/juandicemusic"
+				}
+			]
+		},
+		"music.horseman_boss": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.7,
+					"stream": true,
+					"name": "sounds/music/boss/horsemanmusic"
+				}
+			]
+		},
+		"music.wshaman_boss": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.7,
+					"stream": true,
+					"name": "sounds/music/boss/wshamanmusic"
+				}
+			]
+		},
+		"music.ratt_boss": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.6,
+					"stream": true,
+					"name": "sounds/music/boss/rattmusic"
+				}
+			]
+		},
+		"music.ptn": {
+			"category": "ui",
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"volume": 0.7,
+					"stream": true,
+					"name": "sounds/music/record_creative"
+				}
+			]
+		}
+	}
+}

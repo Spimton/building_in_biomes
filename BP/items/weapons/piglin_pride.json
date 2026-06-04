@@ -1,0 +1,81 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:piglin_pride",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:icon": "piglin_pride",
+            "minecraft:tags": {
+                "tags": [
+                    "dungeons:crossbow",
+                    "oreville:is_crossbow"
+                ]
+            },
+            "minecraft:rarity": "uncommon",
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "minecraft:string"
+                        ],
+                        "repair_amount": "q.max_durability*0.25"
+                    },
+                    {
+                        "items": [
+                            "minecraft:stick"
+                        ],
+                        "repair_amount": "q.max_durability*0.25"
+                    },
+                    {
+                        "items": [
+                            "spimton:piglin_pride"
+                        ],
+                        "repair_amount": "c.other->q.remaining_durability*0.8"
+                    }
+                ]
+            },
+            "minecraft:durability": {
+                "max_durability": 1225
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 3,
+                "movement_modifier": 0.1225
+            },
+            "minecraft:shooter": {
+                "max_draw_duration": 3,
+                "charge_on_draw": true,
+                "max_launch_power": 122.5,
+                "scale_power_by_draw_duration": false,
+                "ammunition": [
+                    {
+                        "item": "spimton:gold_bolt",
+                        "use_offhand": true,
+                        "search_inventory": true,
+                        "use_in_creative": true
+                    },
+                    {
+                        "item": "spimton:lead_bolt",
+                        "use_offhand": true,
+                        "search_inventory": true,
+                        "use_in_creative": true
+                    },
+                    {
+                        "item": "spimton:lead_bolt_ht",
+                        "use_offhand": true,
+                        "search_inventory": true,
+                        "use_in_creative": true
+                    }
+                ]
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:glint": false,
+            "minecraft:use_animation": {
+                "value": "crossbow"
+            }
+        }
+    }
+}

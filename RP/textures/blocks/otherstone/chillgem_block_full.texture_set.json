@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chillgem_block_full",
+		"metalness_emissive_roughness": "chillgem_block_full_mer"
+	}
+}

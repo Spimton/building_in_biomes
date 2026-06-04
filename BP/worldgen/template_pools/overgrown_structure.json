@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:overgrown_structure"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "overgrown_structure"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

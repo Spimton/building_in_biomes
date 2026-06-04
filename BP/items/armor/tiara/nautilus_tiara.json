@@ -1,0 +1,53 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:nautilus_tiara",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "nautilus_tiara",
+			"minecraft:wearable": {
+				"slot": "slot.armor.head"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:rarity": "rare",
+			"minecraft:durability": {
+				"max_durability": 70
+			},
+			"minecraft:tags": {
+				"tags": [
+					"novelty:is_hat"
+				]
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:electrum_ingot"
+						],
+						"repair_amount": "query.max_durability*0.15"
+					},
+					{
+						"items": [
+							"spimton:nautilus_tiara"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					},
+					{
+						"items": [
+							"conduit"
+						],
+						"repair_amount": "query.max_durability*0"
+					}
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 10
+			}
+		}
+	}
+}

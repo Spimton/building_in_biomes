@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:temple_tiles"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:cobbled_temple_rock"
+            }
+        },
+        "result": {
+            "count": 4,
+            "item": "spimton:temple_tiles"
+        }
+    }
+}

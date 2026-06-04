@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:defrosted_chillstone_bricks_slab"
+		},
+		"tags": [
+			"blast_furnace"
+		],
+		"input": "spimton:chillstone_bricks_slab",
+		"output": "spimton:defrosted_chillstone_bricks_slab"
+	}
+}

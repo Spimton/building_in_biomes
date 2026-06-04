@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:applen_helmet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###",
+			"# #"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:applen_ingot"
+			}
+		},
+		"result": {
+			"item": "spimton:applen_helmet"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "tropical_fish",
+                    "functions": [
+                        {
+                            "function": "set_name",
+                            "name": "§r§cRiferimento Oskuro"
+                        },
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "knockback",
+                                    "level": 2
+                                }
+                            ]
+                        },
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§r§7Penso che sia un riferimento a qualcosa, ma non mi ricordo"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:elon_termonucleare",
+                    "functions": []
+                }
+            ]
+        }
+    ]
+}

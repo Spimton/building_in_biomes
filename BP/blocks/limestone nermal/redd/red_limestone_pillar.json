@@ -1,0 +1,126 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:red_limestone_pillar",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.stone",
+				"is_hidden_in_commands": false
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": [
+						"minecraft:block_face"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4,
+				"item_specific_speeds": [
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:iron_tier')"
+						},
+						"destroy_speed": 0.4
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:stone_tier')"
+						},
+						"destroy_speed": 0.6
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:wood_tier')"
+						},
+						"destroy_speed": 0.8
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:diamond_tier')"
+						},
+						"destroy_speed": 0.2
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:netherite_tier')"
+						},
+						"destroy_speed": 0.1
+					},
+					{
+						"item": {
+							"tags": "query.all_tags('minecraft:is_pickaxe','minecraft:golden_tier')"
+						},
+						"destroy_speed": 0.05
+					}
+				]
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#796d4f",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "red_limestone_pillar",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "red_limestone_pillar_top",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "red_limestone_pillar_top",
+					"render_method": "opaque"
+				}
+			},
+			"tag:minecraft:wooden_tier_destructible": {}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'up' || q.block_state('minecraft:block_face') == 'down'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'east' || q.block_state('minecraft:block_face') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							90
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:block_face') == 'north' || q.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							90,
+							0,
+							0
+						]
+					}
+				}
+			}
+		]
+	}
+}

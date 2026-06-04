@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "iridescent_concrete",
+		"metalness_emissive_roughness": "iridescent_concrete_mer"
+	}
+}

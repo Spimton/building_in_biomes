@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "spimton:frozen_temple"
+    },
+    "step": "surface_structures",
+    "start_pool": "spimton:beginning",
+    "max_depth": 7,
+    "start_height": {
+      "type": "constant",
+      "value": {
+        "absolute": -25
+      }
+    },
+    "liquid_settings": "ignore_waterlogging",
+    "biome_filters": [
+      {
+        "all_of": [
+          {
+            "operator": "==",
+            "test": "has_biome_tag",
+            "value": "taiga"
+          },
+          {
+            "operator": "==",
+            "test": "has_biome_tag",
+            "value": "cold"
+          }
+        ]
+      }
+    ],
+    "heightmap_projection": "world_surface"
+  }
+}

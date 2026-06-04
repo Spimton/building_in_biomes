@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:hoary_stone_bricks_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 1,
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:hoary_stone_bricks"
+            }
+        },
+        "result": {
+            "item": "spimton:hoary_stone_bricks_slab",
+            "count": 6
+        }
+    }
+}

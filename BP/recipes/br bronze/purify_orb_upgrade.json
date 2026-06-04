@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "tags": [
+            "crafting_table"
+        ],
+        "description": {
+            "identifier": "spimton:purify_orb_upgrade"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "@#@",
+            "#i#",
+            "@#@"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:silver_nugget"
+            },
+            "@": {
+                "item": "spimton:purify_orb"
+            },
+            "i": {
+                "item": "spimton:steel_ball_upgrade"
+            }
+        },
+        "result": {
+            "item": "spimton:purify_orb_upgrade"
+        }
+    }
+}

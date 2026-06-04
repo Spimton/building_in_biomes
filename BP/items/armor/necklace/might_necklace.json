@@ -1,0 +1,54 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:might_necklace",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "might_necklace",
+			"minecraft:wearable": {
+				"slot": "slot.armor.chest"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:rarity": "uncommon",
+			"minecraft:durability": {
+				"max_durability": 70
+			},
+			"minecraft:tags": {
+				"tags": [
+					"novelty:is_neckless"
+				]
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:electrum_ingot"
+						],
+						"repair_amount": "query.max_durability*0.15"
+					},
+					{
+						"items": [
+							"spimton:might_necklace"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					},
+					{
+						"items": [
+							"spimton:bronze_ingot",
+							"blaze_rod"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 10
+			}
+		}
+	}
+}

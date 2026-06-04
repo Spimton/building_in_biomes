@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:antique_brush"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" w ",
+			" # ",
+			" @ "
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bronze_ingot"
+			},
+			"@": {
+				"item": "stick"
+			},
+			"w": {
+				"item": "spimton:antique_cloth"
+			}
+		},
+		"result": {
+			"item": "spimton:antique_brush"
+		}
+	}
+}

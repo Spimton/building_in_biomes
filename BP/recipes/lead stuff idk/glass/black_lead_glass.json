@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:black_lead_glass"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:lead_ingot"
+			},
+			"@": {
+				"item": "black_stained_glass"
+			}
+		},
+		"pattern": [
+			"@@@",
+			"@#@",
+			"@@@"
+		],
+		"result": {
+			"item": "spimton:black_lead_glass"
+		}
+	}
+}

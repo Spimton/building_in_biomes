@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:hellhall_arena"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "hellhalls/hellhall_beginning"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

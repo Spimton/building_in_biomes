@@ -1,0 +1,89 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:weeperball_4",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 3,
+				"time_down_event": {
+					"event": "minecraft:explode",
+					"target": "self"
+				}
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": [
+							0,
+							0
+						],
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": false
+					}
+				},
+				"power": 1.6,
+				"gravity": 0,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 1,
+				"anchor": 1,
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"reflect_on_hurt": false,
+				"catch_fire": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"creeper",
+					"inanimate"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:explode": {
+				"queue_command": {
+					"command": [
+						"summon spimton:sudden_cardiac_arrest_biggu",
+						"kill @s"
+					]
+				}
+			}
+		}
+	}
+}

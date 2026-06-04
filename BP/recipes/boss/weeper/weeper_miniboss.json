@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:weeper_miniboss"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"zyz",
+			"xwx",
+			"xwx"
+		],
+		"key": {
+			"y": {
+				"item": "spimton:platinum_star"
+			},
+			"z": {
+				"item": "spimton:amethyst_block"
+			},
+			"w": {
+				"item": "spimton:gloom_tiles"
+			},
+			"x": {
+				"item": "spimton:obsidian_tiles"
+			}
+		},
+		"result": {
+			"item": "spimton:weeper_miniboss"
+		}
+	}
+}

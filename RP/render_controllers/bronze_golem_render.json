@@ -1,0 +1,27 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.bronze_golem": {
+            "arrays": {
+                "textures": {
+                    "Array.markings": [
+                        "Texture.default",
+                        "Texture.steel_ball",
+                        "Texture.purify_orb",
+                        "Texture.fireball",
+                        "Texture.dragon_fireball"
+                    ]
+                }
+            },
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Array.markings[query.property('spimton:ammo')]"
+            ]
+        }
+    }
+}

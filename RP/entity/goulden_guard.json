@@ -1,0 +1,62 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:goulden_guard",
+            "materials": {
+                "default": "entity"
+            },
+            "textures": {
+                "default": "textures/entity/goulden_guard"
+            },
+            "geometry": {
+                "default": "geometry.goulden_guard"
+            },
+            "animations": {
+                "walk": "animation.goulden_guard.move",
+                "look_at_target": "animation.common.look_at_target",
+                "charge_arms": "animation.goulden_guard.armcharge",
+                "charge_ring": "animation.goulden_guard.ringcharge",
+                "charge_arm_ready": "animation.goulden_guard.armready",
+                "shoot_orb": "animation.goulden_guard.orbcharge",
+                "shoot_ring": "animation.goulden_guard.ringshoot",
+                "move_controller": "controller.animation.iron_golem.move",
+                "move_arms": "animation.goulden_guard.armmove"
+            },
+            "render_controllers": [
+                "controller.render.iron_golem"
+            ],
+            "particle_emitters": {
+                "goulden_laser_shoot": "spimton:void_barrel"
+            },
+            "scripts": {
+                "scale": "1.225",
+                "pre_animation": [
+                    "variable.modified_tcos0 = Math.clamp(((Math.cos(query.modified_distance_moved * 13.5) * Math.min(query.modified_move_speed, 0.6) / variable.gliding_speed_value) * 25.0), -12.5, 12.5);"
+                ],
+                "animate": [
+                    {
+                        "shoot_orb": " query.mark_variant == 1" //query.mark_variant == 1 && quer
+                    },
+                    {
+                        "shoot_ring": "query.mark_variant == 1" //query.mark_variant == 1 && quer
+                    },
+                    {
+                        "charge_arms": "query.mark_variant == 2" //query.mark_variant == 1 && quer
+                    },
+                    {
+                        "move_arms": "query.is_moving"
+                    },
+                    {
+                        "walk": "query.is_moving"
+                    },
+                    "look_at_target",
+                    "move_controller"
+                ]
+            },
+            "spawn_egg": {
+                "texture": "goulden_guard_egg"
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:insulater",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"spimton:dsp": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": 0.1,
+				"time_down_event": {
+					"target": "self",
+					"event": "spimton:kll"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:kll": {
+				"add": {
+					"component_groups": [
+						"spimton:dsp"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"fill ~2 ~2 ~2 ~-2 ~-2 ~-2 air replace fire"
+					]
+				}
+			}
+		}
+	}
+}

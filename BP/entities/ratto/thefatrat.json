@@ -1,0 +1,143 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:thefatrat",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "component_groups": {
+            "spimton:give": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:proje": {
+                "minecraft:projectile": {
+                    "anchor": 1,
+                    "gravity": 0.05,
+                    "hit_sound": "hit_boom",
+                    "offset": [
+                        0,
+                        -0.1,
+                        0
+                    ],
+                    "on_hit": {
+                        "impact_damage": {
+                            "damage": 12,
+                            "destroy_on_hit": true,
+                            "knockback": false,
+                            "power_multiplier": 0.97,
+                            "semi_random_diff_damage": true
+                        },
+                        "particle_on_hit": {
+                            "num_particles": 5,
+                            "particle_type": "explode",
+                            "on_other_hit": true,
+                            "on_entity_hit": true
+                        },
+                        "stick_in_ground": {
+                            "shake_time": 0.35
+                        },
+                        "definition_event": {
+                            "event_trigger": {
+                                "event": "spimton:explode",
+                                "target": "self"
+                            }
+                        },
+                        "arrow_effect": {}
+                    },
+                    "power": 3,
+                    "should_bounce": true,
+                    "stop_on_hurt": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_dropped_ticks": 10,
+                    "max_optimized_distance": 100,
+                    "use_motion_prediction_hints": true
+                }
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "cause": "lava",
+                        "damage_per_tick": 4,
+                        "filters": {
+                            "operator": "==",
+                            "subject": "self",
+                            "test": "in_lava",
+                            "value": true
+                        }
+                    }
+                ]
+            },
+            "minecraft:timer": {
+                "looping": false,
+                "time": 10,
+                "time_down_event": {
+                    "event": "spimton:give",
+                    "target": "self"
+                }
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "sequence": [
+                    {
+                        "queue_command": {
+                            "command": "tp @s ~ ~10 ~"
+                        }
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "spimton:proje"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "spimton:explode": {
+                "queue_command": {
+                    "command": [
+                        "particle spimton:deltarune_explosion_multiple ~ ~0.5 ~",
+                        "damage @e[family=!ratto,r=2] 48 entity_explosion entity @s",
+                        "playsound sfx.deltarune_boom @a[r=5]"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:give"
+                    ]
+                }
+            },
+            "spimton:give": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "spimton:give"
+                            ]
+                        }
+                    },
+                    {
+                        "queue_command": {
+                            "command": [
+                                "playsound random.break @p"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

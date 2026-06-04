@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:record_relic"
+        },
+        "assume_symmetry": true,
+        "priority": 1,
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:crynil"
+            },
+            "@": {
+                "tag": "minecraft:decorated_pot_sherds"
+            }
+        },
+        "result": {
+            "item": "minecraft:music_disc_relic",
+            "count": 1
+        }
+    }
+}

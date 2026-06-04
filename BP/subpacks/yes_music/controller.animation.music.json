@@ -1,0 +1,293 @@
+{
+    "animation_controllers": {
+        "controller.animation.archshaman.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+                    "on_entry": [
+                        "/music stop 3"
+                    ],
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+                    "on_entry": [
+                        "/music play music.overgrown_boss 1 3 loop"
+                    ],
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.horseman.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+                    "on_entry": [
+                        "/music stop 3"
+                    ],
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+                    "on_entry": [
+                        "/music play music.horseman_boss 1 3 loop"
+                    ],
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.ratt.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+                    "on_entry": [
+                        "/music stop 3"
+                    ],
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+                    "on_entry": [
+                        "/music play music.ratt_boss 1 3 loop"
+                    ],
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.weeper.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+                    "on_entry": [
+                        "/music stop 3"
+                    ],
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+                    "on_entry": [
+                        "/music play music.weeper_boss 1 3 loop"
+                    ],
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+                "controller.animation.wshaman.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+                    "on_entry": [
+                        "/music stop 3"
+                    ],
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+                    "on_entry": [
+                        "/music play music.wshaman_boss 1 3 loop"
+                    ],
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.juandice.music": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "not_playing": "!query.has_target"
+                        },
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "not_playing": {
+                    "transitions": [
+                        {
+                            "start_music": "q.is_alive"
+                        }
+                    ]
+                },
+                "stop_music": {
+                    "on_entry": [
+                        "/music stop 3"
+                    ],
+                    "transitions": [
+                        {
+                            "not_playing": "1"
+                        }
+                    ]
+                },
+                "start_music": {
+                    "on_entry": [
+                        "/music play music.juandice_boss 1 3 loop"
+                    ],
+                    "transitions": [
+                        {
+                            "playing": "1"
+                        }
+                    ]
+                },
+                "playing": {
+                    "transitions": [
+                        {
+                            "stop_music": "!q.is_alive"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "format_version": "1.21.40"
+}

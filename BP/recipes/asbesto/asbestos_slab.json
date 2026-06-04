@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:asbestos_slab"
+		},
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:asbestos_block"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:asbestos_slab",
+			"count": 6
+		}
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:ht_lead_grates",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:geometry": {
+				"identifier": "geometry.custom_glass",
+				"culling": "spimton:culling.custom_glass"
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"can_contain_liquid": true,
+						"liquid_type": "water",
+						"stops_liquid_flowing_from_direction": [
+							"east",
+							"north",
+							"south",
+							"east"
+						]
+					}
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:map_color": "#1E1340",
+			"minecraft:light_dampening": 0,
+			"minecraft:light_emission": 0,
+			"minecraft:material_instances": {
+				"*": {
+					"render_method": "blend",
+					"texture": "lead_grates"
+				}
+			},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:iron": {},
+			"tag:metal": {}
+		}
+	}
+}

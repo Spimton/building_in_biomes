@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:platinum_gauntlet",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "platinum_gauntlet",
+			"minecraft:max_stack_size": 1,
+			"minecraft:custom_components": [
+				"spimton:platinumgauntlet"
+			],
+			"minecraft:durability": {
+				"max_durability": 500
+			},
+			"minecraft:cooldown": {
+				"category": "ora",
+				"duration": 0.5
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"redstone",
+							"spimton:siltstone",
+							"tnt"
+						],
+						"repair_amount": 50
+					},
+					{
+						"items": [
+							"spimton:platinum_star",
+							"spimton:platinum_gauntlet"
+						],
+						"repair_amount": 1997
+					}
+				]
+			},
+			"minecraft:rarity": "epic",
+			"minecraft:hover_text_color": "red",
+			"minecraft:interact_button": true
+		}
+	}
+}

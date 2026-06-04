@@ -1,0 +1,41 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:juandice_miniboss"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"assume_symmetry": true,
+		"priority": 10,
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"pattern": [
+			"zyz",
+			"xwx",
+			"xwx"
+		],
+		"key": {
+			"z": {
+				"item": "spimton:steel_ingot"
+			},
+			"x": {
+				"item": "spimton:sanctuarium_tiles"
+			},
+			"w": {
+				"item": "spimton:basalt_tiles"
+			},
+			"y": {
+				"item": "spimton:pure_diamond"
+			}
+		},
+		"result": [
+			{
+				"count": 1,
+				"item": "spimton:juandice_miniboss"
+			}
+		]
+	}
+}

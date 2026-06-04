@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:decorated_ancient_gold_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"@": {
+				"item": "spimton:ancient_gold_tiles"
+			},
+			"#": {
+				"item": "spimton:imperial_jade_tiles"
+			}
+		},
+		"pattern": [
+			"@#",
+			"#@"
+		],
+		"result": [
+			{
+				"item": "spimton:decorated_ancient_gold_tiles",
+				"count": 4
+			}
+		]
+	}
+}

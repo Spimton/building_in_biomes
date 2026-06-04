@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:hoary_runestone"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 1,
+        "pattern": [
+            "###",
+            "#@#",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:chiseled_hoary_stone_bricks"
+            },
+            "@": {
+                "item": "spimton:tin_ingot"
+            }
+        },
+        "result": {
+            "item": "spimton:hoary_runestone",
+            "count": 1
+        }
+    }
+}

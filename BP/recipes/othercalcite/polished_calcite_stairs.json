@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:polished_calcite_stairs"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:polished_calcite"
+			}
+		},
+		"pattern": [
+			"#",
+			"##",
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:polished_calcite_stairs",
+			"count": 4
+		}
+	}
+}

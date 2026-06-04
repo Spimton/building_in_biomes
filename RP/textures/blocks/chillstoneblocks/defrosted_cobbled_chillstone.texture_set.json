@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "defrosted_cobbled_chillstone",
+		"metalness_emissive_roughness": "defrosted_cobbled_chillstone_mer"
+	}
+}

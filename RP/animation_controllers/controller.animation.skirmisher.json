@@ -1,0 +1,58 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.skirmisher.attack": {
+			"states": {
+				"attack": {
+					"animations": [
+						{
+							"attack": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 3
+				}
+			}
+		},
+		"controller.animation.coldager.general": {
+			"initial_state": "general",
+			"states": {
+				"general": {
+					"animations": [
+						"general"
+					],
+					"transitions": [
+						{
+							"move": "query.ground_speed>=1"
+						},
+						{
+							"shoot": "query.is_sheared"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"shoot": {
+					"animations": [
+						"shoot"
+					],
+					"transitions": [
+						{
+							"general": "!query.is_sheared"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"move": {
+					"animations": [
+						"move"
+					],
+					"transitions": [
+						{
+							"general": "query.ground_speed<=1"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

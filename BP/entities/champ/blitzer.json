@@ -1,0 +1,75 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:blitzer",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"spimton:time": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 1,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:blitz"
+					}
+				}
+			},
+			"spimton:shine": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:type_family": {
+				"family": [
+					"juandice",
+					"inanimate"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.001,
+				"height": 0.001
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"spimton:blitz": {
+				"queue_command": {
+					"command": [
+						"tp @e[type=spimton:justice_champion,c=1] @s",
+						"tp @e[type=spimton:unbreakable_diamond,c=1] @s"
+					],
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"spimton:shine"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spimton:time"
+					]
+				}
+			}
+		}
+	}
+}

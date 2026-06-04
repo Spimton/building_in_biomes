@@ -1,0 +1,46 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:basalt_construct",
+            "materials": {
+                "default": "entity"
+            },
+            "textures": {
+                "default": "textures/entity/basalt_construct"
+            },
+            "geometry": {
+                "default": "geometry.blackstone_golem"
+            },
+            "animations": {
+                "basalt_construct_roar": "animation.blackstone_golem.roar2",
+                "roar_controller": "controller.animation.blackstone_golem.roar",
+                "walk": "animation.iron_golem.walk",
+                "move": "animation.iron_golem.move",
+                "look_at_target": "animation.common.look_at_target",
+                "walk_to_target": "animation.iron_golem.walk_to_target",
+                "move_to_target": "animation.iron_golem.move_to_target",
+                "move_controller": "controller.animation.iron_golem.move"
+            },
+            "render_controllers": [
+                "controller.render.iron_golem"
+            ],
+            "particle_emitters": {
+                "walk": "minecraft:lava_particle"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.modified_tcos0 = Math.clamp(((Math.cos(query.modified_distance_moved * 13.5) * Math.min(query.modified_move_speed, 0.6) / variable.gliding_speed_value) * 25.0), -12.5, 12.5);"
+                ],
+                "animate": [
+                    "roar_controller",
+                    "look_at_target",
+                    "move_controller"
+                ]
+            },
+            "spawn_egg": {
+                "texture": "blackstone_construct_egg"
+            }
+        }
+    }
+}

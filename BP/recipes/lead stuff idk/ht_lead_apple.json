@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:ht_lead_apple"
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ht_lead_ingot"
+			},
+			"@": {
+				"item": "apple"
+			}
+		},
+		"result": {
+			"item": "spimton:ht_lead_apple"
+		}
+	}
+}

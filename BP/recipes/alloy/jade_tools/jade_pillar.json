@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:jade_pillar"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:jade_tiles_slab"
+			}
+		},
+		"pattern": [
+			"#",
+			"#"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:jade_pillar",
+			"count": 1
+		}
+	}
+}

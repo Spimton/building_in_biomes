@@ -1,0 +1,34 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:random_ale_3",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "random_ale_3",
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6,
+                "movement_modifier": 0.3
+            },
+            "minecraft:display_name": {
+                "value": "item.spimton:random_beer.name"
+            },
+            "minecraft:food": {
+                "nutrition": 4,
+                "saturation_modifier": 0.5,
+                "can_always_eat": true,
+                "using_converts_to": "spimton:random_bottle"
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "spimton:ale"
+                ]
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:max_stack_size": 64
+        }
+    }
+}

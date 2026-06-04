@@ -1,0 +1,169 @@
+{
+	"format_version": "1.21.20",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.lavalampv3",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										8,
+										8
+									],
+									"material_instance": "outerglass"
+								},
+								"east": {
+									"uv": [
+										0,
+										8
+									],
+									"uv_size": [
+										8,
+										8
+									],
+									"material_instance": "outerglass"
+								},
+								"south": {
+									"uv": [
+										8,
+										0
+									],
+									"uv_size": [
+										8,
+										8
+									],
+									"material_instance": "outerglass"
+								},
+								"west": {
+									"uv": [
+										8,
+										8
+									],
+									"uv_size": [
+										8,
+										8
+									],
+									"material_instance": "outerglass"
+								},
+								"up": {
+									"uv": [
+										0,
+										16
+									],
+									"uv_size": [
+										8,
+										8
+									],
+									"material_instance": "outergold"
+								},
+								"down": {
+									"uv": [
+										16,
+										8
+									],
+									"uv_size": [
+										8,
+										-8
+									],
+									"material_instance": "outergold"
+								}
+							}
+						},
+						{
+							"origin": [
+								-6,
+								0,
+								-6
+							],
+							"size": [
+								12,
+								16,
+								12
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										12,
+										16
+									],
+									"material_instance": "innerlamp"
+								},
+								"east": {
+									"uv": [
+										12,
+										0
+									],
+									"uv_size": [
+										12,
+										16
+									],
+									"material_instance": "innerlamp"
+								},
+								"south": {
+									"uv": [
+										0,
+										16
+									],
+									"uv_size": [
+										12,
+										16
+									],
+									"material_instance": "innerlamp"
+								},
+								"west": {
+									"uv": [
+										12,
+										16
+									],
+									"uv_size": [
+										12,
+										16
+									],
+									"material_instance": "innerlamp"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

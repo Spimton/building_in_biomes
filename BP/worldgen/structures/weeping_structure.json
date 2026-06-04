@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.20",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "spimton:weeping_structure"
+    },
+    "step": "surface_structures",
+    "terrain_adaptation": "bury",
+    "start_pool": "spimton:weeping_structure",
+    "max_depth": 7,
+    "start_height": {
+      "type": "constant",
+      "value": {
+        "absolute": -40
+      }
+    },
+    "biome_filters": [
+      {
+        "all_of": [
+          {
+            "operator": "!=",
+            "test": "has_biome_tag",
+            "value": "the_end"
+          },
+          {
+            "operator": "!=",
+            "test": "has_biome_tag",
+            "value": "nether"
+          }
+        ]
+      }
+    ],
+    "heightmap_projection": "world_surface"
+  }
+}

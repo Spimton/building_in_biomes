@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"spimton:archaeology_table"
+		],
+		"description": {
+			"identifier": "spimton:howl"
+		},
+		"ingredients": [
+			{
+				"item": "brick"
+			},
+			{
+				"item": "howl_pottery_sherd"
+			}
+		],
+		"result": {
+			"item": "howl_pottery_sherd",
+			"count": 2
+		}
+	}
+}

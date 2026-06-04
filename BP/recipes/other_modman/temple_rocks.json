@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:temple_rocks"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": "spimton:cobbled_temple_rock",
+        "output": "spimton:temple_rock"
+    }
+}

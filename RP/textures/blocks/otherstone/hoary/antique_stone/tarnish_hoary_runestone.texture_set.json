@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "tarnish_hoary_runestone",
+		"metalness_emissive_roughness": "tarnish_hoary_runestone_mer"
+	}
+}

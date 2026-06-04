@@ -1,0 +1,35 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:tasty_bone"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"xxx",
+			"xyx",
+			" z "
+		],
+		"key": {
+			"y": {
+				"item": "spimton:overgrown_orb"
+			},
+			"x": {
+				"tag": "minecraft:is_meat"
+			},
+			"z": {
+				"item": "bone"
+			}
+		},
+		"assume_symmetry": false,
+		"priority": 10,
+		"unlock": {
+			"context": "AlwaysUnlocked"
+		},
+		"result": {
+			"item": "spimton:tasty_bone"
+		}
+	}
+}

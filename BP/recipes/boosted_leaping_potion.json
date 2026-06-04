@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "spimton:boosted_leaping_potion"
+		},
+		"tags": [
+			"brewing_stand"
+		],
+		"reagent": "spimton:fermented_glowstone_dust",
+		"input": "minecraft:potion_type:leaping",
+		"output": "spimton:boosted_leaping_potion"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "range_nethengic_runestone",
+		"metalness_emissive_roughness": "range_hoary_rune_mer"
+	}
+}

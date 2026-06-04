@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:transmutation_amulet"
+        },
+        "assume_symmetry": false,
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " b ",
+            "bcb",
+            " b "
+        ],
+        "key": {
+            "b": {
+                "item": "spimton:temple_fragment"
+            },
+            "c": {
+                "item": "spimton:temple_rock"
+            }
+        },
+        "result": {
+            "item": "spimton:transmutation_amulet"
+        }
+    }
+}

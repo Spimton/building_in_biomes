@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ale"
+		},
+		"tags": [
+			"spimton:keg"
+		],
+		"assume_symmetry": true,
+		"unlock": {
+			"context": "PlayerHasManyItems"
+		},
+		"priority": 1,
+		"pattern": [
+			"xxx",
+			"yyy"
+		],
+		"key": {
+			"x": {
+				"item": "wheat"
+			},
+			"y": {
+				"item": "spimton:mug"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:ale"
+			},
+			{
+				"item": "spimton:ale"
+			},
+			{
+				"item": "spimton:ale"
+			}
+		]
+	}
+}

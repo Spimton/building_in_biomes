@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:studded_galena_tiles"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "pattern": [
+            " # ",
+            "#@#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:galena_tiles"
+            },
+            "@": {
+                "item": "spimton:silver_ingot"
+            }
+        },
+        "result": {
+            "item": "spimton:studded_galena_tiles",
+            "count": 4
+        }
+    }
+}

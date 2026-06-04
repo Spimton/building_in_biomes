@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:insulator",
+			"menu_category": {
+				"category": "construction"
+			},
+			"states": {
+				"spimton:stood_on": [
+					true,
+					false
+				]
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 30
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#C8BAB4",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"minecraft:tick": {
+				"looping": true,
+				"interval_range": [
+					20,
+					20
+				]
+			},
+			"minecraft:custom_components": [
+				"spimton:cancer_treaders",
+				"spimton:insula"
+			]
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:unbreakable_necklace"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:steel_ingot"
+			},
+			"@": {
+				"item": "spimton:empty_necklace"
+			},
+			"g": {
+				"item": "spimton:pure_diamond"
+			},
+			"t": {
+				"item": "netherite_ingot"
+			},
+			"y": {
+				"item": "spimton:nether_cloth"
+			}
+		},
+		"pattern": [
+			" g ",
+			"#@#",
+			"yty"
+		],
+		"result": {
+			"item": "spimton:unbreakable_necklace"
+		}
+	}
+}

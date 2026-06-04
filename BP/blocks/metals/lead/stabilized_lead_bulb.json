@@ -1,0 +1,25 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:stabilized_lead_bulb",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 5
+			},
+			"minecraft:map_color": "#1E1340",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 15,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:iron": {},
+			"tag:metal": {}
+		}
+	}
+}

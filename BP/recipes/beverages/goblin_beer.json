@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:goblin_beer"
+		},
+		"tags": [
+			"spimton:keg"
+		],
+		"pattern": [
+			"xzw",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "wheat"
+			},
+			"y": {
+				"item": "spimton:ale"
+			},
+			"w": {
+				"item": "sugar"
+			},
+			"z": {
+				"item": "chicken"
+			}
+		},
+		"result": {
+			"item": "spimton:goblin_beer"
+		}
+	}
+}

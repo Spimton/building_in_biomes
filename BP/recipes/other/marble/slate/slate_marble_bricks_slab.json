@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": false,
+        "description": {
+            "identifier": "spimton:slate_marble_bricks_slab"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "key": {
+            "#": {
+                "item": "spimton:slate_marble_bricks"
+            }
+        },
+        "pattern": [
+            "###"
+        ],
+        "result": {
+            "count": 6,
+            "item": "spimton:slate_marble_bricks_slab"
+        }
+    }
+}

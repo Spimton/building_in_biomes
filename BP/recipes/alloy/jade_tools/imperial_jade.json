@@ -1,0 +1,21 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:imperial_jade"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:imperial_jade_block",
+				"count": 1
+			}
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:imperial_jade",
+			"count": 9
+		}
+	}
+}

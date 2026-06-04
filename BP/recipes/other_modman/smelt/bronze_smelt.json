@@ -1,0 +1,15 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:bronze_smelt"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": {
+            "tag": "spimton:bronze"
+        },
+        "output": "spimton:bronze_nugget"
+    }
+}

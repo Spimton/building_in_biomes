@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:baleful_steel_2"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "spimton:metallicore_ingot",
+				"count": 8
+			},
+			{
+				"item": "spimton:very_radioactive_bottle",
+				"count": 1
+			}
+		],
+		"result": [
+			{
+				"item": "spimton:baleful_steel_ingot",
+				"count": 16
+			}
+		]
+	}
+}

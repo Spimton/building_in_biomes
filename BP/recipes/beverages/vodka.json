@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:vodka"
+		},
+		"tags": [
+			"spimton:keg_cold",
+			"spimton:keg"
+		],
+		"pattern": [
+			"xzx",
+			"yyy"
+		],
+		"key": {
+			"x": {
+				"item": "potato"
+			},
+			"y": {
+				"item": "spimton:mug"
+			},
+			"z": {
+				"item": "wheat_seeds"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:vodka"
+			},
+			{
+				"item": "spimton:vodka"
+			},
+			{
+				"item": "spimton:vodka"
+			}
+		]
+	}
+}

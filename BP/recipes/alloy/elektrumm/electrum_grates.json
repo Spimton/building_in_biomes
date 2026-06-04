@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:electrum_grates"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:electrum_block"
+			}
+		},
+		"pattern": [
+			" # ",
+			"# #",
+			" # "
+		],
+		"result": [
+			{
+				"item": "spimton:electrum_grates",
+				"count": 8
+			}
+		]
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:hoary_sandstone"
+        },
+        "assume_symmetry": true,
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "sandstone"
+            },
+            "@": {
+                "item": "spimton:bottled_time"
+            }
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "###",
+            "#@#",
+            "###"
+        ],
+        "priority": 3,
+        "result": {
+            "count": 8,
+            "item": "spimton:hoary_sandstone"
+        }
+    }
+}

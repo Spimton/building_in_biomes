@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:ancient_golden_carrot",
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.crop"
+            }
+        },
+        "components": {
+            "minecraft:icon": "ancient_golden_carrot",
+            "minecraft:food": {
+                "nutrition": 6,
+                "saturation_modifier": 1.67
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:glint": true,
+            "minecraft:rarity": "epic",
+            "minecraft:hover_text_color": "green",
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6,
+                "movement_modifier": 0.35
+            }
+        }
+    }
+}

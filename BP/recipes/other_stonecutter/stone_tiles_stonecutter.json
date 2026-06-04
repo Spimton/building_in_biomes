@@ -1,0 +1,19 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "spimton:stone_tiles_stonecutter"
+		},
+		"tags": [
+			"stonecutter"
+		],
+		"ingredients": [
+			{
+				"item": "stone"
+			}
+		],
+		"result": {
+			"item": "spimton:stone_tiles"
+		}
+	}
+}

@@ -1,0 +1,281 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.beacon_platnum",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "external",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								0,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "glass_texture"
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "glass_texture"
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "glass_texture"
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "glass_texture"
+								},
+								"up": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-16
+									],
+									"material_instance": "glass_texture"
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-16
+									],
+									"material_instance": "glass_texture"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "beacon",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								3,
+								-5
+							],
+							"size": [
+								10,
+								11,
+								10
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "orb_texture"
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "orb_texture"
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "orb_texture"
+								},
+								"west": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "orb_texture"
+								},
+								"up": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "orb_texture"
+								},
+								"down": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										16,
+										16
+									],
+									"material_instance": "orb_texture"
+								}
+							}
+						},
+						{
+							"origin": [
+								-6,
+								0,
+								-6
+							],
+							"size": [
+								12,
+								3,
+								12
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										11
+									],
+									"uv_size": [
+										16,
+										5
+									],
+									"material_instance": "base_texture"
+								},
+								"east": {
+									"uv": [
+										0,
+										11
+									],
+									"uv_size": [
+										16,
+										5
+									],
+									"material_instance": "base_texture"
+								},
+								"south": {
+									"uv": [
+										0,
+										11
+									],
+									"uv_size": [
+										16,
+										5
+									],
+									"material_instance": "base_texture"
+								},
+								"west": {
+									"uv": [
+										0,
+										11
+									],
+									"uv_size": [
+										16,
+										5
+									],
+									"material_instance": "base_texture"
+								},
+								"up": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-16
+									],
+									"material_instance": "base_texture"
+								},
+								"down": {
+									"uv": [
+										16,
+										16
+									],
+									"uv_size": [
+										-16,
+										-16
+									],
+									"material_instance": "base_texture"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

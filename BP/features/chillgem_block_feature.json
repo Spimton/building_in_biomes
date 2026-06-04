@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "spimton:chillgem_block_feature"
+		},
+		"count": 9,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "spimton:chillgem_block",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "spimton:chillstone"
+					}
+				]
+			}
+		]
+	}
+}

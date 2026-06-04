@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:galena_bricks"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "priority": 4,
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:polished_galena"
+            }
+        },
+        "result": {
+            "item": "spimton:galena_bricks",
+            "count": 4
+        }
+    }
+}

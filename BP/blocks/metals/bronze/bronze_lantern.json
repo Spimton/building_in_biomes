@@ -1,0 +1,169 @@
+{
+    "format_version": "1.21.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:bronze_lantern",
+            "menu_category": {
+                "category": "items",
+                "group": "minecraft:itemGroup.name.lanterns"
+            },
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:block_face"
+                    ]
+                }
+            },
+            "states": {
+                "spimton:waterlogged": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'up'",
+                "components": {
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -3,
+                            0,
+                            -3
+                        ],
+                        "size": [
+                            6,
+                            8,
+                            6
+                        ]
+                    },
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -3,
+                            0,
+                            -3
+                        ],
+                        "size": [
+                            6,
+                            8,
+                            6
+                        ]
+                    },
+                    "tag:spimton:up": {}
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'down'",
+                "components": {
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -3,
+                            2,
+                            -3
+                        ],
+                        "size": [
+                            6,
+                            8,
+                            6
+                        ]
+                    },
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -3,
+                            2,
+                            -3
+                        ],
+                        "size": [
+                            6,
+                            8,
+                            6
+                        ]
+                    },
+                    "tag:spimton:down": {}
+                }
+            }
+        ],
+        "components": {
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3.5
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.slantern",
+                "bone_visibility": {
+                    "lantern_floor": "query.block_state('minecraft:block_face') == 'up'",
+                    "lantern_hanging": "query.block_state('minecraft:block_face') == 'down'"
+                }
+            },
+            "minecraft:light_emission": 15,
+            "minecraft:light_dampening": 0,
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up",
+                            "down"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "can_contain_liquid": true,
+                        "liquid_type": "water",
+                        "on_liquid_touches": "no_reaction"
+                    }
+                ]
+            },
+            "minecraft:custom_components": [
+                "spimton:multi_destroy_lantern"
+            ],
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "bronze_lantern",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:transformation": {
+                "rotation": [
+                    0,
+                    90,
+                    0
+                ]
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    15,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    15,
+                    16
+                ]
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 3.5
+            },
+            "minecraft:map_color": "#333742",
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "tag:stone": {},
+            "tag:spimton:pickaxe": {},
+            "tag:spimton:wood_tier_destructible": {},
+            "tag:spimton:silk_touch_wood": {}
+        }
+    }
+}

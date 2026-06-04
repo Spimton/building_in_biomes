@@ -1,0 +1,52 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "spimton:deep_lead_rule",
+			"places_feature": "spimton:deep_lead_feature"
+		},
+		"conditions": {
+			"placement_pass": "underground_pass",
+			"minecraft:biome_filter": [
+				{
+					"any_of": [
+						{
+							"test": "has_biome_tag",
+							"operator": "==",
+							"value": "overworld"
+						}
+					]
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 8,
+			"coordinate_eval_order": "zyx",
+			"x": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					-60,
+					300
+				]
+			},
+			"z": {
+				"distribution": "uniform",
+				"extent": [
+					0,
+					16
+				]
+			},
+			"scatter_chance": {
+				"numerator": 3,
+				"denominator": 7
+			}
+		}
+	}
+}

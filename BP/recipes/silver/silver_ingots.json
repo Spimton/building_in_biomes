@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:silver_ingots"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:silver_block"
+			}
+		},
+		"pattern": [
+			"#"
+		],
+		"result": {
+			"item": "spimton:silver_ingot",
+			"count": 9
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "glowing_sanctuarium_tiles",
+		"metalness_emissive_roughness": "glowing_sanctuarium_tiles_mer"
+	}
+}

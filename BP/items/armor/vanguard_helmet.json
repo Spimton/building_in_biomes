@@ -1,0 +1,44 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:vanguard_helmet",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"protection": 3
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_head",
+				"value": 15
+			},
+			"minecraft:durability": {
+				"max_durability": 433
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"spimton:bottled_time",
+							"iron_ingot"
+						],
+						"repair_amount": "query.max_durability*0.2"
+					},
+					{
+						"items": [
+							"spimton:vanguard_helmet",
+							"iron_helmet"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:icon": "vanguard_helmet"
+		}
+	}
+}

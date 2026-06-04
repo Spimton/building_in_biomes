@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:structure_set": {
+        "description": {
+            "identifier": "spimton:hellhalls"
+        },
+        "placement": {
+            "type": "minecraft:random_spread",
+            "salt": 39281139,
+            "separation": 12,
+            "spacing": 160,
+            "spread_type": "linear"
+        },
+        "structures": [
+            {
+                "structure": "spimton:hellhalls",
+                "weight": 1
+            }
+        ]
+    }
+}

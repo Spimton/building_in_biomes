@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:raw_silver_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:raw_silver"
+			}
+		},
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"result": {
+			"item": "spimton:raw_silver_block",
+			"count": 1
+		}
+	}
+}

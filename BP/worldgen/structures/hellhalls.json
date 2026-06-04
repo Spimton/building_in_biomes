@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "spimton:hellhalls"
+    },
+    "step": "surface_structures",
+    "terrain_adaptation": "encapsulate",
+    "start_pool": "spimton:hellhall_arena",
+    "max_depth": 7,
+    "start_height": {
+      "type": "constant",
+      "value": {
+        "absolute": -120
+      }
+    },
+    "liquid_settings": "ignore_waterlogging",
+    "biome_filters": [
+      {
+        "all_of": [
+          {
+            "operator": "==",
+            "test": "has_biome_tag",
+            "value": "nether"
+          }
+        ]
+      }
+    ],
+    "heightmap_projection": "world_surface"
+  }
+}

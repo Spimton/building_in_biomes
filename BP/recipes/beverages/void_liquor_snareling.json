@@ -1,0 +1,34 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:void_liquor_snareling"
+		},
+		"tags": [
+			"spimton:keg_cold"
+		],
+		"pattern": [
+			"zzz",
+			"yyy"
+		],
+		"key": {
+			"z": {
+				"item": "fermented_spider_eye"
+			},
+			"y": {
+				"item": "spimton:void_liquor"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:snareling_drink"
+			},
+			{
+				"item": "spimton:snareling_drink"
+			},
+			{
+				"item": "spimton:snareling_drink"
+			}
+		]
+	}
+}

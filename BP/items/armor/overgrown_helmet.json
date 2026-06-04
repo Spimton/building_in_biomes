@@ -1,0 +1,27 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:overgrown_helmet",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.helmet"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"protection": 2
+			},
+			"minecraft:durability": {
+				"max_durability": 250
+			},
+			"minecraft:icon": "overgrown_helmet",
+			"minecraft:enchantable": {
+				"slot": "armor_head",
+				"value": 20
+			}
+		}
+	}
+}

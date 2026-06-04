@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:asbestos_ore",
+			"menu_category": {
+				"category": "nature",
+				"group": "itemGroup.name.ore"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 10
+			},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#C8BAB4",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"minecraft:loot": "loot_tables/blocks/asbestos_ore.json",
+			"minecraft:custom_components": [
+				"spimton:cancer_treaders"
+			],
+			"tag:minecraft:stone_tier_destructible": {}
+		}
+	}
+}

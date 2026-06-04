@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:rune_fire"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" y ",
+			"yxy",
+			" y "
+		],
+		"key": {
+			"x": {
+				"item": "tnt"
+			},
+			"y": {
+				"item": "blaze_powder"
+			}
+		},
+		"result": {
+			"item": "spimton:rune_fire_spawner",
+			"count": 4
+		}
+	}
+}

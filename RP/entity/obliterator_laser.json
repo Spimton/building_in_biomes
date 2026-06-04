@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:obliterator_laser",
+			"materials": {
+				"default": "snowball"
+			},
+			"textures": {
+				"default": "textures/items/alloy/imperial_jade"
+			},
+			"geometry": {
+				"default": "geometry.item_sprite"
+			},
+			"render_controllers": [
+				"controller.render.item_sprite"
+			],
+			"particle_effects": {
+				"deltarune_explosion": "spimton:deltarune_explosion_multiple"
+			},
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			}
+		}
+	}
+}

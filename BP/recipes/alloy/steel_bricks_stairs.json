@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:steel_bricks_stairs"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:steel_bricks"
+			}
+		},
+		"result": {
+			"item": "spimton:steel_bricks_stairs",
+			"count": 4
+		}
+	}
+}

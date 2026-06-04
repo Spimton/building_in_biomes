@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "spimton:smooth_chillstone"
+		},
+		"tags": [
+			"furnace"
+		],
+		"input": "spimton:chillstone",
+		"output": "spimton:smooth_chillstone"
+	}
+}

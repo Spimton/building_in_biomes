@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:applen_door",
+			"menu_category": {
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.door"
+			}
+		},
+		"components": {
+			"minecraft:icon": "applen_door",
+			"minecraft:block_placer": {
+				"block": "spimton:applen_door",
+				"replace_block_item": true
+			}
+		}
+	}
+}

@@ -1,0 +1,198 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.goulden_guard.move": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"hweel": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							360
+						]
+					}
+				}
+			}
+		},
+		"animation.goulden_guard.ringshoot": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body_ring": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							360,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.goulden_guard.orbcharge": {
+			"loop": true,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.777": {
+					"locator": "body_core",
+					"effect": "goulden_laser_shoot"
+				}
+			},
+			"bones": {
+				"body_core": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							720,
+							0,
+							-360
+						]
+					}
+				}
+			}
+		},
+		"animation.goulden_guard.armmove": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						0,
+						7.5
+					]
+				},
+				"arm_1": {
+					"rotation": [
+						0,
+						0,
+						7.5
+					]
+				},
+				"arm_2": {
+					"rotation": [
+						0,
+						0,
+						7.5
+					]
+				}
+			}
+		},
+		"animation.goulden_guard.ringcharge": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body_ring": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							-90
+						],
+						"1.0": [
+							-360,
+							0,
+							-90
+						]
+					}
+				}
+			}
+		},
+		"animation.goulden_guard.armready": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"body_ring": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							30,
+							0
+						]
+					}
+				},
+				"arm_1": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							-60,
+							-60,
+							0
+						]
+					}
+				},
+				"arm_2": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							30,
+							0,
+							60
+						]
+					}
+				}
+			}
+		},
+		"animation.goulden_guard.armcharge": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						30,
+						0
+					]
+				},
+				"arm_1": {
+					"rotation": [
+						-90.0003,
+						-60.0002,
+						30.0002
+					]
+				},
+				"arm_2": {
+					"rotation": [
+						30,
+						0,
+						60
+					]
+				}
+			}
+		}
+	}
+}

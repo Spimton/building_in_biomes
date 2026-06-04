@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": false,
+        "description": {
+            "identifier": "spimton:marble_stairs"
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "priority": 1,
+        "key": {
+            "#": {
+                "item": "spimton:marble"
+            }
+        },
+        "pattern": [
+            "#  ",
+            "## ",
+            "###"
+        ],
+        "result": {
+            "count": 4,
+            "item": "spimton:marble_stairs"
+        }
+    }
+}

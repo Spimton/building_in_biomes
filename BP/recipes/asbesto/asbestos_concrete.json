@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:asbestos_concrete"
+		},
+		"pattern": [
+			" y ",
+			"yzy",
+			" y "
+		],
+		"key": {
+			"y": {
+				"item": "spimton:asbestos_sheet"
+			},
+			"z": {
+				"item": "concrete"
+			}
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:asbestos_concrete",
+			"count": 4
+		}
+	}
+}

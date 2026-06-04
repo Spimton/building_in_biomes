@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:persistent_runed_gloom_tiles"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:gloom_tiles"
+			},
+			"@": {
+				"item": "totem_of_undying"
+			}
+		},
+		"pattern": [
+			"###",
+			"#@#",
+			"###"
+		],
+		"result": {
+			"item": "spimton:runed_gloom_tiles_p",
+			"count": 8
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:totem_of_devotion",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "totem_devotion",
+			"minecraft:max_stack_size": 1,
+			"minecraft:hover_text_color": "blue",
+			"minecraft:allow_off_hand": true,
+			"minecraft:cooldown": {
+				"category": "devotion",
+				"duration": 135
+			},
+			"minecraft:custom_components": [
+				"spimton:totem_devotion"
+			]
+		}
+	}
+}

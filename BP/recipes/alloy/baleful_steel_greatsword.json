@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:baleful_steel_greatsword"
+        },
+        "assume_symmetry": true,
+        "pattern": [
+            "@",
+            "@",
+            "#"
+        ],
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "None"
+        },
+        "key": {
+            "@": {
+                "item": "spimton:baleful_steel_block"
+            },
+            "#": {
+                "item": "blaze_rod"
+            }
+        },
+        "result": {
+            "item": "spimton:baleful_steel_greatsword"
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:spike_projectile",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "snowball"
+		},
+		"components": {
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_dropped_ticks": 10,
+					"max_optimized_distance": 100,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"cause": "lava",
+						"damage_per_tick": 4,
+						"filters": {
+							"operator": "==",
+							"subject": "self",
+							"test": "in_lava",
+							"value": true
+						}
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 0.5,
+				"width": 0.5
+			},
+			"minecraft:physics": {},
+			"minecraft:projectile": {
+				"anchor": 1,
+				"gravity": 0.05,
+				"hit_sound": "freezer",
+				"offset": [
+					0,
+					-0.1,
+					0
+				],
+				"on_hit": {
+					"stick_in_ground": {
+						"shake_time": 1
+					},
+					"mob_effect": {
+						"visible": true,
+						"ambient": true,
+						"effect": "slowness",
+						"duration": 1,
+						"amplifier": 5
+					},
+					"impact_damage": {
+						"damage": 3,
+						"destroy_on_hit": true,
+						"knockback": false,
+						"power_multiplier": 0.97,
+						"semi_random_diff_damage": true,
+						"should_bounce": false
+					},
+					"definition_event": {
+						"affect_projectile": true,
+						"splash_area": 1,
+						"event_trigger": {
+							"event": "spimton:3freeze",
+							"target": "self"
+						}
+					},
+					"particle_on_hit": {
+						"num_particles": 4,
+						"on_entity_hit": true,
+						"on_other_hit": false,
+						"particle_type": "snowballpoof"
+					},
+					"arrow_effect": {}
+				},
+				"destroy_on_hurt": true,
+				"multiple_targets": false,
+				"power": 2.5,
+				"should_bounce": false,
+				"stop_on_hurt": true,
+				"inertia": 0.99,
+				"semi_random_diff_damage": true,
+				"angle_offset": 0,
+				"uncertainty_base": 0,
+				"uncertainty_multiplier": 1
+			}
+		},
+		"events": {
+			"spimton:3freeze": {
+				"queue_command": {
+					"target": "self",
+					"command": "effect @e[r=1,type=!spimton:coldager] slowness 1 5 true"
+				}
+			}
+		}
+	}
+}

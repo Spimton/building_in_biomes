@@ -1,0 +1,383 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:goulden_guard_3",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:not_attacking": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "spimton:wait_attack": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "spimton:attack",
+                        "target": "self"
+                    }
+                }
+            },
+            "spimton:smash": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "spimton:melee_attack",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "priority": 0,
+                    "duration_range": 2,
+                    "on_end": {
+                        "event": "spimton:attack"
+                    }
+                }
+            },
+            "spimton:ranged": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:behavior.fire_at_target": {
+                    "priority": 0,
+                    "target_anchor": 0,
+                    "projectile_def": "spimton:obliterator_laser",
+                    "attack_range": [
+                        0,
+                        64
+                    ],
+                    "attack_cooldown": 0.25,
+                    "ranged_fov": 360
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 2,
+                    "time_down_event": {
+                        "event": "spimton:choose_attack"
+                    }
+                }
+            },
+            "spimton:far": {
+                "minecraft:behavior.jump_around_target": {
+                    "priority": 5,
+                    "filters": {
+                        "all_of": [
+                            {
+                                "any_of": [
+                                    {
+                                        "test": "in_water",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "on_ground",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            {
+                                "test": "is_riding",
+                                "value": false
+                            },
+                            {
+                                "test": "in_lava",
+                                "value": false
+                            }
+                        ]
+                    },
+                    "jump_cooldown_duration": 0.5,
+                    "jump_cooldown_when_hurt_duration": 0.1,
+                    "last_hurt_duration": 2.0,
+                    "prepare_jump_duration": 0.5,
+                    "max_jump_velocity": 1.4,
+                    "check_collision": false,
+                    "entity_bounding_box_scale": 0.7,
+                    "line_of_sight_obstruction_height_ignore": 4,
+                    "valid_distance_to_target": [
+                        10.0,
+                        40.0
+                    ],
+                    "landing_position_spread_degrees": 90,
+                    "landing_distance_from_target": [
+                        1.0,
+                        2.0
+                    ],
+                    "required_vertical_space": 4,
+                    "snap_to_surface_block_range": 10,
+                    "jump_angles": [
+                        40.0,
+                        55.0,
+                        60.0,
+                        75.0,
+                        80.0
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:pushable": {
+                "is_pushable": false
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player?12+(query.equipment_count*math.random(1,3)):0"
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": -1,
+                "breathes_water": true
+            },
+            "minecraft:equip_item": {},
+            "minecraft:nameable": {},
+            "minecraft:navigation.walk": {
+                "is_amphibious": true,
+                "can_pass_doors": true,
+                "can_open_doors": true,
+                "avoid_water": true,
+                "avoid_portals": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:fire_immune": {},
+            "minecraft:type_family": {
+                "family": [
+                    "spimton:archshaman",
+                    "golem",
+                    "monster",
+                    "mob"
+                ]
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/goulden_guard.json"
+            },
+            "minecraft:health": {
+                "value": 50,
+                "max": 50
+            },
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison"
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "projectile",
+                        "damage_multiplier": 0.1225
+                    },
+                    {
+                        "cause": "entity_attack",
+                        "damage_modifier": -5
+                    },
+                    {
+                        "cause": "mace_smash",
+                        "damage_multiplier": 1.225
+                    },
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "drowning",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "magic",
+                        "damage_multiplier": 2
+                    },
+                    {
+                        "cause": "entity_explosion",
+                        "damage_multiplier": 1.225
+                    },
+                    {
+                        "cause": "block_explosion",
+                        "damage_multiplier": 1.225
+                    }
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0.1997
+            },
+            "minecraft:knockback_resistance": {
+                "max": 1,
+                "value": 1
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "within_radius": 12,
+                "must_see_forget_duration": 40,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "inanimate"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "spimton:archshaman",
+                                    "operator": "!="
+                                }
+                            ]
+                        },
+                        "max_dist": 36
+                    }
+                ]
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 7,
+                "speed_multiplier": 1
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:collision_box": {
+                "height": 5,
+                "width": 2
+            },
+            "minecraft:on_target_escape": {
+                "event": "spimton:not_attacking"
+            },
+            "minecraft:follow_range": {
+                "max": 32,
+                "value": 40
+            },
+            "minecraft:target_nearby_sensor": {
+                "inside_range": 8,
+                "must_see": false,
+                "outside_range": 12,
+                "on_outside_range": {
+                    "event": "spimton:leap"
+                },
+                "on_inside_range": {
+                    "event": "spimton:choose_attack"
+                }
+            },
+            "minecraft:attack": {
+                "damage": 0
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "spimton:melee_attack": {
+                "queue_command": {
+                    "command": [
+                        //"say melee",
+                        "damage @e[family=!spimton:archshaman,type=!item,dx=30,dy=5.67, dz=30,x=~-15,y=~-5,z=~-15] 30 entity_attack entity @n[type=spimton:goulden_guard_3]"
+                    ]
+                }
+            },
+            "spimton:not_attacking": {
+                "add": {
+                    "component_groups": [
+                        "spimton:not_attacking"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:far",
+                        "spimton:ranged",
+                        "spimton:wait_attack",
+                        "spimton:smash"
+                    ]
+                }
+            },
+            "spimton:leap": {
+                "add": {
+                    "component_groups": [
+                        "spimton:far"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:not_attacking"
+                    ]
+                }
+            },
+            "spimton:choose_attack": {
+                "add": {
+                    "component_groups": [
+                        "spimton:wait_attack"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:far",
+                        "spimton:ranged",
+                        "spimton:smash",
+                        "spimton:not_attacking"
+                    ]
+                }
+            },
+            "spimton:smash_attack": {
+                "queue_command": {
+                    "command": [
+                        // "say smash",
+                        "playanimation @s animation.goulden_guard_3.smash none 0",
+                        "particle spimton:opulent_smash ~ ~ ~"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:smash"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:ranged",
+                        "spimton:wait_attack"
+                    ]
+                }
+            },
+            "spimton:shoot_attack": {
+                "add": {
+                    "component_groups": [
+                        "spimton:ranged"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:wait_attack",
+                        "spimton:smash"
+                    ]
+                }
+            },
+            "spimton:attack": {
+                "queue_command": {
+                    "command": [
+                        //"say choose",
+                        "execute if entity @n[type=spimton:goulden_guard_3,dx=20,dy=6, dz=20,x=~-10,y=~5,z=~-10] run event entity @n[type=spimton:goulden_guard_3] spimton:smash_attack",
+                        "execute unless entity @n[type=spimton:goulden_guard_3,dx=20,dy=6, dz=20,x=~-10,y=~5,z=~-10] run event entity @n[type=spimton:goulden_guard_3] spimton:shoot_attack"
+                    ],
+                    "target": "target"
+                }
+            }
+        }
+    }
+}

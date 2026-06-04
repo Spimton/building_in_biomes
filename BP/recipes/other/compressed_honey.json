@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:compressed_honey"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:compressed_honey"
+			}
+		},
+		"pattern": [
+			"#"
+		],
+		"result": {
+			"item": "honey_block",
+			"count": 1
+		}
+	}
+}

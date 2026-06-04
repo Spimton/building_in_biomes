@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:iridescence_necklace"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:bismuth_ingot"
+			},
+			"@": {
+				"item": "spimton:empty_necklace"
+			},
+			"]": {
+				"item": "golden_apple"
+			}
+		},
+		"pattern": [
+			" #",
+			"]@]",
+			" #"
+		],
+		"result": {
+			"item": "spimton:iridescence_necklace"
+		}
+	}
+}

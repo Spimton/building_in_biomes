@@ -1,0 +1,264 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.wraith",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						19,
+						0
+					]
+				},
+				{
+					"name": "uppderbody",
+					"parent": "body",
+					"pivot": [
+						0,
+						7,
+						0
+					],
+					"rotation": [
+						10,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								7,
+								-2
+							],
+							"size": [
+								6,
+								12,
+								4
+							],
+							"uv": [
+								31,
+								35
+							]
+						},
+						{
+							"origin": [
+								-0.5,
+								9,
+								1
+							],
+							"size": [
+								1,
+								10,
+								1
+							],
+							"uv": [
+								0,
+								37
+							]
+						},
+						{
+							"origin": [
+								-4,
+								5,
+								-3
+							],
+							"size": [
+								8,
+								14,
+								6
+							],
+							"inflate": 0.5,
+							"uv": [
+								0,
+								17
+							]
+						}
+					]
+				},
+				{
+					"name": "cape",
+					"parent": "uppderbody",
+					"pivot": [
+						0,
+						19,
+						3
+					]
+				},
+				{
+					"name": "head",
+					"parent": "uppderbody",
+					"pivot": [
+						0,
+						19,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-4,
+								19,
+								-2
+							],
+							"size": [
+								8,
+								8,
+								5
+							],
+							"uv": [
+								31,
+								20
+							]
+						},
+						{
+							"origin": [
+								-4.5,
+								19,
+								-4.25
+							],
+							"size": [
+								9,
+								9.25,
+								8.5
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "nose",
+					"parent": "head",
+					"pivot": [
+						0,
+						21,
+						0
+					]
+				},
+				{
+					"name": "leftArm",
+					"parent": "uppderbody",
+					"pivot": [
+						5,
+						17,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								4,
+								9.1,
+								-2
+							],
+							"size": [
+								4,
+								10,
+								4
+							],
+							"uv": [
+								34,
+								0
+							]
+						},
+						{
+							"origin": [
+								5.5,
+								7,
+								-0.5
+							],
+							"size": [
+								1,
+								12,
+								1
+							],
+							"uv": [
+								17,
+								52
+							]
+						}
+					],
+					"locators": {
+						"left_hand": [
+							6,
+							7,
+							0
+						]
+					}
+				},
+				{
+					"name": "rightArm",
+					"parent": "uppderbody",
+					"pivot": [
+						-5,
+						17,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-6.5,
+								6.9,
+								-0.5
+							],
+							"size": [
+								1,
+								12,
+								1
+							],
+							"uv": [
+								18,
+								38
+							]
+						},
+						{
+							"origin": [
+								-8,
+								9,
+								-2
+							],
+							"size": [
+								4,
+								10,
+								4
+							],
+							"uv": [
+								50,
+								0
+							]
+						}
+					],
+					"locators": {
+						"right_hand": [
+							-6,
+							7,
+							0
+						]
+					}
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [
+						-5.5,
+						11,
+						0.5
+					]
+				}
+			]
+		}
+	]
+}

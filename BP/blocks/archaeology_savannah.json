@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spimton:archaeology_savannah",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 100
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1200
+			},
+			"minecraft:map_color": "#852B2B",
+			"minecraft:light_dampening": 15,
+			"minecraft:light_emission": 0,
+			"minecraft:custom_components": [
+				"spimton:archaeology"
+			],
+			"minecraft:tick": {
+				"looping": false,
+				"interval_range": [
+					1,
+					1
+				]
+			}
+		}
+	}
+}

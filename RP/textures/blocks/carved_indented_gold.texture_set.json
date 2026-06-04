@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "carved_indented_gold",
+		"metalness_emissive_roughness": "carved_indented_gold_mer"
+	}
+}

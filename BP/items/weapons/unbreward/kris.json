@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:kris",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:glint": false,
+			"minecraft:rarity": "uncommon",
+			"minecraft:icon": "kris",
+			"minecraft:hand_equipped": true,
+			"minecraft:custom_components": [
+				"spimton:kris_deltarune"
+			],
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 123
+			},
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 12
+			}
+		}
+	}
+}

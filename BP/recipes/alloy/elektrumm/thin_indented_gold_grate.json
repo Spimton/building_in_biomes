@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:thin_indented_gold_grate"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:indented_gold_grates"
+			}
+		},
+		"result": [
+			{
+				"item": "spimton:thin_indented_gold_grate",
+				"count": 9
+			}
+		]
+	}
+}

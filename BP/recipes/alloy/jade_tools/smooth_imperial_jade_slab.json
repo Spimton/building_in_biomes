@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:smooth_imperial_jade_slab"
+		},
+		"key": {
+			"#": {
+				"item": "spimton:polished_imperial_jade"
+			}
+		},
+		"pattern": [
+			"###"
+		],
+		"tags": [
+			"crafting_table"
+		],
+		"result": {
+			"item": "spimton:polished_imperial_jade_slab",
+			"count": 6
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:storm_horn"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"x": {
+				"item": "copper_ingot"
+			},
+			"y": {
+				"item": "amethyst_shard"
+			},
+			"z": {
+				"item": "goat_horn"
+			},
+			"w": {
+				"item": "spimton:platinum_star"
+			}
+		},
+		"pattern": [
+			"xzx",
+			"ywy"
+		],
+		"result": {
+			"item": "spimton:storm_horn"
+		}
+	}
+}

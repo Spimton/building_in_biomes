@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:platinum_star",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:hover_text_color": "red",
+			"minecraft:icon": "platinum_star",
+			"minecraft:glint": true,
+			"minecraft:rarity": "epic"
+		}
+	}
+}
