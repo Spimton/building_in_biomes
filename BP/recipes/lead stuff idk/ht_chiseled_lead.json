@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:ht_chiseled_lead"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:ht_cut_lead_slab"
+			}
+		},
+		"pattern": [
+			"#",
+			"#"
+		],
+		"result": {
+			"item": "spimton:chiseled_ht_cut_lead",
+			"count": 1
+		}
+	}
+}
