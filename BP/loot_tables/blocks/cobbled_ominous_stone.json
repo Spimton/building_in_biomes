@@ -1,0 +1,23 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:cobbled_ominous_stone",
+                    "conditions": [
+                        {
+                            "condition": "match_tool",
+                            "minecraft:match_tool_filter_all": [
+                                "minecraft:is_pickaxe",
+                                "minecraft:is_tool"
+                            ],
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

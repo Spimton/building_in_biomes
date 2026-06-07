@@ -17,21 +17,17 @@
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
-						"cause": "entity_explosion",
-						"deals_damage": false
-					},
-					{
-						"cause": "fire_tick",
+						"cause": "all",
 						"deals_damage": false
 					}
 				]
 			},
 			"minecraft:timer": {
 				"looping": true,
-				"time": 1,
+				"time": 0.1225,
 				"time_down_event": {
 					"target": "self",
-					"event": "spimton:sspawn"
+					"event": "spimton:sfiree"
 				}
 			},
 			"minecraft:collision_box": {
@@ -41,13 +37,30 @@
 			"minecraft:physics": {}
 		},
 		"events": {
-			"spimton:sspawn": {
-				"queue_command": {
-					"command": [
-						"summon spimton:creepie",
-						"particle minecraft:evoker_spell ~ ~1 ~"
-					]
-				}
+			"spimton:sfiree": {
+				"sequence": [
+					{
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"particle spimton:spore_bouquet ~ ~ ~"
+							]
+						}
+					},
+					{
+						"randomize": [
+							{
+								"weight": 8
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": "summon spimton:creepie"
+								}
+							}
+						]
+					}
+				]
 			}
 		}
 	}

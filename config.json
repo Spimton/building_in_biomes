@@ -5,7 +5,7 @@
 	"authors": [
 		"spimton"
 	],
-	"targetVersion": "1.26.10",
+	"targetVersion": "1.26.20",
 	"description": "not biomes",
 	"experimentalGameplay": {
 		"creationOfCustomBiomes": true,

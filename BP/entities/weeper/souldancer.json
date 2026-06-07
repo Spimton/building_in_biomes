@@ -1,0 +1,435 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:souldancer",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "phantom"
+		},
+		"component_groups": {
+			"spimton:not_attacking": {
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"spimton:target_outside_range": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 3,
+					"time_down_event": {
+						"event": "spimton:check_target"
+					}
+				}
+			},
+			"spimton:roar": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.5,
+					"cooldown_time": 1,
+					"duration": 1.25,
+					"knockback_height_cap": 0.4,
+					"knockback_horizontal_strength": 2,
+					"knockback_vertical_strength": 1,
+					"priority": 0,
+					"knockback_range": 6,
+					"knockback_damage": 8,
+					"damage_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "spimton:weeper"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "inanimate"
+							}
+						]
+					},
+					"knockback_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "spimton:weeper"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "inanimate"
+							}
+						]
+					}
+				}
+			},
+			"spimton:summoner": {
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {
+								"test": "is_target",
+								"subject": "other"
+							},
+							"max_dist": 7,
+							"walk_speed_multiplier": 2,
+							"sprint_speed_multiplier": 2
+						}
+					]
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"cast_duration": 0.5,
+							"cooldown_time": 3,
+							"do_casting": true,
+							"min_activation_range": 1,
+							"max_activation_range": 32,
+							"weight": 1,
+							"sequence": [
+								{
+									"target": "target",
+									"shape": "circle",
+									"size": 8,
+									"entity_type": "spimton:sfire",
+									"summon_event": "spimton:geyser",
+									"entity_lifespan": 10,
+									"num_entities_spawned": 8
+								},
+								{
+									"base_delay": 1.225,
+									"target": "self",
+									"size": 32,
+									"shape": "line",
+									"entity_type": "spimton:sfire",
+									"summon_event": "spimton:geyser",
+									"entity_lifespan": 10,
+									"num_entities_spawned": 16,
+									"delay_per_summon": 0.1225,
+									"summon_cap": 32
+								}
+							]
+						}
+					]
+				}
+			},
+			"spimton:shooter": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:shooter": {
+					"power": 0.45,
+					"def": "spimton:soul_bolt"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"attack_radius": 32,
+					"priority": 1,
+					"attack_interval": 0.1997,
+					"speed_multiplier": 0.45,
+					"attack_radius_min": 7,
+					"ranged_fov": 270,
+					"x_max_rotation": 360
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "20"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"mob",
+					"undead",
+					"spimton:weeper"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/wraith.json"
+			},
+			"minecraft:health": {
+				"value": 24,
+				"max": 24
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "freezing",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "drowning",
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:can_fly": {},
+			"minecraft:movement": {
+				"value": 0.4
+			},
+			"minecraft:flying_speed": {
+				"value": 0.4
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": true
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:burns_in_daylight": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 5,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 8,
+						"walk_speed_multiplier": 2,
+						"sprint_speed_multiplier": 2
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 0.6
+			},
+			"minecraft:behavior.random_fly": {
+				"priority": 5,
+				"speed_multiplier": 0.9,
+				"y_offset": 3,
+				"xz_dist": 10,
+				"y_dist": 14
+			},
+			"minecraft:behavior.circle_around_anchor": {
+				"priority": 4,
+				"speed_multiplier": 0.67,
+				"angle_change": 45,
+				"radius_change": 1,
+				"height_above_target_range": {
+					"min": 3,
+					"max": 7
+				},
+				"radius_range": {
+					"min": 3,
+					"max": 15
+				},
+				"goal_radius": 4
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "spimton:weeper"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "illager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								}
+							]
+						},
+						"max_dist": 32
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 3,
+				"probability": 1
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 10,
+				"look_distance": 8,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:on_target_acquired": {
+				"event": "spimton:check_target"
+			},
+			"minecraft:target_nearby_sensor": {
+				"inside_range": 4,
+				"outside_range": 4,
+				"on_inside_range": {
+					"event": "spimton:inside_range"
+				},
+				"must_see": true,
+				"on_vision_lost_inside_range": {
+					"event": "spimton:target_lost"
+				},
+				"on_outside_range": {
+					"event": "spimton:outside_range"
+				}
+			},
+			"minecraft:on_target_escape": {
+				"event": "spimton:target_lost"
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 32
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"spimton:inside_range": {
+				"add": {
+					"component_groups": [
+						"spimton:roar"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:target_outside_range",
+						"spimton:not_attacking"
+					]
+				}
+			},
+			"spimton:outside_range": {
+				"add": {
+					"component_groups": [
+						"spimton:target_outside_range"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:roar",
+						"spimton:not_attacking"
+					]
+				}
+			},
+			"spimton:target_lost": {
+				"add": {
+					"component_groups": [
+						"spimton:not_attacking"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:roar",
+						"spimton:shooter",
+						"spimton:summoner",
+						"spimton:target_outside_range"
+					]
+				}
+			},
+			"spimton:check_target": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "on_ground",
+							"operator": "!=",
+							"subject": "target"
+						},
+						"add": {
+							"component_groups": [
+								"spimton:shooter"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:summoner"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "on_ground",
+							"subject": "target"
+						},
+						"add": {
+							"component_groups": [
+								"spimton:summoner"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:shooter"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

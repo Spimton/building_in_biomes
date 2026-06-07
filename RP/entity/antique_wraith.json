@@ -11,13 +11,15 @@
 				"default": "textures/entity/antique_wraith"
 			},
 			"geometry": {
-				"default": "geometry.wraith"
+				"default": "geometry.wraiths"
 			},
 			"scripts": {
 				"scale": "0.9375",
 				"animate": [
 					"controller_general",
-					"controller_move"
+					{
+						"move": "query.is_moving"
+					}
 				]
 			},
 			"animations": {
@@ -26,7 +28,8 @@
 				"look_at_target": "animation.common.look_at_target",
 				"celebrating": "animation.humanoid.celebrating",
 				"controller_general": "controller.animation.evoker.general",
-				"controller_move": "controller.animation.villager.move"
+				"controller_move": "controller.animation.villager.move",
+				"move": "animation.wraith.move"
 			},
 			"particle_effects": {
 				"spell": "minecraft:knockback_roar_particle"

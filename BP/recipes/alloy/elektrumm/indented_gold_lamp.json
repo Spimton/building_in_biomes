@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:indented_gold_lamp"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:indented_gold_slab"
+			},
+			"@": {
+				"item": "sea_lantern"
+			}
+		},
+		"pattern": [
+			"###",
+			"@@@",
+			"###"
+		],
+		"result": [
+			{
+				"item": "spimton:indented_gold_lamp",
+				"count": 6
+			}
+		]
+	}
+}

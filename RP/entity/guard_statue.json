@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "materials": {
+                "default": "entity"
+            },
+            "identifier": "spimton:guard_statue",
+            "geometry": {
+                "default": "geometry.guard_statue_sword"
+            },
+            "textures": {
+                "default": "textures/blocks/statues/guard_statue"
+            },
+            "spawn_egg": {
+                "texture": "guard_statue_egg"
+            },
+            "render_controllers": [
+                "controller.render.guard_statue"
+            ]
+        }
+    }
+}

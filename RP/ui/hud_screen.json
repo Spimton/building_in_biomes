@@ -121,7 +121,7 @@
                         },
                         {
                             "binding_type": "view",
-                            "source_property_name": "(#bossName = '  §dThe Weeper§r ')",
+                            "source_property_name": "(#bossName = '  §5The Weeper§r ')",
                             "target_property_name": "#visible"
                         }
                     ]
@@ -184,7 +184,7 @@
                         },
                         {
                             "binding_type": "view",
-                            "source_property_name": "(#bossName = '  §dWilted Shaman§r ')",
+                            "source_property_name": "(#bossName = '  §5Wilted Shaman§r ')",
                             "target_property_name": "#visible"
                         }
                     ]
@@ -470,7 +470,7 @@
         ],
         "bindings": [
             {
-                "binding_name": "(#bossName = '  §dThe Weeper§r ')",
+                "binding_name": "(#bossName = '  §5The Weeper§r ')",
                 "binding_type": "collection",
                 "binding_collection_name": "boss_bars",
                 "binding_name_override": "#visible"
@@ -581,7 +581,7 @@
         ],
         "bindings": [
             {
-                "binding_name": "(#bossName = '  §dWilted Shaman§r ')",
+                "binding_name": "(#bossName = '  §5Wilted Shaman§r ')",
                 "binding_type": "collection",
                 "binding_collection_name": "boss_bars",
                 "binding_name_override": "#visible"

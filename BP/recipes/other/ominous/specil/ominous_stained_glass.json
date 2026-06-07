@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:ominous_stained_glass"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "###",
+            "#@#",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "glass"
+            },
+            "@": {
+                "item": "spimton:ectoplasm"
+            }
+        },
+        "assume_symmetry": false,
+        "result": {
+            "item": "spimton:ominous_stained_glass",
+            "count": 8
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+BUILDING IN BIOMES: PIANI PER 2026
+
+
+-Miglioramento botole: on_tick => on_redstone_update  ASPETTARE LA MOJANG
+
+-Entità proiettile non causano il cambio target 	CHAOS CUBED
+
+
+
+
+-Mob tempio archshaman		MANCANO SCHELETRI
+
+-Attacco antiaereo archshaman
+
+-Struttura proceduralmente generata archshaman
+
+
+-Set blocchi ominosi 		FARE STATUE + VARIANTI
+
+-Mob illager per il castello
+
+-Lancia dei sussurri
+
+-Ricostruzione catacombe del weeper
+
+-Stabilizzare AI del weeper
+
+
+-Court of the Crimson King + sanctuarium proceduralmente generato
+
+-Mob sanctuarium
+
+-Martello della Giustizia rework  	TENERE PER ULTIMO
+
+
+
+-Dungeon delle radici per BtBi proceduralmente generato
+
+-Savage Garden finalizzato
+
+
+
+-Herald Bryne 			ASPETTARE FINALIZZAZIONE DIMENSIONI PERSONALIZZATE
+
+-Bossetium set
+
+
+
+
+
+

@@ -1653,6 +1653,69 @@
 		},
 		"chiseled_cut_lead_nermal": {
 			"textures": "textures/blocks/lead/chiseled_cut_lead_nermal"
+		},
+		"ominous_stone": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stone"
+		},
+		"ominous_stone_bricks": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stone_bricks"
+		},
+		"polished_ominous_stone": {
+			"textures": "textures/blocks/otherstone/ominous/polished_ominous_stone"
+		},
+		"chiseled_ominous_stone": {
+			"textures": "textures/blocks/otherstone/ominous/chiseled_ominous_stone"
+		},
+		"chiseled_ominous_stone_bricks": {
+			"textures": "textures/blocks/otherstone/ominous/chiseled_ominous_stone_bricks"
+		},
+		"chiseled_polished_ominous_stone": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stone_pavement"
+		},
+		"ominous_stone_tiles": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stone_tiles"
+		},
+		"ominous_stone_pillar": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stone_pillar"
+		},
+		"ominous_stone_pillar_top": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stone_pillar_top"
+		},
+		"cobbled_ominous_stone": {
+			"textures": "textures/blocks/otherstone/ominous/cobbled_ominous_stone"
+		},
+		"ominous_dungeon_torch": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_dungeon_torch"
+		},
+		"ominous_glass_pane": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stained_glass_pane"
+		},
+		"ominous_glass": {
+			"textures": "textures/blocks/otherstone/ominous/ominous_stained_glass"
+		},
+		"ominous_carpet_corner": {
+			"textures": "textures/blocks/otherstone/ominous/carpet/ominous_carpet_corner"
+		},
+		"ominous_carpet_side_north": {
+			"textures": "textures/blocks/otherstone/ominous/carpet/ominous_carpet_side_north"
+		},
+		"ominous_carpet_side_south": {
+			"textures": "textures/blocks/otherstone/ominous/carpet/ominous_carpet_side_south"
+		},
+		"ominous_carpet_side_west": {
+			"textures": "textures/blocks/otherstone/ominous/carpet/ominous_carpet_side_west"
+		},
+		"ominous_carpet_side_east": {
+			"textures": "textures/blocks/otherstone/ominous/carpet/ominous_carpet_side_east"
+		},
+		"indented_gold_lamp": {
+			"textures": "textures/blocks/agold/indented_gold_lamp"
+		},
+		"guard_statue": {
+			"textures": "textures/blocks/statues/guard_statue"
+		},
+		"cracked_ominous_stone_bricks": {
+			"textures": "textures/blocks/otherstone/ominous/cracked_ominous_stone_bricks"
 		}
 	}
 }

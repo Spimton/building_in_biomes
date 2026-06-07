@@ -70,6 +70,23 @@
                 "Texture.parachute"
             ],
             "ignore_lighting": true
+        },
+        "controller.render.guard_statue": {
+            "is_hurt_color": {
+                "a": 0,
+                "b": 0,
+                "g": 0,
+                "r": 0
+            },
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ]
         }
     }
 }

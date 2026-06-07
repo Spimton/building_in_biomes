@@ -12,37 +12,22 @@
                             "count": {
                                 "max": 3,
                                 "min": 1
-                            },
-                            "condition": [
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:iron_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:steel_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "bronze_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "diamond_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "netherite_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "stone_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:drill"
-                                }
-                            ]
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "condition": "match_tool",
+                            "minecraft:match_tool_filter_any": [
+                                "minecraft:iron_tier",
+                                "minecraft:diamond_tier",
+                                "minecraft:netherite_tier"
+                            ],
+                            "minecraft:match_tool_filter_all": [
+                                "minecraft:is_pickaxe",
+                                "minecraft:is_tool"
+                            ],
+                            "count": 1
                         }
                     ]
                 }

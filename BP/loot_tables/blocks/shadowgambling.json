@@ -7,51 +7,23 @@
 					"type": "item",
 					"name": "spimton:shadowcrystal",
 					"weight": 1,
+					"conditions": [
+						{
+							"condition": "match_tool",
+							"minecraft:match_tool_filter_all": [
+								"minecraft:is_pickaxe",
+								"minecraft:is_tool"
+							],
+							"count": 1
+						}
+					],
 					"functions": [
 						{
 							"function": "set_count",
 							"count": {
 								"min": 0,
 								"max": 8
-							},
-							"condition": [
-								{
-									"condition": "match_tool",
-									"item": "stone_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "iron_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "diamond_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "gold_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "netherite_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "wood_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "spimton:steel_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "spimton:bronze_pickaxe"
-								},
-								{
-									"condition": "match_tool",
-									"item": "spimton:drill"
-								}
-							]
+							}
 						}
 					]
 				}

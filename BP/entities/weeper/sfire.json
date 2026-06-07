@@ -7,7 +7,28 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {},
+		"component_groups": {
+			"spimton:default": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 0.1225,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:sfiree"
+					}
+				}
+			},
+			"spimton:fire_geyser": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 0.1225,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:sfiree_geyser"
+					}
+				}
+			}
+		},
 		"components": {
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:health": {
@@ -17,22 +38,10 @@
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
-						"cause": "fire",
-						"deals_damage": false
-					},
-					{
-						"cause": "fire_tick",
+						"cause": "all",
 						"deals_damage": false
 					}
 				]
-			},
-			"minecraft:timer": {
-				"looping": true,
-				"time": 0,
-				"time_down_event": {
-					"target": "self",
-					"event": "spimton:sfiree"
-				}
 			},
 			"minecraft:collision_box": {
 				"width": 0.001,
@@ -41,11 +50,36 @@
 			"minecraft:physics": {}
 		},
 		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spimton:default"
+					]
+				}
+			},
+			"spimton:geyser": {
+				"add": {
+					"component_groups": [
+						"spimton:fire_geyser"
+					]
+				}
+			},
 			"spimton:sfiree": {
 				"queue_command": {
+					"target": "self",
 					"command": [
-						"fill ~1 ~1 ~1 ~-1 ~-1 ~-1 soul_fire replace air",
-						"fill ~1 ~1 ~1 ~-1 ~-1 ~-1 fire replace air"
+						"particle spimton:fire_bouquet ~ ~ ~",
+						"damage @e[y=~-1,x=~-2.5,z=~-2.5,dx=5,dy=3, dz=5,family=!spimton:weeper,type=!item] 3 fire"
+					]
+				}
+			},
+			"spimton:sfiree_geyser": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"particle spimton:fire_geyser ~ ~ ~",
+						"particle spimton:fire_bouquet_burst ~ ~ ~",
+						"damage @e[y=~-1,x=~-0.67,z=~-0.67,dx=1.34,dy=12.25, dz=1.34,family=!spimton:weeper,type=!item] 3 fire"
 					]
 				}
 			}

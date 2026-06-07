@@ -16,16 +16,18 @@
 			"minecraft:projectile": {
 				"on_hit": {
 					"particle_on_hit": {
-						"particle_type": "mobspell",
+						"particle_type": "iconcrack",
 						"num_particles": 6,
 						"on_entity_hit": true,
 						"on_other_hit": true
 					},
-					"definition_event": {
-						"event_trigger": {
-							"event": "spimton:creep"
-						},
-						"affect_projectile": true
+					"remove_on_hit": {},
+					"spawn_chance": {
+						"first_spawn_chance": 1,
+						"second_spawn_chance": 4,
+						"first_spawn_count": 1,
+						"second_spawn_count": 4,
+						"spawn_definition": "spimton:creepie_hostile"
 					}
 				},
 				"anchor": 1,
@@ -44,16 +46,6 @@
 				"is_pushable_by_piston": true
 			}
 		},
-		"events": {
-			"spimton:creep": {
-				"queue_command": {
-					"command": [
-						"execute at @s run particle minecraft:evoker_spell ~ ~ ~",
-						"execute at @s run summon spimton:pspore ~ ~1 ~",
-						"kill @s"
-					]
-				}
-			}
-		}
+		"events": {}
 	}
 }

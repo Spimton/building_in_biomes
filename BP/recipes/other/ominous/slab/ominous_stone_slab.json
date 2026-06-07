@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:ominous_stone_slab"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:ominous_stone"
+            }
+        },
+        "result": {
+            "item": "spimton:ominous_stone_slab",
+            "count": 6
+        }
+    }
+}

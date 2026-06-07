@@ -874,7 +874,32 @@ tile.spimton:studded_polished_granite_2.name=Studded Polished Granite
 tile.spimton:overgrown_dungeon_torch.name=Overgrown Dungeon Torch
 tile.spimton:chiseled_cut_lead.name=Chiseled Cut Lead
 tile.spimton:chiseled_ht_cut_lead.name=Chiseled High Toxicity Cut Lead
-
+tile.spimton:ominous_stone.name=Ominous Stone
+tile.spimton:ominous_stone_slab.name=Ominous Stone Slab
+tile.spimton:ominous_stone_bricks.name=Ominous Stone Bricks
+tile.spimton:ominous_stone_stairs.name=Ominous Stone Stairs
+tile.spimton:chiseled_ominous_stone.name=Chiseled Ominous Stone
+tile.spimton:ominous_stone_bricks_slab.name=Ominous Stone Bricks Slab
+tile.spimton:ominous_stone_bricks_stairs.name=Ominous Stone Bricks Stairs
+tile.spimton:chiseled_ominous_stone_bricks.name=Chiseled Ominous Stone Bricks
+tile.spimton:polished_ominous_stone.name=Polished Ominous Stone
+tile.spimton:polished_ominous_stone_slab.name=Polished Ominous Stone Slab
+tile.spimton:polished_ominous_stone_stairs.name=Polished Ominous Stone Stairs
+tile.spimton:chiseled_polished_ominous_stone.name=Chiseled Polished Ominous Stone
+tile.spimton:ominous_stone_tiles.name=Ominous Stone Tiles
+tile.spimton:ominous_stone_tiles_slab.name=Ominous Stone Tiles Slab
+tile.spimton:ominous_stone_tiles_stairs.name=Ominous Stone Tiles Stairs
+tile.spimton:cobbled_ominous_stone.name=Cobbled Ominous Stone
+tile.spimton:cobbled_ominous_stone_slab.name=Cobbled Ominous Stone Slab
+tile.spimton:cobbled_ominous_stone_stairs.name=Cobbled Ominous Stone Stairs
+tile.spimton:ominous_stone_pillar.name=Ominous Stone Pillar
+tile.spimton:ominous_dungeon_torch.name=Ominous Dungeon Torch
+tile.spimton:ominous_stained_glass_pane.name=Ominous Stained Glass Pane
+tile.spimton:ominous_stained_glass.name=Ominous Stained Glass
+tile.spimton:ominous_carpet_corner.name=Ominous Carpet Corner
+tile.spimton:ominous_carpet_side.name=Ominous Carpet Side
+tile.spimton:indented_gold_lamp.name=Indented Gold Lamp
+tile.spimton:cracked_ominous_stone_bricks.name=Cracked Ominous Stone Bricks
 
 
 
@@ -1245,6 +1270,8 @@ item.spawn_egg.entity.spimton:goulden_guard.name=Opulent Observer Spawn Egg
 item.spawn_egg.entity.spimton:goulden_guard_2.name=Opulent Obstructor Spawn Egg
 item.spawn_egg.entity.spimton:goulden_boi.name=Opulent Boi Spawn Egg
 item.spawn_egg.entity.spimton:goulden_guard_3.name=Opulent Obliterator Spawn Egg
+item.spawn_egg.entity.spimton:souldancer.name=Souldancer Spawn Egg
+item.spawn_egg.entity.spimton:guard_statue.name=Ominous Statue
 
 
 
@@ -1326,6 +1353,14 @@ entity.spimton:goulden_laser.name=Opulent Laser
 entity.spimton:goulden_boi.name=Opulent Boi
 entity.spimton:goulden_guard_2.name=Opulent Obstructor
 entity.spimton:goulden_guard_3.name=Opulent Obliterator
+entity.spimton:souldancer.name=Souldancer
+entity.spimton:soul_bolt.name=Soul Bolt
+entity.spimton:sfire.name=Ice Bouquet
+entity.spimton:cspore.name=Spore Growth
+entity.spimton:guard_statue.name=Ominous Statue
+
+
+
 
 
 itemGroup.spimton:boss.name=Boss Rewards

@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chiseled_polished_ominous_stone"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "pattern": [
+            "#",
+            "#"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:polished_ominous_stone_slab"
+            }
+        },
+        "result": {
+            "item": "spimton:chiseled_polished_ominous_stone",
+            "count": 1
+        }
+    }
+}

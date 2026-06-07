@@ -1,0 +1,1 @@
+loot spawn ~ ~ ~ loot "entities/guard_statue"

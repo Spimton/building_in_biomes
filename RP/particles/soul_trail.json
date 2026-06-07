@@ -1,0 +1,46 @@
+{
+    "format_version": "1.10.0",
+    "particle_effect": {
+        "description": {
+            "identifier": "spimton:soul_trail",
+            "basic_render_parameters": {
+                "material": "particles_blend",
+                "texture": "textures/particles/soul_trail"
+            }
+        },
+        "components": {
+            "minecraft:emitter_rate_steady": {
+                "spawn_rate": 1,
+                "max_particles": 100
+            },
+            "minecraft:emitter_lifetime_looping": {
+                "active_time": 1
+            },
+            "minecraft:emitter_shape_point": {},
+            "minecraft:particle_lifetime_expression": {
+                "max_lifetime": 1
+            },
+            "minecraft:particle_initial_speed": 0,
+            "minecraft:particle_motion_dynamic": {},
+            "minecraft:particle_appearance_tinting": {
+                "color": [
+                    0.21176,
+                    0.93725,
+                    0.91373,
+                    1
+                ]
+            },
+            "minecraft:particle_appearance_billboard": {
+                "size": [
+                    0.5,
+                    0.5
+                ],
+                "facing_camera_mode": "rotate_xyz",
+                "uv": {
+                    "texture_width": 4,
+                    "texture_height": 4
+                }
+            }
+        }
+    }
+}

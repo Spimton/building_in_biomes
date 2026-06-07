@@ -11,18 +11,21 @@
 				"default": "textures/entity/wraith"
 			},
 			"geometry": {
-				"default": "geometry.wraith"
+				"default": "geometry.wraiths"
 			},
 			"scripts": {
 				"scale": "0.9375",
 				"animate": [
 					"controller_general",
-					"controller_move"
+					{
+						"move": "query.is_moving"
+					}
 				]
 			},
 			"animations": {
 				"general": "animation.wraith.idle",
 				"casting": "animation.wraith.casting",
+				"move": "animation.wraith.move",
 				"look_at_target": "animation.common.look_at_target",
 				"celebrating": "animation.humanoid.celebrating",
 				"controller_general": "controller.animation.evoker.general",

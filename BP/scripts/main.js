@@ -107,6 +107,31 @@ world.beforeEvents.playerBreakBlock.subscribe(data => {
             block.dimension.runCommand(`setblock ${x} ${y} ${z + 1} air [] destroy`)
         })
     }
+    if (block.below().permutation.matches('spimton:ominous_dungeon_torch', { 'minecraft:block_face': 'down' })) {
+        system.run(() => {
+            block.dimension.runCommand(`setblock ${x} ${y - 1} ${z} air [] destroy`)
+        })
+    }
+    if (block.west().permutation.matches('spimton:ominous_dungeon_torch', { 'minecraft:block_face': 'west' })) {
+        system.run(() => {
+            block.dimension.runCommand(`setblock ${x - 1} ${y} ${z} air [] destroy`)
+        })
+    }
+    if (block.east().permutation.matches('spimton:ominous_dungeon_torch', { 'minecraft:block_face': 'east' })) {
+        system.run(() => {
+            block.dimension.runCommand(`setblock ${x + 1} ${y} ${z} air [] destroy`)
+        })
+    }
+    if (block.north().permutation.matches('spimton:ominous_dungeon_torch', { 'minecraft:block_face': 'north' })) {
+        system.run(() => {
+            block.dimension.runCommand(`setblock ${x} ${y} ${z - 1} air [] destroy`)
+        })
+    }
+    if (block.south().permutation.matches('spimton:ominous_dungeon_torch', { 'minecraft:block_face': 'south' })) {
+        system.run(() => {
+            block.dimension.runCommand(`setblock ${x} ${y} ${z + 1} air [] destroy`)
+        })
+    }
 })
 
 world.afterEvents.playerPlaceBlock.subscribe((data) => {

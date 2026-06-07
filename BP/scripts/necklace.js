@@ -1,61 +1,62 @@
 import { world, system, EquipmentSlot, ItemStack, Player, EntityComponentTypes } from '@minecraft/server'
 
+world.afterEvents.entityHurt.subscribe(data => {
+    const entity = data.hurtEntity
+    const sauce = data.damageSource.damagingEntity;
+    const chance = Math.random();
+    const equippableHurt = entity.getComponent("equippable");
+    if (equippableHurt.getEquipment(EquipmentSlot.Chest)) {
 
-world.afterEvents.entityHitEntity.subscribe(data => {
-    const entity = data.damagingEntity
-    const player = data.hitEntity
-    const chance = Math.random()
-    const playerEquipment = player.getComponent('equippable')
-
-    if (((player?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Chest)?.typeId == 'spimton:galena_necklace')) && chance <= 0.2
-    ) {
-        entity.addEffect('fatal_poison', 600, { amplifier: 4, showParticles: true })
-        entity.addEffect('slowness', 300, { amplifier: 4, showParticles: true })
-        entity.addEffect('weakness', 300, { amplifier: 4, showParticles: true })
-        entity.runCommand("title @s actionbar You have §5[Profound Brain Damage]")
-    }
-})
-world.afterEvents.entityHitEntity.subscribe(data => {
-    const entity = data.damagingEntity
-    const player = data.hitEntity
-    const chance = Math.random()
-    const playerEquipment = player.getComponent('equippable')
-
-    if (((player?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Chest)?.typeId == 'spimton:iridescence_necklace'))
-    ) {
-        entity.runCommand('effect @s blindness 2 1 true')
-        const chance = Math.random()
-        if (chance >= 0.8) {
-            player.addEffect('strength', 300, { showParticles: false })
-        }
-        else {
-            const chance = Math.random()
-            if (chance >= 0.5) {
-                const chance = Math.random()
-                player.addEffect('speed', 300, { showParticles: false })
-            }
-            else {
-                const chance = Math.random()
-                if (chance >= 0.5) {
-                    const chance = Math.random()
-                    if (chance >= 0.5) {
-                        player.addEffect('regeneration', 300, { showParticles: false })
+        switch (equippableHurt.getEquipment(EquipmentSlot.Chest).typeId) { //Hurt Entity
+            case "spimton:galena_necklace":
+                console.warn("Galena")
+                if (chance <= 0.2) {
+                    if (sauce) {
+                        sauce.addEffect('fatal_poison', 600, { amplifier: 4, showParticles: true })
+                        sauce.addEffect('slowness', 300, { amplifier: 4, showParticles: true })
+                        sauce.addEffect('weakness', 300, { amplifier: 4, showParticles: true })
+                        sauce.runCommand("title @s actionbar You have §5[Profound Brain Damage]")
                     }
-                    else player.addEffect('resistance', 300, { showParticles: false })
                 }
-                else player.addEffect('fire_resistance', 300, { showParticles: false })
-            }
-        }
-    }
-})
-world.afterEvents.entityHitEntity.subscribe(data => {
-    const entity = data.damagingEntity
-    const player = data.hitEntity
-    const chance = Math.random()
-    const playerEquipment = player.getComponent('equippable')
-    if ((player?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Chest)?.typeId == 'spimton:chilling_necklace')
-    ) {
-        entity.runCommand('damage @s 6 freezing')
-    }
-})
+                break;
+            case "spimton:iridescence_necklace":
+                console.warn("Iridiscence")
+                if (sauce) sauce.runCommand('effect @s blindness 2 1 true')
+                if (chance >= 0.8) {
+                    entity.addEffect('strength', 300, { showParticles: false })
+                }
+                else {
+                    if (chance >= 0.6) {
 
+                        entity.addEffect('speed', 300, { showParticles: false })
+                    }
+                    else {
+
+                        if (chance >= 0.2) {
+
+                            if (chance >= 0.4) {
+                                entity.addEffect('regeneration', 300, { showParticles: false })
+                            }
+                            else entity.addEffect('resistance', 300, { showParticles: false })
+                        }
+                        else entity.addEffect('fire_resistance', 300, { showParticles: false })
+                    }
+                }
+                break;
+            case "spimton:chilling_necklace":
+                if (sauce) {
+                    const dx = (sauce.location.x - entity.location.x)
+                    const dy = (sauce.location.y - entity.location.y)
+                    const dz = (sauce.location.z - entity.location.z)
+                    const distance = Math.sqrt(dx ** 2 + dy ** 2 + dz ** 2);
+                    const maxDistance = 64
+                    if (distance <= maxDistance) {
+                        const percentageDamage = 1 - (distance / maxDistance)
+                        sauce.applyDamage(data.damage * percentageDamage + 3.5, { cause: "freezing", damagingEntity: entity })
+                    }
+
+                }
+                break;
+        };
+    }
+})

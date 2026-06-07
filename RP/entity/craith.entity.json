@@ -11,16 +11,19 @@
 				"default": "textures/entity/craith"
 			},
 			"geometry": {
-				"default": "geometry.wraith"
+				"default": "geometry.wraiths"
 			},
 			"scripts": {
 				"scale": "0.9375",
 				"animate": [
 					"controller_general",
-					"controller_move"
+					{
+						"move": "query.is_moving"
+					}
 				]
 			},
 			"animations": {
+				"move": "animation.wraith.move",
 				"general": "animation.wraith.idle",
 				"casting": "animation.wraith.casting",
 				"look_at_target": "animation.common.look_at_target",

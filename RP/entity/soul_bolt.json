@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:soul_bolt",
+            "materials": {
+                "default": "arrow"
+            },
+            "textures": {
+                "default": "textures/entity/soul_bolt"
+            },
+            "geometry": {
+                "default": "geometry.soul_bolt"
+            },
+            "animations": {
+                "move": "animation.sprojectile.face"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.shake = query.shake_time - query.frame_alpha;",
+                    "variable.shake_power = variable.shake > 0.0 ? -Math.sin(variable.shake * 200.0) * variable.shake : 0.0;"
+                ],
+                "animate": [
+                    "move"
+                ]
+            },
+            "particle_effects": {
+                "trail": "minecraft:soul_particle"
+            },
+            "render_controllers": [
+                "controller.render.arrow"
+            ]
+        }
+    }
+}

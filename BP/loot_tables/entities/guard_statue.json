@@ -1,0 +1,12 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:guard_statue_spawn_egg"
+                }
+            ]
+        }
+    ]
+}

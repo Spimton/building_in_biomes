@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:cobbled_ominous_stone"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": "spimton:cobbled_ominous_stone",
+        "output": "spimton:ominous_stone"
+    }
+}

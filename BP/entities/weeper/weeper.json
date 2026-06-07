@@ -64,7 +64,7 @@
 			"spimton:bossbar_i": {
 				"minecraft:boss": {
 					"hud_range": 67,
-					"name": "  §dThe Weeper§r "
+					"name": "  §5The Weeper§r "
 				}
 			},
 			"spimton:transient_phy": {

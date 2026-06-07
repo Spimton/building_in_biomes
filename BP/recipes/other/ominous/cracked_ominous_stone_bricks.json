@@ -1,0 +1,13 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_furnace": {
+        "description": {
+            "identifier": "spimton:cracked_ominous_stone_bricks"
+        },
+        "tags": [
+            "furnace"
+        ],
+        "input": "spimton:ominous_stone_bricks",
+        "output": "spimton:cracked_ominous_stone_bricks"
+    }
+}

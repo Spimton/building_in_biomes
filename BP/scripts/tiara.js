@@ -12,62 +12,64 @@ world.afterEvents.playerBreakBlock.subscribe(data => {
     }
 })
 
+
+
 world.afterEvents.entityHurt.subscribe(data => {
     const entity = data.hurtEntity
-    const chance = Math.random()
-    const playerEquipment = entity.getComponent('equippable')
-    if (entity?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Head)?.typeId == 'spimton:wisdom_tiara'
-    ) {
-        entity.dimension.spawnEntity('minecraft:xp_orb', entity.location)
-    }
-})
-
-world.afterEvents.entityHitEntity.subscribe(data => {
-    const entity = data.damagingEntity
-    const player = data.hitEntity
-    const chance = Math.random()
-    const playerEquipment = player.getComponent('equippable')
-    if (player?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Head)?.typeId == 'spimton:iridescence_tiara'
-    ) {
-        player.runCommand('effect @s invisibility 2 1 true')
-        const chance = Math.random()
-        if (chance >= 0.8) {
-            entity.addEffect('weakness', 300, { showParticles: false })
-        }
-        else {
-            const chance = Math.random()
-            if (chance >= 0.5) {
-                const chance = Math.random()
-                entity.addEffect('slowness', 300, { showParticles: false })
-            }
+    const source = data.damageSource
+    const sauce = source.damagingEntity;
+    const chance = Math.random();
+    const equippableHurt = entity.getComponent("equippable");
+    //console.warn(equippableHurt.getEquipment(EquipmentSlot.Head).typeId);
+    if (sauce) {
+        console.warn("Sauce")
+        const equippableHurting = sauce.getComponent("equippable");
+        if (equippableHurting) {
+            //console.warn(equippableHurting.getEquipment(EquipmentSlot.Head).typeId);
+            if (equippableHurting.getEquipment(EquipmentSlot.Head) === undefined) { console.log("Headlee") }
             else {
-                entity.addEffect('poison', 300, { showParticles: false })
+                switch (equippableHurting.getEquipment(EquipmentSlot.Head).typeId) { //Hurting Entity
+                    case "spimton:creeping_tiara":
+                        if (chance < 0.07 * data.damage && entity.typeId != "spimton:creepie_hostile") sauce.dimension.spawnEntity('spimton:creepie_hostile', entity.location)
+                        break;
+                    case "spimton:wisdom_tiara":
+                        if (chance >= 0.45) sauce.dimension.spawnEntity('minecraft:xp_orb', sauce.location);
+                        break;
+
+
+                };
             }
         }
-    }
-})
+    };
+    if (equippableHurt) {
+        if (equippableHurt.getEquipment(EquipmentSlot.Head) === undefined) { console.log("Headlee") }
+        else {
+            switch (equippableHurt.getEquipment(EquipmentSlot.Head).typeId) { //Hurt Entity
+                case "spimton:wisdom_tiara":
+                    console.warn("heyya")
+                    entity.dimension.spawnEntity('minecraft:xp_orb', entity.location)
+                    break;
+                case "spimton:iridescence_tiara":
+                    entity.runCommand('effect @s invisibility 2 1 true')
+                    if (sauce) {
+                        if (chance >= 0.67) {
+                            sauce.addEffect('weakness', 300, { showParticles: false })
+                        }
+                        else {
+                            if (chance < 0.35) {
+                                sauce.addEffect('slowness', 300, { showParticles: false })
+                            }
+                            else {
+                                sauce.addEffect('poison', 300, { showParticles: false })
+                            }
+                        };
 
-world.afterEvents.entityHitEntity.subscribe(data => {
-    const entity = data.damagingEntity
-    const chance = Math.random()
-    const playerEquipment = entity.getComponent('equippable')
-    if (entity?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Head)?.typeId == 'spimton:wisdom_tiara'
-    ) {
-        if (chance >= 0.45) {
-            entity.dimension.spawnEntity('minecraft:xp_orb', entity.location)
+                    };
+                    break;
+
+            };
         }
     }
+
 })
 
-world.afterEvents.entityHitEntity.subscribe(data => {
-    const entity = data.damagingEntity
-    const chance = Math.random()
-    const masochist = data.hitEntity
-    const playerEquipment = entity.getComponent('equippable')
-    if (entity?.hasComponent('equippable') && playerEquipment.getEquipment(EquipmentSlot.Head)?.typeId == 'spimton:creeping_tiara'
-    ) {
-        if (chance >= 0.5) {
-            entity.dimension.spawnEntity('spimton:creepie_hostile', masochist.location)
-        }
-    }
-})

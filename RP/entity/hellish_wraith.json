@@ -11,18 +11,25 @@
 				"default": "textures/entity/hellish_wraith"
 			},
 			"geometry": {
-				"default": "geometry.wraith"
+				"default": "geometry.wraiths"
 			},
 			"scripts": {
 				"scale": "0.9375",
 				"animate": [
 					"controller_general",
-					"controller_move"
+					{
+						"move": "query.is_moving"
+					},
+					{
+						"stream": "query.mark_variant == 1 && query.has_target"
+					}
 				]
 			},
 			"animations": {
+				"move": "animation.wraith.move",
 				"general": "animation.wraith.idle",
 				"casting": "animation.wraith.casting",
+				"stream": "animation.wraith.stream",
 				"look_at_target": "animation.common.look_at_target",
 				"celebrating": "animation.humanoid.celebrating",
 				"controller_general": "controller.animation.evoker.general",

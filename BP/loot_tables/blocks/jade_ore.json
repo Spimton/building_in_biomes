@@ -7,47 +7,29 @@
                     "type": "item",
                     "weight": 2,
                     "name": "spimton:jade",
+                    "conditions": [
+                        {
+                            "condition": "match_tool",
+                            "minecraft:match_tool_filter_all": [
+                                "minecraft:is_pickaxe",
+                                "minecraft:is_tool"
+                            ],
+                            "minecraft:match_tool_filter_any": [
+                                "minecraft:stone_tier",
+                                "minecraft:iron_tier",
+                                "minecraft:diamond_tier",
+                                "minecraft:netherite_tier"
+                            ],
+                            "count": 1
+                        }
+                    ],
                     "functions": [
                         {
                             "function": "set_count",
                             "count": {
                                 "max": 4,
                                 "min": 2
-                            },
-                            "condition": [
-                                {
-                                    "condition": "match_tool",
-                                    "item": "iron_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:steel_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:bronze_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:drill"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "diamond_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "netherite_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "stone_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:drill"
-                                }
-                            ]
+                            }
                         }
                     ]
                 }
@@ -60,47 +42,29 @@
                     "type": "item",
                     "weight": 1,
                     "name": "spimton:imperial_jade",
+                    "conditions": [
+                        {
+                            "condition": "match_tool",
+                            "minecraft:match_tool_filter_all": [
+                                "minecraft:is_pickaxe",
+                                "minecraft:is_tool"
+                            ],
+                            "minecraft:match_tool_filter_any": [
+                                "minecraft:stone_tier",
+                                "minecraft:iron_tier",
+                                "minecraft:diamond_tier",
+                                "minecraft:netherite_tier"
+                            ],
+                            "count": 1
+                        }
+                    ],
                     "functions": [
                         {
                             "function": "set_count",
                             "count": {
                                 "max": 2,
                                 "min": 0
-                            },
-                            "condition": [
-                                {
-                                    "condition": "match_tool",
-                                    "item": "iron_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:steel_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:bronze_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:drill"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "diamond_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "netherite_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "stone_pickaxe"
-                                },
-                                {
-                                    "condition": "match_tool",
-                                    "item": "spimton:drill"
-                                }
-                            ]
+                            }
                         }
                     ]
                 }

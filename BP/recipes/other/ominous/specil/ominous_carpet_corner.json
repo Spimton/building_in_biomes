@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:ominous_carpet_corner"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "@@",
+            "#@"
+        ],
+        "key": {
+            "#": {
+                "item": "red_carpet"
+            },
+            "@": {
+                "item": "gold_nugget"
+            }
+        },
+        "assume_symmetry": true,
+        "result": {
+            "item": "spimton:ominous_carpet_corner",
+            "count": 2
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        }
+    }
+}

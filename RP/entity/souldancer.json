@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:souldancer",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/souldancer"
+			},
+			"geometry": {
+				"default": "geometry.wraiths"
+			},
+			"scripts": {
+				"scale": "1",
+				"animate": [
+					"controller_general",
+					"roar_controller",
+					{
+						"move": "query.is_moving"
+					},
+					{
+						"shoot": "query.mark_variant == 1 && query.has_target"
+					}
+				]
+			},
+			"animations": {
+				"general": "animation.wraith.idle",
+				"casting": "animation.wraith.casting",
+				"move": "animation.wraith.move",
+				"look_at_target": "animation.common.look_at_target",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"blackstone_construct_roar": "animation.wraith.casting",
+				"roar_controller": "controller.animation.blackstone_golem.roar",
+				"shoot": "animation.wraith.stream"
+			},
+			"particle_effects": {
+				"spell": "minecraft:knockback_roar_particle"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "souldancer_spawn_egg"
+			}
+		}
+	}
+}

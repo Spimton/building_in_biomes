@@ -185,6 +185,34 @@
 					"name": "sounds/music/record_creative"
 				}
 			]
+		},
+		"sfx.soul_boom": {
+			"subtitle": "kaboom!",
+			"category": "hostile",
+			"max_distance": 10,
+			"sounds": [
+				"sounds/sfx/soul_boom"
+			]
+		},
+		"mob.soul_bolt.shoot": {
+			"subtitle": "soul bolt shot",
+			"category": "hostile",
+			"max_distance": 10,
+			"sounds": [
+				"sounds/mob/soul_bolt/soul_bolt_shoot_1",
+				"sounds/mob/soul_bolt/soul_bolt_shoot_2",
+				"sounds/mob/soul_bolt/soul_bolt_shoot_3"
+			]
+		},
+		"mob.soul_bolt.hit": {
+			"subtitle": "soul bolt hit",
+			"category": "hostile",
+			"max_distance": 10,
+			"sounds": [
+				"sounds/mob/soul_bolt/soul_bolt_hit_1",
+				"sounds/mob/soul_bolt/soul_bolt_hit_2",
+				"sounds/mob/soul_bolt/soul_bolt_hit_3"
+			]
 		}
 	}
 }

@@ -375,6 +375,25 @@
                 },
                 "pitch": 1
             },
+            "spimton:souldancer": {
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.wraith.hurt",
+                    "death": "mob.wraith.death",
+                    "ambient": "mob.wraith.say",
+                    "roar": "sfx.soul_boom"
+                    // "shoot": "mob.soul_bolt.shoot"
+                },
+                "pitch": 1
+            },
+            "spimton:soul_bolt": {
+                "volume": 1,
+                "events": {
+                    "soul_bolt.hit": "mob.soul_bolt.hit",
+                    "hurt": "mob.soul_bolt.hit",
+                    "death": "mob.soul_bolt.hit"
+                }
+            },
             "spimton:creepie": {
                 "volume": 1,
                 "pitch": 2,
@@ -726,6 +745,12 @@
                     1.10
                 ],
                 "volume": 1.0
+            },
+            "spimton:guard_statue": {
+                "events": {
+                    "hurt": "dig.stone",
+                    "death": "mob.wither.break_block"
+                }
             }
         }
     },
@@ -754,6 +779,18 @@
                 "events": {
                     "step": "block.bone_pile.step"
                 }
+            }
+        }
+    },
+    "individual_event_sounds": {
+        "events": {
+            "soul_bolt.hit": {
+                "sound": "mob.soul_bolt.hit",
+                "volume": 1
+            },
+            "soul_bolt.shoot": {
+                "sound": "mob.soul_bolt.shoot",
+                "volume": 1
             }
         }
     }

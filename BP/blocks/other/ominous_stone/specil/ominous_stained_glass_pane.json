@@ -1,0 +1,511 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:ominous_stained_glass_pane",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.glassPane"
+            },
+            "states": {
+                "spimton:connect_north": [
+                    false,
+                    true
+                ],
+                "spimton:connect_south": [
+                    false,
+                    true
+                ],
+                "spimton:connect_east": [
+                    false,
+                    true
+                ],
+                "spimton:connect_west": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "components": {
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 4
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 2
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.glass_pane",
+                "culling": "spimton:culling.custom_glass_pane",
+                "bone_visibility": {
+                    "center_bar": "!query.block_state('spimton:connect_north') && !query.block_state('spimton:connect_south') && !query.block_state('spimton:connect_west') && !query.block_state('spimton:connect_east')",
+                    "ends": "query.block_state('spimton:connect_north') || query.block_state('spimton:connect_south') || query.block_state('spimton:connect_west') || query.block_state('spimton:connect_east')",
+                    "north": "query.block_state('spimton:connect_north')",
+                    "south": "query.block_state('spimton:connect_south')",
+                    "east": "query.block_state('spimton:connect_east')",
+                    "west": "query.block_state('spimton:connect_west')",
+                    "nside": "query.block_state('spimton:connect_north')  && !query.block_state('spimton:connect_south') && !query.block_state('spimton:connect_west')  && !query.block_state('spimton:connect_east')",
+                    "sside": "!query.block_state('spimton:connect_north')  && query.block_state('spimton:connect_south')  && !query.block_state('spimton:connect_west')  && !query.block_state('spimton:connect_east')",
+                    "wside": "query.block_state('spimton:connect_west')  && !query.block_state('spimton:connect_east') && !query.block_state('spimton:connect_north')  && !query.block_state('spimton:connect_south')",
+                    "eside": "!query.block_state('spimton:connect_west')  && query.block_state('spimton:connect_east') && !query.block_state('spimton:connect_north')  && !query.block_state('spimton:connect_south')"
+                }
+            },
+            "minecraft:item_visual": {
+                "geometry": "geometry.glass_pane",
+                "material_instances": {
+                    "*": {
+                        "texture": "ominous_glass_pane",
+                        "render_method": "blend"
+                    }
+                }
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "ominous_glass_pane",
+                    "render_method": "blend"
+                }
+            },
+            "minecraft:flammable": false,
+            "minecraft:map_color": "#FC2222",
+            "tag:spimton:is_bar": {},
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "tag:stone": {}
+        },
+        "permutations": [
+            {
+                "condition": "!q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west') && q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            16
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west') && !q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            9
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            9
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            2
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south') && q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_north') && !q.block_state('spimton:connect_south') && q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south') && !q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south') && q.block_state('spimton:connect_east') && !q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            9,
+                            16,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "!q.block_state('spimton:connect_north') && q.block_state('spimton:connect_south') && q.block_state('spimton:connect_east') && q.block_state('spimton:connect_west')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            16,
+                            2
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            9
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

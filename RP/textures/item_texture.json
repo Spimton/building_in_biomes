@@ -998,6 +998,12 @@
 		},
 		"goulden_guard_egg": {
 			"textures": "textures/items/spawnegg/goulden_guard_egg"
+		},
+		"souldancer_spawn_egg": {
+			"textures": "textures/items/spawnegg/souldancer_spawn_egg"
+		},
+		"guard_statue_egg": {
+			"textures":"textures/items/spawnegg/guard_statue_item"
 		}
 	}
 }

@@ -5,7 +5,17 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "spimton:cobbled_chillstone"
+                    "name": "spimton:cobbled_chillstone",
+                    "conditions": [
+                        {
+                            "condition": "match_tool",
+                            "minecraft:match_tool_filter_all": [
+                                "minecraft:is_pickaxe",
+                                "minecraft:is_tool"
+                            ],
+                            "count": 1
+                        }
+                    ]
                 }
             ]
         }

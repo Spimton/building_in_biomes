@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "indented_gold_lamp",
+		"metalness_emissive_roughness": "indented_gold_lamp_mer"
+	}
+}

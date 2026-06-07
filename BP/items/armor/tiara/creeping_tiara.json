@@ -17,6 +17,11 @@
 			"minecraft:durability": {
 				"max_durability": 70
 			},
+			"minecraft:tags": {
+				"tags": [
+					"spimton:creepie_pacify"
+				]
+			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{
