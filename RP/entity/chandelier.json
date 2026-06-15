@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:chandelier",
+			"materials": {
+				"default": "entity"
+			},
+			"textures": {
+				"default": "textures/blocks/otherstone/ominous/chandelier"
+			},
+			"geometry": {
+				"default": "geometry.chandelier"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"particle_effects": {
+				"deltarune_explosion": "spimton:deltarune_explosion_multiple"
+			}
+		}
+	}
+}

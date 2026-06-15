@@ -1003,7 +1003,40 @@
 			"textures": "textures/items/spawnegg/souldancer_spawn_egg"
 		},
 		"guard_statue_egg": {
-			"textures":"textures/items/spawnegg/guard_statue_item"
+			"textures": "textures/items/spawnegg/guard_statue_item"
+		},
+		"whispering_spear": {
+			"textures": "textures/items/tools/whispering_spear_item"
+		},
+		"record_wilted": {
+			"textures": "textures/items/record_wshaman"
+		},
+		"roywraith_egg": {
+			"textures": "textures/items/spawnegg/roywraith_spawn_egg"
+		},
+		"royal_hood": {
+			"textures": "textures/items/armor/royal_hood"
+		},
+		"royal_chestplate": {
+			"textures": "textures/items/armor/royal_chestplate"
+		},
+		"royal_boots": {
+			"textures": "textures/items/armor/royal_boots"
+		},
+		"harvester": {
+			"textures": "textures/items/tools/soul/harvester"
+		},
+		"materializer": {
+			"textures": "textures/items/tools/soul/materializer"
+		},
+		"soul_healer": {
+			"textures": "textures/items/tools/soul/soul_healer"
+		},
+		"shadow_shifter": {
+			"textures": "textures/items/tools/soul/shadow_shifter"
+		},
+		"luck_spear": {
+			"textures": "textures/items/tools/luck_spear_item"
 		}
 	}
 }

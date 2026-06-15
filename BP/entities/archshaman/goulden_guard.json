@@ -96,6 +96,11 @@
                 "minecraft:attack": {
                     "damage": 15
                 },
+                "minecraft:break_blocks": {
+                    "breakable_blocks": [
+                        "jungle_leaves"
+                    ]
+                },
                 /* "minecraft:behavior.charge_attack": {
                     "max_distance": 32,
                     "min_distance": 0,
@@ -122,11 +127,18 @@
                     "max_path_time": 1.997,
                     "min_path_time": 1.225,
                     "melee_fov": 335,
-                    "speed_multiplier": 4,
+                    "speed_multiplier": 5,
                     "track_target": true,
-                    "reach_multiplier": 1.225,
+                    "reach_multiplier": 1.997,
                     "x_max_rotation": 360,
                     "random_stop_interval": 0
+                },
+                "minecraft:area_attack": {
+                    "cause": "entity_attack",
+                    "damage_per_tick": 20,
+                    "damage_cooldown": 0.1225,
+                    "play_attack_sound": true,
+                    "damage_range": 1.997
                 }
             }
         },
@@ -143,11 +155,11 @@
             "minecraft:custom_hit_test": {
                 "hitboxes": [
                     {
-                        "height": 1.225,
-                        "width": 1.225,
+                        "height": 0.8,
+                        "width": 0.8,
                         "pivot": [
-                            0,
-                            3,
+                            0.035,
+                            3.035,
                             0
                         ]
                     }
@@ -250,6 +262,10 @@
             "minecraft:knockback_resistance": {
                 "max": 1,
                 "value": 1
+            },
+            "minecraft:collision_box": {
+                "height": 1.225,
+                "width": 0.67
             },
             "minecraft:behavior.nearest_attackable_target": {
                 "priority": 2,

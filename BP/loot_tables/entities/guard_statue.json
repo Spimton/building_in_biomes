@@ -1,9 +1,11 @@
 {
     "pools": [
         {
+            "rolls": 1,
             "entries": [
                 {
                     "type": "item",
+                    "weight": 1,
                     "name": "spimton:guard_statue_spawn_egg"
                 }
             ]

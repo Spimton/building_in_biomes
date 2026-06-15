@@ -1,0 +1,54 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:satellite",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "entity"
+            },
+            "textures": {
+                "default": "textures/entity/royal_guard"
+            },
+            "geometry": {
+                "default": "geometry.towerguard"
+            },
+            "spawn_egg": {
+                "texture": "spawn_egg_vindicator"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 50;"
+                ],
+                "scale": "0.9575",
+                "animate": [
+                    "move_controller",
+                    "controller_look_at_target",
+                    "controller_satellite",
+                    "controller_attack"
+                ]
+            },
+            "animations": {
+                "calm": "animation.towerguard.notarget",
+                "targeting": "animation.towerguard.targeting",
+                "attack": "animation.towerguard.attack",
+                "look_at_target_default": "animation.towerguard.look_at_target",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+                "move": "animation.towerguard.move",
+                "celebrating": "animation.humanoid.celebrating",
+                "move_controller": "controller.animation.villager.move",
+                "controller_look_at_target": "controller.animation.humanoid.look_at_target",
+                "controller_satellite": "controller.animation.satellite.target",
+                "controller_riding": "controller.animation.humanoid.riding",
+                "riding.body": "animation.humanoid.riding.body",
+                "controller_attack": "controller.animation.skirmisher.attack"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "enable_attachables": true,
+            "hide_armor": false
+        }
+    }
+}

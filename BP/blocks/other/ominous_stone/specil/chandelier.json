@@ -1,0 +1,121 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:chandelier",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:facing_direction"
+                    ]
+                },
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:block_face"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": true,
+            "minecraft:selection_box": true,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 6
+            },
+            /*   "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up",
+                            "down"
+                        ]
+                    }
+                ]
+            },*/
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 15
+            },
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "minecraft:light_emission": 14,
+            "minecraft:geometry": "geometry.chandelier",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "chandelier",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:tick": {
+                "interval_range": [
+                    10,
+                    10
+                ],
+                "looping": true
+            },
+            "spimton:dungeon_torch": {
+                "toggle_state": "",
+                "candle_holder": "hanging",
+                "particles": [
+                    "minecraft:basic_smoke_particle",
+                    "minecraft:candle_flame_particle"
+                ]
+            },
+            "spimton:chandelier": {
+                "entity": "spimton:chandelier"
+            },
+            "minecraft:map_color": "#FFC32A"
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'west' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'east' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'south' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:facing_direction') == 'north' ",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

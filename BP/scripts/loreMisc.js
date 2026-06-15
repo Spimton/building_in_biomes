@@ -125,7 +125,8 @@ const ItemArray = [
     new loreItem("spimton:gold_shield", ["§8Level 10 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward, but with 5 ticks of cooldown", "§r§c40% damage reduction penalty", "§r§cCannot block fatal damage"]),
     new loreItem("spimton:charge_shield", ["§8Level 15 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", "§r§c30% damage reduction penalty", "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon recieving damage"]),
     new loreItem("spimton:ancient_gold_shield", ["§8Level 15 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bGain §eDash§b energy while on fire", "§r§c50% damage reduction penalty", "§r§cCharge only when on fire", "§r§cCannot block fatal damage", "§r§hDepending on §eDash§h energy, sets you or the enemy on fire"]),
-    new loreItem("spimton:charge_shield_td", ["§8Level 20 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", "§r§bReflects damage on attacker", "§r§c70% damage reduction penalty", "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon collision"])
+    new loreItem("spimton:charge_shield_td", ["§8Level 20 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", "§r§bReflects damage on attacker", "§r§c70% damage reduction penalty", "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon collision"]),
+    new loreItem("spimton:record_wilted", ["§r§7Elwood - Into the Shadow"])
 
 ];
 

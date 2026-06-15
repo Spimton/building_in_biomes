@@ -5,8 +5,28 @@
 			"identifier": "spimton:ecto_block_plat",
 			"menu_category": {
 				"category": "construction"
+			},
+			"states": {
+				"spimton:mater": [
+					false,
+					true
+				]
 			}
 		},
+		"permutations": [
+			{
+				"condition": "query.block_state('spimton:mater') == true",
+				"components": {
+					"minecraft:tick": {
+						"interval_range": [
+							160,
+							200
+						],
+						"looping": true
+					}
+				}
+			}
+		],
 		"components": {
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 0

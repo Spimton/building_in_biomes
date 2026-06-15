@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:soul_healer",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:hand_equipped": false,
+            "minecraft:icon": "soul_healer",
+            "minecraft:max_stack_size": 1,
+            "spimton:soul_artifact": {},
+            "minecraft:rarity": "uncommon",
+            "minecraft:cooldown": {
+                "duration": 2,
+                "category": "tome"
+            },
+            "minecraft:allow_off_hand": true
+        }
+    }
+}

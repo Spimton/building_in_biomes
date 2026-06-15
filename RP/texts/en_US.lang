@@ -900,6 +900,9 @@ tile.spimton:ominous_carpet_corner.name=Ominous Carpet Corner
 tile.spimton:ominous_carpet_side.name=Ominous Carpet Side
 tile.spimton:indented_gold_lamp.name=Indented Gold Lamp
 tile.spimton:cracked_ominous_stone_bricks.name=Cracked Ominous Stone Bricks
+tile.spimton:brazier.name=Brazier
+tile.spimton:candle_holder.name=Candle Holder
+tile.spimton:chandelier.name=Chandelier
 
 
 
@@ -1272,6 +1275,20 @@ item.spawn_egg.entity.spimton:goulden_boi.name=Opulent Boi Spawn Egg
 item.spawn_egg.entity.spimton:goulden_guard_3.name=Opulent Obliterator Spawn Egg
 item.spawn_egg.entity.spimton:souldancer.name=Souldancer Spawn Egg
 item.spawn_egg.entity.spimton:guard_statue.name=Ominous Statue
+item.spimton:whispering_spear=Whispering Spear
+item.spawn_egg.entity.spimton:royal_wraith.name=Tower Wraith Spawn Egg
+item.spimton:royal_hood=Ominous Hood
+item.spimton:royal_chestplate=Ominous Chestplate
+item.spimton:royal_boots=Ominous Boots
+item.spawn_egg.entity.spimton:satellite.name=Satellite Spawn Egg
+item.spimton:harvester=Tome of Harvest
+item.spimton:materializer=Tome of Materialization
+item.spimton:shadow_shifter=Pendant of Shadow Shift
+item.spimton:soul_healer=Pendant of Soul Heal
+item.spimton:luck_spear=Fortune Spear
+item.spawn_egg.entity.spimton:sentinel.name=Sentinel Spawn Egg
+item.spimton:overgrown_dungeon_torch=Overgrown Dungeon Torch
+item.spimton:ominous_dungeon_torch=Ominous Dungeon Torch
 
 
 
@@ -1358,6 +1375,10 @@ entity.spimton:soul_bolt.name=Soul Bolt
 entity.spimton:sfire.name=Ice Bouquet
 entity.spimton:cspore.name=Spore Growth
 entity.spimton:guard_statue.name=Ominous Statue
+entity.spimton:royal_wraith.name=Tower Wraith
+entity.spimton:satellite.name=Satellite
+entity.spimton:sentinel.name=Sentinel
+entity.spimton:chandelier.name=Chandelier
 
 
 
@@ -1388,3 +1409,4 @@ item.spimton:horseman_boss.name=Anvil - Backwaters
 item.spimton:ratt_boss.name=Peritune - Demise
 item.spimton:record_sruins.name=Anvil - Path to Nowhere
 item.spimton:record_one.name=C418 - Moog City
+item.spimton:wilted_boss.name=Elwood - Into the Shadow

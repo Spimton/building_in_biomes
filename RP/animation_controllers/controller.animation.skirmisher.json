@@ -53,6 +53,44 @@
 					"blend_transition": 0.2
 				}
 			}
+		},
+		"controller.animation.satellite.target": {
+			"initial_state": "not",
+			"states": {
+				"not": {
+					"animations": [
+						"calm"
+					],
+					"transitions": [
+						{
+							"yet": "query.has_target"
+						}
+					]
+				},
+				"attacking": {
+					"transitions": [
+						{
+							"not": "!query.has_target"
+						},
+						{
+							"yet": "query.has_target && variable.attack_time == 0"
+						}
+					]
+				},
+				"yet": {
+					"animations": [
+						"targeting"
+					],
+					"transitions": [
+						{
+							"not": "!query.has_target"
+						},
+						{
+							"attacking": "variable.attack_time >0"
+						}
+					]
+				}
+			}
 		}
 	}
 }

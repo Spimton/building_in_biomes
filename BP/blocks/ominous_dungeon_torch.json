@@ -217,11 +217,7 @@
                             "up",
                             "side"
                         ],
-                        "block_filter": [
-                            {
-                                "tags": "q.any_tag('grass','stone','wood', 'metal')" // Allowed blocks to place the torch at
-                            }
-                        ]
+                        "block_filter": []
                     }
                 ]
             },

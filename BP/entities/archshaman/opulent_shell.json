@@ -65,7 +65,7 @@
 				"is_pushable": false
 			},
 			"minecraft:collision_box": {
-				"width": 6,
+				"width": 12,
 				"height": 6
 			},
 			"minecraft:physics": {}

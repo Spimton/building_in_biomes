@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "royal_armor_attachable",
+		"metalness_emissive_roughness": "royal_armor_attachable_mer"
+	}
+}

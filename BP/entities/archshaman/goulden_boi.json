@@ -146,7 +146,60 @@
                 "can_path_over_water": true
             },
             "minecraft:movement.basic": {},
-            "minecraft:jump.static": {},
+            "minecraft:jump.static": {
+                "jump_power": 0.42
+            },
+            "minecraft:behavior.jump_around_target": {
+                "priority": 2,
+                "filters": {
+                    "all_of": [
+                        {
+                            "any_of": [
+                                {
+                                    "test": "in_water",
+                                    "value": true
+                                },
+                                {
+                                    "test": "on_ground",
+                                    "value": true
+                                }
+                            ]
+                        },
+                        {
+                            "test": "is_riding",
+                            "value": false
+                        },
+                        {
+                            "test": "in_lava",
+                            "value": false
+                        }
+                    ]
+                },
+                "jump_cooldown_duration": 1.225,
+                "jump_cooldown_when_hurt_duration": 1.225,
+                "last_hurt_duration": 2.0,
+                "prepare_jump_duration": 0.1225,
+                "max_jump_velocity": 1.225,
+                "check_collision": true,
+                "entity_bounding_box_scale": 0.7,
+                "line_of_sight_obstruction_height_ignore": 4,
+                "valid_distance_to_target": [
+                    2.0,
+                    6.0
+                ],
+                "landing_position_spread_degrees": 90,
+                "landing_distance_from_target": [
+                    0.25,
+                    0.75
+                ],
+                "required_vertical_space": 4,
+                "snap_to_surface_block_range": 10,
+                "jump_angles": [
+                    60.0,
+                    75.0,
+                    80.0
+                ]
+            },
             "minecraft:follow_range": {
                 "value": 64
             },
@@ -154,13 +207,13 @@
                 "priority": 0
             },
             "minecraft:behavior.melee_attack": {
-                "priority": 3,
+                "priority": 4,
                 "cooldown_time": 0.5
             },
             "minecraft:behavior.delayed_attack": {
                 "attack_duration": 0.75,
                 "hit_delay_pct": 0.66,
-                "priority": 2,
+                "priority": 4,
                 "reach_multiplier": 2
             },
             "minecraft:behavior.random_stroll": {

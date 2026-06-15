@@ -1,0 +1,31 @@
+{
+	"format_version": "1.20.50",
+	"minecraft:item": {
+		"description": {
+			"identifier": "spimton:royal_hood",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.helmet"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": {
+				"texture": "royal_hood"
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"protection": 1
+			},
+			"minecraft:enchantable": {
+				"slot": "armor_head",
+				"value": 16
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:iron_tier"
+				]
+			}
+		}
+	}
+}

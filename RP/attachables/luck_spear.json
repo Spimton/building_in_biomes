@@ -1,0 +1,42 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            //Replace <identifier> with the full identifier of your item
+            "identifier": "spimton:luck_spear",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                //Replace <path> with the filepath to your items texture. It should match up with the filepath given in item_texture.json
+                "default": "textures/entity/spear/luck_spear_attachable",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.whispering_spear"
+            },
+            "animations": {
+                "third_person_hold": "animation.spear.held_third_person",
+                "first_person_hold": "animation.spear.held_third_person",
+                "illager_hold": "animation.whispering_spear.player"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "first_person_hold": "c.is_first_person"
+                    },
+                    {
+                        "third_person_hold": "!c.is_first_person"
+                    } /*,
+                    {
+                        "illager_hold": "context.owning_entity->query.has_any_family('illager')"
+                    }*/
+                ]
+            },
+            "render_controllers": [
+                "controller.render.item_default"
+            ]
+        }
+    }
+}

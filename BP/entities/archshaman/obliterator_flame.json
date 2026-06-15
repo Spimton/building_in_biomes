@@ -17,8 +17,8 @@
                 "on_hit": {
                     "remove_on_hit": {},
                     "impact_damage": {
-                        "knockback": false,
-                        "damage": 5
+                        "knockback": true,
+                        "damage": 2
                     },
                     "particle_on_hit": {
                         "particle_type": "crit",
@@ -41,14 +41,6 @@
             "minecraft:pushable": {
                 "is_pushable": true,
                 "is_pushable_by_piston": true
-            },
-            "minecraft:timer": {
-                "looping": true,
-                "time": 0,
-                "time_down_event": {
-                    "target": "self",
-                    "event": "spimton:purify"
-                }
             }
         },
         "events": {}

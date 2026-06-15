@@ -1,0 +1,416 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:royal_wraith",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "phantom"
+		},
+		"component_groups": {
+			"spimton:normal": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"spimton:lead": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:mob_effect_immunity": {
+					"mob_effects": [
+						"poison",
+						"fatal_poison"
+					]
+				}
+			},
+			"spimton:invisible": {
+				"minecraft:behavior.timer_flag_1": {
+					"priority": 1,
+					"duration_range": [
+						3,
+						5
+					],
+					"on_end": {
+						"event": "spimton:visible"
+					}
+				},
+				"minecraft:is_sheared": {}
+			}
+		},
+		"components": {
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:experience_reward": {
+				"on_death": "20"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"mob",
+					"undead",
+					"spimton:weeper"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/wraith.json"
+			},
+			"minecraft:health": {
+				"value": 24,
+				"max": 24
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "freezing",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "drowning",
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:can_fly": {},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:flying_speed": {
+				"value": 0.2
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": true
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 5,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 4,
+						"walk_speed_multiplier": 2,
+						"sprint_speed_multiplier": 2
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 0.6
+			},
+			"minecraft:behavior.random_fly": {
+				"priority": 5,
+				"speed_multiplier": 0.9,
+				"y_offset": 3,
+				"xz_dist": 10,
+				"y_dist": 7
+			},
+			"minecraft:behavior.circle_around_anchor": {
+				"priority": 4,
+				"speed_multiplier": 0.67,
+				"angle_change": 15,
+				"radius_change": 1,
+				"height_above_target_range": {
+					"min": 3,
+					"max": 7
+				},
+				"radius_range": {
+					"min": 3,
+					"max": 8
+				},
+				"goal_radius": 2
+			},
+			"minecraft:behavior.summon_entity": {
+				"priority": 2,
+				"summon_choices": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"value": 0
+								},
+								{
+									"test": "has_component",
+									"value": "minecraft:is_sheared",
+									"operator": "!="
+								}
+							]
+						},
+						"min_activation_range": 0,
+						"max_activation_range": 22,
+						"cooldown_time": 1.997,
+						"weight": 1,
+						"do_casting": true,
+						"cast_duration": 1,
+						"particle_color": "#FF664D59",
+						"start_sound_event": "cast.spell",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "target",
+								"base_delay": 1,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 1,
+								"entity_type": "spimton:sfire",
+								"summon_event": "spimton:royal_fire",
+								"size": 1,
+								"entity_lifespan": 10,
+								"sound_event": "prepare.attack"
+							}
+						]
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"value": 1
+								},
+								{
+									"test": "has_component",
+									"value": "minecraft:is_sheared",
+									"operator": "!="
+								}
+							]
+						},
+						"min_activation_range": 0,
+						"max_activation_range": 22,
+						"cooldown_time": 1.997,
+						"weight": 1,
+						"do_casting": true,
+						"cast_duration": 1,
+						"particle_color": "#FF664D59",
+						"start_sound_event": "cast.spell",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "target",
+								"base_delay": 1,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 4,
+								"entity_type": "spimton:ht_pbd",
+								"summon_event": "spimton:ill",
+								"size": 1.997,
+								"entity_lifespan": 10,
+								"sound_event": "prepare.attack"
+							}
+						]
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "spimton:weeper"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "illager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								}
+							]
+						}
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					5,
+					10
+				],
+				"time_down_event": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_target",
+								"value": true
+							},
+							{
+								"test": "has_component",
+								"value": "minecraft:is_sheared",
+								"operator": "!="
+							}
+						]
+					},
+					"event": "spimton:switch"
+				}
+			},
+			"minecraft:target_nearby_sensor": {
+				"inside_range": 5,
+				"on_inside_range": {
+					"event": "spimton:try_invisible"
+				},
+				"must_see": true
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 3,
+				"probability": 1
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 10,
+				"look_distance": 8,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 32
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"spimton:switch": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"particle spimton:soul_blast ~ ~ ~",
+								"playanimation @s animation.wraith.switch none 0"
+							],
+							"target": "self"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"value": 1
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:normal"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:lead"
+							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"value": 0
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:lead"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:normal"
+							]
+						}
+					}
+				]
+			},
+			"spimton:try_invisible": {
+				"randomize": [
+					{
+						"weight": 2
+					},
+					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"playanimation animation.wraith.casing none 0",
+								"particle spimton:soul_flame_burst ~ ~ ~",
+								"effect @s invisibility infinite 0 true"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:invisible"
+							]
+						}
+					}
+				]
+			},
+			"spimton:visible": {
+				"queue_command": {
+					"command": [
+						"effect @s clear invisibility"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:invisible"
+					]
+				}
+			}
+		}
+	}
+}

@@ -45,7 +45,7 @@
                     "impact_damage": {
                         "knockback": true,
                         "should_bounce": false,
-                        "damage": 12
+                        "damage": 6
                     }
                 },
                 "inertia": 0.85,

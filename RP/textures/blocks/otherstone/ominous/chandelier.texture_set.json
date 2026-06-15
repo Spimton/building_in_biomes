@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chandelier",
+		"metalness_emissive_roughness": "chandelier_mer"
+	}
+}

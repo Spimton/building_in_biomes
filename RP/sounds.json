@@ -386,6 +386,15 @@
                 },
                 "pitch": 1
             },
+            "spimton:royal_wraith": {
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.wraith.hurt",
+                    "death": "mob.wraith.death",
+                    "ambient": "mob.wraith.say"
+                },
+                "pitch": 0.9
+            },
             "spimton:soul_bolt": {
                 "volume": 1,
                 "events": {
@@ -393,6 +402,50 @@
                     "hurt": "mob.soul_bolt.hit",
                     "death": "mob.soul_bolt.hit"
                 }
+            },
+            "spimton:satellite": {
+                "events": {
+                    "ambient": "mob.vindicator.idle",
+                    "ambient.in.raid": {
+                        "pitch": [
+                            0.80,
+                            1.20
+                        ],
+                        "sound": "mob.vindicator.idle",
+                        "volume": 3.0
+                    },
+                    "celebrate": "mob.vindicator.celebrate",
+                    "death": "mob.vindicator.death",
+                    "hurt": "mob.vindicator.hurt",
+                    "hit": "item.sspear_hit"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
+            },
+            "spimton:sentinel": {
+                "events": {
+                    "ambient": "mob.vindicator.idle",
+                    "ambient.in.raid": {
+                        "pitch": [
+                            0.80,
+                            1.20
+                        ],
+                        "sound": "mob.vindicator.idle",
+                        "volume": 3.0
+                    },
+                    "celebrate": "mob.vindicator.celebrate",
+                    "death": "mob.vindicator.death",
+                    "hurt": "mob.vindicator.hurt",
+                    "hit": "item.sspear_hit"
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "volume": 1.0
             },
             "spimton:creepie": {
                 "volume": 1,
@@ -790,6 +843,16 @@
             },
             "soul_bolt.shoot": {
                 "sound": "mob.soul_bolt.shoot",
+                "volume": 1
+            },
+            "item.sspear.miss": {
+                "pitch": 1,
+                "sound": "item.sspear_miss",
+                "volume": 1
+            },
+            "item.sspear.hit": {
+                "pitch": 1,
+                "sound": "item.sspear_hit",
                 "volume": 1
             }
         }

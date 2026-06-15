@@ -581,9 +581,12 @@ system.beforeEvents.startup.subscribe(eventData => {
             const { block } = e;
             const toggle = params.toggle_state
             let istoggled = block.permutation.getState(toggle);
+            let chandelier = params.candle_holder;
 
             const blockFace = block.permutation.getState('minecraft:block_face');
-            if (istoggled === undefined) istoggled = true;
+            if (istoggled === undefined) {
+                istoggled = true;
+            }
             // Define positions for the particles based on the block face state
             const particlePositions = {
                 north: [0.5, 1.225, 0.4],
@@ -593,34 +596,156 @@ system.beforeEvents.startup.subscribe(eventData => {
                 up: [0.5, 1.225, 0.5]
             };
 
+
             // Get the particle position based on the block face
-            const position = particlePositions[blockFace];
+            let position = [];
+            if (blockFace && !chandelier) {
+                position = particlePositions[blockFace];
+            }
+            else if (!chandelier) {
+                position = [
+                    0.5,
+                    1,
+                    0.5
+                ]
+            }
+            else {
+                if (chandelier == "normal") {
+                    position = [
+                        [3 / 16, 28.67 / 16, 3 / 16],
+                        [13 / 16, 28.67 / 16, 13 / 16],
+                        [3 / 16, 28.67 / 16, 13 / 16],
+                        [13 / 16, 28.67 / 16, 3 / 16],
+                        [0.5, 28.67 / 16, 0.5]
+                    ]
+                }
+                else if (chandelier == "hanging") {
+                    position = [
+                        [
+                            18.5 / 16, 7.5 / 16, 18.5 / 16
+                        ],
+                        [
+                            18.5 / 16, 7.5 / 16, -4.5 / 16
+                        ],
+                        [
+                            -4.5 / 16, 7.5 / 16, -4.5 / 16
+                        ],
+                        [
+                            -4.5 / 16, 7.5 / 16, 18.5 / 16
+                        ],
+                        [
+                            -4.5 / 16, 7.5 / 16, 0.5
+                        ],
+                        [
+                            18.5 / 16, 7.5 / 16, 0.5
+                        ],
+                        [
+                            0.5, 7.5 / 16, -4.5 / 16
+                        ],
+                        [
+                            0.5, 7.5 / 16, 18.5 / 16
+                        ]
+                    ]
+                }
+            };
+
 
             // Check if the position is defined
             if (position && istoggled) {
+                if (!chandelier) {
 
-                // Destructure position into x, y, z coordinates
-                const [offsetX, offsetY, offsetZ] = position;
+                    // Destructure position into x, y, z coordinates
+                    const [offsetX, offsetY, offsetZ] = position;
 
-                // Get the block's current location
-                const { x, y, z } = block.location;
+                    // Get the block's current location
+                    const { x, y, z } = block.location;
 
-                // Calculate the particle spawn position
-                const particleX = x + offsetX;
-                const particleY = y + offsetY;
-                const particleZ = z + offsetZ;
+                    // Calculate the particle spawn position
+                    const particleX = x + offsetX;
+                    const particleY = y + offsetY;
+                    const particleZ = z + offsetZ;
 
-                // Create an empty MolangVariableMap
-                const molangVariables = new MolangVariableMap();
+                    // Create an empty MolangVariableMap
+                    const molangVariables = new MolangVariableMap();
 
-                const particles = params.particles
+                    const particles = params.particles
 
-                particles.forEach((particle, index) => {
-                    console.warn(particle);
-                    block.dimension.spawnParticle(particle, { x: particleX, y: particleY, z: particleZ }, molangVariables);
-                });
+                    particles.forEach((particle, index) => {
+                        console.warn(particle);
+                        block.dimension.spawnParticle(particle, { x: particleX, y: particleY, z: particleZ }, molangVariables);
+                    });
+                }
+                else {
+
+
+                    position.forEach((particle) => {
+                        const [offsetX, offsetY, offsetZ] = particle;
+
+                        // Get the block's current location
+                        const { x, y, z } = block.location;
+
+                        // Calculate the particle spawn position
+                        const particleX = x + offsetX;
+                        const particleY = y + offsetY;
+                        const particleZ = z + offsetZ;
+
+                        // Create an empty MolangVariableMap
+                        let molangVariables = new MolangVariableMap();
+                        molangVariables.setFloat("size", 0.8);
+
+                        const particleIDS = params.particles
+
+                        particleIDS.forEach((particleID) => {
+                            block.dimension.spawnParticle(particleID, { x: particleX, y: particleY, z: particleZ }, molangVariables);
+                        });
+                    });
+
+
+                };
             }
 
+        }
+    })
+    eventData.blockComponentRegistry.registerCustomComponent("spimton:hot_surface", {
+        onTick(event, { params }) {
+            const block = event.block;
+            const fireTime = params.fireTime
+            const fireDamage = params.fireDamage;
+            const entities = block.dimension.getEntities({
+                location: {
+                    x: block.location.x + 0.5,
+                    y: block.location.y + 1,
+                    z: block.location.z + 0.5
+                },
+                maxDistance: 0.5
+            });
+
+            for (const entity of entities) {
+                const pos = entity.location;
+
+                const entityBlockX = Math.floor(pos.x);
+                const entityBlockY = Math.floor(pos.y - 0.1);
+                const entityBlockZ = Math.floor(pos.z);
+
+                if (
+                    entityBlockX === block.location.x &&
+                    entityBlockY === block.location.y &&
+                    entityBlockZ === block.location.z
+                ) {
+                    entity.setOnFire(fireTime, true);
+                    entity.applyDamage(fireDamage, { cause: "fire" })
+                }
+            }
+        }
+    })
+    eventData.blockComponentRegistry.registerCustomComponent("spimton:chandelier", {
+        onTick(event, { params }) {
+            const { block } = event
+            const canFall = (block.above().isAir || block.above().isLiquid) && (block.below().isAir || block.below().isLiquid);
+            if (canFall) {
+                block.setType("air");
+                block.dimension.spawnEntity(params.entity, block.center())
+            }
         }
     });
 });

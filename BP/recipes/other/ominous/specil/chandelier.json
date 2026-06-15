@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:chandelier"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " z ",
+            "zyz",
+            "xxx"
+        ],
+        "key": {
+            "x": {
+                "item": "candle"
+            },
+            "y": {
+                "item": "spimton:cooler_gold_bars"
+            },
+            "z": {
+                "item": "spimton:thin_indented_gold_grate"
+            }
+        },
+        "assume_symmetry": true,
+        "result": {
+            "item": "spimton:chandelier",
+            "count": 1
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        }
+    }
+}

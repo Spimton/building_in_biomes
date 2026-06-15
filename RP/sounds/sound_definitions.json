@@ -213,6 +213,53 @@
 				"sounds/mob/soul_bolt/soul_bolt_hit_2",
 				"sounds/mob/soul_bolt/soul_bolt_hit_3"
 			]
+		},
+		"item.soul_harvester": {
+			"sounds": [
+				"sounds/item/souls/soul_harvester"
+			],
+			"max_distance": 10,
+			"category": "player"
+		},
+		"item.soul_healer": {
+			"sounds": [
+				"sounds/item/souls/soul_healer"
+			],
+			"max_distance": 10,
+			"category": "player"
+		},
+		"item.soul_materializer": {
+			"sounds": [
+				"sounds/item/souls/materializer_1",
+				"sounds/item/souls/materializer_2",
+				"sounds/item/souls/materializer_3"
+			],
+			"max_distance": 10,
+			"category": "player"
+		},
+		"item.shadow_shifter": {
+			"sounds": [
+				"sounds/item/souls/shadowshifter_1",
+				"sounds/item/souls/shadowshifter_2",
+				"sounds/item/souls/shadowshifter_3"
+			],
+			"max_distance": 10,
+			"category": "player"
+		},
+		"item.sspear_hit": {
+			"sounds": [
+				"sounds/item/sspear/sspear_hit"
+			],
+			"max_distance": 10,
+			"category": "neutral"
+		},
+		"item.sspear_miss": {
+			"sounds": [
+				"sounds/item/sspear/sspear_miss_1",
+				"sounds/item/sspear/sspear_miss_2"
+			],
+			"max_distance": 10,
+			"category": "neutral"
 		}
 	}
 }

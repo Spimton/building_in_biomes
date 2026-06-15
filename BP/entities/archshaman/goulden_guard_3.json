@@ -75,8 +75,24 @@
                 }
             },
             "spimton:far": {
+                "minecraft:behavior.fire_at_target": {
+                    "priority": 3,
+                    "target_anchor": 0,
+                    "projectile_def": "spimton:obliterator_laser",
+                    "attack_range": [
+                        0,
+                        64
+                    ],
+                    "target_offset": [
+                        0,
+                        1.225,
+                        0
+                    ],
+                    "attack_cooldown": 0.25,
+                    "ranged_fov": 360
+                },
                 "minecraft:behavior.jump_around_target": {
-                    "priority": 5,
+                    "priority": 1,
                     "filters": {
                         "all_of": [
                             {
@@ -115,8 +131,8 @@
                     ],
                     "landing_position_spread_degrees": 90,
                     "landing_distance_from_target": [
-                        1.0,
-                        2.0
+                        3.0,
+                        8.0
                     ],
                     "required_vertical_space": 4,
                     "snap_to_surface_block_range": 10,

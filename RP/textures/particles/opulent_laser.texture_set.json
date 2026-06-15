@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "opulent_laser",
+		"metalness_emissive_roughness": "opulent_laser_mer"
+	}
+}

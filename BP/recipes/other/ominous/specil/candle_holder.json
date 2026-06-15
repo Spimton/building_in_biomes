@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:candle_holder"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "xxx",
+            "zzz",
+            " z "
+        ],
+        "key": {
+            "x": {
+                "item": "candle"
+            },
+            "z": {
+                "item": "spimton:cooler_gold_bars"
+            }
+        },
+        "assume_symmetry": true,
+        "result": {
+            "item": "spimton:candle_holder",
+            "count": 1
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        }
+    }
+}

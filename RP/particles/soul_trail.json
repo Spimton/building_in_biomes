@@ -37,6 +37,14 @@
                 ],
                 "facing_camera_mode": "rotate_xyz",
                 "uv": {
+                    "uv": [
+                        0,
+                        0
+                    ],
+                    "uv_size": [
+                        4,
+                        4
+                    ],
                     "texture_width": 4,
                     "texture_height": 4
                 }

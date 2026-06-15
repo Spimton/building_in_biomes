@@ -1,35 +1,34 @@
 {
 	"format_version": "1.8.0",
 	"render_controllers": {
-		"controller.render.wraith": {
+		"controller.render.roywraith": {
 			"arrays": {
-				"materials": {
-					"Array.materials": [
-						"Material.default",
-						"Material.invisible"
+				"textures": {
+					"Array.textures": [
+						"Texture.default",
+						"Texture.lead"
 					]
 				}
 			},
-			"is_hurt_color": {
-				"r": "0",
-				"g": "0",
-				"b": "1",
-				"a": "0.35"
-			},
-			"on_fire_color": {
-				"r": "0",
-				"g": "0",
-				"b": "0",
-				"a": "0"
-			},
 			"geometry": "geometry.default",
+			"textures": [
+				"Array.textures[query.variant]"
+			]
+		},
+		"controller.render.satellite": {
+			"geometry": "Geometry.default",
+			"part_visibility": [
+				{
+					"arms": false
+				}
+			],
 			"materials": [
 				{
-					"*": "array.materials[query.is_invisible]"
+					"*": "Material.default"
 				}
 			],
 			"textures": [
-				"texture.default"
+				"Texture.default"
 			]
 		}
 	}

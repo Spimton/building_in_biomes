@@ -1716,6 +1716,15 @@
 		},
 		"cracked_ominous_stone_bricks": {
 			"textures": "textures/blocks/otherstone/ominous/cracked_ominous_stone_bricks"
+		},
+		"brazier": {
+			"textures": "textures/blocks/otherstone/ominous/brazier"
+		},
+		"candle_holder": {
+			"textures": "textures/blocks/otherstone/ominous/candle_holder"
+		},
+		"chandelier": {
+			"textures": "textures/blocks/otherstone/ominous/chandelier"
 		}
 	}
 }

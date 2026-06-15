@@ -53,7 +53,7 @@
                     "value": 1
                 },
                 "minecraft:target_nearby_sensor": {
-                    "inside_range": 5,
+                    "inside_range": 4,
                     "outside_range": 8,
                     "on_outside_range": {
                         "event": "spimton:defense_ready"
@@ -84,7 +84,7 @@
                         "target": "self"
                     },
                     "knockback_height_cap": 1.225,
-                    "knockback_horizontal_strength": 3,
+                    "knockback_horizontal_strength": 5,
                     "knockback_vertical_strength": 1
                 }
             },
@@ -146,6 +146,29 @@
                 "minecraft:movement": {
                     "value": 0
                 },
+                "minecraft:reflect_projectiles": {
+                    "azimuth_angle": "180.0",
+                    "reflection_scale": 0.6,
+                    "reflected_projectiles": [
+                        "arrow",
+                        "snowball",
+                        "fireball",
+                        "small_fireball",
+                        "splash_potion",
+                        "lingering_potion",
+                        "egg",
+                        "thrown_trident",
+                        "wither_skull",
+                        "wither_skull_dangerous",
+                        "spimton:thrown_limestone_spear",
+                        "spimton:hunter_red_limestone_spear",
+                        "spimton:thrown_agold_spear",
+                        "spimton:thrown_electrum_spear",
+                        "spimton:thrown_imperial_jade_spear",
+                        "spimton:thrown_red_limestone_spear",
+                        "spimton:thrown_obsidian_spear"
+                    ]
+                },
                 "minecraft:behavior.summon_entity": {
                     "priority": 1,
                     "summon_choices": [
@@ -162,7 +185,7 @@
                                     "summon_event": "spimton:rune_spawn",
                                     "shape": "circle",
                                     "target": "self",
-                                    "size": 3,
+                                    "size": 2,
                                     "entity_lifespan": 30,
                                     "num_entities_spawned": 4,
                                     "summon_cap": 12

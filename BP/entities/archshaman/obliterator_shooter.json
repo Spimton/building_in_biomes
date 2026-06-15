@@ -72,8 +72,9 @@
                 "attack_radius": 64,
                 "charge_shoot_trigger": 1,
                 "burst_shots": 3,
-                "burst_interval": 0.5,
-                "charge_charged_trigger": 1
+                "burst_interval": 0.7,
+                "charge_charged_trigger": 1,
+                "attack_interval": 1.997
             },
             "minecraft:follow_range": {
                 "value": 64,

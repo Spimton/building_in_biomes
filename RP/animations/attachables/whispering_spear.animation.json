@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.whispering_spear.player": {
+			"loop": true,
+			"bones": {
+				"weapon": {
+					"rotation": [
+						0,
+						0,
+						90
+					]
+				}
+			}
+		}
+	}
+}

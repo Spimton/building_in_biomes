@@ -13,13 +13,13 @@
         },
         "components": {
             "minecraft:collision_box": {
-                "width": 1,
-                "height": 1
+                "width": 1.225,
+                "height": 1.225
             },
             "minecraft:projectile": {
+                "multiple_targets": true,
                 "on_hit": {
                     "definition_event": {
-                        "splash_area": 2,
                         "affect_projectile": true,
                         "event_trigger": {
                             "target": "self",
@@ -30,13 +30,13 @@
                 "anchor": 1,
                 "power": 2,
                 "inertia": 1,
-                "gravity": 0.01225,
-                "uncertainty_base": 1.225,
+                "gravity": 0.001225,
+                "uncertainty_base": 0,
                 "angle_offset": 0,
                 "offset": [
                     0,
                     -0.5,
-                    -1
+                    0
                 ]
             },
             "minecraft:damage_sensor": {
@@ -59,7 +59,7 @@
             },
             "minecraft:timer": {
                 "looping": true,
-                "time": 0.01,
+                "time": 0,
                 "time_down_event": {
                     "target": "self",
                     "event": "spimton:phire"

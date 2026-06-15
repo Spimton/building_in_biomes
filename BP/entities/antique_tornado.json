@@ -59,19 +59,9 @@
             }
         },
         "components": {
-            "minecraft:behavior.owner_hurt_target": {
-                "entity_types": {
-                    "filters": {
-                        "test": "is_family",
-                        "value": "antique",
-                        "operator": "!=",
-                        "subject": "other"
-                    },
-                    "max_dist": 24
-                }
-            },
             "minecraft:type_family": {
                 "family": [
+                    "spimton:weeper",
                     "breeze",
                     "antique",
                     "monster",
@@ -236,12 +226,22 @@
                 "entity_types": [
                     {
                         "filters": {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "antique",
-                            "operator": "!="
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "spimton:weeper",
+                                    "operator": "!="
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "inanimate",
+                                    "operator": "!="
+                                }
+                            ]
                         },
-                        "max_dist": 24
+                        "max_dist": 32
                     }
                 ],
                 "must_see": true

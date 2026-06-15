@@ -1066,6 +1066,18 @@
 		"sound": "cloth",
 		"textures": "ominous_carpet_side_east"
 	},
+	"spimton:brazier": {
+		"sound": "chain",
+		"textures": "brazier"
+	},
+	"spimton:candle_holder": {
+		"sound": "chain",
+		"textures": "candle_holder"
+	},
+	"spimton:chandelier": {
+		"sound": "chain",
+		"textures": "chandelier"
+	},
 	"spimton:mossy_cobblestone_tiles": {
 		"textures": "mossy_cobblestone_tiles",
 		"sound": "stone"

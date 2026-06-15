@@ -1,4 +1,4 @@
-import { world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, InputInfo, EntityHealthComponent, EntityComponentTypes, EntityDamageCause } from '@minecraft/server'
+import { world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, BlockPermutation, InputInfo, EntityHealthComponent, EntityComponentTypes, EntityDamageCause } from '@minecraft/server'
 import { updateItemDurability } from "../folder2/updateDurability.js";
 
 
@@ -1166,9 +1166,21 @@ system.beforeEvents.startup.subscribe(comp => {
                 itemStack.setDynamicProperty("spimton:fatigue", 0)
                 fatigue = 0
             }
-            attackingEntity.addEffect("slowness", 300, { showParticles: false, amplifier: fatigue })
-            attackingEntity.addEffect("mining_fatigue", 300, { showParticles: false, amplifier: fatigue })
-            itemStack.setDynamicProperty("spimton:fatigue", fatigue + 1)
+            const cooldown = attackingEntity.getItemCooldown("guretozawordo");
+            if (cooldown == 0) {
+                attackingEntity.addEffect("slowness", 300, { showParticles: false, amplifier: fatigue })
+                attackingEntity.addEffect("mining_fatigue", 300, { showParticles: false, amplifier: fatigue });
+                fatigue++;
+                attackingEntity.startItemCooldown("guretozawordo", 13);
+            }
+            else {
+                attackingEntity.addEffect("weakness", (cooldown * 20) - 3, { showParticles: false, amplifier: fatigue })
+            };
+            if (fatigue >= 10) {
+                attackingEntity.runCommand("title @s actionbar You feel overwhelmed by the sword's weight...")
+                attackingEntity.applyDamage(fatigue / 1.997, { cause: EntityDamageCause.none })
+            };
+            itemStack.setDynamicProperty("spimton:fatigue", fatigue)
             itemStack.setLore([
                 `§r§7Fatigue: ${fatigue}`
             ])
@@ -1180,6 +1192,7 @@ system.beforeEvents.startup.subscribe(comp => {
         }
     })
 })
+
 system.beforeEvents.startup.subscribe(comp => {
     comp.itemComponentRegistry.registerCustomComponent("spimton:baleful_steel_greatsword", {
         onHitEntity: arg => {
@@ -1189,13 +1202,25 @@ system.beforeEvents.startup.subscribe(comp => {
                 itemStack.setDynamicProperty("spimton:radiation", 0)
                 radiation = 0
             }
-            attackingEntity.addEffect("poison", 300, { showParticles: false, amplifier: radiation })
-            attackingEntity.setOnFire(radiation * 5 + 5, false)
-            for (let c = 0; c < radiation + 1; c++) {
-                attackingEntity.runCommand("scoreboard players add @s asbestos 1");
+            const cooldown = attackingEntity.getItemCooldown("guretozawordo");
+            if (cooldown == 0) {
+                attackingEntity.addEffect("poison", 300, { showParticles: false, amplifier: radiation })
+                attackingEntity.setOnFire(radiation * 5 + 5, false)
+                for (let c = 0; c < radiation + 1; c++) {
+                    attackingEntity.runCommand("scoreboard players add @s asbestos 1");
 
+                }
+                radiation++;
+                attackingEntity.startItemCooldown("guretozawordo", 13);
             }
-            itemStack.setDynamicProperty("spimton:radiation", radiation + 1)
+            else {
+                attackingEntity.addEffect("weakness", (cooldown * 20) - 3, { showParticles: false, amplifier: fatigue })
+            };
+            if (radiation >= 10) {
+                attackingEntity.runCommand("title @s actionbar You feel overwhelmed by the sword's radiation...")
+                attackingEntity.applyDamage(radiation / 1.997, { cause: EntityDamageCause.none })
+            };
+            itemStack.setDynamicProperty("spimton:radiation", radiation)
             itemStack.setLore([
                 `§r§7Radiation: ${radiation}`
             ])
@@ -1216,35 +1241,456 @@ world.afterEvents.entityDie.subscribe(event => {
         const player = damageSource.damagingEntity;
         const equ = player.getComponent("equippable")
         const eqqq = equ.getEquipment(EquipmentSlot.Mainhand)
-        if (eqqq.typeId === "spimton:heavy_metal_greatsword") {
-            const slotm = player.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand)
-            let fatigueded = slotm.getDynamicProperty("spimton:fatigue")
-            player.addEffect("strength", 5 * deadEntity.getComponent("health").effectiveMax, { showParticles: false, amplifier: fatigueded })
-            fatigueded = 0
-            slotm.setDynamicProperty("spimton:fatigue", fatigueded)
-            slotm.setLore([
-                `§r§7Fatigue: ${fatigueded}`
-            ])
-            player.dimension.spawnParticle("minecraft:trial_spawner_detection_ominous", player.getHeadLocation())
-            player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, slotm)
+        const OF = equ.getEquipment(EquipmentSlot.Offhand)
+        if (eqqq) {
+            if (eqqq.typeId === "spimton:heavy_metal_greatsword") {
+                const slotm = player.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand)
+                let fatigueded = slotm.getDynamicProperty("spimton:fatigue")
 
-        }
-        if (eqqq.typeId === "spimton:baleful_steel_greatsword") {
-            const slotm = player.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand)
-            let radiationfox = slotm.getDynamicProperty("spimton:radiation")
-            player.runCommand(`scoreboard players remove @s asbestos ${deadEntity.getComponent("health").effectiveMax * 2}`)
-            player.addTag("greto")
-            player.runCommand(`damage @e[r=12.25,tag=!greto] ${Math.round(radiationfox * deadEntity.getComponent("health").effectiveMax / 20)} void`)
-            player.runCommand(`effect @e[r=12.25,tag=!greto] wither ${Math.round(deadEntity.getComponent("health").effectiveMax)} ${radiationfox}`)
-            player.removeTag("greto")
-            radiationfox = 0
-            slotm.setDynamicProperty("spimton:radiation", radiationfox)
-            slotm.setLore([
-                `§r§7Radiation: ${radiationfox}`
-            ])
-            player.dimension.spawnParticle("spimton:baleful_radiation", deadEntity.location)
-            player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, slotm)
+                player.dimension.spawnParticle("minecraft:trial_spawner_detection_ominous", player.getHeadLocation())
+                player.addEffect("strength", 5 * deadEntity.getComponent("health").effectiveMax, { showParticles: false, amplifier: fatigueded - 1 })
+                fatigueded = 0
+
+                slotm.setDynamicProperty("spimton:fatigue", fatigueded)
+                slotm.setLore([
+                    `§r§7Fatigue: ${fatigueded}`
+                ])
+
+                player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, slotm)
+
+            }
+            if (eqqq.typeId === "spimton:baleful_steel_greatsword") {
+                const slotm = player.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand)
+                let radiationfox = slotm.getDynamicProperty("spimton:radiation")
+                player.runCommand(`scoreboard players remove @s asbestos ${deadEntity.getComponent("health").effectiveMax * 2}`)
+                player.addTag("greto")
+                player.runCommand(`damage @e[r=12.25,tag=!greto] ${Math.round(radiationfox * deadEntity.getComponent("health").effectiveMax / 20)} ${EntityDamageCause.wither}`)
+                player.runCommand(`effect @e[r=12.25,tag=!greto] wither ${Math.round(deadEntity.getComponent("health").effectiveMax)} ${radiationfox}`)
+                player.removeTag("greto")
+                radiationfox = 0
+                slotm.setDynamicProperty("spimton:radiation", radiationfox)
+                slotm.setLore([
+                    `§r§7Radiation: ${radiationfox}`
+                ])
+                player.dimension.spawnParticle("spimton:baleful_radiation", deadEntity.location)
+                player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, slotm)
+
+            }
+            if (eqqq.typeId === "spimton:whispering_spear" && whispering_spear_targets.includes(deadEntity.typeId)) {
+                console.warn("become grrr")
+                let killcount = eqqq.getDynamicProperty("spimton:whispering_spear_killcount");
+                const itemLore = eqqq.getLore()
+                if (!killcount) {
+                    killcount = 0
+                };
+                console.warn("Killcount:", String(killcount));
+                if (killcount < 12) {
+                    killcount++;
+                    if (killcount > 6 && killcount < 12) {
+                        player.runCommand(`title @s actionbar §4§o${12 - killcount} left`)
+                    }
+                    else if (killcount >= 12) {
+                        eqqq.setLore([
+                            "",
+                            whispering_spear_powerup
+                        ])
+                        player.dimension.spawnParticle("spimton:soul_blast", player.getHeadLocation());
+                    };
+                    eqqq.setDynamicProperty("spimton:whispering_spear_killcount", killcount);
+                    player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, eqqq);
+
+                }
+                else if (Math.random() >= 0.67) {
+                    player.runCommand("title @s actionbar §4Become stronger...")
+                }
+            }
+            if (eqqq.typeId === "spimton:luck_spear") {
+                console.warn("become grrr")
+                let killcount = eqqq.getDynamicProperty("spimton:whispering_spear_killcount");
+                if (!killcount) {
+                    killcount = 0
+                };
+                console.warn("Killcount:", String(killcount));
+                if (killcount < 8 && deadEntity.getComponent("type_family").hasTypeFamily("undead") && player.getComponent("health").currentValue / player.getComponent("health").effectiveMax < 0.1997) {
+                    killcount++;
+                    if (killcount >= 8) {
+                        eqqq.setLore([
+                            "",
+                            luck_spear_powerup.base,
+                            luck_spear_powerup.desc,
+                            luck_spear_powerup.desc2
+
+                        ])
+                        player.dimension.playSound("sfx.pluck_spear", player.getHeadLocation())
+                    };
+                    eqqq.setDynamicProperty("spimton:whispering_spear_killcount", killcount);
+                    player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, eqqq);
+
+                };
+                if (Math.random() < deadEntity.getComponent("health").effectiveMax / 40 && killcount < 8) player.runCommand(`loot spawn ${deadEntity.location.x} ${deadEntity.location.y} ${deadEntity.location.z} loot "luck_spear"`)
+            };
+        };
+        if (OF) {
+            const SoulItem = OF.getComponent("spimton:soul_artifact")
+            if (!SoulItem) return;
+            let souls = OF.getDynamicProperty("spimton:souls")
+            if (!souls) {
+                souls = 0
+            };
+            const health = deadEntity.getComponent("health").effectiveMax
+            souls += Math.ceil(health / 10);
+            if (souls > 50) {
+                souls = 50
+            }
+            OF.setDynamicProperty("spimton:souls", souls)
+            OF.setLore(
+                [
+                    "",
+                    `§r§7Souls: ${souls}/50`
+                ]
+            );
+            player.getComponent("equippable").setEquipment(EquipmentSlot.Offhand, OF)
 
         }
     }
 });
+
+const whispering_spear_powerup = "§r§b[Awakened]"
+
+const luck_spear_base = {
+    base: "§r§g[Luck]§7:",
+    desc: "§r§7Killing entities has a chance",
+    desc2: "§r§7to drop loot."
+}
+
+const luck_spear_powerup = {
+    base: "§r§4[Pluck]§7:",
+    desc: "§r§7Having less than 20% of your health",
+    desc2: "§r§7inflicts more damage."
+}
+
+const whispering_spear_targets = [
+    "spimton:chillager",
+    "spimton:chillager_assailant",
+    "spimton:chillager_summoner",
+    "spimton:coldager",
+    "spimton:coldager_assailant",
+    "spimton:coldager_summoner",
+    "spimton:chillager_chieftain"
+]
+
+
+system.beforeEvents.startup.subscribe(dataaa => {
+
+    dataaa.itemComponentRegistry.registerCustomComponent("spimton:whispering_spear", {
+        onHitEntity: arg => {
+            const { hitEntity, attackingEntity } = arg
+            const item = attackingEntity.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand);
+            if (item.getDynamicProperty("spimton:whispering_spear_killcount") == 12) {
+                const health = hitEntity.getComponent("health")
+                if (health.currentValue / health.effectiveMax < 0.1225) {
+                    attackingEntity.runCommand("title @s actionbar §4Proceed")
+                    hitEntity.applyDamage(19.97, { cause: "freezing", damagingEntity: attackingEntity })
+
+                }
+                else {
+                    hitEntity.applyDamage(6, { cause: "freezing", damagingEntity: attackingEntity })
+                }
+            }
+
+        }
+    });
+    dataaa.itemComponentRegistry.registerCustomComponent("spimton:luck_spear", {
+        onHitEntity: arg => {
+            const { hitEntity, attackingEntity } = arg
+            const item = arg.itemStack;
+            const lore = item.getLore();
+            if (lore.length == 0) {
+                item.setLore([
+                    "",
+                    luck_spear_base.base,
+                    luck_spear_base.desc,
+                    luck_spear_base.desc2
+                ])
+            }
+            if (item.getDynamicProperty("spimton:whispering_spear_killcount") == 8) {
+                const health = attackingEntity.getComponent("health")
+                if (health.currentValue / health.effectiveMax < 0.1997) {
+                    hitEntity.applyDamage(21, { cause: EntityDamageCause.entityAttack, damagingEntity: attackingEntity })
+
+                }
+            }
+            attackingEntity.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, item)
+        }
+    });
+    dataaa.itemComponentRegistry.registerCustomComponent("spimton:soul_artifact", {
+        onUse(event) {
+            const { itemStack, source } = event
+            let souls = itemStack.getDynamicProperty("spimton:souls")
+            if (!souls) {
+                souls = 0
+                itemStack.setDynamicProperty("spimton:souls", souls);
+            };
+            const AllyTag = source.name + "_ally";
+            switch (itemStack.typeId) {
+                case "spimton:harvester":
+
+                    if (source?.isSneaking && souls > 0) {
+                        source.addTag("spimton:harvest")
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:harvest", AllyTag], maxDistance: Math.ceil(souls * 0.3) + 3, minDistance: 0, excludeTypes: ["item"] });
+                        for (const Enity of Entities) {
+                            const DV = getVectorToEntity(source, Enity)
+                            Enity.applyKnockback({ x: DV.x * souls / 20, z: DV.z * souls / 20 }, souls / 20)
+                            Enity.applyDamage(souls / 1.225, { damagingEntity: source, cause: EntityDamageCause.magic })
+                        };
+                        source.removeTag("spimton:harvest")
+                        console.warn("end harvest")
+                        source.dimension.spawnParticle("spimton:soul_blast", source.getHeadLocation())
+                        source.dimension.playSound("item.soul_harvester", source.getHeadLocation());
+                        souls = 0;
+                        itemStack.setDynamicProperty("spimton:souls", souls)
+                    }
+                    else if (souls >= 10) {
+                        source.addTag("spimton:harvest")
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:harvest", AllyTag], maxDistance: 6, minDistance: 0, excludeTypes: ["item"] });
+                        for (const Enity of Entities) {
+                            const DV = getVectorToEntity(source, Enity)
+                            Enity.applyKnockback({ x: DV.x * 10 / 20, z: DV.z * 10 / 20 }, 10 / 20)
+                            Enity.applyDamage(10 / 1.225, { damagingEntity: source, cause: EntityDamageCause.magic })
+                        };
+                        source.removeTag("spimton:harvest")
+                        console.warn("end harvest")
+                        source.dimension.spawnParticle("spimton:soul_blast", source.getHeadLocation())
+                        source.dimension.playSound("item.soul_harvester", source.getHeadLocation());
+                        souls += -10;
+                        itemStack.setDynamicProperty("spimton:souls", souls)
+
+
+                    }
+                    else {
+                        source.runCommand("title @s actionbar §bNot Enough Souls!")
+                    };;
+                    break;
+                case "spimton:materializer":
+                    if (source?.isSneaking && souls > 0) {
+                        const BRIDGE_LENGTH = Math.ceil(souls * 2);
+                        const BRIDGE_BLOCK = "spimton:ecto_block_plat";
+                        const location = source.location;
+                        const dir = source.getViewDirection();
+
+                        // Normalize horizontal direction
+                        const horizontalLength = Math.sqrt(dir.x * dir.x + dir.z * dir.z);
+
+                        if (horizontalLength < 0.01) return;
+
+                        const dx = dir.x / horizontalLength;
+                        const dz = dir.z / horizontalLength;
+
+                        // Place blocks forward from the player
+                        for (let i = 1; i <= BRIDGE_LENGTH; i++) {
+                            const x = Math.floor(location.x + dx * i);
+                            const y = Math.floor(location.y - 1); // beneath player
+                            const z = Math.floor(location.z + dz * i);
+
+                            const block = source.dimension.getBlock({ x, y, z });
+
+                            if (block && (block.isAir || block.isLiquid)) {
+                                block.setPermutation(
+                                    BlockPermutation.resolve(BRIDGE_BLOCK, {
+                                        "spimton:mater": true
+                                    })
+                                );
+                                source.dimension.playSound("item.soul_materializer", source.getHeadLocation(), { volume: 0.55 })
+                            }
+                        };
+                        souls = 0
+                        itemStack.setDynamicProperty("spimton:souls", souls)
+                    }
+                    else if (souls >= 10) {
+                        const BRIDGE_LENGTH = Math.ceil(20);
+                        const BRIDGE_BLOCK = "spimton:ecto_block_plat";
+                        const location = source.location;
+                        const dir = source.getViewDirection();
+
+                        // Normalize horizontal direction
+                        const horizontalLength = Math.sqrt(dir.x * dir.x + dir.z * dir.z);
+
+                        if (horizontalLength < 0.01) return;
+
+                        const dx = dir.x / horizontalLength;
+                        const dz = dir.z / horizontalLength;
+
+                        // Place blocks forward from the player
+                        for (let i = 1; i <= BRIDGE_LENGTH; i++) {
+                            const x = Math.floor(location.x + dx * i);
+                            const y = Math.floor(location.y - 1); // beneath player
+                            const z = Math.floor(location.z + dz * i);
+
+                            const block = source.dimension.getBlock({ x, y, z });
+
+                            if (block && (block.isAir || block.isLiquid)) {
+                                block.setPermutation(
+                                    BlockPermutation.resolve(BRIDGE_BLOCK, {
+                                        "spimton:mater": true
+                                    })
+                                );
+                                source.dimension.playSound("item.soul_materializer", source.getHeadLocation(), { volume: 0.55 })
+                            }
+                        };
+                        souls += -10;
+                        itemStack.setDynamicProperty("spimton:souls", souls)
+
+
+                    }
+                    else {
+                        source.runCommand("title @s actionbar §bNot Enough Souls!")
+                    };
+                    break;
+                case "spimton:soul_healer":
+                    if (source?.isSneaking && souls > 0) {
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), maxDistance: Math.floor(souls * 0.6), minDistance: 0, tags: [AllyTag], closest: Math.floor(souls / 3) });
+                        for (const entity of Entities) {
+                            const health = entity.getComponent("health")
+                            const max = health.effectiveMax
+                            let healthtoset = health.currentValue + Math.floor(souls / 1.997 + 1);
+                            if (healthtoset > max) {
+                                healthtoset = max
+                            };
+                            health.setCurrentValue(healthtoset)
+                            entity.dimension.spawnParticle("minecraft:spawn_particle", entity.getHeadLocation())
+
+                        };
+                        const healthS = source.getComponent("health")
+                        const maxS = healthS.effectiveMax
+                        let healthtosetS = healthS.currentValue + Math.floor(souls / 1.225);
+                        if (healthtosetS > maxS) {
+                            healthtosetS = maxS
+                        };
+                        healthS.setCurrentValue(healthtosetS)
+                        source.dimension.playSound("item.soul_healer", source.getHeadLocation())
+                        souls = 0
+                        itemStack.setDynamicProperty("spimton:souls", souls)
+                    }
+                    else if (souls >= 10) {
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), maxDistance: 6, minDistance: 0, tags: [AllyTag], closest: 3 });
+                        for (const entity of Entities) {
+                            const health = entity.getComponent("health")
+                            const max = health.effectiveMax
+                            let healthtoset = health.currentValue + Math.floor(10 / 1.997 + 1);
+                            if (healthtoset > max) {
+                                healthtoset = max
+                            };
+                            health.setCurrentValue(healthtoset)
+                            entity.dimension.spawnParticle("minecraft:spawn_particle", entity.getHeadLocation())
+
+                        };
+                        const healthS = source.getComponent("health")
+                        const maxS = healthS.effectiveMax
+                        let healthtosetS = healthS.currentValue + Math.floor(10 / 1.225);
+                        if (healthtosetS > maxS) {
+                            healthtosetS = maxS
+                        };
+                        healthS.setCurrentValue(healthtosetS)
+                        source.dimension.playSound("item.soul_healer", source.getHeadLocation())
+                        souls += -10;
+                        itemStack.setDynamicProperty("spimton:souls", souls)
+
+
+                    }
+                    else {
+                        source.runCommand("title @s actionbar §bNot Enough Souls!")
+                    };
+                    break;
+                case "spimton:shadow_shifter":
+                    if (source?.isSneaking && souls > 0) {
+                        const TargetEntity = source.getEntitiesFromViewDirection({ maxDistance: souls, ignoreBlockCollision: true, excludeFamilies: ["inanimate"], excludeTypes: ["item"] })
+                        if (TargetEntity.length > 0) {
+                            const playerPos = source.location
+                            const targetPos = TargetEntity[0].entity.location;
+                            source.addEffect("invisibility", souls * 30 / TargetEntity[0].distance, { showParticles: false })
+                            source.addEffect("slow_falling", souls * 30 / TargetEntity[0].distance, { showParticles: false });
+                            TargetEntity[0].entity.teleport(playerPos, { facingLocation: TargetEntity[0].entity.getViewDirection() })
+                            source.teleport(targetPos, { checkForBlocks: false, facingLocation: source.getViewDirection() });
+                            source.dimension.playSound("item.shadow_shifter", source.getHeadLocation())
+                            souls = 0
+                            itemStack.setDynamicProperty("spimton:souls", souls)
+
+                        }
+                        else {
+                            source.runCommand("title @s actionbar §bNo valid targets!")
+                        }
+                    }
+                    else if (souls >= 10) {
+                        const TargetEntity = source.getEntitiesFromViewDirection({ maxDistance: 10, ignoreBlockCollision: true, excludeFamilies: ["inanimate"], excludeTypes: ["item"] })
+                        if (TargetEntity.length > 0) {
+                            const playerPos = source.location
+                            const targetPos = TargetEntity[0].entity.location;
+                            source.addEffect("invisibility", 10 * 30 / TargetEntity[0].distance, { showParticles: false })
+                            source.addEffect("slow_falling", 10 * 30 / TargetEntity[0].distance, { showParticles: false });
+                            TargetEntity[0].entity.teleport(playerPos, { facingLocation: TargetEntity[0].entity.getViewDirection() })
+                            source.teleport(targetPos, { checkForBlocks: false, facingLocation: source.getViewDirection() });
+                            source.dimension.playSound("item.shadow_shifter", source.getHeadLocation())
+                            souls += -10;
+                            itemStack.setDynamicProperty("spimton:souls", souls)
+
+                        }
+                        else {
+                            source.runCommand("title @s actionbar §bNo valid targets!")
+                        }
+
+
+                    }
+                    else {
+                        source.runCommand("title @s actionbar §bNot Enough Souls!")
+                    };
+                    break;
+
+            };
+            itemStack.setLore([
+                "",
+                `§r§7Souls: ${souls}/50`
+            ]);
+            source.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, itemStack);
+        },
+        onHitEntity(event) {
+            const { hitEntity, attackingEntity } = event;
+            console.warn("HIT")
+            if (attackingEntity.typeId === "minecraft:player") {
+                console.warn("player")
+                const AllyTag = attackingEntity.name + "_ally";
+                console.warn("tag");
+                if (!attackingEntity?.isSneaking) {
+                    hitEntity.addTag(AllyTag)
+                    console.warn("add")
+                    attackingEntity.runCommand(`title @s actionbar §bAdded ${nameTag(hitEntity)} to Ally List`)
+                }
+                else {
+                    hitEntity.removeTag(AllyTag);
+                    console.warn("remove")
+                    attackingEntity.runCommand(`title @s actionbar §bRemoved ${nameTag(hitEntity)} from Ally List`)
+                }
+            }
+
+        }
+
+    });
+})
+
+function nameTag(entity) {
+    let nameTag = entity.nameTag;
+    if (nameTag === "") {
+        nameTag = entity.typeId
+    }
+    return nameTag;
+}
+
+
+function getVectorToEntity(origin, target) {
+    const o = origin.location;
+    const t = target.location;
+    return {
+        x: t.x - o.x,
+        y: t.y - o.y,
+        z: t.z - o.z,
+    };
+}

@@ -24,6 +24,9 @@
 					"controller_attack"
 				]
 			},
+			"particle_effects": {
+				"grand_flame": "spimton:grand_flame"
+			},
 			"animations": {
 				"look_at_target": "animation.common.look_at_target",
 				"move": "animation.skirmisher.walk",

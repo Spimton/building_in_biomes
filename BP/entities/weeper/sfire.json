@@ -18,6 +18,16 @@
 					}
 				}
 			},
+			"spimton:royal_fire": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 0.1225,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:rfire"
+					}
+				}
+			},
 			"spimton:fire_geyser": {
 				"minecraft:timer": {
 					"looping": true,
@@ -64,12 +74,28 @@
 					]
 				}
 			},
+			"spimton:royal_fire": {
+				"add": {
+					"component_groups": [
+						"spimton:royal_fire"
+					]
+				}
+			},
 			"spimton:sfiree": {
 				"queue_command": {
 					"target": "self",
 					"command": [
 						"particle spimton:fire_bouquet ~ ~ ~",
 						"damage @e[y=~-1,x=~-2.5,z=~-2.5,dx=5,dy=3, dz=5,family=!spimton:weeper,type=!item] 3 fire"
+					]
+				}
+			},
+			"spimton:rfire": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"particle spimton:fire_bouquet ~ ~ ~",
+						"damage @e[y=~-1,x=~-3,z=~-3,dx=6,dy=3, dz=6,family=!spimton:weeper,type=!item] 4 fire"
 					]
 				}
 			},

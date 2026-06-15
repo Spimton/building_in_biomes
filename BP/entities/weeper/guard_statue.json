@@ -9,13 +9,21 @@
         },
         "component_groups": {
             "spimton:death": {
+                "minecraft:timer": {
+                    "time": 0.1225,
+                    "time_down_event": {
+                        "event": "spimton:desp"
+                    }
+                }
+            },
+            "spimton:despawn": {
                 "minecraft:instant_despawn": {}
             }
         },
         "components": {
             "minecraft:health": {
-                "value": 10,
-                "max": 10,
+                "value": 5,
+                "max": 5,
                 "min": 1
             },
             "minecraft:type_family": {
@@ -57,11 +65,19 @@
             "minecraft:damage_sensor": {
                 "triggers": {
                     "cause": "all",
-                    "deals_damage": "yes"
+                    "deals_damage": "yes",
+                    "damage_multiplier": 0.0001225
                 }
             }
         },
         "events": {
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            },
             "spimton:die": {
                 "sequence": [
                     {

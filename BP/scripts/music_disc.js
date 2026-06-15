@@ -27,6 +27,10 @@ const RodentRecord = [
     'spimton:record_ratt'
 ]
 
+const WiltedRecord = [
+    'spimton:record_wilted'
+]
+
 
 world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
     const { player, itemStack, block } = evd;
@@ -52,6 +56,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -73,6 +78,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -94,6 +100,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -115,6 +122,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -136,6 +144,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -157,6 +166,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -178,6 +188,29 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                     player.runCommand(`stopsound @a music.juandice_boss`)
                     player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.wshaman_boss`)
+                    player.runCommand(`stopsound @a music.horseman_boss`);
+                })
+            }
+            return;
+        }
+        if (WiltedRecord.includes(itemStack.typeId)) {
+
+            if (!record?.isPlaying()) {
+                system.run(function () {
+                    block.dimension.playSound("music.wshaman_boss", block.location)
+                    player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:wilted_boss.name"}]}')
+                })
+            }
+            else {
+                system.run(function () {
+                    player.runCommand(`stopsound @a moogcity`);
+                    player.runCommand(`stopsound @a music.ptn`);
+                    player.runCommand(`stopsound @a music.weeper_boss`)
+                    player.runCommand(`stopsound @a music.juandice_boss`)
+                    player.runCommand(`stopsound @a music.ratt_boss`)
+                    player.runCommand(`stopsound @a music.overgrown_boss`)
+                    player.runCommand(`stopsound @a music.ratt_boss`)
                     player.runCommand(`stopsound @a music.horseman_boss`);
                 })
             }
@@ -192,6 +225,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
         player.runCommand("stopsound @a music.ptn")
         player.runCommand(`stopsound @a music.horseman_boss`)
         player.runCommand(`stopsound @a music.ratt_boss`)
+        player.runCommand(`stopsound @a music.wshaman_boss`)
         player.runCommand(`stopsound @a music.overgrown_boss`);
     })
 })
@@ -207,5 +241,6 @@ world.afterEvents.playerBreakBlock.subscribe(evd => {
     player.runCommand(`stopsound @a music.juandice_boss`)
     player.runCommand(`stopsound @a music.ratt_boss`)
     player.runCommand(`stopsound @a music.overgrown_boss`)
-    player.runCommand(`stopsound @a music.horseman_boss`);
+    player.runCommand(`stopsound @a music.horseman_boss`)
+    player.runCommand(`stopsound @a music.wshaman_boss`);
 })

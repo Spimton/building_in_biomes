@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "spimton:overgrown_dungeon_torch",
+            "render_controllers": [
+                "controller.render.item_default"
+            ],
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/blocks/agold/overgrown_dungeon_torch",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.dungeon_torch_attachable"
+            },
+            "animations": {
+                "first_person_hold": "animation.dungeon_torch_attachable.first_person",
+                "third_person_hold": "animation.dungeon_torch_attachable.third_person"
+            },
+            "particle_effects": {
+                "grand_flame": "spimton:grand_flame"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "first_person_hold": "c.is_first_person"
+                    },
+                    {
+                        "third_person_hold": "!c.is_first_person"
+                    }
+                ]
+            }
+        }
+    }
+}

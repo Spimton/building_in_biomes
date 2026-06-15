@@ -23,6 +23,10 @@
 				"slot": "shield",
 				"value": 10
 			},
+			"minecraft:cooldown": {
+				"category": "guretozawordo",
+				"duration": 0.5
+			},
 			"minecraft:rarity": "epic",
 			"minecraft:should_despawn": false,
 			"minecraft:damage": 10,

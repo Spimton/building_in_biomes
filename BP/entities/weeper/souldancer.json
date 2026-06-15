@@ -175,7 +175,7 @@
 			},
 			"minecraft:nameable": {},
 			"minecraft:loot": {
-				"table": "loot_tables/entities/wraith.json"
+				"table": "loot_tables/entities/souldancer.json"
 			},
 			"minecraft:health": {
 				"value": 24,

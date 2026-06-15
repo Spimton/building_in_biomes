@@ -1,0 +1,19 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:ominous_dungeon_torch",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:block_placer": {
+                "use_on": [],
+                "block": "spimton:ominous_dungeon_torch",
+                "replace_block_item": true
+            },
+            "spimton:agospear": {}
+        }
+    }
+}

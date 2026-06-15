@@ -1,0 +1,27 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "max": 4,
+                "min": 1
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/luck_spear/luck_spear_food.json",
+                    "weight": 5
+                },
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/luck_spear/luck_spear_utilities.json",
+                    "weight": 2
+                },
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/luck_spear/luck_spear_potions.json",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}
