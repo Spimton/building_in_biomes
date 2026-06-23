@@ -1,0 +1,24 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:pipe",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 10
+            },
+            "minecraft:cooldown": {
+                "category": "pipe",
+                "duration": 30
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 6
+            }
+        }
+    }
+}

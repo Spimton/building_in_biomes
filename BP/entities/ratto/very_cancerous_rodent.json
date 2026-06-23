@@ -126,7 +126,8 @@
                 "family": [
                     "monster",
                     "mob",
-                    "ratto"
+                    "ratto",
+                    "spimton:black_knife_immune"
                 ]
             },
             "minecraft:experience_reward": {

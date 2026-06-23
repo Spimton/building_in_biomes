@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:bluestone_crystal",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bluestone_crystal"
+			},
+			"geometry": {
+				"default": "geometry.bluestone_crystal"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					{
+						"erect": "query.mark_variant == 0"
+					}
+				]
+			},
+			"animations": {
+				"erect": "animation.bluestone_crystal.erect",
+				"attack_rotations": "animation.hunter.attack.rotations",
+				"look_at_target": "animation.common.look_at_target",
+				"controller_general": "controller.animation.evoker.general"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"enable_attachables": true
+		}
+	}
+}

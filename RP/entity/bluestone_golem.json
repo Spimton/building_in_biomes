@@ -1,0 +1,43 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:bluestone_golem",
+            "materials": {
+                "default": "entity"
+            },
+            "textures": {
+                "default": "textures/entity/bluestone_golem"
+            },
+            "geometry": {
+                "default": "geometry.bluestone_golem"
+            },
+            "scripts": {
+                "animate": [
+                    "controller_general",
+                    "attack",
+                    "look_at_target",
+                    {
+                        "casting": "query.is_casting"
+                    }
+                ],
+                "scale": 1
+            },
+            "animations": {
+                "controller_general": "controller.animation.bluestone_golem.general",
+                "attack": "controller.animation.bluestone_golem.attack",
+                "general": "animation.bluestone_golem.idle",
+                "attacking": "animation.bluestone_golem.attack",
+                "walking": "animation.bluestone_golem.walk",
+                "look_at_target": "animation.common.look_at_target",
+                "casting": "animation.bluestone_golem.summon"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ],
+            "spawn_egg": {
+                "texture": "bluestone_golem_egg"
+            }
+        }
+    }
+}

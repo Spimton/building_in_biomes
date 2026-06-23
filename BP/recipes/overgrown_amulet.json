@@ -16,9 +16,9 @@
 			}
 		},
 		"pattern": [
-			" # ",
+			"###",
 			"#@#",
-			" # "
+			"###"
 		],
 		"result": {
 			"item": "spimton:overgrown_amulet"

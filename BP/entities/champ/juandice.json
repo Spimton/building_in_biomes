@@ -30,7 +30,7 @@
 			},
 			"minecraft:type_family": {
 				"family": [
-					"juandice"
+					"spimton:juandice"
 				]
 			},
 			"minecraft:damage_sensor": {

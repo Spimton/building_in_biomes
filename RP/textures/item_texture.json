@@ -1037,6 +1037,18 @@
 		},
 		"luck_spear": {
 			"textures": "textures/items/tools/luck_spear_item"
+		},
+		"ggardener_spawn_egg": {
+			"textures": "textures/items/spawnegg/ggardener_spawn_egg"
+		},
+		"bluestone_golem_egg": {
+			"textures": "textures/items/spawnegg/bluestone_golem_egg"
+		},
+		"yellow_jester_egg": {
+			"textures": "textures/items/spawnegg/yellow_jester_spawn_egg"
+		},
+		"purple_piper_spawn_egg": {
+			"textures": "textures/items/spawnegg/purple_piper_egg"
 		}
 	}
 }

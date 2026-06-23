@@ -54,6 +54,14 @@
 					"event": "spimton:kll"
 				}
 			},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"test": "is_underwater"
+					},
+					"event": "desp"
+				}
+			},
 			"minecraft:collision_box": {
 				"height": 0,
 				"width": 0

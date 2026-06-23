@@ -9,13 +9,40 @@
 			"runtime_identifier": "phantom"
 		},
 		"component_groups": {
-			"spimton:over_hh": {
+			"spimton:default": {
 				"minecraft:attack": {
 					"damage": 1
 				},
 				"minecraft:behavior.melee_attack": {
 					"priority": 1,
 					"speed_multiplier": 2
+				},
+				"minecraft:mark_variant": {
+					"value": 0
+				}
+			},
+			"spimton:buffed": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 5,
+					"time_down_event": {
+						"event": "spimton:piper_debuff"
+					}
+				},
+				"minecraft:attack": {
+					"damage": 2
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 1,
+					"speed_multiplier": 2.5,
+					"cooldown_time": 0.5,
+					"on_attack": {
+						"event": "spimton:hurt",
+						"target": "self"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
 				}
 			}
 		},
@@ -48,10 +75,11 @@
 			"minecraft:type_family": {
 				"family": [
 					"skeleton",
-					"juandice",
+					"spimton:juandice",
 					"undead",
 					"monster",
-					"mob"
+					"mob",
+					"spimton:piper_buff"
 				]
 			},
 			"minecraft:loot": {
@@ -257,12 +285,12 @@
 								{
 									"test": "is_family",
 									"subject": "other",
-									"value": "juandice",
+									"value": "spimton:juandice",
 									"operator": "!="
 								}
 							]
 						},
-						"max_dist": 12
+						"max_dist": 24
 					}
 				]
 			},
@@ -298,22 +326,52 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
-			"spimton:switch_to_hh": {
+			"spimton:piper_buff": {
 				"add": {
-					"component_groups": []
+					"component_groups": [
+						"spimton:buffed"
+					]
 				},
 				"remove": {
 					"component_groups": [
-						"spimton:over_hh"
+						"spimton:default"
 					]
 				}
 			},
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [
-						"spimton:over_hh"
+						"spimton:default"
 					]
 				}
+			},
+			"spimton:piper_debuff": {
+				"add": {
+					"component_groups": [
+						"spimton:default"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:buffed"
+					]
+				}
+			},
+			"spimton:hurt": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "actor_health",
+							"subject": "self",
+							"value": 7,
+							"operator": ">="
+						},
+						"queue_command": {
+							"command": "effect @s instant_damage 1 0 true",
+							"target": "self"
+						}
+					}
+				]
 			}
 		}
 	}

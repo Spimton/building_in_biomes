@@ -5,10 +5,12 @@
 			"identifier": "spimton:hollering_chevalier",
 			"min_engine_version": "1.8.0",
 			"materials": {
-				"default": "skeleton"
+				"default": "skeleton",
+				"piper_buff": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/chevalier"
+				"default": "textures/entity/chevalier",
+				"piper_buff": "textures/entity/piper_buff/piper_buff_chevalier"
 			},
 			"geometry": {
 				"default": "geometry.hollering"
@@ -61,7 +63,7 @@
 				}
 			],
 			"render_controllers": [
-				"controller.render.default"
+				"controller.render.piper_buff"
 			],
 			"enable_attachables": true
 		}

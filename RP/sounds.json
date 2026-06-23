@@ -141,6 +141,20 @@
                     "attack": "item.trident.hit"
                 }
             },
+            "spimton:overgrown_arsonist": {
+                "pitch": [
+                    0.5,
+                    1.4
+                ],
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.skeleton.hurt",
+                    "death": "mob.skeleton.death",
+                    "ambient": "mob.skeleton.say",
+                    "walk": "mob.skeleton.step",
+                    "attack": "step.heavy_core"
+                }
+            },
             "spimton:overgrown_horseman": {
                 "pitch": [
                     0.5,
@@ -530,6 +544,37 @@
                     "hit": "mob.irongolem.crack"
                 }
             },
+            "spimton:purple_piper": {
+                "volume": 1,
+                "pitch": 0.6,
+                "events": {
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "shoot": "note.didgeridoo"
+                }
+            },
+            "spimton:green_gardener": {
+                "volume": 1,
+                "pitch": 0.6,
+                "events": {
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:yellow_jester": {
+                "volume": 1,
+                "pitch": 0.6,
+                "events": {
+                    "shoot": "mob.wither.shoot",
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
             "spimton:red_magician": {
                 "volume": 1,
                 "pitch": 0.6,
@@ -803,6 +848,35 @@
                 "events": {
                     "hurt": "dig.stone",
                     "death": "mob.wither.break_block"
+                }
+            },
+            "spimton:bluestone_golem": {
+                "volume": 1,
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "events": {
+                    "hurt": "mob.bluestone_golem.hurt",
+                    "death": "mob.bluestone_golem.death",
+                    "ambient": "mob.bluestone_golem.idle",
+                    "roar": "mob.bluestone_golem.roaring",
+                    "step": {
+                        "sound": "mob.bluestone_golem.step",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                }
+            },
+            "spimton:bluestone_crystal": {
+                "volume": 1,
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "events": {
+                    "hurt": "respawn_anchor.charge",
+                    "death": "respawn_anchor.deplete"
                 }
             }
         }

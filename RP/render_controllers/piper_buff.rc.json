@@ -1,0 +1,53 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.piper_buff": {
+            "geometry": "geometry.default",
+            "part_visibility": [
+                {
+                    "*": true
+                }
+            ],
+            "materials": [
+                {
+                    "*": "Array.materials[query.mark_variant]"
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "Array.textures": [
+                        "Texture.default",
+                        "Texture.piper_buff"
+                    ]
+                },
+                "materials": {
+                    "Array.materials": [
+                        "Material.default",
+                        "Material.piper_buff"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.textures[query.mark_variant]"
+            ],
+            "color": {
+                "r": 0.5,
+                "g": 0.4,
+                "b": 1,
+                "a": 0.5
+            },
+            "uv_anim": {
+                "offset": [
+                    "(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+                    "(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            "light_color_multiplier": 1,
+            "ignore_lighting": true
+        }
+    }
+}

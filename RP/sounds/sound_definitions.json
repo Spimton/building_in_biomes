@@ -194,6 +194,14 @@
 				"sounds/sfx/soul_boom"
 			]
 		},
+		"sfx.pluck_spear": {
+			"subtitle": "kaboom!",
+			"category": "hostile",
+			"max_distance": 10,
+			"sounds": [
+				"sounds/sfx/pluck_spear"
+			]
+		},
 		"mob.soul_bolt.shoot": {
 			"subtitle": "soul bolt shot",
 			"category": "hostile",
@@ -260,6 +268,59 @@
 			],
 			"max_distance": 10,
 			"category": "neutral"
+		},
+		"mob.bluestone_golem.attack": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/bluestone_golem/attack1",
+				"sounds/mob/bluestone_golem/attack2",
+				"sounds/mob/bluestone_golem/attack3"
+			]
+		},
+		"mob.bluestone_golem.death": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/bluestone_golem/death1",
+				"sounds/mob/bluestone_golem/death2",
+				"sounds/mob/bluestone_golem/death3"
+			]
+		},
+		"mob.bluestone_golem.roaring": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/mob/bluestone_golem/growl1",
+				"sounds/mob/bluestone_golem/growl2",
+				"sounds/mob/bluestone_golem/growl3"
+			]
+		},
+		"mob.bluestone_golem.hurt": {
+			"sounds": [
+				"sounds/mob/bluestone_golem/hurt1",
+				"sounds/mob/bluestone_golem/hurt2",
+				"sounds/mob/bluestone_golem/hurt3",
+				"sounds/mob/bluestone_golem/hurt4",
+				"sounds/mob/bluestone_golem/hurt5",
+				"sounds/mob/bluestone_golem/hurt6",
+				"sounds/mob/bluestone_golem/hurt7",
+				"sounds/mob/bluestone_golem/hurt8"
+			]
+		},
+		"mob.bluestone_golem.idle": {
+			"sounds": [
+				"sounds/mob/bluestone_golem/idle1",
+				"sounds/mob/bluestone_golem/idle2",
+				"sounds/mob/bluestone_golem/idle3",
+				"sounds/mob/bluestone_golem/idle4",
+				"sounds/mob/bluestone_golem/idle5"
+			]
+		},
+		"mob.bluestone_golem.step": {
+			"sounds": [
+				"sounds/mob/bluestone_golem/stepshort2",
+				"sounds/mob/bluestone_golem/stepshort3",
+				"sounds/mob/bluestone_golem/stepshort4",
+				"sounds/mob/bluestone_golem/stepshort5"
+			]
 		}
 	}
 }

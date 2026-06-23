@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:bluestone_block"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 10,
+                "max": 30
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:cobbled_ominous_stone"
+                }
+            ]
+        }
+    ]
+}

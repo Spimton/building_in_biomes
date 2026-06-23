@@ -1,0 +1,90 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:bluestone_heal",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "component_groups": {
+            "spimton:despawn": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "width": 1.225,
+                "height": 1.225
+            },
+            "minecraft:projectile": {
+                "multiple_targets": true,
+                "on_hit": {
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "target": "self",
+                            "event": "spimton:phire"
+                        }
+                    }
+                },
+                "anchor": 1,
+                "power": 2,
+                "inertia": 1,
+                "gravity": 0,
+                "uncertainty_base": 0,
+                "angle_offset": 0,
+                "offset": [
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true,
+                "despawn_from_distance": {
+                    "max_distance": 128,
+                    "min_distance": 32
+                }
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 0,
+                "time_down_event": {
+                    "target": "self",
+                    "event": "spimton:phire"
+                }
+            }
+        },
+        "events": {
+            "desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            },
+            "spimton:phire": {
+                "queue_command": {
+                    "command": [
+                        "effect @e[type=spimton:bluestone_golem,r=1.997] instant_health 1 0 true",
+                        "particle spimton:bluestone_heal ~ ~ ~",
+                        "execute if entity @n[type=spimton:bluestone_golem,r=1.997] run event entity @s desp"
+                    ]
+                }
+            }
+        }
+    }
+}

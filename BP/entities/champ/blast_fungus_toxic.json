@@ -1,0 +1,121 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:blast_fungus_toxic",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "snowball"
+        },
+        "component_groups": {
+            "spimton:d": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "spimton:fungus"
+                ]
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_dropped_ticks": 10,
+                    "max_optimized_distance": 100,
+                    "use_motion_prediction_hints": true
+                }
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "cause": "lava",
+                        "damage_per_tick": 4,
+                        "filters": {
+                            "operator": "==",
+                            "subject": "self",
+                            "test": "in_lava",
+                            "value": true
+                        }
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:projectile": {
+                "anchor": 1,
+                "gravity": 0.05,
+                "hit_sound": "hit",
+                "offset": [
+                    0,
+                    0,
+                    0
+                ],
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": 0,
+                        "destroy_on_hit": false,
+                        "knockback": false,
+                        "power_multiplier": 0.97,
+                        "semi_random_diff_damage": true
+                    },
+                    "stick_in_ground": {},
+                    "arrow_effect": {}
+                },
+                "destroy_on_hurt": false,
+                "multiple_targets": false,
+                "power": 2.2,
+                "should_bounce": false,
+                "stop_on_hurt": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:environment_sensor": {
+                "triggers": {
+                    "event": "spimton:3freeze",
+                    "target": "self",
+                    "filters": {
+                        "any_of": [
+                            {
+                                "test": "on_ground",
+                                "subject": "self"
+                            },
+                            {
+                                "test": "in_lava",
+                                "subject": "self"
+                            }
+                        ]
+                    }
+                }
+            },
+            "minecraft:timer": {
+                "time": 10,
+                "time_down_event": {
+                    "event": "spimton:3freeze"
+                }
+            }
+        },
+        "events": {
+            "spimton:3freeze": {
+                "queue_command": {
+                    "target": "self",
+                    "command": [
+                        "particle spimton:deltarune_explosion_multiple ~ ~0.5 ~",
+                        "damage @e[r=3] 6 magic",
+                        "effect @e[r=5,family=!juandice] poison",
+                        "playsound sfx.deltarune_boom @a[r=12.25]",
+                        "event entity @s spimton:desp"
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:d"
+                    ]
+                }
+            }
+        }
+    }
+}

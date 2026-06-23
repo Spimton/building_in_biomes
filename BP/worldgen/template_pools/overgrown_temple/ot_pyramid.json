@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:ot_pyramid"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "overgrown_temple/ot_pyramid"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

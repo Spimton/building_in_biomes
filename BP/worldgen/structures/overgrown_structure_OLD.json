@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "spimton:overgrown_structure_OLD"
+    },
+    "step": "surface_structures",
+    "start_pool": "spimton:overgrown_structure",
+    "terrain_adaptation": "beard_box",
+    "max_depth": 7,
+    "start_height": {
+      "type": "constant",
+      "value": {
+        "absolute": 0
+      }
+    },
+    "liquid_settings": "ignore_waterlogging",
+    "biome_filters": [
+      {
+        "operator": "==",
+        "test": "has_biome_tag",
+        "value": "jungle"
+      }
+    ],
+    "heightmap_projection": "world_surface"
+  }
+}

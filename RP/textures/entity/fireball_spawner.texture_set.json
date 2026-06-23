@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "fireball_spawner",
+		"metalness_emissive_roughness": "fireball_spawner_mer"
+	}
+}

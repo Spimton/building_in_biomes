@@ -1154,7 +1154,7 @@ item.spawn_egg.entity.spimton:cultist.name=Cultist Spawn Egg
 item.spawn_egg.entity.spimton:crither.name=Razziator Spawn Egg
 item.spawn_egg.entity.spimton:hollering_chevalier.name=Hollering Chevalier Spawn Egg
 item.spawn_egg.entity.spimton:crimson_king.name=Crimson King Spawn Egg
-item.spawn_egg.entity.spimton:weeper.name=Weeper Spawn Egg
+item.spawn_egg.entity.spimton:weeper.name=Weeper Spawn Egg §w[W.I.P]§r
 item.spawn_egg.entity.spimton:justice_champion.name=Champion of Justice Spawn Egg
 item.spawn_egg.entity.spimton:overgrown_hunter.name=Overgrown Hunter Spawn Egg
 item.spimton:grape_bottle=Grape Must Bottle
@@ -1289,6 +1289,13 @@ item.spimton:luck_spear=Fortune Spear
 item.spawn_egg.entity.spimton:sentinel.name=Sentinel Spawn Egg
 item.spimton:overgrown_dungeon_torch=Overgrown Dungeon Torch
 item.spimton:ominous_dungeon_torch=Ominous Dungeon Torch
+item.spawn_egg.entity.spimton:overgrown_arsonist.name=Overgrown Arsonist Spawn Egg
+item.spawn_egg.entity.spimton:green_gardener.name=Green Gardener Spawn Egg
+item.spawn_egg.entity.spimton:bluestone_golem.name=Bluestone Golem Spawn Egg §w[W.I.P]§r
+item.spawn_egg.entity.spimton:yellow_jester.name=Yellow Jester Spawn Egg
+item.spawn_egg.entity.spimton:purple_piper.name=Purple Piper Spawn Egg §w[W.I.P]§r
+
+
 
 
 
@@ -1310,7 +1317,7 @@ entity.spimton:wraith.name=Wraith
 entity.spimton:craith.name=Craith
 entity.spimton:creepie.name=Creepie
 entity.spimton:creepie_hostile.name=Creepie
-entity.spimton:weeper.name=Weeper
+entity.spimton:weeper.name=Weeper §w[W.I.P]§r
 entity.spimton:weeperball_1.name=Weeper Bomb
 entity.spimton:weeperball_2.name=Weeper Bomb
 entity.spimton:weeperball_3.name=Weeper Bomb
@@ -1379,6 +1386,13 @@ entity.spimton:royal_wraith.name=Tower Wraith
 entity.spimton:satellite.name=Satellite
 entity.spimton:sentinel.name=Sentinel
 entity.spimton:chandelier.name=Chandelier
+entity.spimton:overgrown_arsonist.name=Overgrown Arsonist
+entity.spimton:blast_fungus.name=Blast Fungus
+entity.spimton:green_gardener.name=Green Gardener
+entity.spimton:bluestone_golem.name=Bluestone Golem §w[W.I.P]§r
+entity.spimton:bluestone_crystal.name=Bluestone Crystal
+entity.spimton:yellow_jester.name=Yellow Jester
+entity.spimton:purple_piper.name=Purple Piper §w[W.I.P.]§r
 
 
 

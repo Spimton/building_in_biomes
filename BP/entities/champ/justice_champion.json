@@ -569,7 +569,7 @@
 			"minecraft:type_family": {
 				"family": [
 					"monster",
-					"juandice",
+					"spimton:juandice",
 					"mob"
 				]
 			},
@@ -675,7 +675,7 @@
 									"test": "is_family",
 									"subject": "other",
 									"operator": "!=",
-									"value": "juandice"
+									"value": "spimton:juandice"
 								}
 							]
 						},

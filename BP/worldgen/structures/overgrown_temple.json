@@ -2,16 +2,15 @@
   "format_version": "1.21.100",
   "minecraft:jigsaw": {
     "description": {
-      "identifier": "spimton:overgrown_structure"
+      "identifier": "spimton:overgrown_temple"
     },
     "step": "surface_structures",
-    "start_pool": "spimton:overgrown_structure",
-    "terrain_adaptation": "beard_box",
-    "max_depth": 7,
+    "start_pool": "spimton:beginning_overgrown",
+    "max_depth": 20,
     "start_height": {
       "type": "constant",
       "value": {
-        "absolute": 0
+        "absolute": -45
       }
     },
     "liquid_settings": "ignore_waterlogging",

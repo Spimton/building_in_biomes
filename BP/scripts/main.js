@@ -25,7 +25,7 @@ import "./folder/beaconw.js"
 import 'juandice'
 import 'coaster'
 import 'door_NEO'
-
+import "./mobs/projectiles.js";
 
 import { wall_Manager } from 'wall_Manager'
 

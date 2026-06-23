@@ -12,7 +12,8 @@
 			"minecraft:conditional_bandwidth_optimization": {},
 			"minecraft:type_family": {
 				"family": [
-					"inanimate"
+					"inanimate",
+					"spimton:rune"
 				]
 			},
 			"minecraft:variant": {

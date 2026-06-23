@@ -144,6 +144,15 @@
 			}
 		},
 		"events": {
+			"spimton:heal": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"effect @e[type=spimton:overgrown_archshaman] resistance 20 4 true",
+						"title @a actionbar The Archshaman used up its GOONERS and gained Resistance!"
+					]
+				}
+			},
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [

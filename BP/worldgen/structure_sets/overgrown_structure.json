@@ -2,18 +2,18 @@
     "format_version": "1.21.100",
     "minecraft:structure_set": {
         "description": {
-            "identifier": "spimton:overgrown_structure"
+            "identifier": "spimton:overgrown_temple"
         },
         "placement": {
             "type": "minecraft:random_spread",
             "salt": 39281139,
-            "separation": 12,
+            "separation": 24,
             "spacing": 80,
             "spread_type": "linear"
         },
         "structures": [
             {
-                "structure": "spimton:overgrown_structure",
+                "structure": "spimton:overgrown_temple",
                 "weight": 1
             }
         ]

@@ -1,0 +1,319 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:bluestone_golem",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:calm": {
+                "minecraft:on_target_acquired": {
+                    "event": "spimton:on_angry",
+                    "target": "self"
+                }
+            },
+            "spimton:angry": {
+                "minecraft:on_target_acquired": {},
+                "minecraft:angry": {
+                    "duration": -1,
+                    "calm_event": {
+                        "event": "spimton:become_calm",
+                        "target": "self"
+                    }
+                },
+                "minecraft:on_target_escape": {
+                    "event": "spimton:become_calm",
+                    "target": "self"
+                },
+                "minecraft:behavior.delayed_attack": {
+                    "priority": 2,
+                    "speed_multiplier": 1,
+                    "reach_multiplier": 1.8,
+                    "hit_delay_pct": 0.4,
+                    "attack_duration": 0.75,
+                    "track_target": true
+                }
+            },
+            "spimton:phase2": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:attack": {
+                    "damage": 18
+                },
+                "minecraft:movement": {
+                    "value": 0.31
+                }
+            },
+            "minecraft:raid_configuration": {
+                "minecraft:dweller": {
+                    "dwelling_type": "village",
+                    "dweller_role": "hostile",
+                    "update_interval_base": 60,
+                    "update_interval_variant": 40,
+                    "can_find_poi": false,
+                    "can_migrate": false,
+                    "first_founding_reward": 0
+                },
+                "minecraft:behavior.move_to_village": {
+                    "priority": 4,
+                    "speed_multiplier": 1,
+                    "goal_radius": 2
+                },
+                "minecraft:navigation.walk": {
+                    "can_path_over_water": true,
+                    "can_pass_doors": true,
+                    "can_break_doors": true
+                },
+                "minecraft:annotation.break_door": {
+                    "break_time": 1,
+                    "min_difficulty": "easy"
+                }
+            },
+            "spimton:summon": {
+                "minecraft:timer": {
+                    "time": 2,
+                    "time_down_event": {
+                        "event": "spimton:on_angry"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/bluestone_golem.json"
+            },
+            "minecraft:nameable": {},
+            "minecraft:type_family": {
+                "family": [
+                    "spimton:weeper",
+                    "illager",
+                    "spimton:bluestone",
+                    "mob",
+                    "monster"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 2.3,
+                "height": 3.5
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:jump.static": {},
+            "minecraft:health": {
+                "value": 140,
+                "max": 140
+            },
+            "minecraft:attack": {
+                "damage": 14
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6,
+                "probability": 0.025
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 6
+            },
+            "minecraft:behavior.nearest_prioritized_attackable_target": {
+                "priority": 1,
+                "within_radius": 32,
+                "reselect_targets": true,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "spimton:weeper"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "inanimate"
+                                }
+                            ]
+                        },
+                        "max_dist": 32,
+                        "priority": 0
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:persistent": {},
+            "minecraft:navigation.walk": {
+                "can_sink": true,
+                "avoid_water": true,
+                "can_path_over_water": false
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:follow_range": {
+                "value": 64
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:movement": {
+                "value": 0.29
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 3,
+                "entity_types": {
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "operator": "!=",
+                        "value": "inanimate"
+                    },
+                    "max_dist": 64
+                }
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "projectile",
+                        "damage_multiplier": 0.8
+                    },
+                    {
+                        "cause": "all",
+                        "on_damage": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "actor_health",
+                                        "subject": "self",
+                                        "value": 70,
+                                        "operator": "<="
+                                    },
+                                    {
+                                        "test": "is_mark_variant",
+                                        "value": 0,
+                                        "subject": "self"
+                                    }
+                                ]
+                            },
+                            "event": "spimton:summon"
+                        }
+                    }
+                ]
+            },
+            "minecraft:experience_reward": {
+                "on_death": 20
+            },
+            "minecraft:on_target_acquired": {
+                "event": "spimton:on_angry"
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "within_radius": 65,
+                "reselect_targets": true,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "spimton:weeper"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "inanimate"
+                                }
+                            ]
+                        },
+                        "max_dist": 65
+                    }
+                ],
+                "must_see": true
+            },
+            "minecraft:fire_immune": true,
+            "minecraft:can_join_raid": {}
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "spimton:angry"
+                    ]
+                }
+            },
+            "spimton:become_calm": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:angry"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:calm"
+                    ]
+                }
+            },
+            "spimton:on_angry": {
+                "add": {
+                    "component_groups": [
+                        "spimton:angry"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:summon"
+                    ]
+                }
+            },
+            "minecraft:spawn_for_raid": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:raid_configuration"
+                    ]
+                }
+            },
+            "spimton:summon": {
+                "add": {
+                    "component_groups": [
+                        "spimton:summon",
+                        "spimton:phase2"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "playanimation @s animation.bluestone_golem.summon none 0",
+                        "summon spimton:bluestone_crystal",
+                        "summon spimton:bluestone_crystal",
+                        "summon spimton:bluestone_crystal",
+                        "spreadplayers ~ ~ 3 9 @e[type=spimton:bluestone_crystal,r=1] ~15"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:angry"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -31,6 +31,16 @@
                 "minecraft:movement": {
                     "value": 0.25
                 },
+                "minecraft:type_family": {
+                    "family": [
+                        "golem",
+                        "monster",
+                        "mob",
+                        "spimton:rune",
+                        "spimton:archshaman",
+                        "inanimate"
+                    ]
+                },
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
@@ -172,6 +182,12 @@
                         {
                             "test": "in_lava",
                             "value": false
+                        },
+                        {
+                            "test": "is_family",
+                            "subject": "self",
+                            "value": "spimton:rune",
+                            "operator": "not"
                         }
                     ]
                 },

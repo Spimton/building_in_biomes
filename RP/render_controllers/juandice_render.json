@@ -29,6 +29,39 @@
             "textures": [
                 "array.skins[query.variant]"
             ]
+        },
+        "controller.render.yellow_jester": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "part_visibility": [
+                {
+                    "*": "query.mark_variant != 1"
+                }
+            ]
+        },
+        "controller.render.yellow_jester.scythe": {
+            "geometry": "Geometry.metamorphosis",
+            "materials": [
+                {
+                    "*": "Material.metamorphosis"
+                }
+            ],
+            "part_visibility": [
+                {
+                    "*": "query.mark_variant == 1"
+                }
+            ],
+            "textures": [
+                "Texture.metamorphosis"
+            ],
+            "ignore_lighting": true
         }
     }
 }

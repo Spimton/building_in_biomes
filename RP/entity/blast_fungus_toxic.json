@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:blast_fungus_toxic",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/blastfungus_toxic"
+            },
+            "geometry": {
+                "default": "geometry.blastfunguss"
+            },
+            "animations": {
+                "fly": "animation.blastfungus.fly"
+            },
+            "scripts": {
+                "animate": [
+                    "fly"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

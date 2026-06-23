@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.26.30",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:bismuth_block",
@@ -17,8 +17,11 @@
 			"minecraft:map_color": "#621D13",
 			"minecraft:light_dampening": 15,
 			"minecraft:light_emission": 5,
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:metal": {}
+			"minecraft:tags": [
+				"minecraft:is_pickaxe_item_destructible",
+				"metal",
+				"minecraft:sulfur_cube_archetype_slow_bouncy"
+			]
 		}
 	}
 }

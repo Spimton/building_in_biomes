@@ -1,0 +1,132 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:bluestone_crystal",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:attack": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:behavior.fire_at_target": {
+                    "attack_range": [
+                        1,
+                        65
+                    ],
+                    "attack_cooldown": 1.225,
+                    "priority": 0,
+                    "projectile_def": "spimton:bluestone_heal"
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 4,
+                "max": 4,
+                "min": 1
+            },
+            "minecraft:timer": {
+                "time": 1,
+                "time_down_event": {
+                    "event": "spimton:attack"
+                }
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate",
+                    "spimton:weeper"
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:physics": {
+                "has_gravity": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 1.8
+            },
+            "minecraft:shooter": {
+                "def": "spimton:bluestone_heal"
+            },
+            "minecraft:behavior.fire_at_target": {
+                "attack_range": [
+                    1,
+                    65
+                ],
+                "attack_cooldown": 1.225,
+                "priority": 0,
+                "projectile_def": "spimton:bluestone_heal"
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:nameable": {},
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison",
+                    "wither",
+                    "fatal_poison",
+                    "levitation"
+                ]
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "within_radius": 65,
+                "reselect_targets": true,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "spimton:bluestone"
+                        },
+                        "max_dist": 65
+                    }
+                ],
+                "must_see": true
+            },
+            "minecraft:on_death": {
+                "event": "spimton:desp"
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": "yes",
+                    "damage_multiplier": 0.0001225
+                }
+            }
+        },
+        "events": {
+            "spimton:attack": {
+                "add": {
+                    "component_groups": [
+                        "spimton:attack"
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

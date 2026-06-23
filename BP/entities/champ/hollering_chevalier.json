@@ -9,7 +9,30 @@
 			"runtime_identifier": "phantom"
 		},
 		"component_groups": {
+			"spimton:nermal_buff": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"time_down_event": {
+						"event": "spimton:piper_debuff"
+					}
+				},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 1,
+					"speed_multiplier": 2,
+					"cooldown_time": 0.1229,
+					"track_target": true
+				}
+			},
 			"spimton:nermal": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
 				"minecraft:attack": {
 					"damage": 1
 				},
@@ -24,6 +47,9 @@
 				}
 			},
 			"spimton:roar": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
 				"minecraft:behavior.knockback_roar": {
 					"attack_time": 0.5,
 					"duration": 1,
@@ -36,7 +62,7 @@
 							"test": "is_family",
 							"subject": "other",
 							"operator": "!=",
-							"value": "juandice"
+							"value": "spimton:juandice"
 						}
 					],
 					"on_roar_end": {
@@ -74,10 +100,11 @@
 			"minecraft:type_family": {
 				"family": [
 					"skeleton",
-					"juandice",
+					"spimton:juandice",
 					"undead",
 					"monster",
-					"mob"
+					"mob",
+					"spimton:piper_buff"
 				]
 			},
 			"minecraft:loot": {
@@ -283,7 +310,7 @@
 								{
 									"test": "is_family",
 									"subject": "other",
-									"value": "juandice",
+									"value": "spimton:juandice",
 									"operator": "!="
 								}
 							]
@@ -360,6 +387,30 @@
 			},
 			"minecraft:entity_spawned": {
 				"add": {
+					"component_groups": [
+						"spimton:nermal"
+					]
+				}
+			},
+			"spimton:piper_debuff": {
+				"add": {
+					"component_groups": [
+						"spimton:nermal"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:nermal_buff"
+					]
+				}
+			},
+			"spimton:piper_buff": {
+				"add": {
+					"component_groups": [
+						"spimton:nermal_buff"
+					]
+				},
+				"remove": {
 					"component_groups": [
 						"spimton:nermal"
 					]

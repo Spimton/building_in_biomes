@@ -81,7 +81,7 @@
                         "filters": {
                             "test": "is_family",
                             "subject": "other",
-                            "value": "juandice",
+                            "value": "spimton:juandice",
                             "operator": "!="
                         },
                         "max_dist": 28

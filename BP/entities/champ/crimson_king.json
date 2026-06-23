@@ -97,7 +97,7 @@
 							"test": "is_family",
 							"subject": "other",
 							"operator": "!=",
-							"value": "juandice"
+							"value": "spimton:juandice"
 						}
 					]
 				},
@@ -281,7 +281,7 @@
 							"test": "is_family",
 							"subject": "other",
 							"operator": "!=",
-							"value": "juandice"
+							"value": "spimton:juandice"
 						}
 					]
 				},
@@ -458,7 +458,7 @@
 			"minecraft:fire_immune": {},
 			"minecraft:type_family": {
 				"family": [
-					"juandice",
+					"spimton:juandice",
 					"enderman",
 					"monster",
 					"mob"
@@ -670,7 +670,7 @@
 								{
 									"test": "is_family",
 									"subject": "other",
-									"value": "juandice",
+									"value": "spimton:juandice",
 									"operator": "!="
 								}
 							]

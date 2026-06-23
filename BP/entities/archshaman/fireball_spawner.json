@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.110",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:fireball_spawner",
@@ -28,6 +28,87 @@
 						"event": "spimton:suicide"
 					}
 				}
+			},
+			"minecraft:exploding_insta": {
+				"minecraft:explode": {
+					"damage_scaling": 0.5,
+					"breaks_blocks": true,
+					"destroy_affected_by_griefing": true,
+					"fire_affected_by_griefing": true,
+					"power": 4,
+					"causes_fire": true,
+					"fuse_lit": true,
+					"fuse_length": 0
+				}
+			},
+			"spimton:upward": {
+				"minecraft:timer": {
+					"time": 3,
+					"time_down_event": {
+						"event": "spimton:downward"
+					}
+				},
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "is_mark_variant",
+							"subject": "self",
+							"value": 1
+						},
+						"event": "spimton:check_block",
+						"target": "self"
+					}
+				},
+				"minecraft:entity_sensor": {
+					"subsensors": [
+						{
+							"range": [
+								1.997,
+								1.997
+							],
+							"event": "spimton:js_explode",
+							"cooldown": 0.1225,
+							"event_filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "spimton:archshaman"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "inanimate"
+									}
+								]
+							}
+						}
+					]
+				},
+				"minecraft:physics": {
+					"has_gravity": false,
+					"has_collision": false
+				}
+			},
+			"spimton:downward": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:physics": {
+					"has_gravity": true,
+					"has_collision": true
+				},
+				"minecraft:projectile": {
+					"gravity": 0.135,
+					"on_hit": {
+						"stick_in_ground": {}
+					}
+				}
 			}
 		},
 		"components": {
@@ -38,39 +119,70 @@
 			},
 			"minecraft:type_family": {
 				"family": [
-					"spimton:archshaman"
+					"spimton:archshaman",
+					"inanimate"
 				]
 			},
 			"minecraft:damage_sensor": {
 				"triggers": {
 					"cause": "all",
-					"deals_damage": false
-				}
-			},
-			"minecraft:timer": {
-				"looping": false,
-				"time": 0.1,
-				"time_down_event": {
-					"target": "self",
-					"event": "spimton:spawn"
+					"deals_damage": "no_but_side_effects_apply"
 				}
 			},
 			"minecraft:collision_box": {
-				"width": 0.001,
-				"height": 0.001
+				"width": 0.1225,
+				"height": 0.1225
 			},
 			"minecraft:physics": {}
 		},
 		"events": {
-			"spimton:spawn": {
+			"minecraft:entity_spawned": {
 				"queue_command": {
 					"command": [
-						"tp @s ~ ~20 ~"
+						"tp @s ~ ~80 ~"
 					]
 				},
 				"add": {
 					"component_groups": [
+						"minecraft:exploding",
+						"spimton:downward"
+					]
+				}
+			},
+			"spimton:js_explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding_insta"
+					]
+				}
+			},
+			"spimton:downward": {
+				"add": {
+					"component_groups": [
+						"spimton:downward",
 						"minecraft:exploding"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:upward"
+					]
+				}
+			},
+			"spimton:check_block": {
+				"queue_command": {
+					"command": [
+						"execute unless block ~ ~1 ~ minecraft:air run event entity @s spimton:js_explode"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"queue_command": {
+					"command": "effect @s levitation 3 10 true"
+				},
+				"add": {
+					"component_groups": [
+						"spimton:upward"
 					]
 				}
 			},

@@ -6,7 +6,11 @@
 			"is_spawnable": false,
 			"is_summonable": true
 		},
-		"component_groups": {},
+		"component_groups": {
+			"spimton:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
 		"components": {
 			"minecraft:health": {
 				"value": 30,
@@ -27,10 +31,25 @@
 			},
 			"minecraft:timer": {
 				"looping": true,
-				"time": 2,
+				"time": 0.67,
 				"time_down_event": {
 					"target": "self",
+					"event": "spimton:effects"
+				}
+			},
+			"minecraft:behavior.timer_flag_1": {
+				"duration_range": 2,
+				"priority": 1,
+				"on_end": {
 					"event": "spimton:kll"
+				}
+			},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"test": "is_underwater"
+					},
+					"event": "desp"
 				}
 			},
 			"minecraft:collision_box": {
@@ -40,12 +59,31 @@
 			"minecraft:physics": {}
 		},
 		"events": {
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": "particle spimton:cloud ~ ~ ~"
+				}
+			},
+			"spimton:effects": {
+				"queue_command": {
+					"command": [
+						"effect @e[r=3] poison 10 0 true",
+						"effect @e[r=3] slowness 10 0 true"
+					]
+				}
+			},
 			"spimton:kll": {
 				"queue_command": {
 					"command": [
-						"tp @s ~ ~-5 ~",
 						"particle spimton:cloud ~ ~1 ~",
-						"kill @s"
+						"event entity @s desp"
+					]
+				}
+			},
+			"desp": {
+				"add": {
+					"component_groups": [
+						"spimton:despawn"
 					]
 				}
 			}

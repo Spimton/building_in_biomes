@@ -1,5 +1,6 @@
 import { world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, BlockPermutation, InputInfo, EntityHealthComponent, EntityComponentTypes, EntityDamageCause } from '@minecraft/server'
 import { updateItemDurability } from "../folder2/updateDurability.js";
+import { ConfigItems } from "../CONFIG.js";
 
 
 system.runInterval(celerity, 20);
@@ -23,7 +24,7 @@ function celerity() {
         const EqAlt = Equipment?.typeId === "spimton:platinum_gauntlet";
         const EqAlt2 = Equipment?.typeId === "spimton:justice_hammer";
         if (hasEquipment || EqAlt || EqAlt2) {
-            updateItemDurability(player, Equipment, -5, EquipmentSlot.Mainhand)
+            updateItemDurability(player, Equipment, ConfigItems.repairGauntlet, EquipmentSlot.Mainhand)
         }
     }
 }
@@ -39,7 +40,7 @@ function royalspear() {
         const Equipment = equipment.getEquipment("Mainhand");
         const hasEquipment = Equipment?.typeId === "spimton:ancient_gold_spear";
         if (hasEquipment) {
-            updateItemDurability(player, Equipment, -3, EquipmentSlot.Mainhand)
+            updateItemDurability(player, Equipment, ConfigItems.repairRoyalSpear, EquipmentSlot.Mainhand)
         }
     }
 }
@@ -60,7 +61,7 @@ function championship() {
         const hasEquipment = Equipment?.typeId === "spimton:champion_leggings";
         const hasEquipmentb = Equipmentb?.typeId === "spimton:champion_boots";
         if (hasEquipment && fallgays && !snek) {
-            player.applyKnockback({ x: wiew.x * 2, z: wiew.z * 2 }, -0.5)
+            player.applyKnockback({ x: wiew.x * ConfigItems.championLeggingsKBX, z: wiew.z * ConfigItems.championLeggingsKBX }, ConfigItems.championLeggingsKBY)
             player.addTag("champioon")
             player.runCommand("damage @e[r=2,tag=!champioon] 3 entity_attack entity @s")
             player.removeTag("champioon")
@@ -108,8 +109,8 @@ function targe() {
                     player.setDynamicProperty("CanTarge", Dash - 1)
                 }
                 else {
-                    player.applyImpulse({ x: wiw.x * 1.225, z: wiw.z * 1.225, y: 0.001 })
-                    player.setDynamicProperty("CanTarge", Dash + 10)
+                    player.applyImpulse({ x: wiw.x * ConfigItems.steelTargeSpeed, z: wiw.z * ConfigItems.steelTargeSpeed, y: 0.001 })
+                    player.setDynamicProperty("CanTarge", Dash + ConfigItems.steelTargeDash)
                     console.warn("Dash")
                 };
 
@@ -129,8 +130,8 @@ function targe() {
                     player.setDynamicProperty("CanTarge", Dash - 1)
                 }
                 else {
-                    player.applyImpulse({ x: wiw.x * 0.67, z: wiw.z * 0.67, y: 0.001 })
-                    player.setDynamicProperty("CanTarge", Dash + 5)
+                    player.applyImpulse({ x: wiw.x * ConfigItems.goldTargeSpeed, z: wiw.z * ConfigItems.goldTargeSpeed, y: 0.001 })
+                    player.setDynamicProperty("CanTarge", Dash + ConfigItems.goldTargeDash)
                     console.warn("Dash")
                 };
 
@@ -152,12 +153,12 @@ function targe() {
                 else {
                     player.addTag("spimton:charget")
                     const ww = player.getViewDirection()
-                    player.applyImpulse({ x: wiw.x * 0.15, z: wiw.z * 0.15, y: 0.01 })
+                    player.applyImpulse({ x: wiw.x * ConfigItems.chargeTargeSpeed, z: wiw.z * ConfigItems.chargeTargeSpeed, y: 0.01 })
                     const enities = player.dimension.getEntities({ location: player.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:charget"], maxDistance: 2, minDistance: 0 });
                     for (const entity of enities) {
-                        entity.applyKnockback({ x: ww.x * 2, z: ww.z * 2 }, 0.5)
-                        entity.applyDamage(5, { cause: EntityDamageCause.entityAttack, damagingEntity: player })
-                        player.setDynamicProperty("CanTarge", Dash - 2)
+                        entity.applyKnockback({ x: ww.x * ConfigItems.chargeTargeKnockbackXZ, z: ww.z * ConfigItems.chargeTargeKnockbackXZ }, ConfigItems.chargeTargeKnockbackY)
+                        entity.applyDamage(ConfigItems.chargeTargeDamage, { cause: EntityDamageCause.entityAttack, damagingEntity: player })
+                        player.setDynamicProperty("CanTarge", Dash - ConfigItems.chargeTargeDashHit)
 
                     };
                     player.removeTag("spimton:charget")
@@ -176,8 +177,8 @@ function targe() {
             if (isMovingHorizontally && isOnGround && player?.isSneaking) {
                 if (Dash == undefined) player.setDynamicProperty("CanTarge", 0);
                 if (player.getComponent("onfire").onFireTicksRemaining > 0) {
-                    player.applyImpulse({ x: wiw.x * 0.2, z: wiw.z * 0.2, y: 0.001 })
-                    player.setDynamicProperty("CanTarge", Dash + 1)
+                    player.applyImpulse({ x: wiw.x * ConfigItems.sunTargeSpeed, z: wiw.z * ConfigItems.sunTargeSpeed, y: 0.001 })
+                    player.setDynamicProperty("CanTarge", Dash + ConfigItems.sunTargeDash)
                     console.warn("Dash")
                 }
                 else {
@@ -202,13 +203,13 @@ function targe() {
                 else {
                     player.addTag("spimton:charget")
                     const ww = player.getViewDirection()
-                    player.applyImpulse({ x: wiw.x * 0.25, z: wiw.z * 0.25, y: 0.01 })
+                    player.applyImpulse({ x: wiw.x * ConfigItems.chargeTarge2Speed, z: wiw.z * ConfigItems.chargeTarge2Speed, y: 0.01 })
                     const enities = player.dimension.getEntities({ location: player.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:charget"], maxDistance: 2, minDistance: 0 });
                     for (const entity of enities) {
-                        entity.applyKnockback({ x: ww.x * 2, z: ww.z * 2 }, 1)
-                        entity.applyDamage(10, { cause: EntityDamageCause.entityAttack, damagingEntity: player })
+                        entity.applyKnockback({ x: ww.x * ConfigItems.chargeTarge2KnockbackXZ, z: ww.z * ConfigItems.chargeTarge2KnockbackXZ }, ConfigItems.chargeTarge2KnockbackY)
+                        entity.applyDamage(ConfigItems.chargeTarge2Damage, { cause: EntityDamageCause.entityAttack, damagingEntity: player })
                         player.clearVelocity()
-                        player.setDynamicProperty("CanTarge", Dash + 30)
+                        player.setDynamicProperty("CanTarge", Dash + ConfigItems.chargeTarge2DashHit)
 
                     };
                     player.removeTag("spimton:charget")
@@ -248,7 +249,7 @@ world.afterEvents.entityHurt.subscribe(event => {
             entity.dimension.playSound("item.shield.block", entity.getHeadLocation())
             const h = entity.getComponent("health")
             if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * 0.8))
+                h.setCurrentValue(h.currentValue + (damage * ConfigItems.steelTargeReduction))
             };
             entity.clearVelocity();
 
@@ -277,7 +278,7 @@ world.afterEvents.entityHurt.subscribe(event => {
 
             const h = entity.getComponent("health")
             if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * 0.6))
+                h.setCurrentValue(h.currentValue + (damage * ConfigItems.goldTargeReduction))
             };
             entity.clearVelocity();
 
@@ -306,9 +307,9 @@ world.afterEvents.entityHurt.subscribe(event => {
             if (entity.getDynamicProperty("CanTarge") == undefined) player.setDynamicProperty("CanTarge", 0);
             const h = entity.getComponent("health")
             if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * 0.7))
+                h.setCurrentValue(h.currentValue + (damage * ConfigItems.chargeTargeReduction))
             };
-            entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") + 20)
+            entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") + ConfigItems.chargeTargeDashHurt)
 
             if (MainhandTarge3 && !entity.matches({ gameMode: GameMode.Creative })) {
                 const itemEnchantmentComp = MainhandEq.getComponent("minecraft:enchantable");
@@ -335,15 +336,15 @@ world.afterEvents.entityHurt.subscribe(event => {
             if (entity.getDynamicProperty("CanTarge") == undefined) player.setDynamicProperty("CanTarge", 0);
             const h = entity.getComponent("health")
             if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * 0.5))
+                h.setCurrentValue(h.currentValue + (damage * ConfigItems.sunTargeReduction))
             };
             if (entity.getDynamicProperty("CanTarge") <= 0) {
-                entity.setOnFire(2.5, false)
-                entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") + 2)
+                entity.setOnFire(ConfigItems.sunTargeSetonFire / 2, false)
+                entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") + ConfigItems.sunTargeFireDash / 5)
             }
             else {
-                hiter.setOnFire(5, false)
-                entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") - 10)
+                hiter.setOnFire(ConfigItems.sunTargeSetonFire, false)
+                entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") - ConfigItems.sunTargeFireDash)
             };
             if (MainhandTarge4 && !entity.matches({ gameMode: GameMode.Creative })) {
                 const itemEnchantmentComp = MainhandEq.getComponent("minecraft:enchantable");
@@ -370,12 +371,12 @@ world.afterEvents.entityHurt.subscribe(event => {
             if (entity.getDynamicProperty("CanTarge") == undefined) player.setDynamicProperty("CanTarge", 0);
             const h = entity.getComponent("health")
             if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * 0.3))
+                h.setCurrentValue(h.currentValue + (damage * ConfigItems.chargeTarge2Reduction))
             };
-            entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") - 10)
-            entity.applyKnockback({ x: entity.getViewDirection().x * 1.67, z: entity.getViewDirection().z * 1.67 }, 0.3)
+            entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") - ConfigItems.chargeTarge2DashHurt)
+            entity.applyKnockback({ x: entity.getViewDirection().x * ConfigItems.chargeTarge2KnockbackHurtXZ, z: entity.getViewDirection().z * ConfigItems.chargeTarge2KnockbackHurtXZ }, ConfigItems.chargeTarge2KnockbackHurtY)
             hiter.applyDamage(damage, { damagingEntity: entity, cause: EntityDamageCause.entityAttack })
-            hiter.applyKnockback({ x: entity.getViewDirection().x * 1.77, z: entity.getViewDirection().z * 1.77 }, 0.3);
+            hiter.applyKnockback({ x: entity.getViewDirection().x * ConfigItems.chargeTarge2KnockbackHurtXZ * 1.07, z: entity.getViewDirection().z * ConfigItems.chargeTarge2KnockbackHurtXZ * 1.07 }, ConfigItems.chargeTarge2KnockbackHurtY);
 
             if (MainhandTarge5 && !entity.matches({ gameMode: GameMode.Creative })) {
                 const itemEnchantmentComp = MainhandEq.getComponent("minecraft:enchantable");
@@ -421,7 +422,7 @@ function championshipb() {
         const hasEquipmentb = Equipmentb?.typeId === "spimton:champion_boots";
         if (hasEquipmentb && player?.isJumping && player?.isSneaking) {
             if (aer == false) {
-                player.applyKnockback({ x: wiew.x * 0.1, z: wiew.z * 0.1 }, 1)
+                player.applyKnockback({ x: wiew.x * ConfigItems.championBootsKBX, z: wiew.z * ConfigItems.championBootsKBX }, ConfigItems.championBootsKBY)
                 player.addEffect("resistance", 30, { amplifier: 5, showParticles: false })
             }
         }
@@ -432,20 +433,13 @@ system.beforeEvents.startup.subscribe(initEvent => {
         onUse: arg => {
             const sauce = arg.source
             const item = arg.itemStack
-            if (sauce.matches({ gameMode: GameMode.Survival }) || sauce.matches({ gameMode: GameMode.Adventure })) updateItemDurability(sauce, item, 1, EquipmentSlot.Mainhand)
-            const wolf = sauce.dimension.spawnEntity("minecraft:wolf", sauce.location);
-            const wolf2 = sauce.dimension.spawnEntity("minecraft:wolf", sauce.location);
-            const wolf3 = sauce.dimension.spawnEntity("minecraft:wolf", sauce.location);
-            wolf.triggerEvent("minecraft:spawn_wild_rusty");
-            wolf2.triggerEvent("minecraft:spawn_wild_rusty");
-            wolf3.triggerEvent("minecraft:spawn_wild_rusty");
-            // Tame the wolf to the player
-            const tameable = wolf.getComponent("minecraft:tameable");
-            const tameable2 = wolf2.getComponent("minecraft:tameable");
-            const tameable3 = wolf3.getComponent("minecraft:tameable");
-            tameable.tame(sauce);
-            tameable2.tame(sauce);
-            tameable3.tame(sauce);
+            if (sauce.matches({ gameMode: GameMode.Survival }) || sauce.matches({ gameMode: GameMode.Adventure })) updateItemDurability(sauce, item, ConfigItems.tastyBoneDamage, EquipmentSlot.Mainhand)
+            for (let c = 0; c < ConfigItems.tastyBoneWolves; c++) {
+                const wolf = sauce.dimension.spawnEntity("minecraft:wolf", sauce.location);
+                wolf.triggerEvent("minecraft:spawn_wild_rusty");
+                const tameable = wolf.getComponent("minecraft:tameable");
+                tameable.tame(sauce);
+            };
 
         },
         onBeforeDurabilityDamage: arg => {
@@ -469,7 +463,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:impspear', {
         onHitEntity: arg => {
             let hited = arg.hitEntity
-            hited.addEffect('poison', 75, { amplifier: 1 })
+            hited.addEffect('poison', ConfigItems.imperialSpearDur, { amplifier: ConfigItems.imperialSpearAmp })
         }
     })
 })
@@ -477,7 +471,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:agospear', {
         onHitEntity: arg => {
             let hited = arg.hitEntity
-            hited.setOnFire(5, true)
+            hited.setOnFire(ConfigItems.agoSpearDur, true)
         }
     })
 })
@@ -489,7 +483,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
 
 
             if (source?.isSneaking) {
-                source.runCommand(`execute if entity @e[type=spimton:jojoref_friendly] run gamerule randomtickspeed ${ticks / 20}`)
+                source.runCommand(`execute if entity @e[type=spimton:jojoref_friendly] run gamerule randomtickspeed ${ticks / ConfigItems.chronosStaffMod}`)
                 source.runCommand('kill @e[type=spimton:jojoref_friendly]')
                 let item = arg.itemStack
 
@@ -497,7 +491,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
             }
             else {
 
-                source.runCommand(`execute unless entity @e[type=spimton:jojoref_friendly] run gamerule randomtickspeed ${ticks * 20}`)
+                source.runCommand(`execute unless entity @e[type=spimton:jojoref_friendly] run gamerule randomtickspeed ${ticks * ConfigItems.chronosStaffMod}`)
                 source.runCommand('kill @e[type=spimton:jojoref_friendly]')
                 source.playSound('ambient.weather.lightning.impact')
                 source.runCommand('summon spimton:jojoref_friendly')
@@ -518,7 +512,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
             const mR = Math.random()
             let source = arg.source
             source.runCommand('particle minecraft:trial_spawner_detection ~ ~ ~')
-            if (mR >= 0.5) {
+            if (mR >= ConfigItems.splosionStaffChance) {
                 source.runCommand('execute if entity @p[hasitem={location=slot.weapon.offhand,item=spimton:big_splosion_ammo}] run tellraw @a {"rawtext": [{"translate": "§f<%%1> Succumb to the power of Michael Bay!", "with":{"rawtext": [{"selector":"@p"}]}}]}')
                 source.runCommand('execute if entity @p[hasitem={location=slot.weapon.offhand,item=spimton:small_splosion_ammo}] run tellraw @a {"rawtext": [{"translate": "§f<%%1> Succumb to the power of Michael Bay!", "with":{"rawtext": [{"selector":"@p"}]}}]}')
                 source.runCommand('execute if entity @p[hasitem={location=slot.weapon.offhand,item=spimton:antigravity_splosion_ammo}] run tellraw @a {"rawtext": [{"translate": "§f<%%1> Succumb to the power of Michael Bay!", "with":{"rawtext": [{"selector":"@p"}]}}]}')
@@ -553,31 +547,31 @@ system.beforeEvents.startup.subscribe(initEvent => {
             let hitedtype = hited.typeId
             const chance = Math.random()
             if (hitedtype == "minecraft:pig") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
             else if (hitedtype == "minecraft:cow") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
             else if (hitedtype == "minecraft:chicken") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
             else if (hitedtype == "minecraft:rabbit") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
             else if (hitedtype == "minecraft:sheep") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
             else if (hitedtype == "minecraft:zombie") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
             else if (hitedtype == "minecraft:horse") {
-                if (chance > 0.6)
+                if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             };
         }
@@ -627,15 +621,15 @@ system.beforeEvents.startup.subscribe(initEvent => {
             let source = arg.source
             const durability = item.getComponent("durability")
             if (source?.isSneaking) {
-                if (durability <= 10) return;
-                source.dimension.createExplosion(block, 4, { source: source, causesFire: false })
-                if (source.matches({ gameMode: GameMode.Survival }) || source.matches({ gameMode: GameMode.Adventure })) updateItemDurability(source, item, 10, EquipmentSlot.Mainhand)
+                if (durability <= ConfigItems.platinumGauntletDurabilityLoss) return;
+                source.dimension.createExplosion(block, ConfigItems.platinumGauntletStrongBlast, { source: source, causesFire: false })
+                if (source.matches({ gameMode: GameMode.Survival }) || source.matches({ gameMode: GameMode.Adventure })) updateItemDurability(source, item, ConfigItems.platinumGauntletDurabilityLoss, EquipmentSlot.Mainhand)
                 if (Math.random() > 0.65) source.runCommand('tellraw @a[r=20] {"rawtext": [{"translate":"§f<%%1> ORA!", "with":{"rawtext": [{"selector":"@p"}]}}]}')
 
             } else {
-                if (durability <= 5) return;
-                source.dimension.createExplosion(block, 2, { source: source, causesFire: false })
-                if (source.matches({ gameMode: GameMode.Survival }) || source.matches({ gameMode: GameMode.Adventure })) updateItemDurability(source, item, 5, EquipmentSlot.Mainhand)
+                if (durability <= ConfigItems.platinumGauntletDurabilityLoss / 2) return;
+                source.dimension.createExplosion(block, ConfigItems.platinumGauntletWeakBlast, { source: source, causesFire: false })
+                if (source.matches({ gameMode: GameMode.Survival }) || source.matches({ gameMode: GameMode.Adventure })) updateItemDurability(source, item, ConfigItems.platinumGauntletDurabilityLoss / 2, EquipmentSlot.Mainhand)
 
             }
 
@@ -720,9 +714,9 @@ world.afterEvents.entityHurt.subscribe(data => {
     ) {
         if (!damaged?.isSneaking) {
             damaged.dimension.spawnParticle("spimton:seismic", viktorr)
-            damaged.applyKnockback({ x: ww.x * 0, z: ww.z * 0 }, -3)
+            damaged.applyKnockback({ x: ww.x * 0, z: ww.z * 0 }, ConfigItems.championChestplateKnockback)
             damaged.addTag("smash")
-            damaged.runCommand(`damage @e[r=3, tag=!smash] ${Math.ceil(Math.random() * 5)} entity_attack entity @s`)
+            damaged.runCommand(`damage @e[r=3, tag=!smash] ${Math.ceil(Math.random() * ConfigItems.championChestplateDamage)} entity_attack entity @s`)
             damaged.removeTag("smash")
         }
     }
@@ -730,15 +724,15 @@ world.afterEvents.entityHurt.subscribe(data => {
     ) {
         if (damaged?.isSneaking) {
             damaged.dimension.spawnParticle("spimton:seismic", viktorr)
-            damaged.applyKnockback({ x: ww.x * 0, z: ww.z * 0 }, 1)
+            damaged.applyKnockback({ x: ww.x * 0, z: ww.z * 0 }, ConfigItems.championHelmetKnockback)
             damaged.addTag("smash")
-            damaged.runCommand(`damage @e[r=3, tag=!smash] ${Math.ceil(Math.random() * 5)} entity_attack entity @s`)
+            damaged.runCommand(`damage @e[r=3, tag=!smash] ${Math.ceil(Math.random() * ConfigItems.championHelmetDamage)} entity_attack entity @s`)
             damaged.removeTag("smash")
         }
     }
     if (damaged?.hasComponent('equippable') && eq.getEquipment(EquipmentSlot.Chest)?.typeId == 'spimton:antique_cloth_cape'
     ) {
-        if (Math.random() > 0.6) {
+        if (Math.random() > ConfigItems.antiqueAllyChance) {
             const tornado = damaged.dimension.spawnEntity("spimton:antique_tornado_ally", damaged.location);
             // Tame the wolf to the player
             const tameable = tornado.getComponent("minecraft:tameable");
@@ -747,7 +741,7 @@ world.afterEvents.entityHurt.subscribe(data => {
     }
     if (damaged?.hasComponent('equippable') && eq.getEquipment(EquipmentSlot.Chest)?.typeId == 'spimton:nethengic_cloth_cape'
     ) {
-        if (Math.random() > 0.6) {
+        if (Math.random() > ConfigItems.nethengeicAllyChance) {
             const reddo = damaged.dimension.spawnEntity("spimton:magicians_red_ally", damaged.location);
             // Tame the wolf to the player
             const tameable = reddo.getComponent("minecraft:tameable");
@@ -778,7 +772,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
             let block = arg.block
             let item = arg.itemStack
             source.addEffect("resistance", 20, { amplifier: 3, showParticles: false })
-            source.dimension.createExplosion(block, 3, { causesFire: true, source: source })
+            source.dimension.createExplosion(block, 3, { causesFire: true, source: source })    //REWORK THIS
             source.dimension.spawnEntity("lightning_bolt", block)
 
             source.applyKnockback({ x: heed.x * 2.5, z: heed.z * 2.5 }, 0.5)
@@ -789,12 +783,12 @@ system.beforeEvents.startup.subscribe(initEvent => {
     })
 })
 const Knockback = {
-    Horizontal: 2.5,
-    Vertical: 0.5
+    Horizontal: ConfigItems.celerityGauntletKHoriz,
+    Vertical: ConfigItems.celerityGauntletKVert
 }
 const KnockbackR = {
-    HorizontalR: -2.5,
-    VerticalR: 0.35
+    HorizontalR: ConfigItems.celerityGauntletKHorizB,
+    VerticalR: ConfigItems.celerityGauntletKVertB
 }
 
 world.afterEvents.itemUse.subscribe((event) => {
@@ -805,8 +799,8 @@ world.afterEvents.itemUse.subscribe((event) => {
         if (player?.isSneaking) {
             if (player.matches({ gameMode: GameMode.Survival }) || player.matches({ gameMode: GameMode.Adventure })) {
                 const durability = item.getComponent("durability");
-                if (durability <= 100) return;
-                updateItemDurability(player, item, 50, EquipmentSlot.Mainhand)
+                if (durability <= ConfigItems.celerityGauntletDamageB * 2) return;
+                updateItemDurability(player, item, ConfigItems.celerityGauntletDamageB, EquipmentSlot.Mainhand)
                 player.runCommand('particle minecraft:wind_explosion_emitter ~ ~ ~')
                 player.runCommand('playsound wind_charge.burst @a[r=10] ~ ~ ~ 1 1')
                 player.applyKnockback({ x: looking.x * KnockbackR.HorizontalR, z: looking.z * KnockbackR.HorizontalR }, KnockbackR.VerticalR)
@@ -818,8 +812,8 @@ world.afterEvents.itemUse.subscribe((event) => {
         } else {
             if (player.matches({ gameMode: GameMode.Survival }) || player.matches({ gameMode: GameMode.Adventure })) {
                 const durability = item.getComponent("durability");
-                if (durability <= 20) return;
-                updateItemDurability(player, item, 10, EquipmentSlot.Mainhand)
+                if (durability <= ConfigItems.celerityGauntletDamage * 2) return;
+                updateItemDurability(player, item, ConfigItems.celerityGauntletDamage, EquipmentSlot.Mainhand)
                 player.runCommand('particle minecraft:wind_explosion_emitter ~ ~ ~')
                 player.runCommand('playsound wind_charge.burst @a[r=10] ~ ~ ~ 1 1')
                 player.applyKnockback({ x: looking.x * Knockback.Horizontal, z: looking.z * Knockback.Horizontal }, Knockback.Vertical)
@@ -829,9 +823,7 @@ world.afterEvents.itemUse.subscribe((event) => {
                 player.applyKnockback({ x: looking.x * Knockback.Horizontal, z: looking.z * Knockback.Horizontal }, Knockback.Vertical)
             }
         }
-    } else {
-        console.warn(item.typeId)
-    }
+    };
 })
 
 
@@ -843,63 +835,61 @@ system.beforeEvents.startup.subscribe(initEvent => {
             const ww = source.getViewDirection()
             const dura = item.getComponent("durability")
             if (source?.isSprinting && !source?.isJumping) {
-                if ((dura.maxDurability - dura.damage) >= 9) {
-                    source.applyKnockback({ x: ww.x * 5, z: ww.z * 5 }, 0.15)
-                    source.startItemCooldown("knife", 47)
-                    updateItemDurability(source, item, 9, EquipmentSlot.Mainhand)
+                if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack1.duarbility) {
+                    source.applyKnockback({ x: ww.x * ConfigItems.blackKnife.attack1.knockbackXZ, z: ww.z * ConfigItems.blackKnife.attack1.knockbackXZ }, ConfigItems.blackKnife.attack1.knockbackY)
+                    source.startItemCooldown("knife", ConfigItems.blackKnife.attack1.cooldown)
+                    updateItemDurability(source, item, ConfigItems.blackKnife.attack1.duarbility, EquipmentSlot.Mainhand)
                 }
                 else source.runCommand("title @s actionbar Not enough durability for you to use the skill!")
             }
             if (source?.isSprinting && source?.isJumping) {
-                if ((dura.maxDurability - dura.damage) >= 33) {
+                if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack2.durability) {
                     source.addEffect("water_breathing", 200, { showParticles: false })
-                    source.runCommand("tp @s ~ ~20 ~")
-
-                    source.applyKnockback({ x: ww.x * 0, z: ww.z * 0 }, -10)
-                    source.startItemCooldown("knife", 204)
-                    updateItemDurability(source, item, 33, EquipmentSlot.Mainhand)
+                    source.teleport({ x: source.location, z: source.location, y: source.location + ConfigItems.blackKnife.attack2.teleport })
+                    source.startItemCooldown("knife", ConfigItems.blackKnife.attack2.cooldown)
+                    updateItemDurability(source, item, ConfigItems.blackKnife.attack2.durability, EquipmentSlot.Mainhand)
                 }
                 else source.runCommand("title @s actionbar Not enough durability for you to use the skill!")
 
             }
             if (source?.isSneaking && !source?.isJumping) {
-                if ((dura.maxDurability - dura.damage) >= 6) {
+                if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack3.durability) {
                     source.addTag("immuneK")
-                    source.runCommand("damage @e[r=6,tag=!immuneK] 12 void entity @s")
+                    source.runCommand(`damage @e[r=${ConfigItems.blackKnife.attack3.range},tag=!immuneK] ${ConfigItems.blackKnife.attack3.damage} void entity @s`)
                     source.removeTag("immuneK")
-                    source.startItemCooldown("knife", 102)
+                    source.startItemCooldown("knife", ConfigItems.blackKnife.attack3.cooldown)
                     source.runCommand("particle spimton:starp ~ ~ ~")
 
-                    updateItemDurability(source, item, 6, EquipmentSlot.Mainhand)
+                    updateItemDurability(source, item, ConfigItems.blackKnife.attack3.durability, EquipmentSlot.Mainhand)
                 }
                 else source.runCommand("title @s actionbar Not enough durability for you to use the skill!")
             }
             if (source?.isSneaking && source?.isJumping) {
-                if ((dura.maxDurability - dura.damage) >= 6) {
+                if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack4.durability) {
                     source.addTag("immuneK")
-                    source.runCommand("damage @e[r=12,tag=!immuneK] 6 void entity @s")
+                    source.runCommand(`damage @e[r=${ConfigItems.blackKnife.attack4.range},tag=!immuneK] ${ConfigItems.blackKnife.attack4.damage} void entity @s`)
                     source.removeTag("immuneK")
-                    source.startItemCooldown("knife", 102)
+                    source.startItemCooldown("knife", ConfigItems.blackKnife.attack4.cooldown)
                     source.runCommand("particle spimton:starp ~ ~ ~")
 
-                    updateItemDurability(source, item, 6, EquipmentSlot.Mainhand)
+                    updateItemDurability(source, item, ConfigItems.blackKnife.attack4.durability, EquipmentSlot.Mainhand)
                 }
                 else source.runCommand("title @s actionbar Not enough durability for you to use the skill!")
             }
             if (source?.isGliding || source?.isFalling) {
-                if ((dura.maxDurability - dura.damage) >= 3) {
+                if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack5.durability) {
                     source.clearVelocity()
-                    source.startItemCooldown("knife", 66)
-                    updateItemDurability(source, item, 3, EquipmentSlot.Mainhand)
+                    source.startItemCooldown("knife", ConfigItems.blackKnife.attack5.cooldown)
+                    updateItemDurability(source, item, ConfigItems.blackKnife.attack5.durability, EquipmentSlot.Mainhand)
                 }
                 else source.runCommand("title @s actionbar Not enough durability for you to use the skill!")
 
             }
             if (!source?.isSprinting && source?.isJumping && !source?.isSneaking) {
-                if ((dura.maxDurability - dura.damage) >= 66) {
-                    source.runCommand("tp @s ^ ^ ^15")
-                    source.startItemCooldown("knife", 660)
-                    updateItemDurability(source, item, 66, EquipmentSlot.Mainhand)
+                if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack6.durability) {
+                    source.teleport({ x: source.getViewDirection().x * ConfigItems.blackKnife.attack6.teleport, y: source.getViewDirection().y * ConfigItems.blackKnife.attack6.teleport, z: source.getViewDirection().z * ConfigItems.blackKnife.attack6.teleport })
+                    source.startItemCooldown("knife", ConfigItems.blackKnife.attack6.cooldown)
+                    updateItemDurability(source, item, ConfigItems.blackKnife.attack6.durability, EquipmentSlot.Mainhand)
                 }
                 else source.runCommand("title @s actionbar Not enough durability for you to use the skill!")
 
@@ -912,16 +902,19 @@ system.beforeEvents.startup.subscribe(initEvent => {
             const health = hited.getComponent("health")
             const curh = health.currentValue
             const maxh = health.effectiveMax
-            hited.applyDamage(Math.floor(maxh * 0.066))
+            const family = hited.getComponent("type_family").hasTypeFamily("spimton:black_knife_immune");
+            hited.applyDamage(Math.floor(maxh * ConfigItems.blackKnife.hpDamage))
             if (hiter?.isSneaking) {
-                if (curh / maxh < 0.33) {
+                if (curh / maxh < ConfigItems.blackKnife.erasePrc) {
                     const itemDur = arg.itemStack.getComponent("durability")
-                    if ((itemDur.maxDurability - itemDur.damage) >= 666) {
-                        if (hited.typeId === 'player' || maxh >= 200 || hited.typeId === "spimton:very_cancerous_rodent" || hited.typeId === "spimton:overgrown_equestrian" || hited.typeId === "spimton:wilted_shaman") {
-                            hited.applyDamage(66)
+
+                    if ((itemDur.maxDurability - itemDur.damage) >= ConfigItems.blackKnife.eraseDur) {
+
+                        if (hited.typeId === 'player' || maxh >= ConfigItems.blackKnife.eraseHealth || family) {
+                            hited.applyDamage(ConfigItems.blackKnife.eraseDamage)
                         }
                         else hited.remove();
-                        updateItemDurability(hiter, arg.itemStack, 666, EquipmentSlot.Mainhand)
+                        updateItemDurability(hiter, arg.itemStack, ConfigItems.blackKnife.eraseDur, EquipmentSlot.Mainhand)
                     }
                     else hiter.runCommand("title @s actionbar Not enough durability for you to use the skill!")
 
@@ -940,7 +933,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
             const health = hiter.getComponent("minecraft:health")
             const curh = health.currentValue
             const maxh = health.effectiveMax
-            const damage = (maxh - curh) / maxh * 30
+            const damage = (maxh - curh) / maxh * ConfigItems.krisMult
             for (let c = 0; c < damage; c++) {
                 hited.runCommand("particle minecraft:soul_particle ~ ~1 ~");
 
@@ -1004,11 +997,11 @@ system.beforeEvents.startup.subscribe(initEvent => {
             hited.runCommand("execute if entity @s[family=undead] run tag @s add spimton:undead_check")
             if (hited.hasTag("spimton:undead_check")) {
                 if (hiter?.isFalling) {
-                    hited.applyDamage(18, { cause: "magic" })
+                    hited.applyDamage(ConfigItems.silverSwordDamage * 1.5, { cause: "magic" })
                     hited.dimension.spawnParticle("minecraft:trial_spawner_detection_ominous", hited.getHeadLocation())
                 }
                 else {
-                    hited.applyDamage(12, { cause: "magic" })
+                    hited.applyDamage(ConfigItems.silverSwordDamage, { cause: "magic" })
                     hited.dimension.spawnParticle("minecraft:trial_spawner_detection_ominous", hited.getHeadLocation())
                 }
             }
@@ -1029,7 +1022,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
             const health = hiter.getComponent("minecraft:health")
             const curh = health.currentValue
             const maxh = health.effectiveMax
-            const damage = (maxh * 0.9) - (maxh - curh) * 0.9
+            const damage = (maxh * ConfigItems.darkenedSlicerMult) - (maxh - curh) * ConfigItems.darkenedSlicerMult;
             for (let c = 0; c < damage; c++) {
                 hited.runCommand("particle minecraft:soul_particle ~ ~1 ~");
 
@@ -1051,7 +1044,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
 
 
 
-            const pain = (maxh / curh) * 2.5
+            const pain = (maxh / curh) * ConfigItems.blackKrisMult
             hited.applyDamage(pain)
             for (let c = 0; c < pain; c++) {
                 hited.runCommand("particle minecraft:soul_particle ~ ~1 ~");
@@ -1138,7 +1131,7 @@ world.afterEvents.entityHitEntity.subscribe(data => {
     const eq = hitler.getComponent('equippable')
     if (hitler?.hasComponent('equippable') && eq.getEquipment(EquipmentSlot.Head)?.typeId == 'spimton:antique_cloth_hood'
     ) {
-        if (Math.random() > 0.75) {
+        if (Math.random() > ConfigItems.antiqueAllyHit) {
             const tornado = hitled.dimension.spawnEntity("spimton:antique_tornado_ally", hitled.location);
             // Tame the wolf to the player
             const tameable = tornado.getComponent("minecraft:tameable");
@@ -1147,7 +1140,7 @@ world.afterEvents.entityHitEntity.subscribe(data => {
     }
     if (hitler?.hasComponent('equippable') && eq.getEquipment(EquipmentSlot.Head)?.typeId == 'spimton:nethengic_cloth_hood'
     ) {
-        if (Math.random() > 0.75) {
+        if (Math.random() > ConfigItems.nethengeicAllyHit) {
             const reddo = hitled.dimension.spawnEntity("spimton:magicians_red_ally", hitled.location);
             // Tame the wolf to the player
             const tameable = reddo.getComponent("minecraft:tameable");
@@ -1168,17 +1161,17 @@ system.beforeEvents.startup.subscribe(comp => {
             }
             const cooldown = attackingEntity.getItemCooldown("guretozawordo");
             if (cooldown == 0) {
-                attackingEntity.addEffect("slowness", 300, { showParticles: false, amplifier: fatigue })
-                attackingEntity.addEffect("mining_fatigue", 300, { showParticles: false, amplifier: fatigue });
+                attackingEntity.addEffect("slowness", ConfigItems.guretozawordo.metallicore.effectDuration, { showParticles: false, amplifier: fatigue })
+                attackingEntity.addEffect("mining_fatigue", ConfigItems.guretozawordo.metallicore.effectDuration, { showParticles: false, amplifier: fatigue });
                 fatigue++;
-                attackingEntity.startItemCooldown("guretozawordo", 13);
+                attackingEntity.startItemCooldown("guretozawordo", ConfigItems.guretozawordo.metallicore.cooldown);
             }
             else {
                 attackingEntity.addEffect("weakness", (cooldown * 20) - 3, { showParticles: false, amplifier: fatigue })
             };
-            if (fatigue >= 10) {
+            if (fatigue >= ConfigItems.guretozawordo.metallicore.treshold) {
                 attackingEntity.runCommand("title @s actionbar You feel overwhelmed by the sword's weight...")
-                attackingEntity.applyDamage(fatigue / 1.997, { cause: EntityDamageCause.none })
+                attackingEntity.applyDamage(fatigue / ConfigItems.guretozawordo.metallicore.damageApplied, { cause: EntityDamageCause.none })
             };
             itemStack.setDynamicProperty("spimton:fatigue", fatigue)
             itemStack.setLore([
@@ -1204,21 +1197,21 @@ system.beforeEvents.startup.subscribe(comp => {
             }
             const cooldown = attackingEntity.getItemCooldown("guretozawordo");
             if (cooldown == 0) {
-                attackingEntity.addEffect("poison", 300, { showParticles: false, amplifier: radiation })
-                attackingEntity.setOnFire(radiation * 5 + 5, false)
+                attackingEntity.addEffect("poison", ConfigItems.guretozawordo.baleful.effectDuration, { showParticles: false, amplifier: radiation })
+                attackingEntity.setOnFire((radiation + 1) * ConfigItems.guretozawordo.baleful.fireDuration, false)
                 for (let c = 0; c < radiation + 1; c++) {
                     attackingEntity.runCommand("scoreboard players add @s asbestos 1");
 
                 }
                 radiation++;
-                attackingEntity.startItemCooldown("guretozawordo", 13);
+                attackingEntity.startItemCooldown("guretozawordo", ConfigItems.guretozawordo.baleful.cooldown);
             }
             else {
                 attackingEntity.addEffect("weakness", (cooldown * 20) - 3, { showParticles: false, amplifier: fatigue })
             };
-            if (radiation >= 10) {
+            if (radiation >= ConfigItems.guretozawordo.baleful.treshold) {
                 attackingEntity.runCommand("title @s actionbar You feel overwhelmed by the sword's radiation...")
-                attackingEntity.applyDamage(radiation / 1.997, { cause: EntityDamageCause.none })
+                attackingEntity.applyDamage(radiation / ConfigItems.guretozawordo.baleful.damageApplied, { cause: EntityDamageCause.none })
             };
             itemStack.setDynamicProperty("spimton:radiation", radiation)
             itemStack.setLore([
@@ -1248,7 +1241,7 @@ world.afterEvents.entityDie.subscribe(event => {
                 let fatigueded = slotm.getDynamicProperty("spimton:fatigue")
 
                 player.dimension.spawnParticle("minecraft:trial_spawner_detection_ominous", player.getHeadLocation())
-                player.addEffect("strength", 5 * deadEntity.getComponent("health").effectiveMax, { showParticles: false, amplifier: fatigueded - 1 })
+                player.addEffect("strength", ConfigItems.guretozawordo.metallicore.killAmp * deadEntity.getComponent("health").effectiveMax, { showParticles: false, amplifier: fatigueded - 1 })
                 fatigueded = 0
 
                 slotm.setDynamicProperty("spimton:fatigue", fatigueded)
@@ -1264,8 +1257,8 @@ world.afterEvents.entityDie.subscribe(event => {
                 let radiationfox = slotm.getDynamicProperty("spimton:radiation")
                 player.runCommand(`scoreboard players remove @s asbestos ${deadEntity.getComponent("health").effectiveMax * 2}`)
                 player.addTag("greto")
-                player.runCommand(`damage @e[r=12.25,tag=!greto] ${Math.round(radiationfox * deadEntity.getComponent("health").effectiveMax / 20)} ${EntityDamageCause.wither}`)
-                player.runCommand(`effect @e[r=12.25,tag=!greto] wither ${Math.round(deadEntity.getComponent("health").effectiveMax)} ${radiationfox}`)
+                player.runCommand(`damage @e[r=${ConfigItems.guretozawordo.baleful.killRange},tag=!greto] ${Math.round(radiationfox * deadEntity.getComponent("health").effectiveMax / ConfigItems.guretozawordo.baleful.killRed)} ${EntityDamageCause.wither}`)
+                player.runCommand(`effect @e[r=${ConfigItems.guretozawordo.baleful.killRange},tag=!greto] wither ${Math.round(deadEntity.getComponent("health").effectiveMax)} ${radiationfox}`)
                 player.removeTag("greto")
                 radiationfox = 0
                 slotm.setDynamicProperty("spimton:radiation", radiationfox)
@@ -1284,12 +1277,12 @@ world.afterEvents.entityDie.subscribe(event => {
                     killcount = 0
                 };
                 console.warn("Killcount:", String(killcount));
-                if (killcount < 12) {
+                if (killcount < ConfigItems.spear.whispering.killcount) {
                     killcount++;
-                    if (killcount > 6 && killcount < 12) {
-                        player.runCommand(`title @s actionbar §4§o${12 - killcount} left`)
+                    if (killcount > ConfigItems.spear.whispering.killcount / 2 && killcount < ConfigItems.spear.whispering.killcount) {
+                        player.runCommand(`title @s actionbar §4§o${ConfigItems.spear.whispering.killcount - killcount} left`)
                     }
-                    else if (killcount >= 12) {
+                    else if (killcount >= ConfigItems.spear.whispering.killcount) {
                         eqqq.setLore([
                             "",
                             whispering_spear_powerup
@@ -1311,9 +1304,9 @@ world.afterEvents.entityDie.subscribe(event => {
                     killcount = 0
                 };
                 console.warn("Killcount:", String(killcount));
-                if (killcount < 8 && deadEntity.getComponent("type_family").hasTypeFamily("undead") && player.getComponent("health").currentValue / player.getComponent("health").effectiveMax < 0.1997) {
+                if (killcount < ConfigItems.spear.luck.killcount && deadEntity.getComponent("type_family").hasTypeFamily("undead") && player.getComponent("health").currentValue / player.getComponent("health").effectiveMax < 0.1997) {
                     killcount++;
-                    if (killcount >= 8) {
+                    if (killcount >= ConfigItems.spear.luck.killcount) {
                         eqqq.setLore([
                             "",
                             luck_spear_powerup.base,
@@ -1327,7 +1320,7 @@ world.afterEvents.entityDie.subscribe(event => {
                     player.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, eqqq);
 
                 };
-                if (Math.random() < deadEntity.getComponent("health").effectiveMax / 40 && killcount < 8) player.runCommand(`loot spawn ${deadEntity.location.x} ${deadEntity.location.y} ${deadEntity.location.z} loot "luck_spear"`)
+                if (Math.random() < deadEntity.getComponent("health").effectiveMax / ConfigItems.spear.luck.luckChance && killcount < ConfigItems.spear.luck.killcount) player.runCommand(`loot spawn ${deadEntity.location.x} ${deadEntity.location.y} ${deadEntity.location.z} loot "luck_spear"`)
             };
         };
         if (OF) {
@@ -1338,15 +1331,15 @@ world.afterEvents.entityDie.subscribe(event => {
                 souls = 0
             };
             const health = deadEntity.getComponent("health").effectiveMax
-            souls += Math.ceil(health / 10);
-            if (souls > 50) {
-                souls = 50
+            souls += Math.ceil(health / ConfigItems.soulArtifacts.healtMod);
+            if (souls > ConfigItems.soulArtifacts.maxSouls) {
+                souls = ConfigItems.soulArtifacts.maxSouls
             }
             OF.setDynamicProperty("spimton:souls", souls)
             OF.setLore(
                 [
                     "",
-                    `§r§7Souls: ${souls}/50`
+                    `§r§7Souls: ${souls}/${ConfigItems.soulArtifacts.maxSouls}`
                 ]
             );
             player.getComponent("equippable").setEquipment(EquipmentSlot.Offhand, OF)
@@ -1365,7 +1358,7 @@ const luck_spear_base = {
 
 const luck_spear_powerup = {
     base: "§r§4[Pluck]§7:",
-    desc: "§r§7Having less than 20% of your health",
+    desc: `§r§7Having less than ${Math.ceil(ConfigItems.spear.luck.pluckTreshold * 100)} of your health`,
     desc2: "§r§7inflicts more damage."
 }
 
@@ -1386,15 +1379,15 @@ system.beforeEvents.startup.subscribe(dataaa => {
         onHitEntity: arg => {
             const { hitEntity, attackingEntity } = arg
             const item = attackingEntity.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand);
-            if (item.getDynamicProperty("spimton:whispering_spear_killcount") == 12) {
+            if (item.getDynamicProperty("spimton:whispering_spear_killcount") == ConfigItems.spear.whispering.killcount) {
                 const health = hitEntity.getComponent("health")
-                if (health.currentValue / health.effectiveMax < 0.1225) {
+                if (health.currentValue / health.effectiveMax < ConfigItems.spear.whispering.proceedTreshold) {
                     attackingEntity.runCommand("title @s actionbar §4Proceed")
-                    hitEntity.applyDamage(19.97, { cause: "freezing", damagingEntity: attackingEntity })
+                    hitEntity.applyDamage(ConfigItems.spear.whispering.proceedDamage, { cause: "freezing", damagingEntity: attackingEntity })
 
                 }
                 else {
-                    hitEntity.applyDamage(6, { cause: "freezing", damagingEntity: attackingEntity })
+                    hitEntity.applyDamage(ConfigItems.spear.whispering.freezingDamage, { cause: "freezing", damagingEntity: attackingEntity })
                 }
             }
 
@@ -1413,10 +1406,10 @@ system.beforeEvents.startup.subscribe(dataaa => {
                     luck_spear_base.desc2
                 ])
             }
-            if (item.getDynamicProperty("spimton:whispering_spear_killcount") == 8) {
+            if (item.getDynamicProperty("spimton:whispering_spear_killcount") == ConfigItems.spear.luck.killcount) {
                 const health = attackingEntity.getComponent("health")
-                if (health.currentValue / health.effectiveMax < 0.1997) {
-                    hitEntity.applyDamage(21, { cause: EntityDamageCause.entityAttack, damagingEntity: attackingEntity })
+                if (health.currentValue / health.effectiveMax < ConfigItems.spear.luck.pluckTreshold) {
+                    hitEntity.applyDamage(ConfigItems.spear.luck.pluckDamage, { cause: EntityDamageCause.entityAttack, damagingEntity: attackingEntity })
 
                 }
             }
@@ -1437,11 +1430,11 @@ system.beforeEvents.startup.subscribe(dataaa => {
 
                     if (source?.isSneaking && souls > 0) {
                         source.addTag("spimton:harvest")
-                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:harvest", AllyTag], maxDistance: Math.ceil(souls * 0.3) + 3, minDistance: 0, excludeTypes: ["item"] });
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:harvest", AllyTag], maxDistance: Math.ceil(souls * ConfigItems.soulArtifacts.harvester.rangeScale) + ConfigItems.soulArtifacts.harvester.rangeAdd, minDistance: 0, excludeTypes: ["item"] });
                         for (const Enity of Entities) {
                             const DV = getVectorToEntity(source, Enity)
-                            Enity.applyKnockback({ x: DV.x * souls / 20, z: DV.z * souls / 20 }, souls / 20)
-                            Enity.applyDamage(souls / 1.225, { damagingEntity: source, cause: EntityDamageCause.magic })
+                            Enity.applyKnockback({ x: DV.x * souls / ConfigItems.soulArtifacts.harvester.damageScale, z: DV.z * souls / ConfigItems.soulArtifacts.harvester.damageScale }, souls / ConfigItems.soulArtifacts.harvester.damageScale)
+                            Enity.applyDamage(souls / ConfigItems.soulArtifacts.harvester.defaultScale, { damagingEntity: source, cause: EntityDamageCause.magic })
                         };
                         source.removeTag("spimton:harvest")
                         console.warn("end harvest")
@@ -1450,19 +1443,19 @@ system.beforeEvents.startup.subscribe(dataaa => {
                         souls = 0;
                         itemStack.setDynamicProperty("spimton:souls", souls)
                     }
-                    else if (souls >= 10) {
+                    else if (souls >= ConfigItems.soulArtifacts.harvester.defaultSouls) {
                         source.addTag("spimton:harvest")
-                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:harvest", AllyTag], maxDistance: 6, minDistance: 0, excludeTypes: ["item"] });
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), excludeFamilies: ["inanimate"], excludeTags: ["spimton:harvest", AllyTag], maxDistance: ConfigItems.soulArtifacts.harvester.defaultRange, minDistance: 0, excludeTypes: ["item"] });
                         for (const Enity of Entities) {
                             const DV = getVectorToEntity(source, Enity)
-                            Enity.applyKnockback({ x: DV.x * 10 / 20, z: DV.z * 10 / 20 }, 10 / 20)
-                            Enity.applyDamage(10 / 1.225, { damagingEntity: source, cause: EntityDamageCause.magic })
+                            Enity.applyKnockback({ x: DV.x * 10 / ConfigItems.soulArtifacts.harvester.damageScale, z: DV.z * 10 / ConfigItems.soulArtifacts.harvester.damageScale }, 10 / ConfigItems.soulArtifacts.harvester.damageScale)
+                            Enity.applyDamage(ConfigItems.soulArtifacts.harvester.defaultDamage / ConfigItems.soulArtifacts.harvester.defaultScale, { damagingEntity: source, cause: EntityDamageCause.magic })
                         };
                         source.removeTag("spimton:harvest")
                         console.warn("end harvest")
                         source.dimension.spawnParticle("spimton:soul_blast", source.getHeadLocation())
                         source.dimension.playSound("item.soul_harvester", source.getHeadLocation());
-                        souls += -10;
+                        souls += -ConfigItems.soulArtifacts.harvester.defaultSouls;
                         itemStack.setDynamicProperty("spimton:souls", souls)
 
 
@@ -1473,7 +1466,7 @@ system.beforeEvents.startup.subscribe(dataaa => {
                     break;
                 case "spimton:materializer":
                     if (source?.isSneaking && souls > 0) {
-                        const BRIDGE_LENGTH = Math.ceil(souls * 2);
+                        const BRIDGE_LENGTH = Math.ceil(souls * ConfigItems.soulArtifacts.materializer.bridgeScale);
                         const BRIDGE_BLOCK = "spimton:ecto_block_plat";
                         const location = source.location;
                         const dir = source.getViewDirection();
@@ -1506,8 +1499,8 @@ system.beforeEvents.startup.subscribe(dataaa => {
                         souls = 0
                         itemStack.setDynamicProperty("spimton:souls", souls)
                     }
-                    else if (souls >= 10) {
-                        const BRIDGE_LENGTH = Math.ceil(20);
+                    else if (souls >= ConfigItems.soulArtifacts.materializer.defaultSouls) {
+                        const BRIDGE_LENGTH = Math.ceil(ConfigItems.soulArtifacts.materializer.defaultLength);
                         const BRIDGE_BLOCK = "spimton:ecto_block_plat";
                         const location = source.location;
                         const dir = source.getViewDirection();
@@ -1537,7 +1530,7 @@ system.beforeEvents.startup.subscribe(dataaa => {
                                 source.dimension.playSound("item.soul_materializer", source.getHeadLocation(), { volume: 0.55 })
                             }
                         };
-                        souls += -10;
+                        souls += -ConfigItems.soulArtifacts.materializer.defaultSouls;
                         itemStack.setDynamicProperty("spimton:souls", souls)
 
 
@@ -1548,11 +1541,11 @@ system.beforeEvents.startup.subscribe(dataaa => {
                     break;
                 case "spimton:soul_healer":
                     if (source?.isSneaking && souls > 0) {
-                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), maxDistance: Math.floor(souls * 0.6), minDistance: 0, tags: [AllyTag], closest: Math.floor(souls / 3) });
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), maxDistance: Math.floor(souls * ConfigItems.soulArtifacts.soulHealer.rangeScale), minDistance: 0, tags: [AllyTag], closest: Math.floor(souls / 3) });
                         for (const entity of Entities) {
                             const health = entity.getComponent("health")
                             const max = health.effectiveMax
-                            let healthtoset = health.currentValue + Math.floor(souls / 1.997 + 1);
+                            let healthtoset = health.currentValue + Math.floor(souls / ConfigItems.soulArtifacts.soulHealer.healScale + 1);
                             if (healthtoset > max) {
                                 healthtoset = max
                             };
@@ -1562,7 +1555,7 @@ system.beforeEvents.startup.subscribe(dataaa => {
                         };
                         const healthS = source.getComponent("health")
                         const maxS = healthS.effectiveMax
-                        let healthtosetS = healthS.currentValue + Math.floor(souls / 1.225);
+                        let healthtosetS = healthS.currentValue + Math.floor(souls / ConfigItems.soulArtifacts.soulHealer.healLScale);
                         if (healthtosetS > maxS) {
                             healthtosetS = maxS
                         };
@@ -1571,12 +1564,12 @@ system.beforeEvents.startup.subscribe(dataaa => {
                         souls = 0
                         itemStack.setDynamicProperty("spimton:souls", souls)
                     }
-                    else if (souls >= 10) {
-                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), maxDistance: 6, minDistance: 0, tags: [AllyTag], closest: 3 });
+                    else if (souls >= ConfigItems.soulArtifacts.soulHealer.defaultSouls) {
+                        const Entities = source.dimension.getEntities({ location: source.getHeadLocation(), maxDistance: ConfigItems.soulArtifacts.soulHealer.defaultDistance, minDistance: 0, tags: [AllyTag], closest: 3 });
                         for (const entity of Entities) {
                             const health = entity.getComponent("health")
                             const max = health.effectiveMax
-                            let healthtoset = health.currentValue + Math.floor(10 / 1.997 + 1);
+                            let healthtoset = health.currentValue + Math.floor(ConfigItems.soulArtifacts.soulHealer.defaultHeal / ConfigItems.soulArtifacts.soulHealer.healScale + 1);
                             if (healthtoset > max) {
                                 healthtoset = max
                             };
@@ -1586,13 +1579,13 @@ system.beforeEvents.startup.subscribe(dataaa => {
                         };
                         const healthS = source.getComponent("health")
                         const maxS = healthS.effectiveMax
-                        let healthtosetS = healthS.currentValue + Math.floor(10 / 1.225);
+                        let healthtosetS = healthS.currentValue + Math.floor(ConfigItems.soulArtifacts.soulHealer.defaultHealL / ConfigItems.soulArtifacts.soulHealer.healLScale);
                         if (healthtosetS > maxS) {
                             healthtosetS = maxS
                         };
                         healthS.setCurrentValue(healthtosetS)
                         source.dimension.playSound("item.soul_healer", source.getHeadLocation())
-                        souls += -10;
+                        souls += -ConfigItems.soulArtifacts.soulHealer.defaultSouls;
                         itemStack.setDynamicProperty("spimton:souls", souls)
 
 
@@ -1607,8 +1600,8 @@ system.beforeEvents.startup.subscribe(dataaa => {
                         if (TargetEntity.length > 0) {
                             const playerPos = source.location
                             const targetPos = TargetEntity[0].entity.location;
-                            source.addEffect("invisibility", souls * 30 / TargetEntity[0].distance, { showParticles: false })
-                            source.addEffect("slow_falling", souls * 30 / TargetEntity[0].distance, { showParticles: false });
+                            source.addEffect("invisibility", souls * ConfigItems.soulArtifacts.shadowShifter.durMod / TargetEntity[0].distance, { showParticles: false })
+                            source.addEffect("slow_falling", souls * ConfigItems.soulArtifacts.shadowShifter.durMod / TargetEntity[0].distance, { showParticles: false });
                             TargetEntity[0].entity.teleport(playerPos, { facingLocation: TargetEntity[0].entity.getViewDirection() })
                             source.teleport(targetPos, { checkForBlocks: false, facingLocation: source.getViewDirection() });
                             source.dimension.playSound("item.shadow_shifter", source.getHeadLocation())
@@ -1620,17 +1613,17 @@ system.beforeEvents.startup.subscribe(dataaa => {
                             source.runCommand("title @s actionbar §bNo valid targets!")
                         }
                     }
-                    else if (souls >= 10) {
-                        const TargetEntity = source.getEntitiesFromViewDirection({ maxDistance: 10, ignoreBlockCollision: true, excludeFamilies: ["inanimate"], excludeTypes: ["item"] })
+                    else if (souls >= ConfigItems.soulArtifacts.shadowShifter.defaultSouls) {
+                        const TargetEntity = source.getEntitiesFromViewDirection({ maxDistance: ConfigItems.soulArtifacts.shadowShifter.defaultDistance, ignoreBlockCollision: true, excludeFamilies: ["inanimate"], excludeTypes: ["item"] })
                         if (TargetEntity.length > 0) {
                             const playerPos = source.location
                             const targetPos = TargetEntity[0].entity.location;
-                            source.addEffect("invisibility", 10 * 30 / TargetEntity[0].distance, { showParticles: false })
-                            source.addEffect("slow_falling", 10 * 30 / TargetEntity[0].distance, { showParticles: false });
+                            source.addEffect("invisibility", ConfigItems.soulArtifacts.shadowShifter.defaultDur * ConfigItems.soulArtifacts.shadowShifter.durMod / TargetEntity[0].distance, { showParticles: false })
+                            source.addEffect("slow_falling", ConfigItems.soulArtifacts.shadowShifter.defaultDur * ConfigItems.soulArtifacts.shadowShifter.durMod / TargetEntity[0].distance, { showParticles: false });
                             TargetEntity[0].entity.teleport(playerPos, { facingLocation: TargetEntity[0].entity.getViewDirection() })
                             source.teleport(targetPos, { checkForBlocks: false, facingLocation: source.getViewDirection() });
                             source.dimension.playSound("item.shadow_shifter", source.getHeadLocation())
-                            souls += -10;
+                            souls += -ConfigItems.soulArtifacts.shadowShifter.defaultSouls;
                             itemStack.setDynamicProperty("spimton:souls", souls)
 
                         }
@@ -1648,7 +1641,7 @@ system.beforeEvents.startup.subscribe(dataaa => {
             };
             itemStack.setLore([
                 "",
-                `§r§7Souls: ${souls}/50`
+                `§r§7Souls: ${souls}/${ConfigItems.soulArtifacts.maxSouls}`
             ]);
             source.getComponent("equippable").setEquipment(EquipmentSlot.Mainhand, itemStack);
         },

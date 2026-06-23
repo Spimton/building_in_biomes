@@ -3,9 +3,7 @@ execute at @e[type=spimton:solar_flare] run particle minecraft:mobflame_single ~
 execute at @e[type=spimton:fireball_friendly] run particle minecraft:mobflame_single ~ ~ ~
 execute at @e[type=spimton:fireball_friendly_bigg] run particle minecraft:mobflame_single ~ ~ ~
 execute at @e[type=spimton:fireball_friendly_antigravity] run particle minecraft:mobflame_single ~ ~ ~
-execute at @e[type=spimton:rune_fire] run particle minecraft:lava_particle ~ ~ ~
-execute at @e[type=spimton:pbd] run effect @e[r=3] poison 10 0 true
-execute at @e[type=spimton:pbd] run effect @e[r=3] slowness 10 0 true
+execute at @e[family=spimton:rune] run particle minecraft:lava_particle ~ ~ ~
 execute at @e[type=spimton:blitzer] run particle spimton:firewarp ~ ~ ~
 execute at @e[type=spimton:sacred_spear] run particle minecraft:basic_flame_particle ~ ~ ~
 execute at @e[type=spimton:sacred_spear_fast] run particle minecraft:dragon_breath_trail ~ ~ ~

@@ -228,6 +228,10 @@
 					"priority": 1,
 					"summon_choices": [
 						{
+							"filters": {
+								"test": "on_ground",
+								"subject": "target"
+							},
 							"min_activation_range": 1,
 							"max_activation_range": 50,
 							"cooldown_time": 3,
@@ -249,6 +253,10 @@
 							]
 						},
 						{
+							"filters": {
+								"test": "on_ground",
+								"subject": "target"
+							},
 							"min_activation_range": 1,
 							"max_activation_range": 50,
 							"cooldown_time": 3,
@@ -264,6 +272,57 @@
 									"delay_per_summon": 0.2,
 									"num_entities_spawned": 6,
 									"entity_type": "spimton:overgrown_skirmisher",
+									"size": 15,
+									"entity_lifespan": 30
+								}
+							]
+						},
+						{
+							"filters": {
+								"test": "on_ground",
+								"subject": "target"
+							},
+							"min_activation_range": 1,
+							"max_activation_range": 50,
+							"cooldown_time": 1,
+							"weight": 2,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "line",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0.1225,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:overgrown_arsonist",
+									"size": 15,
+									"entity_lifespan": 30
+								}
+							]
+						},
+						{
+							"filters": {
+								"test": "on_ground",
+								"subject": "target",
+								"operator": "!="
+							},
+							"min_activation_range": 1,
+							"max_activation_range": 50,
+							"cooldown_time": 3,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0.2,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:overgrown_hunter",
 									"size": 15,
 									"entity_lifespan": 30
 								}
@@ -354,7 +413,7 @@
 									"delay_per_summon": 0.5,
 									"num_entities_spawned": 15,
 									"entity_type": "spimton:fireball_spawner",
-									"size": 12,
+									"size": 9,
 									"entity_lifespan": 6,
 									"sound_event": "prepare.attack"
 								},
@@ -377,6 +436,118 @@
 									"entity_type": "spimton:fireball_spawner",
 									"size": 6,
 									"entity_lifespan": 10
+								}
+							]
+						},
+						{
+							"filters": {
+								"test": "is_underground",
+								"subject": "self"
+							},
+							"min_activation_range": 1,
+							"max_activation_range": 6,
+							"cooldown_time": 3,
+							"weight": 4,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:mby_dialog",
+									"size": 1,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.5,
+									"num_entities_spawned": 2,
+									"entity_type": "spimton:fireball_spawner_upward",
+									"size": 2.5,
+									"entity_lifespan": 6,
+									"sound_event": "prepare.attack"
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 4,
+									"entity_type": "spimton:fireball_spawner_upward",
+									"size": 5,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:fireball_spawner_upward",
+									"size": 10,
+									"entity_lifespan": 6
+								}
+							]
+						},
+						{
+							"filters": {
+								"test": "is_underground",
+								"subject": "self"
+							},
+							"min_activation_range": 1,
+							"max_activation_range": 11,
+							"cooldown_time": 3,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:mby_dialog",
+									"size": 1,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.5,
+									"num_entities_spawned": 10,
+									"entity_type": "spimton:fireball_spawner_upward",
+									"size": 9,
+									"entity_lifespan": 5,
+									"sound_event": "prepare.attack"
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 1,
+									"num_entities_spawned": 8,
+									"entity_type": "spimton:fireball_spawner_upward",
+									"size": 6,
+									"entity_lifespan": 5
+								},
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 8,
+									"entity_type": "spimton:fireball_spawner_upward",
+									"size": 6,
+									"entity_lifespan": 8
 								}
 							]
 						},
@@ -565,6 +736,16 @@
 			"minecraft:navigation.walk": {
 				"can_path_over_water": true
 			},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"test": "in_lava",
+						"subject": "self"
+					},
+					"target": "self",
+					"event": "spimton:lava"
+				}
+			},
 			"minecraft:movement.basic": {},
 			"minecraft:jump.static": {},
 			"minecraft:follow_range": {
@@ -615,42 +796,35 @@
 				]
 			},
 			"spimton:try_randomize_33": {
-				"randomize": [
-					{
-						"weight": 20,
-						"trigger": "spimton:try_randomize"
-					},
-					{
-						"weight": 10,
-						"trigger": "spimton:try_randomize",
-						"queue_command": {
-							"target": "self",
-							"command": "effect @s resistance 1 5 true"
-						}
-					}
-				]
+				"trigger": "spimton:try_randomize",
+				"queue_command": {
+					"target": "self",
+					"command": "effect @s resistance 1 2 true"
+				}
 			},
 			"spimton:try_randomize_23": {
-				"randomize": [
-					{
-						"weight": 10,
-						"trigger": "spimton:try_randomize"
-					},
-					{
-						"weight": 20,
-						"trigger": "spimton:try_randomize",
-						"queue_command": {
-							"target": "self",
-							"command": "effect @s resistance 1 5 true"
-						}
-					}
-				]
+				"trigger": "spimton:try_randomize",
+				"queue_command": {
+					"target": "self",
+					"command": "effect @s resistance 1 3 true"
+				}
 			},
 			"spimton:try_randomize_13": {
 				"trigger": "spimton:try_randomize",
 				"queue_command": {
 					"target": "self",
-					"command": "effect @s resistance 1 5 true"
+					"command": "effect @s resistance 1 4 true"
+				}
+			},
+			"spimton:lava": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"title @a[r=30] actionbar The Archshaman concentrated the lava into the SUN!",
+						"fill ~10 ~-5 ~10 ~-10 ~15 ~-10 air replace lava",
+						"fill ~10 ~-5 ~10 ~-10 ~15 ~-10 air replace flowing_lava",
+						"summon spimton:sun"
+					]
 				}
 			},
 			"minecraft:entity_spawned": {
@@ -778,7 +952,9 @@
 										"execute as @e[type=spimton:overgrown_skirmisher] run event entity @s spimton:heal",
 										"execute as @e[type=spimton:overgrown_warlock] run event entity @s spimton:heal",
 										"kill @e[type=spimton:overgrown_skirmisher]",
-										"kill @e[type=spimton:overgrown_warlock]"
+										"kill @e[type=spimton:overgrown_warlock]",
+										"kill @e[type=spimton:overgrown_hunter]",
+										"kill @e[type=spimton:overgrown_arsonist]"
 									],
 									"target": "self"
 								},

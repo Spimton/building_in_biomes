@@ -5,10 +5,12 @@
 			"identifier": "spimton:red_magician",
 			"min_engine_version": "1.8.0",
 			"materials": {
-				"default": "skeleton"
+				"default": "skeleton",
+				"piper_buff": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/cultist"
+				"default": "textures/entity/cultist",
+				"piper_buff": "textures/entity/piper_buff/piper_buff_cultist"
 			},
 			"geometry": {
 				"default": "geometry.mann"
@@ -68,7 +70,7 @@
 				}
 			],
 			"render_controllers": [
-				"controller.render.default"
+				"controller.render.piper_buff"
 			],
 			"enable_attachables": true
 		}
