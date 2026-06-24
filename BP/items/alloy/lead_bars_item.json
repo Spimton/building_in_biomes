@@ -2,16 +2,16 @@
     "format_version": "1.21.100",
     "minecraft:item": {
         "description": {
-            "identifier": "spimton:cooler_ht_lead_bars",
+            "identifier": "spimton:lead_bars",
             "menu_category": {
                 "category": "construction",
                 "group": "minecraft:itemGroup.name.bars"
             }
         },
         "components": {
-            "minecraft:icon": "cooler_ht_lead_bars",
+            "minecraft:icon": "lead_bars",
             "minecraft:block_placer": {
-                "block": "spimton:cooler_ht_lead_bars",
+                "block": "spimton:lead_bars",
                 "replace_block_item": true
             }
         }

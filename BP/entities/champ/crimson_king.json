@@ -8,6 +8,57 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"spimton:offensive_mode": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1.5,
+							"damage_modifier": 1
+						}
+					]
+				}
+			},
+			"spimton:defensive_mode": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 0.85,
+							"damage_modifier": -3
+						}
+					]
+				}
+			},
+			"spimton:virtuose_mode": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "all",
+							"damage_multiplier": 1,
+							"damage_modifier": 0
+						}
+					]
+				}
+			},
 			////OFFENSIVE\\\\
 			"spimton:bay_offensive": {
 				"minecraft:teleport": {
@@ -28,8 +79,8 @@
 					"projectile_def": "spimton:fireball_friendly_bigg",
 					"priority": 2,
 					"attack_range": [
-						0,
-						64
+						5,
+						32
 					],
 					"attack_cooldown": 0.5,
 					"pre_shoot_delay": 2,
@@ -48,17 +99,8 @@
 						0
 					]
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 1.5,
-							"damage_modifier": 2
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 6,
 					"time_down_event": {
 						"target": "self",
@@ -83,13 +125,13 @@
 					"reflection_scale": 1.225
 				},
 				"minecraft:behavior.knockback_roar": {
-					"attack_time": 0.1,
-					"duration": 0.5,
-					"knockback_damage": 6,
+					"attack_time": 0.6,
+					"duration": 1,
+					"knockback_damage": 3,
 					"knockback_horizontal_strength": 2,
 					"knockback_vertical_strength": 3,
-					"knockback_height_cap": 3,
-					"cooldown_time": 0.5,
+					"knockback_height_cap": 5,
+					"cooldown_time": 0.1997,
 					"priority": 1,
 					"knockback_range": 8,
 					"damage_filters": [
@@ -101,17 +143,8 @@
 						}
 					]
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 1.5,
-							"damage_modifier": 2
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 4,
 					"time_down_event": {
 						"target": "self",
@@ -124,19 +157,21 @@
 					"priority": 1,
 					"summon_choices": [
 						{
-							"cast_duration": 2,
+							"cast_duration": 3,
 							"do_casting": true,
-							"cooldown_time": 2,
+							"cooldown_time": 6,
 							"max_activation_range": 32,
 							"min_activation_range": 1,
 							"start_sound_event": "cast.spell",
 							"weight": 1,
 							"sequence": [
 								{
-									"size": 3,
+									"base_delay": 2,
+									"delay_per_summon": 0.25,
+									"size": 2,
 									"shape": "circle",
 									"target": "self",
-									"entity_type": "spimton:red_magician",
+									"entity_type": "spimton:cking_court",
 									"num_entities_spawned": 3,
 									"entity_lifespan": 11
 								}
@@ -144,18 +179,9 @@
 						}
 					]
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 1.5,
-							"damage_modifier": 2
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
-					"time": 4,
+					"looping": true,
+					"time": 8,
 					"time_down_event": {
 						"target": "self",
 						"event": "spimton:switch"
@@ -178,28 +204,20 @@
 					"target_teleport_chance": 1
 				},
 				"minecraft:movement": {
-					"value": 0.27
+					"value": 0.25
 				},
 				"minecraft:attack": {
 					"damage": 4
 				},
 				"minecraft:behavior.melee_attack": {
+					"cooldown_time": 0.5,
 					"on_attack": {
 						"event": "spimton:melee_leech",
 						"target": "self"
 					}
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 1.5,
-							"damage_modifier": 2
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 5,
 					"time_down_event": {
 						"target": "self",
@@ -227,7 +245,7 @@
 					"projectile_def": "spimton:fireball_friendly",
 					"priority": 2,
 					"attack_range": [
-						0,
+						5,
 						32
 					],
 					"attack_cooldown": 0.5,
@@ -247,17 +265,8 @@
 						0
 					]
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 0.85,
-							"damage_modifier": -4
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 6,
 					"time_down_event": {
 						"target": "self",
@@ -267,13 +276,13 @@
 			},
 			"spimton:rory_defensive": {
 				"minecraft:behavior.knockback_roar": {
-					"attack_time": 0.1,
-					"duration": 0.5,
+					"attack_time": 0.6,
+					"duration": 1,
 					"knockback_damage": 2,
 					"knockback_horizontal_strength": 2,
 					"knockback_vertical_strength": 2,
 					"knockback_height_cap": 2,
-					"cooldown_time": 2,
+					"cooldown_time": 1.997,
 					"priority": 1,
 					"knockback_range": 8,
 					"damage_filters": [
@@ -300,17 +309,8 @@
 					],
 					"reflection_scale": 0.5
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 0.85,
-							"damage_modifier": -4
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
+					"looping": true,
 					"time": 4,
 					"time_down_event": {
 						"target": "self",
@@ -323,38 +323,31 @@
 					"priority": 1,
 					"summon_choices": [
 						{
-							"cast_duration": 2,
+							"cast_duration": 3,
 							"do_casting": true,
-							"cooldown_time": 2,
+							"cooldown_time": 6,
 							"max_activation_range": 32,
 							"min_activation_range": 1,
 							"start_sound_event": "cast.spell",
 							"weight": 1,
 							"sequence": [
 								{
+									"base_delay": 2,
+									"delay_per_summon": 0.25,
 									"size": 3,
 									"shape": "circle",
 									"target": "self",
 									"entity_type": "spimton:cultist",
 									"num_entities_spawned": 3,
-									"entity_lifespan": 10
+									"entity_lifespan": 11
 								}
 							]
 						}
 					]
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"damage_multiplier": 0.85,
-							"damage_modifier": -4
-						}
-					]
-				},
 				"minecraft:timer": {
-					"looping": false,
-					"time": 4,
+					"looping": true,
+					"time": 8,
 					"time_down_event": {
 						"target": "self",
 						"event": "spimton:switch"
@@ -377,7 +370,7 @@
 					"target_teleport_chance": 1
 				},
 				"minecraft:movement": {
-					"value": 0.2
+					"value": 0.225
 				},
 				"minecraft:attack": {
 					"damage": 1
@@ -388,18 +381,238 @@
 						"target": "self"
 					}
 				},
-				"minecraft:damage_sensor": {
-					"triggers": [
+				"minecraft:timer": {
+					"looping": true,
+					"time": 6,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			///VIRTUOSE\\\
+			"spimton:bay_virtuose": {
+				"minecraft:teleport": {
+					"dark_teleport_chance": 0.1,
+					"light_teleport_chance": 0.1,
+					"max_random_teleport_time": 20,
+					"random_teleport_cube": [
+						7,
+						7,
+						7
+					],
+					"random_teleports": false,
+					"min_random_teleport_time": 20,
+					"target_distance": 16,
+					"target_teleport_chance": 1
+				},
+				"minecraft:behavior.fire_at_target": {
+					"projectile_def": "spimton:fireball_friendly_antigravity",
+					"priority": 2,
+					"attack_range": [
+						5,
+						32
+					],
+					"attack_cooldown": 0.5,
+					"pre_shoot_delay": 0.5,
+					"post_shoot_delay": 1,
+					"ranged_fov": 90,
+					"owner_anchor": 2,
+					"owner_offset": [
+						0,
+						0.3,
+						0
+					],
+					"target_anchor": 0,
+					"target_offset": [
+						0,
+						0.5,
+						0
+					]
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 6,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:strike_virtuose": {
+				"minecraft:teleport": {
+					"dark_teleport_chance": 0.1,
+					"light_teleport_chance": 0.1,
+					"max_random_teleport_time": 20,
+					"random_teleport_cube": [
+						5,
+						5,
+						5
+					],
+					"random_teleports": false,
+					"min_random_teleport_time": 20,
+					"target_distance": 32,
+					"target_teleport_chance": 1
+				},
+				"minecraft:movement": {
+					"value": 0.27
+				},
+				"minecraft:attack": {
+					"damage": 2
+				},
+				"minecraft:behavior.melee_attack": {
+					"cooldown_time": 0.5,
+					"on_attack": {
+						"event": "spimton:melee_leech",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 5,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:summon_virtuose": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
 						{
-							"cause": "all",
-							"damage_multiplier": 0.85,
-							"damage_modifier": -4
+							"cast_duration": 3,
+							"do_casting": true,
+							"cooldown_time": 6,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"start_sound_event": "cast.spell",
+							"weight": 1,
+							"sequence": [
+								{
+									"base_delay": 2,
+									"delay_per_summon": 0.25,
+									"size": 2,
+									"shape": "circle",
+									"target": "self",
+									"entity_type": "spimton:red_magician",
+									"num_entities_spawned": 3,
+									"entity_lifespan": 11
+								}
+							]
+						},
+						{
+							"cast_duration": 2,
+							"do_casting": true,
+							"cooldown_time": 6,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"start_sound_event": "cast.spell",
+							"weight": 1,
+							"sequence": [
+								{
+									"base_delay": 2,
+									"delay_per_summon": 0.25,
+									"size": 2,
+									"shape": "circle",
+									"target": "self",
+									"entity_type": "spimton:green_gardener",
+									"num_entities_spawned": 3,
+									"entity_lifespan": 11
+								}
+							]
+						},
+						{
+							"cast_duration": 2,
+							"do_casting": true,
+							"cooldown_time": 6,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"start_sound_event": "cast.spell",
+							"weight": 1,
+							"sequence": [
+								{
+									"base_delay": 2,
+									"delay_per_summon": 0.25,
+									"size": 2,
+									"shape": "circle",
+									"target": "self",
+									"entity_type": "spimton:yellow_jester",
+									"num_entities_spawned": 3,
+									"entity_lifespan": 11
+								}
+							]
+						},
+						{
+							"cast_duration": 2,
+							"do_casting": true,
+							"cooldown_time": 6,
+							"max_activation_range": 32,
+							"min_activation_range": 1,
+							"start_sound_event": "cast.spell",
+							"weight": 1,
+							"sequence": [
+								{
+									"base_delay": 2,
+									"delay_per_summon": 0.25,
+									"size": 2,
+									"shape": "circle",
+									"target": "self",
+									"entity_type": "spimton:purple_piper",
+									"num_entities_spawned": 3,
+									"entity_lifespan": 11
+								}
+							]
 						}
 					]
 				},
 				"minecraft:timer": {
-					"looping": false,
-					"time": 6,
+					"looping": true,
+					"time": 8,
+					"time_down_event": {
+						"target": "self",
+						"event": "spimton:switch"
+					}
+				}
+			},
+			"spimton:rory_virtuose": {
+				"minecraft:behavior.knockback_roar": {
+					"attack_time": 0.6,
+					"duration": 1,
+					"knockback_damage": 6,
+					"knockback_horizontal_strength": 1,
+					"knockback_vertical_strength": 2,
+					"knockback_height_cap": 10,
+					"cooldown_time": 1.225,
+					"priority": 1,
+					"knockback_range": 10,
+					"damage_filters": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "spimton:juandice"
+						}
+					]
+				},
+				"minecraft:reflect_projectiles": {
+					"azimuth_angle": 180,
+					"reflected_projectiles": [
+						"arrow",
+						"snowball",
+						"splash_potion",
+						"lingering_potion",
+						"fireball",
+						"minecraft:small_fireball",
+						"dragon_fireball",
+						"wither_skull",
+						"shulker_bullet"
+					],
+					"reflection_scale": 0.5
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 4,
 					"time_down_event": {
 						"target": "self",
 						"event": "spimton:switch"
@@ -439,6 +652,9 @@
 				"suffocate_time": 0,
 				"breathes_water": true
 			},
+			"minecraft:variant": {
+				"value": 0
+			},
 			"minecraft:equip_item": {},
 			"minecraft:collision_box": {
 				"width": 0.8,
@@ -461,7 +677,8 @@
 					"spimton:juandice",
 					"enderman",
 					"monster",
-					"mob"
+					"mob",
+					"spimton:piper_buff"
 				]
 			},
 			"minecraft:loot": {
@@ -479,178 +696,6 @@
 			},
 			"minecraft:movement": {
 				"value": 0.29
-			},
-			"minecraft:shareables": {
-				"items": [
-					{
-						"item": "minecraft:netherite_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 0
-					},
-					{
-						"item": "minecraft:diamond_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 1
-					},
-					{
-						"item": "minecraft:iron_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 2
-					},
-					{
-						"item": "minecraft:chainmail_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 3
-					},
-					{
-						"item": "minecraft:golden_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 4
-					},
-					{
-						"item": "minecraft:leather_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 5
-					},
-					{
-						"item": "minecraft:turtle_helmet",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 6
-					},
-					{
-						"item": "minecraft:skull:0",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 7
-					},
-					{
-						"item": "minecraft:skull:1",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 7
-					},
-					{
-						"item": "minecraft:carved_pumpkin",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 7
-					},
-					{
-						"item": "minecraft:netherite_chestplate",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 0
-					},
-					{
-						"item": "minecraft:diamond_chestplate",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 1
-					},
-					{
-						"item": "minecraft:iron_chestplate",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 2
-					},
-					{
-						"item": "minecraft:chainmail_chestplate",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 3
-					},
-					{
-						"item": "minecraft:golden_chestplate",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 4
-					},
-					{
-						"item": "minecraft:leather_chestplate",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 5
-					},
-					{
-						"item": "minecraft:netherite_leggings",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 0
-					},
-					{
-						"item": "minecraft:diamond_leggings",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 1
-					},
-					{
-						"item": "minecraft:iron_leggings",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 2
-					},
-					{
-						"item": "minecraft:chainmail_leggings",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 3
-					},
-					{
-						"item": "minecraft:golden_leggings",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 4
-					},
-					{
-						"item": "minecraft:leather_leggings",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 5
-					},
-					{
-						"item": "minecraft:netherite_boots",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 0
-					},
-					{
-						"item": "minecraft:diamond_boots",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 1
-					},
-					{
-						"item": "minecraft:iron_boots",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 2
-					},
-					{
-						"item": "minecraft:chainmail_boots",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 3
-					},
-					{
-						"item": "minecraft:golden_boots",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 4
-					},
-					{
-						"item": "minecraft:leather_boots",
-						"want_amount": 1,
-						"surplus_amount": 1,
-						"priority": 5
-					}
-				]
 			},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 2,
@@ -675,7 +720,7 @@
 								}
 							]
 						},
-						"max_dist": 32
+						"max_dist": 64
 					}
 				]
 			},
@@ -687,6 +732,10 @@
 				"speed_multiplier": 1.25,
 				"target_dist": 0,
 				"track_target": true
+			},
+			"minecraft:follow_range": {
+				"max": 64,
+				"value": 64
 			},
 			"minecraft:behavior.equip_item": {
 				"priority": 3
@@ -713,19 +762,36 @@
 				"should_darken_sky": true,
 				"name": "§9Crimson King§r"
 			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 2,
+				"time_down_event": {
+					"event": "spimton:switch"
+				}
+			},
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
 			"spimton:switch": {
-				"randomize": [
+				"sequence": [
 					{
-						"weight": 5,
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"value": 0
+								},
+								{
+									"test": "has_target",
+									"value": true
+								}
+							]
+						},
 						"trigger": "spimton:switch_offensive",
 						"queue_command": {
 							"target": "self",
 							"command": [
-								"tag @s add offensive",
-								"tag @s remove defensive",
 								"title @a[r=30] actionbar The Crimson King emanates an §mOffensive§r aura..."
 							]
 						},
@@ -734,19 +800,33 @@
 								"spimton:bay_defensive",
 								"spimton:rory_defensive",
 								"spimton:strike_defensive",
-								"spimton:summon_defensive"
+								"spimton:summon_defensive",
+								"spimton:bay_virtuose",
+								"spimton:rory_virtuose",
+								"spimton:strike_virtuose",
+								"spimton:summon_virtuose"
 							]
 						}
 					},
 					{
-						"weight": 5,
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"value": 1
+								},
+								{
+									"test": "has_target",
+									"value": true
+								}
+							]
+						},
 						"trigger": "spimton:switch_defensive",
 						"queue_command": {
 							"target": "self",
 							"command": [
-								"tag @s remove offensive",
-								"tag @s add defensive",
-								"title @a[r=30] actionbar The Crimson King emanates a §tDefensive§r aura..."
+								"title @a[r=30] actionbar The Crimson King emanates an §tOffensive§r aura..."
 							]
 						},
 						"remove": {
@@ -754,174 +834,388 @@
 								"spimton:bay_offensive",
 								"spimton:rory_offensive",
 								"spimton:strike_offensive",
-								"spimton:summon_offensive"
+								"spimton:summon_offensive",
+								"spimton:bay_virtuose",
+								"spimton:rory_virtuose",
+								"spimton:strike_virtuose",
+								"spimton:summon_virtuose"
 							]
 						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"subject": "self",
+									"value": 2
+								},
+								{
+									"test": "has_target",
+									"value": true
+								}
+							]
+						},
+						"randomize": [
+							{
+								"weight": 1,
+								"trigger": "spimton:switch_defensive",
+								"queue_command": {
+									"target": "self",
+									"command": [
+										"title @a[r=30] actionbar The Crimson King emanates an §tOffensive§r aura..."
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:bay_offensive",
+										"spimton:rory_offensive",
+										"spimton:strike_offensive",
+										"spimton:summon_offensive",
+										"spimton:bay_virtuose",
+										"spimton:rory_virtuose",
+										"spimton:strike_virtuose",
+										"spimton:summon_virtuose"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"trigger": "spimton:switch_offensive",
+								"queue_command": {
+									"target": "self",
+									"command": [
+										"title @a[r=30] actionbar The Crimson King emanates an §mOffensive§r aura..."
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:bay_defensive",
+										"spimton:rory_defensive",
+										"spimton:strike_defensive",
+										"spimton:summon_defensive",
+										"spimton:bay_virtuose",
+										"spimton:rory_virtuose",
+										"spimton:strike_virtuose",
+										"spimton:summon_virtuose"
+									]
+								}
+							}
+						]
 					}
 				]
 			},
 			"spimton:melee_leech": {
 				"queue_command": {
 					"target": "self",
-					"command": "effect @s instant_health 1 1 true"
+					"command": "effect @s instant_health 1 0 true"
 				}
 			},
-			"spimton:switch_offensive": {
-				"randomize": [
-					{
-						"add": {
-							"component_groups": [
-								"spimton:rory_offensive"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:bay_offensive",
-								"spimton:strike_offensive",
-								"spimton:summon_offensive"
-							]
-						},
-						"weight": 3,
-						"queue_command": {
-							"target": "target",
-							"command": "function mob/cking_rory"
-						}
-					},
-					{
-						"add": {
-							"component_groups": [
-								"spimton:strike_offensive"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:bay_offensive",
-								"spimton:rory_offensive",
-								"spimton:summon_offensive"
-							]
-						},
-						"weight": 3,
-						"queue_command": {
-							"target": "target",
-							"command": "function mob/cking_strike"
-						}
-					},
-					{
-						"add": {
-							"component_groups": [
-								"spimton:bay_offensive"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:rory_offensive",
-								"spimton:strike_offensive",
-								"spimton:summon_offensive"
-							]
-						},
-						"weight": 2,
-						"queue_command": {
-							"target": "target",
-							"command": "function mob/cking_bay"
-						}
-					},
-					{
-						"add": {
-							"component_groups": [
-								"spimton:summon_offensive"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:bay_offensive",
-								"spimton:strike_offensive",
-								"spimton:rory_offensive"
-							]
-						},
-						"weight": 3,
-						"queue_command": {
-							"target": "target",
-							"command": "function mob/cking_summon"
-						}
-					}
-				]
-			},
 			"spimton:switch_defensive": {
-				"randomize": [
+				"sequence": [
 					{
-						"add": {
-							"component_groups": [
-								"spimton:rory_defensive"
-							]
-						},
 						"remove": {
 							"component_groups": [
-								"spimton:bay_defensive",
-								"spimton:strike_defensive",
-								"spimton:summon_defensive"
+								"spimton:offensive_mode",
+								"spimton:virtuose_mode"
 							]
 						},
-						"weight": 3,
-						"queue_command": {
-							"target": "target",
-							"command": "function mob/cking_rory"
+						"add": {
+							"component_groups": [
+								"spimton:defensive_mode"
+							]
 						}
 					},
 					{
+						"filters": {
+							"test": "has_target",
+							"operator": "!="
+						},
+						"queue_command": {
+							"command": [
+								"title @a[r=30] actionbar The Crimson King doesn't have a target!",
+								"effect @s regeneration 10 1 true"
+							]
+						}
+					},
+					{
+						"filters": [
+							{
+								"test": "target_distance",
+								"subject": "self",
+								"operator": ">=",
+								"value": 10
+							}
+						],
+						"randomize": [
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spimton:summon_defensive"
+									]
+								},
+								"queue_command": {
+									"target": "target",
+									"command": "function mob/cking_summon"
+								}
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spimton:bay_defensive"
+									]
+								},
+								"queue_command": {
+									"target": "target",
+									"command": "function mob/cking_bay"
+								}
+							}
+						]
+					},
+					{
+						"filters": [
+							{
+								"test": "target_distance",
+								"subject": "self",
+								"operator": "<",
+								"value": 5
+							}
+						],
 						"add": {
 							"component_groups": [
 								"spimton:strike_defensive"
 							]
 						},
-						"remove": {
-							"component_groups": [
-								"spimton:bay_defensive",
-								"spimton:rory_defensive",
-								"spimton:summon_defensive"
-							]
-						},
-						"weight": 3,
 						"queue_command": {
 							"target": "target",
 							"command": "function mob/cking_strike"
 						}
 					},
 					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": ">=",
+									"value": 5
+								},
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": "<",
+									"value": 10
+								}
+							]
+						},
 						"add": {
 							"component_groups": [
-								"spimton:bay_defensive"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:rory_defensive",
-								"spimton:strike_defensive",
-								"spimton:summon_defensive"
-							]
-						},
-						"weight": 2,
-						"queue_command": {
-							"target": "target",
-							"command": "function mob/cking_bay"
-						}
-					},
-					{
-						"add": {
-							"component_groups": [
-								"spimton:summon_defensive"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:bay_defensive",
-								"spimton:strike_defensive",
 								"spimton:rory_defensive"
 							]
 						},
-						"weight": 3,
 						"queue_command": {
 							"target": "target",
-							"command": "function mob/cking_summon"
+							"command": "function mob/cking_rory"
+						}
+					}
+				]
+			},
+			"spimton:switch_offensive": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"spimton:defensive_mode",
+								"spimton:virtuose_mode"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:offensive_mode"
+							]
+						}
+					},
+					{
+						"filters": [
+							{
+								"test": "target_distance",
+								"subject": "self",
+								"operator": ">=",
+								"value": 10
+							}
+						],
+						"randomize": [
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spimton:summon_offensive"
+									]
+								},
+								"queue_command": {
+									"target": "target",
+									"command": "function mob/cking_summon"
+								}
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spimton:bay_offensive"
+									]
+								},
+								"queue_command": {
+									"target": "target",
+									"command": "function mob/cking_bay"
+								}
+							}
+						]
+					},
+					{
+						"filters": [
+							{
+								"test": "target_distance",
+								"subject": "self",
+								"operator": "<",
+								"value": 5
+							}
+						],
+						"add": {
+							"component_groups": [
+								"spimton:strike_offensive"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": "function mob/cking_strike"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": ">=",
+									"value": 5
+								},
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": "<",
+									"value": 10
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:rory_offensive"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": "function mob/cking_rory"
+						}
+					}
+				]
+			},
+			"spimton:switch_virtuose": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"spimton:offensive_mode",
+								"spimton:defensive_mode"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:virtuose_mode"
+							]
+						}
+					},
+					{
+						"filters": [
+							{
+								"test": "target_distance",
+								"subject": "self",
+								"operator": ">=",
+								"value": 10
+							}
+						],
+						"randomize": [
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spimton:summon_virtuose"
+									]
+								},
+								"queue_command": {
+									"target": "target",
+									"command": "function mob/cking_summon"
+								}
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spimton:bay_virtuose"
+									]
+								},
+								"queue_command": {
+									"target": "target",
+									"command": "function mob/cking_bay"
+								}
+							}
+						]
+					},
+					{
+						"filters": [
+							{
+								"test": "target_distance",
+								"subject": "self",
+								"operator": "<",
+								"value": 5
+							}
+						],
+						"add": {
+							"component_groups": [
+								"spimton:strike_virtuose"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": "function mob/cking_strike"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": ">=",
+									"value": 5
+								},
+								{
+									"test": "target_distance",
+									"subject": "self",
+									"operator": "<",
+									"value": 10
+								}
+							]
+						},
+						"add": {
+							"component_groups": [
+								"spimton:rory_virtuose"
+							]
+						},
+						"queue_command": {
+							"target": "target",
+							"command": "function mob/cking_rory"
 						}
 					}
 				]
@@ -934,6 +1228,45 @@
 					"target": "self",
 					"command": "function mob/cking_escape"
 				}
+			},
+			"spimton:piper_buff": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"value": 2,
+									"operator": "!="
+								},
+								{
+									"test": "has_target",
+									"subject": "self",
+									"value": true
+								}
+							]
+						},
+						"trigger": "spimton:switch_virtuose",
+						"queue_command": {
+							"target": "self",
+							"command": [
+								"title @a[r=30] actionbar The Crimson King emanates a §uVirtuose§r aura..."
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:bay_defensive",
+								"spimton:rory_defensive",
+								"spimton:strike_defensive",
+								"spimton:summon_defensive",
+								"spimton:bay_offensive",
+								"spimton:rory_offensive",
+								"spimton:strike_offensive",
+								"spimton:summon_offensive"
+							]
+						}
+					}
+				]
 			}
 		}
 	}

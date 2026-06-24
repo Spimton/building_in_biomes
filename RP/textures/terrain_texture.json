@@ -1725,6 +1725,24 @@
 		},
 		"chandelier": {
 			"textures": "textures/blocks/otherstone/ominous/chandelier"
+		},
+		"lead_bars": {
+			"textures": "textures/blocks/lead/lead_bars_nermal"
+		},
+		"ht_lead_bars": {
+			"textures": "textures/blocks/lead/lead_bars"
+		},
+		"cooler_lead_bars": {
+			"textures": "textures/blocks/lead/cooler_lead_bars_nermal"
+		},
+		"cooler_ht_lead_bars": {
+			"textures": "textures/blocks/lead/cooler_lead_bars"
+		},
+		"polished_lead": {
+			"textures": "textures/blocks/lead/polished_lead_nermal"
+		},
+		"ht_polished_lead": {
+			"textures": "textures/blocks/lead/polished_lead"
 		}
 	}
 }

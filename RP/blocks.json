@@ -2386,18 +2386,54 @@
 	"spimton:chiseled_cut_lead": {
 		"sound": "iron",
 		"textures": {
-			"up": "cut_lead_nermal",
-			"down": "cut_lead_nermal",
+			"up": "polished_lead",
+			"down": "polished_lead",
 			"side": "chiseled_cut_lead_nermal"
 		}
 	},
 	"spimton:chiseled_ht_cut_lead": {
 		"sound": "iron",
 		"textures": {
-			"up": "cut_lead",
-			"down": "cut_lead",
+			"up": "ht_polished_lead",
+			"down": "ht_polished_lead",
 			"side": "chiseled_cut_lead"
 		}
+	},
+	"spimton:lead_bars": {
+		"sound": "iron"
+	},
+	"spimton:cooler_lead_bars": {
+		"sound": "iron"
+	},
+	"spimton:ht_lead_bars": {
+		"sound": "iron"
+	},
+	"spimton:cooler_ht_lead_bars": {
+		"sound": "iron"
+	},
+	"spimton:polished_lead_block": {
+		"sound": "iron",
+		"textures": "polished_lead"
+	},
+	"spimton:polished_lead_slab": {
+		"sound": "iron",
+		"textures": "polished_lead"
+	},
+	"spimton:polished_lead_stairs": {
+		"sound": "iron",
+		"textures": "polished_lead"
+	},
+	"spimton:polished_ht_lead_block": {
+		"sound": "iron",
+		"textures": "ht_polished_lead"
+	},
+	"spimton:polished_ht_lead_slab": {
+		"sound": "iron",
+		"textures": "ht_polished_lead"
+	},
+	"spimton:polished_ht_lead_stairs": {
+		"sound": "iron",
+		"textures": "ht_polished_lead"
 	},
 	///DECO BLOCKS///
 	"spimton:amethyst_block": {

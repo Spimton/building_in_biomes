@@ -369,6 +369,9 @@
 					]
 				}
 			},
+			"minecraft:entity_transformed": {
+				"trigger": "minecraft:entity_spawned"
+			},
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [

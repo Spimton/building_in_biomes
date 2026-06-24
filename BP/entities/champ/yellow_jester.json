@@ -195,9 +195,6 @@
 			"minecraft:loot": {
 				"table": "loot_tables/entities/sanctuarium.json"
 			},
-			"minecraft:equipment": {
-				"table": "loot_tables/entities/cultist_eq.json"
-			},
 			"minecraft:health": {
 				"value": 20,
 				"max": 20
@@ -454,6 +451,9 @@
 						"spimton:default"
 					]
 				}
+			},
+			"minecraft:entity_transformed": {
+				"trigger": "minecraft:entity_spawned"
 			},
 			"spimton:piper_debuff": {
 				"add": {

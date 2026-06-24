@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "assume_symmetry": true,
+        "description": {
+            "identifier": "spimton:cooler_lead_bars"
+        },
+        "pattern": [
+            "###",
+            "###"
+        ],
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:lead_block"
+            }
+        },
+        "result": {
+            "item": "spimton:cooler_lead_bars",
+            "count": 64
+        }
+    }
+}

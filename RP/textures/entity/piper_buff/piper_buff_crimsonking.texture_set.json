@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "piper_buff_crimsonking",
+		"metalness_emissive_roughness": "piper_buff_crimsonking_mer"
+	}
+}

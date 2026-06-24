@@ -903,6 +903,21 @@ tile.spimton:cracked_ominous_stone_bricks.name=Cracked Ominous Stone Bricks
 tile.spimton:brazier.name=Brazier
 tile.spimton:candle_holder.name=Candle Holder
 tile.spimton:chandelier.name=Chandelier
+tile.spimton:lead_bars.name=Lead Bars
+tile.spimton:cooler_lead_bars.name=Cooler Lead Bars
+tile.spimton:ht_lead_bars.name=High Toxicity Lead Bars
+tile.spimton:cooler_ht_lead_bars.name=Cooler High Toxicity Lead Bars
+tile.spimton:polished_lead_block.name=Polished Lead
+tile.spimton:polished_lead_slab.name=Polished Lead Slab
+tile.spimton:polished_lead_stairs.name=Polished Lead Stairs
+tile.spimton:polished_ht_lead_block.name=High Toxicity Polished Lead
+tile.spimton:polished_ht_lead_slab.name=High Toxicity Polished Lead Slab
+tile.spimton:polished_ht_lead_stairs.name=High Toxicity Polished Lead Stairs
+
+
+
+
+
 
 
 
@@ -1291,9 +1306,13 @@ item.spimton:overgrown_dungeon_torch=Overgrown Dungeon Torch
 item.spimton:ominous_dungeon_torch=Ominous Dungeon Torch
 item.spawn_egg.entity.spimton:overgrown_arsonist.name=Overgrown Arsonist Spawn Egg
 item.spawn_egg.entity.spimton:green_gardener.name=Green Gardener Spawn Egg
-item.spawn_egg.entity.spimton:bluestone_golem.name=Bluestone Golem Spawn Egg §w[W.I.P]§r
+item.spawn_egg.entity.spimton:bluestone_golem.name=Bluestone Golem Spawn Egg
 item.spawn_egg.entity.spimton:yellow_jester.name=Yellow Jester Spawn Egg
-item.spawn_egg.entity.spimton:purple_piper.name=Purple Piper Spawn Egg §w[W.I.P]§r
+item.spawn_egg.entity.spimton:purple_piper.name=Purple Piper Spawn Egg
+item.spimton:lead_bars=Lead Bars
+item.spimton:ht_lead_bars=High Toxicity Lead Bars
+item.spimton:cooler_lead_bars=Cooler Lead Bars
+item.spimton:cooler_ht_lead_bars=Cooler High Toxicity Lead Bars
 
 
 

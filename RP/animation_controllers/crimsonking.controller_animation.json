@@ -1,0 +1,58 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.crimsonking.flame": {
+            "initial_state": "defensive",
+            "states": {
+                "defensive": {
+                    "particle_effects": [
+                        {
+                            "locator": "sans_eye",
+                            "effect": "defensive_flame"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "offensive": "query.variant == 1"
+                        },
+                        {
+                            "virtuose": "query.variant == 2"
+                        }
+                    ]
+                },
+                "offensive": {
+                    "particle_effects": [
+                        {
+                            "locator": "sans_eye",
+                            "effect": "offensive_flame"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "defensive": "query.variant == 0"
+                        },
+                        {
+                            "virtuose": "query.variant == 2"
+                        }
+                    ]
+                },
+                "virtuose": {
+                    "particle_effects": [
+                        {
+                            "locator": "sans_eye",
+                            "effect": "virtuose_flame"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "offensive": "query.variant == 1"
+                        },
+                        {
+                            "defensive": "query.variant == 0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

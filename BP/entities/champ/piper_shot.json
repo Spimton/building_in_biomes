@@ -62,7 +62,7 @@
                     "target": "self",
                     "command": [
                         "execute at @s run particle minecraft:note_particle ~ ~ ~",
-                        "effect @e[r=3,family=spimton:juandice] regeneration 2 3 true",
+                        "effect @e[r=3,family=spimton:juandice,type=!spimton:crimson_king] regeneration 2 3 true",
                         "execute at @s run event entity @e[r=2] spimton:piper_buff"
                     ]
                 }

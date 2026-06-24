@@ -92,6 +92,9 @@
 					"event": "spimton:firee"
 				}
 			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
 			"minecraft:damage_over_time": {
 				"time_between_hurt": 10,
 				"damage_per_hurt": 1

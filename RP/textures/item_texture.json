@@ -1049,6 +1049,18 @@
 		},
 		"purple_piper_spawn_egg": {
 			"textures": "textures/items/spawnegg/purple_piper_egg"
+		},
+		"lead_bars": {
+			"textures": "textures/blocks/lead/lead_bars_nermal"
+		},
+		"cooler_lead_bars": {
+			"textures": "textures/blocks/lead/cooler_lead_bars_nermal"
+		},
+		"ht_lead_bars": {
+			"textures": "textures/blocks/lead/lead_bars"
+		},
+		"cooler_ht_lead_bars": {
+			"textures": "textures/blocks/lead/cooler_lead_bars"
 		}
 	}
 }
