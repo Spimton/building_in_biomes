@@ -309,6 +309,7 @@
                 "queue_command": {
                     "command": [
                         //"say melee",
+                        "particle spimton:obliterator_smash ~ ~1 ~",
                         "damage @e[family=!spimton:archshaman,type=!item,dx=30,dy=5.225, dz=30,x=~-15,y=~-5,z=~-15] 30 entity_attack entity @n[type=spimton:goulden_guard_3]"
                     ]
                 }
@@ -360,7 +361,7 @@
                     "command": [
                         // "say smash",
                         "playanimation @s animation.goulden_guard_3.smash none 0",
-                        "particle spimton:opulent_smash ~ ~ ~"
+                        "summon spimton:circle_indicator ~ ~ ~ ~ ~ spimton:opulent_obliterator"
                     ],
                     "target": "self"
                 },

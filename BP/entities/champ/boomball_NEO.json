@@ -1,0 +1,124 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:boomball_neo",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "snowball"
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"damage_scaling": 0.1225,
+					"power": 6,
+					"causes_fire": true,
+					"breaks_blocks": true,
+					"destroy_affected_by_griefing": true,
+					"fire_affected_by_griefing": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:despawn": {
+				"despawn_from_simulation_edge": true,
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				}
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"event_trigger": {
+							"target": "self",
+							"event": "minecraft:explode"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							48,
+							60
+						],
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": false
+					}
+				},
+				"power": 1.5,
+				"gravity": 0,
+				"inertia": 0.9,
+				"liquid_inertia": 0.8,
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 1,
+				"anchor": 1,
+				"offset": [
+					0,
+					-1,
+					0
+				],
+				"reflect_on_hurt": true,
+				"catch_fire": false
+			},
+			"minecraft:timer": {
+				"looping": true,
+				"time": [
+					2,
+					4
+				],
+				"time_down_event": {
+					"event": "spimton:change_trajectory"
+				}
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": "no"
+					}
+				]
+			}
+		},
+		"events": {
+			"spimton:change_trajectory": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"scriptevent spimton:redirect spimton:juandice_target;2.5"
+					]
+				}
+			},
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			}
+		}
+	}
+}

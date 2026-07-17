@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "chevalier_hogrider",
+		"metalness_emissive_roughness": "chevalier_hogrider_mer"
+	}
+}

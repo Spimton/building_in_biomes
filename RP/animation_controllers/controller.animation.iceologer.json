@@ -52,22 +52,24 @@
 			}
 		},
 		"controller.animation.juandice.general": {
+			"initial_state": "default",
 			"states": {
 				"default": {
-					"animations": [],
 					"transitions": [
 						{
 							"shoota": "query.mark_variant == 1"
 						},
 						{
 							"tyre": "query.mark_variant == 2"
+						},
+						{
+							"shootBay": "query.mark_variant == 3"
 						}
-					],
-					"blend_transition": 0.1
+					]
 				},
 				"shoota": {
 					"animations": [
-						"shoot"
+						"shootNEO"
 					],
 					"transitions": [
 						{
@@ -75,9 +77,27 @@
 						},
 						{
 							"tyre": "query.mark_variant == 2"
+						},
+						{
+							"shootBay": "query.mark_variant == 3"
 						}
+					]
+				},
+				"shootBay": {
+					"animations": [
+						"bayNEO"
 					],
-					"blend_transition": 0.1
+					"transitions": [
+						{
+							"default": "query.mark_variant == 0"
+						},
+						{
+							"shoota": "query.mark_variant == 1"
+						},
+						{
+							"tyre": "query.mark_variant == 2"
+						}
+					]
 				},
 				"tyre": {
 					"animations": [
@@ -89,9 +109,11 @@
 						},
 						{
 							"default": "query.mark_variant == 0"
+						},
+						{
+							"shootBay": "query.mark_variant == 3"
 						}
-					],
-					"blend_transition": 0.1
+					]
 				}
 			}
 		}

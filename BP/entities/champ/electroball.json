@@ -28,8 +28,8 @@
 					},
 					"impact_damage": {
 						"damage": [
-							3,
-							1
+							4,
+							2
 						],
 						"knockback": false,
 						"semi_random_diff_damage": false,
@@ -40,7 +40,7 @@
 				"gravity": 0,
 				"inertia": 1,
 				"liquid_inertia": 1,
-				"uncertainty_base": 1,
+				"uncertainty_base": 15,
 				"uncertainty_multiplier": 1,
 				"anchor": 1,
 				"offset": [

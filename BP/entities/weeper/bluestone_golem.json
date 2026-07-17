@@ -5,7 +5,15 @@
             "identifier": "spimton:bluestone_golem",
             "is_spawnable": true,
             "is_summonable": true,
-            "is_experimental": false
+            "is_experimental": false,
+            "animations": {
+                "health": "controller.animation.bluestone_golem.health"
+            },
+            "scripts": {
+                "animate": [
+                    "health"
+                ]
+            }
         },
         "component_groups": {
             "spimton:calm": {
@@ -193,27 +201,6 @@
                     {
                         "cause": "projectile",
                         "damage_multiplier": 0.8
-                    },
-                    {
-                        "cause": "all",
-                        "on_damage": {
-                            "filters": {
-                                "all_of": [
-                                    {
-                                        "test": "actor_health",
-                                        "subject": "self",
-                                        "value": 70,
-                                        "operator": "<="
-                                    },
-                                    {
-                                        "test": "is_mark_variant",
-                                        "value": 0,
-                                        "subject": "self"
-                                    }
-                                ]
-                            },
-                            "event": "spimton:summon"
-                        }
                     }
                 ]
             },

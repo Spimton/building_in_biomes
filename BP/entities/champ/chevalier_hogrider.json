@@ -1,0 +1,447 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:chevalier_hogrider",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "phantom"
+		},
+		"component_groups": {
+			"spimton:nermal_buff": {
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 5,
+					"time_down_event": {
+						"event": "spimton:piper_debuff"
+					}
+				},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:behavior.timer_flag_1": {
+					"cooldown_range": 1.225,
+					"priority": 1,
+					"duration_range": 1,
+					"on_end": {
+						"filters": {
+							"test": "has_target"
+						},
+						"event": "spimton:crossfire_b"
+					},
+					"on_start": {
+						"event": "spimton:summon_anim",
+						"filters": {
+							"test": "has_target"
+						}
+					}
+				}
+			},
+			"spimton:nermal": {
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:behavior.timer_flag_1": {
+					"cooldown_range": 3,
+					"priority": 1,
+					"duration_range": 1,
+					"on_end": {
+						"event": "spimton:crossfire_n",
+						"filters": {
+							"test": "has_target"
+						}
+					},
+					"on_start": {
+						"event": "spimton:summon_anim",
+						"filters": {
+							"test": "has_target"
+						}
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.look_at_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"max_dist": 6,
+				"priority": 1,
+				"max_flee": 10,
+				"remove_target": false,
+				"sprint_speed_multiplier": 2,
+				"walk_speed_multiplier": 2,
+				"entity_types": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "is_target",
+								"subject": "other",
+								"value": true
+							},
+							{
+								"test": "is_riding",
+								"subject": "self",
+								"value": true
+							}
+						]
+					},
+					"must_see": true,
+					"max_dist": 6,
+					"sprint_speed_multiplier": 2,
+					"walk_speed_multiplier": 2
+				}
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player?12+(query.equipment_count*math.random(1,3)):0"
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_water": true
+			},
+			"minecraft:equip_item": {},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 2.1
+			},
+			"minecraft:nameable": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true,
+				"avoid_portals": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:fire_immune": {},
+			"minecraft:type_family": {
+				"family": [
+					"skeleton",
+					"spimton:juandice",
+					"undead",
+					"monster",
+					"mob",
+					"spimton:piper_buff"
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/sanctuarium.json"
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/entities/hogrider_eq.json",
+				"slot_drop_chance": [
+					{
+						"slot": "slot.weapon.mainhand",
+						"drop_chance": 0.1997
+					}
+				]
+			},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:movement": {
+				"value": 0.14
+			},
+			"minecraft:shareables": {
+				"items": [
+					{
+						"item": "minecraft:netherite_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:turtle_helmet",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 6
+					},
+					{
+						"item": "minecraft:skull:0",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:skull:1",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:carved_pumpkin",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 7
+					},
+					{
+						"item": "minecraft:netherite_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_chestplate",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:netherite_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_leggings",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					},
+					{
+						"item": "minecraft:netherite_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					},
+					{
+						"item": "minecraft:diamond_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 1
+					},
+					{
+						"item": "minecraft:iron_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 2
+					},
+					{
+						"item": "minecraft:chainmail_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 3
+					},
+					{
+						"item": "minecraft:golden_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 4
+					},
+					{
+						"item": "minecraft:leather_boots",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 5
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"within_radius": 36,
+				"must_see_forget_duration": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "spimton:juandice",
+									"operator": "!="
+								}
+							]
+						},
+						"max_dist": 36
+					}
+				]
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:behavior.mount_pathing": {
+				"priority": 2,
+				"speed_multiplier": 1.25,
+				"target_dist": 0,
+				"track_target": true
+			},
+			"minecraft:behavior.equip_item": {
+				"priority": 3
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 7,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"spimton:nermal"
+					]
+				},
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"ride @s summon_ride spimton:hellglin no_ride_change spimton:armored"
+					]
+				}
+			},
+			"spimton:piper_debuff": {
+				"add": {
+					"component_groups": [
+						"spimton:nermal"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:nermal_buff"
+					]
+				}
+			},
+			"spimton:piper_buff": {
+				"add": {
+					"component_groups": [
+						"spimton:nermal_buff"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"spimton:nermal"
+					]
+				}
+			},
+			"spimton:summon_anim": {
+				"queue_command": {
+					"target": "self",
+					"command": "playanimation @s animation.chevalier.summon none 1"
+				}
+			},
+			"spimton:crossfire_n": {
+				"queue_command": {
+					"target": "target",
+					"command": [
+						"scriptevent spimton:crossfire spimton:darkened_sai,4,0.8,1"
+					]
+				}
+			},
+			"spimton:crossfire_b": {
+				"queue_command": {
+					"target": "target",
+					"command": [
+						"scriptevent spimton:crossfire spimton:darkened_sai,2,1.225,6"
+					]
+				}
+			}
+		}
+	}
+}

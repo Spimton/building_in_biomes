@@ -136,6 +136,23 @@
                     ]
                 }
             }
+        },
+        "controller.animation.bluestone_golem.health": {
+            "initial_state": "above_hh",
+            "states": {
+                "above_hh": {
+                    "transitions": [
+                        {
+                            "below_hh": "query.health / query.max_health <= 0.5"
+                        }
+                    ]
+                },
+                "below_hh": {
+                    "on_entry": [
+                        "/event entity @s spimton:summon"
+                    ]
+                }
+            }
         }
     }
 }

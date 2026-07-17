@@ -1061,6 +1061,24 @@
 		},
 		"cooler_ht_lead_bars": {
 			"textures": "textures/blocks/lead/cooler_lead_bars"
+		},
+		"hellglin_tusk": {
+			"textures": "textures/items/hellglin_tusk"
+		},
+		"sol_sword": {
+			"textures": "textures/items/tools/soul/sol_sword"
+		},
+		"priest_leggings": {
+			"textures": "textures/items/armor/priest_leggings"
+		},
+		"priest_necklace": {
+			"textures": "textures/items/armor/priest_necklace"
+		},
+		"priest_tiara": {
+			"textures": "textures/items/armor/priest_tiara"
+		},
+		"preacher_egg": {
+			"textures": "textures/items/spawnegg/priest_egg"
 		}
 	}
 }

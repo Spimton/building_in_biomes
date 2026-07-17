@@ -1,0 +1,111 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "spimton:boomball_smol",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "snowball"
+		},
+		"component_groups": {
+			"spimton:kill": {
+				"minecraft:instant_despawn": {}
+			},
+			"spimton:splode": {
+				"minecraft:explode": {
+					"destroy_affected_by_griefing": true,
+					"breaks_blocks": true,
+					"causes_fire": false,
+					"power": 3,
+					"knockback_scaling": 1.997,
+					"fuse_lit": true,
+					"fuse_length": 0,
+					"damage_scaling": 1.225
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.31,
+				"height": 0.31
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"target": "self",
+							"event": "spimton:bolt"
+						}
+					},
+					"impact_damage": {
+						"damage": [
+							8,
+							7
+						],
+						"semi_random_diff_damage": true,
+						"should_bounce": false
+					}
+				},
+				"multiple_targets": true,
+				"anchor": 1,
+				"power": 1,
+				"inertia": 1,
+				"gravity": 0.015,
+				"uncertainty_base": 1,
+				"angle_offset": 0,
+				"offset": [
+					0,
+					3,
+					-1
+				]
+			},
+			"minecraft:type_family": {
+				"family": [
+					"inanimate"
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				},
+				"despawn_from_simulation_edge": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": "no"
+					}
+				]
+			}
+		},
+		"events": {
+			"spimton:bolt": {
+				"queue_command": {
+					"command": "summon lightning_bolt",
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"spimton:kill"
+					]
+				}
+			}
+		}
+	}
+}

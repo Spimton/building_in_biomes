@@ -913,6 +913,9 @@ tile.spimton:polished_lead_stairs.name=Polished Lead Stairs
 tile.spimton:polished_ht_lead_block.name=High Toxicity Polished Lead
 tile.spimton:polished_ht_lead_slab.name=High Toxicity Polished Lead Slab
 tile.spimton:polished_ht_lead_stairs.name=High Toxicity Polished Lead Stairs
+tile.spimton:soul_brazier.name=Soul Brazier
+tile.spimton:juandice_stained_glass_pane.name=Sanctuarium Stained Glass Pane
+tile.spimton:juandice_stained_glass.name=Sanctuarium Stained Glass
 
 
 
@@ -1313,6 +1316,14 @@ item.spimton:lead_bars=Lead Bars
 item.spimton:ht_lead_bars=High Toxicity Lead Bars
 item.spimton:cooler_lead_bars=Cooler Lead Bars
 item.spimton:cooler_ht_lead_bars=Cooler High Toxicity Lead Bars
+item.spawn_egg.entity.spimton:hellglin.name=Hellglin Spawn Egg
+item.spimton:hellglin_tusk=Blazing Tusk
+item.spawn_egg.entity.spimton:chevalier_hogrider.name=Hollering Hogrider Spawn Egg
+item.spimton:sol_sword=Sunset of the Seven Suns
+item.spawn_egg.entity.spimton:priest.name=Preacher Spawn Egg
+item.spimton:priest_tiara=Brittle Tiara
+item.spimton:priest_necklace=Brittle Necklace with Shoulder Pads
+item.spimton:priest_leggings=Brittle Leggings
 
 
 
@@ -1408,10 +1419,20 @@ entity.spimton:chandelier.name=Chandelier
 entity.spimton:overgrown_arsonist.name=Overgrown Arsonist
 entity.spimton:blast_fungus.name=Blast Fungus
 entity.spimton:green_gardener.name=Green Gardener
-entity.spimton:bluestone_golem.name=Bluestone Golem §w[W.I.P]§r
+entity.spimton:bluestone_golem.name=Bluestone Golem
 entity.spimton:bluestone_crystal.name=Bluestone Crystal
 entity.spimton:yellow_jester.name=Yellow Jester
-entity.spimton:purple_piper.name=Purple Piper §w[W.I.P.]§r
+entity.spimton:purple_piper.name=Purple Piper
+entity.spimton:hellglin.name=Hellglin
+entity.spimton:darkened_sai.name=Darkened Sai
+entity.spimton:chevalier_hogrider.name=Hollering Hogrider
+entity.spimton:priest.name=Preacher
+entity.spimton:boomball_neo.name=Michael Bay
+entity.spimton:boomball_smol.name=Michael Bay
+entity.spimton:justice_hammer.name=Hammer of Justice
+entity.spimton:justice_bell.name=Sound of Justice
+entity.spimton:column.name=Column of Justice
+
 
 
 

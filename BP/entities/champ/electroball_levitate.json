@@ -1,5 +1,5 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.100",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:electroball_levitate",
@@ -13,6 +13,8 @@
 					"fuse_length": 0,
 					"fuse_lit": true,
 					"power": 3,
+					"damage_scaling": 0.5,
+					"knockback_scaling": 1.225,
 					"causes_fire": false,
 					"breaks_blocks": true,
 					"destroy_affected_by_griefing": true,
@@ -91,7 +93,7 @@
 				"triggers": [
 					{
 						"cause": "all",
-						"deals_damage": false
+						"deals_damage": "no"
 					}
 				]
 			}

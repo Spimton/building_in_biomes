@@ -1,0 +1,44 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:priest_necklace",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:rarity": "rare",
+            "minecraft:icon": "priest_necklace",
+            "minecraft:wearable": {
+                "slot": "slot.armor.chest",
+                "protection": 3
+            },
+            "minecraft:enchantable": {
+                "slot": "armor_torso",
+                "value": 14
+            },
+            "minecraft:durability": {
+                "max_durability": 48,
+                "damage_chance": {
+                    "min": 50,
+                    "max": 100
+                }
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "gold_ingot"
+                        ],
+                        "repair_amount": 12
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": []
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:justice_bell",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "minecraft:snowball"
+        },
+        "component_groups": {
+            "spimton:give": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:proje": {
+                "minecraft:projectile": {
+                    "anchor": 1,
+                    "gravity": 0.05,
+                    "hit_sound": "hit_boom",
+                    "offset": [
+                        0,
+                        -0.1,
+                        0
+                    ],
+                    "on_hit": {
+                        "impact_damage": {
+                            "damage": 1225,
+                            "destroy_on_hit": false,
+                            "knockback": false,
+                            "power_multiplier": 0.97,
+                            "semi_random_diff_damage": false
+                        },
+                        "stick_in_ground": {
+                            "shake_time": 0.35
+                        }
+                    },
+                    "power": 3,
+                    "should_bounce": false,
+                    "stop_on_hurt": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_dropped_ticks": 10,
+                    "max_optimized_distance": 100,
+                    "use_motion_prediction_hints": true
+                }
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "cause": "lava",
+                        "damage_per_tick": 4,
+                        "filters": {
+                            "operator": "==",
+                            "subject": "self",
+                            "test": "in_lava",
+                            "value": true
+                        }
+                    }
+                ]
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 1.997,
+                "time_down_event": {
+                    "event": "spimton:fall",
+                    "target": "self"
+                }
+            },
+            "minecraft:projectile": {
+                "anchor": 1,
+                "gravity": 0,
+                "hit_sound": "hit_boom",
+                "offset": [
+                    0,
+                    -0.1,
+                    0
+                ],
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": 1225,
+                        "destroy_on_hit": false,
+                        "knockback": false,
+                        "power_multiplier": 0.97,
+                        "semi_random_diff_damage": false
+                    },
+                    "stick_in_ground": {
+                        "shake_time": 0.35
+                    }
+                },
+                "power": 3,
+                "should_bounce": false,
+                "stop_on_hurt": false
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:collision_box": {
+                "height": 4,
+                "width": 3
+            },
+            "minecraft:environment_sensor": {
+                "triggers": {
+                    "filters": {
+                        "any_of": [
+                            {
+                                "test": "on_ground"
+                            }
+                        ]
+                    },
+                    "event": "spimton:explode"
+                }
+            }
+        },
+        "events": {
+            "spimton:fall": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "spimton:proje"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "spimton:explode": {
+                "queue_command": {
+                    "command": [
+                        "particle spimton:obliterator_smash ~ ~0.5 ~",
+                        "effect @e[r=6] slowness 10 4 true",
+                        "damage @e[r=3] 1225 falling_block",
+                        "playsound block.bell.use @a[r=24]",
+                        "event entity @s spimton:give"
+                    ],
+                    "target": "self"
+                }
+            },
+            "minecraft:entity_born": {
+                "queue_command": {
+                    "command": "tp @s ~ ~16 ~"
+                }
+            },
+            "spimton:give": {
+                "sequence": [
+                    {
+                        "add": {
+                            "component_groups": [
+                                "spimton:give"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

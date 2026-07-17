@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:unbreakable_diamond",
+			"min_engine_version": "1.10.0",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/unbreakable_diamond"
+			},
+			"geometry": {
+				"default": "geometry.champion"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_move",
+					"controller_general",
+					"controller_attack"
+				]
+			},
+			"animations": {
+				"shootNEO": "animation.champion.shootNEO",
+				"bayNEO": "animation.champion.bayNEO",
+				"general": "animation.archshaman.idle",
+				"casting": "animation.champion.summon",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.archshaman.walk",
+				"tyre": "animation.champion.tyre",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"shoot": "animation.archshaman.casting",
+				"roaring": "animation.archshaman.roaring",
+				"controller_attack": "controller.animation.juandice.general"
+			},
+			"particle_effects": {
+				"spell": "minecraft:trial_omen_ambient",
+				"shoot": "minecraft:knockback_roar_particle"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

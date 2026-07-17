@@ -321,6 +321,14 @@
 				"sounds/mob/bluestone_golem/stepshort4",
 				"sounds/mob/bluestone_golem/stepshort5"
 			]
+		},
+		"sfx.beam_pillar": {
+			"sounds": [
+				"sounds/sfx/beam_pillar"
+			],
+			"category": "hostile",
+			"max_distance": 48,
+			"min_distance": 0
 		}
 	}
 }

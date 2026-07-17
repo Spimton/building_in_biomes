@@ -1058,6 +1058,14 @@
 		"sound": "glass",
 		"textures": "ominous_glass_pane"
 	},
+	"spimton:juandice_stained_glass": {
+		"sound": "glass",
+		"textures": "juandice_glass"
+	},
+	"spimton:juandice_stained_glass_pane": {
+		"sound": "glass",
+		"textures": "juandice_glass_pane"
+	},
 	"spimton:ominous_carpet_corner": {
 		"sound": "cloth",
 		"textures": "ominous_carpet_corner"
@@ -1069,6 +1077,10 @@
 	"spimton:brazier": {
 		"sound": "chain",
 		"textures": "brazier"
+	},
+	"spimton:soul_brazier": {
+		"sound": "chain",
+		"textures": "soul_brazier"
 	},
 	"spimton:candle_holder": {
 		"sound": "chain",

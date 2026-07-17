@@ -56,17 +56,7 @@
 				"minecraft:wants_jockey": {}
 			},
 			"spimton:melee": {
-				"minecraft:behavior.melee_attack": {
-					"cooldown_time": 1,
-					"melee_fov": 360,
-					"max_path_time": 0.55,
-					"min_path_time": 0.1,
-					"priority": 4,
-					"reach_multiplier": 3,
-					"require_complete_path": false,
-					"speed_multiplier": 1.5
-				},
-				"minecraft:behavior.use_kinetic_weapon": {
+				/*"minecraft:behavior.use_kinetic_weapon": {
 					"priority": 1,
 					"track_target": true,
 					"approach_distance": 10.0,
@@ -83,6 +73,25 @@
 					"speed_multiplier": 2,
 					"weapon_reach_multiplier": 1,
 					"weapon_min_speed_multiplier": 0.2,
+					"hijack_mount_navigation": true
+				},*/
+				"minecraft:behavior.use_kinetic_weapon": {
+					"priority": 3,
+					"track_target": true,
+					"approach_distance": 32.0,
+					"reposition_distance": {
+						"min": 8.0,
+						"max": 9.0
+					},
+					"cooldown_distance": {
+						"min": 11.0,
+						"max": 13.0
+					},
+					"weapon_reach_multiplier": 0.67,
+					"weapon_min_speed_multiplier": 0.2,
+					"speed_multiplier": 1.225,
+					"reposition_speed_multiplier": 1.225,
+					"cooldown_speed_multiplier": 1.225,
 					"hijack_mount_navigation": true
 				},
 				"minecraft:attack": {
@@ -101,38 +110,28 @@
 				}
 			},
 			"spimton:melee_below": {
-				"minecraft:behavior.melee_attack": {
-					"cooldown_time": 1,
-					"melee_fov": 360,
-					"max_path_time": 0.55,
-					"min_path_time": 0.1,
-					"priority": 4,
-					"reach_multiplier": 3,
-					"require_complete_path": false,
-					"speed_multiplier": 1.5
-				},
 				"minecraft:behavior.use_kinetic_weapon": {
-					"priority": 1,
+					"priority": 3,
 					"track_target": true,
-					"approach_distance": 10.0,
+					"approach_distance": 32.0,
 					"reposition_distance": {
-						"min": 3.0,
-						"max": 5.0
+						"min": 16.0,
+						"max": 18.0
 					},
 					"cooldown_distance": {
-						"min": 3.0,
-						"max": 5.0
+						"min": 11.0,
+						"max": 13.0
 					},
-					"cooldown_time": 0.1225,
-					"melee_fov": 360,
-					"speed_multiplier": 2,
-					"weapon_reach_multiplier": 1,
-					"weapon_min_speed_multiplier": 0.2,
+					"weapon_reach_multiplier": 1.225,
+					"weapon_min_speed_multiplier": 0.1225,
+					"speed_multiplier": 1.997,
+					"reposition_speed_multiplier": 1.997,
+					"cooldown_speed_multiplier": 1.997,
 					"hijack_mount_navigation": true
 				},
 				"minecraft:attack": {
 					"damage": {
-						"range_max": 5,
+						"range_max": 6,
 						"range_min": 4
 					}
 				},
@@ -529,12 +528,17 @@
 							},
 							{
 								"filters": {
-									"all_of": [
+									"any_of": [
 										{
 											"test": "actor_health",
 											"subject": "target",
 											"value": 10,
 											"operator": "<="
+										},
+										{
+											"test": "has_mob_effect",
+											"subject": "target",
+											"value": "poison"
 										}
 									]
 								},

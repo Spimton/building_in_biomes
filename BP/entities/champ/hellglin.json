@@ -1,0 +1,284 @@
+{
+    "format_version": "1.21.130",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:hellglin",
+            "spawn_category": "monster",
+            "is_spawnable": true,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "spimton:unarmored": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:knockback_resistance": {
+                    "value": 0.1997
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "damage_multiplier": 1
+                    }
+                }
+            },
+            "spimton:armored": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:knockback_resistance": {
+                    "value": 0.9997
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "entity_attack",
+                            "damage_multiplier": 0.55
+                        },
+                        {
+                            "cause": "projectile",
+                            "damage_multiplier": 0.55
+                        },
+                        {
+                            "cause": "entity_explosion",
+                            "damage_modifier": -6
+                        }
+                    ]
+                }
+            },
+            "minecraft:hoglin_adult": {
+                "minecraft:collision_box": {
+                    "width": 1.4,
+                    "height": 1.4
+                },
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:custom_hit_test": {
+                    "hitboxes": [
+                        {
+                            "width": 2.0,
+                            "height": 1.75,
+                            "pivot": [
+                                0,
+                                1,
+                                0
+                            ]
+                        }
+                    ]
+                },
+                "minecraft:behavior.hurt_by_target": {
+                    "priority": 0
+                },
+                "minecraft:loot": {
+                    "table": "loot_tables/entities/hellglin.json"
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 3,
+                    "speed_multiplier": 1.4,
+                    "track_target": true,
+                    "reach_multiplier": 0.8,
+                    "cooldown_time": 2
+                },
+                "minecraft:attack": {
+                    "damage": [
+                        5,
+                        7
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:timer": {
+                "looping": true,
+                "time": 0.1997,
+                "time_down_event": {
+                    "event": "spimton:fire_stomp",
+                    "target": "self",
+                    "filters": {
+                        "all_of": [
+                            {
+                                "test": "is_moving",
+                                "subject": "self"
+                            },
+                            {
+                                "test": "has_target",
+                                "subject": "self"
+                            }
+                        ]
+                    }
+                }
+            },
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "seats": {
+                    "position": [
+                        0,
+                        0.9,
+                        -0.3
+                    ],
+                    "lock_rider_rotation": 0
+                },
+                "family_types": [
+                    "spimton:juandice"
+                ]
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "spimton:juandice",
+                    "hoglin",
+                    "mob",
+                    "monster"
+                ]
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:nameable": {},
+            "minecraft:health": {
+                "value": 40,
+                "max": 40
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 8 : 0"
+            },
+            "minecraft:knockback_resistance": {
+                "value": 0.6
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 1,
+                "within_radius": 64.0,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "spimton:juandice"
+                                },
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "inanimate"
+                                }
+                            ]
+                        },
+                        "max_dist": 32
+                    }
+                ],
+                "must_see": false
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:behavior.avoid_block": {
+                "priority": 1,
+                "tick_interval": 5,
+                "search_range": 8,
+                "search_height": 4,
+                "walk_speed_modifier": 1,
+                "sprint_speed_modifier": 1,
+                "avoid_block_sound": "retreat",
+                "sound_interval": {
+                    "max": 5,
+                    "min": 2
+                },
+                "target_selection_method": "nearest",
+                "target_blocks": [
+                    "minecraft:warped_fungus",
+                    "minecraft:portal",
+                    "minecraft:respawn_anchor"
+                ]
+            },
+            "minecraft:navigation.walk": {
+                "can_jump": true,
+                "can_float": true,
+                "can_path_over_water": true,
+                "avoid_water": true,
+                "avoid_sun": false,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:movement.basic": {
+                "max_turn": 90
+            },
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:leashable": {},
+            "minecraft:despawn": {
+                "despawn_from_distance": {}
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 6.0,
+                "probability": 0.02
+            },
+            "minecraft:balloonable": {},
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "trigger": "spawn_adult",
+                "add": {
+                    "component_groups": [
+                        "spimton:unarmored"
+                    ]
+                }
+            },
+            "spawn_adult": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:hoglin_adult"
+                    ]
+                }
+            },
+            "spimton:unarmored": {
+                "add": {
+                    "component_groups": [
+                        "spimton:unarmored"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:armored"
+                    ]
+                }
+            },
+            "spimton:armored": {
+                "add": {
+                    "component_groups": [
+                        "spimton:armored",
+                        "minecraft:hoglin_adult"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "spimton:unarmored"
+                    ]
+                }
+            },
+            "spimton:fire_stomp": {
+                "queue_command": {
+                    "target": "self",
+                    "command": [
+                        "particle spimton:fire_stomp ~ ~0.1997 ~",
+                        "damage @e[family=!spimton:juandice,r=1.997,type=!item] 3 fire"
+                    ]
+                }
+            }
+        }
+    }
+}

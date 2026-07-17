@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:circle_indicator",
+            "materials": {
+                "default": "entity_alphablend"
+            },
+            "textures": {
+                "default": "textures/particles/circle_particle"
+            },
+            "geometry": {
+                "default": "geometry.circle_attack"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.circle_size = q.property('spimton:scale');"
+                ],
+                "scaleX": "variable.circle_size",
+                "scaleZ": "variable.circle_size"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

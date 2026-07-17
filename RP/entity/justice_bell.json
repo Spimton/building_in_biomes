@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:justice_bell",
+			"materials": {
+				"default": "entity"
+			},
+			"textures": {
+				"default": "textures/entity/justice_bell"
+			},
+			"geometry": {
+				"default": "geometry.justice_bell"
+			},
+			"scripts": {
+				"scale": "1.997"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

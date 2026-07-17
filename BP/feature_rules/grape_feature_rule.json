@@ -3,7 +3,7 @@
     "minecraft:feature_rules": {
         "description": {
             "identifier": "spimton:grape_feature_rule",
-            "places_feature": "spimton:grape_feature"
+            "places_feature": "spimton:grape_patch"
         },
         "conditions": {
             "placement_pass": "first_pass",
@@ -32,7 +32,7 @@
             },
             "scatter_chance": {
                 "numerator": 1,
-                "denominator": 10
+                "denominator": 19
             }
         }
     }

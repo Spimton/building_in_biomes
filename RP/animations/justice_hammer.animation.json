@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.justice_hammer.rote": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"hammer": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							720
+						]
+					}
+				}
+			}
+		}
+	}
+}

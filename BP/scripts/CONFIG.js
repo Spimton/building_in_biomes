@@ -136,6 +136,7 @@ export const ConfigItems = {
         }
     },
     soulArtifacts: {
+        solSwordMult: 0.66,
         maxSouls: 50,
         healtMod: 10,
         harvester: {

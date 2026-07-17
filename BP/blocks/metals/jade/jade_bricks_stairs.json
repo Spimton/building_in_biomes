@@ -58,7 +58,7 @@
 				}
 			],
 			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 7,
+				"seconds_to_destroy": 15,
 				"item_specific_speeds": [
 					{
 						"item": {
@@ -71,7 +71,7 @@
 			"tag:minecraft:is_pickaxe_item_destructible": {},
 			"minecraft:flammable": false,
 			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 22
+				"explosion_resistance": 66
 			},
 			"minecraft:material_instances": {
 				"*": {

@@ -35,7 +35,7 @@
                 "explosion_resistance": 6
             },
             "minecraft:geometry": {
-                "identifier": "geometry.gold_bars",
+                "identifier": "geometry.bismuth_bars",
                 "bone_visibility": {
                     "center_bar": "!query.block_state('spimton:connect_north') && !query.block_state('spimton:connect_south') && !query.block_state('spimton:connect_west') && !query.block_state('spimton:connect_east')",
                     "ends": "query.block_state('spimton:connect_north') || query.block_state('spimton:connect_south') || query.block_state('spimton:connect_west') || query.block_state('spimton:connect_east')",

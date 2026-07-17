@@ -39,7 +39,8 @@
             "minecraft:damage_absorption": {
                 "absorbable_causes": [
                     "fly_into_wall",
-                    "stalactite"
+                    "stalagmite",
+                    "block_explosion"
                 ]
             },
             "minecraft:tags": {

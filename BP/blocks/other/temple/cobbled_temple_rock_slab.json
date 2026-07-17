@@ -1,11 +1,17 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.120",
     "minecraft:block": {
         "description": {
             "identifier": "spimton:cobbled_temple_rock_slab",
             "menu_category": {
                 "category": "construction",
-                "group": "itemGroup.name.slab"
+                "group": "minecraft:itemGroup.name.slab"
+            },
+            "states": {
+                "spimton:double": [
+                    false,
+                    true
+                ]
             },
             "traits": {
                 "minecraft:placement_position": {
@@ -16,10 +22,6 @@
             }
         },
         "components": {
-            "minecraft:loot": "loot_tables/blocks/temple_reduced.json",
-            "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 3
-            },
             "minecraft:collision_box": {
                 "origin": [
                     -8,
@@ -44,22 +46,38 @@
                     16
                 ]
             },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 15
+            },
+            "minecraft:geometry": "geometry.defrosted_cobbled_chillstone_slab",
             "minecraft:material_instances": {
                 "*": {
                     "texture": "cobbled_temple_rock",
                     "render_method": "alpha_test"
                 }
             },
-            "minecraft:destructible_by_explosion": {
-                "explosion_resistance": 10
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "can_contain_liquid": true,
+                        "on_liquid_touches": "blocking"
+                    }
+                ]
             },
-            "minecraft:geometry": "geometry.defrosted_cobbled_chillstone_slab",
+            "minecraft:loot": "loot_tables/blocks/temple_reduced.json",
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 4
+            },
             "tag:stone": {},
-            "tag:minecraft:is_pickaxe_item_destructible": {}
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "spimton:slab_comp": {
+                "lootTable": "blocks/temple_reduced"
+            }
         },
         "permutations": [
             {
-                "condition": "q.block_state('minecraft:vertical_half') == 'top' ",
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && query.block_state('spimton:double') == false",
                 "components": {
                     "minecraft:collision_box": {
                         "origin": [
@@ -91,6 +109,22 @@
                             0,
                             0
                         ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('spimton:double') == true",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "minecraft:geometry.full_block"
+                    },
+                    "minecraft:collision_box": true,
+                    "minecraft:selection_box": true,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "cobbled_temple_rock",
+                            "render_method": "alpha_test"
+                        }
                     }
                 }
             }

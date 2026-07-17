@@ -1,0 +1,184 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.justice_hammer",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [
+					0,
+					0.5,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "hammer",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						-90
+					],
+					"cubes": [
+						{
+							"origin": [
+								6,
+								-8,
+								-4
+							],
+							"size": [
+								8,
+								16,
+								8
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										8,
+										16
+									]
+								},
+								"east": {
+									"uv": [
+										8,
+										0
+									],
+									"uv_size": [
+										8,
+										16
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										16
+									],
+									"uv_size": [
+										8,
+										16
+									]
+								},
+								"west": {
+									"uv": [
+										16,
+										0
+									],
+									"uv_size": [
+										8,
+										16
+									]
+								},
+								"up": {
+									"uv": [
+										8,
+										16
+									],
+									"uv_size": [
+										8,
+										8
+									]
+								},
+								"down": {
+									"uv": [
+										16,
+										24
+									],
+									"uv_size": [
+										8,
+										-8
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-11,
+								-1,
+								-1
+							],
+							"size": [
+								17,
+								2,
+								2
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										24,
+										0
+									],
+									"uv_size": [
+										17,
+										2
+									]
+								},
+								"east": {
+									"uv": [
+										8,
+										24
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"south": {
+									"uv": [
+										24,
+										2
+									],
+									"uv_size": [
+										17,
+										2
+									]
+								},
+								"west": {
+									"uv": [
+										24,
+										8
+									],
+									"uv_size": [
+										2,
+										2
+									]
+								},
+								"up": {
+									"uv": [
+										24,
+										4
+									],
+									"uv_size": [
+										17,
+										2
+									]
+								},
+								"down": {
+									"uv": [
+										24,
+										8
+									],
+									"uv_size": [
+										17,
+										-2
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

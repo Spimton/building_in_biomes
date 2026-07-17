@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:juandice_house"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "sanctuarium_neo/juandice_house_1",
+                    "projection": "rigid"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "sanctuarium_neo/juandice_house_2",
+                    "projection": "rigid"
+                },
+                "weight": 2
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "sanctuarium_neo/juandice_garden",
+                    "projection": "rigid"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "sanctuarium_neo/juandice_pen",
+                    "projection": "rigid"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

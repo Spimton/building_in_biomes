@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:juandice_palace"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "sanctuarium_neo/juandice_palace",
+                    "projection": "rigid"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

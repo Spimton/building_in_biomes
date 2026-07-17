@@ -1,11 +1,11 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.120",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:chillstone_slab",
 			"menu_category": {
 				"category": "construction",
-				"group": "itemGroup.name.slab"
+				"group": "minecraft:itemGroup.name.slab"
 			},
 			"traits": {
 				"minecraft:placement_position": {
@@ -13,6 +13,12 @@
 						"minecraft:vertical_half"
 					]
 				}
+			},
+			"states": {
+				"spimton:double": [
+					false,
+					true
+				]
 			}
 		},
 		"components": {
@@ -50,14 +56,27 @@
 					"render_method": "alpha_test"
 				}
 			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 6
 			},
-			"tag:stone": {}
+			"tag:stone": {},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"spimton:slab_comp": {
+				"lootTable": "false"
+			}
 		},
 		"permutations": [
 			{
-				"condition": "q.block_state('minecraft:vertical_half') == 'top' ",
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && query.block_state('spimton:double') == false",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [
@@ -89,6 +108,22 @@
 							0,
 							0
 						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:double') == true",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "minecraft:geometry.full_block"
+					},
+					"minecraft:collision_box": true,
+					"minecraft:selection_box": true,
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "chillstone",
+							"render_method": "alpha_test"
+						}
 					}
 				}
 			}

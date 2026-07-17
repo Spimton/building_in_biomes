@@ -63,14 +63,17 @@
                 "minecraft:collision_box": {
                     "width": 1.4,
                     "height": 1.6
-                },
-                "minecraft:behavior.melee_attack": {
-                    "priority": 3,
-                    "reach_multiplier": 1.9,
-                    "speed_multiplier": 1.5
                 }
             },
             "spimton:scared": {
+                "minecraft:behavior.melee_attack": {
+                    "priority": 3,
+                    "reach_multiplier": 0,
+                    "speed_multiplier": 1.5
+                },
+                "minecraft:attack": {
+                    "damage": 1
+                },
                 "minecraft:behavior.avoid_mob_type": {
                     "max_flee": 10,
                     "entity_types": {
@@ -104,6 +107,15 @@
                 }
             },
             "angry": {
+                "minecraft:behavior.melee_attack": {
+                    "priority": 3,
+                    "reach_multiplier": 1,
+                    "speed_multiplier": 1.225,
+                    "cooldown_time": 1.997
+                },
+                "minecraft:attack": {
+                    "damage": 3
+                },
                 "minecraft:angry": {
                     "broadcast_anger": true,
                     "broadcastAnger": true,

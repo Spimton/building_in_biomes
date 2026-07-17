@@ -527,6 +527,7 @@
                     "death": "mob.irongolem.death",
                     "hurt": "random.anvil_land",
                     "cast_spell": "block.bell.hit",
+                    "justice_bell": "sfx.ringing",
                     "transfoma": {
                         "sound": "item.trident.hit",
                         "pitch": 1,
@@ -612,6 +613,27 @@
                 "volume": 1,
                 "pitch": 0.4,
                 "events": {
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:chevalier_hogrider": {
+                "volume": 1,
+                "pitch": 0.4,
+                "events": {
+                    "death": "mob.wraith.death",
+                    "hurt": "mob.wraith.hurt",
+                    "ambient": "mob.wraith.say",
+                    "hit": "mob.irongolem.crack"
+                }
+            },
+            "spimton:priest": {
+                "volume": 1,
+                "pitch": 0.6,
+                "events": {
+                    "magiciansred": "mob.ghast.scream",
                     "death": "mob.wraith.death",
                     "hurt": "mob.wraith.hurt",
                     "ambient": "mob.wraith.say",
@@ -877,6 +899,34 @@
                 "events": {
                     "hurt": "respawn_anchor.charge",
                     "death": "respawn_anchor.deplete"
+                }
+            },
+            "spimton:hellglin": {
+                "events": {
+                    "ambient": "mob.hoglin.ambient",
+                    "angry": "mob.hoglin.angry",
+                    "attack": "mob.hoglin.attack",
+                    "death": "mob.hoglin.death",
+                    "hurt": "mob.hoglin.hurt",
+                    "retreat": "mob.hoglin.retreat",
+                    "step": {
+                        "pitch": 1.0,
+                        "sound": "mob.hoglin.step",
+                        "volume": 1.0
+                    }
+                },
+                "pitch": [
+                    0.70,
+                    1.10
+                ],
+                "volume": 1.0
+            },
+            "spimton:column": {
+                "pitch": 1.0,
+                "volume": 1.0,
+                "events": {
+                    "hurt": "hit.stone",
+                    "death": "dig.stone"
                 }
             }
         }

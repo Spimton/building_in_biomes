@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:column",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/column",
+				"crack1": "textures/entity/column_cracked_1",
+				"crack2": "textures/entity/column_cracked_2",
+				"crack3": "textures/entity/column_cracked_3"
+			},
+			"geometry": {
+				"default": "geometry.column.geo"
+			},
+			"scripts": {
+				"scale": "1.0",
+				"animate": [
+					{
+						"erect": "query.mark_variant == 0"
+					}
+				]
+			},
+			"animations": {
+				"erect": "animation.column.erection"
+			},
+			"render_controllers": [
+				"controller.render.column"
+			],
+			"enable_attachables": true
+		}
+	}
+}

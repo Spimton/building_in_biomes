@@ -1,0 +1,127 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:column",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:attack": {
+                "minecraft:is_collidable": {},
+                "minecraft:mark_variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "time": 9,
+                    "time_down_event": {
+                        "event": "spimton:desp"
+                    }
+                }
+            },
+            "spimton:gauntlet": {
+                "minecraft:is_collidable": {},
+                "minecraft:mark_variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "time": 90,
+                    "time_down_event": {
+                        "event": "spimton:desp"
+                    }
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": "no"
+                        }
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 100,
+                "max": 100,
+                "min": 1
+            },
+            "minecraft:timer": {
+                "time": 1,
+                "time_down_event": {
+                    "event": "spimton:attack"
+                }
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate",
+                    "spimton:juandice"
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:physics": {
+                "has_gravity": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "width": 1.25,
+                "height": 5.5
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "entity_explosion",
+                    "deals_damage": "no"
+                }
+            },
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison",
+                    "wither",
+                    "fatal_poison",
+                    "levitation"
+                ]
+            },
+            "minecraft:on_death": {
+                "event": "spimton:desp"
+            }
+        },
+        "events": {
+            "spimton:attack": {
+                "add": {
+                    "component_groups": [
+                        "spimton:attack"
+                    ]
+                }
+            },
+            "spimton:gauntlet": {
+                "add": {
+                    "component_groups": [
+                        "spimton:gauntlet"
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

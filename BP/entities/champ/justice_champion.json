@@ -2,8 +2,8 @@
 	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "spimton:justice_champion",
-			"is_spawnable": true,
+			"identifier": "spimton:justice_champion_old",
+			"is_spawnable": false,
 			"is_summonable": true,
 			"is_experimental": false,
 			"scripts": {
@@ -28,7 +28,7 @@
 							"spimton:transformer"
 						]
 					},
-					"into": "spimton:unbreakable_diamond",
+					"into": "spimton:unbreakable_diamond_old",
 					"transformation_sound": "transfoma",
 					"delay": 2
 				}
@@ -88,20 +88,18 @@
 					"value": 1
 				},
 				"minecraft:shooter": {
-					"def": "spimton:boomball",
-					"aux_val": 18
+					"def": "spimton:boomball_neo"
 				},
 				"minecraft:behavior.ranged_attack": {
 					"priority": 1,
 					"burst_shots": 1,
 					"burst_interval": 1,
 					"attack_interval": 1,
-					"attack_radius": 30,
-					"charge_shoot_trigger": 1
+					"attack_radius": 64
 				},
 				"minecraft:timer": {
 					"looping": false,
-					"time": 30,
+					"time": 4,
 					"time_down_event": {
 						"event": "spimton:tyre"
 					}
@@ -702,7 +700,7 @@
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
-				"is_pushable": true,
+				"is_pushable": false,
 				"is_pushable_by_piston": true
 			},
 			"minecraft:follow_range": {
@@ -860,6 +858,7 @@
 						"queue_command": {
 							"target": "target",
 							"command": [
+								"tag @s add spimton:juandice_target",
 								"function mob/juandice/bigprojectile",
 								"playanimation @e[type=spimton:justice_champion,c=1] animation.champion.shoot none 5"
 							]

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:boomball_NEO",
+			"min_engine_version": "1.10.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/boomball"
+			},
+			"geometry": {
+				"default": "geometry.ball"
+			},
+			"scripts": {
+				"animate": [
+					"general"
+				],
+				"scale": "1.66"
+			},
+			"animations": {
+				"general": "animation.crystalball.idle",
+				"idle": "animation.crystalball.idle"
+			},
+			"render_controllers": [
+				"controller.render.enderman"
+			]
+		}
+	}
+}

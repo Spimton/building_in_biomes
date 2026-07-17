@@ -92,11 +92,11 @@
 				"priority": 4,
 				"success_rate": 1,
 				"max_distance": 70,
-				"min_distance": 0,
+				"min_distance": 0.01,
 				"speed_multiplier": 1
 			},
 			"minecraft:area_attack": {
-				"damage_range": 0.1,
+				"damage_range": 0.1225,
 				"cause": "magic",
 				"damage_per_tick": 3,
 				"entity_filter": {

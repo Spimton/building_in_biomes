@@ -1,0 +1,234 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:circle_indicator",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "properties": {
+                "spimton:scale": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 1,
+                    "range": [
+                        0,
+                        122
+                    ]
+                }
+            }
+        },
+        "events": {
+            "spimton:blue_cultist": {
+                "set_property": {
+                    "spimton:scale": 3
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:blue_cultist"
+                    ]
+                }
+            },
+            "spimton:blue_cultist_spread": {
+                "set_property": {
+                    "spimton:scale": 3
+                },
+                "queue_command": {
+                    "command": "spreadplayers ~ ~ 0 16 @s ~6"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:blue_cultist"
+                    ]
+                }
+            },
+            "spimton:turn_electroball": {
+                "queue_command": {
+                    "command": [
+                        "summon spimton:electroball_levitate",
+                        "event entity @s spimton:desp"
+                    ]
+                }
+            },
+            "spimton:electroball_d": {
+                "set_property": {
+                    "spimton:scale": 3
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:electroball_d"
+                    ]
+                }
+            },
+            "spimton:boomball_explode": {
+                "queue_command": {
+                    "target": "self",
+                    "command": [
+                        "particle spimton:electric_boom ~ ~0.1225 ~",
+                        "damage @e[family=!juandice,dx=7,dy=1.1225, dz=7,x=~-3.5,y=~-1,z=~-3.5] 18 entity_explosion",
+                        "summon lightning_bolt",
+                        "camerashake add @a[r=8] 3 0.5 positional",
+                        "event entity @s spimton:desp"
+                    ]
+                }
+            },
+            "spimton:boomball_delayed": {
+                "set_property": {
+                    "spimton:scale": 4
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:boomball_delayed"
+                    ]
+                }
+            },
+            "spimton:justice_bell": {
+                "set_property": {
+                    "spimton:scale": 10
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:justice_bell"
+                    ]
+                }
+            },
+            "spimton:electroball_dspread": {
+                "set_property": {
+                    "spimton:scale": 3
+                },
+                "queue_command": {
+                    "command": "spreadplayers ~ ~ 0 16 @s ~6"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:electroball_d"
+                    ]
+                }
+            },
+            "spimton:opulent_obliterator": {
+                "set_property": {
+                    "spimton:scale": 30
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:opulent_obliterator"
+                    ]
+                }
+            },
+            "spimton:summon_beam": {
+                "queue_command": {
+                    "target": "self",
+                    "command": [
+                        "particle spimton:beam_particle ~ ~ ~", //Create beam particle, lifetime is low
+                        "particle spimton:beam_circle ~ ~30 ~",
+                        "playsound sfx.beam_pillar @a[r=32] ~ ~ ~",
+                        "damage @e[family=!inanimate,dx=1.5,dy=30, dz=1.5,x=~-0.75,y=~,z=~-0.75] 15 magic", //Damage dealt only once
+                        "event entity @s spimton:desp" //Despawn
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:desp"
+                    ]
+                }
+            }
+        },
+        "component_groups": {
+            "spimton:boomball_delayed": {
+                "minecraft:timer": {
+                    "time": 1.225,
+                    "time_down_event": {
+                        "event": "spimton:boomball_explode"
+                    }
+                }
+            },
+            "spimton:opulent_obliterator": {
+                "minecraft:timer": {
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "spimton:desp"
+                    }
+                }
+            },
+            "spimton:justice_bell": {
+                "minecraft:spawn_entity": {
+                    "entities": {
+                        "num_to_spawn": 1,
+                        "spawn_entity": "spimton:justice_bell",
+                        "spawn_method": "born",
+                        "single_use": true,
+                        "min_wait_time": 0,
+                        "max_wait_time": 0,
+                        "should_leash": false
+                    }
+                },
+                "minecraft:timer": {
+                    "time": 2,
+                    "time_down_event": {
+                        "event": "spimton:desp"
+                    }
+                }
+            },
+            "spimton:blue_cultist": {
+                "minecraft:timer": {
+                    "time": 0.5,
+                    "time_down_event": {
+                        "event": "spimton:summon_beam"
+                    }
+                }
+            },
+            "spimton:electroball_d": {
+                "minecraft:timer": {
+                    "time": 1.997,
+                    "time_down_event": {
+                        "event": "spimton:turn_electroball"
+                    }
+                }
+            },
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate"
+                ]
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:movement": {
+                "value": 0.0
+            },
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": false
+            },
+            "minecraft:collision_box": {
+                "width": 0.0,
+                "height": 0.0
+            },
+            "minecraft:push_through": {
+                "value": 1.0
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        }
+    }
+}

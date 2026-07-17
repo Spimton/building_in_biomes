@@ -50,7 +50,7 @@
 					}
 				},
 				"power": 1.6,
-				"gravity": 0,
+				"gravity": 0.067,
 				"inertia": 1,
 				"liquid_inertia": 1,
 				"uncertainty_base": 1,

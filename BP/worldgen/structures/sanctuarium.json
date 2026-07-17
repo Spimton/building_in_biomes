@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "spimton:sanctuarium"
+    },
+    "step": "surface_structures",
+    "start_pool": "spimton:sanctuarium_start",
+    "terrain_adaptation": "beard_thin",
+    "max_depth": 14,
+    "start_height": {
+      "type": "constant",
+      "value": {
+        "absolute": -70
+      }
+    },
+    "liquid_settings": "ignore_waterlogging",
+    "biome_filters": [
+      {
+        "operator": "==",
+        "test": "has_biome_tag",
+        "value": "soulsand_valley"
+      }
+    ],
+    "heightmap_projection": "world_surface"
+  }
+}

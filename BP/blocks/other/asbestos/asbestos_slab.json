@@ -1,10 +1,17 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.120",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:asbestos_slab",
 			"menu_category": {
-				"category": "construction"
+				"category": "construction",
+				"group": "minecraft:itemGroup.name.slab"
+			},
+			"states": {
+				"spimton:double": [
+					false,
+					true
+				]
 			},
 			"traits": {
 				"minecraft:placement_position": {
@@ -15,9 +22,6 @@
 			}
 		},
 		"components": {
-			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 10
-			},
 			"minecraft:collision_box": {
 				"origin": [
 					-8,
@@ -43,7 +47,7 @@
 				]
 			},
 			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 40
+				"explosion_resistance": 30
 			},
 			"minecraft:geometry": "geometry.defrosted_cobbled_chillstone_slab",
 			"minecraft:material_instances": {
@@ -52,12 +56,27 @@
 					"render_method": "alpha_test"
 				}
 			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true,
+						"on_liquid_touches": "blocking"
+					}
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 8
+			},
 			"tag:stone": {},
-			"tag:is_pickaxe_item_destructible": {}
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"spimton:slab_comp": {
+				"lootTable": "false"
+			}
 		},
 		"permutations": [
 			{
-				"condition": "q.block_state('minecraft:vertical_half') == 'top' ",
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && query.block_state('spimton:double') == false",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [
@@ -89,6 +108,22 @@
 							0,
 							0
 						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('spimton:double') == true",
+				"components": {
+					"minecraft:geometry": {
+						"identifier": "minecraft:geometry.full_block"
+					},
+					"minecraft:collision_box": true,
+					"minecraft:selection_box": true,
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "asbestos_block",
+							"render_method": "alpha_test"
+						}
 					}
 				}
 			}

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "beam_end_particle",
+		"metalness_emissive_roughness": "beam_end_particle_mer"
+	}
+}

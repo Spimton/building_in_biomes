@@ -16,6 +16,16 @@
                         "deals_damage": "no"
                     }
                 },
+                "minecraft:type_family": {
+                    "family": [
+                        "golem",
+                        "monster",
+                        "mob",
+                        "spimton:rune",
+                        "spimton:archshaman",
+                        "inanimate"
+                    ]
+                },
                 "minecraft:timer": {
                     "looping": false,
                     "time": 1,
@@ -36,9 +46,7 @@
                         "golem",
                         "monster",
                         "mob",
-                        "spimton:rune",
-                        "spimton:archshaman",
-                        "inanimate"
+                        "spimton:archshaman"
                     ]
                 },
                 "minecraft:damage_sensor": {

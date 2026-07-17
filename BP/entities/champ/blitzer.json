@@ -53,6 +53,7 @@
 				"queue_command": {
 					"command": [
 						"tp @e[type=spimton:justice_champion,c=1] @s",
+						"tp @e[type=spimton:justice_champion_old,c=1] @s",
 						"tp @e[type=spimton:unbreakable_diamond,c=1] @s"
 					],
 					"target": "self"

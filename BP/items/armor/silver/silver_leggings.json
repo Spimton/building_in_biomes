@@ -38,8 +38,10 @@
             },
             "minecraft:damage_absorption": {
                 "absorbable_causes": [
-                    "stalagmite",
-                    "fireworks"
+                    "stalactite",
+                    "fireworks",
+                    "falling_block",
+                    "anvil"
                 ]
             },
             "minecraft:tags": {

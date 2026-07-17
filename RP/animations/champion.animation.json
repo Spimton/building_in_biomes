@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"animation.champion.summon": {
-			"animation_length": 2,
+			"animation_length": 1,
 			"bones": {
 				"arm0": {
 					"rotation": {
@@ -11,27 +11,27 @@
 							0,
 							0
 						],
-						"0.5": [
+						"0.25": [
 							0,
 							0,
 							-137.5
 						],
-						"1.0": [
+						"0.5": [
 							0,
 							0,
 							-140
 						],
-						"1.25": [
+						"0.6667": [
 							0,
 							0,
 							-40
 						],
-						"1.5": [
+						"0.75": [
 							0,
 							0,
 							-45
 						],
-						"2.0": [
+						"1.0": [
 							0,
 							0,
 							0
@@ -45,22 +45,22 @@
 							0,
 							0
 						],
-						"0.5": [
+						"0.25": [
 							0,
 							0,
 							-10
 						],
-						"1.0": [
+						"0.5": [
 							0,
 							0,
 							-12.5
 						],
-						"1.25": [
+						"0.6667": [
 							0,
 							0,
 							65
 						],
-						"2.0": [
+						"1.0": [
 							0,
 							0,
 							0
@@ -259,6 +259,7 @@
 		},
 		"animation.champion.tyre": {
 			"animation_length": 5,
+			"loop": true,
 			"bones": {
 				"upperbody": {
 					"rotation": {
@@ -394,6 +395,127 @@
 							0
 						]
 					}
+				}
+			}
+		},
+		"animation.champion.shootNEO": {
+			"loop": true,
+			"bones": {
+				"upperbody": {
+					"rotation": [
+						0,
+						-35,
+						0
+					]
+				},
+				"head": {
+					"rotation": [
+						0,
+						35,
+						0
+					]
+				},
+				"arm0": {
+					"rotation": [
+						-45,
+						0,
+						-65
+					]
+				},
+				"HAMMAH": {
+					"rotation": [
+						0,
+						-10,
+						80
+					]
+				},
+				"leg1": {
+					"rotation": [
+						0,
+						-35,
+						0
+					],
+					"position": [
+						-1.25,
+						0,
+						-1.25
+					]
+				},
+				"leg0": {
+					"rotation": [
+						0,
+						-35,
+						0
+					],
+					"position": [
+						2,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.champion.bayNEO": {
+			"loop": true,
+			"bones": {
+				"main": {
+					"rotation": [
+						0,
+						-25,
+						0
+					]
+				},
+				"head": {
+					"rotation": [
+						0,
+						17.5,
+						0
+					]
+				},
+				"arm1": {
+					"rotation": [
+						-30,
+						0,
+						40
+					]
+				},
+				"arm0": {
+					"rotation": [
+						-20,
+						0,
+						-77.5
+					]
+				},
+				"HAMMAH": {
+					"rotation": [
+						0,
+						0,
+						82.5
+					]
+				},
+				"leg1": {
+					"rotation": [
+						0,
+						0,
+						42.5
+					],
+					"position": [
+						2,
+						-2,
+						0
+					]
+				},
+				"leg0": {
+					"rotation": [
+						0,
+						0,
+						22.5
+					],
+					"position": [
+						7,
+						-2,
+						0
+					]
 				}
 			}
 		}

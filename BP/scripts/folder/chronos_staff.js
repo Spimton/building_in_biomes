@@ -230,6 +230,7 @@ world.afterEvents.entityHurt.subscribe(event => {
     const hiter = event.damageSource.damagingEntity
     if (!hiter) return;
     const equipment = entity.getComponent("equippable")
+    if (equipment === undefined) return;
     const hasAbsorption = entity.getEffect("absorption");
     const MainhandEq = equipment.getEquipment("Mainhand");
     const OffhandEq = equipment.getEquipment("Offhand");
@@ -1332,6 +1333,7 @@ world.afterEvents.entityDie.subscribe(event => {
             };
             const health = deadEntity.getComponent("health").effectiveMax
             souls += Math.ceil(health / ConfigItems.soulArtifacts.healtMod);
+            if (eqqq && eqqq.typeId === "spimton:sol_sword") souls += Math.ceil(Math.ceil(health / ConfigItems.soulArtifacts.healtMod) * ConfigItems.soulArtifacts.solSwordMult);
             if (souls > ConfigItems.soulArtifacts.maxSouls) {
                 souls = ConfigItems.soulArtifacts.maxSouls
             }

@@ -1693,6 +1693,12 @@
 		"ominous_glass": {
 			"textures": "textures/blocks/otherstone/ominous/ominous_stained_glass"
 		},
+		"juandice_glass_pane": {
+			"textures": "textures/blocks/otherstone/ominous/juandice_stained_glass_pane"
+		},
+		"juandice_glass": {
+			"textures": "textures/blocks/otherstone/ominous/juandice_stained_glass"
+		},
 		"ominous_carpet_corner": {
 			"textures": "textures/blocks/otherstone/ominous/carpet/ominous_carpet_corner"
 		},
@@ -1743,6 +1749,9 @@
 		},
 		"ht_polished_lead": {
 			"textures": "textures/blocks/lead/polished_lead"
+		},
+		"soul_brazier": {
+			"textures": "textures/blocks/otherstone/ominous/soul_brazier"
 		}
 	}
 }
