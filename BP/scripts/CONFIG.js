@@ -168,7 +168,18 @@ export const ConfigItems = {
             defaultDur: 10,
             durMod: 30
         }
-    }
+    },
+    justiceHammer: {
+        blastMultiplier: 1 / 20,
+        cooldownMult: 0.75,
+        cooldownBase: 1.225,
+        blastGrief: true,
+        speedBase: 0,
+        speedMod: 1.997,
+        blastRadius: 1.225,
+        minimumUseTicks: 5
+    },
+    meatMalletAccept: []
 
 
 }

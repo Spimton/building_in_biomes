@@ -13,14 +13,6 @@
 				"width": 0.31,
 				"height": 0.31
 			},
-			"minecraft:timer": {
-				"looping": true,
-				"time": 3,
-				"time_down_event": {
-					"event": "minecraft:explode",
-					"target": "self"
-				}
-			},
 			"minecraft:projectile": {
 				"on_hit": {
 					"impact_damage": {
@@ -31,7 +23,16 @@
 						"knockback": true,
 						"semi_random_diff_damage": false,
 						"destroy_on_hit": false
-					}
+					},
+					"remove_on_hit": {},
+					"spawn_chance": {
+						"first_spawn_count": 1,
+						"first_spawn_chance": 1,
+						"second_spawn_chance": 0,
+						"second_spawn_count": 0,
+						"spawn_definition": "spimton:sudden_cardiac_arrest_biggu"
+					},
+					"stick_in_ground": {}
 				},
 				"power": 1.6,
 				"gravity": 0,

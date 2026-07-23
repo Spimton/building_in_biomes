@@ -1116,7 +1116,7 @@ item.spimton:champion_leggings=Leggings of the Championship
 item.spimton:champion_boots=Boots of the Championship
 item.spimton:champion_chestplate=Chestplate of the Championship
 item.spimton:champion_helmet=Helmet of the Championship
-item.spimton:justice_hammer=Hammer of Justice
+item.spimton:justice_hammer_weapon=Hammer of Justice
 item.spimton:champion_upgrade=Championship Upgrade
 item.spimton:meat_mallet=Meat Mallet
 item.spimton:darkened_utensil=Darkened Slicer
@@ -1324,6 +1324,7 @@ item.spawn_egg.entity.spimton:priest.name=Preacher Spawn Egg
 item.spimton:priest_tiara=Brittle Tiara
 item.spimton:priest_necklace=Brittle Necklace with Shoulder Pads
 item.spimton:priest_leggings=Brittle Leggings
+item.spimton:ominous_statue_spawner=Ominous Statue
 
 
 

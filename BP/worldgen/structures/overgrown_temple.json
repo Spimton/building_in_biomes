@@ -10,7 +10,7 @@
     "start_height": {
       "type": "constant",
       "value": {
-        "absolute": -45
+        "absolute": -49
       }
     },
     "liquid_settings": "ignore_waterlogging",

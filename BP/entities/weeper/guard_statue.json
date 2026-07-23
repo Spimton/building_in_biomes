@@ -3,7 +3,7 @@
     "minecraft:entity": {
         "description": {
             "identifier": "spimton:guard_statue",
-            "is_spawnable": true,
+            "is_spawnable": false,
             "is_summonable": true,
             "is_experimental": false
         },
@@ -28,22 +28,22 @@
             },
             "minecraft:type_family": {
                 "family": [
-                    "inanimate",
-                    "armor_stand"
+                    "inanimate"
                 ]
             },
             "minecraft:movement": {
                 "value": 0
             },
             "minecraft:physics": {
-                "has_gravity": false
+                "has_gravity": true
             },
+            "minecraft:is_collidable": {},
             "minecraft:pushable": {
                 "is_pushable": false,
                 "is_pushable_by_piston": false
             },
             "minecraft:collision_box": {
-                "width": 1,
+                "width": 0.7,
                 "height": 2.2
             },
             "minecraft:knockback_resistance": {

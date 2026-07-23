@@ -51,12 +51,20 @@
 				"minecraft:mark_variant": {
 					"value": 1
 				},
+				"minecraft:knockback_resistance": {
+					"max": 1,
+					"value": 1
+				},
 				"minecraft:environment_sensor": {
 					"triggers": {
 						"filters": {
-							"test": "is_mark_variant",
-							"subject": "self",
-							"value": 1
+							"all_of": [
+								{
+									"test": "is_mark_variant",
+									"subject": "self",
+									"value": 1
+								}
+							]
 						},
 						"event": "spimton:check_block",
 						"target": "self"
@@ -66,8 +74,8 @@
 					"subsensors": [
 						{
 							"range": [
-								1.997,
-								1.997
+								1.225,
+								1.225
 							],
 							"event": "spimton:js_explode",
 							"cooldown": 0.1225,
@@ -89,10 +97,6 @@
 							}
 						}
 					]
-				},
-				"minecraft:physics": {
-					"has_gravity": false,
-					"has_collision": false
 				}
 			},
 			"spimton:downward": {
@@ -176,9 +180,11 @@
 					]
 				}
 			},
-			"minecraft:entity_transformed": {
+			"spimton:upward": {
 				"queue_command": {
-					"command": "effect @s levitation 3 10 true"
+					"command": [
+						"effect @s levitation 3 12 true"
+					]
 				},
 				"add": {
 					"component_groups": [

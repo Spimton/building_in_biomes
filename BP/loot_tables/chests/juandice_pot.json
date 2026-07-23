@@ -1,0 +1,110 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spimton:asriel_dust",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 12,
+                                "min": 25
+                            }
+                        }
+                    ],
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:nether_cloth",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 2,
+                                "min": 5
+                            }
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:bismuth_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 2
+                            }
+                        }
+                    ],
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "candle",
+                    "functions": [
+                        {
+                            "function": "random_dye"
+                        },
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 2
+                            }
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:ectoplasm",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 2
+                            }
+                        }
+                    ],
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:bismuth_hammer",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "max": 450,
+                                "min": 122
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:bismuth_smoothener",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "max": 450,
+                                "min": 122
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

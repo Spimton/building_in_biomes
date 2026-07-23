@@ -11,6 +11,17 @@
 			"spimton:kill": {
 				"minecraft:instant_despawn": {}
 			},
+			"spimton:splode_player": {
+				"minecraft:explode": {
+					"destroy_affected_by_griefing": true,
+					"breaks_blocks": true,
+					"damage_scaling": 1,
+					"power": 3,
+					"knockback_scaling": 1,
+					"fuse_length": 0,
+					"fuse_lit": true
+				}
+			},
 			"spimton:splode": {
 				"minecraft:explode": {
 					"destroy_affected_by_griefing": true,
@@ -22,12 +33,52 @@
 					"fuse_length": 0,
 					"damage_scaling": 1.225
 				}
+			},
+			"spimton:player": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 10,
+					"time_down_event": {
+						"event": "spimton:bolt_player"
+					}
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"stick_in_ground": {},
+						"impact_damage": {
+							"damage": [
+								2,
+								5
+							],
+							"knockback": true,
+							"should_bounce": true,
+							"semi_random_diff_damage": true
+						}
+					},
+					"multiple_targets": true,
+					"anchor": 1,
+					"power": 0.67,
+					"inertia": 1,
+					"gravity": 0.001225,
+					"uncertainty_base": 1,
+					"angle_offset": 0,
+					"offset": [
+						0,
+						-0.5,
+						-1
+					]
+				}
 			}
 		},
 		"components": {
 			"minecraft:collision_box": {
 				"width": 0.31,
 				"height": 0.31
+			},
+			"minecraft:variant": {
+				"value": 0
 			},
 			"minecraft:projectile": {
 				"on_hit": {
@@ -73,13 +124,6 @@
 				"is_pushable": false,
 				"is_pushable_by_piston": true
 			},
-			"minecraft:despawn": {
-				"despawn_from_distance": {
-					"max_distance": 128,
-					"min_distance": 64
-				},
-				"despawn_from_simulation_edge": true
-			},
 			"minecraft:conditional_bandwidth_optimization": {
 				"default_values": {
 					"max_optimized_distance": 80,
@@ -97,6 +141,13 @@
 			}
 		},
 		"events": {
+			"spimton:player": {
+				"add": {
+					"component_groups": [
+						"spimton:player"
+					]
+				}
+			},
 			"spimton:bolt": {
 				"queue_command": {
 					"command": [
@@ -108,6 +159,13 @@
 				"add": {
 					"component_groups": [
 						"spimton:splode"
+					]
+				}
+			},
+			"spimton:bolt_player": {
+				"add": {
+					"component_groups": [
+						"spimton:splode_player"
 					]
 				}
 			}

@@ -638,6 +638,11 @@
 							]
 						},
 						{
+							"filters": {
+								"test": "is_underground",
+								"operator": "!=",
+								"subject": "self"
+							},
 							"min_activation_range": 5,
 							"weight": 5,
 							"cooldown_time": 5,
@@ -662,6 +667,39 @@
 									"size": 3,
 									"num_entities_spawned": 6,
 									"entity_type": "spimton:fireball_spawner",
+									"entity_lifespan": 6
+								}
+							]
+						},
+						{
+							"filters": {
+								"test": "is_underground",
+								"subject": "self"
+							},
+							"min_activation_range": 5,
+							"weight": 5,
+							"cooldown_time": 5,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "jojoref",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:tp_dialog",
+									"size": 1,
+									"entity_lifespan": 1
+								},
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"size": 3,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:fireball_spawner_upward",
 									"entity_lifespan": 6
 								}
 							]

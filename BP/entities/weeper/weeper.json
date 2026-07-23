@@ -33,6 +33,21 @@
 					"priority": 1,
 					"cooldown_time": 0.1225,
 					"knockback_damage": 0,
+					"damage_filters": {
+						"all_of": [
+							{
+								"subject": "other",
+								"test": "is_family",
+								"value": "spimton:weeper"
+							},
+							{
+								"subject": "other",
+								"test": "is_family",
+								"operator": "!=",
+								"value": "spimton:weeper"
+							}
+						]
+					},
 					"knockback_range": 20,
 					"knockback_horizontal_strength": -1,
 					"knockback_vertical_strength": 1,

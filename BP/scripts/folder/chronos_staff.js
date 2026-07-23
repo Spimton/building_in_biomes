@@ -1,4 +1,4 @@
-import { world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, BlockPermutation, InputInfo, EntityHealthComponent, EntityComponentTypes, EntityDamageCause } from '@minecraft/server'
+import { world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, BlockPermutation, InputInfo, ItemComponentTypes, EntityComponentTypes, EntityDamageCause } from '@minecraft/server'
 import { updateItemDurability } from "../folder2/updateDurability.js";
 import { ConfigItems } from "../CONFIG.js";
 
@@ -22,8 +22,7 @@ function celerity() {
         const Equipment = equipment.getEquipment("Mainhand");
         const hasEquipment = Equipment?.typeId === "spimton:celerity_gauntlet";
         const EqAlt = Equipment?.typeId === "spimton:platinum_gauntlet";
-        const EqAlt2 = Equipment?.typeId === "spimton:justice_hammer";
-        if (hasEquipment || EqAlt || EqAlt2) {
+        if (hasEquipment || EqAlt) {
             updateItemDurability(player, Equipment, ConfigItems.repairGauntlet, EquipmentSlot.Mainhand)
         }
     }
@@ -547,34 +546,11 @@ system.beforeEvents.startup.subscribe(initEvent => {
             let hited = arg.hitEntity
             let hitedtype = hited.typeId
             const chance = Math.random()
-            if (hitedtype == "minecraft:pig") {
+            const family = hited.getComponent("type_family")
+            if (family.hasTypeFamily("animal") || ConfigItems.meatMalletAccept.includes(hitedtype)) {
                 if (chance > ConfigItems.meatMalletChance)
                     hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
             }
-            else if (hitedtype == "minecraft:cow") {
-                if (chance > ConfigItems.meatMalletChance)
-                    hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
-            }
-            else if (hitedtype == "minecraft:chicken") {
-                if (chance > ConfigItems.meatMalletChance)
-                    hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
-            }
-            else if (hitedtype == "minecraft:rabbit") {
-                if (chance > ConfigItems.meatMalletChance)
-                    hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
-            }
-            else if (hitedtype == "minecraft:sheep") {
-                if (chance > ConfigItems.meatMalletChance)
-                    hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
-            }
-            else if (hitedtype == "minecraft:zombie") {
-                if (chance > ConfigItems.meatMalletChance)
-                    hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
-            }
-            else if (hitedtype == "minecraft:horse") {
-                if (chance > ConfigItems.meatMalletChance)
-                    hited.runCommand('loot spawn ~ ~ ~ kill @s mainhand')
-            };
         }
     })
 })
@@ -765,7 +741,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
         }
     })
 })
-system.beforeEvents.startup.subscribe(initEvent => {
+/*system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:justice_hammer', {
         onUseOn: arg => {
             let source = arg.source
@@ -781,8 +757,102 @@ system.beforeEvents.startup.subscribe(initEvent => {
                 updateItemDurability(source, item, 15, EquipmentSlot.Mainhand)
             source.extinguishFire(false)
         }
+
     })
+})*/ //OLD
+
+world.afterEvents.itemReleaseUse.subscribe(data => {
+    const { source, itemStack, useDuration } = data;
+
+
+    switch (itemStack.typeId) {
+
+        case "spimton:justice_hammer_weapon":
+            const trueUseDuration = 100 - useDuration;
+            console.warn(trueUseDuration);
+            if (trueUseDuration < ConfigItems.justiceHammer.minimumUseTicks) break;
+
+            const projectile = source.dimension.spawnEntity("spimton:justice_hammer", source.getHeadLocation(), { spawnEvent: "spimton:player" });
+            const comp = projectile.getComponent("projectile");
+            comp.owner = source;
+            const speedM = (trueUseDuration / 20 / ConfigItems.justiceHammer.speedMod) + ConfigItems.justiceHammer.speedBase;
+            const shootDir = {
+                x: source.getViewDirection().x * speedM,
+                y: source.getViewDirection().y * speedM,
+                z: source.getViewDirection().z * speedM
+
+            };
+            comp.shoot(shootDir);
+            projectile.setDynamicProperty("spimton:useDur", trueUseDuration);
+            break;
+
+
+    }
 })
+
+
+world.afterEvents.itemCompleteUse.subscribe(data => {
+    const { source, itemStack } = data;
+    switch (itemStack.typeId) {
+        case "spimton:justice_hammer_weapon":
+            const projectile = source.dimension.spawnEntity("spimton:justice_hammer", source.getHeadLocation(), { spawnEvent: "spimton:player" });
+            const comp = projectile.getComponent("projectile");
+            comp.owner = source;
+            const speedM = 100 / 20 * ConfigItems.justiceHammer.speedMod;
+            const shootDir = {
+                x: source.getViewDirection().x * speedM,
+                y: source.getViewDirection().y * speedM,
+                z: source.getViewDirection().z * speedM
+
+            };
+            comp.shoot(shootDir);
+            projectile.setDynamicProperty("spimton:useDur", 100);
+            break;
+    }
+})
+
+world.afterEvents.projectileHitBlock.subscribe(data => {
+    const { projectile } = data;
+    switch (projectile.typeId) {
+        case "spimton:justice_hammer":
+            const variant = projectile.getComponent("variant").value
+            if (variant != 1) break;
+            const tpLoc = projectile.location;
+            JusticeHammerTP(tpLoc, projectile);
+            break;
+    }
+
+
+})
+
+
+world.afterEvents.projectileHitEntity.subscribe(data => {
+
+    const { projectile } = data;
+    switch (projectile.typeId) {
+        case "spimton:justice_hammer":
+            const variant = projectile.getComponent("variant").value
+            if (variant != 1) break;
+            const tpLoc = projectile.location;
+            JusticeHammerTP(tpLoc, projectile);
+            break;
+
+    }
+})
+
+function JusticeHammerTP(tpLoc, projectile) {
+    const projComp = projectile.getComponent("projectile");
+    const owner = projComp.owner;
+    owner.teleport(tpLoc);
+    const useDur = projectile.getDynamicProperty("spimton:useDur")
+    if (world.gameRules.mobGriefing && ConfigItems.justiceHammer.blastGrief) projectile.dimension.createExplosion(tpLoc, ConfigItems.justiceHammer.blastRadius + (ConfigItems.justiceHammer.blastMultiplier * useDur), { source: owner, causesFire: false, breaksBlocks: true })
+    else projectile.dimension.createExplosion(tpLoc, ConfigItems.justiceHammer.blastRadius + (ConfigItems.justiceHammer.blastMultiplier * useDur), { source: owner, causesFire: false, breaksBlocks: false });
+    owner.startItemCooldown("jhammer", (useDur * ConfigItems.justiceHammer.cooldownMult) + ConfigItems.justiceHammer.cooldownBase)
+    projectile.remove();
+    return;
+}
+
+
 const Knockback = {
     Horizontal: ConfigItems.celerityGauntletKHoriz,
     Vertical: ConfigItems.celerityGauntletKVert

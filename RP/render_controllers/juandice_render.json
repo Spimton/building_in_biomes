@@ -112,6 +112,25 @@
             "textures": [
                 "Array.textures[math.clamp(query.health / 25, 0, 3)]"
             ]
+        },
+        "controller.render.hammer_justice": {
+            "geometry": "Geometry.default",
+            "arrays": {
+                "textures": {
+                    "Array.textures": [
+                        "Texture.default",
+                        "Texture.player"
+                    ]
+                }
+            },
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Array.textures[query.variant]"
+            ]
         }
     }
 }

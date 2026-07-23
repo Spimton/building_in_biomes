@@ -88,6 +88,17 @@
 					"scale": 1.1
 				}
 			}
+		},
+		"animation.hammah.throw": {
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"(122 + query.item_in_use_duration / query.item_max_use_duration * 122);",
+						0,
+						0
+					]
+				}
+			}
 		}
 	}
 }

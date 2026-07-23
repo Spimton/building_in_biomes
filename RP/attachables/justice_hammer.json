@@ -1,8 +1,8 @@
 {
-    "format_version": "1.10.0",
+    "format_version": "1.21.0",
     "minecraft:attachable": {
         "description": {
-            "identifier": "spimton:justice_hammer",
+            "identifier": "spimton:justice_hammer_weapon",
             "render_controllers": [
                 "controller.render.item_default"
             ],

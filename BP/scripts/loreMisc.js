@@ -63,7 +63,7 @@ const ItemArray = [
     new loreItem("spimton:champion_helmet", ["§r§7When damaged, if sneaking,", "§r§7thrusts you upwards damaging nearby entities"]),
     new loreItem("spimton:kris", ["", "§r§7A winding blade.", "§r§7The greater the pain, the greater the damage inflicted"]),
     new loreItem("spimton:champion_upgrade", ["§r§7Smithing Template", "", "§r§7Applies to:", " §r§9Steel Armor", "§r§7Ingredients:", " §r§9Netherite Ingot"]),
-    new loreItem("spimton:justice_hammer", ["", "§r§7Legendary Masochist Weapon", "", "§r§7Right click on a block to summon lightning", "§r§7and simultaneously thrust you"]),
+    new loreItem("spimton:justice_hammer_weapon", ["", "§r§7Legendary Masochist Weapon", "", "§r§7Hold to charge weapon throw.", "§r§7Release to launch a hammer, teleporting you once", "§r§7it hits something. Velocity is based on charge time."]),
     new loreItem("spimton:meat_mallet", ["§r§7Hit animals have a chance to drop their loot", "§r§7Is affected by Looting and Fire Aspect"]),
     new loreItem("spimton:diamond_relic", ["§r§7Use it on the Judgement Altar to summon the", "§r§9Champion of Justice§7 boss"]),
     new loreItem("spimton:black_kris", ["", "Your eyes can't hide it. Without play,", "the knife grows dull"]),

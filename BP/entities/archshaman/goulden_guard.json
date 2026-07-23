@@ -96,11 +96,6 @@
                 "minecraft:attack": {
                     "damage": 15
                 },
-                "minecraft:break_blocks": {
-                    "breakable_blocks": [
-                        "jungle_leaves"
-                    ]
-                },
                 /* "minecraft:behavior.charge_attack": {
                     "max_distance": 32,
                     "min_distance": 0,
@@ -129,13 +124,13 @@
                     "melee_fov": 335,
                     "speed_multiplier": 5,
                     "track_target": true,
-                    "reach_multiplier": 1.997,
-                    "x_max_rotation": 360,
+                    "reach_multiplier": 0,
+                    "x_max_rotation": 15,
                     "random_stop_interval": 0
                 },
                 "minecraft:area_attack": {
                     "cause": "entity_attack",
-                    "damage_per_tick": 20,
+                    "damage_per_tick": 16,
                     "damage_cooldown": 0.1225,
                     "play_attack_sound": true,
                     "damage_range": 1.997

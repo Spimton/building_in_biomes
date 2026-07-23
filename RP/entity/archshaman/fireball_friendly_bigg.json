@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:fireball_friendly_bigg",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/fireball_spawner"
+            },
+            "geometry": {
+                "default": "geometry.blastfunguss"
+            },
+            "animations": {
+                "fly": "animation.blastfungus.fly"
+            },
+            "scripts": {
+                "scale": "1.997",
+                "animate": [
+                    "fly"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

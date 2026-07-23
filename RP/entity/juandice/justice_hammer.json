@@ -8,7 +8,8 @@
 				"default": "entity"
 			},
 			"textures": {
-				"default": "textures/entity/hammer_justice"
+				"default": "textures/entity/hammer_justice",
+				"player": "textures/entity/hammer_justice_player"
 			},
 			"geometry": {
 				"default": "geometry.justice_hammer"
@@ -23,7 +24,7 @@
 				"idle": "animation.justice_hammer.rote"
 			},
 			"render_controllers": [
-				"controller.render.default"
+				"controller.render.hammer_justice"
 			]
 		}
 	}

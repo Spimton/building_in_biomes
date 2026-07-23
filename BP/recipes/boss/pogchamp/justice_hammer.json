@@ -12,7 +12,7 @@
 				"item": "spimton:pure_diamond"
 			},
 			"#": {
-				"item": "spimton:platinum_star"
+				"item": "ender_pearl"
 			},
 			"x": {
 				"item": "netherite_ingot"
@@ -27,7 +27,7 @@
 			" x "
 		],
 		"result": {
-			"item": "spimton:justice_hammer",
+			"item": "spimton:justice_hammer_weapon",
 			"count": 1
 		}
 	}
