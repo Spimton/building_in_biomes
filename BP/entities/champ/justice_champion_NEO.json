@@ -479,6 +479,7 @@
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 1,
 				"must_see": false,
+				"persist_time": 10,
 				"entity_types": [
 					{
 						"filters": {

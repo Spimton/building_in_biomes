@@ -142,8 +142,7 @@
 						{
 							"test": "is_family",
 							"subject": "other",
-							"operator": "!=",
-							"value": "inanimate"
+							"value": "spimton:archshaman"
 						}
 					],
 					"knockback_filters": [
@@ -178,6 +177,7 @@
 			}
 		},
 		"components": {
+			"minecraft:burns_in_daylight": {},
 			"minecraft:target_nearby_sensor": {
 				"inside_range": 5,
 				"outside_range": 8,

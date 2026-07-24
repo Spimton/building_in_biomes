@@ -605,7 +605,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
 
             } else {
                 if (durability <= ConfigItems.platinumGauntletDurabilityLoss / 2) return;
-                source.dimension.createExplosion(block, ConfigItems.platinumGauntletWeakBlast, { source: source, causesFire: false })
+                source.dimension.createExplosion(block, ConfigItems.platinumGauntletBlast, { source: source, causesFire: false })
                 if (source.matches({ gameMode: GameMode.Survival }) || source.matches({ gameMode: GameMode.Adventure })) updateItemDurability(source, item, ConfigItems.platinumGauntletDurabilityLoss / 2, EquipmentSlot.Mainhand)
 
             }

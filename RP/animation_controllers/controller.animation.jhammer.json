@@ -1,0 +1,36 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.jhammer_trail": {
+            "initial_state": "mob",
+            "states": {
+                "mob": {
+                    "particle_effects": [
+                        {
+                            "locator": "trail",
+                            "effect": "mob_particle"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "player": "query.variant == 1"
+                        }
+                    ]
+                },
+                "player": {
+                    "particle_effects": [
+                        {
+                            "locator": "trail",
+                            "effect": "player_particle"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "mob": "query.variant == 0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

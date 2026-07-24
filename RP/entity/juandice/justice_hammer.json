@@ -16,12 +16,18 @@
 			},
 			"scripts": {
 				"animate": [
-					"idle"
+					"idle",
+					"particles"
 				],
 				"scale": "1"
 			},
 			"animations": {
+				"particles": "controller.animation.jhammer_trail",
 				"idle": "animation.justice_hammer.rote"
+			},
+			"particle_effects": {
+				"player_particle": "spimton:soul_trail",
+				"mob_particle": "spimton:soul_trail_mob"
 			},
 			"render_controllers": [
 				"controller.render.hammer_justice"

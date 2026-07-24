@@ -99,6 +99,17 @@
 					]
 				}
 			}
+		},
+		"animation.kcannon.use": {
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"(122 + query.item_in_use_duration / query.item_max_use_duration * 12);",
+						0,
+						0
+					]
+				}
+			}
 		}
 	}
 }

@@ -949,6 +949,10 @@
 						],
 						"randomize": [
 							{
+								"filters": {
+									"test": "on_ground",
+									"subject": "target"
+								},
 								"weight": 1,
 								"add": {
 									"component_groups": [
@@ -1048,6 +1052,10 @@
 						],
 						"randomize": [
 							{
+								"filters": {
+									"test": "on_ground",
+									"subject": "target"
+								},
 								"weight": 1,
 								"add": {
 									"component_groups": [
@@ -1147,6 +1155,10 @@
 						],
 						"randomize": [
 							{
+								"filters": {
+									"test": "on_ground",
+									"subject": "target"
+								},
 								"weight": 1,
 								"add": {
 									"component_groups": [

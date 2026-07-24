@@ -72,17 +72,5 @@
 			"module_name": "@minecraft/server-ui",
 			"version": "2.0.0"
 		}
-	],
-	"subpacks": [
-		{
-			"folder_name": "no_music",
-			"memory_tier": 0,
-			"name": "Boss Music Disabled"
-		},
-		{
-			"folder_name": "yes_music",
-			"memory_tier": 1,
-			"name": "Boss Music Enabled"
-		}
 	]
 }

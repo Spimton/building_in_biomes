@@ -75,6 +75,7 @@
 				"value": 25,
 				"max": 30
 			},
+			"minecraft:burns_in_daylight": {},
 			"minecraft:hurt_on_condition": {
 				"damage_conditions": [
 					{

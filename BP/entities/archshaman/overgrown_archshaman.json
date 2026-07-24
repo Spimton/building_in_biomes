@@ -279,8 +279,16 @@
 						},
 						{
 							"filters": {
-								"test": "on_ground",
-								"subject": "target"
+								"all_of": [
+									{
+										"test": "on_ground",
+										"subject": "target"
+									},
+									{
+										"test": "is_daytime",
+										"operator": "not"
+									}
+								]
 							},
 							"min_activation_range": 1,
 							"max_activation_range": 50,

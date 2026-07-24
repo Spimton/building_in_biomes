@@ -52,7 +52,9 @@
                     ],
                     "must_reach": false,
                     "within_radius": 32,
-                    "must_see": true
+                    "must_see": true,
+                    "must_see_forget_duration": 40,
+                    "persist_time": 15
                 }
             },
             "minecraft:pig_adult": {

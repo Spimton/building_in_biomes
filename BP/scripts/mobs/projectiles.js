@@ -467,7 +467,7 @@ function shootSpread(player, spreadDegrees, projectileCount, speed, projectileId
             const fromE = player.getHeadLocation();
             direction = {
                 x: to.x - fromE.x,
-                y: to.y - fromE.y - 2,
+                y: to.y - fromE.y - 2.5,
                 z: to.z - fromE.z,
             };
             const length = Math.sqrt(

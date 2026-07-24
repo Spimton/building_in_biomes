@@ -52,12 +52,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -74,12 +74,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -88,7 +88,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
 
             if (!record?.isPlaying()) {
                 system.run(function () {
-                    block.dimension.playSound("music.overgrown_boss", block.location)
+                    block.dimension.playSound("music.overgrown_boss_disc", block.location)
                     player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:overgrown_boss.name"}]}')
                 })
             }
@@ -96,12 +96,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -110,7 +110,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
 
             if (!record?.isPlaying()) {
                 system.run(function () {
-                    block.dimension.playSound("music.weeper_boss", block.location)
+                    block.dimension.playSound("music.weeper_boss_disc", block.location)
                     player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:weeper_boss.name"}]}')
                 })
             }
@@ -118,12 +118,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -132,7 +132,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
 
             if (!record?.isPlaying()) {
                 system.run(function () {
-                    block.dimension.playSound("music.juandice_boss", block.location)
+                    block.dimension.playSound("music.juandice_boss_disc", block.location)
                     player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:juandice_boss.name"}]}')
                 })
             }
@@ -140,12 +140,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -154,7 +154,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
 
             if (!record?.isPlaying()) {
                 system.run(function () {
-                    block.dimension.playSound("music.horseman_boss", block.location)
+                    block.dimension.playSound("music.horseman_boss_disc", block.location)
                     player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:horseman_boss.name"}]}')
                 })
             }
@@ -162,12 +162,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -176,7 +176,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
 
             if (!record?.isPlaying()) {
                 system.run(function () {
-                    block.dimension.playSound("music.ratt_boss", block.location)
+                    block.dimension.playSound("music.ratt_boss_disc", block.location)
                     player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:ratt_boss.name"}]}')
                 })
             }
@@ -184,12 +184,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.wshaman_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -198,7 +198,7 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
 
             if (!record?.isPlaying()) {
                 system.run(function () {
-                    block.dimension.playSound("music.wshaman_boss", block.location)
+                    block.dimension.playSound("music.wshaman_boss_disc", block.location)
                     player.runCommand('titleraw @p actionbar {"rawtext": [{"text": "§dNow Playing: "},{"translate": "item.spimton:wilted_boss.name"}]}')
                 })
             }
@@ -206,12 +206,12 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
                 system.run(function () {
                     player.runCommand(`stopsound @a moogcity`);
                     player.runCommand(`stopsound @a music.ptn`);
-                    player.runCommand(`stopsound @a music.weeper_boss`)
-                    player.runCommand(`stopsound @a music.juandice_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.overgrown_boss`)
-                    player.runCommand(`stopsound @a music.ratt_boss`)
-                    player.runCommand(`stopsound @a music.horseman_boss`);
+                    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+                    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+                    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+                    player.runCommand(`stopsound @a music.horseman_boss_disc`);
                 })
             }
             return;
@@ -220,13 +220,13 @@ world.beforeEvents.playerInteractWithBlock.subscribe(evd => {
     system.run(function () {
         player.runCommand(`stopsound @a moogcity`)
         player.runCommand(`stopsound @a music.game.creative`)
-        player.runCommand(`stopsound @a music.weeper_boss`)
-        player.runCommand(`stopsound @a music.juandice_boss`)
+        player.runCommand(`stopsound @a music.weeper_boss_disc`)
+        player.runCommand(`stopsound @a music.juandice_boss_disc`)
         player.runCommand("stopsound @a music.ptn")
-        player.runCommand(`stopsound @a music.horseman_boss`)
-        player.runCommand(`stopsound @a music.ratt_boss`)
-        player.runCommand(`stopsound @a music.wshaman_boss`)
-        player.runCommand(`stopsound @a music.overgrown_boss`);
+        player.runCommand(`stopsound @a music.horseman_boss_disc`)
+        player.runCommand(`stopsound @a music.ratt_boss_disc`)
+        player.runCommand(`stopsound @a music.wshaman_boss_disc`)
+        player.runCommand(`stopsound @a music.overgrown_boss_disc`);
     })
 })
 
@@ -237,10 +237,10 @@ world.afterEvents.playerBreakBlock.subscribe(evd => {
     if (!brokenBlockPermutation.matches('minecraft:jukebox')) return;
     player.runCommand(`stopsound @a moogcity`);
     player.runCommand(`stopsound @a music.ptn`);
-    player.runCommand(`stopsound @a music.weeper_boss`)
-    player.runCommand(`stopsound @a music.juandice_boss`)
-    player.runCommand(`stopsound @a music.ratt_boss`)
-    player.runCommand(`stopsound @a music.overgrown_boss`)
-    player.runCommand(`stopsound @a music.horseman_boss`)
-    player.runCommand(`stopsound @a music.wshaman_boss`);
+    player.runCommand(`stopsound @a music.weeper_boss_disc`)
+    player.runCommand(`stopsound @a music.juandice_boss_disc`)
+    player.runCommand(`stopsound @a music.ratt_boss_disc`)
+    player.runCommand(`stopsound @a music.overgrown_boss_disc`)
+    player.runCommand(`stopsound @a music.horseman_boss_disc`)
+    player.runCommand(`stopsound @a music.wshaman_boss_disc`);
 })

@@ -23,8 +23,9 @@
 				"minecraft:behavior.nearest_attackable_target": {
 					"priority": 2,
 					"must_see": true,
-					"within_radius": 12,
-					"must_see_forget_duration": 40,
+					"persist_time": 15,
+					"within_radius": 48,
+					"must_see_forget_duration": 50,
 					"entity_types": [
 						{
 							"filters": {
@@ -312,6 +313,7 @@
 			}
 		},
 		"components": {
+			"minecraft:burns_in_daylight": {},
 			"minecraft:experience_reward": {
 				"on_death": "query.last_hit_by_player?(query.is_baby?120:50)+(math.die_roll(query.equipment_count,1,3)):0"
 			},
