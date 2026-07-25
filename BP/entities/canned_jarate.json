@@ -64,6 +64,7 @@
 			"spimton:purify": {
 				"queue_command": {
 					"command": [
+						"scoreboard objectives add spimton:sandals dummy",
 						"scoreboard objectives add cannate dummy",
 						"scoreboard players add @e[r=3] cannate 200",
 						"effect @e[r=3] nausea 5 1",

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "justice_sun",
+		"metalness_emissive_roughness": "justice_sun_mer"
+	}
+}
