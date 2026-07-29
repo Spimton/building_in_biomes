@@ -2,7 +2,7 @@
     "format_version": "1.8.0",
     "minecraft:client_entity": {
         "description": {
-            "identifier": "spimton:tnt_weeper",
+            "identifier": "spimton:tnt_weeper_proj",
             "min_engine_version": "1.8.0",
             "materials": {
                 "default": "entity_alphatest",

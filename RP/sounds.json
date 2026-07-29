@@ -487,6 +487,25 @@
                     }
                 }
             },
+            "spimton:weeper_old": {
+                "volume": 1,
+                "pitch": 0.5,
+                "events": {
+                    "death": "mob.creeper.death",
+                    "hurt": "mob.creeper.say",
+                    "jojref": "sfx.deltarune_boom",
+                    "fuse": {
+                        "pitch": 0.5,
+                        "sound": "random.fuse",
+                        "volume": 1
+                    },
+                    "deathb": {
+                        "sound": "sfx.deltarune_boom",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                }
+            },
             "spimton:weeper": {
                 "volume": 1,
                 "pitch": 0.5,

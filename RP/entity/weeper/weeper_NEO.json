@@ -4,15 +4,18 @@
 		"description": {
 			"identifier": "spimton:weeper",
 			"materials": {
-				"default": "wither_boss"
+				"default": "wither_boss",
+				"armor": "wither_boss_armor"
 			},
 			"textures": {
 				"default": "textures/entity/weeper",
 				"transient": "textures/entity/weeper_transient",
-				"death": "textures/entity/weeper_death"
+				"death": "textures/entity/weeper_death",
+				"armor": "textures/entity/weeper_armor"
 			},
 			"geometry": {
-				"default": "geometry.witherBoss"
+				"default": "geometry.witherBoss",
+				"armor": "geometry.witherBoss.armor"
 			},
 			"scripts": {
 				"pre_animation": [
@@ -46,7 +49,8 @@
 				"death": "spimton:deltarune_explosion_multiple"
 			},
 			"render_controllers": [
-				"controller.render.weeper"
+				"controller.render.weeper_neo",
+				"controller.render.weeper_armor"
 			],
 			"spawn_egg": {
 				"texture": "weeper_spawn_egg"

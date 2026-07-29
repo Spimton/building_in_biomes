@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "spimton:weeperball_2_neo",
+			"min_engine_version": "1.10.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/fireball_spawner"
+			},
+			"geometry": {
+				"default": "geometry.blastfunguss"
+			},
+			"scripts": {
+				"animate": [
+					"spin"
+				]
+			},
+			"animations": {
+				"spin": "animation.blastfungus.fly"
+			},
+			"render_controllers": [
+				"controller.render.creeper"
+			]
+		}
+	}
+}

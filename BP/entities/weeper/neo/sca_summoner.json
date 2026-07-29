@@ -1,0 +1,77 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:sca_summoner",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "spimton:phase_1": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1.225,
+                    "time_down_event": {
+                        "event": "spimton:die"
+                    }
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "priority": 0,
+                    "duration_range": 5,
+                    "on_end": {
+                        "event": "spimton:desp"
+                    }
+                }
+            },
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:health": {
+                "value": 30,
+                "max": 30
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate"
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.001,
+                "height": 0.001
+            },
+            "minecraft:physics": {}
+        },
+        "events": {
+            "spimton:phase_1": {
+                "add": {
+                    "component_groups": [
+                        "spimton:phase_1"
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:desp"
+                    ]
+                }
+            },
+            "spimton:die": {
+                "queue_command": {
+                    "command": "summon spimton:sudden_cardiac_arrest ~ ~ ~ ~ ~ spimton:weeper_parachute"
+                }
+            }
+        }
+    }
+}

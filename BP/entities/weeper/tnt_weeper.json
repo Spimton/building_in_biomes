@@ -8,6 +8,35 @@
             "is_experimental": false
         },
         "component_groups": {
+            "spimton:tnt_rain": {
+                "minecraft:explode": {
+                    "fuse_length": 4,
+                    "fuse_lit": true,
+                    "breaks_blocks": true,
+                    "destroy_affected_by_griefing": true,
+                    "fire_affected_by_griefing": true,
+                    "power": 4,
+                    "causes_fire": false
+                },
+                "minecraft:is_sheared": {},
+                "minecraft:projectile": {
+                    "gravity": 0.01997,
+                    "anchor": 1,
+                    "offset": [
+                        0,
+                        -0.1,
+                        0
+                    ],
+                    "on_hit": {
+                        "stick_in_ground": {
+                            "shake_time": 0.35
+                        }
+                    },
+                    "power": 3,
+                    "should_bounce": false,
+                    "stop_on_hurt": false
+                }
+            },
             "from_explosion": {
                 "minecraft:explode": {
                     "fuse_length": {
@@ -63,6 +92,31 @@
             }
         },
         "events": {
+            "spimton:tnt_rain": {
+                "add": {
+                    "component_groups": [
+                        "spimton:tnt_rain"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "spreadplayers ~ ~ 5 32 @s ~",
+                        "tp @s ~ ~32 ~"
+                    ]
+                }
+            },
+            "spimton:tnt_rain_aim": {
+                "add": {
+                    "component_groups": [
+                        "spimton:tnt_rain"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "tp @s ~ ~32 ~"
+                    ]
+                }
+            },
             "from_explosion": {
                 "add": {
                     "component_groups": [

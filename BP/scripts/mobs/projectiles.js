@@ -282,7 +282,6 @@ world.afterEvents.entityHitEntity.subscribe(data => {
 world.afterEvents.entityHurt.subscribe(data => {
     const { hurtEntity, damageSource } = data;
     if (!damageSource.damagingProjectile) return;
-    console.warn("Jester Shot")
     if (damageSource.damagingProjectile.typeId === "spimton:jester_shot" && hurtEntity.typeId === "minecraft:player") {
         const inventory = hurtEntity.getComponent("inventory").container;
         const cooldownCategories = new Set();
@@ -367,7 +366,28 @@ system.afterEvents.scriptEventReceive.subscribe((data) => {
         health.setCurrentValue(newValue);
 
     }
+    if (id === "spimton:weeper_init") {
+        let count = 0;
+        const healthComp = sourceEntity.getComponent("health");
+        const id = system.runInterval(() => {
+
+
+            if (healthComp.currentValue < 285) healthComp.setCurrentValue(healthComp.currentValue + 15)
+            else healthComp.resetToMaxValue();
+            count++;
+
+            if (count >= 20) {
+                system.clearRun(id);
+            }
+        }, 10);
+    }
 });
+
+
+
+
+
+
 
 
 system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
