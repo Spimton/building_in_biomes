@@ -1,0 +1,138 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:weeperball_5_neo",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "snowball",
+            "properties": {
+                "spimton:armor": {
+                    "type": "bool",
+                    "client_sync": true,
+                    "default": true
+                },
+                "spimton:armor_color": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [
+                        0,
+                        2
+                    ]
+                }
+            }
+        },
+        "component_groups": {
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true,
+                "despawn_from_distance": {
+                    "max_distance": 128,
+                    "min_distance": 64
+                }
+            },
+            "minecraft:collision_box": {
+                "width": 0.66,
+                "height": 0.66
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "creeper",
+                    "inanimate"
+                ]
+            },
+            "minecraft:timer": {
+                "looping": false,
+                "time": [
+                    3,
+                    4
+                ],
+                "time_down_event": {
+                    "event": "spimton:splode"
+                }
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": [
+                            12,
+                            25
+                        ],
+                        "knockback": true,
+                        "should_bounce": true,
+                        "semi_random_diff_damage": true,
+                        "destroy_on_hit": false
+                    },
+                    "stick_in_ground": {}
+                },
+                "power": 3,
+                "gravity": 0.1,
+                "inertia": 1,
+                "liquid_inertia": 1,
+                "uncertainty_base": 12.25,
+                "uncertainty_multiplier": 1.997,
+                "anchor": 1,
+                "offset": [
+                    0,
+                    -0.3,
+                    0
+                ],
+                "reflect_on_hurt": true,
+                "catch_fire": false
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 80,
+                    "max_dropped_ticks": 10,
+                    "use_motion_prediction_hints": true
+                }
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "spimton:splode": {
+                "add": {
+                    "component_groups": [
+                        "spimton:desp"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "randomize": [
+                    {
+                        "weight": 2,
+                        "set_property": {
+                            "spimton:armor_color": 2
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "set_property": {
+                            "spimton:armor_color": 1
+                        },
+                        "trigger": "spimton:desp"
+                    }
+                ]
+            },
+            "spimton:desp": {}
+        }
+    }
+}

@@ -11,7 +11,9 @@
 				"default": "textures/entity/weeper",
 				"transient": "textures/entity/weeper_transient",
 				"death": "textures/entity/weeper_death",
-				"armor": "textures/entity/weeper_armor"
+				"armor": "textures/entity/weeper_armor",
+				"armor_blue": "textures/entity/weeper_armor_blue",
+				"armor_inv": "textures/entity/weeper_armor_invu"
 			},
 			"geometry": {
 				"default": "geometry.witherBoss",

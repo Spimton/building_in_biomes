@@ -1,13 +1,6 @@
 import { EquipmentSlot, GameMode, world, system } from "@minecraft/server";
 
-/**
- * @param {number} min The minimum integer
- * @param {number} max The maximum integer
- * @returns {number} A random integer between the `min` and `max` parameters (inclusive)
- */
-const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const maxGrowth = 7;
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
 const JustBossSpawner = {
@@ -19,7 +12,7 @@ const JustBossSpawner = {
 
         const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
         if (!mainhand.hasItem() || mainhand.typeId !== "spimton:diamond_relic") {
-            player.runCommand("title @p actionbar The Altar needs a §9Diamond Relic§f to activate...")
+            player.runCommand("title @p actionbar The Altar needs a §9Diamond Sigil§f to activate...")
             return;
         }
         const activated = block.permutation.getState("spimton:activated")

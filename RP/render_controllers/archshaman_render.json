@@ -30,6 +30,37 @@
                 "array.skins[query.variant]"
             ]
         },
+        "controller.render.archshaman_armor": {
+            "geometry": "Geometry.armor",
+            "is_hurt_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            },
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.armor_1",
+                        "Texture.armor_2",
+                        "Texture.armor_3"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.property('spimton:phase') -1]"
+            ],
+            "part_visibility": [
+                {
+                    "*": "query.property('spimton:armor_visible')"
+                }
+            ],
+            "materials": [
+                {
+                    "*": "material.armor"
+                }
+            ]
+        },
         "controller.render.goulden_boi": {
             "geometry": "Geometry.default",
             "materials": [

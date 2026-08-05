@@ -3,15 +3,20 @@
 	"minecraft:client_entity": {
 		"description": {
 			"identifier": "spimton:overgrown_archshaman",
-			"min_engine_version": "1.8.0",
+			"min_engine_version": "1.10.0",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "entity_alphatest",
+				"armor": "wither_boss_armor"
 			},
 			"textures": {
-				"default": "textures/entity/overgrown_archshaman"
+				"default": "textures/entity/overgrown_archshaman",
+				"armor_1": "textures/entity/piper_buff/archshaman_armor_1",
+				"armor_2": "textures/entity/piper_buff/archshaman_armor_2",
+				"armor_3": "textures/entity/piper_buff/archshaman_armor_3"
 			},
 			"geometry": {
-				"default": "geometry.archshaman"
+				"default": "geometry.archshaman",
+				"armor": "geometry.archshaman_armor"
 			},
 			"scripts": {
 				"scale": "0.9375",
@@ -36,7 +41,8 @@
 				"shoot": "minecraft:knockback_roar_particle"
 			},
 			"render_controllers": [
-				"controller.render.overgrown"
+				"controller.render.overgrown",
+				"controller.render.archshaman_armor"
 			],
 			"spawn_egg": {
 				"texture": "archshaman_spawn_egg"

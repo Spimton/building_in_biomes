@@ -44,6 +44,48 @@
                 }
             },
             {
+                "archshaman_health_2@archshaman_health_2": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §gOvergrown Archshaman§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "archshaman_health_3@archshaman_health_3": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §vOvergrown Archshaman§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
                 "dualliste_health@dualliste_health": {
                     "offset": [
                         0,
@@ -122,6 +164,27 @@
                         {
                             "binding_type": "view",
                             "source_property_name": "(#bossName = '  §5The Weeper§r ')",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "weeper_b_health@weeper_b_health": {
+                    "offset": [
+                        0,
+                        -46.2
+                    ],
+                    "layer": 2,
+                    "bindings": [
+                        {
+                            "binding_name": "#bossName",
+                            "binding_type": "collection",
+                            "binding_collection_name": "boss_bars"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#bossName = '  §wThe Weeper§r ')",
                             "target_property_name": "#visible"
                         }
                     ]
@@ -226,7 +289,7 @@
                         },
                         {
                             "binding_type": "view",
-                            "source_property_name": "(#bossName = '  §9[Unbreakable Crazy Diamond]§r ')",
+                            "source_property_name": "(#bossName = '  §gUnbreakable Crazy Diamond§r ')",
                             "target_property_name": "#visible"
                         }
                     ]
@@ -336,6 +399,80 @@
             },
             {
                 "filled_archshaman_bossbar@filled_archshaman_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_archshaman_bossbar@overlay_archshaman_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "archshaman_health_2": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §gOvergrown Archshaman§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_archshaman_bossbar_2@filled_archshaman_bossbar_2": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_archshaman_bossbar@overlay_archshaman_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "archshaman_health_3": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §vOvergrown Archshaman§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_archshaman_bossbar_3@filled_archshaman_bossbar_3": {
                     "layer": 2,
                     "keep_ratio": false
                 }
@@ -490,7 +627,44 @@
                 }
             },
             {
-                "overlay_weeper_i_bossbar@overlay_weeper_i_bossbar": {
+                "overlay_weeper_bossbar@overlay_weeper_bossbar": {
+                    "layer": 3,
+                    "keep_ratio": false
+                }
+            }
+        ]
+    },
+    "weeper_b_health": {
+        "type": "panel",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [
+            300,
+            125
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#bossName = '  §wThe Weeper§r ')",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "empty_health@empty_health": {
+                    "layer": 1,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "filled_weeper_b_bossbar@filled_weeper_b_bossbar": {
+                    "layer": 2,
+                    "keep_ratio": false
+                }
+            },
+            {
+                "overlay_weeper_bossbar@overlay_weeper_bossbar": {
                     "layer": 3,
                     "keep_ratio": false
                 }
@@ -601,7 +775,7 @@
                 }
             },
             {
-                "overlay_wshaman_i_bossbar@overlay_wshaman_i_bossbar": {
+                "overlay_wshaman_bossbar@overlay_wshaman_bossbar": {
                     "layer": 3,
                     "keep_ratio": false
                 }
@@ -656,7 +830,7 @@
         ],
         "bindings": [
             {
-                "binding_name": "(#bossName = '  §9[Unbreakable Crazy Diamond]§r ')",
+                "binding_name": "(#bossName = '  §gUnbreakable Crazy Diamond§r ')",
                 "binding_type": "collection",
                 "binding_collection_name": "boss_bars",
                 "binding_name_override": "#visible"
@@ -807,6 +981,28 @@
             }
         ]
     },
+    "filled_archshaman_bossbar_2@filled_archshaman_health_2": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_archshaman_bossbar_3@filled_archshaman_health_3": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
     "filled_dualliste_bossbar@filled_dualliste_health": {
         "clip_pixelperfect": true,
         "bindings": [
@@ -841,6 +1037,17 @@
         ]
     },
     "filled_weeper_i_bossbar@filled_weeper_i_health": {
+        "clip_pixelperfect": true,
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio",
+                "binding_type": "collection",
+                "binding_collection_name": "$progress_bar_collection"
+            }
+        ]
+    },
+    "filled_weeper_b_bossbar@filled_weeper_b_health": {
         "clip_pixelperfect": true,
         "bindings": [
             {
@@ -943,6 +1150,36 @@
     "filled_archshaman_health": {
         "type": "image",
         "texture": "textures/ui/bossbars/overgrown_archshaman/full",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_archshaman_health_2": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/full_2",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
+    "filled_archshaman_health_3": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/overgrown_archshaman/full_3",
         "clip_direction": "left",
         "bindings": [
             {
@@ -1061,6 +1298,21 @@
             5
         ]
     },
+    "filled_weeper_b_health": {
+        "type": "image",
+        "texture": "textures/ui/bossbars/weeper/full_electric",
+        "clip_direction": "left",
+        "bindings": [
+            {
+                "binding_name": "#progress_percentage",
+                "binding_name_override": "#clip_ratio"
+            }
+        ],
+        "size": [
+            182,
+            5
+        ]
+    },
     "filled_crither_health": {
         "type": "image",
         "texture": "textures/ui/bossbars/weeper/full",
@@ -1121,7 +1373,7 @@
             9
         ]
     },
-    "overlay_weeper_i_bossbar": {
+    /* "overlay_weeper_i_bossbar": {
         "type": "image",
         "texture": "textures/ui/bossbars/weeper/weeper_bar_overlay",
         "clip_direction": "left",
@@ -1135,7 +1387,7 @@
             188,
             9
         ]
-    },
+    },*/
     "overlay_crither_bossbar": {
         "type": "image",
         "texture": "textures/ui/bossbars/weeper/crither_bar_overlay",
@@ -1166,7 +1418,7 @@
             9
         ]
     },
-    "overlay_wshaman_i_bossbar": {
+    /*"overlay_wshaman_i_bossbar": {
         "type": "image",
         "texture": "textures/ui/bossbars/weeper/shaman_bar_overlay",
         "clip_direction": "left",
@@ -1180,7 +1432,7 @@
             188,
             9
         ]
-    },
+    },*/
     ///Juandice
     "filled_juandice_health": {
         "type": "image",
@@ -1199,7 +1451,7 @@
     },
     "filled_crazyd_health": {
         "type": "image",
-        "texture": "textures/ui/bossbars/juandice/full",
+        "texture": "textures/ui/bossbars/juandice/full_invincible",
         "clip_direction": "left",
         "bindings": [
             {

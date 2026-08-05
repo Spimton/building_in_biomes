@@ -102,8 +102,17 @@
                 }
             ],
             "textures": [
-                "Texture.armor"
+                "Array.armor_color[query.property('spimton:armor_color')]"
             ],
+            "arrays": {
+                "textures": {
+                    "Array.armor_color": [
+                        "Texture.armor",
+                        "Texture.armor_blue",
+                        "Texture.armor_inv"
+                    ]
+                }
+            },
             "part_visibility": [
                 {
                     "*": "query.property('spimton:armor')"

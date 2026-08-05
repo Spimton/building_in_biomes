@@ -13,6 +13,9 @@
 			"minecraft:durability": {
 				"max_durability": 1000
 			},
+			"minecraft:damage": {
+				"value": 6
+			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{

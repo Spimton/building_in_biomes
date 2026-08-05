@@ -7,7 +7,11 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {},
+		"component_groups": {
+			"spimton:desp": {
+				"minecraft:instant_despawn": {}
+			}
+		},
 		"components": {
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:health": {
@@ -50,12 +54,20 @@
 					{
 						"randomize": [
 							{
-								"weight": 8
+								"weight": 6
+							},
+							{
+								"weight": 3,
+								"queue_command": {
+									"command": "summon spimton:creepie"
+								}
 							},
 							{
 								"weight": 1,
-								"queue_command": {
-									"command": "summon spimton:creepie"
+								"add": {
+									"component_groups": [
+										"spimton:desp"
+									]
 								}
 							}
 						]

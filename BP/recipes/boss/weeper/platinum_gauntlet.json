@@ -10,20 +10,20 @@
 		"pattern": [
 			"wxw",
 			"yzy",
-			"vvv"
+			" v"
 		],
 		"key": {
 			"v": {
 				"item": "tnt"
 			},
 			"y": {
-				"item": "spimton:siltstone"
+				"item": "spimton:nether_cloth"
 			},
 			"z": {
 				"item": "spimton:platinum_star"
 			},
 			"w": {
-				"item": "spimton:creeper_spores"
+				"item": "spimton:steel_ingot"
 			},
 			"x": {
 				"item": "redstone_block"

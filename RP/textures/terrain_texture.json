@@ -796,7 +796,7 @@
 		"cut_chromium": {
 			"textures": "textures/blocks/cut_chromium"
 		},
-		"chromium_bars": {
+		"chromium_grates": {
 			"textures": "textures/blocks/chromium_grates"
 		},
 		"chromium_pillar_side": {

@@ -493,7 +493,7 @@
                 "events": {
                     "death": "mob.creeper.death",
                     "hurt": "mob.creeper.say",
-                    "jojref": "sfx.deltarune_boom",
+                    "jojoref": "sfx.deltarune_boom",
                     "fuse": {
                         "pitch": 0.5,
                         "sound": "random.fuse",
@@ -510,9 +510,8 @@
                 "volume": 1,
                 "pitch": 0.5,
                 "events": {
-                    "death": "mob.creeper.death",
+                    "death": "mob.wither.death",
                     "hurt": "mob.creeper.say",
-                    "jojref": "sfx.deltarune_boom",
                     "fuse": {
                         "pitch": 0.5,
                         "sound": "random.fuse",

@@ -75,6 +75,7 @@ const bottledtime = 'spimton:bottled_time'
 const antiquecarrot = 'spimton:ancient_golden_carrot'
 const radioactivebottle1 = 'spimton:radioactive_bottle'
 const radioactivebottle2 = 'spimton:very_radioactive_bottle'
+const xpFlask = "spimton:experience_flask"
 
 const randomwine = [
     "spimton:random_wine_1",
@@ -598,6 +599,14 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
     const { source: entity, itemStack } = event
     if (entity.typeId !== "minecraft:player" || !itemStack || !minuspotion.includes(itemStack.typeId)) return;
     entity.addEffect('jump_boost', 300, { amplifier: 255, showParticles: true })
+})
+
+
+world.afterEvents.itemCompleteUse.subscribe(event => {
+    const { source: entity, itemStack } = event
+    if (entity.typeId !== "minecraft:player" || !itemStack || !xpFlask.includes(itemStack.typeId)) return;
+    const xp = Math.ceil(Math.random() * 33);
+    entity.runCommand(`xp ${xp} @s`);
 })
 
 world.afterEvents.itemCompleteUse.subscribe(event => {

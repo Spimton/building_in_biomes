@@ -1,0 +1,197 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:weeperball_4_neo",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "arrow",
+            "properties": {
+                "spimton:can_explode": {
+                    "client_sync": false,
+                    "type": "bool",
+                    "default": false
+                },
+                "spimton:size": {
+                    "client_sync": true,
+                    "range": [
+                        1,
+                        3
+                    ],
+                    "default": 3,
+                    "type": "int"
+                }
+            }
+        },
+        "component_groups": {
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true,
+                "despawn_from_distance": {
+                    "max_distance": 128,
+                    "min_distance": 64
+                }
+            },
+            "minecraft:collision_box": {
+                "width": 0.31,
+                "height": 0.31
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "creeper",
+                    "inanimate"
+                ]
+            },
+            "minecraft:timer": {
+                "looping": false,
+                "time": 1,
+                "time_down_event": {
+                    "event": "spimton:allow_splode"
+                }
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "filters": {
+                                "test": "bool_property",
+                                "domain": "spimton:can_explode",
+                                "value": true
+                            },
+                            "event": "minecraft:explode",
+                            "target": "self"
+                        }
+                    },
+                    "spawn_aoe_cloud": {
+                        "affect_owner": false,
+                        "duration": 6,
+                        "particle": "mobspellinstantaneous",
+                        "potion": 36,
+                        "reapplication_delay": 0.1997,
+                        "radius": 2
+                    },
+                    "particle_on_hit": {
+                        "particle_type": "explode",
+                        "num_particles": 1,
+                        "on_entity_hit": true,
+                        "on_other_hit": true
+                    },
+                    "impact_damage": {
+                        "damage": [
+                            12,
+                            12
+                        ],
+                        "knockback": true,
+                        "should_bounce": true,
+                        "semi_random_diff_damage": true,
+                        "destroy_on_hit": false
+                    },
+                    "stick_in_ground": {}
+                },
+                "power": 3,
+                "gravity": 0.05,
+                "inertia": 1,
+                "liquid_inertia": 1,
+                "uncertainty_base": 12.25,
+                "uncertainty_multiplier": 1.997,
+                "anchor": 1,
+                "offset": [
+                    0,
+                    -0.3,
+                    0
+                ],
+                "reflect_on_hurt": true,
+                "catch_fire": false
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 80,
+                    "max_dropped_ticks": 10,
+                    "use_motion_prediction_hints": true
+                }
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "minecraft:explode": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:size",
+                            "value": 4
+                        },
+                        "queue_command": {
+                            "command": "scriptevent spimton:skull_fungus 3"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:size",
+                            "value": 3
+                        },
+                        "queue_command": {
+                            "command": "scriptevent spimton:skull_fungus 2"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:size",
+                            "value": 2
+                        },
+                        "queue_command": {
+                            "command": "scriptevent spimton:skull_fungus 1"
+                        }
+                    },
+                    {
+                        "trigger": "spimton:desp"
+                    }
+                ]
+            },
+            "spimton:round_3": {
+                "set_property": {
+                    "spimton:can_explode": false,
+                    "spimton:size": 3
+                }
+            },
+            "spimton:round_2": {
+                "set_property": {
+                    "spimton:can_explode": false,
+                    "spimton:size": 2
+                }
+            },
+            "spimton:round_1": {
+                "set_property": {
+                    "spimton:can_explode": false,
+                    "spimton:size": 1
+                }
+            },
+            "spimton:allow_splode": {
+                "set_property": {
+                    "spimton:can_explode": true
+                }
+            },
+            "spimton:desp": {}
+        }
+    }
+}

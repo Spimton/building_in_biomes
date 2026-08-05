@@ -7,11 +7,13 @@
             "is_summonable": true,
             "scripts": {
                 "animate": [
-                    "music"
+                    "music",
+                    "health"
                 ]
             },
             "animations": {
-                "music": "controller.animation.weeper.music"
+                "music": "controller.animation.weeper.music",
+                "health": "controller.animation.weeperneo.health"
             },
             "properties": {
                 "spimton:phase": {
@@ -28,15 +30,19 @@
                     "default": false,
                     "client_sync": true
                 },
-                "spimton:backoff": {
+                "spimton:forced_phase_2": {
                     "type": "bool",
-                    "default": false,
-                    "client_sync": false
+                    "client_sync": true,
+                    "default": false
                 },
-                "spimton:backoff_cooldown": {
-                    "type": "bool",
-                    "default": false,
-                    "client_sync": false
+                "spimton:armor_color": {
+                    "default": 0,
+                    "client_sync": true,
+                    "type": "int",
+                    "range": [
+                        0,
+                        2
+                    ]
                 }
             }
         },
@@ -97,6 +103,10 @@
                         },
                         {
                             "cause": "fire",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fall",
                             "deals_damage": "no"
                         },
                         {
@@ -235,7 +245,7 @@
                     }
                 },
                 "minecraft:behavior.fire_at_target": {
-                    "attack_cooldown": 0.1997,
+                    "attack_cooldown": 0.1225,
                     "attack_range": [
                         0,
                         60
@@ -257,8 +267,8 @@
                     }
                 },
                 "minecraft:behavior.timer_flag_1": {
-                    "cooldown_range": 1.997,
-                    "duration_range": 1,
+                    "cooldown_range": 1.225,
+                    "duration_range": 1.225,
                     "priority": 3,
                     "on_start": {
                         "event": "spimton:tnt_rain_1",
@@ -286,7 +296,7 @@
                     }
                 },
                 "minecraft:behavior.timer_flag_1": {
-                    "cooldown_range": 1.997,
+                    "cooldown_range": 1.225,
                     "duration_range": 1.225,
                     "priority": 3,
                     "on_start": {
@@ -314,10 +324,10 @@
                     "duration": 3,
                     "attack_time": 1,
                     "knockback_range": 6,
-                    "knockback_horizontal_strength": 2,
+                    "knockback_horizontal_strength": 5,
                     "knockback_vertical_strength": 1,
                     "knockback_height_cap": 1.225,
-                    "knockback_damage": 18,
+                    "knockback_damage": 24,
                     "damage_filters": {
                         "all_of": [
                             {
@@ -414,9 +424,405 @@
                         "wither_skull_dangerous"
                     ]
                 }
+            },
+            /*
+
+            PHASE 2 /// ATTRIBUTES
+
+            */
+            "spimton:phase_2_attributes": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "block_explosion",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fall",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "entity_explosion",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fire_tick",
+                            "deals_damage": "no"
+                        }
+                    ]
+                },
+                "minecraft:movement.fly": {
+                    "max_turn": 335
+                },
+                "minecraft:navigation.fly": {
+                    "can_float": true
+                },
+                "minecraft:pushable": {
+                    "is_pushable": false
+                },
+                "minecraft:can_fly": {},
+                "minecraft:movement": {
+                    "value": 0
+                },
+                "minecraft:flying_speed": {
+                    "value": 0
+                }
+            },
+            "spimton:phase_2_powerup": {
+                "minecraft:timer": {
+                    "time": 2,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "spimton:spawn_powerup"
+                    }
+                }
+            },
+            "spimton:phase_3_attributes": {
+                "minecraft:physics": {
+                    "has_gravity": true,
+                    "has_collision": true
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "block_explosion",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fall",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "entity_explosion",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fire_tick",
+                            "deals_damage": "no"
+                        }
+                    ]
+                },
+                "minecraft:movement.fly": {
+                    "max_turn": 335
+                },
+                "minecraft:navigation.fly": {
+                    "can_float": true
+                },
+                "minecraft:can_fly": {},
+                "minecraft:movement": {
+                    "value": 0.2
+                },
+                "minecraft:flying_speed": {
+                    "value": 0.2
+                }
+            },
+            "spimton:phase_4_attributes": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "block_explosion",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fall",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "entity_explosion",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": "no"
+                        },
+                        {
+                            "cause": "fire_tick",
+                            "deals_damage": "no"
+                        }
+                    ]
+                },
+                "minecraft:pushable": {
+                    "is_pushable": false
+                },
+                "minecraft:movement.fly": {
+                    "max_turn": 335
+                },
+                "minecraft:navigation.fly": {
+                    "can_float": true
+                },
+                "minecraft:explode": {
+                    "fuse_length": 10,
+                    "power": 8,
+                    "fuse_lit": true,
+                    "breaks_blocks": true,
+                    "destroy_affected_by_griefing": true
+                },
+                "minecraft:can_fly": {},
+                "minecraft:movement": {
+                    "value": 0
+                },
+                "minecraft:flying_speed": {
+                    "value": 0
+                }
+            },
+            "spimton:no_fotns": {
+                "minecraft:on_target_acquired": {
+                    "event": "spimton:fist_launch"
+                }
+            },
+            /*
+
+            PHASE 2 /// TARGET ABOVE GROUND
+
+            */
+            "spimton:shooter_burst_2": {
+                "minecraft:shooter": {
+                    "def": "spimton:weeperball_3_neo"
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "attack_radius_min": 1,
+                    "priority": 3,
+                    "attack_interval": 3.3,
+                    "attack_radius": 32,
+                    "burst_interval": 0.001997,
+                    "burst_shots": 18,
+                    "ranged_fov": 180,
+                    "target_in_sight_time": 1
+                }
+            },
+            /*
+
+            PHASE 2 /// TARGET ON GROUND 
+
+            */
+            "spimton:vizier_rain": {
+                "minecraft:mob_effect_immunity": {
+                    "mob_effects": [
+                        "wither"
+                    ]
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1.997,
+                    "duration_range": 1.997,
+                    "priority": 3,
+                    "on_start": {
+                        "event": "spimton:vizier_rain",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    },
+                    "on_end": {
+                        "event": "spimton:vizier_rain",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    }
+                }
+            },
+            "spimton:creepie_rain": {
+                "minecraft:mob_effect_immunity": {
+                    "mob_effects": [
+                        "wither"
+                    ]
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1.225,
+                    "duration_range": 3,
+                    "priority": 3,
+                    "on_start": {
+                        "event": "spimton:creepie_rain",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    },
+                    "on_end": {
+                        "event": "spimton:attack_finish_2"
+                    }
+                }
+            },
+            "spimton:arrivederci": {
+                "minecraft:mob_effect_immunity": {
+                    "mob_effects": [
+                        "wither"
+                    ]
+                },
+                "minecraft:behavior.look_at_target": {
+                    "priority": 1,
+                    "look_time": [
+                        1,
+                        3
+                    ],
+                    "probability": 1
+                }
+            },
+            "spimton:myjarona": {
+                "minecraft:is_sheared": {},
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1.225,
+                    "duration_range": 0.01,
+                    "priority": 3,
+                    "on_start": {
+                        "event": "spimton:jarona_ready",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    },
+                    "on_end": {
+                        "event": "spimton:jarona",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    }
+                }
+            },
+            "spimton:tnt_spiral": {
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1,
+                    "duration_range": 5,
+                    "priority": 2,
+                    "on_start": {
+                        "event": "spimton:tnt_spiral",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    }
+                }
+            },
+            "spimton:tele_shoot": {
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1,
+                    "duration_range": 1.01,
+                    "priority": 2,
+                    "on_start": {
+                        "event": "spimton:tele_prep",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    },
+                    "on_end": {
+                        "event": "spimton:shoot_tele",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    }
+                }
+            },
+            "spimton:melee_blast": {
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 0,
+                    "duration_range": 4,
+                    "priority": 3,
+                    "on_end": {
+                        "event": "spimton:melee_shockwave"
+                    }
+                }
+            },
+            "spimton:vizier_rain_2": {
+                "minecraft:mob_effect_immunity": {
+                    "mob_effects": [
+                        "wither"
+                    ]
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1.997,
+                    "duration_range": 1.997,
+                    "priority": 3,
+                    "on_start": {
+                        "event": "spimton:vizier_rain_2",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    },
+                    "on_end": {
+                        "event": "spimton:vizier_rain_3",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    }
+                }
+            },
+            /*
+
+            PREVENT NO ATTACKS
+
+            */
+            "spimton:phase_2_selection": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": [
+                        5,
+                        7
+                    ],
+                    "time_down_event": {
+                        "event": "spimton:attack_finish_2",
+                        "target": "self"
+                    }
+                }
+            },
+            /*
+
+            BOSSBAR 
+
+            */
+            "spimton:bossbar_regular": {
+                "minecraft:boss": {
+                    "hud_range": 67,
+                    "name": "  §cThe Weeper§r "
+                }
+            },
+            "spimton:bossbar_blue": {
+                "minecraft:boss": {
+                    "hud_range": 67,
+                    "name": "  §wThe Weeper§r "
+                }
+            },
+            "spimton:bossbar_inv": {
+                "minecraft:boss": {
+                    "hud_range": 67,
+                    "name": "  §5The Weeper§r "
+                }
             }
         },
         "components": {
+            "minecraft:environment_sensor": {
+                "triggers": [
+                    {
+                        "target": "self",
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:armor_color",
+                            "value": 0
+                        },
+                        "event": "spimton:bossbar_normal"
+                    },
+                    {
+                        "target": "self",
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:armor_color",
+                            "value": 1
+                        },
+                        "event": "spimton:bossbar_blue"
+                    },
+                    {
+                        "target": "self",
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:armor_color",
+                            "value": 2
+                        },
+                        "event": "spimton:bossbar_inv"
+                    }
+                ]
+            },
             "minecraft:entity_sensor": {
                 "find_players_only": false,
                 "relative_range": true,
@@ -455,15 +861,19 @@
                 "breathes_solids": true,
                 "suffocate_time": 1997
             },
-            "minecraft:nameable": {},
             "minecraft:health": {
                 "value": 300,
-                "max": 300
+                "max": 300,
+                "min": 1
             },
             "minecraft:damage_sensor": {
                 "triggers": [
                     {
                         "cause": "block_explosion",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fall",
                         "deals_damage": "no"
                     },
                     {
@@ -569,33 +979,16 @@
             "minecraft:variant": {
                 "value": 0
             },
-            "minecraft:environment_sensor": {
-                "triggers": [
-                    {
-                        "target": "self",
-                        "event": "spimton:backoff",
-                        "filters": {
-                            "all_of": [
-                                {
-                                    "test": "has_target",
-                                    "subject": "self"
-                                },
-                                {
-                                    "test": "bool_property",
-                                    "domain": "spimton:backoff",
-                                    "subject": "self",
-                                    "value": true
-                                },
-                                {
-                                    "test": "bool_property",
-                                    "domain": "spimton:backoff_cooldown",
-                                    "subject": "self",
-                                    "value": false
-                                }
-                            ]
-                        }
-                    }
-                ]
+            "minecraft:on_death": {
+                "event": "spimton:death_event"
+            },
+            "minecraft:on_target_acquired": {
+                "filters": {
+                    "test": "int_property",
+                    "domain": "spimton:phase",
+                    "value": 3
+                },
+                "event": "spimton:attack_selection"
             }
         },
         "events": {
@@ -623,7 +1016,6 @@
             "spimton:commence_phase_1": {
                 "set_property": {
                     "spimton:phase": 1,
-                    "spimton:backoff": true,
                     "spimton:armor": false
                 },
                 "remove": {
@@ -637,6 +1029,80 @@
                         "spimton:phase_1_attributes"
                     ]
                 }
+            },
+            "spimton:commence_phase_transition": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:armored",
+                        "spimton:charge_after",
+                        "spimton:charge_timer",
+                        "spimton:melee_roar",
+                        "spimton:shooter_burst",
+                        "spimton:shooter_burst_alt",
+                        "spimton:shooter_creepie",
+                        "spimton:shooter_homing",
+                        "spimton:spawn_sequence",
+                        "spimton:timer_no_target",
+                        "spimton:tnt_rain",
+                        "spimton:tnt_rain_alt"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:phase_2_attributes",
+                        "spimton:phase_2_powerup"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "effect @s regeneration infinite 3 true",
+                        "title @a[r=32] actionbar Something terrible is coming..."
+                    ]
+                },
+                "set_property": {
+                    "spimton:phase": 2
+                }
+            },
+            "spimton:commence_phase_2": {
+                "sequence": [
+                    {
+                        "set_property": {
+                            "spimton:armor": true,
+                            "spimton:phase": 3
+                        },
+                        "add": {
+                            "component_groups": [
+                                "spimton:armored"
+                            ]
+                        },
+                        "queue_command": {
+                            "command": "effect @s clear"
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "spimton:phase_2_powerup"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "has_target",
+                            "value": true
+                        },
+                        "trigger": "spimton:fist_launch"
+                    },
+                    {
+                        "filters": {
+                            "test": "has_target",
+                            "value": false
+                        },
+                        "add": {
+                            "component_groups": [
+                                "spimton:no_fotns"
+                            ]
+                        }
+                    }
+                ]
             },
             /*
 
@@ -657,12 +1123,24 @@
                             "test": "int_property",
                             "subject": "self",
                             "domain": "spimton:phase",
+                            "value": 3
+                        },
+                        "set_property": {
+                            "spimton:armor": true,
+                            "spimton:armor_color": 0
+                        },
+                        "trigger": "spimton:attack_selection_2"
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "subject": "self",
+                            "domain": "spimton:phase",
                             "value": 1
                         },
                         "set_property": {
                             "spimton:armor": false,
-                            "spimton:backoff": true,
-                            "spimton:backoff_cooldown": false
+                            "spimton:armor_color": 0
                         },
                         "remove": {
                             "component_groups": [
@@ -720,9 +1198,6 @@
                                 "function mob/weeper/wf_dialog"
                             ]
                         },
-                        "set_property": {
-                            "spimton:backoff": false
-                        },
                         "add": {
                             "component_groups": [
                                 "spimton:melee_roar"
@@ -740,7 +1215,7 @@
                                 "filters": {
                                     "test": "target_distance",
                                     "subject": "self",
-                                    "value": 16,
+                                    "value": 14,
                                     "operator": "<="
                                 },
                                 "queue_command": {
@@ -757,7 +1232,7 @@
                                 "filters": {
                                     "test": "target_distance",
                                     "subject": "self",
-                                    "value": 16,
+                                    "value": 14,
                                     "operator": "<="
                                 },
                                 "queue_command": {
@@ -774,7 +1249,7 @@
                                 "filters": {
                                     "test": "target_distance",
                                     "subject": "self",
-                                    "value": 16,
+                                    "value": 14,
                                     "operator": ">"
                                 },
                                 "queue_command": {
@@ -792,7 +1267,7 @@
                                     "all_of": [
                                         {
                                             "test": "target_distance",
-                                            "value": 16,
+                                            "value": 18,
                                             "operator": ">="
                                         },
                                         {
@@ -816,7 +1291,7 @@
                                     "all_of": [
                                         {
                                             "test": "target_distance",
-                                            "value": 16,
+                                            "value": 18,
                                             "operator": "<"
                                         },
                                         {
@@ -852,6 +1327,339 @@
                                     "component_groups": [
                                         "spimton:tnt_rain_alt"
                                     ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            /*
+
+            ATTACK SELECTION /// PHASE 2
+
+            */
+            "spimton:attack_selection_2": {
+                "sequence": [
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "spimton:shooter_burst_2",
+                                "spimton:vizier_rain",
+                                "spimton:creepie_rain",
+                                "spimton:arrivederci",
+                                "spimton:myjarona",
+                                "spimton:tnt_spiral",
+                                "spimton:tele_shoot",
+                                "spimton:melee_blast",
+                                "spimton:vizier_rain_2"
+                            ]
+                        },
+                        "queue_command": {
+                            "target": "target",
+                            "command": [
+                                "kill @e[type=spimton:cspore]",
+                                "summon spimton:sca_summoner ~ ~ ~ ~ ~ spimton:phase_2",
+                                "tag @e remove spimton:weeper_target",
+                                "tag @s add spimton:weeper_target"
+                            ]
+                        }
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "target_distance",
+                                            "operator": ">=",
+                                            "value": 12
+                                        },
+                                        {
+                                            "test": "has_component",
+                                            "subject": "target",
+                                            "value": "minecraft:reflect_projectiles",
+                                            "operator": "!="
+                                        }
+                                    ]
+                                },
+                                "weight": 3,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:shooter_burst_2"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/as_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "on_ground",
+                                            "subject": "target"
+                                        },
+                                        {
+                                            "test": "is_underground",
+                                            "operator": "!=",
+                                            "subject": "self"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "subject": "self",
+                                            "value": 6,
+                                            "operator": ">"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "subject": "self",
+                                            "value": 13,
+                                            "operator": "<="
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": ">="
+                                        }
+                                    ]
+                                },
+                                "weight": 1,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:vizier_rain"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/vz_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "on_ground",
+                                            "subject": "target"
+                                        },
+                                        {
+                                            "test": "is_underground",
+                                            "operator": "!=",
+                                            "subject": "self"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "subject": "self",
+                                            "value": 6,
+                                            "operator": ">"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "subject": "self",
+                                            "value": 13,
+                                            "operator": "<="
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": "<="
+                                        }
+                                    ]
+                                },
+                                "weight": 2,
+                                "set_property": {
+                                    "spimton:armor_color": 2
+                                },
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:vizier_rain_2"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/vzf_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "on_ground",
+                                            "subject": "target"
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": "<="
+                                        }
+                                    ]
+                                },
+                                "weight": 1,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:creepie_rain"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/sm_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "target_distance",
+                                            "operator": "<=",
+                                            "value": 5
+                                        }
+                                    ]
+                                },
+                                "weight": 3,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:arrivederci"
+                                    ]
+                                },
+                                "trigger": "spimton:arrivederci",
+                                "queue_command": {
+                                    "command": "function mob/weeper/ari_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "target_distance",
+                                            "operator": "<=",
+                                            "value": 5
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "operator": "<=",
+                                            "value": 150
+                                        }
+                                    ]
+                                },
+                                "weight": 5,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:melee_blast"
+                                    ]
+                                },
+                                "set_property": {
+                                    "spimton:armor_color": 1
+                                },
+                                "queue_command": {
+                                    "command": [
+                                        "function mob/weeper/meb_dialog",
+                                        "particle spimton:lightning_charge_weeper ~ ~1 ~"
+                                    ]
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": ">="
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "operator": ">=",
+                                            "value": 16
+                                        }
+                                    ]
+                                },
+                                "weight": 3,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:myjarona"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/sf_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": "<=",
+                                            "subject": "self"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "operator": ">=",
+                                            "value": 16
+                                        }
+                                    ]
+                                },
+                                "weight": 3,
+                                "set_property": {
+                                    "spimton:armor_color": 2
+                                },
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:myjarona"
+                                    ]
+                                },
+                                "trigger": "spimton:absorb_creepies",
+                                "queue_command": {
+                                    "command": "function mob/weeper/si_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "on_ground",
+                                            "subject": "target"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "operator": ">=",
+                                            "value": 8
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": "<="
+                                        }
+                                    ]
+                                },
+                                "weight": 3,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:tnt_spiral"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/xp_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "target_distance",
+                                            "operator": "<=",
+                                            "value": 24
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": "<="
+                                        }
+                                    ]
+                                },
+                                "weight": 1,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:tele_shoot"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/ts_dialog"
                                 }
                             }
                         ]
@@ -932,21 +1740,260 @@
                     ]
                 },
                 "set_property": {
-                    "spimton:armor": true
+                    "spimton:armor": true,
+                    "spimton:armor_color": 1
                 }
             },
             "spimton:sca_remove": {
                 "queue_command": {
-                    "command": "event entity @e[family=spimton:sudden_cardiac_arrest,c=3] minecraft:start_exploding"
-                }
-            },
-            "spimton:backoff": {
-                "set_property": {
-                    "spimton:backoff_cooldown": true
+                    "command": "event entity @e[family=spimton:sudden_cardiac_arrest,c=-3] minecraft:start_exploding"
                 }
             },
             "spimton:roar_end": {
                 "trigger": "spimton:attack_selection"
+            },
+            "spimton:spawn_powerup": {},
+            "spimton:fist_launch": {
+                "sequence": [
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "spimton:no_fotns",
+                                "spimton:timer_no_target",
+                                "spimton:phase_2_attributes"
+                            ]
+                        },
+                        "queue_command": {
+                            "target": "target",
+                            "command": [
+                                "tag @e remove spimton:weeper_target",
+                                "tag @s add spimton:weeper_target"
+                            ]
+                        }
+                    },
+                    {
+                        "queue_command": {
+                            "target": "self",
+                            "command": [
+                                "scriptevent spimton:fotns",
+                                "function mob/weeper/fotns_dialog"
+                            ]
+                        }
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "spimton:phase_2_selection",
+                                "spimton:phase_3_attributes"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "spimton:vizier_rain": {
+                "queue_command": {
+                    "command": "scriptevent spimton:skull_fungus 3"
+                }
+            },
+            "spimton:creepie_rain": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "target_distance",
+                            "operator": ">=",
+                            "value": 6
+                        },
+                        "queue_command": {
+                            "command": "blastfungus 8 spimton:creeper_spore 0.5 5.5"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "target_distance",
+                            "operator": "<",
+                            "value": 6
+                        },
+                        "queue_command": {
+                            "command": "blastfungus 4 spimton:creeper_spore 0.3 5.5"
+                        }
+                    }
+                ]
+            },
+            "spimton:arrivederci": {},
+            "spimton:jarona_ready": {
+                "queue_command": {
+                    "command": [
+                        "tag @e remove spimton:weeper_target",
+                        "tag @s add spimton:weeper_target",
+                        "function mob/weeper/ja_dialog"
+                    ],
+                    "target": "target"
+                }
+            },
+            "spimton:jarona": {},
+            "spimton:last_jarona": {
+                "queue_command": {
+                    "command": [
+                        "blastfungus 7 spimton:canned_jarate 0.3 5",
+                        "function mob/weeper/lja_dialog",
+                        "event entity @s spimton:jarona"
+                    ]
+                },
+                "trigger": "spimton:attack_selection"
+            },
+            "spimton:tnt_spiral": {},
+            "spimton:tele_prep": {
+                "queue_command": {
+                    "command": [
+                        "tag @e remove spimton:weeper_target",
+                        "tag @s add spimton:weeper_target",
+                        "summon spimton:tele_prepp"
+                    ],
+                    "target": "target"
+                }
+            },
+            "spimton:shoot_tele": {},
+            "spimton:attack_finish_2": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "has_target",
+                                    "operator": "==",
+                                    "value": true
+                                },
+                                {
+                                    "test": "has_component",
+                                    "operator": "==",
+                                    "value": "minecraft:is_sheared"
+                                }
+                            ]
+                        },
+                        "trigger": "spimton:last_jarona"
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "has_target",
+                                    "operator": "==",
+                                    "value": true
+                                },
+                                {
+                                    "test": "has_component",
+                                    "operator": "!=",
+                                    "value": "minecraft:is_sheared"
+                                }
+                            ]
+                        },
+                        "trigger": "spimton:attack_selection"
+                    },
+                    {
+                        "remove": {
+                            "component_groups": [
+                                "spimton:phase_2_selection"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "spimton:no_target"
+                    }
+                ]
+            },
+            "spimton:no_target": {
+                "add": {
+                    "component_groups": [
+                        "spimton:phase_2_selection"
+                    ]
+                }
+            },
+            "spimton:melee_shockwave": {
+                "filters": {
+                    "test": "int_property",
+                    "domain": "spimton:armor_color",
+                    "value": 1
+                },
+                "set_property": {
+                    "spimton:armor_color": 0
+                },
+                "queue_command": {
+                    "command": [
+                        "particle spimton:lightning_blast_weeper ~ ~1 ~",
+                        "function mob/weeper/wf_dialog"
+                    ]
+                }
+            },
+            "spimton:bossbar_normal": {
+                "add": {
+                    "component_groups": [
+                        "spimton:bossbar_regular"
+                    ]
+                }
+            },
+            "spimton:bossbar_blue": {
+                "add": {
+                    "component_groups": [
+                        "spimton:bossbar_blue"
+                    ]
+                }
+            },
+            "spimton:bossbar_inv": {
+                "add": {
+                    "component_groups": [
+                        "spimton:bossbar_inv"
+                    ]
+                }
+            },
+            "spimton:absorb_creepies": {},
+            "spimton:vizier_rain_2": {
+                "queue_command": {
+                    "command": "blastfungus 8 spimton:weeperball_5_neo 0.66 4 45"
+                }
+            },
+            "spimton:vizier_rain_3": {
+                "queue_command": {
+                    "command": "blastfungus 12 spimton:weeperball_5_neo 0.99 4 135"
+                }
+            },
+            /*
+
+            DEATH
+
+            */
+            "spimton:death_event": {
+                "remove": {
+                    "component_groups": [
+                        "spimton:shooter_burst_2",
+                        "spimton:vizier_rain",
+                        "spimton:creepie_rain",
+                        "spimton:arrivederci",
+                        "spimton:myjarona",
+                        "spimton:tnt_spiral",
+                        "spimton:tele_shoot",
+                        "spimton:melee_blast",
+                        "spimton:vizier_rain_2",
+                        "spimton:charge_after",
+                        "spimton:shooter_burst",
+                        "spimton:shooter_burst_alt",
+                        "spimton:shooter_homing",
+                        "spimton:tnt_rain",
+                        "spimton:tnt_rain_alt",
+                        "spimton:shooter_creepie",
+                        "spimton:melee_roar"
+                    ]
+                },
+                "set_property": {
+                    "spimton:phase": 4
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:phase_4_attributes"
+                    ]
+                },
+                "queue_command": {
+                    "command": "function mob/weeper/death_neo"
+                }
             }
         }
     }

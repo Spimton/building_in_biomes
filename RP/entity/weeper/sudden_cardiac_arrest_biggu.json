@@ -7,10 +7,12 @@
                 "default": "entity_emissive_alpha"
             },
             "textures": {
-                "default": "textures/entity/sudden_caridac_arrest"
+                "default": "textures/entity/sudden_caridac_arrest",
+                "parachute": "textures/entity/parachute"
             },
             "geometry": {
-                "default": "geometry.sca"
+                "default": "geometry.sca",
+                "parachute": "geometry.parachute"
             },
             "scripts": {
                 "animate": [
@@ -23,7 +25,8 @@
                 "look_at_controller": "controller.animation.breeze.look_at"
             },
             "render_controllers": [
-                "controller.render.default"
+                "controller.render.default",
+                "controller.render.parachute"
             ]
         }
     }

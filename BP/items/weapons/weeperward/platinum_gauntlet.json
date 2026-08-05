@@ -20,6 +20,9 @@
 				"category": "ora",
 				"duration": 0.5
 			},
+			"minecraft:damage": {
+				"value": 6
+			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{

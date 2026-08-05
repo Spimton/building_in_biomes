@@ -159,7 +159,7 @@
                 "not_playing": {
                     "transitions": [
                         {
-                            "start_music": "q.is_alive&&query.has_target"
+                            "start_music": "q.is_alive&&query.has_target&&q.property('spimton:phase') != 4"
                         }
                     ]
                 },
@@ -186,7 +186,7 @@
                 "playing": {
                     "transitions": [
                         {
-                            "stop_music": "!query.has_target||!q.is_alive||q.mark_variant == 2"
+                            "stop_music": "!query.has_target||q.property('spimton:phase') == 4||q.mark_variant == 2"
                         }
                     ]
                 }

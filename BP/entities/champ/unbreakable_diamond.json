@@ -1013,7 +1013,7 @@
 			"minecraft:conditional_bandwidth_optimization": {},
 			"minecraft:boss": {
 				"hud_range": 55,
-				"name": "  §9[Unbreakable Crazy Diamond]§r "
+				"name": "  §gUnbreakable Crazy Diamond§r "
 			},
 			"minecraft:knockback_resistance": {
 				"value": 100

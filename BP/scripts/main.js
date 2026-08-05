@@ -27,6 +27,7 @@ import 'coaster'
 import 'door_NEO'
 import "./mobs/projectiles.js"
 import "./mobs/weeper.js"
+import "./mobs/archshaman.js"
 import 'slabs';
 
 import { wall_Manager } from 'wall_Manager'

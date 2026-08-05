@@ -8,10 +8,10 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/skulls/creeper"
+				"default": "textures/entity/weeper"
 			},
 			"geometry": {
-				"default": "geometry.mob_head"
+				"default": "geometry.weeper_skull"
 			},
 			"scripts": {
 				"pre_animation": [

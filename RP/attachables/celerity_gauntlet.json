@@ -11,7 +11,7 @@
                 "enchanted": "entity_alphatest_glint"
             },
             "textures": {
-                "default": "textures/entity/attachable/platinum_gauntlet_attachable",
+                "default": "textures/entity/attachable/fist_of_the_northern_wind_attachable",
                 "enchanted": "textures/misc/enchanted_item_glint"
             },
             "geometry": {

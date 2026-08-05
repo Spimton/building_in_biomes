@@ -62,7 +62,7 @@ export const ConfigItems = {
             duarbility: 9,
             cooldown: 47,
             knockbackXZ: 5,
-            knockbacky: 0.15
+            knockbackY: 0.15
         },
         attack2: {
             teleport: 20,
@@ -83,7 +83,7 @@ export const ConfigItems = {
         },
         attack5: {
             cooldown: 66,
-            duarbility: 3
+            durability: 3
         },
         attack6: {
             cooldown: 660,
@@ -182,4 +182,50 @@ export const ConfigItems = {
     meatMalletAccept: []
 
 
+}
+
+
+export const ConfigEntity = {
+    weeperConfig: {
+        damageCap: 30,
+        phase1Height: 12,
+        phase2Height: 4,
+        fotnsPercDamage: 0.1997,
+        electricArmorReduction: 1.997,
+        damageCapBypassSource: [
+            "none",
+            "override",
+            "void",
+            "selfDestruct"
+        ],
+        initialExplosionRadius: 12.25,
+        powerupRate: 4,
+        forceTransitionDamage: 45,
+        fotnsBaseRadius: 6,
+        fotnsRadiusMult: 0.33,
+        fotnsBaseDamage: 19.97,
+        fotnsDamageMult: 6.6,
+        arrivederciCount: 4,
+        arrivederciDist: 0.8,
+        jaronaSpeed: 0.1997,
+        jaronaDuration: 20,
+        jaronaDamage: 18,
+        shockwaveBaseRadius: 6.6,
+        shockwaveRadiusMultiplier: 0.1997,
+        shockwaveBaseDamage: 19.97,
+        shockwaveDamageMultiplier: 1.997,
+        shochwaveDistanceDamageModifier: 0.033,
+        shockwaveDistanceKnockbackModifier: 2,
+        creeperDamageMultiplier: 5,
+        creepieDamageMultiplier: 1
+
+
+
+    },
+    archshamanConfig: {
+        maxRandomBayRadius: 32,
+        randomBayInterval: 20,
+        minRandomBayRadius: 8,
+        archieFogRange: 64
+    }
 }

@@ -1,15 +1,15 @@
 import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
 import { updateItemDurability } from "../folder2/updateDurability.js";
+import { shootAroundHead } from "./weeper.js";
 
 
 
-function blastFungus(location, dimension, count = 30, entity, speed) {
-
+function blastFungus(location, dimension, count = 30, entity, speed, maxangle = 50) {
     for (let i = 0; i < count; i++) {
         const yaw = Math.random() * Math.PI * 2;
 
         // 0–35° from straight up
-        const angle = Math.random() * (50 * Math.PI / 180);
+        const angle = Math.random() * (maxangle * Math.PI / 180);
 
         const x = Math.sin(angle) * Math.cos(yaw);
         const y = Math.cos(angle);
@@ -28,6 +28,62 @@ function blastFungus(location, dimension, count = 30, entity, speed) {
     }
 }
 
+
+
+export function spiral(
+    entity,
+    projectileId,
+    shots,
+    stepDegrees = 15,
+    speed = 2,
+    speedIncrease = 0,
+    clockwise = true,
+    startAngle = 0,
+    yOffset = 1.6,
+    interval = 2,
+    yDirection = 0
+) {
+    let angle = startAngle;
+
+    const direction = clockwise ? 1 : -1;
+
+    let speedAdd = 0;
+
+    const runId = system.runInterval(() => {
+        try {
+            if (shots-- <= 0) {
+                system.clearRun(runId);
+                return;
+            }
+
+            const yaw = angle * Math.PI / 180;
+
+            const arrow = entity.dimension.spawnEntity(
+                projectileId,
+                {
+                    x: entity.location.x,
+                    y: entity.location.y + yOffset,
+                    z: entity.location.z
+                }
+            );
+
+            const currentSpeed = speed + speedAdd;
+            arrow.getComponent("projectile").owner = entity;
+
+            arrow.applyImpulse({
+                x: -Math.sin(yaw) * currentSpeed,
+                y: yDirection,
+                z: Math.cos(yaw) * currentSpeed
+            });
+            speedAdd += speedIncrease;
+            angle += stepDegrees * direction;
+            console.warn(angle)
+        } catch (e) {
+            console.warn(e)
+            system.clearRun(runId)
+        }
+    }, interval);
+}
 
 function crossfire(target, distance, entity, speed, offsetY) {
     const { dimension, location } = target;
@@ -174,10 +230,24 @@ system.beforeEvents.startup.subscribe((event) => {
                 {
                     name: "speed",
                     type: CustomCommandParamType.Float,
-                },
+                }
             ],
+            optionalParameters: [
+                {
+                    name: "yOffset",
+                    type: CustomCommandParamType.Float,
+                },
+                {
+                    name: "maxAngle",
+                    type: CustomCommandParamType.Float,
+                }
+            ]
         },
-        (origin, count, entityType, speed) => {
+        (origin, count, entityType, speed, yOffset, maxAngle) => {
+
+            yOffset ??= 2.2;
+
+            maxAngle ??= 50.0;
 
             const source = origin.sourceEntity;
 
@@ -187,13 +257,14 @@ system.beforeEvents.startup.subscribe((event) => {
                     blastFungus(
                         {
                             x: source.location.x,
-                            y: source.location.y + 2.2,
+                            y: source.location.y + yOffset,
                             z: source.location.z
                         },
                         source.dimension,
                         count,
                         entityType,
-                        speed
+                        speed,
+                        maxAngle
                     );
 
                 })
@@ -209,13 +280,14 @@ system.beforeEvents.startup.subscribe((event) => {
                     blastFungus(
                         {
                             x: block.location.x,
-                            y: block.location.y + 2.2,
+                            y: block.location.y + yOffset,
                             z: block.location.z
                         },
                         block.dimension,
                         count,
                         entityType,
-                        speed
+                        speed,
+                        maxAngle
                     );
 
                 })
@@ -381,11 +453,129 @@ system.afterEvents.scriptEventReceive.subscribe((data) => {
             }
         }, 10);
     }
+    if (id === "spimton:fotns") {
+        const heed = sourceEntity.getHeadLocation();
+        const Fist = sourceEntity.dimension.spawnEntity("spimton:fist_of_the_north_star", {
+            x: heed.x,
+            y: heed.y + 2,
+            z: heed.z
+        });
+        const targetA = sourceEntity.dimension.getEntities({ location: sourceEntity.location, tags: ["spimton:weeper_target"], maxDistance: 64 });
+        for (const Target of targetA) {
+            const projectile = Fist.getComponent("projectile");
+            projectile.owner = sourceEntity;
+            Fist.setProperty("spimton:powerup", sourceEntity.getDynamicProperty("spimton:weeper_powerup"));
+            const pos = Fist.location;
+            const targetPos = Target.getHeadLocation();
+            const powerUP = Fist.getProperty("spimton:powerup");
+
+            const dx = targetPos.x - pos.x;
+            const dy = targetPos.y - pos.y;
+            const dz = targetPos.z - pos.z;
+
+            const length = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            if (length < 0.0001) return;
+
+            projectile.shoot({
+                x: (dx / length) / (powerUP * 0.33 + 1),
+                y: (dy / length) / (powerUP * 0.33 + 1),
+                z: (dz / length) / (powerUP * 0.33 + 1)
+            });
+
+
+        }
+
+
+
+
+
+    }
+    if (id === "spimton:skull_fungus") {
+        const round = Number(message);
+        const location = sourceEntity.location
+        skullFungus(
+            {
+                x: location.x,
+                y: location.y + 4,
+                z: location.z,
+            },
+            sourceEntity.dimension,
+            round,
+            "spimton:weeperball_4_neo",
+            0.1997 + round * 0.1,
+            `spimton:round_${round}`
+
+        )
+
+    }
+    if (id === "spimton:archshaman_spiral") {
+        sourceEntity.dimension.spawnParticle("spimton:arch_sun", {
+            x: sourceEntity.getHeadLocation().x,
+            y: sourceEntity.getHeadLocation().y + 1,
+            z: sourceEntity.getHeadLocation().z
+        })
+        const phase = sourceEntity.getProperty("spimton:phase");
+        if (phase == 2) {
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 2, 1.225, 0, true, 0, 2.25, 2.5)
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 2, 1.225, 0, true, 90, 2.25, 2.5)
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 2, 1.225, 0, true, 180, 2.25, 2.5)
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 2, 1.225, 0, true, 270, 2.25, 2.5)
+        }
+        else if (phase == 3) {
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 4, 1.225, 0, true, 0, 2.25, 2.5)
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 4, 1.225, 0, true, 90, 2.25, 2.5)
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 4, 1.225, 0, true, 180, 2.25, 2.5)
+            spiral(sourceEntity, "spimton:fireball_unfriendly", 70, 4, 1.225, 0, true, 270, 2.25, 2.5)
+        }
+        else { }
+    }
+    if (id === "spimton:player_dynamic_properties") {
+        const props = sourceEntity.getDynamicPropertyIds();
+        for (const prop of props) {
+            const property = sourceEntity.getDynamicProperty(prop);
+            sourceEntity.runCommand(`say ${prop} : ${property}`)
+        }
+    }
 });
 
 
 
+function skullFungus(
+    location,
+    dimension,
+    count = 30,
+    entity,
+    speed,
+    event = "minecraft:entity_spawned"
+) {
+    let fired = 0;
 
+    const intervalId = system.runInterval(() => {
+        if (fired >= count) {
+            system.clearRun(intervalId);
+            return;
+        }
+
+        const yaw = Math.random() * Math.PI * 2;
+        const angle = Math.random() * (50 * Math.PI / 180);
+
+        const x = Math.sin(angle) * Math.cos(yaw);
+        const y = Math.cos(angle);
+        const z = Math.sin(angle) * Math.sin(yaw);
+
+        const projectile = dimension.spawnEntity(entity, location);
+
+        projectile.triggerEvent(event);
+
+        projectile.getComponent("minecraft:projectile").shoot({
+            x: x * speed,
+            y: y * speed * 1.997,
+            z: z * speed,
+        });
+
+        fired++;
+    }, 3); // Fire one projectile every 5 ticks
+}
 
 
 
@@ -472,7 +662,7 @@ function rotateHorizontal(direction, angleDegrees) {
     };
 }
 
-function shootSpread(player, spreadDegrees, projectileCount, speed, projectileId, tag) { //Speed = 3
+export function shootSpread(player, spreadDegrees, projectileCount, speed, projectileId, tag) { //Speed = 3
     let direction = player.getViewDirection();
     let head = player.getHeadLocation();
     const dimension = player.dimension;
@@ -532,7 +722,6 @@ function shootSpread(player, spreadDegrees, projectileCount, speed, projectileId
 
         const projectile = arrow.getComponent("minecraft:projectile");
         projectile.owner = player;
-
         projectile.shoot({
             x: dir.x * speed,
             y: dir.y * speed,

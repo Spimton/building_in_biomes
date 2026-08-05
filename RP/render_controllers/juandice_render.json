@@ -110,7 +110,7 @@
                 }
             },
             "textures": [
-                "Array.textures[math.clamp(query.health / 25, 0, 3)]"
+                "Array.textures[math.clamp(query.health / (query.max_health / 4), 0, 3)]"
             ]
         },
         "controller.render.hammer_justice": {

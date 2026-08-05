@@ -46,8 +46,8 @@
         },
         "components": {
             "minecraft:health": {
-                "value": 100,
-                "max": 100,
+                "value": 66,
+                "max": 66,
                 "min": 1
             },
             "minecraft:timer": {

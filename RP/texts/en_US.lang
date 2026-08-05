@@ -1326,6 +1326,7 @@ item.spimton:priest_tiara=Brittle Tiara
 item.spimton:priest_necklace=Brittle Necklace with Shoulder Pads
 item.spimton:priest_leggings=Brittle Leggings
 item.spimton:ominous_statue_spawner=Ominous Statue
+item.spimton:experience_flask=Flask o' Enchanting
 
 
 
@@ -1435,6 +1436,10 @@ entity.spimton:boomball_smol.name=Michael Bay
 entity.spimton:justice_hammer.name=Hammer of Justice
 entity.spimton:justice_bell.name=Sound of Justice
 entity.spimton:column.name=Column of Justice
+entity.spimton:weeperball_1_neo.name=Weeper Skull
+entity.spimton:weeperball_2_neo.name=Weeper Fireball
+entity.spimton:weeperball_3_neo.name=Charged Weeper Skull
+entity.spimton:weeperball_4_neo.name=Weeper Skull
 
 
 

@@ -5,6 +5,7 @@ world.afterEvents.entityHurt.subscribe(data => {
     const sauce = data.damageSource.damagingEntity;
     const chance = Math.random();
     const equippableHurt = entity.getComponent("equippable");
+    if (!entity) return;
     if (equippableHurt.getEquipment(EquipmentSlot.Chest)) {
 
         switch (equippableHurt.getEquipment(EquipmentSlot.Chest).typeId) { //Hurt Entity

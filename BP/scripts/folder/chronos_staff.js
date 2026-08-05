@@ -916,7 +916,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
             if (source?.isSprinting && source?.isJumping) {
                 if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack2.durability) {
                     source.addEffect("water_breathing", 200, { showParticles: false })
-                    source.teleport({ x: source.location, z: source.location, y: source.location + ConfigItems.blackKnife.attack2.teleport })
+                    source.teleport({ x: source.location.x, z: source.location.z, y: source.location.y + ConfigItems.blackKnife.attack2.teleport })
                     source.startItemCooldown("knife", ConfigItems.blackKnife.attack2.cooldown)
                     updateItemDurability(source, item, ConfigItems.blackKnife.attack2.durability, EquipmentSlot.Mainhand)
                 }
@@ -958,7 +958,12 @@ system.beforeEvents.startup.subscribe(initEvent => {
             }
             if (!source?.isSprinting && source?.isJumping && !source?.isSneaking) {
                 if ((dura.maxDurability - dura.damage) >= ConfigItems.blackKnife.attack6.durability) {
-                    source.teleport({ x: source.getViewDirection().x * ConfigItems.blackKnife.attack6.teleport, y: source.getViewDirection().y * ConfigItems.blackKnife.attack6.teleport, z: source.getViewDirection().z * ConfigItems.blackKnife.attack6.teleport })
+                    const finalDestination = {
+                        x: source.location.x + source.getViewDirection().x + ConfigItems.blackKnife.attack6.teleport,
+                        y: source.location.y + source.getViewDirection().y + ConfigItems.blackKnife.attack6.teleport,
+                        z: source.location.z + source.getViewDirection().z + ConfigItems.blackKnife.attack6.teleport
+                    }
+                    source.teleport({ finalDestination });
                     source.startItemCooldown("knife", ConfigItems.blackKnife.attack6.cooldown)
                     updateItemDurability(source, item, ConfigItems.blackKnife.attack6.durability, EquipmentSlot.Mainhand)
                 }

@@ -70,6 +70,33 @@
                 }
             }
         },
+        "controller.animation.weeperneo.health": {
+            "initial_state": "phase_1",
+            "states": {
+                "phase_1": {
+                    "transitions": [
+                        {
+                            "phase_2": "query.health / query.max_health < 0.5 && query.property('spimton:phase') == 1"
+                        }
+                    ]
+                },
+                "phase_2": {
+                    "on_entry": [
+                        "/event entity @s spimton:commence_phase_transition"
+                    ],
+                    "transitions": [
+                        {
+                            "phase_3": "query.health == query.max_health || query.property('spimton:forced_phase_2')"
+                        }
+                    ]
+                },
+                "phase_3": {
+                    "on_entry": [
+                        "/event entity @s spimton:commence_phase_2"
+                    ]
+                }
+            }
+        },
         "controller.animation.juandice.health": {
             "initial_state": "alive",
             "states": {

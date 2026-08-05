@@ -14,11 +14,55 @@
                     "fuse_length": 0,
                     "fuse_lit": true,
                     "power": 3,
-                    "damage_scaling": 0.5,
+                    "knockback_scaling": 1.225,
+                    "damage_scaling": 0.1225,
                     "causes_fire": true,
                     "breaks_blocks": true,
                     "destroy_affected_by_griefing": true,
                     "fire_affected_by_griefing": true
+                }
+            },
+            "spimton:burst": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 5,
+                    "time_down_event": {
+                        "event": "minecraft:explode"
+                    }
+                },
+                "minecraft:projectile": {
+                    "on_hit": {
+                        "definition_event": {
+                            "affect_projectile": true,
+                            "event_trigger": {
+                                "event": "minecraft:explode",
+                                "target": "self"
+                            }
+                        },
+                        "impact_damage": {
+                            "damage": [
+                                25,
+                                12
+                            ],
+                            "knockback": true,
+                            "semi_random_diff_damage": false,
+                            "destroy_on_hit": false
+                        }
+                    },
+                    "power": 1.6,
+                    "gravity": 0,
+                    "inertia": 0.95,
+                    "liquid_inertia": 0.7,
+                    "uncertainty_base": 1,
+                    "uncertainty_multiplier": 1,
+                    "anchor": 1,
+                    "offset": [
+                        0,
+                        -0.1,
+                        0
+                    ],
+                    "reflect_on_hurt": false,
+                    "catch_fire": true
                 }
             }
         },
@@ -31,8 +75,8 @@
                 }
             },
             "minecraft:collision_box": {
-                "width": 0.31,
-                "height": 0.31
+                "width": 0.5,
+                "height": 0.5
             },
             "minecraft:despawn": {
                 "despawn_from_simulation_edge": true,
@@ -58,19 +102,19 @@
                     },
                     "impact_damage": {
                         "damage": [
-                            25,
+                            15,
                             12
                         ],
                         "knockback": true,
                         "semi_random_diff_damage": false,
-                        "destroy_on_hit": false
+                        "destroy_on_hit": true
                     }
                 },
                 "power": 1.6,
                 "gravity": 0,
                 "inertia": 1,
                 "liquid_inertia": 1,
-                "uncertainty_base": 1,
+                "uncertainty_base": 19.97,
                 "uncertainty_multiplier": 1,
                 "anchor": 1,
                 "offset": [
@@ -115,6 +159,13 @@
                 "add": {
                     "component_groups": [
                         "minecraft:exploding"
+                    ]
+                }
+            },
+            "spimton:burst": {
+                "add": {
+                    "component_groups": [
+                        "spimton:burst"
                     ]
                 }
             }

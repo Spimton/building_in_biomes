@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "archshaman_armor_2",
+		"metalness_emissive_roughness": "archshaman_armor_2_mer"
+	}
+}

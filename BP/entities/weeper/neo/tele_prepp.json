@@ -1,0 +1,92 @@
+{
+    "format_version": "1.21.80",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:tele_prepp",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "spimton:time": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "target": "self",
+                        "event": "spimton:blitz"
+                    }
+                }
+            },
+            "spimton:shine": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:shyre": {
+                "minecraft:is_sheared": {}
+            }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:health": {
+                "value": 30,
+                "max": 30
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "spimton:juandice",
+                    "inanimate"
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.001,
+                "height": 0.001
+            },
+            "minecraft:physics": {
+                "has_gravity": false
+            }
+        },
+        "events": {
+            "spimton:blitz": {
+                "queue_command": {
+                    "command": [
+                        "tp @n[type=spimton:weeper] @s"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:shine"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "spimton:time"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "spreadplayers ~ ~ 12 25 @s ~",
+                        "event entity @s spimton:shyre"
+                    ]
+                }
+            },
+            "spimton:shyre": {
+                "add": {
+                    "component_groups": [
+                        "spimton:shyre"
+                    ]
+                }
+            }
+        }
+    }
+}

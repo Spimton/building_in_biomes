@@ -585,6 +585,11 @@
 								}
 							}
 						],
+						"filters": {
+							"test": "target_distance",
+							"value": 12,
+							"operator": "<="
+						},
 						"weight": 25
 					},
 					{
@@ -607,29 +612,84 @@
 						"weight": 10
 					},
 					{
-						"add": {
-							"component_groups": [
-								"spimton:spear1"
-							]
+						"filters": {
+							"test": "target_distance",
+							"value": 12,
+							"operator": ">="
 						},
-						"queue_command": {
-							"target": "self",
-							"command": [
-								"playanimation @s animation.overgrown_soldier.throw",
-								"ride @s start_riding @n[type=spimton:overgrown_steed]"
-							]
-						},
-						"remove": {
-							"component_groups": [
-								"spimton:potion",
-								"spimton:melee_below",
-								"spimton:potion_finish",
-								"spimton:potion_undead",
-								"spimton:melee",
-								"spimton:gooners",
-								"spimton:spear2"
-							]
-						},
+						"sequence": [
+							{
+								"queue_command": {
+									"target": "self",
+									"command": [
+										"playanimation @s animation.overgrown_soldier.throw",
+										"ride @s start_riding @n[type=spimton:overgrown_steed]"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"spimton:potion",
+										"spimton:melee_below",
+										"spimton:potion_finish",
+										"spimton:potion_undead",
+										"spimton:melee",
+										"spimton:gooners",
+										"spimton:spear2",
+										"spimton:spear1"
+									]
+								}
+							},
+							{
+								"randomize": [
+									{
+										"filters": {
+											"any_of": [
+												{
+													"test": "has_mob_effect",
+													"subject": "target",
+													"value": "poison"
+												},
+												{
+													"test": "has_component",
+													"operator": "!=",
+													"subject": "target",
+													"value": "minecraft:fire_immune"
+												}
+											]
+										},
+										"add": {
+											"component_groups": [
+												"spimton:spear1"
+											]
+										},
+										"weight": 1
+									},
+									{
+										"filters": {
+											"any_of": [
+												{
+													"test": "has_mob_effect",
+													"subject": "target",
+													"operator": "!=",
+													"value": "poison"
+												},
+												{
+													"test": "has_component",
+													"subject": "target",
+													"value": "minecraft:fire_immune"
+												}
+											]
+										},
+										"add": {
+											"component_groups": [
+												"spimton:spear2"
+											]
+										},
+										"weight": 1
+									}
+								]
+							}
+						],
 						"weight": 20
 					},
 					{

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "fist_of_the_north_star",
+		"metalness_emissive_roughness": "fist_of_the_north_star_mer"
+	}
+}

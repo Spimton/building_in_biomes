@@ -16,6 +16,35 @@
 					"breaks_blocks": true,
 					"destroy_affected_by_griefing": true
 				}
+			},
+			"spimton:parachute": {
+				"minecraft:is_sheared": {},
+				"minecraft:timer": {
+					"time": 1,
+					"time_down_event": {
+						"event": "spimton:deploy_para"
+					}
+				}
+			},
+			"spimton:final_timer": {
+				"minecraft:timer": {
+					"looping": false,
+					"time": 15,
+					"time_down_event": {
+						"event": "minecraft:start_exploding",
+						"target": "self"
+					}
+				}
+			},
+			"spimton:deploy": {
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "on_ground"
+						},
+						"event": "spimton:no_para"
+					}
+				}
 			}
 		},
 		"components": {
@@ -26,6 +55,14 @@
 					"event": "minecraft:start_exploding",
 					"target": "self"
 				}
+			},
+			"minecraft:explode": {
+				"fuse_length": 10,
+				"fuse_lit": true,
+				"power": 3.5,
+				"causes_fire": false,
+				"breaks_blocks": true,
+				"destroy_affected_by_griefing": true
 			},
 			"minecraft:experience_reward": {
 				"on_death": "query.last_hit_by_player?5:0"
@@ -108,7 +145,7 @@
 					"target": "self"
 				},
 				"track_target": true,
-				"reach_multiplier": 1
+				"reach_multiplier": 0
 			},
 			"minecraft:despawn": {
 				"despawn_from_distance": {}
@@ -167,9 +204,13 @@
 				"is_pushable": true,
 				"is_pushable_by_piston": true
 			},
-			"minecraft:on_target_escape": {
-				"event": "minecraft:stop_exploding",
-				"target": "self"
+			"minecraft:target_nearby_sensor": {
+				"inside_range": 1.997,
+				"must_see": false,
+				"on_inside_range": {
+					"event": "minecraft:start_exploding"
+				},
+				"outside_range": 5
 			},
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
@@ -178,9 +219,12 @@
 				"sequence": [
 					{
 						"filters": {
-							"test": "has_component",
-							"operator": "!=",
-							"value": "minecraft:is_charged"
+							"test": "on_ground"
+						},
+						"remove": {
+							"component_groups": [
+								"spimton:final_timer"
+							]
 						},
 						"add": {
 							"component_groups": [
@@ -190,10 +234,41 @@
 					}
 				]
 			},
-			"minecraft:stop_exploding": {
+			"spimton:weeper_parachute": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"spreadplayers ~ ~ 10 32 @s ~",
+						"tp @s ~ ~30 ~",
+						"effect @s slow_falling infinite 1 true"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"spimton:parachute"
+					]
+				}
+			},
+			"spimton:no_para": {
 				"remove": {
 					"component_groups": [
-						"minecraft:exploding"
+						"spimton:parachute"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"spimton:final_timer"
+					]
+				},
+				"queue_command": {
+					"target": "self",
+					"command": "effect @s clear slow_falling"
+				}
+			},
+			"spimton:deploy_para": {
+				"add": {
+					"component_groups": [
+						"spimton:deploy"
 					]
 				}
 			}

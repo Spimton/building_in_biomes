@@ -14,6 +14,7 @@
                     "fuse_length": 0,
                     "fuse_lit": true,
                     "power": 1,
+                    "knockback_scaling": 0.1225,
                     "causes_fire": false,
                     "breaks_blocks": true,
                     "destroy_affected_by_griefing": true,
@@ -55,7 +56,7 @@
                         ],
                         "knockback": true,
                         "should_bounce": true,
-                        "semi_random_diff_damage": false,
+                        "semi_random_diff_damage": true,
                         "destroy_on_hit": false
                     },
                     "stick_in_ground": {}
@@ -64,8 +65,8 @@
                 "gravity": 0,
                 "inertia": 1,
                 "liquid_inertia": 1,
-                "uncertainty_base": 1,
-                "uncertainty_multiplier": 1,
+                "uncertainty_base": 12.25,
+                "uncertainty_multiplier": 1.997,
                 "anchor": 1,
                 "offset": [
                     0,

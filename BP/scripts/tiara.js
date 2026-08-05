@@ -22,7 +22,6 @@ world.afterEvents.entityHurt.subscribe(data => {
     const equippableHurt = entity.getComponent("equippable");
     //console.warn(equippableHurt.getEquipment(EquipmentSlot.Head).typeId);
     if (sauce) {
-        console.warn("Sauce")
         const equippableHurting = sauce.getComponent("equippable");
         if (equippableHurting) {
             //console.warn(equippableHurting.getEquipment(EquipmentSlot.Head).typeId);
