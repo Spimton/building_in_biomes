@@ -456,5 +456,65 @@
         ],
         "ticks_per_frame": 2,
         "blend_frames": true
+    },
+    {
+        "atlas_tile": "juandice_altar_content",
+        "flipbook_texture": "textures/blocks/sculk_shrieker_can_summon_inner_top",
+        "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "ticks_per_frame": 3,
+        "blend_frames": false
+    },
+    {
+        "atlas_tile": "juandice_altar_content_off",
+        "flipbook_texture": "textures/blocks/sculk_shrieker_inner_top",
+        "frames": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "ticks_per_frame": 3,
+        "blend_frames": false
+    },
+    {
+        "atlas_tile": "weeping_altar_content",
+        "flipbook_texture": "textures/blocks/altar/weeping_altar_content",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
+    },
+    {
+        "atlas_tile": "weeping_altar_content_off",
+        "flipbook_texture": "textures/blocks/altar/weeping_altar_content_off",
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ticks_per_frame": 20,
+        "blend_frames": true
     }
 ]

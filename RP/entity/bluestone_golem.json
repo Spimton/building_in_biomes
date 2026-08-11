@@ -19,11 +19,15 @@
                     "look_at_target",
                     {
                         "casting": "query.is_casting"
+                    },
+                    {
+                        "sleep": "query.variant == 0"
                     }
                 ],
                 "scale": 1
             },
             "animations": {
+                "sleep": "animation.bluestone_golem.sleep",
                 "controller_general": "controller.animation.bluestone_golem.general",
                 "attack": "controller.animation.bluestone_golem.attack",
                 "general": "animation.bluestone_golem.idle",

@@ -1988,7 +1988,7 @@
 		"sound": "glass"
 	},
 	"spimton:overgrown_altar": {
-		"sound": "dripstone_block",
+		"sound": "stone",
 		"textures": "overgrown_altar"
 	},
 	"spimton:grapes": {

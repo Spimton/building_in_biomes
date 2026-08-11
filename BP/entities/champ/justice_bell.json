@@ -134,7 +134,7 @@
                         "particle spimton:obliterator_smash ~ ~0.5 ~",
                         "effect @e[r=6] slowness 10 9 true",
                         "damage @e[r=4] 1225 falling_block",
-                        "playsound block.bell.use @a[r=24]",
+                        "playsound block.bell.hit @a[r=24] ~ ~ ~ 19.97 0.66",
                         "event entity @s spimton:give"
                     ],
                     "target": "self"

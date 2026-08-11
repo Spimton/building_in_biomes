@@ -222,6 +222,50 @@ function targe() {
 
     };
 }
+world.beforeEvents.entityHurt.subscribe(event => {
+    const entity = event.hurtEntity;
+    const hiter = event.damageSource.damagingEntity;
+    const hiterP = event.damageSource.damagingProjectile;
+    if (!hiter && !hiterP) return;
+    const equipment = entity.getComponent("equippable")
+    if (equipment === undefined) return;
+    const MainhandEq = equipment.getEquipment("Mainhand");
+    const OffhandEq = equipment.getEquipment("Offhand");
+    const OffhandTarge1 = OffhandEq?.typeId === "spimton:steel_shield";
+    const OffhandTarge2 = OffhandEq?.typeId === "spimton:gold_shield";
+    const MainhandTarge1 = MainhandEq?.typeId === "spimton:steel_shield";
+    const MainhandTarge2 = MainhandEq?.typeId === "spimton:gold_shield";
+    const MainhandTarge3 = MainhandEq?.typeId === "spimton:charge_shield";
+    const OffhandTarge3 = OffhandEq?.typeId === "spimton:charge_shield";
+    const MainhandTarge4 = MainhandEq?.typeId === "spimton:ancient_gold_shield";
+    const OffhandTarge4 = OffhandEq?.typeId === "spimton:ancient_gold_shield";
+    const MainhandTarge5 = MainhandEq?.typeId === "spimton:charge_shield_td";
+    const OffhandTarge5 = OffhandEq?.typeId === "spimton:charge_shield_td";
+    if (entity?.isSneaking) {
+        if (OffhandTarge1 || MainhandTarge1) {
+
+            event.damage *= 1 - ConfigItems.steelTargeReduction;
+        }
+        if (OffhandTarge2 || MainhandTarge2) {
+
+            event.damage *= 1 - ConfigItems.goldTargeReduction;
+        }
+        if (OffhandTarge3 || MainhandTarge3) {
+
+            event.damage *= 1 - ConfigItems.chargeTargeReduction;
+        }
+        if (OffhandTarge4 || MainhandTarge4) {
+
+            event.damage *= 1 - ConfigItems.sunTargeReduction;
+        }
+        if (OffhandTarge5 || MainhandTarge5) {
+
+            event.damage *= 1 - ConfigItems.chargeTarge2Reduction;
+        }
+    }
+
+})
+
 
 world.afterEvents.entityHurt.subscribe(event => {
     const entity = event.hurtEntity
@@ -230,7 +274,6 @@ world.afterEvents.entityHurt.subscribe(event => {
     if (!hiter) return;
     const equipment = entity.getComponent("equippable")
     if (equipment === undefined) return;
-    const hasAbsorption = entity.getEffect("absorption");
     const MainhandEq = equipment.getEquipment("Mainhand");
     const OffhandEq = equipment.getEquipment("Offhand");
     const OffhandTarge1 = OffhandEq?.typeId === "spimton:steel_shield";
@@ -247,10 +290,6 @@ world.afterEvents.entityHurt.subscribe(event => {
     if (OffhandTarge1 || MainhandTarge1) {
         if (entity?.isSneaking) {
             entity.dimension.playSound("item.shield.block", entity.getHeadLocation())
-            const h = entity.getComponent("health")
-            if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * ConfigItems.steelTargeReduction))
-            };
             entity.clearVelocity();
 
             if (MainhandTarge1 && !entity.matches({ gameMode: GameMode.Creative })) {
@@ -276,10 +315,6 @@ world.afterEvents.entityHurt.subscribe(event => {
         if (entity?.isSneaking) {
             entity.dimension.playSound("item.shield.block", entity.getHeadLocation())
 
-            const h = entity.getComponent("health")
-            if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * ConfigItems.goldTargeReduction))
-            };
             entity.clearVelocity();
 
             if (MainhandTarge2 && !entity.matches({ gameMode: GameMode.Creative })) {
@@ -305,10 +340,6 @@ world.afterEvents.entityHurt.subscribe(event => {
         if (entity?.isSneaking) {
             entity.dimension.playSound("item.shield.block", entity.getHeadLocation())
             if (entity.getDynamicProperty("CanTarge") == undefined) player.setDynamicProperty("CanTarge", 0);
-            const h = entity.getComponent("health")
-            if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * ConfigItems.chargeTargeReduction))
-            };
             entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") + ConfigItems.chargeTargeDashHurt)
 
             if (MainhandTarge3 && !entity.matches({ gameMode: GameMode.Creative })) {
@@ -334,10 +365,6 @@ world.afterEvents.entityHurt.subscribe(event => {
         if (entity?.isSneaking) {
             entity.dimension.playSound("item.shield.block", entity.getHeadLocation())
             if (entity.getDynamicProperty("CanTarge") == undefined) player.setDynamicProperty("CanTarge", 0);
-            const h = entity.getComponent("health")
-            if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * ConfigItems.sunTargeReduction))
-            };
             if (entity.getDynamicProperty("CanTarge") <= 0) {
                 entity.setOnFire(ConfigItems.sunTargeSetonFire / 2, false)
                 entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") + ConfigItems.sunTargeFireDash / 5)
@@ -369,13 +396,9 @@ world.afterEvents.entityHurt.subscribe(event => {
         if (entity?.isSneaking) {
             entity.dimension.playSound("item.shield.block", entity.getHeadLocation())
             if (entity.getDynamicProperty("CanTarge") == undefined) player.setDynamicProperty("CanTarge", 0);
-            const h = entity.getComponent("health")
-            if (hasAbsorption === undefined) {
-                h.setCurrentValue(h.currentValue + (damage * ConfigItems.chargeTarge2Reduction))
-            };
             entity.setDynamicProperty("CanTarge", entity.getDynamicProperty("CanTarge") - ConfigItems.chargeTarge2DashHurt)
             entity.applyKnockback({ x: entity.getViewDirection().x * ConfigItems.chargeTarge2KnockbackHurtXZ, z: entity.getViewDirection().z * ConfigItems.chargeTarge2KnockbackHurtXZ }, ConfigItems.chargeTarge2KnockbackHurtY)
-            hiter.applyDamage(damage, { damagingEntity: entity, cause: EntityDamageCause.entityAttack })
+            hiter.applyDamage(damage * (1 - ConfigItems.chargeTarge2Reduction), { damagingEntity: entity, cause: EntityDamageCause.entityAttack })
             hiter.applyKnockback({ x: entity.getViewDirection().x * ConfigItems.chargeTarge2KnockbackHurtXZ * 1.07, z: entity.getViewDirection().z * ConfigItems.chargeTarge2KnockbackHurtXZ * 1.07 }, ConfigItems.chargeTarge2KnockbackHurtY);
 
             if (MainhandTarge5 && !entity.matches({ gameMode: GameMode.Creative })) {
@@ -963,7 +986,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
                         y: source.location.y + source.getViewDirection().y + ConfigItems.blackKnife.attack6.teleport,
                         z: source.location.z + source.getViewDirection().z + ConfigItems.blackKnife.attack6.teleport
                     }
-                    source.teleport({ finalDestination });
+                    source.teleport(finalDestination);
                     source.startItemCooldown("knife", ConfigItems.blackKnife.attack6.cooldown)
                     updateItemDurability(source, item, ConfigItems.blackKnife.attack6.durability, EquipmentSlot.Mainhand)
                 }

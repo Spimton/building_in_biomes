@@ -946,6 +946,14 @@
                     "hurt": "hit.stone",
                     "death": "dig.stone"
                 }
+            },
+            "spimton:justice_bell": {
+                "pitch": 0.66,
+                "volume": 12.25,
+                "events": {
+                    "hurt": "hit.stone",
+                    "death": "dig.stone"
+                }
             }
         }
     },

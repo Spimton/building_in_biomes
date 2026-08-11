@@ -12,7 +12,7 @@ const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + mi
 const maxGrowth = 7;
 let Effect = undefined
 
-function BeaconInterfaceOLD(player) {
+/*function BeaconInterfaceOLD(player) {
     let IntBC = new ActionFormData()
 
     IntBC.title("Tainted Beacon")
@@ -50,9 +50,9 @@ function BeaconInterfaceOLD(player) {
             Effect = "Haste";
         }
     })
-}
+}*/
 
-function BeaconInterface(player) {
+function BeaconInterfaceOLD(player) {
     let IntBC = new ModalFormData()
 
     IntBC.title("Tainted Beacon")
@@ -170,13 +170,7 @@ function BlockInterface(player) {
 /** @type {import("@minecraft/server").BlockCustomComponent} */
 const WeeperB = {
     onPlayerInteract({ block, dimension, player }) {
-        if (!player) return;
-        const equippable = player.getComponent("minecraft:equippable");
-        if (!equippable) return;
-
-        const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
-        // Decrement stack
-        BeaconInterface(player);
+        WeeperWaypoints(player, block)
 
 
 
@@ -194,3 +188,130 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
 });
 
 
+
+function WeeperWaypoints(player, block) {
+    const waypoints = getWaypoints(player)
+    let WeeperWaystone = new ActionFormData()
+    WeeperWaystone.title("Tainted Beacon")
+    WeeperWaystone.body(`Your position: ${Math.round(player.location.x)} ${Math.round(player.location.y)} ${Math.round(player.location.z)}\n\n\nYour locations:\n
+    Slot 1: ${showPos(0, "x", waypoints)} ${showPos(0, "y", waypoints)} ${showPos(0, "z", waypoints)}, ${showPos(0, "dimension", waypoints)}\n\n
+    Slot 2: ${showPos(1, "x", waypoints)} ${showPos(1, "y", waypoints)} ${showPos(1, "z", waypoints)}, ${showPos(1, "dimension", waypoints)}\n\n
+    Slot 3: ${showPos(2, "x", waypoints)} ${showPos(2, "y", waypoints)} ${showPos(2, "z", waypoints)}, ${showPos(2, "dimension", waypoints)}\n\n
+    Slot 4: ${showPos(3, "x", waypoints)} ${showPos(3, "y", waypoints)} ${showPos(3, "z", waypoints)}, ${showPos(3, "dimension", waypoints)}\n\n
+    Slot 5: ${showPos(4, "x", waypoints)} ${showPos(4, "y", waypoints)} ${showPos(4, "z", waypoints)}, ${showPos(4, "dimension", waypoints)}\n\n
+    `)
+    WeeperWaystone.divider()
+    WeeperWaystone.button("Save Current Location\nto Slot 1")
+    WeeperWaystone.button("Teleport to Slot 1")
+    WeeperWaystone.button("Save Current Location\nto Slot 2")
+    WeeperWaystone.button("Teleport to Slot 2")
+    WeeperWaystone.button("Save Current Location\nto Slot 3")
+    WeeperWaystone.button("Teleport to Slot 3")
+    WeeperWaystone.button("Save Current Location\nto Slot 4")
+    WeeperWaystone.button("Teleport to Slot 4")
+    WeeperWaystone.button("Save Current Location\nto Slot 5")
+    WeeperWaystone.button("Teleport to Slot 5")
+    WeeperWaystone.show(player).then(button => {
+        if (button.canceled) return;
+        if (button.selection % 2 == 0) {
+            setWaypoint(player, button.selection / 2, block)
+            player.runCommand(`tellraw @s {"rawtext": [{"text":"Set Beacon slot ${button.selection / 2 + 1} to ${block.location.x} ${block.location.y} ${block.location.z} in ${block.dimension.id}"}]}`)
+        }
+        else {
+            if (waypoints[(button.selection - 1) / 2] == null) {
+                player.runCommand(`tellraw @s {"rawtext": [{"text": "§cNo position set!"}]}`)
+                return;
+
+            };
+            const dimension = world.getDimension(waypoints[(button.selection - 1) / 2].dimension);
+            if (dimension.id != player.dimension.id) {
+                player.runCommand(`tellraw @s {"rawtext": [{"text": "§cCannot teleport between dimensions!"}]}`)
+                return;
+            }
+            const TeleportBlock =
+            {
+                x: waypoints[(button.selection - 1) / 2].x,
+                y: waypoints[(button.selection - 1) / 2].y + 1,
+                z: waypoints[(button.selection - 1) / 2].z
+            }
+
+            player.teleport(TeleportBlock)
+            player.dimension.spawnParticle("spimton:beam_particle", {
+                x: waypoints[(button.selection - 1) / 2].x,
+                y: waypoints[(button.selection - 1) / 2].y,
+                z: waypoints[(button.selection - 1) / 2].z
+            })
+            player.dimension.spawnParticle("spimton:beam_circle", {
+                x: waypoints[(button.selection - 1) / 2].x,
+                y: waypoints[(button.selection - 1) / 2].y + 30,
+                z: waypoints[(button.selection - 1) / 2].z
+            })
+            player.dimension.playSound("sfx.beam_pillar", TeleportBlock);
+
+
+        }
+    })
+
+
+
+
+
+}
+
+function showPos(slot, prop, waypoints) {
+    if (waypoints[slot] == null) {
+        if (prop == "dimension") {
+            return "Nowhere"
+        }
+        return "Not Set"
+    }
+    return waypoints[slot][prop];
+
+}
+
+function getWaypoints(player) {
+    const data = player.getDynamicProperty("spimton:tainted_beacon_slots");
+
+    if (typeof data !== "string") {
+        return [null, null, null, null, null];
+    }
+
+    try {
+        const waypoints = JSON.parse(data);
+
+        // Make sure we always have exactly 5 slots
+        if (!Array.isArray(waypoints)) {
+            return [null, null, null, null, null];
+        }
+
+        return [
+            waypoints[0] ?? null,
+            waypoints[1] ?? null,
+            waypoints[2] ?? null,
+            waypoints[3] ?? null,
+            waypoints[4] ?? null
+        ];
+    } catch {
+        return [null, null, null, null, null];
+    }
+}
+
+function saveWaypoints(player, waypoints) {
+    player.setDynamicProperty(
+        "spimton:tainted_beacon_slots",
+        JSON.stringify(waypoints)
+    );
+}
+
+function setWaypoint(player, slot, block) {
+    const waypoints = getWaypoints(player);
+
+    waypoints[slot] = {
+        x: block.location.x,
+        y: block.location.y,
+        z: block.location.z,
+        dimension: block.dimension.id
+    };
+
+    saveWaypoints(player, waypoints);
+}

@@ -83,7 +83,7 @@
             "spimton:splode": {
                 "queue_command": {
                     "command": [
-                        "damage @e[family=!inanimate,r=2] 26 entity_explosion"
+                        "damage @e[family=!inanimate,r=2] 48 entity_explosion"
                     ]
                 }
             },

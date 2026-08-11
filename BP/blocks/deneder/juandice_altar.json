@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.50",
+	"format_version": "1.21.100",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:juandice_altar",
@@ -22,24 +22,34 @@
 			}
 		},
 		"components": {
-			"minecraft:geometry": "geometry.altar_jungle",
+			"minecraft:geometry": "geometry.altar",
 			"minecraft:map_color": "#584214",
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "juandice_altar",
 					"render_method": "alpha_test"
+				},
+				"altar_content": {
+					"texture": "juandice_altar_content",
+					"render_method": "alpha_test"
 				}
+			},
+			"spimton:power_comp": {},
+			"spimton:boss_spawner": {
+				"spawn_item": false,
+				"require_offering": true,
+				"offering_item": [
+					"spimton:diamond_relic"
+				],
+				"spawned_boss": "spimton:juandice",
+				"summon_text": "The §9Bell of Justice§r rings...\nPrepare thyself for...",
+				"sound": "sfx.ringing",
+				"item_name": "a §9Sigil§r"
 			},
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 1997
 			},
-			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 1997
-			},
-			"minecraft:custom_components": [
-				"spimton:overgrown_act",
-				"spimton:juandice_boss"
-			],
+			"minecraft:destructible_by_explosion": false,
 			"minecraft:loot": "loot_tables/empty.json"
 		},
 		"permutations": [
@@ -94,10 +104,15 @@
 			{
 				"condition": "q.block_state('spimton:activated') == true",
 				"components": {
-					"minecraft:light_emission": 5,
+					"minecraft:light_emission": 10,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "juandice_altar"
+							"texture": "juandice_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "juandice_altar_content_off",
+							"render_method": "alpha_test"
 						}
 					}
 				}
@@ -108,7 +123,12 @@
 					"minecraft:light_emission": 0,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "juandice_altar_off"
+							"texture": "juandice_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "juandice_altar_content_off",
+							"render_method": "alpha_test"
 						}
 					}
 				}

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.50",
+	"format_version": "1.21.100",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:creeping_altar",
@@ -22,22 +22,35 @@
 			}
 		},
 		"components": {
-			"minecraft:geometry": "geometry.altar_jungle",
+			"minecraft:geometry": "geometry.altar",
 			"minecraft:map_color": "#584214",
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "creeping_altar",
 					"render_method": "alpha_test"
+				},
+				"altar_content": {
+					"texture": "weeping_altar_content",
+					"render_method": "alpha_test"
 				}
+			},
+			"spimton:power_comp": {},
+			"spimton:boss_spawner": {
+				"spawn_item": true,
+				"require_offering": true,
+				"offering_item": [
+					"spimton:crither_skull",
+					"minecraft:wither_skeleton_skull"
+				],
+				"spawned_boss": "spimton:weeper_soul",
+				"summon_text": "You feel an ominous presence...",
+				"sound": "mob.wither.spawn",
+				"item_name": "a §cWither Skull§r"
 			},
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 1997
 			},
 			"minecraft:destructible_by_explosion": false,
-			"minecraft:custom_components": [
-				"spimton:creeping_boss",
-				"spimton:overgrown_act"
-			],
 			"minecraft:loot": "loot_tables/empty.json"
 		},
 		"permutations": [
@@ -92,10 +105,15 @@
 			{
 				"condition": "q.block_state('spimton:activated') == true",
 				"components": {
-					"minecraft:light_emission": 5,
+					"minecraft:light_emission": 10,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "creeping_altar"
+							"texture": "creeping_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "weeping_altar_content",
+							"render_method": "alpha_test"
 						}
 					}
 				}
@@ -106,7 +124,12 @@
 					"minecraft:light_emission": 0,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "creeping_altar_off"
+							"texture": "creeping_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "weeping_altar_content_off",
+							"render_method": "alpha_test"
 						}
 					}
 				}

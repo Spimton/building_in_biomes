@@ -1,5 +1,5 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.100",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:sun",
@@ -13,7 +13,10 @@
 				"minecraft:timer": {
 					"looping": false,
 					"randomInterval": true,
-					"time": 20,
+					"time": [
+						19.97,
+						25.12
+					],
 					"time_down_event": {
 						"event": "minecraft:add_periodic_damage"
 					}
@@ -25,7 +28,8 @@
 					"causes_fire": true,
 					"destroy_affected_by_griefing": true,
 					"fire_affected_by_griefing": true,
-					"power": 5,
+					"power": 7,
+					"knockback_scaling": 0,
 					"fuse_lit": true,
 					"fuse_length": 0
 				}
@@ -36,15 +40,11 @@
 				"triggers": [
 					{
 						"cause": "suffocation",
-						"deals_damage": false
+						"deals_damage": "no"
 					},
 					{
 						"cause": "entity_explosion",
-						"deals_damage": false
-					},
-					{
-						"cause": "override",
-						"deals_damage": false
+						"deals_damage": "no"
 					}
 				]
 			},
@@ -62,8 +62,8 @@
 				]
 			},
 			"minecraft:health": {
-				"value": 100,
-				"max": 100
+				"value": 66,
+				"max": 66
 			},
 			"minecraft:attack": {
 				"damage": 3
@@ -82,15 +82,12 @@
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},
 			"minecraft:fire_immune": {},
-			"minecraft:despawn": {
-				"despawn_from_distance": {}
-			},
 			"minecraft:behavior.float": {
 				"priority": 0
 			},
 			"minecraft:behavior.charge_attack": {
 				"priority": 4,
-				"success_rate": 1,
+				"success_rate": 0.66,
 				"max_distance": 70,
 				"min_distance": 0.01,
 				"speed_multiplier": 1
@@ -98,7 +95,7 @@
 			"minecraft:area_attack": {
 				"damage_range": 0.1225,
 				"cause": "magic",
-				"damage_per_tick": 3,
+				"damage_per_tick": 6,
 				"entity_filter": {
 					"test": "is_family",
 					"value": "spimton:archshaman",

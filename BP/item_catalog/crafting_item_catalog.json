@@ -1,4 +1,4 @@
-	{
+{
     "format_version": "1.21.60",
     "minecraft:crafting_items_catalog": {
         "categories": [
@@ -65,7 +65,8 @@
                             "spimton:iridescence_necklace",
                             "spimton:unbreakable_necklace",
                             "spimton:overgrown_necklace",
-                            "spimton:overgrown_necklace_c"
+                            "spimton:overgrown_necklace_c",
+                            "spimton:priest_necklace"
                         ]
                     },
                     {
@@ -82,7 +83,8 @@
                             "spimton:iridescence_tiara",
                             "spimton:unbreakable_tiara",
                             "spimton:overgrown_tiara",
-                            "spimton:overgrown_tiara_c"
+                            "spimton:overgrown_tiara_c",
+                            "spimton:priest_tiara"
                         ]
                     }
                 ]

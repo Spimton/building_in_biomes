@@ -40,10 +40,7 @@
                             }
                         },
                         "impact_damage": {
-                            "damage": [
-                                25,
-                                12
-                            ],
+                            "damage": 25,
                             "knockback": true,
                             "semi_random_diff_damage": false,
                             "destroy_on_hit": false
@@ -102,8 +99,8 @@
                     },
                     "impact_damage": {
                         "damage": [
-                            15,
-                            12
+                            25,
+                            22
                         ],
                         "knockback": true,
                         "semi_random_diff_damage": false,

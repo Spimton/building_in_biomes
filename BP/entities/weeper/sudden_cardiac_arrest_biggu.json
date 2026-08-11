@@ -1,5 +1,5 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:sudden_cardiac_arrest_biggu",
@@ -78,6 +78,29 @@
 			"minecraft:follow_range": {
 				"value": 32
 			},
+			"minecraft:behavior.jump_around_target": {
+				"check_collision": true,
+				"valid_distance_to_target": [
+					12,
+					25
+				],
+				"landing_distance_from_target": [
+					2,
+					3
+				],
+				"priority": 1,
+				"filters": {
+					"test": "on_ground",
+					"subject": "self"
+				},
+				"jump_angles": [
+					66
+				],
+				"jump_cooldown_duration": 3,
+				"max_jump_velocity": 1.997,
+				"prepare_jump_duration": 0,
+				"required_vertical_space": 5
+			},
 			"minecraft:breathable": {
 				"total_supply": 15,
 				"suffocate_time": 0
@@ -135,7 +158,7 @@
 			},
 			"minecraft:behavior.melee_attack": {
 				"attack_once": false,
-				"priority": 1,
+				"priority": 2,
 				"max_path_time": 1,
 				"min_path_time": 0.67,
 				"melee_fov": 335,

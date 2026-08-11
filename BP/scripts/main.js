@@ -17,12 +17,9 @@ import "./folder/chronos_staff.js"
 import 'boss'
 import 'loreApplen'
 import 'applen_eq'
-import 'overgrown_power'
 import 'book'
 import "./folder/ability_other.js"
-import 'weeper_power'
 import "./folder/beaconw.js"
-import 'juandice'
 import 'coaster'
 import 'door_NEO'
 import "./mobs/projectiles.js"

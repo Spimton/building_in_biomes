@@ -488,7 +488,7 @@
 			"textures": "textures/blocks/jade_tiles"
 		},
 		"overgrown_altar": {
-			"textures": "textures/blocks/overgrown_altar"
+			"textures": "textures/blocks/altar/overgrown_altar_neo"
 		},
 		"applen_block": {
 			"textures": "textures/blocks/applen_block"
@@ -635,7 +635,7 @@
 			"textures": "textures/blocks/ecto_block"
 		},
 		"creeping_altar": {
-			"textures": "textures/blocks/creeping_altar"
+			"textures": "textures/blocks/altar/weeping_altar_neo"
 		},
 		"creeping_altar_off": {
 			"textures": "textures/blocks/creeping_altar_off"
@@ -683,7 +683,7 @@
 			"textures": "textures/blocks/black_sanctuarium_tiles"
 		},
 		"lavalamp": {
-			"textures": "textures/blocks/lavalamp_flipbook"
+			"textures": "textures/blocks/lava_lamp"
 		},
 		"encased_glowstone": {
 			"textures": "textures/blocks/glowing_sanctuarium_tiles"
@@ -701,7 +701,7 @@
 			"textures": "textures/blocks/bone_pile_side"
 		},
 		"juandice_altar": {
-			"textures": "textures/blocks/juandice_altar"
+			"textures": "textures/blocks/altar/juandice_altar_neo"
 		},
 		"juandice_altar_off": {
 			"textures": "textures/blocks/juandice_altar_off"
@@ -992,7 +992,7 @@
 			"textures": "textures/blocks/temple/decorated_temple_tiles_2"
 		},
 		"temple_altar": {
-			"textures": "textures/blocks/temple/temple_altar"
+			"textures": "textures/blocks/altar/temple_altar_neo"
 		},
 		"temple_pillar_top": {
 			"textures": "textures/blocks/temple/temple_pillar_top"
@@ -1752,6 +1752,18 @@
 		},
 		"soul_brazier": {
 			"textures": "textures/blocks/otherstone/ominous/soul_brazier"
+		},
+		"juandice_altar_content": {
+			"textures": "textures/blocks/sculk_shrieker_can_summon_inner_top"
+		},
+		"juandice_altar_content_off": {
+			"textures": "textures/blocks/sculk_shrieker_inner_top"
+		},
+		"weeping_altar_content": {
+			"textures": "textures/blocks/altar/weeping_altar_content"
+		},
+		"weeping_altar_content_off": {
+			"textures": "textures/blocks/altar/weeping_altar_content_off"
 		}
 	}
 }

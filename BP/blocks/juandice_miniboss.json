@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.50",
+	"format_version": "1.21.100",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:juandice_miniboss",
@@ -13,24 +13,33 @@
 						"minecraft:cardinal_direction"
 					]
 				}
+			},
+			"states": {
+				"spimton:activated": [
+					true,
+					false
+				]
 			}
 		},
 		"components": {
-			"minecraft:geometry": "geometry.altar_jungle",
+			"minecraft:geometry": "geometry.altar",
 			"minecraft:map_color": "#584214",
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "juandice_altar",
 					"render_method": "alpha_test"
+				},
+				"altar_content": {
+					"texture": "sculk_shrieker_inner_top",
+					"render_method": "alpha_test"
 				}
 			},
+			"spimton:power_comp": {},
+			"spimton:miniboss": {},
 			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 4
+				"seconds_to_destroy": 9
 			},
-			"minecraft:destructible_by_explosion": false,
-			"minecraft:custom_components": [
-				"spimton:miniboss"
-			]
+			"minecraft:destructible_by_explosion": false
 		},
 		"permutations": [
 			{
@@ -78,6 +87,38 @@
 							270,
 							0
 						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:activated') == true",
+				"components": {
+					"minecraft:light_emission": 10,
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "juandice_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "juandice_altar_content",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('spimton:activated') == false",
+				"components": {
+					"minecraft:light_emission": 0,
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "juandice_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "sculk_shrieker_inner_top",
+							"render_method": "alpha_test"
+						}
 					}
 				}
 			}

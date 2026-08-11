@@ -1,56 +1,90 @@
-import { EquipmentSlot, GameMode, world, system } from "@minecraft/server";
+import { EquipmentSlot, GameMode, world, system, ItemStack } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
+import { updateItemDurability } from "./folder2/updateDurability.js"
 /**
  * @param {number} min The minimum integer
  * @param {number} max The maximum integer
  * @returns {number} A random integer between the `min` and `max` parameters (inclusive)
  */
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const Powaa = {
+    onRandomTick({ block }) {
+        const powerChanc = 0.1;
+        if (Math.random() > powerChanc) return;
 
-const maxGrowth = 7;
+        block.setPermutation(block.permutation.withState("spimton:activated", true))
+    }
+};
+
+system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
+    blockComponentRegistry.registerCustomComponent(
+        "spimton:power_comp",
+        Powaa
+    );
+});
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
-const OvergrownBossSpawner = {
-    onPlayerInteract({ block, dimension, player }) {
+const BossSpawnerComp = {
+    onPlayerInteract({ block, dimension, player }, { params }) {
         if (!player) return;
 
         const equippable = player.getComponent("minecraft:equippable");
         if (!equippable) return;
 
         const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
-        if (!mainhand.hasItem() || mainhand.typeId !== "spimton:overgrown_amulet") {
-            player.runCommand("title @p actionbar The Altar needs an §aAmulet§f to activate...")
-            return;
-        }
         const activated = block.permutation.getState("spimton:activated")
-        if (activated == false) {
-            player.runCommand("title @p actionbar The Altar's Soul §vis not ready yet§f...")
-            return;
+        if (mainhand.hasItem() && mainhand.typeId === "spimton:shadowhorn" && activated == false) {
+            player.runCommand("title @p actionbar The Altar's Soul is now ready...")
+
+            block.setPermutation(block.permutation.withState("spimton:activated", true));
+            if (player.matches({ gameMode: GameMode.Creative })) return;
+            updateItemDurability(player, mainhand, 1, EquipmentSlot.Mainhand)
+        }
+        else {
+            if (params.require_offering) {
+                if (!mainhand.hasItem() || !params.offering_item.includes(mainhand.typeId)) {
+                    player.runCommand(`title @s actionbar The Altar needs ${params.item_name} to activate...`)
+                    return;
+                }
+            };
+
+
+            if (activated == false) {
+                player.runCommand("title @p actionbar The Altar's Soul §vis not ready yet§f...")
+                return;
+            }
+
+
+            block.setPermutation(block.permutation.withState('spimton:activated', false))
+
+            // Decrement stack
+            if (params.require_offering) {
+                if (mainhand.amount > 1) mainhand.amount--;
+
+
+                else mainhand.setItem(undefined);
+            };
+
+
+            // Play effects
+            const effectLocation = block.above().center();
+            dimension.playSound(params.sound, effectLocation);
+            if (params.spawn_item) {
+                dimension.spawnItem(new ItemStack(params.spawned_boss), effectLocation)
+            }
+            else {
+                dimension.spawnEntity(params.spawned_boss, effectLocation);
+                dimension.runCommand(`tellraw @a {"rawtext": [{"text": "${params.summon_text}"}]}`);
+            }
         }
 
-
-        block.setPermutation(block.permutation.withState('spimton:activated', false))
-
-        // Decrement stack
-        if (mainhand.amount > 1) mainhand.amount--;
-
-
-        else mainhand.setItem(undefined);
-
-
-        // Play effects
-        const effectLocation = block.above();
-        dimension.playSound("mob.wither.spawn", effectLocation);
-        dimension.spawnParticle("minecraft:trial_spawner_detection_ominous", effectLocation);
-        dimension.spawnEntity("spimton:overgrown_archshaman", effectLocation);
-        dimension.runCommand('tellraw @a {"rawtext": [{"text": "The §aOvergrown Archshaman§r has been summoned!"}]}');
     },
 };
 
 system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
-        "spimton:overgrown_boss",
-        OvergrownBossSpawner
+        "spimton:boss_spawner",
+        BossSpawnerComp
     );
 });
 

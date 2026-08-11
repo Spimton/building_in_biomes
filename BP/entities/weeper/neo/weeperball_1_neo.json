@@ -13,7 +13,7 @@
                 "minecraft:explode": {
                     "fuse_length": 0,
                     "fuse_lit": true,
-                    "power": 1,
+                    "power": 2,
                     "knockback_scaling": 0.1225,
                     "causes_fire": false,
                     "breaks_blocks": true,
@@ -51,8 +51,8 @@
                     },
                     "impact_damage": {
                         "damage": [
-                            6,
-                            2
+                            8,
+                            6
                         ],
                         "knockback": true,
                         "should_bounce": true,

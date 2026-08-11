@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.50",
+	"format_version": "1.21.100",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:overgrown_arena_altar",
@@ -22,24 +22,34 @@
 			}
 		},
 		"components": {
-			"minecraft:geometry": "geometry.altar_jungle",
+			"minecraft:geometry": "geometry.altar",
 			"minecraft:map_color": "#584214",
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "overgrown_altar",
 					"render_method": "alpha_test"
+				},
+				"altar_content": {
+					"texture": "still_lava",
+					"render_method": "alpha_test"
 				}
+			},
+			"spimton:power_comp": {},
+			"spimton:boss_spawner": {
+				"spawn_item": false,
+				"require_offering": false,
+				"offering_item": [
+					"spimton:overgrown_amulet"
+				],
+				"spawned_boss": "spimton:overgrown_horseman",
+				"summon_text": "The §rOvergrown Equestrian§r has been summoned!",
+				"sound": "item.trident.thunder",
+				"item_name": "an §aAmulet§r"
 			},
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 1997
 			},
-			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 1997
-			},
-			"minecraft:custom_components": [
-				"spimton:overgrown_eqboss",
-				"spimton:overgrown_act"
-			],
+			"minecraft:destructible_by_explosion": false,
 			"minecraft:loot": "loot_tables/empty.json"
 		},
 		"permutations": [
@@ -94,10 +104,15 @@
 			{
 				"condition": "q.block_state('spimton:activated') == true",
 				"components": {
-					"minecraft:light_emission": 5,
+					"minecraft:light_emission": 10,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "overgrown_altar"
+							"texture": "overgrown_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "still_lava",
+							"render_method": "alpha_test"
 						}
 					}
 				}
@@ -108,7 +123,12 @@
 					"minecraft:light_emission": 0,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "overgrown_altar_off"
+							"texture": "overgrown_altar",
+							"render_method": "alpha_test"
+						},
+						"altar_content": {
+							"texture": "magma",
+							"render_method": "alpha_test"
 						}
 					}
 				}

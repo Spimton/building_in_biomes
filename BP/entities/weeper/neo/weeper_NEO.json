@@ -749,6 +749,21 @@
                     }
                 }
             },
+            "spimton:ultimatus": {
+                "minecraft:mob_effect_immunity": {
+                    "mob_effects": [
+                        "wither"
+                    ]
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1.997,
+                    "duration_range": 10,
+                    "priority": 3,
+                    "on_start": {
+                        "event": "spimton:ultimatus"
+                    }
+                }
+            },
             /*
 
             PREVENT NO ATTACKS
@@ -1351,7 +1366,8 @@
                                 "spimton:tnt_spiral",
                                 "spimton:tele_shoot",
                                 "spimton:melee_blast",
-                                "spimton:vizier_rain_2"
+                                "spimton:vizier_rain_2",
+                                "spimton:ultimatus"
                             ]
                         },
                         "queue_command": {
@@ -1454,7 +1470,7 @@
                                         {
                                             "test": "target_distance",
                                             "subject": "self",
-                                            "value": 13,
+                                            "value": 16,
                                             "operator": "<="
                                         },
                                         {
@@ -1475,6 +1491,50 @@
                                 },
                                 "queue_command": {
                                     "command": "function mob/weeper/vzf_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "on_ground",
+                                            "subject": "target"
+                                        },
+                                        {
+                                            "test": "is_underground",
+                                            "operator": "!=",
+                                            "subject": "self"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "subject": "self",
+                                            "value": 2,
+                                            "operator": ">"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "subject": "self",
+                                            "value": 16,
+                                            "operator": "<="
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": "<="
+                                        }
+                                    ]
+                                },
+                                "weight": 1,
+                                "set_property": {
+                                    "spimton:armor_color": 1
+                                },
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:ultimatus"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/ulf_dialog"
                                 }
                             },
                             {
@@ -1680,6 +1740,11 @@
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain"
                     ],
                     "target": "self"
@@ -1688,6 +1753,10 @@
             "spimton:tnt_rain_2_alt": {
                 "queue_command": {
                     "command": [
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
+                        "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
                         "summon spimton:tnt_weeper ~ ~ ~ ~ ~ spimton:tnt_rain",
@@ -1956,6 +2025,11 @@
                     "command": "blastfungus 12 spimton:weeperball_5_neo 0.99 4 135"
                 }
             },
+            "spimton:ultimatus": {
+                "queue_command": {
+                    "command": "blastfungus 1 spimton:weeperball_7_neo 0.99 4 66"
+                }
+            },
             /*
 
             DEATH
@@ -1980,7 +2054,8 @@
                         "spimton:tnt_rain",
                         "spimton:tnt_rain_alt",
                         "spimton:shooter_creepie",
-                        "spimton:melee_roar"
+                        "spimton:melee_roar",
+                        "spimton:ultimatus"
                     ]
                 },
                 "set_property": {

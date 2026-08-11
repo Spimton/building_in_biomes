@@ -87,6 +87,43 @@
                         "event": "spimton:on_angry"
                     }
                 }
+            },
+            "spimton:asleep": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:movement": {
+                    "value": 0
+                },
+                "minecraft:movement.basic": {
+                    "max_turn": 0
+                },
+                "minecraft:on_target_acquired": {
+                    "event": "spimton:wakeup"
+                }
+            },
+            "spimton:wake": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:movement": {
+                    "value": 0.29
+                },
+                "minecraft:movement.basic": {
+                    "max_turn": 90
+                },
+                "minecraft:on_target_acquired": {
+                    "event": "spimton:on_angry"
+                },
+                "minecraft:jump.static": {},
+                "minecraft:behavior.look_at_player": {
+                    "priority": 7,
+                    "look_distance": 6,
+                    "probability": 0.025
+                },
+                "minecraft:behavior.random_look_around": {
+                    "priority": 6
+                }
             }
         },
         "components": {
@@ -112,7 +149,6 @@
             },
             "minecraft:is_collidable": {},
             "minecraft:is_hidden_when_invisible": {},
-            "minecraft:jump.static": {},
             "minecraft:health": {
                 "value": 140,
                 "max": 140
@@ -121,14 +157,6 @@
                 "damage": 14
             },
             "minecraft:behavior.random_stroll": {
-                "priority": 6
-            },
-            "minecraft:behavior.look_at_player": {
-                "priority": 7,
-                "look_distance": 6,
-                "probability": 0.025
-            },
-            "minecraft:behavior.random_look_around": {
                 "priority": 6
             },
             "minecraft:behavior.nearest_prioritized_attackable_target": {
@@ -244,7 +272,7 @@
             "minecraft:entity_spawned": {
                 "add": {
                     "component_groups": [
-                        "spimton:angry"
+                        "spimton:asleep"
                     ]
                 }
             },
@@ -261,6 +289,11 @@
                 }
             },
             "spimton:on_angry": {
+                "filters": {
+                    "test": "is_variant",
+                    "operator": ">=",
+                    "value": 1
+                },
                 "add": {
                     "component_groups": [
                         "spimton:angry"
@@ -292,13 +325,24 @@
                         "summon spimton:bluestone_crystal",
                         "summon spimton:bluestone_crystal",
                         "summon spimton:bluestone_crystal",
-                        "spreadplayers ~ ~ 3 9 @e[type=spimton:bluestone_crystal,r=1] ~15"
+                        "spreadplayers ~ ~ 3 9 @e[type=spimton:bluestone_crystal,r=1] ~5"
                     ]
                 },
                 "remove": {
                     "component_groups": [
                         "spimton:angry"
                     ]
+                }
+            },
+            "spimton:wakeup": {
+                "add": {
+                    "component_groups": [
+                        "spimton:wake",
+                        "spimton:angry"
+                    ]
+                },
+                "queue_command": {
+                    "command": "playanimation @s animation.bluestone_golem.wake"
                 }
             }
         }

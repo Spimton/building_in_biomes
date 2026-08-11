@@ -20,9 +20,9 @@
                 "minecraft:explode": {
                     "fuse_length": 0,
                     "fuse_lit": true,
-                    "power": 2,
+                    "power": 3,
                     "knockback_scaling": 2,
-                    "damage_scaling": 0.1225,
+                    "damage_scaling": 0.66,
                     "causes_fire": false,
                     "breaks_blocks": true,
                     "destroy_affected_by_griefing": true,
@@ -59,8 +59,8 @@
                     },
                     "impact_damage": {
                         "damage": [
-                            6,
-                            2
+                            8,
+                            6
                         ],
                         "knockback": true,
                         "should_bounce": true,

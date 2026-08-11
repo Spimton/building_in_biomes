@@ -62,7 +62,7 @@
                         "particle_type": "crit"
                     },
                     "impact_damage": {
-                        "damage": 1
+                        "damage": 19
                     }
                 },
                 "multiple_targets": true,

@@ -1,0 +1,113 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:weeperball_8_neo",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "snowball",
+            "properties": {}
+        },
+        "component_groups": {
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true,
+                "despawn_from_distance": {
+                    "max_distance": 63,
+                    "min_distance": 62
+                }
+            },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "creeper",
+                    "inanimate"
+                ]
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 0.1225,
+                "time_down_event": {
+                    "event": "spimton:splode"
+                }
+            },
+            "minecraft:projectile": {
+                "multiple_targets": true,
+                "power": 3,
+                "gravity": 0,
+                "inertia": 1,
+                "liquid_inertia": 1,
+                "uncertainty_base": 0,
+                "uncertainty_multiplier": 0,
+                "anchor": 1,
+                "offset": [
+                    0,
+                    0.1997,
+                    0
+                ],
+                "reflect_on_hurt": false,
+                "catch_fire": false
+            },
+            "minecraft:physics": {
+                "has_collision": false
+            },
+            "minecraft:area_attack": {
+                "use_self_as_damage_source": false,
+                "cause": "entity_explosion",
+                "damage_cooldown": 0.1225,
+                "damage_per_tick": 128,
+                "damage_range": 3,
+                "entity_filter": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "operator": "!=",
+                            "value": "inanimate"
+                        },
+                        {
+                            "test": "is_family",
+                            "operator": "!=",
+                            "value": "creeper"
+                        }
+                    ]
+                }
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 80,
+                    "max_dropped_ticks": 10,
+                    "use_motion_prediction_hints": true
+                }
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "spimton:splode": {
+                "queue_command": {
+                    "command": [
+                        "damage @e[family=!inanimate,r=4] 256 entity_explosion"
+                    ]
+                }
+            },
+            "spimton:desp": {}
+        }
+    }
+}

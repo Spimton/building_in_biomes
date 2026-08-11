@@ -21,7 +21,7 @@ const Powaa = {
 
 system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
-        "spimton:overgrown_act",
+        "spimton:power_comp",
         Powaa
     );
 });

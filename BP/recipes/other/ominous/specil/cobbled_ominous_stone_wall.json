@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:cobbled_ominous_stone_wall"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "###",
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:cobbled_ominous_stone"
+            }
+        },
+        "assume_symmetry": true,
+        "result": {
+            "item": "spimton:cobbled_ominous_stone_wall",
+            "count": 6
+        },
+        "unlock": {
+            "context": "PlayerHasManyItems"
+        }
+    }
+}

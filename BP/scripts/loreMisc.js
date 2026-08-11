@@ -1,4 +1,5 @@
 import { system, world } from '@minecraft/server'
+import { ConfigItems } from "./CONFIG.js"
 
 class loreItem {
     constructor(itemId, lore) {
@@ -121,11 +122,11 @@ const ItemArray = [
     new loreItem("spimton:dragon_fireball_upgrade", ["§r§7\nThe Golem will shoot Dragon Fireballs, which\ncreate an area effect cloud of dragon breath.\nThe Bronze Golem will take damage from this, so be careful."]),
     new loreItem("spimton:antique_brush", ["§r§7Right click blocks to turn them into", "§r§7their non sandy variant.", "§r§7Right click while sneaking to turn them into", "§r§7their non-sandy variant in a 3x3 square (only if up close).", "§r§7Performing one of these actions drops Dust."]),
     new loreItem("spimton:runic_tome", ["§r§7The knowledge of the ancient builders", "§r§7is now at your disposal"]),
-    new loreItem("spimton:steel_shield", ["§8Level 10 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward, but with 10 ticks of cooldown", "§r§c20% damage reduction penalty", "§r§cCannot block fatal damage"]),
-    new loreItem("spimton:gold_shield", ["§8Level 10 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward, but with 5 ticks of cooldown", "§r§c40% damage reduction penalty", "§r§cCannot block fatal damage"]),
-    new loreItem("spimton:charge_shield", ["§8Level 15 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", "§r§c30% damage reduction penalty", "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon recieving damage"]),
-    new loreItem("spimton:ancient_gold_shield", ["§8Level 15 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bGain §eDash§b energy while on fire", "§r§c50% damage reduction penalty", "§r§cCharge only when on fire", "§r§cCannot block fatal damage", "§r§hDepending on §eDash§h energy, sets you or the enemy on fire"]),
-    new loreItem("spimton:charge_shield_td", ["§8Level 20 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", "§r§bReflects damage on attacker", "§r§c70% damage reduction penalty", "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon collision"]),
+    new loreItem("spimton:steel_shield", ["§8Level 10 Shield\n", "§r§bCan block while attacking", `§r§bYou can dash forward, but with ${ConfigItems.steelTargeDash} ticks of cooldown`, `§r§c${100 - ConfigItems.steelTargeReduction * 100}% damage reduction penalty`]),
+    new loreItem("spimton:gold_shield", ["§8Level 10 Shield\n", "§r§bCan block while attacking", `§r§bYou can dash forward, but with ${ConfigItems.goldTargeDash} ticks of cooldown`, `§r§c${100 - ConfigItems.goldTargeReduction * 100}% damage reduction penalty`, "§r§cCannot block fatal damage"]),
+    new loreItem("spimton:charge_shield", ["§8Level 15 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", `§r§c${100 - ConfigItems.chargeTargeReduction * 100}% damage reduction penalty`, "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon recieving damage"]),
+    new loreItem("spimton:ancient_gold_shield", ["§8Level 15 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bGain §eDash§b energy while on fire", `§r§c${100 - ConfigItems.sunTargeReduction * 100}% damage reduction penalty`, "§r§cCharge only when on fire", "§r§cCannot block fatal damage", "§r§hDepending on §eDash§h energy, sets you or the enemy on fire"]),
+    new loreItem("spimton:charge_shield_td", ["§8Level 20 Shield\n", "§r§bCan block while attacking", "§r§bYou can dash forward with no cooldown", "§r§bDamages entities upon collision", "§r§bReflects damage on attacker", `§r§c%${100 - ConfigItems.chargeTarge2Reduction * 100}damage reduction penalty`, "§r§cCannot block fatal damage", "§r§c-100% Knockback resistance", "§r§cCharge is interrupted for 1 second upon collision"]),
     new loreItem("spimton:record_wilted", ["§r§7Elwood - Into the Shadow"]),
     new loreItem("spimton:sol_sword", ["§r§7Increases souls gained"])
 

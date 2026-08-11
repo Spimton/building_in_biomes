@@ -110,10 +110,10 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
 
         switch (eventId) {
             case "spimton:tnt_rain_1":
-                shootAroundHead(entity.dimension, entity.getHeadLocation(), Math.ceil(Math.random() * 6.67), "spimton:tnt_weeper_proj", Math.random() * 1.225, Math.random())
+                shootAroundHead(entity.dimension, entity.getHeadLocation(), Math.ceil(Math.random() * 9), "spimton:tnt_weeper_proj", Math.random() * 1.225, Math.random())
                 break;
             case "spimton:tnt_rain_2":
-                shootAroundHead(entity.dimension, entity.getHeadLocation(), Math.ceil(Math.random() * 12.25), "spimton:tnt_weeper_proj", Math.random() * 2.25, Math.random())
+                shootAroundHead(entity.dimension, entity.getHeadLocation(), Math.ceil(Math.random() * 14), "spimton:tnt_weeper_proj", Math.random() * 2.25, Math.random())
                 break;
             case "spimton:commence_phase_1":
                 entity.dimension.createExplosion(entity.location, WeeperConfig.initialExplosionRadius, { breaksBlocks: world.gameRules.mobGriefing, causesFire: false, source: entity })
@@ -246,7 +246,8 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
 
                 break;
             case "spimton:jarona":
-                const Jamultiplier = entity.getDynamicProperty("spimton:weeper_creeper_absorption");
+                let Jamultiplier = entity.getDynamicProperty("spimton:weeper_creeper_absorption");
+                if (Jamultiplier === undefined) Jamultiplier = 0;
 
                 const wargets = entity.dimension.getEntities({ location: entity.location, maxRange: 32, closest: 1, tags: ["spimton:weeper_target"] });
 
@@ -276,13 +277,18 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
                 }
                 break;
             case "spimton:tnt_spiral":
-                if (Math.random() > 0.5) {
+                if (Math.random() > 0.1997) {
                     spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, true, 0, 4, 2, 1)
                     spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, true, 180, 4, 2, 1)
+                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, true, 90, 4, 2, 1)
+                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, true, 270, 4, 2, 1)
                 }
                 else {
-                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, false, 90, 4, 2, 1)
-                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, false, 270, 4, 2, 1)
+                    const random = Math.random() > 0.5 ? true : false;
+                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, random, 0, 4, 2, 1)
+                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, random, 180, 4, 2, 1)
+                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, random, 90, 4, 2, 1)
+                    spiral(entity, "spimton:tnt_weeper_proj", 30, 22.5, 0.5, 0.1225, random, 270, 4, 2, 1)
                 }
                 break;
             case "spimton:shoot_tele":
@@ -298,6 +304,10 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
                     const distance = Math.hypot(dz, dx, dy);
                     const damage = ((WeeperConfig.shockwaveBaseDamage + WeeperConfig.shockwaveDamageMultiplier * absorbed) / (1 + distance * WeeperConfig.shochwaveDistanceDamageModifier));
                     if (damage > 0) damagee.applyDamage(damage, { damagingEntity: entity, cause: "entityAttack" });
+                    damagee.applyKnockback({
+                        x: dx / distance * 1.997,
+                        z: dx / distance * 1.997
+                    }, dy / distance + 1)
 
                 };
                 entity.setDynamicProperty("spimton:weeper_impulse_absorption", 0)
@@ -405,6 +415,39 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
 
 
     }
+    if (entity.typeId === "spimton:weeperball_7_neo") {
+        if (eventId === "spimton:splode") {
+            let directions = [{
+                x: 1.225,
+                y: 0,
+                z: 0
+            },
+            {
+                x: -1.225,
+                y: 0,
+                z: 0
+            },
+            {
+                x: 0,
+                y: 0,
+                z: 1.225
+            },
+            {
+                x: 0,
+                y: 0,
+                z: -1.225
+            }]
+            const { x, y, z } = entity.location;
+            for (const direction of directions) {
+                const projectile = entity.dimension.spawnEntity("spimton:weeperball_8_neo", { x: x, y: y + 1.5, z: z })
+                projectile.getComponent("projectile").shoot(direction)
+            }
+        }
+
+
+
+
+    }
 })
 
 
@@ -476,7 +519,8 @@ world.beforeEvents.entityHurt.subscribe((event) => {
         if (event.damageSource.damagingProjectile.typeId === "spimton:fist_of_the_north_star") {
 
             const power = event.damageSource.damagingProjectile.getProperty("spimton:powerup")
-            event.damage += WeeperConfig.fotnsBaseDamage + WeeperConfig.fotnsDamageMult * power + event.hurtEntity.getComponent("health").effectiveMax * WeeperConfig.fotnsPercDamage;
+            event.damage = event.damage * (1 + WeeperConfig.fotnsDamageMult * power) + event.hurtEntity.getComponent("health").effectiveMax * WeeperConfig.fotnsPercDamage;
+            console.warn(event.damage);
 
         }
     }
@@ -500,6 +544,12 @@ world.afterEvents.entityHurt.subscribe((event) => {
         hurtEntity.setDynamicProperty("spimton:weeper_impulse_absorption", damageAbsorbed + RecievedDamage);
 
     }
+    if (damageSource.cause === "lightning") {
+        const Champions = hurtEntity.dimension.getEntities({ location: hurtEntity.location, maxRange: 32, type: "spimton:justice_champion" });
+        for (const champion of Champions) {
+            champion.addEffect("instant_health", 1, { amplifier: 0 })
+        };
+    }
 
 
 })
@@ -515,7 +565,7 @@ world.afterEvents.projectileHitEntity.subscribe((event) => {
 
             break;
         case "spimton:fist_of_the_north_star":
-            projectile.dimension.createExplosion(projectile.location, WeeperConfig.fotnsBaseRadius + projectile.getProperty("spimton:powerup") * WeeperConfig.fotnsRadiusMult, { breaksBlocks: world.gameRules.mobGriefing })
+            projectile.dimension.createExplosion(projectile.location, WeeperConfig.fotnsBaseRadius + projectile.getProperty("spimton:powerup") * WeeperConfig.fotnsRadiusMult, { breaksBlocks: world.gameRules.mobGriefing, source: projectile })
             projectile.remove()
 
     }
@@ -526,7 +576,7 @@ world.afterEvents.projectileHitBlock.subscribe((event) => {
     const projectile = event.projectile;
     switch (projectile.typeId) {
         case "spimton:fist_of_the_north_star":
-            projectile.dimension.createExplosion({ x: projectile.location.x, y: projectile.location.y + 1, z: projectile.location.z }, WeeperConfig.fotnsBaseRadius + projectile.getProperty("spimton:powerup") * WeeperConfig.fotnsRadiusMult, { breaksBlocks: world.gameRules.mobGriefing })
+            projectile.dimension.createExplosion({ x: projectile.location.x, y: projectile.location.y + 1, z: projectile.location.z }, WeeperConfig.fotnsBaseRadius + projectile.getProperty("spimton:powerup") * WeeperConfig.fotnsRadiusMult, { breaksBlocks: world.gameRules.mobGriefing, source: projectile })
             projectile.remove()
 
     }

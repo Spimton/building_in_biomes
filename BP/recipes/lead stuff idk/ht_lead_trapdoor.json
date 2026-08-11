@@ -13,12 +13,12 @@
 			}
 		},
 		"pattern": [
-			"###",
-			"###"
+			"##",
+			"##"
 		],
 		"result": {
 			"item": "spimton:ht_lead_trapdoor",
-			"count": 3
+			"count": 2
 		}
 	}
 }

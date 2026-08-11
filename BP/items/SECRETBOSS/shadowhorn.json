@@ -12,11 +12,8 @@
 			"minecraft:rarity": "epic",
 			"minecraft:hover_text_color": "dark_purple",
 			"minecraft:max_stack_size": 1,
-			"minecraft:custom_components": [
-				"spimton:shadowhorn"
-			],
 			"minecraft:durability": {
-				"max_durability": 3
+				"max_durability": 6
 			}
 		}
 	}

@@ -21,13 +21,6 @@
                 "width": 1,
                 "height": 1
             },
-            "minecraft:despawn": {
-                "despawn_from_simulation_edge": true,
-                "despawn_from_distance": {
-                    "max_distance": 128,
-                    "min_distance": 64
-                }
-            },
             "minecraft:projectile": {
                 "power": 1.5,
                 "gravity": 0,

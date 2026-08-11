@@ -9,39 +9,18 @@
             }
         },
         "components": {
-            "minecraft:geometry": "geometry.temple_altar",
-            "minecraft:map_color": "#584214",
+            "minecraft:geometry": "geometry.altar",
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 1997
-            },
-            "minecraft:collision_box": {
-                "origin": [
-                    -8,
-                    0,
-                    -8
-                ],
-                "size": [
-                    16,
-                    14,
-                    16
-                ]
-            },
-            "minecraft:selection_box": {
-                "origin": [
-                    -8,
-                    0,
-                    -8
-                ],
-                "size": [
-                    16,
-                    14,
-                    16
-                ]
             },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "temple_altar",
-                    "render_method": "opaque"
+                    "render_method": "alpha_test"
+                },
+                "altar_content": {
+                    "texture": "sea_lantern",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:destructible_by_explosion": {

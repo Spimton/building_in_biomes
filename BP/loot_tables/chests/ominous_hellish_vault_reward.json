@@ -27,7 +27,7 @@
                             "function": "set_count",
                             "count": {
                                 "max": 15,
-                                "min": 1
+                                "min": 3
                             }
                         }
                     ],
@@ -68,8 +68,36 @@
                         {
                             "function": "set_count",
                             "count": {
+                                "max": 5,
+                                "min": 2
+                            }
+                        }
+                    ],
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "diamond_block",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
                                 "max": 3,
                                 "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 15
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:crimsite_block",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 2
                             }
                         }
                     ],

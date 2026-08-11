@@ -83,10 +83,16 @@
                 "value": 0
             },
             "minecraft:damage_sensor": {
-                "triggers": {
-                    "cause": "entity_explosion",
-                    "deals_damage": "no"
-                }
+                "triggers": [
+                    {
+                        "cause": "entity_explosion",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "lightning",
+                        "deals_damage": "no"
+                    }
+                ]
             },
             "minecraft:mob_effect_immunity": {
                 "mob_effects": [

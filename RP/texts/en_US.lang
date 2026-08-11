@@ -900,6 +900,8 @@ tile.spimton:ominous_carpet_corner.name=Ominous Carpet Corner
 tile.spimton:ominous_carpet_side.name=Ominous Carpet Side
 tile.spimton:indented_gold_lamp.name=Indented Gold Lamp
 tile.spimton:cracked_ominous_stone_bricks.name=Cracked Ominous Stone Bricks
+tile.spimton:cobbled_ominous_stone_wall.name=Cobbled Ominous Stone Wall
+tile.spimton:ominous_stone_bricks_wall.name=Ominous Stone Bricks Wall
 tile.spimton:brazier.name=Brazier
 tile.spimton:candle_holder.name=Candle Holder
 tile.spimton:chandelier.name=Chandelier
@@ -1440,6 +1442,8 @@ entity.spimton:weeperball_1_neo.name=Weeper Skull
 entity.spimton:weeperball_2_neo.name=Weeper Fireball
 entity.spimton:weeperball_3_neo.name=Charged Weeper Skull
 entity.spimton:weeperball_4_neo.name=Weeper Skull
+entity.spimton:weeperball_5_neo.name=Weeper Bomb
+entity.spimton:fist_of_the_north_star.name=§w§lFist of the North Star§r
 
 
 

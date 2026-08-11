@@ -55,18 +55,13 @@
 			},
 			"minecraft:geometry": "geometry.lavalampv3",
 			"minecraft:material_instances": {
-				"outerglass": {
-					"texture": "lavalamp_outer",
+				"*": {
+					"texture": "lavalamp",
 					"render_method": "alpha_test",
 					"face_dimming": true
 				},
-				"outergold": {
-					"texture": "lavalamp_outer",
-					"render_method": "alpha_test",
-					"face_dimming": true
-				},
-				"innerlamp": {
-					"texture": "lavalamp_inner",
+				"lava": {
+					"texture": "flowing_lava",
 					"render_method": "alpha_test",
 					"face_dimming": true
 				}
