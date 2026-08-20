@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:arch_volcano",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/arch_volcano",
+                "crack1": "textures/entity/arch_volcano",
+                "crack2": "textures/entity/arch_volcano",
+                "crack3": "textures/entity/arch_volcano"
+            },
+            "geometry": {
+                "default": "geometry.arch_volcano"
+            },
+            "scripts": {
+                "scale": "0.9375",
+                "animate": [
+                    {
+                        "erect": "query.mark_variant == 0"
+                    }
+                ]
+            },
+            "animations": {
+                "erect": "animation.bluestone_crystal.erect",
+                "attack_rotations": "animation.hunter.attack.rotations",
+                "look_at_target": "animation.common.look_at_target",
+                "controller_general": "controller.animation.evoker.general"
+            },
+            "render_controllers": [
+                "controller.render.default",
+                "controller.render.column"
+            ],
+            "enable_attachables": true
+        }
+    }
+}

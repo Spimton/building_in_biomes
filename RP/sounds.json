@@ -510,7 +510,11 @@
                 "volume": 1,
                 "pitch": 0.5,
                 "events": {
-                    "death": "mob.wither.death",
+                    "death": {
+                        "sound": "mob.wither.death",
+                        "pitch": 1,
+                        "volume": 1
+                    },
                     "hurt": "mob.creeper.say",
                     "fuse": {
                         "pitch": 0.5,
@@ -953,6 +957,14 @@
                 "events": {
                     "hurt": "hit.stone",
                     "death": "dig.stone"
+                }
+            },
+            "spimton:arch_volcano": {
+                "pitch": 0.66,
+                "volume": 12.25,
+                "events": {
+                    "hurt": "hit.basalt",
+                    "death": "dig.basalt"
                 }
             }
         }

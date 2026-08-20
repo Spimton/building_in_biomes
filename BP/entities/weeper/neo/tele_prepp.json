@@ -75,7 +75,7 @@
                 },
                 "queue_command": {
                     "command": [
-                        "spreadplayers ~ ~ 12 25 @s ~",
+                        "spreadplayers ~ ~ 12 25 @s ~30",
                         "event entity @s spimton:shyre"
                     ]
                 }

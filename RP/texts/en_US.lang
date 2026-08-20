@@ -1442,8 +1442,9 @@ entity.spimton:weeperball_1_neo.name=Weeper Skull
 entity.spimton:weeperball_2_neo.name=Weeper Fireball
 entity.spimton:weeperball_3_neo.name=Charged Weeper Skull
 entity.spimton:weeperball_4_neo.name=Weeper Skull
-entity.spimton:weeperball_5_neo.name=Weeper Bomb
-entity.spimton:fist_of_the_north_star.name=§w§lFist of the North Star§r
+entity.spimton:weeperball_5_neo.name=Michael Bomb
+entity.spimton:weeperball_7_neo.name=Ultimate Michael Bomb
+entity.spimton:fist_of_the_north_star.name=Fist of the North Star
 
 
 

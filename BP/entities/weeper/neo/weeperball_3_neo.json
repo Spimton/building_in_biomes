@@ -22,7 +22,7 @@
                     "fuse_lit": true,
                     "power": 3,
                     "knockback_scaling": 2,
-                    "damage_scaling": 0.66,
+                    "damage_scaling": 0.33,
                     "causes_fire": false,
                     "breaks_blocks": true,
                     "destroy_affected_by_griefing": true,

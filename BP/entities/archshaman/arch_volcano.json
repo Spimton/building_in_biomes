@@ -1,0 +1,171 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:arch_volcano",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "properties": {
+                "spimton:phase": {
+                    "default": 2,
+                    "type": "int",
+                    "range": [
+                        2,
+                        3
+                    ]
+                }
+            }
+        },
+        "component_groups": {
+            "spimton:splode": {
+                "minecraft:explode": {
+                    "causes_fire": true,
+                    "breaks_blocks": false,
+                    "power": 4,
+                    "fuse_length": 1.997,
+                    "fuse_lit": true
+                }
+            },
+            "spimton:despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:attack": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:behavior.timer_flag_1": {
+                    "priority": 1,
+                    "cooldown_range": 1.225,
+                    "duration_range": 0,
+                    "on_start": {
+                        "event": "spimton:phire"
+                    }
+                },
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 10,
+                    "time_down_event": {
+                        "event": "spimton:desp"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 22,
+                "max": 22,
+                "min": 1
+            },
+            "minecraft:timer": {
+                "time": 1,
+                "time_down_event": {
+                    "event": "spimton:attack"
+                }
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate",
+                    "spimton:archshaman"
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:physics": {
+                "has_gravity": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "width": 1.8,
+                "height": 2.4
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:nameable": {},
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison",
+                    "wither",
+                    "fatal_poison",
+                    "levitation"
+                ]
+            },
+            "minecraft:on_death": {
+                "event": "spimton:desp"
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "entity_explosion",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "projectile",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "spimton:attack": {
+                "add": {
+                    "component_groups": [
+                        "spimton:attack"
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:splode"
+                    ]
+                }
+            },
+            "spimton:phase2": {
+                "set_property": {
+                    "spimton:phase": 2
+                }
+            },
+            "spimton:phase3": {
+                "set_property": {
+                    "spimton:phase": 3
+                }
+            },
+            "spimton:phire": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:phase",
+                            "value": 2
+                        },
+                        "queue_command": {
+                            "command": "blastfungus 1 spimton:fireball_friendly 0.8 2.5 30"
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:phase",
+                            "value": 3
+                        },
+                        "queue_command": {
+                            "command": [
+                                "blastfungus 1 spimton:fireball_friendly_bigg 0.85 2.5 30"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

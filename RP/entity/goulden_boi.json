@@ -39,6 +39,9 @@
 				"controller.render.goulden_boi",
 				"controller.render.goulden_boi_rune"
 			],
+			"particle_effects": {
+				"rune": "minecraft:lava_particle"
+			},
 			"spawn_egg": {
 				"texture": "goulden_guard_egg"
 			}

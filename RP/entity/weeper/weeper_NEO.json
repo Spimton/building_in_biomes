@@ -48,7 +48,7 @@
 			],
 			"particle_effects": {
 				"spell": "minecraft:knockback_roar_particle",
-				"death": "spimton:deltarune_explosion_multiple"
+				"death": "spimton:weeper_death"
 			},
 			"render_controllers": [
 				"controller.render.weeper_neo",

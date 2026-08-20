@@ -24,6 +24,9 @@
 				"idling": "animation.rune.normal",
 				"controller_general": "controller.animation.evoker.general"
 			},
+			"particle_effects": {
+				"rune": "minecraft:lava_particle"
+			},
 			"render_controllers": [
 				"controller.render.default"
 			],

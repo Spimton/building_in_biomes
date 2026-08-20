@@ -219,6 +219,25 @@
 							"max_dist": 30
 						}
 					]
+				},
+				"minecraft:behavior.nearest_prioritized_attackable_target": {
+					"priority": 1,
+					"must_see": false,
+					"persist_time": 10,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							},
+							"max_dist": 40
+						}
+					]
 				}
 			},
 			"spimton:shootah": {
@@ -616,6 +635,90 @@
 							"filters": {
 								"any_of": [
 									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 2
+									}
+								]
+							},
+							"min_activation_range": 6,
+							"max_activation_range": 18,
+							"cooldown_time": 5,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:mby_dialog",
+									"size": 1,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.1225,
+									"num_entities_spawned": 4,
+									"entity_type": "spimton:arch_volcano",
+									"size": 12.25,
+									"entity_lifespan": 12,
+									"summon_event": "spimton:phase2",
+									"sound_event": "prepare.attack"
+								}
+							]
+						},
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 3
+									}
+								]
+							},
+							"min_activation_range": 6,
+							"max_activation_range": 18,
+							"cooldown_time": 5,
+							"weight": 3,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.15,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 1,
+									"entity_type": "spimton:mby_dialog",
+									"size": 1,
+									"entity_lifespan": 6
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.1225,
+									"num_entities_spawned": 4,
+									"entity_type": "spimton:arch_volcano",
+									"size": 12.25,
+									"entity_lifespan": 12,
+									"summon_event": "spimton:phase3",
+									"sound_event": "prepare.attack"
+								}
+							]
+						},
+						{
+							"filters": {
+								"any_of": [
+									{
 										"test": "is_underground",
 										"subject": "self"
 									},
@@ -923,6 +1026,14 @@
 					},
 					{
 						"filters": {
+							"test": "in_water",
+							"subject": "self"
+						},
+						"target": "self",
+						"event": "spimton:water"
+					},
+					/*{
+						"filters": {
 							"test": "int_property",
 							"domain": "spimton:phase",
 							"value": 1
@@ -944,7 +1055,7 @@
 							"value": 3
 						},
 						"event": "spimton:bossbar_3"
-					},
+					},*/
 					{
 						"filters": {
 							"test": "has_mob_effect",
@@ -1037,9 +1148,20 @@
 					"target": "self",
 					"command": [
 						"title @a[r=30] actionbar The Archshaman concentrated the lava into the SUN!",
-						"fill ~10 ~-5 ~10 ~-10 ~15 ~-10 air replace lava",
-						"fill ~10 ~-5 ~10 ~-10 ~15 ~-10 air replace flowing_lava",
+						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace lava",
+						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace flowing_lava",
 						"summon spimton:sun"
+					]
+				}
+			},
+			"spimton:water": {
+				"queue_command": {
+					"target": "self",
+					"command": [
+						"title @a[r=30] actionbar The Archshaman evaporated the water! Made in Heaven cooldown increased!",
+						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace water",
+						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace flowing_water",
+						"scoreboard players add @s mih_treshold 150"
 					]
 				}
 			},
@@ -1239,6 +1361,9 @@
 				"set_property": {
 					"spimton:phase": 1
 				},
+				"trigger": {
+					"event": "spimton:bossbar_1"
+				},
 				"add": {
 					"component_groups": [
 						"spimton:33"
@@ -1252,6 +1377,9 @@
 				}
 			},
 			"spimton:health_2": {
+				"trigger": {
+					"event": "spimton:bossbar_2"
+				},
 				"set_property": {
 					"spimton:phase": 2
 				},
@@ -1270,6 +1398,9 @@
 			"spimton:health_1": {
 				"set_property": {
 					"spimton:phase": 3
+				},
+				"trigger": {
+					"event": "spimton:bossbar_3"
 				},
 				"add": {
 					"component_groups": [

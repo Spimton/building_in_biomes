@@ -955,6 +955,25 @@
                     }
                 ]
             },
+            "minecraft:behavior.nearest_prioritized_attackable_target": {
+                "priority": 1,
+                "must_see": false,
+                "persist_time": 30,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                }
+                            ]
+                        },
+                        "max_dist": 64
+                    }
+                ]
+            },
             "minecraft:behavior.look_at_player": {
                 "priority": 9,
                 "look_distance": 3,
@@ -2059,7 +2078,8 @@
                     ]
                 },
                 "set_property": {
-                    "spimton:phase": 4
+                    "spimton:phase": 4,
+                    "spimton:armor_color": 1
                 },
                 "add": {
                     "component_groups": [
@@ -2067,7 +2087,10 @@
                     ]
                 },
                 "queue_command": {
-                    "command": "function mob/weeper/death_neo"
+                    "command": [
+                        "function mob/weeper/death_neo",
+                        "effect @s levitation 10 0 true"
+                    ]
                 }
             }
         }

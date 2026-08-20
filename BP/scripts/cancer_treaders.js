@@ -2,51 +2,61 @@
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 import { Entity, GameMode, Player, world, system, BlockPermutation } from "@minecraft/server";
 
+const ignoredEntities = [
+    "spimton:creepie",
+    "minecraft:xp_orb",
+    "spimton:creeper_spore",
+    "evocation_fang",
+    "spimton:cspore",
+    "spimton:thefatrat"
+]
+
 /** @type {import("@minecraft/server").BlockCustomComponent} */
 const BlockWitherTreadersComponent = {
-    onTick(event) {
-        const entities = event.dimension.getEntitiesAtBlockLocation(event.block.above().location);
-        entities.forEach((entity) => {
-            if (entity.typeId === 'spimton:creepie' || entity.typeId === 'minecraft:xp_orb' || entity.typeId === 'spimton:creeper_spore' || entity.typeId === 'spimton:cspore' || entity.typeId === 'spimton:pspore' || entity.typeId === 'minecraft:item' || entity.typeId === 'evocation_fang') return 0;
-            else {
 
-                entity.runCommand('fill ~ ~ ~ ~ ~-2 ~ spimton:gloom_tiles replace spimton:runed_gloom_tiles')
-                entity.runCommand('fill ~ ~ ~ ~ ~-2 ~ spimton:runed_gloom_tiles_cooldown replace spimton:runed_gloom_tiles_p')
-                entity.runCommand('execute if block ~ ~-1 ~ air run fill ~1 ~ ~1 ~-1 ~-2 ~-1 spimton:runed_gloom_tiles_cooldown replace spimton:runed_gloom_tiles_p')
-                entity.addEffect('slowness', 20, { amplifier: 4, showParticles: false })
-                entity.runCommand('execute unless entity @e[type=evocation_fang,r=1] run summon evocation_fang')
-            }
-        });
-    },
+
 };
+
+
+function spawnFang(event, component) {
+    const { block, entity } = event;
+    const { entity: fang, replace_block } = component.params;
+
+    if (!entity) return;
+
+    if (entity.typeId === "minecraft:item") return;
+
+    if (ignoredEntities.includes(entity.typeId)) return;
+
+    const location = {
+        x: block.location.x + 0.5,
+        y: block.location.y + 1,
+        z: block.location.z + 0.5
+    };
+
+    block.dimension.runCommand(
+        `summon ${fang} ${location.x} ${location.y} ${location.z}`
+    );
+
+    block.setType(replace_block);
+}
+
 
 system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
         "spimton:rune",
-        BlockWitherTreadersComponent
-    );
-});
+        {
+            onStepOn(event, params) {
+                spawnFang(event, params);
+            },
 
-system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
-    blockComponentRegistry.registerCustomComponent("spimton:rune_radio", {
-        onTick(event) {
-            const entities = event.dimension.getEntitiesAtBlockLocation(event.block.above().location);
-            entities.forEach((entity) => {
-                if (entity.typeId === 'spimton:thefatrat' || entity.typeId === 'minecraft:xp_orb' || entity.typeId === 'spimton:creeper_spore' || entity.typeId === 'spimton:cspore' || entity.typeId === 'spimton:pspore' || entity.typeId === 'minecraft:item' || entity.typeId === 'evocation_fang') return 0;
-                else {
-
-                    entity.runCommand('fill ~ ~ ~ ~ ~-2 ~ spimton:gloom_tiles replace spimton:radioactive_gloom_tiles')
-                    entity.runCommand('fill ~ ~ ~ ~ ~-2 ~ spimton:radioactive_gloom_tiles_cooldown replace spimton:radioactive_gloom_tiles_p')
-                    entity.runCommand('execute if block ~ ~-1 ~ air run fill ~1 ~ ~1 ~-1 ~-2 ~-1 spimton:radioactive_gloom_tiles_cooldown replace spimton:radioactive_gloom_tiles_p')
-                    entity.addEffect('slowness', 20, { amplifier: 4, showParticles: false })
-                    entity.runCommand('execute unless entity @e[type=spimton:thefatrat,r=1] run summon spimton:thefatrat')
-                }
-            });
+            onEntityFallOn(event, params) {
+                spawnFang(event, params);
+            }
         }
-    }
-
     );
 });
+
 system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent("spimton:trampoline", {
         onEntityFallOn(event) {

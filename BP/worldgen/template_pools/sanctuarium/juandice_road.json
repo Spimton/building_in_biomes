@@ -8,14 +8,16 @@
             {
                 "element": {
                     "element_type": "minecraft:single_pool_element",
-                    "location": "sanctuarium_neo/juandice_village_path"
+                    "location": "sanctuarium_neo/juandice_village_path",
+                    "processors": "spimton:empty_proc"
                 },
                 "weight": 1
             },
             {
                 "element": {
                     "element_type": "minecraft:single_pool_element",
-                    "location": "sanctuarium_neo/juandice_village_turn"
+                    "location": "sanctuarium_neo/juandice_village_turn",
+                    "processors": "spimton:empty_proc"
                 },
                 "weight": 1
             }

@@ -30,13 +30,6 @@
             }
         },
         "components": {
-            "minecraft:despawn": {
-                "despawn_from_simulation_edge": true,
-                "despawn_from_distance": {
-                    "max_distance": 128,
-                    "min_distance": 64
-                }
-            },
             "minecraft:collision_box": {
                 "width": 3,
                 "height": 3

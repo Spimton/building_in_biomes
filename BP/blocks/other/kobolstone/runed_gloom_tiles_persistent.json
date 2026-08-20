@@ -1,17 +1,11 @@
 {
-	"format_version": "1.21.40",
+	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:runed_gloom_tiles_p",
 			"menu_category": {
 				"category": "construction",
 				"is_hidden_in_commands": false
-			},
-			"states": {
-				"spimton:stood_on": [
-					false,
-					true
-				]
 			}
 		},
 		"components": {
@@ -28,28 +22,10 @@
 			"tag:minecraft:is_pickaxe_item_destructible": {},
 			"tag:stone": {},
 			"tag:is_pickaxe_item_destructible": {},
-			"minecraft:custom_components": [
-				"spimton:treader_detection"
-			],
-			"minecraft:loot": "loot_tables/empty.json"
-		},
-		"permutations": [
-			{
-				"condition": "q.block_state('spimton:stood_on')",
-				"components": {
-					"minecraft:custom_components": [
-						"spimton:treader_detection",
-						"spimton:rune"
-					],
-					"minecraft:tick": {
-						"interval_range": [
-							1,
-							5
-						],
-						"looping": true
-					}
-				}
+			"spimton:rune": {
+				"entity": "minecraft:evocation_fang",
+				"replace_block": "spimton:runed_gloom_tiles_cooldown"
 			}
-		]
+		}
 	}
 }

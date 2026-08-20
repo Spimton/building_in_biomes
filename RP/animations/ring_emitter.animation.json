@@ -21,6 +21,18 @@
 					}
 				]
 			}
+		},
+		"animation.weeper.death": {
+			"loop": false,
+			"animation_length": 10,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "death",
+						"locator": "head1"
+					}
+				]
+			}
 		}
 	}
 }

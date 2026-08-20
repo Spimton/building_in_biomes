@@ -30,6 +30,9 @@
 			"render_controllers": [
 				"controller.render.default"
 			],
+			"particle_effects": {
+				"rune": "minecraft:lava_particle"
+			},
 			"enable_attachables": true
 		}
 	}

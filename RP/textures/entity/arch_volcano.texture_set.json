@@ -1,0 +1,8 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "arch_volcano",
+		"metalness_emissive_roughness": "arch_volcano_mer",
+		"heightmap": "arch_volcano_height"
+	}
+}
