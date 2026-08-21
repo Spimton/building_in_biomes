@@ -7,7 +7,7 @@
     "step": "surface_structures",
     "terrain_adaptation": "beard_thin",
     "start_pool": "spimton:weepercastle_start",
-    "max_depth": 7,
+    "max_depth": 12,
     "liquid_settings": "apply_waterlogging",
     "start_height": {
       "type": "constant",

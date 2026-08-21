@@ -664,7 +664,7 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
     const { source: entity, itemStack } = event
     if (entity.typeId !== "minecraft:player" || !itemStack || !bottledtime.includes(itemStack.typeId)) return;
     entity.runCommand("scoreboard objectives add pharaohcursespimton dummy")
-    entity.runCommand("execute if entity @s[scores={spimton:sandals=1}] run scoreboard players add @s pharaohcursespimton 400")
+    entity.runCommand("execute if entity @s[ hasitem={item=spimton:sandals,quantity=0,location=slot.armor.feet}] run scoreboard players add @s pharaohcursespimton 400")
 })
 
 world.afterEvents.itemCompleteUse.subscribe(event => {

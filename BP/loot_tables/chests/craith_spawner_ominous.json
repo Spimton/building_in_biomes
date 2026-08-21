@@ -1,0 +1,65 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "emerald",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 3,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "gold_ingot",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 3,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:creeper_spores",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 5,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "spimton:compressed_ectoplasm",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1
+                            }
+                        }
+                    ],
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

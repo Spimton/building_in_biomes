@@ -131,6 +131,7 @@
             "spimton:explode": {
                 "queue_command": {
                     "command": [
+                        "camera @a[hasitem={item=spimton:sandals,location=slot.armor.feet,quantity=0},r=32] fade time 0 1 5 color 0 0 0",
                         "particle spimton:obliterator_smash ~ ~0.5 ~",
                         "effect @e[r=6] slowness 10 9 true",
                         "damage @e[r=4] 1225 falling_block",

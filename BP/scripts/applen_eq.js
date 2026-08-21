@@ -8,7 +8,6 @@ system.runInterval(bulwark, 20);
 system.runInterval(poison, 200);
 system.runInterval(luxxury, 100);
 system.runInterval(mike, 80);
-system.runInterval(sandals, 1);
 system.runInterval(unbreakable_set, 20);
 
 function applen_armor_set() {
@@ -117,25 +116,6 @@ function ghostly_necklace() {
         if (hasEquipment && player?.isSneaking) {
             player.runCommand(`execute at @p run fill ~1 ~-1 ~1 ~-1 ~-1 ~-1 spimton:ecto_block_plat replace air`);
         }
-    }
-}
-
-function sandals() {
-    const players = world.getPlayers();
-    for (const player of players) {
-        const equipment = player.getComponent("equippable");
-
-        if (equipment == null) {
-
-            continue;
-        }
-        const Equipment = equipment.getEquipment("Feet");
-        const hasEquipment = Equipment?.typeId === "spimton:sandals";
-
-        if (hasEquipment) {
-            player.runCommand("scoreboard players set @s spimton:sandals 1");
-        }
-        else player.runCommand("scoreboard players set @s spimton:sandals 0");
     }
 }
 function bulwark() {

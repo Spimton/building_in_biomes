@@ -1082,6 +1082,9 @@
 		},
 		"experience_flask": {
 			"textures": "textures/items/experience_flask"
+		},
+		"spainting_item": {
+			"textures":"textures/items/spainting_item"
 		}
 	}
 }

@@ -704,6 +704,27 @@
 					}
 				]
 			},
+			"minecraft:behavior.nearest_prioritized_attackable_target": {
+				"priority": 1,
+				"must_see": true,
+				"within_radius": 32,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						},
+						"max_dist": 32,
+						"priority": 0
+					}
+				]
+			},
 			"minecraft:behavior.look_at_player": {
 				"priority": 9,
 				"look_distance": 3,

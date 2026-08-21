@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "spimton:weepercrypt_hidden"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "weeper/weepercastle_hid",
+                    "processors": "spimton:crack_ominous_stone"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

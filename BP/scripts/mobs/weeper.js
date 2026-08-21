@@ -566,6 +566,7 @@ world.afterEvents.projectileHitEntity.subscribe((event) => {
             break;
         case "spimton:fist_of_the_north_star":
             projectile.dimension.createExplosion(projectile.location, WeeperConfig.fotnsBaseRadius + projectile.getProperty("spimton:powerup") * WeeperConfig.fotnsRadiusMult, { breaksBlocks: world.gameRules.mobGriefing, source: projectile })
+            projectile.runCommand('function mob/weeper/nuclear_blast')
             projectile.remove()
 
     }
@@ -577,6 +578,7 @@ world.afterEvents.projectileHitBlock.subscribe((event) => {
     switch (projectile.typeId) {
         case "spimton:fist_of_the_north_star":
             projectile.dimension.createExplosion({ x: projectile.location.x, y: projectile.location.y + 1, z: projectile.location.z }, WeeperConfig.fotnsBaseRadius + projectile.getProperty("spimton:powerup") * WeeperConfig.fotnsRadiusMult, { breaksBlocks: world.gameRules.mobGriefing, source: projectile })
+            projectile.runCommand('function mob/weeper/nuclear_blast')
             projectile.remove()
 
     }

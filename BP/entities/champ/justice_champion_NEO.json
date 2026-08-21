@@ -478,7 +478,7 @@
 			"minecraft:navigation.walk": {},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 1,
-				"must_see": false,
+				"must_see": true,
 				"persist_time": 10,
 				"entity_types": [
 					{

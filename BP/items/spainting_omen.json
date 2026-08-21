@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:spainting_omen",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "spainting_item",
+            "minecraft:block_placer": {
+                "block": "spimton:spainting_omen",
+                "replace_block_item": true
+            }
+        }
+    }
+}

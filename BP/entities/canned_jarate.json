@@ -64,12 +64,11 @@
 			"spimton:purify": {
 				"queue_command": {
 					"command": [
-						"scoreboard objectives add spimton:sandals dummy",
 						"scoreboard objectives add cannate dummy",
 						"scoreboard players add @e[r=3] cannate 200",
 						"effect @e[r=3] nausea 5 1",
 						"particle spimton:piss ~ ~1 ~",
-						"camera @e[r=3,type=player, scores={spimton:sandals=0}] fade time 0.1 0.1 10 color 160 140 20",
+						"camera @e[r=3,type=player, hasitem={item=spimton:sandals,quantity=0,location=slot.armor.feet}] fade time 0.1 0.1 10 color 160 140 20",
 						"event entity @s spimton:kira"
 					]
 				}

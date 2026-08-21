@@ -918,7 +918,7 @@ tile.spimton:polished_ht_lead_stairs.name=High Toxicity Polished Lead Stairs
 tile.spimton:soul_brazier.name=Soul Brazier
 tile.spimton:juandice_stained_glass_pane.name=Sanctuarium Stained Glass Pane
 tile.spimton:juandice_stained_glass.name=Sanctuarium Stained Glass
-
+tile.spimton:spainting_omen.name=Weird Painting
 
 
 
@@ -1329,6 +1329,7 @@ item.spimton:priest_necklace=Brittle Necklace with Shoulder Pads
 item.spimton:priest_leggings=Brittle Leggings
 item.spimton:ominous_statue_spawner=Ominous Statue
 item.spimton:experience_flask=Flask o' Enchanting
+item.spimton:spainting_omen=Weird Painting\n§eUnseen Power
 
 
 

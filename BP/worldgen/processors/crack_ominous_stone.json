@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:processor_list": {
+        "description": {
+            "identifier": "spimton:crack_ominous_stone"
+        },
+        "processors": [
+            {
+                "processor_type": "minecraft:rule",
+                "rules": [
+                    {
+                        "input_predicate": {
+                            "predicate_type": "minecraft:random_block_match",
+                            "block": "spimton:ominous_stone_bricks",
+                            "probability": 0.1225
+                        },
+                        "output_state": {
+                            "name": "spimton:cracked_ominous_stone_bricks"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

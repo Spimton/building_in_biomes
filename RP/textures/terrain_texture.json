@@ -1764,6 +1764,12 @@
 		},
 		"weeping_altar_content_off": {
 			"textures": "textures/blocks/altar/weeping_altar_content_off"
+		},
+		"spainting_omen": {
+			"textures": "textures/blocks/spainting/spainting_omen"
+		},
+		"spainting_back": {
+			"textures": "textures/blocks/spainting/spainting_back"
 		}
 	}
 }

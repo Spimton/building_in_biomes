@@ -1,0 +1,119 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.spainting",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "painting",
+					"pivot": [
+						0,
+						15,
+						7.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-15,
+								0,
+								7
+							],
+							"size": [
+								30,
+								30,
+								1
+							],
+							"uv": {
+								"north": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										32,
+										32
+									]
+								},
+								"east": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										0.5,
+										32
+									]
+								},
+								"south": {
+									"uv": [
+										0,
+										0
+									],
+									"uv_size": [
+										32,
+										32
+									],
+									"material_instance": "back"
+								},
+								"west": {
+									"uv": [
+										31.5,
+										0
+									],
+									"uv_size": [
+										0.5,
+										32
+									]
+								},
+								"up": {
+									"uv": [
+										0,
+										0.5
+									],
+									"uv_size": [
+										32,
+										-0.5
+									]
+								},
+								"down": {
+									"uv": [
+										0,
+										32
+									],
+									"uv_size": [
+										32,
+										-0.5
+									]
+								}
+							}
+						},
+						{
+							"origin": [
+								-8,
+								0,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": {}
+						}
+					]
+				}
+			]
+		}
+	]
+}
