@@ -1,27 +1,9 @@
 {
     "materials": {
         "version": "1.0.0",
-        "flipbook:entity": {
+        "square_warning:entity_emissive_alpha": {
             "+defines": [
                 "USE_UV_ANIM"
-            ]
-        },
-        "piper_buff:entity_static": {
-            "+defines": [
-                "USE_UV_ANIM",
-                "USE_COLOR_MASK"
-            ],
-            "+states": [
-                "Blending",
-                "DisableCulling"
-            ],
-            "blendDst": "One",
-            "depthFunc": "Equal",
-            "+samplerStates": [
-                {
-                    "samplerIndex": 0,
-                    "textureWrap": "Repeat"
-                }
             ]
         }
     }

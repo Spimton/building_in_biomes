@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "solar_flare_warning",
+		"metalness_emissive_roughness": "solar_flare_warning_mer"
+	}
+}

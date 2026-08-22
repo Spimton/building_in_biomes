@@ -9,6 +9,78 @@
 		"component_groups": {
 			"spimton:desp": {
 				"minecraft:instant_despawn": {}
+			},
+			"spimton:phase1": {
+				"minecraft:area_attack": {
+					"use_self_as_damage_source": false,
+					"cause": "fire_tick",
+					"damage_per_tick": 2,
+					"damage_range": 0.2,
+					"entity_filter": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "spimton:archshaman",
+								"operator": "!="
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "inanimate",
+								"operator": "!="
+							}
+						]
+					}
+				}
+			},
+			"spimton:phase2": {
+				"minecraft:area_attack": {
+					"use_self_as_damage_source": false,
+					"cause": "fire_tick",
+					"damage_per_tick": 3,
+					"damage_range": 0.2,
+					"entity_filter": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "spimton:archshaman",
+								"operator": "!="
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "inanimate",
+								"operator": "!="
+							}
+						]
+					}
+				}
+			},
+			"spimton:phase3": {
+				"minecraft:area_attack": {
+					"use_self_as_damage_source": false,
+					"cause": "fire_tick",
+					"damage_per_tick": 4,
+					"damage_range": 0.2,
+					"entity_filter": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "spimton:archshaman",
+								"operator": "!="
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "inanimate",
+								"operator": "!="
+							}
+						]
+					}
+				}
 			}
 		},
 		"components": {
@@ -75,13 +147,23 @@
 			"minecraft:area_attack": {
 				"use_self_as_damage_source": false,
 				"cause": "fire_tick",
-				"damage_per_tick": 2,
+				"damage_per_tick": 3,
 				"damage_range": 0.2,
 				"entity_filter": {
-					"test": "is_family",
-					"subject": "other",
-					"value": "spimton:archshaman",
-					"operator": "!="
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "spimton:archshaman",
+							"operator": "!="
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "inanimate",
+							"operator": "!="
+						}
+					]
 				}
 			},
 			"minecraft:timer": {
@@ -157,6 +239,9 @@
 					],
 					"target": "self"
 				}
+			},
+			"minecraft:entity_transformed": {
+				"trigger": "spimton:firee"
 			}
 		}
 	}

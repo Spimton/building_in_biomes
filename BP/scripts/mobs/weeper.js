@@ -1,6 +1,7 @@
 import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
 import { ConfigEntity } from "../CONFIG.js";
 import { spiral, shootSpread } from "./projectiles.js";
+import { dodgeProjectiles } from "./strafeScript.js";
 
 
 
@@ -9,6 +10,43 @@ const WeeperConfig = ConfigEntity.weeperConfig;
 
 
 const activeCharges = new Map();
+
+
+
+function YetAnotherGetRandomInt(min, max, int = false) {
+    const returning = Math.random() * (max - min + 1) + min;
+    return int ? Math.floor(returning) : returning;
+}
+
+
+
+const weeper_dodge_config = {
+    ownerTag: "spimton:weeper_target",
+
+    // How far away projectiles can be detected.
+    detectionRange: WeeperConfig.projectileDodge.detectionRange,
+
+    // How close the projectile's predicted path
+    // needs to come to the entity before dodging.
+    dodgeRadius: WeeperConfig.projectileDodge.dodgeRadius,
+
+    // How far ahead to predict the projectile's path.
+    predictionTime: WeeperConfig.projectileDodge.predictionTime,
+
+    // Horizontal dodge strength.
+    dodgeStrength: WeeperConfig.projectileDodge.dodgeStrength,
+
+    // Number of ticks before the entity can dodge again.
+    cooldown: WeeperConfig.projectileDodge.cooldown
+};
+
+
+
+
+
+
+
+
 
 
 
@@ -57,10 +95,44 @@ system.runInterval(() => {
                     z: 0,
                 });
             }
+
+
         }
     }
 }, 10);
 
+
+system.runInterval(() => {
+    for (const dimension of [
+        world.getDimension("overworld"),
+        world.getDimension("nether"),
+        world.getDimension("the_end")
+    ]) {
+        for (const entity of dimension.getEntities({
+            type: "spimton:weeper"
+        })) {
+            const cooldown =
+                entity.getDynamicProperty("ProjectileDodgeCooldown") ?? 0;
+
+            if (cooldown > 0) {
+                entity.setDynamicProperty(
+                    "ProjectileDodgeCooldown",
+                    cooldown - 1
+                );
+
+                return;
+            }
+            const phase = entity.getProperty("spimton:phase");
+            const armor = entity.getProperty("spimton:armor_color");
+            const projectileHit = entity.getDynamicProperty("spimton:weeper_arrow_adaptation") ?? 0;
+            const chance = Math.random() + WeeperConfig.projectileDodge.projectileHitBase + WeeperConfig.projectileDodge.projectileHitIncrease * projectileHit
+            console.warn("Chance: ", chance, "\nHit: ", projectileHit)
+            if (phase < 2 && armor != 1 && chance >= 1) {
+                dodgeProjectiles(entity, weeper_dodge_config);
+            }
+        }
+    }
+}, 1)
 
 
 system.runInterval(() => {
@@ -76,7 +148,7 @@ system.runInterval(() => {
                 y: charge.dirY * WeeperConfig.jaronaSpeed / 2,
                 z: charge.dirZ * WeeperConfig.jaronaSpeed
             });
-            const entities = entity.dimension.getEntities({ location: entity.location, excludeFamilies: ["creeper"], maxDistance: 1.997 });
+            const entities = entity.dimension.getEntities({ location: entity.location, excludeFamilies: ["creeper"], maxDistance: 2.2 });
             for (const damagee of entities) {
                 damagee.applyDamage(charge.damage, { cause: "entityAttack", damagingEntity: entity })
                 damagee.applyKnockback({ x: 0, z: 0 }, 1);
@@ -332,6 +404,35 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
             case "spimton:last_jarona":
                 entity.setDynamicProperty("spimton:weeper_creeper_absorption", 0);
                 break;
+            case "spimton:vizier_rain":
+                const maxStrafe = WeeperConfig.vizierStrafe;
+                entity.applyImpulse({
+                    x: YetAnotherGetRandomInt(-maxStrafe, maxStrafe),
+                    y: 0.1225,
+                    z: YetAnotherGetRandomInt(-maxStrafe, maxStrafe)
+                })
+                break;
+            case "spimton:tnt_rain_1_phase2":
+                shootAroundHead(entity.dimension, {
+                    x: entity.getHeadLocation().x,
+                    y: entity.getHeadLocation().y + 2,
+                    z: entity.getHeadLocation().z,
+                }, YetAnotherGetRandomInt(6, 8), "spimton:tnt_weeper_proj", 1.225, 0.1997)
+                break;
+            case "spimton:tnt_rain_2_phase2":
+
+                shootAroundHead(entity.dimension, {
+                    x: entity.getHeadLocation().x,
+                    y: entity.getHeadLocation().y + 2,
+                    z: entity.getHeadLocation().z,
+                }, YetAnotherGetRandomInt(12, 16), "spimton:tnt_weeper_proj", 2.45, 0.1997);
+                const strafe = WeeperConfig.tntStrafe;
+                entity.applyImpulse({
+                    x: YetAnotherGetRandomInt(-strafe, strafe),
+                    y: 0.1225,
+                    z: YetAnotherGetRandomInt(-strafe, strafe)
+                })
+                break;
 
 
 
@@ -549,6 +650,13 @@ world.afterEvents.entityHurt.subscribe((event) => {
         for (const champion of Champions) {
             champion.addEffect("instant_health", 1, { amplifier: 0 })
         };
+    }
+    if (hurtEntity.typeId === "spimton:weeper" && hurtEntity.getProperty("spimton:phase") == 1) {
+        const weeperArrowAdaptation = hurtEntity.getDynamicProperty("spimton:weeper_arrow_adaptation") ?? 0;
+        if (damageSource.damagingProjectile && damageSource.damagingEntity) {
+
+            if (damageSource.damagingEntity.hasTag("spimton:weeper_target") && weeperArrowAdaptation < WeeperConfig.projectileDodge.projectileHitCount) hurtEntity.setDynamicProperty("spimton:weeper_arrow_adaptation", weeperArrowAdaptation + 1);
+        }
     }
 
 

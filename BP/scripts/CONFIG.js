@@ -34,6 +34,11 @@ export const ConfigItems = {
     chargeTarge2DashHurt: 10,
     chargeTarge2KnockbackHurtXZ: 1.65,
     chargeTarge2KnockbackHurtY: 0.3,
+    steelTargeBlockArc: 0.5,
+    goldTargeBlockArc: 0.5,
+    chargeTargeBlockArc: 0.5,
+    chargeTarge2BlockArc: 0.5,
+    sunTargeBlockArc: 0.5,
     tastyBoneDamage: 1,
     tastyBoneWolves: 3,
     imperialSpearDur: 75,
@@ -216,7 +221,19 @@ export const ConfigEntity = {
         shochwaveDistanceDamageModifier: 0.01225,
         shockwaveDistanceKnockbackModifier: 2,
         creeperDamageMultiplier: 5,
-        creepieDamageMultiplier: 1
+        creepieDamageMultiplier: 1,
+        projectileDodge: {
+            detectionRange: 8,
+            dodgeRadius: 1.2,
+            predictionTime: 1.0,
+            dodgeStrength: 1.225,
+            cooldown: 66,
+            projectileHitIncrease: 0.1,
+            projectileHitBase: 0.4,
+            projectileHitCount: 6
+        },
+        vizierStrafe: 0.66,
+        tntStrafe: 1.225
 
 
 

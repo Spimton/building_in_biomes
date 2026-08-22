@@ -518,10 +518,10 @@
                 },
                 "minecraft:can_fly": {},
                 "minecraft:movement": {
-                    "value": 0.2
+                    "value": 0.33
                 },
                 "minecraft:flying_speed": {
-                    "value": 0.2
+                    "value": 0.33
                 }
             },
             "spimton:phase_4_attributes": {
@@ -588,8 +588,9 @@
                     "def": "spimton:weeperball_3_neo"
                 },
                 "minecraft:behavior.ranged_attack": {
-                    "attack_radius_min": 1,
+                    "attack_radius_min": 3,
                     "priority": 3,
+                    "speed_multiplier": 1.997,
                     "attack_interval": 3.3,
                     "attack_radius": 32,
                     "burst_interval": 0.001997,
@@ -627,6 +628,25 @@
                     }
                 }
             },
+            "spimton:tnt_rain_phase2": {
+                "minecraft:behavior.timer_flag_1": {
+                    "cooldown_range": 1.997,
+                    "duration_range": 0.66,
+                    "priority": 3,
+                    "on_start": {
+                        "event": "spimton:tnt_rain_1_phase2",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    },
+                    "on_end": {
+                        "event": "spimton:tnt_rain_2_phase2",
+                        "filters": {
+                            "test": "has_target"
+                        }
+                    }
+                }
+            },
             "spimton:creepie_rain": {
                 "minecraft:mob_effect_immunity": {
                     "mob_effects": [
@@ -652,6 +672,19 @@
                 "minecraft:mob_effect_immunity": {
                     "mob_effects": [
                         "wither"
+                    ]
+                },
+                "minecraft:behavior.avoid_mob_type": {
+                    "priority": 3,
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "test": "is_target"
+                            },
+                            "max_dist": 8,
+                            "walk_speed_multiplier": 1.225,
+                            "sprint_speed_multiplier": 1.225
+                        }
                     ]
                 },
                 "minecraft:behavior.look_at_target": {
@@ -721,6 +754,11 @@
                     "duration_range": 4,
                     "priority": 3,
                     "on_end": {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:armor_color",
+                            "value": 1
+                        },
                         "event": "spimton:melee_shockwave"
                     }
                 }
@@ -1386,7 +1424,17 @@
                                 "spimton:tele_shoot",
                                 "spimton:melee_blast",
                                 "spimton:vizier_rain_2",
-                                "spimton:ultimatus"
+                                "spimton:ultimatus",
+                                "spimton:tnt_rain_phase2",
+                                //PHASE 1 FAILSAFE
+                                "spimton:charge_after",
+                                "spimton:shooter_burst",
+                                "spimton:shooter_burst_alt",
+                                "spimton:shooter_homing",
+                                "spimton:tnt_rain",
+                                "spimton:tnt_rain_alt",
+                                "spimton:shooter_creepie",
+                                "spimton:melee_roar"
                             ]
                         },
                         "queue_command": {
@@ -1408,6 +1456,11 @@
                                             "test": "target_distance",
                                             "operator": ">=",
                                             "value": 12
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "operator": "<=",
+                                            "value": 33
                                         },
                                         {
                                             "test": "has_component",
@@ -1720,6 +1773,40 @@
                                 "filters": {
                                     "all_of": [
                                         {
+                                            "test": "on_ground",
+                                            "subject": "target"
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "operator": ">=",
+                                            "value": 8
+                                        },
+                                        {
+                                            "test": "target_distance",
+                                            "operator": "<=",
+                                            "value": 16
+                                        },
+                                        {
+                                            "test": "actor_health",
+                                            "value": 150,
+                                            "operator": ">="
+                                        }
+                                    ]
+                                },
+                                "weight": 3,
+                                "add": {
+                                    "component_groups": [
+                                        "spimton:tnt_rain_phase2"
+                                    ]
+                                },
+                                "queue_command": {
+                                    "command": "function mob/weeper/xp_dialog"
+                                }
+                            },
+                            {
+                                "filters": {
+                                    "all_of": [
+                                        {
                                             "test": "target_distance",
                                             "operator": "<=",
                                             "value": 24
@@ -1752,6 +1839,8 @@
             */
             "spimton:tnt_rain_1": {},
             "spimton:tnt_rain_2": {},
+            "spimton:tnt_rain_1_phase2": {},
+            "spimton:tnt_rain_2_phase2": {},
             "spimton:tnt_rain_1_alt": {
                 "queue_command": {
                     "command": [
@@ -1997,11 +2086,6 @@
                 }
             },
             "spimton:melee_shockwave": {
-                "filters": {
-                    "test": "int_property",
-                    "domain": "spimton:armor_color",
-                    "value": 1
-                },
                 "set_property": {
                     "spimton:armor_color": 0
                 },
@@ -2074,7 +2158,8 @@
                         "spimton:tnt_rain_alt",
                         "spimton:shooter_creepie",
                         "spimton:melee_roar",
-                        "spimton:ultimatus"
+                        "spimton:ultimatus",
+                        "spimton:tnt_rain_phase2"
                     ]
                 },
                 "set_property": {

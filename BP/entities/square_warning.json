@@ -1,0 +1,250 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:square_warning",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "properties": {
+                "spimton:texture": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 1,
+                    "range": [
+                        1,
+                        2
+                    ]
+                },
+                "spimton:danger": {
+                    "client_sync": false,
+                    "type": "int",
+                    "default": 1,
+                    "range": [
+                        1,
+                        3
+                    ]
+                }
+            }
+        },
+        "events": {
+            "spimton:solar_flare": {
+                "add": {
+                    "component_groups": [
+                        "spimton:solar_flare"
+                    ]
+                }
+            },
+            "spimton:solar_flare_2": {
+                "add": {
+                    "component_groups": [
+                        "spimton:solar_flare_2"
+                    ]
+                }
+            },
+            "spimton:solar_flare_3": {
+                "add": {
+                    "component_groups": [
+                        "spimton:solar_flare_3"
+                    ]
+                }
+            },
+            "spimton:solar_flare_dangerous": {
+                "set_property": {
+                    "spimton:danger": 1,
+                    "spimton:texture": 2
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:solar_flare_dangerous"
+                    ]
+                }
+            },
+            "spimton:solar_flare_dangerous_2": {
+                "set_property": {
+                    "spimton:danger": 2,
+                    "spimton:texture": 2
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:solar_flare_dangerous_2"
+                    ]
+                }
+            },
+            "spimton:solar_flare_dangerous_3": {
+                "set_property": {
+                    "spimton:danger": 3,
+                    "spimton:texture": 2
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:solar_flare_dangerous_3"
+                    ]
+                }
+            },
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:desp"
+                    ]
+                }
+            },
+            "spimton:flare_dangerous": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:danger",
+                            "value": 1
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle spimton:solar_flare_dangerous ~ ~1.997 ~",
+                                "particle spimton:solar_flare_assist ~ ~0.1997 ~",
+                                "damage @e[family=!inanimate,x=~-0.9,y=~,z=~-0.9,dx=1.8,dz=1.8,dy=3] 9 fire",
+                                "fill ~ ~ ~ ~ ~1 ~ fire keep"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:danger",
+                            "value": 2
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle spimton:solar_flare_dangerous  ~ ~1.997 ~",
+                                "particle spimton:solar_flare_assist ~ ~0.1997 ~",
+                                "damage @e[family=!inanimate,x=~-0.9,y=~,z=~-0.9,dx=1.8,dz=1.8,dy=3] 12 fire",
+                                "fill ~ ~ ~ ~ ~1 ~ fire keep"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:danger",
+                            "value": 3
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle spimton:solar_flare_dangerous  ~ ~1.997 ~",
+                                "particle spimton:solar_flare_assist ~ ~0.1997 ~",
+                                "damage @e[family=!inanimate,x=~-0.9,y=~,z=~-0.9,dx=1.8,dz=1.8,dy=3] 15 fire",
+                                "fill ~ ~ ~ ~ ~1 ~ fire keep"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "spimton:desp"
+                    }
+                ]
+            }
+        },
+        "component_groups": {
+            "spimton:solar_flare": {
+                "minecraft:transformation": {
+                    "into": "spimton:solar_flare",
+                    "delay": 0.88,
+                    "add": {
+                        "component_groups": [
+                            "spimton:phase1"
+                        ]
+                    }
+                }
+            },
+            "spimton:solar_flare_2": {
+                "minecraft:transformation": {
+                    "into": "spimton:solar_flare",
+                    "delay": 0.55,
+                    "add": {
+                        "component_groups": [
+                            "spimton:phase2"
+                        ]
+                    }
+                }
+            },
+            "spimton:solar_flare_3": {
+                "minecraft:transformation": {
+                    "into": "spimton:solar_flare",
+                    "delay": 0.22,
+                    "add": {
+                        "component_groups": [
+                            "spimton:phase3"
+                        ]
+                    }
+                }
+            },
+            "spimton:solar_flare_dangerous": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 1.225,
+                    "time_down_event": {
+                        "event": "spimton:flare_dangerous"
+                    }
+                }
+            },
+            "spimton:solar_flare_dangerous_2": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 0.98,
+                    "time_down_event": {
+                        "event": "spimton:flare_dangerous"
+                    }
+                }
+            },
+            "spimton:solar_flare_dangerous_3": {
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 0.735,
+                    "time_down_event": {
+                        "event": "spimton:flare_dangerous"
+                    }
+                }
+            },
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate"
+                ]
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:movement": {
+                "value": 0.0
+            },
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": false
+            },
+            "minecraft:collision_box": {
+                "width": 0.0,
+                "height": 0.0
+            },
+            "minecraft:push_through": {
+                "value": 1.0
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        }
+    }
+}

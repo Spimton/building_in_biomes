@@ -70,7 +70,7 @@ function championship() {
 }
 
 
-function targe() {
+/*function targe() {
     const players = world.getPlayers();
     for (const player of players) {
         const equipment = player.getComponent("equippable");
@@ -221,8 +221,718 @@ function targe() {
 
 
     };
+}*/
+
+
+function targe() {
+    const players = world.getPlayers();
+
+    for (const player of players) {
+        const equipment = player.getComponent("equippable");
+
+        if (!equipment) continue;
+
+        const MainhandEq = equipment.getEquipment("Mainhand");
+        const OffhandEq = equipment.getEquipment("Offhand");
+
+        /*
+         * Shield configuration
+         *
+         * Offhand has priority over mainhand.
+         * Only ONE of these configurations can be selected.
+         */
+        const shieldConfig = {
+
+            "spimton:steel_shield": {
+                type: "steel",
+                speed: ConfigItems.steelTargeSpeed,
+                dash: ConfigItems.steelTargeDash
+            },
+
+            "spimton:gold_shield": {
+                type: "gold",
+                speed: ConfigItems.goldTargeSpeed,
+                dash: ConfigItems.goldTargeDash
+            },
+
+            "spimton:charge_shield": {
+                type: "charge",
+                speed: ConfigItems.chargeTargeSpeed,
+                dash: ConfigItems.chargeTargeDash,
+                dashHit: ConfigItems.chargeTargeDashHit,
+                knockbackXZ: ConfigItems.chargeTargeKnockbackXZ,
+                knockbackY: ConfigItems.chargeTargeKnockbackY,
+                damage: ConfigItems.chargeTargeDamage
+            },
+
+            "spimton:ancient_gold_shield": {
+                type: "sun",
+                speed: ConfigItems.sunTargeSpeed,
+                dash: ConfigItems.sunTargeDash
+            },
+
+            "spimton:charge_shield_td": {
+                type: "charge2",
+                speed: ConfigItems.chargeTarge2Speed,
+                dash: ConfigItems.chargeTarge2Dash,
+                dashHit: ConfigItems.chargeTarge2DashHit,
+                knockbackXZ: ConfigItems.chargeTarge2KnockbackXZ,
+                knockbackY: ConfigItems.chargeTarge2KnockbackY,
+                damage: ConfigItems.chargeTarge2Damage
+            }
+
+        };
+
+
+        /*
+         * Select the shield.
+         *
+         * Offhand takes priority.
+         * Mainhand is only checked if there isn't a shield
+         * in the offhand.
+         */
+        let shield = shieldConfig[OffhandEq?.typeId];
+
+        if (!shield) {
+            shield = shieldConfig[MainhandEq?.typeId];
+        }
+
+        // No shield equipped
+        if (!shield) continue;
+
+
+        /*
+         * Get player movement information
+         */
+        const velocity = player.getVelocity();
+
+        const speed = Math.sqrt(
+            velocity.x * velocity.x +
+            velocity.z * velocity.z
+        );
+
+        const isMovingHorizontally = speed > 0.01;
+        const isOnGround = player.isOnGround;
+        const isSneaking = player.isSneaking;
+
+
+        /*
+         * Shield ability only activates while:
+         * - Moving
+         * - On ground
+         * - Sneaking
+         */
+        if (!isMovingHorizontally || !isOnGround || !isSneaking) {
+            continue;
+        }
+
+
+        /*
+         * Get the current dash cooldown.
+         */
+        let Dash = player.getDynamicProperty("CanTarge");
+
+        if (typeof Dash !== "number") {
+            Dash = 0;
+            player.setDynamicProperty("CanTarge", 0);
+        }
+
+
+        const viewDirection = player.getViewDirection();
+
+
+        // =========================================================
+        // STEEL SHIELD
+        // =========================================================
+
+        if (shield.type === "steel") {
+
+            if (Dash > 0) {
+                player.setDynamicProperty("CanTarge", Dash - 1);
+            }
+            else {
+                player.applyImpulse({
+                    x: viewDirection.x * shield.speed,
+                    z: viewDirection.z * shield.speed,
+                    y: 0.001
+                });
+
+                player.setDynamicProperty(
+                    "CanTarge",
+                    shield.dash
+                );
+            }
+        }
+
+
+        // =========================================================
+        // GOLD SHIELD
+        // =========================================================
+
+        else if (shield.type === "gold") {
+
+            if (Dash > 0) {
+                player.setDynamicProperty("CanTarge", Dash - 1);
+            }
+            else {
+                player.applyImpulse({
+                    x: viewDirection.x * shield.speed,
+                    z: viewDirection.z * shield.speed,
+                    y: 0.001
+                });
+
+                player.setDynamicProperty(
+                    "CanTarge",
+                    shield.dash
+                );
+            }
+        }
+
+
+        // =========================================================
+        // CHARGE SHIELD
+        // =========================================================
+
+        else if (shield.type === "charge") {
+
+            if (Dash > 0) {
+                player.setDynamicProperty("CanTarge", Dash - 1);
+            }
+            else {
+                player.addTag("spimton:charget");
+
+                const direction = player.getViewDirection();
+
+                player.applyImpulse({
+                    x: direction.x * shield.speed,
+                    z: direction.z * shield.speed,
+                    y: 0.01
+                });
+
+
+                const entities = player.dimension.getEntities({
+                    location: player.getHeadLocation(),
+                    excludeFamilies: ["inanimate"],
+                    excludeTags: ["spimton:charget"],
+                    maxDistance: 2,
+                    minDistance: 0
+                });
+
+
+                for (const entity of entities) {
+
+                    entity.applyKnockback(
+                        {
+                            x: direction.x * shield.knockbackXZ,
+                            z: direction.z * shield.knockbackXZ
+                        },
+                        shield.knockbackY
+                    );
+
+                    entity.applyDamage(
+                        shield.damage,
+                        {
+                            cause: EntityDamageCause.entityAttack,
+                            damagingEntity: player
+                        }
+                    );
+
+
+                    player.setDynamicProperty(
+                        "CanTarge",
+                        Dash - shield.dashHit
+                    );
+                }
+
+                player.removeTag("spimton:charget");
+            }
+        }
+
+
+        // =========================================================
+        // SUN SHIELD
+        // =========================================================
+
+        else if (shield.type === "sun") {
+
+            /*
+             * the Sun Shield only performs its dash while
+             * the player is on fire.
+             */
+            const onFire = player.getComponent("onfire");
+
+            if (
+                onFire &&
+                onFire.onFireTicksRemaining > 0
+            ) {
+                player.applyImpulse({
+                    x: viewDirection.x * shield.speed,
+                    z: viewDirection.z * shield.speed,
+                    y: 0.001
+                });
+
+                player.setDynamicProperty(
+                    "CanTarge",
+                    Dash + shield.dash
+                );
+            }
+        }
+
+
+        // =========================================================
+        // CHARGE SHIELD TOKYO DRIFT
+        // =========================================================
+
+        else if (shield.type === "charge2") {
+
+            if (Dash > 0) {
+                player.setDynamicProperty("CanTarge", Dash - 1);
+            }
+            else {
+                player.addTag("spimton:charget");
+
+                const direction = player.getViewDirection();
+
+                player.applyImpulse({
+                    x: direction.x * shield.speed,
+                    z: direction.z * shield.speed,
+                    y: 0.01
+                });
+
+
+                const entities = player.dimension.getEntities({
+                    location: player.getHeadLocation(),
+                    excludeFamilies: ["inanimate"],
+                    excludeTags: ["spimton:charget"],
+                    maxDistance: 2,
+                    minDistance: 0
+                });
+
+
+                for (const entity of entities) {
+
+                    entity.applyKnockback(
+                        {
+                            x: direction.x * shield.knockbackXZ,
+                            z: direction.z * shield.knockbackXZ
+                        },
+                        shield.knockbackY
+                    );
+
+                    entity.applyDamage(
+                        shield.damage,
+                        {
+                            cause: EntityDamageCause.entityAttack,
+                            damagingEntity: player
+                        }
+                    );
+
+                    player.clearVelocity();
+
+                    player.setDynamicProperty(
+                        "CanTarge",
+                        Dash + shield.dashHit
+                    );
+                }
+
+                player.removeTag("spimton:charget");
+            }
+        }
+    }
 }
+
+
+function isAttackerInFront(entity, attacker, dotThreshold) {
+    if (!attacker?.location) return false;
+
+    const rotation = entity.getRotation();
+    const yaw = rotation.y * Math.PI / 180;
+
+    // Direction the blocking entity is facing
+    const forwardX = -Math.sin(yaw);
+    const forwardZ = Math.cos(yaw);
+
+    // Direction from the blocking entity to the attacker
+    const dx = attacker.location.x - entity.location.x;
+    const dz = attacker.location.z - entity.location.z;
+
+    const distance = Math.sqrt(dx * dx + dz * dz);
+
+    if (distance === 0) return true;
+
+    const directionX = dx / distance;
+    const directionZ = dz / distance;
+
+    // Dot product
+    const dot =
+        forwardX * directionX +
+        forwardZ * directionZ;
+
+    return dot >= dotThreshold;
+}
+
+
 world.beforeEvents.entityHurt.subscribe(event => {
+    const entity = event.hurtEntity;
+
+    const hiter = event.damageSource.damagingEntity;
+    const hiterP = event.damageSource.damagingProjectile;
+
+    if (!hiter && !hiterP) return;
+
+    const equipment = entity.getComponent("equippable");
+    if (!equipment) return;
+
+    // Must be sneaking to block
+    if (!entity.isSneaking) return;
+
+
+    const MainhandEq = equipment.getEquipment("Mainhand");
+    const OffhandEq = equipment.getEquipment("Offhand");
+
+
+    /*
+     * Shield configuration
+     *
+     * The offhand is checked first.
+     * If there is a shield in the offhand, it takes priority.
+     * Otherwise, the mainhand shield is used.
+     */
+
+    const shieldConfig = {
+
+        "spimton:steel_shield": {
+            reduction: ConfigItems.steelTargeReduction,
+            blockArc: ConfigItems.steelTargeBlockArc
+        },
+
+        "spimton:gold_shield": {
+            reduction: ConfigItems.goldTargeReduction,
+            blockArc: ConfigItems.goldTargeBlockArc
+        },
+
+        "spimton:charge_shield": {
+            reduction: ConfigItems.chargeTargeReduction,
+            blockArc: ConfigItems.chargeTargeBlockArc
+        },
+
+        "spimton:ancient_gold_shield": {
+            reduction: ConfigItems.sunTargeReduction,
+            blockArc: ConfigItems.sunTargeBlockArc
+        },
+
+        "spimton:charge_shield_td": {
+            reduction: ConfigItems.chargeTarge2Reduction,
+            blockArc: ConfigItems.chargeTarge2BlockArc
+        }
+
+    };
+
+
+    // Check offhand first
+    let shield = shieldConfig[OffhandEq?.typeId];
+
+    // If there isn't a shield in the offhand, check mainhand
+    if (!shield) {
+        shield = shieldConfig[MainhandEq?.typeId];
+    }
+
+    // No shield equipped
+    if (!shield) return;
+
+
+    /*
+     * For projectiles, use the projectile's position.
+     * Otherwise use the attacking entity's position.
+     */
+    const attacker = hiterP ?? hiter;
+
+
+    // Check whether the attacker is inside this shield's blocking arc
+    if (!isAttackerInFront(
+        entity,
+        attacker,
+        shield.blockArc
+    )) {
+        return;
+    }
+
+
+    // Apply the shield's damage reduction
+    event.damage *= 1 - shield.reduction;
+});
+
+
+world.afterEvents.entityHurt.subscribe(event => {
+    const entity = event.hurtEntity;
+    const damage = event.damage;
+    const hiter = event.damageSource.damagingEntity;
+
+    if (!hiter) return;
+
+    const equipment = entity.getComponent("equippable");
+    if (!equipment) return;
+
+    if (!entity.isSneaking) return;
+
+
+    const MainhandEq = equipment.getEquipment("Mainhand");
+    const OffhandEq = equipment.getEquipment("Offhand");
+
+
+    /*
+     * Shield configuration
+     *
+     * Offhand has priority.
+     * If there is no shield in the offhand,
+     * the mainhand shield is used.
+     */
+    const shieldConfig = {
+
+        "spimton:steel_shield": {
+            type: "steel",
+            durabilityMultiplier: 0.40,
+            blockArc: ConfigItems.steelTargeBlockArc
+        },
+
+        "spimton:gold_shield": {
+            type: "gold",
+            durabilityMultiplier: 0.30,
+            blockArc: ConfigItems.goldTargeBlockArc
+        },
+
+        "spimton:charge_shield": {
+            type: "charge",
+            durabilityMultiplier: 0.35,
+            blockArc: ConfigItems.chargeTargeBlockArc
+        },
+
+        "spimton:ancient_gold_shield": {
+            type: "sun",
+            durabilityMultiplier: 0.25,
+            blockArc: ConfigItems.sunTargeBlockArc
+        },
+
+        "spimton:charge_shield_td": {
+            type: "charge2",
+            durabilityMultiplier: 0.35,
+            blockArc: ConfigItems.chargeTarge2BlockArc
+        }
+
+    };
+
+
+    /*
+     * Select shield.
+     *
+     * Offhand first.
+     * Mainhand only if offhand isn't a shield.
+     */
+    let shield = shieldConfig[OffhandEq?.typeId];
+    let shieldSlot = EquipmentSlot.Offhand;
+    let shieldItem = OffhandEq;
+
+
+    if (!shield) {
+        shield = shieldConfig[MainhandEq?.typeId];
+        shieldSlot = EquipmentSlot.Mainhand;
+        shieldItem = MainhandEq;
+    }
+
+
+    // No shield equipped
+    if (!shield || !shieldItem) return;
+
+
+    /*
+     * Make sure the attack is actually inside
+     * the shield's blocking arc.
+     *
+     * For this event we have the attacking entity,
+     * so use its position.
+     */
+    if (!isAttackerInFront(entity, hiter, shield.blockArc)) {
+        return;
+    }
+
+
+    /*
+     * Shield block sound
+     */
+    entity.dimension.playSound(
+        "item.shield.block",
+        entity.getHeadLocation()
+    );
+
+
+    /*
+     * Steel / Gold shields stop the player's movement
+     * when they successfully block.
+     */
+    if (
+        shield.type === "steel" ||
+        shield.type === "gold"
+    ) {
+        entity.clearVelocity();
+    }
+
+
+    /*
+     * Get the player's CanTarge dynamic property.
+     */
+    let canTarge = entity.getDynamicProperty("CanTarge");
+
+    if (typeof canTarge !== "number") {
+        canTarge = 0;
+        entity.setDynamicProperty("CanTarge", 0);
+    }
+
+
+    // =========================================================
+    // CHARGE SHIELD
+    // =========================================================
+
+    if (shield.type === "charge") {
+
+        entity.setDynamicProperty(
+            "CanTarge",
+            canTarge + ConfigItems.chargeTargeDashHurt
+        );
+    }
+
+
+    // =========================================================
+    // ANCIENT GOLD / SUN SHIELD
+    // =========================================================
+
+    else if (shield.type === "sun") {
+
+        if (canTarge <= 0) {
+
+            entity.setOnFire(
+                ConfigItems.sunTargeSetonFire / 2,
+                false
+            );
+
+            entity.setDynamicProperty(
+                "CanTarge",
+                canTarge + ConfigItems.sunTargeFireDash / 5
+            );
+
+        }
+        else {
+
+            hiter.setOnFire(
+                ConfigItems.sunTargeSetonFire,
+                false
+            );
+
+            entity.setDynamicProperty(
+                "CanTarge",
+                canTarge - ConfigItems.sunTargeFireDash
+            );
+        }
+    }
+
+
+    // =========================================================
+    // CHARGE SHIELD TD
+    // =========================================================
+
+    else if (shield.type === "charge2") {
+
+        entity.setDynamicProperty(
+            "CanTarge",
+            canTarge - ConfigItems.chargeTarge2DashHurt
+        );
+
+
+        const direction = entity.getViewDirection();
+
+
+        // Knock the shield user backward/forward
+        entity.applyKnockback(
+            {
+                x: direction.x *
+                    ConfigItems.chargeTarge2KnockbackHurtXZ,
+
+                z: direction.z *
+                    ConfigItems.chargeTarge2KnockbackHurtXZ
+            },
+            ConfigItems.chargeTarge2KnockbackHurtY
+        );
+
+
+        /*
+         * Damage the attacker.
+         */
+        hiter.applyDamage(
+            damage * (1 - ConfigItems.chargeTarge2Reduction),
+            {
+                damagingEntity: entity,
+                cause: EntityDamageCause.entityAttack
+            }
+        );
+
+
+        /*
+         * Knock the attacker away.
+         */
+        hiter.applyKnockback(
+            {
+                x: direction.x *
+                    ConfigItems.chargeTarge2KnockbackHurtXZ *
+                    1.07,
+
+                z: direction.z *
+                    ConfigItems.chargeTarge2KnockbackHurtXZ *
+                    1.07
+            },
+            ConfigItems.chargeTarge2KnockbackHurtY
+        );
+    }
+
+
+    /*
+     * Durability
+     *
+     * Creative players don't lose durability.
+     */
+    if (!entity.matches({ gameMode: GameMode.Creative })) {
+
+        const enchantable =
+            shieldItem.getComponent("minecraft:enchantable");
+
+        const unbreakingLevel =
+            enchantable?.getEnchantment("unbreaking")?.level ?? 0;
+
+
+        const breakChance =
+            100 / (unbreakingLevel + 1);
+
+        const randomizeChance =
+            Math.random() * 100;
+
+
+        if (breakChance >= randomizeChance) {
+
+            updateItemDurability(
+                entity,
+                shieldItem,
+                Math.ceil(
+                    damage * shield.durabilityMultiplier
+                ),
+                shieldSlot
+            );
+        }
+    }
+});
+
+
+//OLD SHIELD SCRIPT
+
+
+/*world.beforeEvents.entityHurt.subscribe(event => {
     const entity = event.hurtEntity;
     const hiter = event.damageSource.damagingEntity;
     const hiterP = event.damageSource.damagingProjectile;
@@ -264,10 +974,10 @@ world.beforeEvents.entityHurt.subscribe(event => {
         }
     }
 
-})
+})*/
 
 
-world.afterEvents.entityHurt.subscribe(event => {
+/*world.afterEvents.entityHurt.subscribe(event => {
     const entity = event.hurtEntity
     const damage = event.damage
     const hiter = event.damageSource.damagingEntity
@@ -423,7 +1133,7 @@ world.afterEvents.entityHurt.subscribe(event => {
 
 
 
-})
+})*/
 
 
 

@@ -780,10 +780,24 @@
 								}
 							]
 						},
+						/*
+						
+						SOLAR FLARE
+						
+						*/
 						{
 							"filters": {
-								"test": "in_water_or_rain",
-								"operator": "!="
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 1
+									}
+								]
 							},
 							"min_activation_range": 3,
 							"weight": 3,
@@ -798,8 +812,9 @@
 									"base_delay": 1,
 									"delay_per_summon": 0.001,
 									"num_entities_spawned": 16,
-									"entity_type": "spimton:solar_flare",
-									"size": 5,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare",
+									"size": 6,
 									"entity_lifespan": -1
 								},
 								{
@@ -807,17 +822,27 @@
 									"target": "self",
 									"base_delay": 1,
 									"delay_per_summon": 0.05,
-									"num_entities_spawned": 16,
-									"entity_type": "spimton:solar_flare",
-									"size": 20,
+									"num_entities_spawned": 18,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare",
+									"size": 32,
 									"entity_lifespan": -1
 								}
 							]
 						},
 						{
 							"filters": {
-								"test": "in_water_or_rain",
-								"operator": "!="
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 1
+									}
+								]
 							},
 							"min_activation_range": 5,
 							"weight": 2,
@@ -831,9 +856,10 @@
 									"target": "target",
 									"base_delay": 1,
 									"delay_per_summon": 0.001,
-									"num_entities_spawned": 16,
-									"entity_type": "spimton:solar_flare",
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:square_warning",
 									"size": 6,
+									"summon_event": "spimton:solar_flare",
 									"entity_lifespan": -1
 								},
 								{
@@ -842,7 +868,8 @@
 									"base_delay": 1,
 									"delay_per_summon": 0.05,
 									"num_entities_spawned": 16,
-									"entity_type": "spimton:solar_flare",
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare",
 									"size": 10,
 									"entity_lifespan": -1
 								},
@@ -851,8 +878,9 @@
 									"target": "self",
 									"base_delay": 1,
 									"delay_per_summon": 0.05,
-									"num_entities_spawned": 16,
-									"entity_type": "spimton:solar_flare",
+									"num_entities_spawned": 20,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare",
 									"size": 14,
 									"entity_lifespan": -1
 								},
@@ -861,13 +889,676 @@
 									"target": "self",
 									"base_delay": 1,
 									"delay_per_summon": 0.05,
-									"num_entities_spawned": 16,
-									"entity_type": "spimton:solar_flare",
+									"num_entities_spawned": 24,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare",
 									"size": 18,
 									"entity_lifespan": -1
 								}
 							]
 						},
+						/*
+						
+						SOLAR FLARE 2
+						
+						*/
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 2
+									}
+								]
+							},
+							"min_activation_range": 3,
+							"weight": 3,
+							"cooldown_time": 1,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_2",
+									"size": 6,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 18,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_2",
+									"size": 32,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 2
+									}
+								]
+							},
+							"min_activation_range": 5,
+							"weight": 2,
+							"cooldown_time": 2,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:square_warning",
+									"size": 6,
+									"summon_event": "spimton:solar_flare_2",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_2",
+									"size": 10,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 20,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_2",
+									"size": 14,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 24,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_2",
+									"size": 18,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						/*
+
+						SOLAR FLARE 3
+
+						*/
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 3
+									}
+								]
+							},
+							"min_activation_range": 3,
+							"weight": 3,
+							"cooldown_time": 1,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_3",
+									"size": 6,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 18,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_3",
+									"size": 32,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 3
+									}
+								]
+							},
+							"min_activation_range": 5,
+							"weight": 2,
+							"cooldown_time": 2,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:square_warning",
+									"size": 6,
+									"summon_event": "spimton:solar_flare_3",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_3",
+									"size": 10,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 20,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_3",
+									"size": 14,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 24,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_3",
+									"size": 18,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						/*
+						
+						SOLAR FLARE INSTANT
+						
+						*/
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 1
+									},
+									{
+										"test": "has_component",
+										"subject": "target",
+										"value": "minecraft:fire_immune",
+										"operator": "!="
+									},
+									{
+										"test": "has_mob_effect",
+										"subject": "target",
+										"value": "fire_resistance",
+										"operator": "!="
+									}
+								]
+							},
+							"min_activation_range": 3,
+							"weight": 3,
+							"cooldown_time": 0.33,
+							"cast_duration": 2,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous",
+									"size": 5,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 22,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous",
+									"size": 32,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 1
+									},
+									{
+										"test": "has_component",
+										"subject": "target",
+										"value": "minecraft:fire_immune",
+										"operator": "!="
+									},
+									{
+										"test": "has_mob_effect",
+										"subject": "target",
+										"value": "fire_resistance",
+										"operator": "!="
+									}
+								]
+							},
+							"min_activation_range": 5,
+							"weight": 2,
+							"cooldown_time": 1,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:square_warning",
+									"size": 6,
+									"summon_event": "spimton:solar_flare_dangerous",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous",
+									"size": 10,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 20,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous",
+									"size": 14,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 24,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous",
+									"size": 18,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						/*
+
+						SOLAR FLARE INSTANT 2
+
+						*/
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 2
+									},
+									{
+										"test": "has_component",
+										"subject": "target",
+										"value": "minecraft:fire_immune",
+										"operator": "!="
+									},
+									{
+										"test": "has_mob_effect",
+										"subject": "target",
+										"value": "fire_resistance",
+										"operator": "!="
+									}
+								]
+							},
+							"min_activation_range": 3,
+							"weight": 3,
+							"cooldown_time": 0.5,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_2",
+									"size": 6,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 18,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_2",
+									"size": 32,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 2
+									},
+									{
+										"test": "has_component",
+										"subject": "target",
+										"value": "minecraft:fire_immune",
+										"operator": "!="
+									},
+									{
+										"test": "has_mob_effect",
+										"subject": "target",
+										"value": "fire_resistance",
+										"operator": "!="
+									}
+								]
+							},
+							"min_activation_range": 5,
+							"weight": 2,
+							"cooldown_time": 1,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0.001,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:square_warning",
+									"size": 6,
+									"summon_event": "spimton:solar_flare_dangerous_2",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_2",
+									"size": 10,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 20,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_2",
+									"size": 14,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 24,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_2",
+									"size": 18,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						/*
+
+						SOLAR FLARE 3
+
+						*/
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 3
+									},
+									{
+										"test": "has_component",
+										"subject": "target",
+										"value": "minecraft:fire_immune",
+										"operator": "!="
+									},
+									{
+										"test": "has_mob_effect",
+										"subject": "target",
+										"value": "fire_resistance",
+										"operator": "!="
+									}
+								]
+							},
+							"min_activation_range": 3,
+							"weight": 3,
+							"cooldown_time": 0.33,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_3",
+									"size": 6,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "line",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 18,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_3",
+									"size": 32,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "in_water_or_rain",
+										"operator": "!="
+									},
+									{
+										"test": "int_property",
+										"domain": "spimton:phase",
+										"value": 3
+									},
+									{
+										"test": "has_component",
+										"subject": "target",
+										"value": "minecraft:fire_immune",
+										"operator": "!="
+									},
+									{
+										"test": "has_mob_effect",
+										"subject": "target",
+										"value": "fire_resistance",
+										"operator": "!="
+									}
+								]
+							},
+							"min_activation_range": 5,
+							"weight": 2,
+							"cooldown_time": 1,
+							"cast_duration": 1,
+							"particle_color": "#FF664D59",
+							"start_sound_event": "shoot",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "target",
+									"base_delay": 1,
+									"delay_per_summon": 0,
+									"num_entities_spawned": 6,
+									"entity_type": "spimton:square_warning",
+									"size": 6,
+									"summon_event": "spimton:solar_flare_dangerous_3",
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.0,
+									"num_entities_spawned": 16,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_3",
+									"size": 10,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.0,
+									"num_entities_spawned": 20,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_3",
+									"size": 14,
+									"entity_lifespan": -1
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 1,
+									"delay_per_summon": 0.0,
+									"num_entities_spawned": 24,
+									"entity_type": "spimton:square_warning",
+									"summon_event": "spimton:solar_flare_dangerous_3",
+									"size": 18,
+									"entity_lifespan": -1
+								}
+							]
+						},
+						/*
+
+						TELEPORT
+
+						*/
 						{
 							"filters": {
 								"test": "is_underground",

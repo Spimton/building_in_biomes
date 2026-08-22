@@ -93,6 +93,31 @@
                 "Texture.spawn"
             ],
             "ignore_lighting": false
+        },
+        "controller.render.square_warning": {
+            "uv_anim": {
+                "offset": [
+                    0,
+                    "math.mod(math.floor(q.life_time * 10), 2) / 2"
+                ],
+                "scale": [
+                    1,
+                    "1 / 2"
+                ]
+            },
+            "arrays": {
+                "textures": {
+                    "Array.texture": [
+                        "Texture.default",
+                        "Texture.second"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.texture[query.property('spimton:texture')- 1]"
+            ],
+            "geometry": "Geometry.default",
+            "ignore_lighting": true
         }
     }
 }

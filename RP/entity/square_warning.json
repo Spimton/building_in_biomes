@@ -1,0 +1,22 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:square_warning",
+            "materials": {
+                "default": "square_warning"
+            },
+            "textures": {
+                "default": "textures/entity/solar_flare_warning",
+                "second": "textures/entity/solar_flare_warning_dangerous"
+            },
+            "geometry": {
+                "default": "geometry.square_warning"
+            },
+            "scripts": {},
+            "render_controllers": [
+                "controller.render.square_warning"
+            ]
+        }
+    }
+}
