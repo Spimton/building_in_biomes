@@ -36,7 +36,7 @@
                 },
                 "minecraft:behavior.timer_flag_1": {
                     "priority": 1,
-                    "cooldown_range": 1.225,
+                    "cooldown_range": 0.66,
                     "duration_range": 0,
                     "on_start": {
                         "event": "spimton:phire"
@@ -44,7 +44,7 @@
                 },
                 "minecraft:timer": {
                     "looping": true,
-                    "time": 10,
+                    "time": 19.97,
                     "time_down_event": {
                         "event": "spimton:desp"
                     }
@@ -105,11 +105,7 @@
             "minecraft:damage_sensor": {
                 "triggers": [
                     {
-                        "cause": "entity_explosion",
-                        "deals_damage": "no"
-                    },
-                    {
-                        "cause": "projectile",
+                        "cause": "all",
                         "deals_damage": "no"
                     }
                 ]

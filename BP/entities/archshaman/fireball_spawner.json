@@ -13,7 +13,7 @@
 					"breaks_blocks": true,
 					"destroy_affected_by_griefing": true,
 					"fire_affected_by_griefing": true,
-					"power": 4,
+					"power": 4.2,
 					"causes_fire": true,
 					"fuse_lit": true,
 					"fuse_length": {
@@ -35,7 +35,7 @@
 					"breaks_blocks": true,
 					"destroy_affected_by_griefing": true,
 					"fire_affected_by_griefing": true,
-					"power": 4,
+					"power": 4.2,
 					"causes_fire": true,
 					"fuse_lit": true,
 					"fuse_length": 0
@@ -110,6 +110,27 @@
 				"minecraft:projectile": {
 					"gravity": 0.135,
 					"on_hit": {
+						"stick_in_ground": {}
+					}
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "on_ground",
+							"operator": "!="
+						},
+						"event": "spimton:can_projectile"
+					}
+				}
+			},
+			"spimton:downward_projectile": {
+				"minecraft:projectile": {
+					"gravity": 0.135,
+					"on_hit": {
+						"impact_damage": {
+							"damage": 45,
+							"semi_random_diff_damage": true
+						},
 						"stick_in_ground": {}
 					}
 				}
@@ -197,6 +218,13 @@
 					"command": [
 						"particle dragon_dying_explosion ~ ~ ~",
 						"kill @s"
+					]
+				}
+			},
+			"spimton:can_projectile": {
+				"add": {
+					"component_groups": [
+						"spimton:downward_projectile"
 					]
 				}
 			}

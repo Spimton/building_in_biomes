@@ -37,7 +37,7 @@
 				"roaring": "animation.archshaman.roaring"
 			},
 			"particle_effects": {
-				"spell": "minecraft:trial_spawner_detection",
+				"casting_particle": "spimton:archshaman_spell_emitter",
 				"shoot": "minecraft:knockback_roar_particle"
 			},
 			"render_controllers": [

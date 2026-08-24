@@ -403,6 +403,7 @@
 				"can_walk": true,
 				"can_jump": true
 			},
+			"minecraft:fire_immune": true,
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{

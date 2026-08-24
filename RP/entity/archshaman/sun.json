@@ -5,7 +5,7 @@
 			"identifier": "spimton:sun",
 			"min_engine_version": "1.8.0",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "spider"
 			},
 			"textures": {
 				"default": "textures/entity/sun"

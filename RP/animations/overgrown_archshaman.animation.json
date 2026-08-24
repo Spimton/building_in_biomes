@@ -216,6 +216,12 @@
 						]
 					}
 				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"locator": "spell_emitter",
+					"effect": "casting_particle"
+				}
 			}
 		},
 		"animation.archshaman.roaring": {

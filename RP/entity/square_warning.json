@@ -13,7 +13,12 @@
             "geometry": {
                 "default": "geometry.square_warning"
             },
-            "scripts": {},
+            "scripts": {
+                "pre_animation": [
+                    "variable.size = 0.75 + query.property('spimton:scale') / 4;"
+                ],
+                "scale": "variable.size"
+            },
             "render_controllers": [
                 "controller.render.square_warning"
             ]

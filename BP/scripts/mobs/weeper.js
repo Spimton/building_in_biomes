@@ -65,6 +65,11 @@ system.runInterval(() => {
 
             const distance = distanceToSurface(entity);
             const phase = entity.getProperty("spimton:phase");
+            const Arrests = entity.dimension.getEntities({ type: "spimton:sudden_cardiac_arrest" });
+            if (Arrests.length > 9) {
+                const arrest = Arrests[Math.floor(Math.random() * Arrests.length)];
+                arrest.triggerEvent("minecraft:start_exploding")
+            }
 
             if (distance === Infinity) {
                 entity.applyImpulse({

@@ -84,6 +84,11 @@
 			}
 		},
 		"components": {
+			"minecraft:mob_effect_immunity": {
+				"mob_effects": [
+					"levitation"
+				]
+			},
 			"minecraft:despawn": {
 				"despawn_from_chance": true,
 				"despawn_from_simulation_edge": true,

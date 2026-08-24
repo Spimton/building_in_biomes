@@ -8,6 +8,11 @@
 			"is_experimental": false,
 			"runtime_identifier": "arrow"
 		},
+		"component_groups": {
+			"spimton:d": {
+				"minecraft:instant_despawn": {}
+			}
+		},
 		"components": {
 			"minecraft:conditional_bandwidth_optimization": {
 				"default_values": {
@@ -48,7 +53,7 @@
 						}
 					},
 					"impact_damage": {
-						"damage": 3,
+						"damage": 6,
 						"destroy_on_hit": false,
 						"knockback": false,
 						"power_multiplier": 0.97,
@@ -77,7 +82,17 @@
 			"spimton:3freeze": {
 				"queue_command": {
 					"target": "self",
-					"command": "execute at @n[family=!ratto] run fill ~ ~ ~ ~ ~ ~ spimton:ratt_jelly keep"
+					"command": [
+						"execute at @n[family=!ratto] run fill ~ ~ ~ ~ ~ ~ spimton:ratt_jelly keep",
+						"event entity @s spimton:desp"
+					]
+				}
+			},
+			"spimton:desp": {
+				"add": {
+					"component_groups": [
+						"spimton:d"
+					]
 				}
 			}
 		}

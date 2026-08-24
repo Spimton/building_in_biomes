@@ -749,15 +749,24 @@
                 }
             },
             "spimton:melee_blast": {
+                "minecraft:is_charged": {},
                 "minecraft:behavior.timer_flag_1": {
                     "cooldown_range": 0,
                     "duration_range": 4,
                     "priority": 3,
                     "on_end": {
                         "filters": {
-                            "test": "int_property",
-                            "domain": "spimton:armor_color",
-                            "value": 1
+                            "all_of": [
+                                {
+                                    "test": "has_component",
+                                    "value": "minecraft:is_charged"
+                                },
+                                {
+                                    "test": "int_property",
+                                    "domain": "spimton:armor_color",
+                                    "value": 1
+                                }
+                            ]
                         },
                         "event": "spimton:melee_shockwave"
                     }
@@ -876,27 +885,6 @@
                     }
                 ]
             },
-            "minecraft:entity_sensor": {
-                "find_players_only": false,
-                "relative_range": true,
-                "subsensors": [
-                    {
-                        "cooldown": 1,
-                        "event": "spimton:sca_remove",
-                        "range": [
-                            32,
-                            32
-                        ],
-                        "minimum_count": 12,
-                        "event_filters": {
-                            "test": "is_family",
-                            "subject": "other",
-                            "value": "spimton:sudden_cardiac_arrest"
-                        },
-                        "require_all": false
-                    }
-                ]
-            },
             "minecraft:experience_reward": {
                 "on_death": "500"
             },
@@ -956,6 +944,7 @@
             "minecraft:jump.static": {
                 "jump_power": 1
             },
+            "minecraft:fire_immune": {},
             "minecraft:can_climb": {},
             "minecraft:behavior.random_stroll": {
                 "priority": 6,
@@ -1919,11 +1908,6 @@
                 "set_property": {
                     "spimton:armor": true,
                     "spimton:armor_color": 1
-                }
-            },
-            "spimton:sca_remove": {
-                "queue_command": {
-                    "command": "event entity @e[family=spimton:sudden_cardiac_arrest,c=-3] minecraft:start_exploding"
                 }
             },
             "spimton:roar_end": {

@@ -23,6 +23,15 @@
                         1,
                         3
                     ]
+                },
+                "spimton:scale": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 1,
+                    "range": [
+                        1,
+                        6
+                    ]
                 }
             }
         },
@@ -51,7 +60,8 @@
             "spimton:solar_flare_dangerous": {
                 "set_property": {
                     "spimton:danger": 1,
-                    "spimton:texture": 2
+                    "spimton:texture": 2,
+                    "spimton:scale": 2
                 },
                 "add": {
                     "component_groups": [
@@ -62,7 +72,8 @@
             "spimton:solar_flare_dangerous_2": {
                 "set_property": {
                     "spimton:danger": 2,
-                    "spimton:texture": 2
+                    "spimton:texture": 2,
+                    "spimton:scale": 2
                 },
                 "add": {
                     "component_groups": [
@@ -73,7 +84,8 @@
             "spimton:solar_flare_dangerous_3": {
                 "set_property": {
                     "spimton:danger": 3,
-                    "spimton:texture": 2
+                    "spimton:texture": 2,
+                    "spimton:scale": 2
                 },
                 "add": {
                     "component_groups": [

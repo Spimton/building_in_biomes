@@ -315,7 +315,7 @@
 							"cooldown_time": 3,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ff1cef12", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -340,7 +340,7 @@
 							"cooldown_time": 3,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ffabef12", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -373,7 +373,7 @@
 							"cooldown_time": 1,
 							"weight": 2,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ffedef12", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -399,7 +399,7 @@
 							"cooldown_time": 3,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FF7E1027", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -427,7 +427,7 @@
 							"cooldown_time": 3,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ffFF7E00", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -479,7 +479,7 @@
 							"cooldown_time": 3,
 							"weight": 2,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ffFFA500", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -544,7 +544,7 @@
 							"cooldown_time": 3,
 							"weight": 4,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ffFF7E00", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -605,7 +605,7 @@
 							"cooldown_time": 3,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF0000",
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -646,7 +646,7 @@
 							"cooldown_time": 5,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFAI00FF", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -667,7 +667,7 @@
 									"num_entities_spawned": 4,
 									"entity_type": "spimton:arch_volcano",
 									"size": 12.25,
-									"entity_lifespan": 12,
+									"entity_lifespan": 19,
 									"summon_event": "spimton:phase2",
 									"sound_event": "prepare.attack"
 								}
@@ -688,7 +688,7 @@
 							"cooldown_time": 5,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFAI00FF", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -709,7 +709,7 @@
 									"num_entities_spawned": 4,
 									"entity_type": "spimton:arch_volcano",
 									"size": 12.25,
-									"entity_lifespan": 12,
+									"entity_lifespan": 19,
 									"summon_event": "spimton:phase3",
 									"sound_event": "prepare.attack"
 								}
@@ -734,7 +734,7 @@
 							"cooldown_time": 3,
 							"weight": 3,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#ffFFA500", //FIXED
 							"start_sound_event": "cast.spell",
 							"sequence": [
 								{
@@ -803,7 +803,7 @@
 							"weight": 3,
 							"cooldown_time": 1,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFFA000", /// FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -848,7 +848,7 @@
 							"weight": 2,
 							"cooldown_time": 2,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFFFA00", //FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -920,7 +920,7 @@
 							"weight": 3,
 							"cooldown_time": 1,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFFA000", //FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -965,7 +965,7 @@
 							"weight": 2,
 							"cooldown_time": 2,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFFFA00", //FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1037,7 +1037,7 @@
 							"weight": 3,
 							"cooldown_time": 1,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFFA000", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1082,7 +1082,7 @@
 							"weight": 2,
 							"cooldown_time": 2,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFFFA00", //FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1166,7 +1166,7 @@
 							"weight": 3,
 							"cooldown_time": 0.33,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF5C00", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1223,7 +1223,7 @@
 							"weight": 2,
 							"cooldown_time": 1,
 							"cast_duration": 1,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF2C00", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1307,7 +1307,7 @@
 							"weight": 3,
 							"cooldown_time": 0.5,
 							"cast_duration": 1,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF5C00", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1364,7 +1364,7 @@
 							"weight": 2,
 							"cooldown_time": 1,
 							"cast_duration": 1,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF2C00", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1448,7 +1448,7 @@
 							"weight": 3,
 							"cooldown_time": 0.33,
 							"cast_duration": 1,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF5C00", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1505,7 +1505,7 @@
 							"weight": 2,
 							"cooldown_time": 1,
 							"cast_duration": 1,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FFFF2C00", // FIXED
 							"start_sound_event": "shoot",
 							"sequence": [
 								{
@@ -1569,7 +1569,7 @@
 							"weight": 5,
 							"cooldown_time": 5,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#000000ff",
 							"start_sound_event": "jojoref",
 							"sequence": [
 								{
@@ -1611,7 +1611,7 @@
 							"weight": 5,
 							"cooldown_time": 5,
 							"cast_duration": 2,
-							"particle_color": "#FF664D59",
+							"particle_color": "#FF00FFE2",
 							"start_sound_event": "jojoref",
 							"sequence": [
 								{
