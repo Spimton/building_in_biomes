@@ -18,13 +18,13 @@
 				"item": "spimton:silver_block"
 			},
 			"z": {
-				"item": "golden_carrot"
+				"item": "spimton:shadowcrystal_block"
 			}
 		},
 		"pattern": [
 			" y ",
-			"zxz",
-			" w "
+			"wxw",
+			" z "
 		],
 		"result": {
 			"item": "spimton:totem_of_vision",

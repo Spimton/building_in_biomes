@@ -211,14 +211,14 @@ function mike() {
         const hasEquipment = Equipment?.typeId === "spimton:totem_of_combustion";
 
         if (hasEquipment && player?.isSneaking) {
-            player.runCommand('summon tnt ~3 ~ ~3')
-            player.runCommand('summon tnt ~3 ~ ~')
-            player.runCommand('summon tnt ~3 ~ ~-3')
-            player.runCommand('summon tnt ~-3 ~ ~3')
-            player.runCommand('summon tnt ~-3 ~ ~-3')
-            player.runCommand('summon tnt ~-3 ~ ~')
-            player.runCommand('summon tnt ~ ~ ~3')
-            player.runCommand('summon tnt ~ ~ ~-3')
+            player.runCommand('summon spimton:tnt_weeper ~3 ~ ~3')
+            player.runCommand('summon spimton:tnt_weeper ~3 ~ ~')
+            player.runCommand('summon spimton:tnt_weeper ~3 ~ ~-3')
+            player.runCommand('summon spimton:tnt_weeper ~-3 ~ ~3')
+            player.runCommand('summon spimton:tnt_weeper ~-3 ~ ~-3')
+            player.runCommand('summon spimton:tnt_weeper ~-3 ~ ~')
+            player.runCommand('summon spimton:tnt_weeper ~ ~ ~3')
+            player.runCommand('summon spimton:tnt_weeper ~ ~ ~-3')
         }
     }
 }

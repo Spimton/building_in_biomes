@@ -231,7 +231,7 @@
                 "priority": 2,
                 "must_see": true,
                 "reselect_targets": true,
-                "within_radius": 25,
+                "within_radius": 33,
                 "must_see_forget_duration": 17,
                 "entity_types": [
                     {
@@ -371,10 +371,10 @@
                                 "scoreboard players add @s asbestos 1"
                             ]
                         },
-                        "weight": 10
+                        "weight": 1
                     },
                     {
-                        "weight": 10
+                        "weight": 2
                     }
                 ]
             }

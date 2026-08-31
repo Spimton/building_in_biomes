@@ -103,7 +103,8 @@ system.beforeEvents.startup.subscribe(initEvent => {
 
 })
 
-function ConfirmStructureArena(player) {
+function ConfirmStructureArena(player, block) {
+    const { x, y, z } = block.location;
     let OptionBC = new ActionFormData()
 
     OptionBC.title("Proceed with structure placement?")
@@ -112,12 +113,13 @@ function ConfirmStructureArena(player) {
     OptionBC.button("No")
     OptionBC.show(player).then(r => {
         if (r.canceled) return
-        if (r.selection === 0) player.runCommand('clear @s spimton:overgrown_helmet 0 1'), player.runCommand('structure load overgrown_arena_full ~-23 ~-1 ~-23 0_degrees none block_by_block 10 true'), player.addEffect("slow_falling", 200), player.runCommand("tp @s ~ ~20 ~");
+        if (r.selection === 0) player.runCommand('clear @s spimton:overgrown_helmet 0 1'), player.runCommand(`execute positioned ${x} ${y} ${z} run structure load overgrown_arena_full ~-23 ~-1 ~-23 0_degrees none block_by_block 10 true`), player.addEffect("slow_falling", 200), player.runCommand("tp @s ~ ~20 ~");
         if (r.selection === 1) player.runCommand("title @s actionbar Cancelled structure placement")
     })
 }
 
-function ConfirmStructureWilted(player) {
+function ConfirmStructureWilted(player, block) {
+    const { x, y, z } = block.location;
     let OptionBC = new ActionFormData()
 
     OptionBC.title("Proceed with structure placement?")
@@ -126,7 +128,7 @@ function ConfirmStructureWilted(player) {
     OptionBC.button("No")
     OptionBC.show(player).then(r => {
         if (r.canceled) return
-        if (r.selection === 0) player.runCommand('clear @s spimton:black_shard 0 1'), player.runCommand('structure load wilted_arena ~-17 ~-20 ~-17 0_degrees none block_by_block 1 true'), player.addEffect("slow_falling", 200), player.runCommand("tp @s ~ ~1 ~");
+        if (r.selection === 0) player.runCommand('clear @s spimton:black_shard 0 1'), player.runCommand(`execute positioned ${x} ${y} ${z} run structure load wilted_arena ~-17 ~-18 ~-17 0_degrees none block_by_block 1 true`), player.addEffect("slow_falling", 200), player.runCommand("tp @s ~ ~1 ~");
         if (r.selection === 1) player.runCommand("title @s actionbar Cancelled structure placement")
     })
 }
@@ -185,8 +187,8 @@ system.beforeEvents.startup.subscribe(initEvent => {
                 if (!equippable) return;
 
                 const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
-                if (mainhand.typeId === "spimton:overgrown_helmet") {
-                    ConfirmStructureArena(player);
+                if (mainhand.typeId == "spimton:overgrown_helmet") {
+                    ConfirmStructureArena(player, block);
                 }
                 else {
                     block.dimension.spawnEntity("spimton:overgrown_dualliste", block)
@@ -198,8 +200,8 @@ system.beforeEvents.startup.subscribe(initEvent => {
                 if (!equippable) return;
 
                 const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
-                if (mainhand.typeId === "spimton:black_shard") {
-                    ConfirmStructureWilted(player);
+                if (mainhand.typeId == "spimton:black_shard") {
+                    ConfirmStructureWilted(player, block);
                 }
                 else {
                     block.dimension.spawnEntity("spimton:crither", block)

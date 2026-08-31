@@ -1,4 +1,5 @@
-import { system, world, EquipmentSlot } from '@minecraft/server'
+import { system, world, EquipmentSlot, GameMode } from '@minecraft/server'
+import { TotemVisionComponent } from './spectator_totem.js'
 
 
 const loreTotemBulwark = 'spimton:totem_of_bulwark'
@@ -34,10 +35,12 @@ function checkPlayerInventory() {
             if (item && item.typeId === loreTotemVision) {
                 item.setLore([
                     '§r§9When in Main Hand:',
-                    ' §r§7Grants §aNight Vision§7',
+                    ' §r§7Hold right click to charge meter§7',
+                    ' §r§7Release to go in spectator for a limited amount',
+                    ' §r§7of time. Costs experience',
                     '',
                     '§r§9When in Offhand:',
-                    ' §r§7Grants §aInvisibility§7'
+                    ' §r§7Grants §aNight Vision§7'
                 ])
                 inventory.setItem(i, item)
             }
@@ -150,8 +153,6 @@ system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_bulwark', {
         onUse: arg => {
             let source = arg.source
-            let players = world.getAllPlayers()
-            let item = arg.itemStack
             source.addEffect("resistance", 600, { showParticles: false, amplifier: 1 })
             source.playSound("smithing_table.use")
         }
@@ -162,9 +163,8 @@ system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_vitality', {
         onUse: arg => {
             let source = arg.source
-            let players = world.getAllPlayers()
-            let item = arg.itemStack
             source.addEffect("regeneration", 100, { showParticles: false, amplifier: 1 })
+            source.playSound("random.potion.brewed")
         }
     })
 })
@@ -172,8 +172,6 @@ system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_resonance', {
         onUse: arg => {
             let source = arg.source
-            let players = world.getAllPlayers()
-            let item = arg.itemStack
             source.runCommand("effect @e[r=5] clear")
             source.playSound("random.totem")
         }
@@ -209,11 +207,23 @@ system.beforeEvents.startup.subscribe(initEvent => {
         onUse: arg => {
             let source = arg.source
             source.addTag("bay")
-            source.runCommand('tag @e[type=item] add bay')
-            source.runCommand('tag @e[type=xp_orb] add bay')
-            source.runCommand('execute at @e[tag=!bay, r=32, c=1] run summon tnt')
-            source.removeTag("bay")
+            const entityL = source.dimension.getEntities({ excludeFamilies: ["inanimate"], maxRange: 32, minRange: 2, excludeTypes: ["xp_orb", "item"], location: source.location });
+            for (const entity of entityL) {
+                const tnt = entity.dimension.spawnEntity(
+                    "spimton:tnt_weeper",
+                    {
+                        x: entity.location.x,
+                        y: entity.location.y,
+                        z: entity.location.z
+                    }
+                );
+                tnt.applyImpulse({
+                    x: 0,
+                    y: 0.66,
+                    z: 0
+                })
+            }
         }
-    })
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:spectator_item', TotemVisionComponent)
 })
-

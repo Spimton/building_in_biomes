@@ -16,8 +16,7 @@ execute as @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_enfeeb
 effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_enfeeblement}] clear weakness
 execute as @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_enfeeblement}] at @s run effect @e[r=4] slowness 2 5 false
 effect @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_enfeeblement}] clear slowness
-effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_vision}] invisibility 5 1 true
-effect @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_vision}] night_vision 15 1 true
+effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_vision}] night_vision 11 1 true
 effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_poison}] clear fatal_poison
 effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_poison}] clear poison
 execute at @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_poison}] run effect @e[r=10] clear fatal_poison

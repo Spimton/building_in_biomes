@@ -582,7 +582,7 @@ function skullFungus(
 
 system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
     // Register an enum for teleport locations
-    customCommandRegistry.registerEnum("spimton:operation", ["set", "go"]);
+    customCommandRegistry.registerEnum("spimton:operation", ["set", "go", "get"]);
 
     // Register the custom command
     customCommandRegistry.registerCommand(
@@ -631,6 +631,25 @@ system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
                 return {
                     status: CustomCommandStatus.Success,
                     message: `Teleported to Homer`,
+                };
+
+            }
+            else if (operation === "get") {
+                if (Homer === undefined) {
+                    return {
+                        status: CustomCommandStatus.Failure,
+                        message: "§cNo Homer set"
+                    };
+                }
+                system.run(() => {
+                    console.warn("x: ", Homer.x)
+                    console.warn("y: ", Homer.y)
+                    console.warn("z: ", Homer.z)
+
+                });
+                return {
+                    status: CustomCommandStatus.Success,
+                    message: `Homer is at: ${Homer.x} ${Homer.y} ${Homer.z}`,
                 };
 
             }

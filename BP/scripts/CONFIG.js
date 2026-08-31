@@ -184,7 +184,33 @@ export const ConfigItems = {
         blastRadius: 1.225,
         minimumUseTicks: 5
     },
-    meatMalletAccept: []
+    meatMalletAccept: [],
+    totemConfig: {
+        totemVision: {
+            // Maximum amount of time the item can be charged.
+            maxChargeSeconds: 10,
+            // 1 second charging = 0.5 seconds spectator.
+            spectatorSecondsPerChargeSecond: 1,
+            // 1 charged second = 1 XP level.
+            xpLevelsPerChargeSecond: 2,
+            // 1 charged second = 1 second cooldown.
+            cooldownSecondsPerChargeSecond: 3,
+            // Dynamic property names.
+            properties: {
+                active: "spimton:spectator_active",
+                time: "spimton:spectator_time",
+                previousGameMode: "spimton:previous_gamemode",
+                previousLocation: "spimton:previous_location",
+                previousDimension: "spimton:previous_dimension",
+                chargeTime: "spimton:charge_time"
+            },
+            spectatorMinY: {
+                "minecraft:overworld": -64,
+                "minecraft:nether": 0,
+                "minecraft:the_end": -40
+            }
+        }
+    }
 
 
 }
