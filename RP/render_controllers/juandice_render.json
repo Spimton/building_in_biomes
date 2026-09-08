@@ -110,7 +110,7 @@
                 }
             },
             "textures": [
-                "Array.textures[math.clamp(query.health / (query.max_health / 4), 0, 3)]"
+                "query.mark_variant == 2 ? Texture.phase2 : Array.textures[math.clamp(query.health / (query.max_health / 4), 0, 3)]"
             ]
         },
         "controller.render.hammer_justice": {

@@ -1,0 +1,7 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:texture_set": {
+		"color": "phase2_column",
+		"metalness_emissive_roughness": "phase2_column_mer"
+	}
+}

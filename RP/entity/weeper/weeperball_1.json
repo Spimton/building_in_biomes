@@ -11,10 +11,7 @@
 				"default": "textures/entity/creeper/creeper"
 			},
 			"geometry": {
-				"default": "geometry.wither_skull"
-			},
-			"spawn_egg": {
-				"texture": "spawn_egg_creeper"
+				"default": "geometry.weeper_skull"
 			},
 			"scripts": {
 				"pre_animation": [

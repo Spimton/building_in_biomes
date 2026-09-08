@@ -174,8 +174,8 @@
                     "priority": 3,
                     "attack_radius_min": 5,
                     "attack_interval": 1.225,
-                    "attack_radius": 18,
-                    "burst_interval": 0.1997,
+                    "attack_radius": 32,
+                    "burst_interval": 0.1225,
                     "burst_shots": 10,
                     "ranged_fov": 180,
                     "target_in_sight_time": 1
@@ -199,8 +199,8 @@
                     "attack_radius_min": 5,
                     "priority": 3,
                     "attack_interval": 1.997,
-                    "attack_radius": 18,
-                    "burst_interval": 0.1997,
+                    "attack_radius": 32,
+                    "burst_interval": 0.1225,
                     "burst_shots": 18,
                     "ranged_fov": 180,
                     "target_in_sight_time": 1
@@ -594,7 +594,7 @@
                     "attack_interval": 3.3,
                     "attack_radius": 32,
                     "burst_interval": 0.001997,
-                    "burst_shots": 18,
+                    "burst_shots": 25,
                     "ranged_fov": 180,
                     "target_in_sight_time": 1
                 }
@@ -1965,7 +1965,7 @@
                             "value": 6
                         },
                         "queue_command": {
-                            "command": "blastfungus 8 spimton:creeper_spore 0.5 5.5"
+                            "command": "blastfungus 12 spimton:creeper_spore 0.5 5.5"
                         }
                     },
                     {
@@ -1975,7 +1975,7 @@
                             "value": 6
                         },
                         "queue_command": {
-                            "command": "blastfungus 4 spimton:creeper_spore 0.3 5.5"
+                            "command": "blastfungus 8 spimton:creeper_spore 0.3 5.5"
                         }
                     }
                 ]

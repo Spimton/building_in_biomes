@@ -426,7 +426,7 @@
 						"cause": "lightning",
 						"deals_damage": "no"
 					},
-					{
+					/*{
 						"cause": "projectile",
 						"damage_multiplier": 0.75,
 						"damage_modifier": -1.997
@@ -434,7 +434,7 @@
 					{
 						"cause": "entity_attack",
 						"damage_multiplier": 0.75
-					},
+					},*/
 					{
 						"cause": "mace_smash",
 						"damage_multiplier": 1
@@ -476,7 +476,6 @@
 				}
 			},
 			"minecraft:jump.static": {},
-			"minecraft:navigation.walk": {},
 			"minecraft:behavior.nearest_attackable_target": {
 				"priority": 1,
 				"must_see": true,

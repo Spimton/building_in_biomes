@@ -1,6 +1,7 @@
 import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
 import { ConfigEntity } from "../CONFIG.js";
 import { spiral, shootSpread } from "./projectiles.js";
+import { ChampConfig, resolveRangedDamage } from "./champion.js";
 import { dodgeProjectiles } from "./strafeScript.js";
 
 
@@ -23,20 +24,20 @@ function YetAnotherGetRandomInt(min, max, int = false) {
 const weeper_dodge_config = {
     ownerTag: "spimton:weeper_target",
 
-    // How far away projectiles can be detected.
+    // How far away projectiles can be detected
     detectionRange: WeeperConfig.projectileDodge.detectionRange,
 
     // How close the projectile's predicted path
-    // needs to come to the entity before dodging.
+    // needs to come to the entity before dodging
     dodgeRadius: WeeperConfig.projectileDodge.dodgeRadius,
 
-    // How far ahead to predict the projectile's path.
+    // How far ahead to predict the projectile's path
     predictionTime: WeeperConfig.projectileDodge.predictionTime,
 
-    // Horizontal dodge strength.
+    // Horizontal dodge strength
     dodgeStrength: WeeperConfig.projectileDodge.dodgeStrength,
 
-    // Number of ticks before the entity can dodge again.
+    // Number of ticks before the entity can dodge again
     cooldown: WeeperConfig.projectileDodge.cooldown
 };
 
@@ -542,7 +543,28 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
                 x: 0,
                 y: 0,
                 z: -1.225
-            }]
+            },
+            {
+                x: 0.866,
+                y: 0,
+                z: -0.866
+            },
+            {
+                x: 0.866,
+                y: 0,
+                z: 0.866
+            },
+            {
+                x: -0.866,
+                y: 0,
+                z: 0.866
+            },
+            {
+                x: -0.866,
+                y: 0,
+                z: -0.866
+            }
+            ]
             const { x, y, z } = entity.location;
             for (const direction of directions) {
                 const projectile = entity.dimension.spawnEntity("spimton:weeperball_8_neo", { x: x, y: y + 1.5, z: z })
@@ -611,7 +633,7 @@ const DamageCapBypassSource = WeeperConfig.damageCapBypassSource;
 
 world.beforeEvents.entityHurt.subscribe((event) => {
     if (event.hurtEntity.typeId === "spimton:weeper" && !DamageCapBypassSource.includes(event.damageSource.cause)) {
-        if (event.damage > WeeperConfig.damageCap) event.damage = WeeperConfig.damageCap;
+        if (event.damage > WeeperConfig.damageCap) event.damage = damageCapCalculation(event.damage, WeeperConfig.damageCap, WeeperConfig.damageCapReduction, WeeperConfig.hardDamageCap);
         if (event.hurtEntity.getProperty("spimton:armor_color") == 1 && event.hurtEntity.getProperty("spimton:armor")) {
             event.damage /= WeeperConfig.electricArmorReduction;
         }
@@ -630,6 +652,15 @@ world.beforeEvents.entityHurt.subscribe((event) => {
 
         }
     }
+    if (event.damageSource.damagingEntity && event.hurtEntity.typeId === "spimton:justice_champion" && !ChampConfig.rangedDamageBypassSource.includes(event.damageSource.cause)) {
+        const distance = Math.hypot(
+            event.damageSource.damagingEntity.location.x - event.hurtEntity.location.x,
+            event.damageSource.damagingEntity.location.y - event.hurtEntity.location.y,
+            event.damageSource.damagingEntity.location.z - event.hurtEntity.location.z,
+
+        );
+        event.damage = resolveRangedDamage(event.damage, distance, ChampConfig);
+    }
 });
 
 
@@ -639,6 +670,7 @@ world.afterEvents.entityHurt.subscribe((event) => {
         const RecievedDamage = damage;
         const damageAbsorbed = hurtEntity.getDynamicProperty("spimton:weeper_transition_absorption") ?? 0;
         hurtEntity.setDynamicProperty("spimton:weeper_transition_absorption", damageAbsorbed + RecievedDamage);
+        hurtEntity.getComponent("health").setCurrentValue(hurtEntity.getComponent('health').currentValue + RecievedDamage)
 
         if (damageAbsorbed + RecievedDamage > WeeperConfig.forceTransitionDamage) {
             hurtEntity.setProperty("spimton:forced_phase_2", true)
@@ -698,5 +730,15 @@ world.afterEvents.projectileHitBlock.subscribe((event) => {
 
 })
 
+function damageCapCalculation(damage, damageCap, damageCapReduction, hardDamageCap = false) {
+    let newDamage = damage;
+    if (damage >= damageCap) {
+        if (!hardDamageCap) {
+            newDamage = damageCap - (damageCap / damageCapReduction) + (damage / damageCapReduction);
+        }
+        else newDamage = damageCap;
+    }
+    return newDamage;
+}
 
 

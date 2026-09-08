@@ -41,8 +41,8 @@
 					},
 					"impact_damage": {
 						"damage": [
-							8,
-							7
+							16,
+							12
 						],
 						"semi_random_diff_damage": true,
 						"should_bounce": false
@@ -52,7 +52,7 @@
 				"anchor": 1,
 				"power": 1,
 				"inertia": 1,
-				"gravity": 0.015,
+				"gravity": 0.0066,
 				"uncertainty_base": 1,
 				"angle_offset": 0,
 				"offset": [

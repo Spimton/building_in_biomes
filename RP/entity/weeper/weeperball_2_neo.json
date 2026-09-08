@@ -15,11 +15,16 @@
 			},
 			"scripts": {
 				"animate": [
-					"spin"
+					"spin",
+					"effect"
 				]
 			},
 			"animations": {
-				"spin": "animation.blastfungus.fly"
+				"spin": "animation.blastfungus.fly",
+				"effect": "animation.projectile.particle"
+			},
+			"particle_effects": {
+				"projectile_effect": "spimton:grand_flame_single"
 			},
 			"render_controllers": [
 				"controller.render.creeper"

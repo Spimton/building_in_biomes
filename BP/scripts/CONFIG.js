@@ -218,7 +218,9 @@ export const ConfigItems = {
 
 export const ConfigEntity = {
     weeperConfig: {
+        hardDamageCap: false,
         damageCap: 30,
+        damageCapReduction: 6.6,
         phase1Height: 12,
         phase2Height: 4,
         fotnsPercDamage: 0.1997,
@@ -269,5 +271,21 @@ export const ConfigEntity = {
         randomBayInterval: 20,
         minRandomBayRadius: 8,
         archieFogRange: 64
+    },
+    championConfig: {
+        rangedDamageBypassSource: [
+            "none",
+            "override",
+            "void",
+            "selfDestruct"
+        ],
+        rangedReductionMinimumDistance: 12.25,
+        rangedReductionMinimumDamage: 0.66,
+        rangedReductionMinimumMultiplier: 0.1225,
+        rangedReductionPerBlock: 0.066,
+        rangedDamageMinimumMultiplierAllow: true,
+        proportionalReduction: false,
+        rangedSubtractionPerBlock: 1.225
+
     }
 }

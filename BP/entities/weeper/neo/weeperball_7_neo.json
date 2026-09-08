@@ -53,14 +53,16 @@
             "minecraft:projectile": {
                 "on_hit": {
                     "impact_damage": {
-                        "damage": [
-                            33,
-                            34
-                        ],
+                        "damage": 666,
                         "knockback": true,
                         "should_bounce": true,
                         "semi_random_diff_damage": true,
                         "destroy_on_hit": false
+                    },
+                    "definition_event": {
+                        "event_trigger": {
+                            "event": "spimton:hit"
+                        }
                     },
                     "stick_in_ground": {}
                 },
@@ -101,6 +103,16 @@
             }
         },
         "events": {
+            "spimton:hit": {
+                "queue_command": {
+                    "command": [
+                        "particle spimton:obliterator_smash ~ ~0.5 ~",
+                        "playsound sfx.deltarune_boom @a[r=32] ~ ~ ~ 12 0.66",
+                        "blastfungus 6 spimton:weeperball_5_neo 0.99 4 135",
+                        "blastfungus 4 spimton:weeperball_5_neo 0.66 4 45"
+                    ]
+                }
+            },
             "spimton:splode": {
                 "add": {
                     "component_groups": [

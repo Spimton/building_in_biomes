@@ -14,7 +14,7 @@
             "spimton:attack": {
                 "minecraft:is_collidable": {},
                 "minecraft:mark_variant": {
-                    "value": 0
+                    "value": 1
                 },
                 "minecraft:timer": {
                     "time": 9,
@@ -26,7 +26,7 @@
             "spimton:gauntlet": {
                 "minecraft:is_collidable": {},
                 "minecraft:mark_variant": {
-                    "value": 0
+                    "value": 2
                 },
                 "minecraft:timer": {
                     "time": 90,

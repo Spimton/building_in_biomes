@@ -162,7 +162,7 @@
 		"events": {
 			"spimton:damage": {
 				"queue_command": {
-					"command": "damage @n[type=spimton:overgrown_archshaman] 50 self_destruct",
+					"command": "scoreboard players add @n[type=spimton:overgrown_archshaman] mih_treshold 450",
 					"target": "self"
 				}
 			},

@@ -51,6 +51,16 @@
 					]
 				}
 			}
+		},
+		"animation.projectile.particle": {
+			"loop": true,
+			"animation_length": 0.1225,
+			"particle_effects": {
+				"0.0": {
+					"locator": "root",
+					"effect": "projectile_effect"
+				}
+			}
 		}
 	}
 }

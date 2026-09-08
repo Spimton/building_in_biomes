@@ -19,6 +19,7 @@
                 },
                 "23": {
                     "on_entry": [
+                        "/scoreboard players remove @s mih_treshold 150",
                         "/fog @a[r=48] push spimton:archie_fog_1",
                         "/summon spimton:sun ~ ~2 ~",
                         "/event entity @e[type=spimton:solar_flare] spimton:heal_sun",

@@ -11,7 +11,8 @@
 				"default": "textures/entity/column",
 				"crack1": "textures/entity/column_cracked_1",
 				"crack2": "textures/entity/column_cracked_2",
-				"crack3": "textures/entity/column_cracked_3"
+				"crack3": "textures/entity/column_cracked_3",
+				"phase2": "textures/entity/piper_buff/phase2_column"
 			},
 			"geometry": {
 				"default": "geometry.column.geo"
@@ -20,7 +21,7 @@
 				"scale": "1.0",
 				"animate": [
 					{
-						"erect": "query.mark_variant == 0"
+						"erect": "query.mark_variant != 3"
 					}
 				]
 			},

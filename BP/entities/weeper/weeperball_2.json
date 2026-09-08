@@ -1,12 +1,12 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.0",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:weeperball_2",
 			"is_spawnable": false,
 			"is_summonable": true,
 			"is_experimental": false,
-			"runtime_identifier": "arrow"
+			"runtime_identifier": "snowball"
 		},
 		"component_groups": {
 			"minecraft:exploding": {
@@ -27,11 +27,7 @@
 				"height": 0.31
 			},
 			"minecraft:despawn": {
-				"despawn_from_simulation_edge": true,
-				"despawn_from_distance": {
-					"max_distance": 128,
-					"min_distance": 64
-				}
+				"despawn_from_simulation_edge": true
 			},
 			"minecraft:type_family": {
 				"family": [

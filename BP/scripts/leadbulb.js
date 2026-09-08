@@ -535,23 +535,39 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
             const currentValue = block.permutation.getState(toggleableState);
             const toggledValue = !currentValue;
 
-            block.setPermutation(block.permutation.withState(toggleableState, toggledValue));
+            block.setPermutation(
+                block.permutation.withState(toggleableState, toggledValue)
+            );
 
-            const toggleSound = toggledValue ? params.enable_sound : params.disable_sound;
+            const toggleSound = toggledValue
+                ? params.enable_sound
+                : params.disable_sound;
+
             dimension.playSound(toggleSound, block.center());
         },
-        onRedstoneUpdate({ block, dimension, powerLevel }, { params }) {
+
+        onRedstoneUpdate(
+            { block, dimension, powerLevel, previousPowerLevel },
+            { params }
+        ) {
             const toggleableState = params.block_state;
-            const currentValue = block.permutation.getState(toggleableState);
-            const toggledValue = !currentValue;
-            if (powerLevel > 0) {
-                block.setPermutation(block.permutation.withState(toggleableState, true));
-            }
-            else {
-                block.setPermutation(block.permutation.withState(toggleableState, false));
+
+            // Ignore redstone updates where the power level
+            // has not actually changed.
+            if (powerLevel === previousPowerLevel) {
+                return;
             }
 
-            const toggleSound = toggledValue ? params.enable_sound : params.disable_sound;
+            const newValue = powerLevel > 0;
+
+            block.setPermutation(
+                block.permutation.withState(toggleableState, newValue)
+            );
+
+            const toggleSound = newValue
+                ? params.enable_sound
+                : params.disable_sound;
+
             dimension.playSound(toggleSound, block.center());
         }
     });
