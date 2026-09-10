@@ -37,22 +37,10 @@ world.afterEvents.playerPlaceBlock.subscribe(
     (data) => wall_Manager.updateWallsAround(data.block)
 );
 
-
-
-import { bars } from 'barsr'
-world.afterEvents.playerBreakBlock.subscribe((data) => {
-    bars.updateBarsAround(data.block)
-})
-world.afterEvents.playerPlaceBlock.subscribe((data) => {
-    bars.updateBarsAround(data.block)
-})
-
-
 system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.blockComponentRegistry.registerCustomComponent('spimton:multi_destroy_lantern', {
         beforeOnPlayerPlace: (event) => {
-            const { player, block, face, permutationToPlace, dimension } =
-                event
+            const { player, block, face, permutationToPlace, dimension } = event;
             const offset = faceOffset.get(face)
             const newLocation = { x: block.location.x - offset.x, y: block.location.y - offset.y, z: block.location.z - offset.z }
             const newBlock = dimension.getBlock(newLocation)

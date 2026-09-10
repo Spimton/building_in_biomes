@@ -135,12 +135,10 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
 
 
             // Spawn the XP orbs
-            const xpAmount = randomInt(0, 3); // Number of XP orbs to spawn
 
-            for (let c = 0; c < xpAmount; c++) {
-                dimension.spawnEntity("spimton:cancer_giver", block.location)
-                dimension.spawnParticle("spimton:lungcancer", block.above(2));
-            }
+            dimension.spawnEntity("spimton:cancer_giver", block.location)
+            dimension.spawnParticle("spimton:lungcancer", block.above(2));
+
 
 
         },
@@ -148,13 +146,16 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
             const Random = Math.random()
             if (Random > 0.9) {
                 const location = block.location
-                const north = block.north()
-                const south = block.south()
-                const west = block.west()
-                const east = block.east()
-                const above = block.above()
-                const below = block.below()
-                if (north?.permutation.matches('minecraft:air') || south?.permutation.matches('minecraft:air') || west?.permutation.matches('minecraft:air') || east?.permutation.matches('minecraft:air') || above?.permutation.matches('minecraft:air') || below?.permutation.matches('minecraft:air')) {
+                const adjcent = [
+                    block.north(),
+                    block.south(),
+                    block.west(),
+                    block.east(),
+                    block.above(),
+                    block.below()
+                ]
+
+                if (!adjcent.every(blockL => blockL.typeId === "air" || blockL === undefined)) {
                     dimension.spawnEntity("spimton:cancer_giver", location)
                     dimension.spawnParticle("spimton:lungcancer", block.above())
                 }
@@ -177,12 +178,11 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
             if (Object.values(adjacentBlocks).some(adjacentBlock => adjacentBlock?.permutation.matches('minecraft:water'))) return;
 
             // Spawn the XP orbs
-            const xpAmount = randomInt(0, 3); // Number of XP orbs to spawn
+            // Number of XP orbs to spawn
 
-            for (let c = 0; c < xpAmount; c++) {
-                dimension.spawnEntity("spimton:pbd", block.location)
-                dimension.spawnParticle("spimton:cloud", block.above(2));
-            }
+
+            dimension.spawnEntity("spimton:pbd", block.location)
+            dimension.spawnParticle("spimton:cloud", block.above(2));
 
 
         },

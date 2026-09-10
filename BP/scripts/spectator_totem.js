@@ -43,7 +43,10 @@ export const TotemVisionComponent = {
         if (chargingPlayers.has(player.id)) {
             return;
         }
-
+        if (player.hasTag("spimton:juandice_target") || player.hasTag("spimton:weeper_target")) {
+            player.sendMessage("You are in presence of a too powerful entity")
+            return;
+        }
         chargingPlayers.set(player.id, {
             startTick: system.currentTick
         });
@@ -62,8 +65,8 @@ export const TotemVisionComponent = {
 
         // Clear actionbar
         player.onScreenDisplay.setActionBar("");
-
         // Full 10 second charge
+
         activateSpectator(
             player,
             CONFIG.maxChargeSeconds * 20

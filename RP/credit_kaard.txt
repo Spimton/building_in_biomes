@@ -1,5 +1,7 @@
 Custom bossbars ripped off Alylica's Dungeons
 
-Misc templates by kaiora
+Misc templates by kaiora on github
 
-Music by Elwood, Anvil, Guifrog, Toby Fox
+Most block textures ripped off MCD
+
+Music by Elwood, Anvil, Guifrog, Toby Fox, Peritune

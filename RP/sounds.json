@@ -256,9 +256,10 @@
                     1,
                     1
                 ],
-                "volume": 1,
+                "volume": 0,
                 "events": {
-                    "death": "mob.silverfish.step"
+                    "death": "mob.silverfish.step",
+                    "hurt": "mob.silverfish.hit"
                 }
             },
             "spimton:pbd": {
@@ -266,7 +267,7 @@
                     1,
                     1
                 ],
-                "volume": 1,
+                "volume": 0,
                 "events": {
                     "death": "mob.silverfish.step"
                 }
