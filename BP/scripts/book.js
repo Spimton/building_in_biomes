@@ -6,17 +6,9 @@ import { MessageFormData } from "@minecraft/server-ui"
 world.afterEvents.itemUse.subscribe(event => {
     const item = event.itemStack.typeId
     var player = event.source
-
-    if (item === 'spimton:guide_book') {
-        Book1(player)
-    }
     if (item === 'spimton:ancient_tablet') {
         Sculpt(player)
     }
-    if (item === 'spimton:boss_guide')
-        Book2(player)
-    if (item === 'spimton:block_guide')
-        BookBlocks(player)
 })
 
 function Sculpt(player) {

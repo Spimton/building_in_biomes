@@ -978,6 +978,7 @@
 					"target": "self",
 					"command": [
 						"scriptevent spimton:health_set 19",
+						"tag @e remove spimton:juandice_target",
 						"music stop 5"
 					]
 				}

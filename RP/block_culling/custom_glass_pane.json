@@ -5,113 +5,49 @@
             "identifier": "spimton:culling.custom_glass_pane"
         },
         "rules": [
+            // North extension: cull its outward north face
+            // when another ominous_stained_glass_pane is directly north.
             {
-                "condition": "same_block",
-                "direction": "down",
                 "geometry_part": {
                     "bone": "north",
                     "cube": 0,
-                    "face": "down"
-                }
+                    "face": "north"
+                },
+                "direction": "north",
+                "condition": "same_block"
             },
+            // South extension: cull its outward south face
+            // when another ominous_stained_glass_pane is directly south.
             {
-                "condition": "same_block",
-                "direction": "down",
-                "geometry_part": {
-                    "bone": "east",
-                    "cube": 0,
-                    "face": "down"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "down",
                 "geometry_part": {
                     "bone": "south",
                     "cube": 0,
-                    "face": "down"
-                }
+                    "face": "south"
+                },
+                "direction": "south",
+                "condition": "same_block"
             },
+            // East extension: cull its outward east face
+            // when another ominous_stained_glass_pane is directly east.
             {
-                "condition": "same_block",
-                "direction": "down",
-                "geometry_part": {
-                    "bone": "west",
-                    "cube": 0,
-                    "face": "down"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "down",
-                "geometry_part": {
-                    "bone": "central_bar",
-                    "cube": 0,
-                    "face": "down"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "down",
-                "geometry_part": {
-                    "bone": "ends",
-                    "cube": 0,
-                    "face": "down"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "up",
-                "geometry_part": {
-                    "bone": "north",
-                    "cube": 2,
-                    "face": "up"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "up",
                 "geometry_part": {
                     "bone": "east",
-                    "cube": 2,
-                    "face": "up"
-                }
+                    "cube": 0,
+                    "face": "north"
+                },
+                "direction": "east",
+                "condition": "same_block"
             },
+            // West extension: cull its outward west face
+            // when another ominous_stained_glass_pane is directly west.
             {
-                "condition": "same_block",
-                "direction": "up",
-                "geometry_part": {
-                    "bone": "south",
-                    "cube": 2,
-                    "face": "up"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "up",
                 "geometry_part": {
                     "bone": "west",
-                    "cube": 2,
-                    "face": "up"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "up",
-                "geometry_part": {
-                    "bone": "central_bar",
-                    "cube": 2,
-                    "face": "up"
-                }
-            },
-            {
-                "condition": "same_block",
-                "direction": "up",
-                "geometry_part": {
-                    "bone": "ends",
-                    "cube": 2,
-                    "face": "up"
-                }
+                    "cube": 0,
+                    "face": "south"
+                },
+                "direction": "west",
+                "condition": "same_block"
             }
         ]
     }

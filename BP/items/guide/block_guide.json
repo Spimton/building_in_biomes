@@ -10,7 +10,7 @@
 		"components": {
 			"minecraft:icon": "guide_book_1",
 			"minecraft:display_name": {
-				"value": "Building in Biomes Guide Book - Building"
+				"value": "Building in Biomes Guide Book - Building\n§7UNUSED, WORK §4NOT§7 IN PROGRESS"
 			},
 			"minecraft:max_stack_size": 1,
 			"minecraft:hover_text_color": "blue"

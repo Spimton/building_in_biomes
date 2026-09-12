@@ -132,7 +132,6 @@ system.runInterval(() => {
             const armor = entity.getProperty("spimton:armor_color");
             const projectileHit = entity.getDynamicProperty("spimton:weeper_arrow_adaptation") ?? 0;
             const chance = Math.random() + WeeperConfig.projectileDodge.projectileHitBase + WeeperConfig.projectileDodge.projectileHitIncrease * projectileHit
-            console.warn("Chance: ", chance, "\nHit: ", projectileHit)
             if (phase < 2 && armor != 1 && chance >= 1) {
                 dodgeProjectiles(entity, weeper_dodge_config);
             }

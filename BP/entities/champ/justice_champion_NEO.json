@@ -811,7 +811,8 @@
 					"command": [
 						"effect @s instant_health 100 3 true",
 						"function mob/juandice/h_dialog",
-						"event entity @e[type=spimton:column] spimton:desp"
+						"event entity @e[type=spimton:column] spimton:desp",
+						"tag @e remove spimton:juandice_target"
 					],
 					"target": "self"
 				}
