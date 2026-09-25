@@ -24,7 +24,7 @@
 				"celebrating": "animation.chillager.casting3",
 				"ranged": "animation.chillager.casting2",
 				"general": "animation.chillager.general",
-				"casting": "animation.chillager.casting",
+				"casting": "animation.chillager.castingneo_1",
 				"look_at_target": "animation.common.look_at_target",
 				"move": "animation.chillager.move",
 				"controller_general": "controller.animation.evoker.general",

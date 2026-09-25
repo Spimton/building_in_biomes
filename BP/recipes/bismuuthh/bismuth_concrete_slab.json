@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_concrete_slab"
+		},
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:iridescent_concrete"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_concrete_slab",
+			"count": 6
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

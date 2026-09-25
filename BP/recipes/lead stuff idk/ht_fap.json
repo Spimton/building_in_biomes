@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"tags": [
+			"crafting_table"
+		],
+		"description": {
+			"identifier": "spimton:ht_fap"
+		},
+		"ingredients": [
+			{
+				"item": "spimton:ht_lead_ingot"
+			},
+			{
+				"item": "flint"
+			}
+		],
+		"result": {
+			"item": "spimton:ht_flint_and_pewter",
+			"count": 1
+		}
+	}
+}

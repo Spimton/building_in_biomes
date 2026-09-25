@@ -84,6 +84,7 @@
 			}
 		},
 		"components": {
+			"minecraft:cannot_be_attacked": {},
 			"minecraft:mob_effect_immunity": {
 				"mob_effects": [
 					"levitation"

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.80",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:ht_pbd",
@@ -22,6 +22,7 @@
 			}
 		},
 		"components": {
+			"minecraft:cannot_be_attacked": {},
 			"minecraft:health": {
 				"value": 30,
 				"max": 30
@@ -35,7 +36,7 @@
 				"triggers": [
 					{
 						"cause": "all",
-						"deals_damage": false
+						"deals_damage": "no"
 					}
 				]
 			},

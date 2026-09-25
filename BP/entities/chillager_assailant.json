@@ -208,7 +208,7 @@
 							{
 								"shape": "circle",
 								"target": "self",
-								"base_delay": 1.5,
+								"base_delay": 1.25,
 								"delay_per_summon": 1,
 								"num_entities_spawned": 1,
 								"entity_type": "spimton:shockwave",
@@ -230,11 +230,11 @@
 							{
 								"shape": "line",
 								"target": "self",
-								"base_delay": 1,
+								"base_delay": 1.25,
 								"delay_per_summon": 0.25,
 								"num_entities_spawned": 25,
 								"entity_type": "spimton:shockwave_ranged",
-								"size": 20,
+								"size": 25,
 								"entity_lifespan": 1
 							}
 						]

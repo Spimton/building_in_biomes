@@ -3182,7 +3182,23 @@
 		"sound": "cloth",
 		"textures": "iridescent_wool"
 	},
+	"spimton:iridescent_wool_slab": {
+		"sound": "cloth",
+		"textures": "iridescent_wool"
+	},
+	"spimton:iridescent_wool_stairs": {
+		"sound": "cloth",
+		"textures": "iridescent_wool"
+	},
 	"spimton:iridescent_concrete": {
+		"sound": "stone",
+		"textures": "iridescent_concrete"
+	},
+	"spimton:iridescent_concrete_slab": {
+		"sound": "stone",
+		"textures": "iridescent_concrete"
+	},
+	"spimton:iridescent_concrete_stairs": {
 		"sound": "stone",
 		"textures": "iridescent_concrete"
 	},

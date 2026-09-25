@@ -52,6 +52,7 @@
             }
         },
         "components": {
+            "minecraft:cannot_be_attacked": {},
             "minecraft:health": {
                 "value": 22,
                 "max": 22,

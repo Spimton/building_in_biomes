@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_wool_slab"
+		},
+		"pattern": [
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:iridescent_wool"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_wool_slab",
+			"count": 6
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

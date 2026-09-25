@@ -1,4 +1,4 @@
-import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
+import { world, system, DimensionTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
 import { ConfigEntity } from "../CONFIG.js";
 const ShamanConfig = ConfigEntity.archshamanConfig;
 
@@ -9,11 +9,10 @@ function distance(min, max) {
 }
 
 system.runInterval(() => {
-    for (const dimension of [
-        world.getDimension("overworld"),
-        world.getDimension("nether"),
-        world.getDimension("the_end")
-    ]) {
+    const dimensionIds = DimensionTypes.getAll().map(
+        dimensionType => world.getDimension(dimensionType.typeId)
+    );
+    for (const dimension of dimensionIds) {
         for (const entity of dimension.getEntities({
             type: "spimton:overgrown_archshaman"
         })) {

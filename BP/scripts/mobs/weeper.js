@@ -1,4 +1,4 @@
-import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
+import { world, system, DimensionTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
 import { ConfigEntity } from "../CONFIG.js";
 import { spiral, shootSpread } from "./projectiles.js";
 import { ChampConfig, resolveRangedDamage } from "./champion.js";
@@ -54,11 +54,10 @@ const weeper_dodge_config = {
 //const weeperIntervals = new Map();
 
 system.runInterval(() => {
-    for (const dimension of [
-        world.getDimension("overworld"),
-        world.getDimension("nether"),
-        world.getDimension("the_end")
-    ]) {
+    const dimensionIds = DimensionTypes.getAll().map(
+        dimensionType => world.getDimension(dimensionType.typeId)
+    );
+    for (const dimension of dimensionIds) {
 
         for (const entity of dimension.getEntities({
             type: "spimton:weeper"
@@ -109,11 +108,10 @@ system.runInterval(() => {
 
 
 system.runInterval(() => {
-    for (const dimension of [
-        world.getDimension("overworld"),
-        world.getDimension("nether"),
-        world.getDimension("the_end")
-    ]) {
+    const dimensionIds = DimensionTypes.getAll().map(
+        dimensionType => world.getDimension(dimensionType.typeId)
+    );
+    for (const dimension of dimensionIds) {
         for (const entity of dimension.getEntities({
             type: "spimton:weeper"
         })) {

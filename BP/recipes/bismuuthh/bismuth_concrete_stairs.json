@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_concrete_stairs"
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:iridescent_concrete"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_concrete_stairs",
+			"count": 4
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

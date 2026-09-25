@@ -8,142 +8,10 @@
 			"is_experimental": false,
 			"runtime_identifier": "snowball"
 		},
-		"component_groups": {
-			"spimton:tf": {
-				"minecraft:timer": {
-					"time": 0.01,
-					"time_down_event": {
-						"event": "desp"
-					}
-				}
-			},
-			"spimton:d": {
-				"minecraft:instant_despawn": {}
-			},
-			"minecraft:celebrate": {
-				"minecraft:behavior.celebrate": {
-					"priority": 5,
-					"celebration_sound": "celebrate",
-					"sound_interval": {
-						"range_min": 2,
-						"range_max": 7
-					},
-					"jump_interval": {
-						"range_min": 1,
-						"range_max": 3.5
-					},
-					"duration": 30,
-					"on_celebration_end_event": {
-						"event": "minecraft:stop_celebrating",
-						"target": "self"
-					}
-				}
-			},
-			"minecraft:vindicator_aggro": {
-				"minecraft:angry": {
-					"duration": -1,
-					"broadcastRange": 32,
-					"broadcast_anger": true,
-					"calm_event": {
-						"event": "minecraft:stop_aggro",
-						"target": "self"
-					}
-				}
-			},
-			"minecraft:default_targeting": {
-				"minecraft:behavior.nearest_attackable_target": {
-					"priority": 2,
-					"must_see": true,
-					"within_radius": 12,
-					"must_see_forget_duration": 40,
-					"entity_types": [
-						{
-							"filters": {
-								"any_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "player"
-									},
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "snowgolem"
-									},
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "irongolem"
-									},
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "wandering_trader"
-									}
-								]
-							},
-							"max_dist": 12
-						},
-						{
-							"filters": {
-								"all_of": [
-									{
-										"test": "is_family",
-										"subject": "other",
-										"value": "villager"
-									},
-									{
-										"test": "has_component",
-										"subject": "other",
-										"operator": "!=",
-										"value": "minecraft:is_baby"
-									}
-								]
-							},
-							"max_dist": 12
-						}
-					]
-				}
-			},
-			"minecraft:raid_configuration": {
-				"minecraft:dweller": {
-					"dwelling_type": "village",
-					"dweller_role": "hostile",
-					"update_interval_base": 60,
-					"update_interval_variant": 40,
-					"can_find_poi": false,
-					"can_migrate": false,
-					"first_founding_reward": 0
-				},
-				"minecraft:behavior.move_to_village": {
-					"priority": 4,
-					"speed_multiplier": 1,
-					"goal_radius": 2
-				},
-				"minecraft:navigation.walk": {
-					"can_path_over_water": true,
-					"can_pass_doors": true,
-					"can_break_doors": true
-				},
-				"minecraft:annotation.break_door": {
-					"break_time": 30,
-					"min_difficulty": "normal"
-				},
-				"minecraft:ambient_sound_interval": {
-					"value": 2,
-					"range": 4,
-					"event_name": "ambient.in.raid"
-				}
-			}
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:projectile": {
 				"on_hit": {
-					"impact_damage": {
-						"damage": 3,
-						"knockback": true,
-						"destroy_on_hit": true
-					},
 					"spawn_chance": {
 						"first_spawn_chance": 1,
 						"first_spawn_count": 1,
@@ -164,7 +32,8 @@
 					"golem",
 					"monster",
 					"illager",
-					"mob"
+					"mob",
+					"inanimate"
 				]
 			},
 			"minecraft:variant": {
@@ -236,76 +105,12 @@
 			"minecraft:behavior.hurt_by_target": {
 				"priority": 1
 			},
-			"minecraft:on_target_acquired": {
-				"event": "minecraft:become_aggro",
-				"target": "self"
-			},
-			"minecraft:on_target_escape": {
-				"event": "minecraft:stop_aggro",
-				"target": "self"
-			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
 				"is_pushable": true,
 				"is_pushable_by_piston": true
 			}
 		},
-		"events": {
-			"desp": {
-				"add": {
-					"component_groups": [
-						"spimton:d"
-					]
-				}
-			},
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": [
-						"minecraft:default_targeting"
-					]
-				}
-			},
-			"minecraft:become_aggro": {
-				"add": {
-					"component_groups": [
-						"minecraft:vindicator_aggro"
-					]
-				}
-			},
-			"minecraft:stop_aggro": {
-				"remove": {
-					"component_groups": [
-						"minecraft:vindicator_aggro"
-					]
-				}
-			},
-			"minecraft:start_celebrating": {
-				"add": {
-					"component_groups": [
-						"minecraft:celebrate"
-					]
-				}
-			},
-			"minecraft:stop_celebrating": {
-				"remove": {
-					"component_groups": [
-						"minecraft:celebrate"
-					]
-				}
-			},
-			"spimton:transform": {
-				"add": {
-					"component_groups": [
-						"spimton:tf"
-					]
-				},
-				"queue_command": {
-					"command": [
-						"summon spimton:chillgolem",
-						"kill @s"
-					]
-				}
-			}
-		}
+		"events": {}
 	}
 }

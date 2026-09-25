@@ -11,6 +11,17 @@
 					"music"
 				]
 			},
+			"properties": {
+				"spimton:casting_variant": {
+					"client_sync": true,
+					"type": "int",
+					"default": 0,
+					"range": [
+						0,
+						3
+					]
+				}
+			},
 			"animations": {
 				"music": "controller.animation.juandice.music"
 			}
@@ -18,6 +29,31 @@
 		"component_groups": {
 			"spimton:despawn": {
 				"minecraft:instant_despawn": {}
+			},
+			"spimton:melee_check": {
+				"minecraft:entity_sensor": {
+					"relative_range": true,
+					"subsensors": [
+						{
+							"event": "spimton:melee",
+							"cooldown": 1.997,
+							"minimum_count": 1,
+							"event_filters": {
+								"test": "target_distance",
+								"subject": "self",
+								"operator": "<=",
+								"value": 3
+							},
+							"y_offset": 0,
+							"maximum_count": -1,
+							"range": [
+								3,
+								3
+							],
+							"require_all": false
+						}
+					]
+				}
 			},
 			"spimton:attackshooter_1": {
 				"minecraft:mark_variant": {
@@ -118,7 +154,7 @@
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 32,
-							"min_activation_range": 1,
+							"min_activation_range": 3,
 							"cooldown_time": 1,
 							"sequence": [
 								{
@@ -178,7 +214,7 @@
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 30,
-							"min_activation_range": 1,
+							"min_activation_range": 3,
 							"cooldown_time": 2.5,
 							"sequence": [
 								{
@@ -221,7 +257,7 @@
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 32,
-							"min_activation_range": 1,
+							"min_activation_range": 3,
 							"cooldown_time": 0.66,
 							"sequence": [
 								{
@@ -261,7 +297,7 @@
 							"cast_duration": 1,
 							"do_casting": true,
 							"max_activation_range": 32,
-							"min_activation_range": 1,
+							"min_activation_range": 3,
 							"cooldown_time": 0.5,
 							"weight": 1,
 							"sequence": [
@@ -375,7 +411,7 @@
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 32,
-							"min_activation_range": 1,
+							"min_activation_range": 3,
 							"cooldown_time": 1.225,
 							"sequence": [
 								{
@@ -503,7 +539,7 @@
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 32,
-							"min_activation_range": 1,
+							"min_activation_range": 3,
 							"cooldown_time": 1.225,
 							"sequence": [
 								{
@@ -851,8 +887,12 @@
 				},
 				"add": {
 					"component_groups": [
-						"spimton:attacksummoner_1"
+						"spimton:attacksummoner_1",
+						"spimton:melee_check"
 					]
+				},
+				"set_property": {
+					"spimton:casting_variant": 3
 				},
 				"queue_command": {
 					"target": "self",
@@ -874,6 +914,9 @@
 						"spimton:attacksummoner_2"
 					]
 				},
+				"set_property": {
+					"spimton:casting_variant": 1
+				},
 				"queue_command": {
 					"target": "self",
 					"command": [
@@ -894,6 +937,9 @@
 						"spimton:attacksummoner_3"
 					]
 				},
+				"set_property": {
+					"spimton:casting_variant": 2
+				},
 				"queue_command": {
 					"target": "self",
 					"command": [
@@ -906,7 +952,8 @@
 				"trigger": "spimton:finish_attack",
 				"remove": {
 					"component_groups": [
-						"spimton:attacksummoner_3"
+						"spimton:attacksummoner_3",
+						"spimton:melee_check"
 					]
 				},
 				"add": {
@@ -949,9 +996,13 @@
 						"spimton:attackfinal_2"
 					]
 				},
+				"set_property": {
+					"spimton:casting_variant": 3
+				},
 				"add": {
 					"component_groups": [
-						"spimton:attackfinal_3"
+						"spimton:attackfinal_3",
+						"spimton:melee_check"
 					]
 				},
 				"queue_command": {
@@ -966,7 +1017,8 @@
 				"trigger": "spimton:finish_attack",
 				"remove": {
 					"component_groups": [
-						"spimton:attackfinal_3"
+						"spimton:attackfinal_3",
+						"spimton:melee_check"
 					]
 				},
 				"add": {
@@ -1034,6 +1086,14 @@
 					"command": [
 						"playanimation @s animation.champion.shoot none 5",
 						"scriptevent spimton:spread spimton:boomball_smol,30,3,1.225,spimton:juandice_target"
+					]
+				}
+			},
+			"spimton:melee": {
+				"queue_command": {
+					"command": [
+						"playanimation @s animation.champion.melee",
+						"scriptevent spimton:champion_melee"
 					]
 				}
 			},

@@ -1,0 +1,104 @@
+{
+    "format_version": "1.21.100",
+    "animation_controllers": {
+        "controller.animation.champion.summoner": {
+            "initial_state": "not_casting",
+            "states": {
+                "not_casting": {
+                    "transitions": [
+                        {
+                            "casting": "query.is_casting"
+                        }
+                    ]
+                },
+                "casting": {
+                    "animations": [
+                        {
+                            "casting_0": "query.property('spimton:casting_variant') == 0"
+                        },
+                        {
+                            "casting_1": "query.property('spimton:casting_variant') == 1"
+                        },
+                        {
+                            "casting_2": "query.property('spimton:casting_variant') == 2"
+                        },
+                        {
+                            "casting_3": "query.property('spimton:casting_variant') == 3"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "not_casting": "!query.is_casting"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.juandice.general": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "shoota": "query.mark_variant == 1"
+                        },
+                        {
+                            "tyre": "query.mark_variant == 2"
+                        },
+                        {
+                            "shootBay": "query.mark_variant == 3"
+                        }
+                    ]
+                },
+                "shoota": {
+                    "animations": [
+                        "shootNEO"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.mark_variant == 0"
+                        },
+                        {
+                            "tyre": "query.mark_variant == 2"
+                        },
+                        {
+                            "shootBay": "query.mark_variant == 3"
+                        }
+                    ]
+                },
+                "shootBay": {
+                    "animations": [
+                        "bayNEO"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.mark_variant == 0"
+                        },
+                        {
+                            "shoota": "query.mark_variant == 1"
+                        },
+                        {
+                            "tyre": "query.mark_variant == 2"
+                        }
+                    ]
+                },
+                "tyre": {
+                    "animations": [
+                        "tyre"
+                    ],
+                    "transitions": [
+                        {
+                            "shoota": "query.mark_variant == 1"
+                        },
+                        {
+                            "default": "query.mark_variant == 0"
+                        },
+                        {
+                            "shootBay": "query.mark_variant == 3"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

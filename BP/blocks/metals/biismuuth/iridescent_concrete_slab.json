@@ -2,7 +2,7 @@
     "format_version": "1.21.120",
     "minecraft:block": {
         "description": {
-            "identifier": "spimton:chillwood_slab",
+            "identifier": "spimton:iridescent_concrete_slab",
             "menu_category": {
                 "category": "construction",
                 "group": "minecraft:itemGroup.name.slab"
@@ -52,7 +52,7 @@
             "minecraft:geometry": "geometry.defrosted_cobbled_chillstone_slab",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "chillwood_planks",
+                    "texture": "iridescent_concrete",
                     "render_method": "alpha_test"
                 }
             },
@@ -66,10 +66,10 @@
                 ]
             },
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 4
+                "seconds_to_destroy": 5
             },
-            "tag:wood": {},
-            "tag:minecraft:is_kaxe_item_destructible": {},
+            "tag:stone": {},
+            "tag:minecraft:is_pickaxe_item_destructible": {},
             "spimton:slab_comp": {
                 "lootTable": "false"
             }
@@ -121,7 +121,7 @@
                     "minecraft:selection_box": true,
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "chillwood_planks",
+                            "texture": "iridescent_concrete",
                             "render_method": "alpha_test"
                         }
                     }

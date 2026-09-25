@@ -22,7 +22,7 @@
 			},
 			"animations": {
 				"general": "animation.chillager.general",
-				"casting": "animation.chillager.casting",
+				"casting": "animation.chillager.castingneo_2",
 				"look_at_target": "animation.common.look_at_target",
 				"move": "animation.chillager.move",
 				"celebrating": "animation.chillager.casting3",

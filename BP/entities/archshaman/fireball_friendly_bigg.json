@@ -5,7 +5,8 @@
 			"identifier": "spimton:fireball_friendly_bigg",
 			"is_spawnable": false,
 			"is_summonable": true,
-			"is_experimental": false
+			"is_experimental": false,
+			"runtime_identifier": "snowball"
 		},
 		"component_groups": {
 			"minecraft:exploding": {

@@ -1,5 +1,5 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.26.30",
     "minecraft:entity": {
         "description": {
             "identifier": "spimton:tnt_weeper",
@@ -62,7 +62,7 @@
             "minecraft:damage_sensor": {
                 "triggers": {
                     "cause": "all",
-                    "deals_damage": false
+                    "deals_damage": "no"
                 }
             },
             "minecraft:collision_box": {
@@ -79,10 +79,6 @@
                 "causes_fire": false
             },
             "minecraft:physics": {},
-            "minecraft:pushable": {
-                "is_pushable": false,
-                "is_pushable_by_piston": true
-            },
             "minecraft:conditional_bandwidth_optimization": {
                 "default_values": {
                     "max_optimized_distance": 80.0,

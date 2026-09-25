@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.26.20",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:justice_hammer",
@@ -57,6 +57,7 @@
 							"semi_random_diff_damage": true
 						}
 					},
+					"isolated_physics": true,
 					"multiple_targets": true,
 					"anchor": 1,
 					"power": 0.67,
@@ -101,6 +102,7 @@
 					},
 					"stick_in_ground": {}
 				},
+				"isolated_physics": true,
 				"multiple_targets": true,
 				"anchor": 1,
 				"power": 0.66,
@@ -120,10 +122,7 @@
 				]
 			},
 			"minecraft:physics": {},
-			"minecraft:pushable": {
-				"is_pushable": false,
-				"is_pushable_by_piston": true
-			},
+			"minecraft:pushable_by_block": {},
 			"minecraft:conditional_bandwidth_optimization": {
 				"default_values": {
 					"max_optimized_distance": 80,

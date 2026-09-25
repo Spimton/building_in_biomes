@@ -18,14 +18,19 @@
 				"animate": [
 					"controller_move",
 					"controller_general",
-					"controller_attack"
+					"controller_attack",
+					"controller_summoner"
 				]
 			},
 			"animations": {
+				"casting_0": "animation.champion.summon",
+				"casting_1": "animation.champion.boomball_deathlier_summon",
+				"casting_2": "animation.champion.blitzer_summon",
+				"casting_3": "animation.champion.heavensfallingdown_summon",
 				"shootNEO": "animation.champion.shootNEO",
 				"bayNEO": "animation.champion.bayNEO",
 				"general": "animation.archshaman.idle",
-				"casting": "animation.champion.summon",
+				//"casting": "animation.champion.summon",
 				"look_at_target": "animation.common.look_at_target",
 				"move": "animation.archshaman.walk",
 				"tyre": "animation.champion.tyre",
@@ -34,6 +39,7 @@
 				"controller_move": "controller.animation.villager.move",
 				"shoot": "animation.archshaman.casting",
 				"roaring": "animation.archshaman.roaring",
+				"controller_summoner": "controller.animation.champion.summoner",
 				"controller_attack": "controller.animation.juandice.general"
 			},
 			"particle_effects": {

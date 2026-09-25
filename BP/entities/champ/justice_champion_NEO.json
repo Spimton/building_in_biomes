@@ -12,6 +12,17 @@
 					"health"
 				]
 			},
+			"properties": {
+				"spimton:casting_variant": {
+					"client_sync": true,
+					"type": "int",
+					"default": 0,
+					"range": [
+						0,
+						3
+					]
+				}
+			},
 			"animations": {
 				"health": "controller.animation.juandice.health",
 				"music": "controller.animation.juandice.music"
@@ -115,12 +126,12 @@
 					"priority": 1,
 					"summon_choices": [
 						{
-							"cast_duration": 1,
+							"cast_duration": 1.5,
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 20,
 							"min_activation_range": 1,
-							"cooldown_time": 3,
+							"cooldown_time": 1.997,
 							"sequence": [
 								{
 									"base_delay": 0,
@@ -178,12 +189,12 @@
 					"priority": 1,
 					"summon_choices": [
 						{
-							"cast_duration": 1,
+							"cast_duration": 1.5,
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 32,
 							"min_activation_range": 1,
-							"cooldown_time": 1.997,
+							"cooldown_time": 1.225,
 							"sequence": [
 								{
 									"base_delay": 0,
@@ -235,7 +246,7 @@
 							"weight": 1,
 							"max_activation_range": 32,
 							"min_activation_range": 1,
-							"cooldown_time": 1.5,
+							"cooldown_time": 1.1225,
 							"sequence": [
 								{
 									"base_delay": 0,
@@ -284,12 +295,12 @@
 					"priority": 1,
 					"summon_choices": [
 						{
-							"cast_duration": 1,
+							"cast_duration": 1.5,
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 8,
 							"min_activation_range": 2,
-							"cooldown_time": 1.225,
+							"cooldown_time": 0.66,
 							"sequence": [
 								{
 									"base_delay": 0,
@@ -305,12 +316,12 @@
 							]
 						},
 						{
-							"cast_duration": 1,
+							"cast_duration": 1.5,
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 32,
 							"min_activation_range": 1,
-							"cooldown_time": 1.225,
+							"cooldown_time": 0.66,
 							"sequence": [
 								{
 									"base_delay": 0,
@@ -326,12 +337,12 @@
 							]
 						},
 						{
-							"cast_duration": 1,
+							"cast_duration": 1.5,
 							"do_casting": true,
 							"weight": 1,
 							"max_activation_range": 11,
 							"min_activation_range": 5,
-							"cooldown_time": 1.225,
+							"cooldown_time": 0.66,
 							"sequence": [
 								{
 									"base_delay": 0,
@@ -347,6 +358,9 @@
 							]
 						}
 					]
+				},
+				"minecraft:mark_variant": {
+					"value": 0
 				},
 				"minecraft:timer": {
 					"looping": true,
@@ -685,6 +699,9 @@
 										"spimton:heavensfallingdown"
 									]
 								},
+								"set_property": {
+									"spimton:casting_variant": 3
+								},
 								"filters": {
 									"test": "target_distance",
 									"value": 20,
@@ -710,6 +727,9 @@
 										"spimton:blitzard"
 									]
 								},
+								"set_property": {
+									"spimton:casting_variant": 2
+								},
 								"queue_command": {
 									"command": [
 										"function mob/juandice/dialog_blitz"
@@ -730,6 +750,9 @@
 									],
 									"target": "target"
 								},
+								"set_property": {
+									"spimton:casting_variant": 3
+								},
 								"trigger": "spimton:column"
 							},
 							{
@@ -738,6 +761,9 @@
 									"component_groups": [
 										"spimton:summoner_deathlier"
 									]
+								},
+								"set_property": {
+									"spimton:casting_variant": 1
 								},
 								"queue_command": {
 									"command": [

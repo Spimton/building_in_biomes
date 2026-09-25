@@ -1,4 +1,4 @@
-import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
+import { world, system, EntityComponentTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, DimensionTypes } from '@minecraft/server'
 import { updateItemDurability } from "../folder2/updateDurability.js";
 import { shootAroundHead } from "./weeper.js";
 
@@ -306,11 +306,9 @@ system.beforeEvents.startup.subscribe((event) => {
 
 
 system.runInterval(() => {
-    const dimensions = [
-        world.getDimension("overworld"),
-        world.getDimension("nether"),
-        world.getDimension("the_end"),
-    ];
+    const dimensions = DimensionTypes.getAll().map(
+        dimensionType => world.getDimension(dimensionType.typeId)
+    );
     for (const dimension of dimensions) {
         for (const e of dimension.getEntities({
             families: ["spimton:fungus"]
@@ -535,6 +533,30 @@ system.afterEvents.scriptEventReceive.subscribe((data) => {
             const property = sourceEntity.getDynamicProperty(prop);
             sourceEntity.runCommand(`say ${prop} : ${property}`)
         }
+    }
+    if (id === "spimton:champion_melee") {
+        system.runTimeout(() => {
+            const entitiesHit = sourceEntity.dimension.getEntities({ location: sourceEntity.location, excludeFamilies: ["spimton:juandice", "inanimate"], maxDistance: 5 })
+
+            for (const entity of entitiesHit) {
+                if (entity == sourceEntity) continue;
+                const viktor = Math.hypot(
+                    entity.location.x - sourceEntity.location.x,
+                    entity.location.y - sourceEntity.location.y,
+                    entity.location.z - sourceEntity.location.z
+                );
+                console.warn((entity.location.x - sourceEntity.location.x))
+                entity.applyImpulse({
+                    x: (entity.location.x - sourceEntity.location.x) / (viktor + 0.00001) * 4,
+                    y: (entity.location.y - sourceEntity.location.y) / (viktor + 0.00001) * 4,
+                    z: (entity.location.z - sourceEntity.location.z) / (viktor + 0.00001) * 4
+                });
+                entity.applyDamage(22, { damagingEntity: sourceEntity, cause: "entityAttack" })
+
+
+            }
+        }, 18)
+
     }
 });
 

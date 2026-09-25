@@ -12,6 +12,7 @@
             }
         },
         "components": {
+            "minecraft:cannot_be_attacked": {},
             "minecraft:conditional_bandwidth_optimization": {},
             "minecraft:type_family": {
                 "family": [

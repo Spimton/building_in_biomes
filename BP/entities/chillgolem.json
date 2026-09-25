@@ -235,6 +235,13 @@
 					]
 				}
 			},
+			"minecraft:entity_born": {
+				"add": {
+					"component_groups": [
+						"minecraft:default_targeting"
+					]
+				}
+			},
 			"minecraft:become_aggro": {
 				"add": {
 					"component_groups": [

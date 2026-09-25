@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "spimton:bismuth_wool_stairs"
+		},
+		"pattern": [
+			"#  ",
+			"## ",
+			"###"
+		],
+		"key": {
+			"#": {
+				"item": "spimton:iridescent_wool"
+			}
+		},
+		"result": {
+			"item": "spimton:iridescent_wool_stairs",
+			"count": 4
+		},
+		"tags": [
+			"crafting_table"
+		]
+	}
+}

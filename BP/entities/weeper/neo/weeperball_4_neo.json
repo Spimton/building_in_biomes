@@ -71,7 +71,6 @@
                     "spawn_aoe_cloud": {
                         "affect_owner": false,
                         "duration": 6,
-                        "particle": "mobspellinstantaneous",
                         "potion": 36,
                         "reapplication_delay": 0.1997,
                         "radius": 2
