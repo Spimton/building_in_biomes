@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.80",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "spimton:sfire",
@@ -40,6 +40,7 @@
 			}
 		},
 		"components": {
+			"minecraft:cannot_be_attacked": {},
 			"minecraft:is_hidden_when_invisible": {},
 			"minecraft:health": {
 				"value": 30,
@@ -49,7 +50,7 @@
 				"triggers": [
 					{
 						"cause": "all",
-						"deals_damage": false
+						"deals_damage": "no"
 					}
 				]
 			},

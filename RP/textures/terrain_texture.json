@@ -1345,6 +1345,12 @@
 		"chorus_cobblestone_mosaic": {
 			"textures": "textures/blocks/ender/chorus_mossy_cobblestone_mosaic"
 		},
+		"chorus_granite_bricks": {
+			"textures": "textures/blocks/ender/chorus_mossy_granite_bricks"
+		},
+		"chorus_andesite_bricks": {
+			"textures": "textures/blocks/ender/chorus_mossy_andesite_bricks"
+		},
 		"crimsite_block": {
 			"textures": "textures/blocks/crimsite/crimsite_block"
 		},

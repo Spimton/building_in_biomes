@@ -1,0 +1,132 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:block": {
+        "description": {
+            "identifier": "spimton:nether_wool_slab",
+            "menu_category": {
+                "category": "construction",
+                "group": "minecraft:itemGroup.name.slab"
+            },
+            "states": {
+                "spimton:double": [
+                    false,
+                    true
+                ]
+            },
+            "traits": {
+                "minecraft:placement_position": {
+                    "enabled_states": [
+                        "minecraft:vertical_half"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    8,
+                    16
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    8,
+                    16
+                ]
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 4
+            },
+            "minecraft:geometry": "geometry.defrosted_cobbled_chillstone_slab",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "nether_wool",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:liquid_detection": {
+                "detection_rules": [
+                    {
+                        "liquid_type": "water",
+                        "can_contain_liquid": true,
+                        "on_liquid_touches": "blocking"
+                    }
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "tag:woold": {},
+            "tag:minecraft:is_shears_item_destructible": {},
+            "spimton:slab_comp": {
+                "lootTable": "false"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && query.block_state('spimton:double') == false",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [
+                            180,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('spimton:double') == true",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "minecraft:geometry.full_block"
+                    },
+                    "minecraft:collision_box": true,
+                    "minecraft:selection_box": true,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "nether_wool",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

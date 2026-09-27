@@ -1409,6 +1409,8 @@ world.afterEvents.entityDie.subscribe(data => {
         cadaver.runCommand("scoreboard players set @s asbestos 0")
         cadaver.runCommand("scoreboard players set @s cancer 0")
         cadaver.removeTag("spimton:void_overdose")
+        cadaver.removeTag("spimton:juandice_target")
+        cadaver.removeTag("spimton:weeper_target")
     }
 
 

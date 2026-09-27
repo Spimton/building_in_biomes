@@ -305,6 +305,30 @@
 		"textures": "chorus_cragrock_bricks",
 		"sound": "stone"
 	},
+	"spimton:chorus_granite_bricks": {
+		"sound": "stone",
+		"textures": "chorus_granite_bricks"
+	},
+	"spimton:chorus_granite_bricks_slab": {
+		"sound": "stone",
+		"textures": "chorus_granite_bricks"
+	},
+	"spimton:chorus_granite_bricks_stairs": {
+		"sound": "stone",
+		"textures": "chorus_granite_bricks"
+	},
+	"spimton:chorus_andesite_bricks": {
+		"sound": "stone",
+		"textures": "chorus_andesite_bricks"
+	},
+	"spimton:chorus_andesite_bricks_slab": {
+		"sound": "stone",
+		"textures": "chorus_andesite_bricks"
+	},
+	"spimton:chorus_granite_andesite_stairs": {
+		"sound": "stone",
+		"textures": "chorus_granite_bricks"
+	},
 	///STONE///
 	"spimton:chiseled_cobblestone_bricks": {
 		"textures": "chiseled_cobblestone_bricks",
@@ -3456,6 +3480,14 @@
 		"textures": "bricked_glowstone"
 	},
 	"spimton:nether_wool": {
+		"sound": "cloth",
+		"textures": "nether_wool"
+	},
+	"spimton:nether_wool_slab": {
+		"sound": "cloth",
+		"textures": "nether_wool"
+	},
+	"spimton:nether_wool_stairs": {
 		"sound": "cloth",
 		"textures": "nether_wool"
 	},

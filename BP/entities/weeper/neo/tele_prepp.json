@@ -26,6 +26,7 @@
             }
         },
         "components": {
+            "minecraft:cannot_be_attacked": {},
             "minecraft:is_hidden_when_invisible": {},
             "minecraft:health": {
                 "value": 30,

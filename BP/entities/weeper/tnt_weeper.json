@@ -53,6 +53,7 @@
             }
         },
         "components": {
+            "minecraft:cannot_be_attacked": {},
             "minecraft:type_family": {
                 "family": [
                     "tnt",

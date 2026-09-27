@@ -30,6 +30,7 @@
             }
         },
         "components": {
+            "minecraft:cannot_be_attacked": {},
             "minecraft:collision_box": {
                 "width": 3,
                 "height": 3
