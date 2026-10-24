@@ -15,7 +15,6 @@ import 'necklace'
 import 'tiara'
 import "./folder/chronos_staff.js"
 import 'boss'
-import 'loreApplen'
 import 'applen_eq'
 import 'book'
 import "./folder/ability_other.js"

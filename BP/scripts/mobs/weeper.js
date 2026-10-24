@@ -1,4 +1,4 @@
-import { world, system, DimensionTypes, EntityProjectileComponent, CustomCommandParamType, CommandPermissionLevel, CustomCommandError, CustomCommandStatus, GameMode } from '@minecraft/server'
+import { world, system, DimensionTypes } from '@minecraft/server'
 import { ConfigEntity } from "../CONFIG.js";
 import { spiral, shootSpread } from "./projectiles.js";
 import { ChampConfig, resolveRangedDamage } from "./champion.js";
@@ -576,7 +576,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
 })
 
 
-function distanceToSurface(entity) {
+export function distanceToSurface(entity) {
     const dimension = entity.dimension;
     const loc = entity.location;
 

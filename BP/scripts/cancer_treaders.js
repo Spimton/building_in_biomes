@@ -143,10 +143,16 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
 
         },
         onRandomTick({ block, dimension }) {
+            const players = dimension.getPlayers({
+                location: block.location,
+                maxDistance: 16
+            });
+
+            if (players.length === 0) return;
+
             const Random = Math.random()
             if (Random > 0.9) {
-                const location = block.location
-                const adjcent = [
+                let adjacent = [
                     block.north(),
                     block.south(),
                     block.west(),
@@ -154,10 +160,19 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
                     block.above(),
                     block.below()
                 ]
+                const hasAirNeighbor = adjacent.some(
+                    blockL => blockL !== undefined && blockL.typeId === "minecraft:air"
+                );
 
-                if (!adjcent.every(blockL => blockL.typeId === "air" || blockL === undefined)) {
-                    dimension.spawnEntity("spimton:cancer_giver", location)
-                    dimension.spawnParticle("spimton:lungcancer", block.above())
+                if (hasAirNeighbor && Math.random() > 0.9) {
+                    const location = block.location;
+
+                    dimension.spawnEntity("spimton:cancer_giver", location);
+                    dimension.spawnParticle("spimton:lungcancer", {
+                        x: location.x,
+                        y: location.y + 1,
+                        z: location.z
+                    });
                 }
             }
         }

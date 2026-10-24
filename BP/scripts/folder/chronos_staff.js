@@ -1,12 +1,15 @@
-import { world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, BlockPermutation, InputInfo, ItemComponentTypes, EntityComponentTypes, EntityDamageCause } from '@minecraft/server'
+import {
+    world, system, WeatherType, ItemStack, EquipmentSlot, GameMode, GameRule, BlockPermutation, InputInfo, ItemComponentTypes, EntityComponentTypes, EntityDamageCause, InputButton,
+    ButtonState
+} from '@minecraft/server'
 import { updateItemDurability } from "../folder2/updateDurability.js";
 import { ConfigItems } from "../CONFIG.js";
+import { distanceToSurface } from "../mobs/weeper.js";
 
 
 system.runInterval(celerity, 20);
 
 system.runInterval(championship, 1);
-system.runInterval(championshipb, 1);
 system.runInterval(targe, 1);
 system.runInterval(royalspear, 20);
 
@@ -58,7 +61,6 @@ function championship() {
         const Equipmentb = equipment.getEquipment("Feet");
         const Equipment = equipment.getEquipment("Legs");
         const hasEquipment = Equipment?.typeId === "spimton:champion_leggings";
-        const hasEquipmentb = Equipmentb?.typeId === "spimton:champion_boots";
         if (hasEquipment && fallgays && !snek) {
             player.applyKnockback({ x: wiew.x * ConfigItems.championLeggingsKBX, z: wiew.z * ConfigItems.championLeggingsKBX }, ConfigItems.championLeggingsKBY)
             player.addTag("champioon")
@@ -1135,31 +1137,36 @@ world.afterEvents.entityHurt.subscribe(event => {
 
 })*/
 
-
-
-function championshipb() {
-    const players = world.getPlayers();
-    for (const player of players) {
-        const equipment = player.getComponent("equippable");
-
-        if (equipment == null) {
-
-            continue;
-        }
-        const { x, y, z } = player.getHeadLocation()
-        const viktor = { x: x, y: y - 1, z: z }
-        const wiew = player.getViewDirection()
-        const block = player.dimension.getBlock(viktor)
-        const aer = block.below(1).isAir
-        const Equipmentb = equipment.getEquipment("Feet");
-        const hasEquipmentb = Equipmentb?.typeId === "spimton:champion_boots";
-        if (hasEquipmentb && player?.isJumping && player?.isSneaking) {
-            if (aer == false) {
-                player.applyKnockback({ x: wiew.x * ConfigItems.championBootsKBX, z: wiew.z * ConfigItems.championBootsKBX }, ConfigItems.championBootsKBY)
-                player.addEffect("resistance", 30, { amplifier: 5, showParticles: false })
-            }
+world.afterEvents.playerButtonInput.subscribe(
+    ({ player, button, newButtonState }) => {
+        if (
+            button === InputButton.Jump &&
+            newButtonState === ButtonState.Pressed
+        ) {
+            championshipb(player);
         }
     }
+);
+
+
+function championshipb(player) {
+
+    const equipment = player.getComponent("equippable");
+
+    if (equipment == null) {
+
+        return;
+    }
+
+    const wiew = player.getViewDirection()
+    const Equipmentb = equipment.getEquipment("Feet");
+    const hasEquipmentb = Equipmentb?.typeId === "spimton:champion_boots";
+    if (hasEquipmentb && player?.isSneaking && distanceToSurface(player) < 2) {
+        player.playSound("wind_charge.burst")
+        player.applyKnockback({ x: wiew.x * ConfigItems.championBootsKBX, z: wiew.z * ConfigItems.championBootsKBX }, ConfigItems.championBootsKBY)
+
+    }
+
 }
 system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:goodboy', {

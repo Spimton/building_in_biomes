@@ -1,4 +1,5 @@
 import { world, system, TicksPerSecond, EntityComponentTypes } from '@minecraft/server'
+import { ConfigItems } from "./CONFIG.js"
 
 const ale = [
     'spimton:ale'
@@ -109,6 +110,9 @@ const randomwine = [
     "spimton:crude_vodka",
     "spimton:crude_lager"
 ]
+
+const beverConfig = ConfigItems.beverageConfig;
+const drunkConfig = beverConfig.bottledBeverageConfig.drunkConfig;
 ///BEVERAGES///
 
 world.afterEvents.itemCompleteUse.subscribe(event => {
@@ -283,19 +287,19 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
     if (entity.typeId !== "minecraft:player" || !itemStack || !randomwine.includes(itemStack.typeId)) return;
     const tag = itemStack.getTags()
     if (tag[0] === "spimton:red_wine") {
-        Drunk(250, 0.15, 10, entity)
+        Drunk(drunkConfig.redWineDrunk, entity)
         entity.addEffect('nausea', 800, { amplifier: 0, showParticles: true });
     }
     if (tag[0] === "spimton:white_wine") {
-        Drunk(200, 0.1, 12, entity)
+        Drunk(drunkConfig.whiteWineDrunk, entity)
         entity.addEffect('nausea', 400, { amplifier: 0, showParticles: true });
     }
     if (tag[0] === "spimton:cider") {
-        Drunk(100, 0.075, 8, entity)
+        Drunk(drunkConfig.ciderDrunk, entity)
         entity.addEffect('nausea', 600, { amplifier: 0, showParticles: true });
     }
     if (tag[0] === "spimton:lager") {
-        Drunk(100, 0.1, 15, entity)
+        Drunk(drunkConfig.lagerDrunk, entity)
         entity.addEffect('nausea', Math.ceil(Math.random() * 800), { amplifier: 0, showParticles: true });
     }
     if (tag[0] === "spimton:ale") {
@@ -368,22 +372,22 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
             entity.camera.fade({ fadeColor: { red: 18 / 255, green: 52 / 255, blue: 5 / 255 }, fadeTime: { fadeInTime: 0.1, fadeOutTime: 5, holdTime: 0.1 } })
             break;
         case "spimton:random_ale_1":
-            Drunk(200, 0.05, 5, entity)
+            Drunk(drunkConfig.aleDrunk.ale_1_drunk, entity)
 
             break;
         case "spimton:random_ale_2":
-            Drunk(90, 0.05, Math.floor(Math.random() * 10), entity)
+            Drunk(drunkConfig.aleDrunk.ale_2_drunk, entity)
 
             break;
         case "spimton:random_ale_3":
-            Drunk(105, 0.15, 8, entity)
+            Drunk(drunkConfig.aleDrunk.ale_3_drunk, entity)
             break;
         case "spimton:random_ale_4":
-            Drunk(120, 0.1, 4, entity)
+            Drunk(drunkConfig.aleDrunk.ale_4_drunk, entity)
             break;
         case "spimton:random_ale_5":
             entity.addEffect("strength", 200)
-            Drunk(105, 0.15, 4, entity)
+            Drunk(drunkConfig.aleDrunk.ale_5_drunk, entity)
             break;
         case "spimton:random_lager_1":
             entity.addEffect('jump_boost', 100, { amplifier: 2 })
@@ -392,11 +396,11 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
             entity.addEffect('regeneration', Math.floor(Math.random() * 400))
             break;
         case "spimton:random_ale_6":
-            Drunk(180, 0.075, 5, entity)
+            Drunk(drunkConfig.aleDrunk.ale_6_drunk, entity)
             entity.addEffect("saturation", Math.floor(Math.random() * 1000))
             break;
         case "spimton:random_vodka":
-            Drunk(180, 0.075, 5, entity)
+            Drunk(drunkConfig.vodkaDrunk, entity)
             entity.addEffect("slowness", Math.floor(Math.random() * 500))
             break;
 
@@ -425,8 +429,9 @@ world.afterEvents.entityDie.subscribe(event => {
 
 
 
-function Drunk(duration, maxPower, interval, entity) {
+function Drunk(drunkConfig, entity) {
     let ticks = 0;
+    let { maxPower, duration, interval } = drunkConfig;
 
     if (DrunkPeople.has(entity.id)) {
         system.clearRun(DrunkPeople.get(entity.id));

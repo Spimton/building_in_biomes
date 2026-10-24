@@ -770,3 +770,193 @@ export function shootSpread(player, spreadDegrees, projectileCount, speed, proje
         });
     }
 }
+
+
+
+
+
+
+
+
+/// DYNAMIC PROPERTIES COMMAND
+
+system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
+    // Register command modes.
+    customCommandRegistry.registerEnum("spimton:dp_mode", [
+        "read",
+        "modify"
+    ]);
+
+    // Register supported property types.
+    customCommandRegistry.registerEnum("spimton:dp_type", [
+        "number",
+        "string",
+        "boolean"
+    ]);
+
+    customCommandRegistry.registerCommand(
+        {
+            name: "spimton:dynamic_properties",
+            description: "Read or modify entity dynamic properties",
+            permissionLevel: CommandPermissionLevel.GameDirectors,
+
+            mandatoryParameters: [
+                {
+                    name: "target",
+                    type: CustomCommandParamType.EntitySelector
+                },
+                {
+                    name: "spimton:dp_mode",
+                    type: CustomCommandParamType.Enum
+                },
+                {
+                    name: "property",
+                    type: CustomCommandParamType.String
+                }
+            ],
+
+            optionalParameters: [
+                {
+                    name: "spimton:dp_type",
+                    type: CustomCommandParamType.Enum
+                },
+                {
+                    name: "value",
+                    type: CustomCommandParamType.String
+                }
+            ]
+        },
+        (origin, targets, mode, property, type, rawValue) => {
+
+
+            // Validate read commands.
+            if (mode === "read" && (type !== undefined || rawValue !== undefined)) {
+                return {
+                    status: CustomCommandStatus.Failure,
+                    message: "Usage: /spimton:dp <target> read <property|all>"
+                };
+            }
+
+            // Validate modify commands.
+            if (mode === "modify") {
+                if (!type || rawValue === undefined) {
+                    return {
+                        status: CustomCommandStatus.Failure,
+                        message: "Usage: /spimton:dp <target> modify <property> <number|string|boolean> <value>"
+                    };
+                }
+
+                if (
+                    type === "boolean" &&
+                    rawValue !== "true" &&
+                    rawValue !== "false"
+                ) {
+                    return {
+                        status: CustomCommandStatus.Failure,
+                        message: "Boolean values must be true or false."
+                    };
+                }
+
+                if (
+                    type === "number" &&
+                    (
+                        rawValue.trim() === "" ||
+                        !Number.isFinite(Number(rawValue))
+                    )
+                ) {
+                    return {
+                        status: CustomCommandStatus.Failure,
+                        message: "The value must be a valid number."
+                    };
+                }
+            }
+
+            system.run(() => {
+                const executor = origin.sourceEntity;
+
+                function reply(message) {
+                    if (executor?.typeId === "minecraft:player") {
+                        executor.sendMessage(message);
+                    } else {
+                        world.sendMessage(message);
+                    }
+                }
+
+                for (const entity of targets) {
+                    try {
+                        // READ ALL: list every dynamic property.
+                        if (mode === "read" && property === "all") {
+                            const ids = entity.getDynamicPropertyIds();
+
+                            reply(
+                                `§6[DP] ${entity.typeId}: ${ids.length} dynamic properties`
+                            );
+
+                            if (ids.length === 0) {
+                                reply("§7No dynamic properties have been set.");
+                                continue;
+                            }
+
+                            for (const id of ids) {
+                                const value = entity.getDynamicProperty(id);
+
+                                reply(
+                                    `§e${id} §7= §a${JSON.stringify(value)}`
+                                );
+                            }
+                        }
+
+                        // READ ONE: retrieve a specific property.
+                        else if (mode === "read") {
+                            const value = entity.getDynamicProperty(property);
+
+                            reply(
+                                `§e[DP] ${entity.typeId} §7${property} = §a${value === undefined
+                                    ? "undefined (not set)"
+                                    : JSON.stringify(value)
+                                }`
+                            );
+                        }
+
+                        // MODIFY: set a property to the specified value.
+                        else if (mode === "modify") {
+                            let value;
+
+                            switch (type) {
+                                case "number":
+                                    value = Number(rawValue);
+                                    break;
+
+                                case "string":
+                                    value = rawValue;
+                                    break;
+
+                                case "boolean":
+                                    value = rawValue === "true";
+                                    break;
+
+                                default:
+                                    reply(`§cUnknown property type: ${type}`);
+                                    continue;
+                            }
+
+                            entity.setDynamicProperty(property, value);
+
+                            reply(
+                                `§a[DP] Set ${property} = ${JSON.stringify(value)} (${type})`
+                            );
+                        }
+                    } catch (error) {
+                        reply(
+                            `§c[DP] Error for ${entity.typeId}: ${error}`
+                        );
+                    }
+                }
+            });
+
+            return {
+                status: CustomCommandStatus.Success
+            };
+        }
+    );
+});

@@ -1,4 +1,5 @@
 import { system, world } from '@minecraft/server'
+import { ConfigItems } from "./CONFIG.js"
 
 
 const loreAle = 'spimton:ale'
@@ -67,6 +68,13 @@ const crude = [
 ]
 const vodka = "spimton:random_vodka"
 
+const drunkConfig = ConfigItems.beverageConfig.bottledBeverageConfig.drunkConfig;
+
+function drunkDuration(drunkEffect) {
+    const { interval, duration } = drunkEffect
+    return Math.round((interval * duration) / 20)
+}
+
 function checkPlayerInventory() {
     for (const player of world.getPlayers()) {
         const inventory = player.getComponent('minecraft:inventory').container;
@@ -76,85 +84,74 @@ function checkPlayerInventory() {
 
             if (item && item.typeId === loreWine) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Applies §aResistance I§7 for §e10§7 seconds'
+                    '§r§9Nausea (0:20)',
+                    '§r§9Resistance (0:10)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreMead) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Applies §aStrength I§7 for §e10§7 seconds'
+                    '§r§9Nausea (0:20)',
+                    '§r§9Strength (0:10)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreCider) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Fully restores hunger bar'
+                    '§r§9Nausea (0:20)',
+                    '§r§9Saturation (0:01)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreAle) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Applies §aRegeneration I§7 for §e10§7 seconds'
+                    '§r§9Nausea (0:20)',
+                    '§r§9Regeneration (0:10)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreBeetAle) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e5§7 seconds',
-                    ' §r§7Applies §cSlowness I§7 for §e5§7 seconds',
-                    ' §r§7Applies §aAbsorption III§7 for §e5§7 seconds'
+                    '§r§9Nausea (0:05)',
+                    '§r§9Absorption III (0:10)',
+                    '§r§9Slowness I (0:05)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreGrog) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e10§7 seconds',
-                    ' §r§7Replenishes a few hunger bars'
+                    '§r§9Nausea (0:10)',
+                    '§r§9Saturation (0:0025)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreVodka) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e30§7 seconds',
-                    ' §r§7Applies §cWeakness I§7 for §e15§7 seconds',
-                    ' §r§7Has high saturation'
+                    '§r§9Nausea (0:30)',
+                    '§r§9Weakness (0:30)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreRedRum) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e10§7 seconds',
-                    ' §r§7Applies §cBlindness§7 for §e10§7 seconds',
-                    ' §r§7Applies §aStrength III§7 for §e10§7 seconds',
-                    ' §r§7Sets consumer on fire'
+                    '§r§9Nausea (0:10)',
+                    '§r§9Blindness (0:10)',
+                    '§r§9Strength III (0:10)',
+                    '§r§9Sets consumer on fire'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreDreadGrog) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e5§7 seconds',
-                    ' §r§7Applies §cBad Omen I§7 for §e60§7 seconds'
+                    '§r§9Nausea (0:05)',
+                    '§r§9Bad Omen (0:60)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreEggnog) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e10§7 seconds',
-                    ' §r§7Applies §aJump Boost§7 for §e10§7 seconds',
+                    '§r§9Nausea (0:10)',
+                    '§r§9Jump Boost (0:10)'
                 ])
                 inventory.setItem(i, item)
             }
@@ -168,17 +165,15 @@ function checkPlayerInventory() {
             }
             if (item && item.typeId === loreGbeer) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Applies §aSpeed II§7 for §e20§7 seconds',
-                    ' §r§7Applies §cHunger II§7 for §e20§7 seconds'
+                    '§r§9Nausea (0:20)',
+                    '§r§9Speed II (0:20)',
+                    '§r§9Hunger II (0:20)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === loreHTLead) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §5[Profund Brain Damage]',
+                    '§r§9Applies §5Profound Brain Damage§9:',
                     ' §r§7-§cNausea X',
                     ' §r§7-§cWeakness X',
                     ' §r§7-§cSlowness X',
@@ -188,8 +183,7 @@ function checkPlayerInventory() {
             }
             if (item && item.typeId === loreLead) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §5[Brain Damage]',
+                    '§r§9Applies §uBrain Damage§9:',
                     ' §r§7-§cNausea II',
                     ' §r§7-§cWeakness II',
                     ' §r§7-§cSlowness II',
@@ -199,30 +193,28 @@ function checkPlayerInventory() {
             }
             if (item && item.typeId === loreSTStout) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Applies §cSlowness V§7 for §e20§7 seconds',
-                    ' §r§7Applies §cResistance V§7 for §e20§7 seconds',
+                    '§r§9Nausea (0:20)',
+                    '§r§9Slowness V (0:20)',
+                    '§r§9Resistance V (0:20)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === lorevliquor) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e20§7 seconds',
-                    ' §r§7Removes §cALL§7 experience levels ',
-                    ' §r§7Adds §a2 hearts§7 for each 2 points consumed,',
-                    ' §r§7plus an additional 2',
-                    ' §r§4Results in an explosion if the user had',
-                    ' §r§4already drunk the Liquor.',
-                    '',
+                    '§r§9Nausea (0:20)',
+                    '§r§9Removes all experience',
+                    '§r§9Applies one level of Health Boost for each',
+                    '§r§92 levels consumed',
+                    '§r§mResults in an explosion if the user had',
+                    '§r§malready drunk the Liquor.',
+                    /*'',
                     'The Economist',
                     'In this world of Spies and Hats',
-                    'Trades XP for better Stats'
+                    'Trades XP for better Stats'*/
                 ])
                 inventory.setItem(i, item)
             }
-            if (item && item.typeId === loreCannate) {
+            /*if (item && item.typeId === loreCannate) {
                 item.setLore([
                     '',
                     'The Australian',
@@ -230,7 +222,7 @@ function checkPlayerInventory() {
                     'this Jarate is surprisingly tasty!'
                 ])
                 inventory.setItem(i, item)
-            }
+            }*/
             if (item && item.typeId === lorespoison) {
                 item.setLore([
                     '§r§7Affects HP a lot!',
@@ -241,234 +233,364 @@ function checkPlayerInventory() {
             }
             if (item && item.typeId === lorerwine) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e40§7 seconds',
-                    ' §r§7Applies §aResistance I§7 for §e20§7 seconds',
-                    '',
-                    'Cosmetic variant of normal Wine'
+                    '§r§9Nausea (0:40)',
+                    '§r§9Resistance (0:20)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === lorewwine) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7Applies §cNausea§7 for §e10§7 seconds',
-                    ' §r§7Applies §aResistance I§7 for §e5§7 seconds',
-                    '',
-                    'Cosmetic variant of normal Wine'
+                    '§r§9Nausea (0:10)',
+                    '§r§9Resistance (0:05)'
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === lorevliquors) {
                 item.setLore([
-                    '§r§9Upon Consumption:',
-                    ' §r§7For each effect active on the drinker,',
-                    ' §r§7one experience level is added',
-                    ' §r§7Removes all active effects',
-                    ' §r§7Applies §cNausea§7 afterwards,',
-                    ' §r§7with its duration based on removed effects.',
-                    ' §r§7Prevents Spontaneous Combustion if you already',
-                    ' §r§7drank a Void Liquor',
-                    '',
-                    'LimiTed Snareling Edition',
-                    'Digest powerful acid that dissolves everything.'
+                    '§r§9Nausea (0:20)',
+                    '§r§9Removes all active effects',
+                    '§r§9Bestows one experience point for each',
+                    '§r§9removed effect',
+                    '§r§sPrevents Void Liquor combustion'
+
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === randomwinel1) {
                 item.setLore([
-                    'Barolo'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Speed (0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === randomwinel2) {
                 item.setLore([
-                    'Chianti'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Haste (0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === randomwinel3) {
                 item.setLore([
-                    'Merlot'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Hunger (0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === randomwinel4) {
                 item.setLore([
-                    'Pinot Noir'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Strength (0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === randomwinel5) {
                 item.setLore([
-                    'Cabernet Sauvignon'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Jump Boost (0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === randomwinel6) {
                 item.setLore([
-                    'Bordeaux'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Blindness (0:40)"
                 ])
                 inventory.setItem(i, item)
             }
-            if (item && item.typeId === randomwinel7) {
+            /*if (item && item.typeId === randomwinel7) {
                 item.setLore([
-                    'Tactical Amarone'
+                    
                 ])
                 inventory.setItem(i, item)
-            }
-            if (item && item.typeId === randomwinel8) {
+            }*/
+            /*if (item && item.typeId === randomwinel8) {
                 item.setLore([
                     'Semi-flammable Wine'
                 ])
                 inventory.setItem(i, item)
-            }
+            }*/
             if (item && item.typeId === randomwinel9) {
                 item.setLore([
-                    'Barbera'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.redWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.redWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.redWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:40)",
+                    "§r§9Charges §eDash Energy§9",
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === scrumpy[0]) {
                 item.setLore([
-                    'Scrumpy'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.ciderDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.ciderDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.ciderDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:30)",
+                    "§r§9Saturation V"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === scrumpy[1]) {
                 item.setLore([
-                    'Applewine'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.ciderDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.ciderDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.ciderDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:30)",
+                    "§r§9Converts §eDash Energy§9 into Speed"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === scrumpy[2]) {
                 item.setLore([
-                    'Ice Cider'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.ciderDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.ciderDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.ciderDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:30)",
+                    "§r§9Heals based on remaining time on fire"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === whitew[0]) {
                 item.setLore([
-                    'Champagne'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.whiteWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.whiteWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.whiteWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:20)",
+                    "§r§9Regeneration (0:20)"
                 ])
                 inventory.setItem(i, item)
             }
-            if (item && item.typeId === whitew[1]) {
+            /*if (item && item.typeId === whitew[1]) {
                 item.setLore([
-                    'Prosecco'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.whiteWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.whiteWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.whiteWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:20)",
+                    "§r§9Hunger II (0:30)"
                 ])
                 inventory.setItem(i, item)
-            }
+            }*/
             if (item && item.typeId === whitew[2]) {
                 item.setLore([
-                    'Verdicchio'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.whiteWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.whiteWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.whiteWineDrunk.maxPower} maximum movement`,
+                    "§r§9Heals based on the amplifier of your effects"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === whitew[3]) {
                 item.setLore([
-                    'Vermentino'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.whiteWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.whiteWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.whiteWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:20)",
+                    "§r§9Jump Boost (0:20)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === whitew[4]) {
                 item.setLore([
-                    'Gewürztraminer'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.whiteWineDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.whiteWineDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.whiteWineDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:20)",
+                    "§r§9Briefly obfuscates camera"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === unfwinel) {
                 item.setLore([
-                    'Rose'
+                    '',
+                    "§r§9Hunger II (0:30)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === expwinel) {
                 item.setLore([
-                    'I hate it when I accidentally',
-                    'mess up a recipe and the cellar',
-                    'suddenly explodes.'
+                    "§mI ain't tasting this,"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === ale[0]) {
                 item.setLore([
-                    'Strong Ale'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.aleDrunk.ale_1_drunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.aleDrunk.ale_1_drunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.aleDrunk.ale_1_drunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:10 - 0:30)",
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === ale[1]) {
                 item.setLore([
-                    'Pale Ale'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.aleDrunk.ale_2_drunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.aleDrunk.ale_2_drunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.aleDrunk.ale_2_drunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:10 - 0:30)",
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === ale[2]) {
                 item.setLore([
-                    'Trippel'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.aleDrunk.ale_3_drunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.aleDrunk.ale_3_drunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.aleDrunk.ale_3_drunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:10 - 0:30)",
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === ale[3]) {
                 item.setLore([
-                    'Brown Ale'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.aleDrunk.ale_4_drunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.aleDrunk.ale_4_drunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.aleDrunk.ale_4_drunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:10 - 0:30)",
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === ale[4]) {
                 item.setLore([
-                    'Red Ale'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.aleDrunk.ale_5_drunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.aleDrunk.ale_5_drunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.aleDrunk.ale_5_drunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:10 - 0:30)",
+                    "§r§9Strength (0:10)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === ale[5]) {
                 item.setLore([
-                    'Porter'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.aleDrunk.ale_6_drunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.aleDrunk.ale_6_drunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.aleDrunk.ale_6_drunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:10 - 0:30)",
+                    "§r§9Saturation (0:01 - 0:50)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === lager[0]) {
                 item.setLore([
-                    'Lager'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.lagerDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.lagerDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.lagerDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:01 - 0:40)",
+                    "§r§9Jump Boost III (0:05)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === lager[1]) {
                 item.setLore([
-                    'Pilsner'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.lagerDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.lagerDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.lagerDrunk.maxPower} maximum movement`,
+                    "§r§9Nausea (0:01 - 0:40)",
+                    "§r§9Regeneration (0:01 - 0:20)"
                 ])
                 inventory.setItem(i, item)
-            }
+            }/*
             if (item && item.typeId === lager[2]) {
                 item.setLore([
                     'Bock'
                 ])
                 inventory.setItem(i, item)
-            }
+            }*/
             if (item && item.typeId === vodka) {
                 item.setLore([
-                    'Vodka'
+                    '',
+                    "§r§9Applies Drunk:",
+                    `§r§7Frequency: ${Math.round(drunkConfig.vodkaDrunk.interval / 20)} seconds maximum`,
+                    `§r§7Duration: ${drunkDuration(drunkConfig.vodkaDrunk)} seconds maximum`,
+                    `§r§7Tipsy: ${drunkConfig.vodkaDrunk.maxPower} maximum movement`,
+                    "§r§9Slowness (0:01 - 0:25)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === crude[0]) {
                 item.setLore([
-                    'Crude Ale'
+                    '',
+                    "§r§9Hunger III (0:01 - 0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === crude[1]) {
                 item.setLore([
-                    'Crude Lager'
+                    '',
+                    "§r§9Hunger III (0:01 - 0:40)"
                 ])
                 inventory.setItem(i, item)
             }
             if (item && item.typeId === crude[2]) {
                 item.setLore([
-                    'Crude Vodka'
+                    '',
+                    "§r§9Hunger III (0:01 - 0:40)"
                 ])
                 inventory.setItem(i, item)
             }
+
         }
     }
 }

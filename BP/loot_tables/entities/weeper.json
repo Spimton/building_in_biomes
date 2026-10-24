@@ -14,6 +14,12 @@
 								"min": 1,
 								"max": 1
 							}
+						},
+						{
+							"function": "set_lore",
+							"lore": [
+								"\n\n§7I will be the judge!"
+							]
 						}
 					]
 				}
@@ -44,16 +50,51 @@
 				{
 					"type": "item",
 					"name": "spimton:record_weeper",
-					"weight": 1
+					"weight": 10
 				},
 				{
 					"type": "item",
 					"name": "spimton:shadowcrystal",
-					"weight": 2,
+					"weight": 19,
 					"functions": [
 						{
 							"function": "set_count",
 							"count": 4
+						},
+						{
+							"function": "set_lore",
+							"lore": [
+								"",
+								"§uYou looked through the glass...",
+								"§uYou thought you saw yourself being surrounded",
+								"§uthey were all chanting a spell of seal",
+								"§ulike they feared what would have been unleashed...",
+								"",
+								"§uIt must have been your imagination"
+							]
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "spimton:shadowcrystal",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": 4
+						},
+						{
+							"function": "set_lore",
+							"lore": [
+								"",
+								"§uYou looked through the glass...",
+								"§mYou thought you saw a flash of red",
+								"§milluminating the pitch black room",
+								"§myou became stronger",
+								"",
+								"§4Your heartbeat quickened"
+							]
 						}
 					]
 				}

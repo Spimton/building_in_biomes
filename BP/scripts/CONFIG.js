@@ -210,6 +210,69 @@ export const ConfigItems = {
                 "minecraft:the_end": -40
             }
         }
+    },
+    beverageConfig: {
+        bottledBeverageConfig: {
+            drunkConfig: {
+                redWineDrunk: {
+                    duration: 250,
+                    interval: 10,
+                    maxPower: 0.15
+                },
+                whiteWineDrunk: {
+                    duration: 200,
+                    interval: 12,
+                    maxPower: 0.1
+                },
+                ciderDrunk: {
+                    duration: 100,
+                    interval: 8,
+                    maxPower: 0.075
+                },
+                lagerDrunk: {
+                    duration: 100,
+                    interval: 15,
+                    maxPower: 0.1
+                },
+                aleDrunk: {
+                    ale_1_drunk: {
+                        duration: 200,
+                        interval: 5,
+                        maxPower: 0.05
+                    },
+                    ale_2_drunk: {
+                        duration: 90,
+                        interval: Math.floor(Math.random() * 10),
+                        maxPower: 0.05
+                    },
+                    ale_3_drunk: {
+                        duration: 105,
+                        interval: 8,
+                        maxPower: 0.15
+                    },
+                    ale_4_drunk: {
+                        duration: 120,
+                        interval: 4,
+                        maxPower: 0.1
+                    },
+                    ale_5_drunk: {
+                        duration: 105,
+                        interval: 4,
+                        maxPower: 0.15
+                    },
+                    ale_6_drunk: {
+                        duration: 180,
+                        interval: 5,
+                        maxPower: 0.075
+                    }
+                },
+                vodkaDrunk: {
+                    duration: 180,
+                    interval: 5,
+                    maxPower: 0.075
+                }
+            }
+        }
     }
 
 
