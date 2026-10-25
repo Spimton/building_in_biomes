@@ -35,6 +35,12 @@
 							"spimton:bronze_ingot"
 						],
 						"repair_amount": 50
+					},
+					{
+						"items": [
+							"spimton:bronze_leggings"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
 					}
 				]
 			},

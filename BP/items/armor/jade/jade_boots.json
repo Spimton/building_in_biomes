@@ -31,9 +31,15 @@
 				"repair_items": [
 					{
 						"items": [
-							"spimton:jade"
+							"spimton:jade_cladding"
 						],
 						"repair_amount": 50
+					},
+					{
+						"items": [
+							"spimton:jade_boots"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
 					}
 				]
 			},

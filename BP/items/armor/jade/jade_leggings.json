@@ -20,7 +20,7 @@
 				"value": 15
 			},
 			"minecraft:durability": {
-				"max_durability": 300,
+				"max_durability": 500,
 				"damage_chance": {
 					"min": 10,
 					"max": 100
@@ -31,9 +31,15 @@
 				"repair_items": [
 					{
 						"items": [
-							"spimton:jade"
+							"spimton:jade_cladding"
 						],
 						"repair_amount": 50
+					},
+					{
+						"items": [
+							"spimton:jade_leggings"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
 					}
 				]
 			},

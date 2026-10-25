@@ -33,7 +33,13 @@
 							"spimton:steel_ingot"
 						],
 						"repair_amount": 250
-					}
+					},
+					                    {
+                        "items": [
+                            "spimton:steel_boots"
+                        ],
+                        "repair_amount":"context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    }
 				]
 			},
 			"minecraft:tags": {

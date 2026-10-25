@@ -33,6 +33,12 @@
                             "spimton:steel_ingot"
                         ],
                         "repair_amount": 250
+                    },
+                    {
+                        "items": [
+                            "spimton:unbreakable_leggings"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
                     }
                 ]
             },
