@@ -414,9 +414,9 @@ function endSpectator(player) {
             undefined
     });
 
-
+    player.playSound("beacon.deactivate")
     player.sendMessage(
-        "§bSpectator time ended."
+        "§7§oHere I am again!"
     );
 }
 
@@ -449,7 +449,7 @@ function activateSpectator(player, chargedTicks) {
     if (player.level < xpCost) {
 
         player.sendMessage(
-            `§cNot enough XP levels! ` +
+            `§mNot enough XP levels! ` +
             `§7You need §e${xpCost} §7levels.`
         );
 
@@ -494,9 +494,10 @@ function activateSpectator(player, chargedTicks) {
     player.setGameMode(GameMode.Spectator);
 
     player.sendMessage(
-        `§bSpectator activated! ` +
-        `§7Charge: §e${chargeSeconds.toFixed(1)}s ` +
-        `§7| Time: §e${spectatorSeconds.toFixed(1)}s ` +
-        `§7| XP: §e-${xpCost}`
+        `§7§oI am a shadow of my former self`
+        /* `§bSpectator activated! ` +
+         `§7Charge: §e${chargeSeconds.toFixed(1)}s ` +
+         `§7| Time: §e${spectatorSeconds.toFixed(1)}s ` +
+         `§7| XP: §e-${xpCost}`*/
     );
 }

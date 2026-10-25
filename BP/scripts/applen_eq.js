@@ -6,7 +6,7 @@ system.runInterval(templar_armor_set, 1);
 system.runInterval(ghostly_necklace, 1);
 system.runInterval(bulwark, 20);
 system.runInterval(poison, 200);
-system.runInterval(luxxury, 100);
+//system.runInterval(luxxury, 100);
 system.runInterval(mike, 80);
 system.runInterval(unbreakable_set, 20);
 

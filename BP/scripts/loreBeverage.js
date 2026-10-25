@@ -400,7 +400,7 @@ function checkPlayerInventory() {
                 ])
                 inventory.setItem(i, item)
             }
-            /*if (item && item.typeId === whitew[1]) {
+            if (item && item.typeId === whitew[1]) {
                 item.setLore([
                     '',
                     "§r§9Applies Drunk:",
@@ -408,10 +408,10 @@ function checkPlayerInventory() {
                     `§r§7Duration: ${drunkDuration(drunkConfig.whiteWineDrunk)} seconds maximum`,
                     `§r§7Tipsy: ${drunkConfig.whiteWineDrunk.maxPower} maximum movement`,
                     "§r§9Nausea (0:20)",
-                    "§r§9Hunger II (0:30)"
+                    "§r§9Absorption (0:20)"
                 ])
                 inventory.setItem(i, item)
-            }*/
+            }
             if (item && item.typeId === whitew[2]) {
                 item.setLore([
                     '',
