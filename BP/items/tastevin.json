@@ -1,0 +1,45 @@
+{
+    "format_version": "1.21.110",
+    "minecraft:item": {
+        "description": {
+            "identifier": "spimton:tastevin",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "spimton:tastevin": {},
+            "minecraft:cooldown": {
+                "category": "tastevin",
+                "duration": 10
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:use_modifiers": {
+                "movement_modifier": 0.25,
+                "use_duration": 6
+            },
+            "minecraft:icon": "tastevin",
+            "minecraft:max_stack_size": 1,
+            "minecraft:rarity": "uncommon",
+            "minecraft:durability": {
+                "max_durability": 10
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "spimton:tastevin"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+                    },
+                    {
+                        "items": [
+                            "spimton:electrum_ingot"
+                        ],
+                        "repair_amount": "math.ceil(query.max_durability * 0.25)"
+                    }
+                ]
+            }
+        }
+    }
+}

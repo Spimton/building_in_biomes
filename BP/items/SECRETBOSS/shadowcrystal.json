@@ -8,7 +8,7 @@
 			}
 		},
 		"components": {
-			"minecraft:fire_resistant": true,
+			//"minecraft:fire_resistant": true,
 			"minecraft:icon": "shadowcrystal",
 			"minecraft:rarity": "epic",
 			"minecraft:hover_text_color": "dark_purple",

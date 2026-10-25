@@ -45,6 +45,22 @@ const poisoned_drink = [
     'spimton:poisoned_drink'
 ]
 
+const muggedweak = [
+    "spimton:ale",
+    "spimton:mead",
+    "spimton:cider",
+    "spimton:grog",
+    "spimton:spoison",
+    "spimton:white_wine"
+]
+const muggedmedium = [
+    "spimton:wine", "spimton:dread_grog", "spimton:beetroot_ale", "spimton:egg_nog", "spimton:goblin_beer", "spimton:red_wine"
+]
+const muggedstrong = [
+    "spimton:vodka", "spimton:red_rum", "spimton:poisoned_drink", "spimton:void_liquor", "spimton:snareling_drink", "spimton:steel_toe_stout"
+]
+
+
 const gbeer = 'spimton:goblin_beer'
 const spoison = 'spimton:spoison'
 const vliquor = 'spimton:void_liquor'
@@ -114,6 +130,21 @@ const randomwine = [
 const beverConfig = ConfigItems.beverageConfig;
 const drunkConfig = beverConfig.bottledBeverageConfig.drunkConfig;
 ///BEVERAGES///
+world.afterEvents.itemCompleteUse.subscribe(event => {
+    const { source: entity, itemStack } = event
+    if (entity.typeId !== "minecraft:player" || !itemStack || !muggedweak.includes(itemStack.typeId)) return;
+    Drunk(beverConfig.muggedBeverageConfig.drunkConfig.weakMuggedDrunk, entity);
+})
+world.afterEvents.itemCompleteUse.subscribe(event => {
+    const { source: entity, itemStack } = event
+    if (entity.typeId !== "minecraft:player" || !itemStack || !muggedmedium.includes(itemStack.typeId)) return;
+    Drunk(beverConfig.muggedBeverageConfig.drunkConfig.mediumMuggedDrunk, entity);
+})
+world.afterEvents.itemCompleteUse.subscribe(event => {
+    const { source: entity, itemStack } = event
+    if (entity.typeId !== "minecraft:player" || !itemStack || !muggedstrong.includes(itemStack.typeId)) return;
+    Drunk(beverConfig.muggedBeverageConfig.drunkConfig.strongMuggedDrunk, entity);
+})
 
 world.afterEvents.itemCompleteUse.subscribe(event => {
     const { source: entity, itemStack } = event
@@ -353,7 +384,8 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
             entity.dimension.createExplosion(entity.getHeadLocation(), 4, { causesFire: true, breaksBlocks: true })
             break;
         case "spimton:random_wine_f1":
-            entity.addEffect('hunger', 600, { amplifier: 1, showParticles: true });
+            entity.addEffect('nausea', 600, { amplifier: 0, showParticles: true });
+            entity.addEffect('regeneration', 600, { amplifier: 0, showParticles: true });
             break;
         case "spimton:random_wine_w1":
             entity.addEffect('regeneration', 400)

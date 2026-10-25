@@ -231,6 +231,25 @@ export const ConfigItems = {
         }
     },
     beverageConfig: {
+        muggedBeverageConfig: {
+            drunkConfig: {
+                weakMuggedDrunk: {
+                    duration: 180,//1800 max
+                    interval: 10,
+                    maxPower: 0.1
+                },
+                mediumMuggedDrunk: {
+                    duration: 240,//2400 max
+                    interval: 10,
+                    maxPower: 0.1225
+                },
+                strongMuggedDrunk: {
+                    duration: 600, // 3000 max
+                    interval: 5,
+                    maxPower: 0.1225
+                }
+            }
+        },
         bottledBeverageConfig: {
             drunkConfig: {
                 redWineDrunk: {
@@ -286,7 +305,7 @@ export const ConfigItems = {
                     }
                 },
                 vodkaDrunk: {
-                    duration: 180,
+                    duration: 300,
                     interval: 5,
                     maxPower: 0.075
                 }

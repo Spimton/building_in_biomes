@@ -13,6 +13,7 @@
                 "category": "lava_rock",
                 "duration": 1
             },
+            //"minecraft:fire_resistant": true,
             "minecraft:icon": "lava_rock",
             "minecraft:max_stack_size": 1,
             "minecraft:rarity": "rare",

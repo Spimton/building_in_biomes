@@ -1479,6 +1479,8 @@ item.spimton:spainting_omen=Weird Painting
 tile.spimton:spainting_omen.tooltip=§eUnseen Power
 item.spimton:lava_rock=Lava Rock
 tile.spimton:lava_rock.tooltip=§9Interact to pull items towards you
+item.spimton:tastevin=Tastevin
+tile.spimton:tastevin.tooltip=§9Reveals beverages' effects
 
 
 
