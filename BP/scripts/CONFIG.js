@@ -202,13 +202,32 @@ export const ConfigItems = {
                 previousGameMode: "spimton:previous_gamemode",
                 previousLocation: "spimton:previous_location",
                 previousDimension: "spimton:previous_dimension",
-                chargeTime: "spimton:charge_time"
+                chargeTime: "spimton:totem_vision_charge_time"
             },
             spectatorMinY: {
                 "minecraft:overworld": -64,
                 "minecraft:nether": 0,
                 "minecraft:the_end": -40
             }
+        },
+        totemDevotion: {
+            maxChargeSeconds: 10,
+            protectionSecondsPerChargeSecond: 2,
+            xpLevelsPerChargeSeconds: 1,
+            cooldownSecondsPerChargeSecond: 6,
+            properties: {
+                chargeTime: "spimton:totem_devotion_charge_time",
+                active: "spimton:death_protection_active",
+                preventedDeaths: "spimton:prevented_deaths_totem"
+            },
+            deathProtectionBypassSource: [
+                "override",
+                "void",
+                "selfDestruct"
+            ]
+        },
+        totemLuxury: {
+            maxRadius: 25
         }
     },
     beverageConfig: {
