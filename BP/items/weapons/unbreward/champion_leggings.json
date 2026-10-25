@@ -33,6 +33,12 @@
 							"netherite_ingot"
 						],
 						"repair_amount": 150
+					},
+					{
+						"items": [
+							"spimton:champion_leggings"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
 					}
 				]
 			},

@@ -1084,7 +1084,10 @@
 			"textures": "textures/items/experience_flask"
 		},
 		"spainting_item": {
-			"textures":"textures/items/spainting_item"
+			"textures": "textures/items/spainting_item"
+		},
+		"lava_rock": {
+			"textures": "textures/items/lava_rock"
 		}
 	}
 }

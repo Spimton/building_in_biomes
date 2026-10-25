@@ -21,4 +21,4 @@ effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_poison}] c
 effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_poison}] clear poison
 execute at @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_poison}] run effect @e[r=10] clear fatal_poison
 execute at @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_poison}] run effect @e[r=10] clear poison
-effect @e[hasitem={location=slot.weapon.mainhand,item=spimton:totem_of_luxury}] village_hero 1 0 true
+effect @e[hasitem={location=slot.weapon.offhand,item=spimton:totem_of_luxury}] village_hero 2 0 true

@@ -1432,6 +1432,7 @@ item.spimton:exploded_wine.name=Exploded Beverage Bottle
 item.spawn_egg.entity.spimton:piglin_pyro.name=Pyroglin Spawn Egg
 item.spimton:charge_shield_td=Charge Targe 2: Tokyo Drift
 item.spimton:sandals=Sandals
+tile.spimton:sandals.tooltip=§9Prevents some screen obfuscation caused\nby bosses
 item.spimton:random_bottle.name=Empty Beverage Bottle
 item.spimton:random_beer.name=Beer Bottle
 item.spawn_egg.entity.spimton:goulden_guard.name=Opulent Observer Spawn Egg

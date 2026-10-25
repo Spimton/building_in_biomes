@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.80",
+	"format_version": "1.21.110",
 	"minecraft:item": {
 		"description": {
 			"identifier": "spimton:shadowcrystal",
@@ -8,6 +8,7 @@
 			}
 		},
 		"components": {
+			"minecraft:fire_resistant": true,
 			"minecraft:icon": "shadowcrystal",
 			"minecraft:rarity": "epic",
 			"minecraft:hover_text_color": "dark_purple",
