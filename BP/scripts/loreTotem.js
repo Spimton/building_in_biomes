@@ -1,6 +1,7 @@
 import { system, world, EquipmentSlot, GameMode } from '@minecraft/server'
 import { TotemVisionComponent } from './spectator_totem.js'
-
+import { TotemDevotionComponent } from './devotion_totem.js'
+import { ConfigItems } from './CONFIG.js'
 
 const loreTotemBulwark = 'spimton:totem_of_bulwark'
 const loreTotemVision = 'spimton:totem_of_vision'
@@ -146,43 +147,10 @@ function checkPlayerInventory() {
     }
 }
 
-
-system.runInterval(checkPlayerInventory, 10)
-
-system.beforeEvents.startup.subscribe(initEvent => {
-    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_bulwark', {
-        onUse: arg => {
-            let source = arg.source
-            source.addEffect("resistance", 600, { showParticles: false, amplifier: 1 })
-            source.playSound("smithing_table.use")
-        }
-    })
-})
-
-system.beforeEvents.startup.subscribe(initEvent => {
-    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_vitality', {
-        onUse: arg => {
-            let source = arg.source
-            source.addEffect("regeneration", 100, { showParticles: false, amplifier: 1 })
-            source.playSound("random.potion.brewed")
-        }
-    })
-})
-system.beforeEvents.startup.subscribe(initEvent => {
-    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_resonance', {
-        onUse: arg => {
-            let source = arg.source
-            source.runCommand("effect @e[r=5] clear")
-            source.playSound("random.totem")
-        }
-    })
-})
-system.beforeEvents.startup.subscribe(initEvent => {
+/*system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_devotion', {
         onUse: arg => {
             let source = arg.source
-            let players = world.getAllPlayers()
-            let item = arg.itemStack
             source.runCommand("effect @e[r=10] regeneration 45 255 true")
             source.extinguishFire
             source.addEffect("instant_health", 40, { showParticles: false, amplifier: 100 })
@@ -190,9 +158,9 @@ system.beforeEvents.startup.subscribe(initEvent => {
             source.playSound("random.totem")
         }
     })
-})
+})*/
 
-world.afterEvents.entityHitEntity.subscribe(data => {
+/*world.afterEvents.entityHitEntity.subscribe(data => {
     const entity = data.damagingEntity
     const player = data.hitEntity
     const chance = Math.random()
@@ -201,7 +169,7 @@ world.afterEvents.entityHitEntity.subscribe(data => {
     ) {
         player.addEffect('resistance', 20, { showParticles: false, amplifier: 4 })
     }
-})
+})*/
 system.beforeEvents.startup.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_combustion', {
         onUse: arg => {
@@ -225,5 +193,134 @@ system.beforeEvents.startup.subscribe(initEvent => {
             }
         }
     });
-    initEvent.itemComponentRegistry.registerCustomComponent('spimton:spectator_item', TotemVisionComponent)
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:spectator_item', TotemVisionComponent);
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_devotion', TotemDevotionComponent);
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_bulwark', {
+        onUse: arg => {
+            let source = arg.source
+            source.addEffect("resistance", 600, { showParticles: false, amplifier: 1 })
+            source.playSound("smithing_table.use")
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_vitality', {
+        onUse: arg => {
+            let source = arg.source
+            source.addEffect("regeneration", 100, { showParticles: false, amplifier: 1 })
+            source.playSound("random.potion.brewed")
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_resonance', {
+        onUse: arg => {
+            let source = arg.source
+            source.runCommand("effect @e[r=5] clear")
+            source.playSound("random.totem")
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:totem_luxury', {
+        onUse(event) {
+            const player = event.source;
+            const dimension = player.dimension;
+            const playerPos = player.location;
+
+            const items = dimension.getEntities({
+                type: "minecraft:item",
+                location: playerPos,
+                maxDistance: ConfigItems.totemConfig.totemLuxury.maxRadius
+            });
+
+            for (const item of items) {
+                const itemPos = item.location;
+
+                // Direction from the dropped item to the player
+                const dx = playerPos.x - itemPos.x;
+                const dy = (playerPos.y + 0.5) - itemPos.y;
+                const dz = playerPos.z - itemPos.z;
+
+                const distance = Math.sqrt(
+                    dx * dx + dy * dy + dz * dz
+                );
+
+                // Avoid division by zero for items at the player's position
+                if (distance < 0.1) continue;
+
+                // Normalize the direction vector
+                const strength = 1.2;
+
+                item.applyImpulse({
+                    x: (dx / distance) * strength,
+                    y: (dy / distance) * strength,
+                    z: (dz / distance) * strength
+                });
+            }
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('spimton:lavarock', {
+        onUse(event) {
+            const player = event.source;
+            const dimension = player.dimension;
+            const playerPos = player.location;
+
+
+            const items = dimension.getEntities({
+                type: "minecraft:item",
+                location: playerPos,
+                maxDistance: 9
+            });
+            let pulledCount = 0;
+            for (const item of items) {
+                const itemPos = item.location;
+
+                // Direction from the dropped item to the player
+                const dx = playerPos.x - itemPos.x;
+                const dy = (playerPos.y + 0.5) - itemPos.y;
+                const dz = playerPos.z - itemPos.z;
+
+                const distance = Math.sqrt(
+                    dx * dx + dy * dy + dz * dz
+                );
+
+                // Avoid division by zero for items at the player's position
+                if (distance < 0.1) continue;
+
+                // Normalize the direction vector
+                const strength = 0.99;
+
+                item.applyImpulse({
+                    x: (dx / distance) * strength,
+                    y: (dy / distance) * strength,
+                    z: (dz / distance) * strength
+                });
+                pulledCount++;
+
+            }
+            if (pulledCount === 0) return;
+
+            // Creative mode doesn't consume durability
+            if (player.getGameMode() === GameMode.Creative) return;
+
+            const equippable = player.getComponent("minecraft:equippable");
+            if (!equippable) return;
+
+            const mainhand = equippable.getEquipmentSlot(
+                EquipmentSlot.Mainhand
+            );
+
+            const magnet = mainhand.getItem();
+            if (!magnet) return;
+
+            const durability = magnet.getComponent("minecraft:durability");
+            if (!durability) return;
+
+            // One durability point per pulled item entity
+            durability.damage += pulledCount;
+
+            // Break the magnet if its durability is exhausted
+            if (durability.damage >= durability.maxDurability) {
+                mainhand.setItem(undefined);
+                player.playSound("random.break");
+            } else {
+                mainhand.setItem(magnet);
+            }
+        }
+    });
 })
