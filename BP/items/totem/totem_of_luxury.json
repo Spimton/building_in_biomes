@@ -8,6 +8,13 @@
 			}
 		},
 		"components": {
+			"minecraft:custom_components": [
+				"spimton:totem_luxury"
+			],
+			"minecraft:cooldown": {
+				"category": "lava_rock",
+				"duration": 5
+			},
 			"minecraft:icon": "totem_luxury",
 			"minecraft:max_stack_size": 1,
 			"minecraft:rarity": "rare",
