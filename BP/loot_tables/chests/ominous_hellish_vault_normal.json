@@ -43,17 +43,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "nether_brick",
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "max": 10,
-                                "min": 5
-                            }
-                        }
-                    ],
-                    "weight": 15
+                    "name": "spimton:lava_rock",
+                    "weight": 10
                 },
                 {
                     "type": "item",
@@ -90,8 +81,8 @@
                         {
                             "function": "set_count",
                             "count": {
-                                "max": 6,
-                                "min": 3
+                                "max": 8,
+                                "min": 4
                             }
                         }
                     ],
@@ -104,8 +95,8 @@
                         {
                             "function": "set_count",
                             "count": {
-                                "max": 3,
-                                "min": 1
+                                "max": 5,
+                                "min": 3
                             }
                         }
                     ],
@@ -118,8 +109,8 @@
                         {
                             "function": "set_count",
                             "count": {
-                                "max": 3,
-                                "min": 1
+                                "max": 6,
+                                "min": 4
                             }
                         }
                     ],

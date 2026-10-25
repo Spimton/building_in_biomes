@@ -64,17 +64,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "spimton:nether_cloth",
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "max": 5,
-                                "min": 3
-                            }
-                        }
-                    ],
-                    "weight": 15
+                    "name": "spimton:lava_rock",
+                    "weight": 10
                 },
                 {
                     "type": "item",
