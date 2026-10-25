@@ -358,6 +358,9 @@ world.afterEvents.itemCompleteUse.subscribe(event => {
         case "spimton:random_wine_w1":
             entity.addEffect('regeneration', 400)
             break;
+        case "spimton:random_wine_w2":
+            entity.addEffect('absorption', 400)
+            break;
         case "spimton:random_wine_w3":
             const HeltoW = entity.getComponent("health")
             const effects = entity.getEffects()
