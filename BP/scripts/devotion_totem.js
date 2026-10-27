@@ -122,9 +122,15 @@ world.afterEvents.itemReleaseUse.subscribe((event) => {
         player.onScreenDisplay.setActionBar("");
         return;
     }
-
-    activateDeathProtection(player, chargedTicks);
-    player.setDynamicProperty(CONFIG.properties.preventedDeaths, 0);
+    if (chargedTicks > 20) {
+        activateDeathProtection(player, chargedTicks);
+        player.setDynamicProperty(CONFIG.properties.preventedDeaths, 0);
+    }
+    else {
+        player.sendMessage(
+            `§mNot enough charge!`
+        )
+    }
 });
 
 // ============================================================
