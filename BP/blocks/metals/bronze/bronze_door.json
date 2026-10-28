@@ -1,13 +1,16 @@
 {
-	"format_version": "1.21.130",
+	"format_version": "1.26.40",
 	"minecraft:block": {
 		"description": {
 			"identifier": "spimton:bronze_door",
-			"menu_category": {
-				"category": "construction",
-				"is_hidden_in_commands": false
-			},
 			"traits": {
+				"minecraft:multi_block": {
+					"enabled_states": [
+						"minecraft:multi_block_part"
+					],
+					"parts": 2,
+					"direction": "up"
+				},
 				"minecraft:placement_direction": {
 					"enabled_states": [
 						"minecraft:cardinal_direction"
@@ -19,65 +22,82 @@
 					false,
 					true
 				],
-				"spimton:upper_block_bit": [
-					false,
-					true
-				],
 				"spimton:door_hinge_bit": [
 					false,
 					true
 				]
 			}
 		},
+		"components": {
+			"minecraft:movable": {
+				"movement_type": "popped",
+				"sticky": "none"
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-8,
+					0,
+					5
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-8,
+					0,
+					5
+				],
+				"size": [
+					16,
+					16,
+					3
+				]
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 8
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 12
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "bronze_door_lower",
+					"render_method": "alpha_test_single_sided"
+				}
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.door",
+				"bone_visibility": {
+					"door_open": "q.block_state('spimton:open_bit') && !q.block_state('spimton:door_hinge_bit')",
+					"door_closed": "!q.block_state('spimton:open_bit') && !q.block_state('spimton:door_hinge_bit')",
+					"door_open_flipped": "q.block_state('spimton:open_bit') && q.block_state('spimton:door_hinge_bit')",
+					"door_closed_flipped": "!q.block_state('spimton:open_bit') && q.block_state('spimton:door_hinge_bit')"
+				}
+			},
+			"minecraft:redstone_consumer": {
+				"min_power": 0,
+				"propagates_power": false
+			},
+			"spimton:doorNeo": {
+				"block_state": "spimton:open_bit",
+				"can_interact": true,
+				"enable_sound": "open_door.copper",
+				"disable_sound": "close_door.copper"
+			},
+			"minecraft:tags": [
+				"minecraft:is_pickaxe_item_destructible",
+				"minecraft:stone",
+				"stone",
+				"spimton:door",
+				"spimton:pickaxe",
+				"minecraft:stone_tier_destructible"
+			]
+		},
 		"permutations": [
-			{
-				"condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
-							0,
-							0,
-							0
-						]
-					}
-				}
-			},
-			{
-				"condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
-							0,
-							180,
-							0
-						]
-					}
-				}
-			},
-			{
-				"condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
-							0,
-							270,
-							0
-						]
-					}
-				}
-			},
-			{
-				"condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
-				"components": {
-					"minecraft:transformation": {
-						"rotation": [
-							0,
-							90,
-							0
-						]
-					}
-				}
-			},
 			{
 				"condition": "q.block_state('spimton:open_bit') && !q.block_state('spimton:door_hinge_bit')",
 				"components": {
@@ -137,7 +157,55 @@
 				}
 			},
 			{
-				"condition": "!q.block_state('spimton:upper_block_bit')",
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							270,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:multi_block_part') == 0",
 				"components": {
 					"minecraft:material_instances": {
 						"*": {
@@ -148,7 +216,7 @@
 				}
 			},
 			{
-				"condition": "q.block_state('spimton:upper_block_bit')",
+				"condition": "q.block_state('minecraft:multi_block_part') == 1",
 				"components": {
 					"minecraft:material_instances": {
 						"*": {
@@ -158,74 +226,6 @@
 					}
 				}
 			}
-		],
-		"components": {
-			"minecraft:movable": {
-				"movement_type": "popped",
-				"sticky": "none"
-			},
-			"minecraft:collision_box": {
-				"origin": [
-					-8,
-					0,
-					5
-				],
-				"size": [
-					16,
-					16,
-					3
-				]
-			},
-			"minecraft:selection_box": {
-				"origin": [
-					-8,
-					0,
-					5
-				],
-				"size": [
-					16,
-					16,
-					3
-				]
-			},
-			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 8
-			},
-			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 12
-			},
-			"minecraft:material_instances": {
-				"minecraft:material_instances": {
-					"*": {
-						"texture": "bronze_door_lower",
-						"render_method": "alpha_test_single_sided"
-					}
-				}
-			},
-			"minecraft:geometry": {
-				"identifier": "geometry.door",
-				"bone_visibility": {
-					"door_open": "q.block_state('spimton:open_bit') && !q.block_state('spimton:door_hinge_bit')",
-					"door_closed": "!q.block_state('spimton:open_bit') && !q.block_state('spimton:door_hinge_bit')",
-					"door_open_flipped": "q.block_state('spimton:open_bit') && q.block_state('spimton:door_hinge_bit')",
-					"door_closed_flipped": "!q.block_state('spimton:open_bit') && q.block_state('spimton:door_hinge_bit')"
-				}
-			},
-			"minecraft:redstone_consumer": {
-				"min_power": 0,
-				"propogates_power": false
-			},
-			"spimton:doorNeo": {
-				"block_state": "spimton:open_bit",
-				"door_part": "spimton:upper_block_bit",
-				"enable_sound": "open_door.copper",
-				"disable_sound": "close_door.copper"
-			},
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:stone": {},
-			"tag:spimton:door": {},
-			"tag:spimton:pickaxe": {},
-			"tag:spimton:stone_tier_destructible": {}
-		}
+		]
 	}
 }
