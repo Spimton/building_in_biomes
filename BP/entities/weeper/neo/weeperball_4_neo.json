@@ -6,7 +6,7 @@
             "is_spawnable": false,
             "is_summonable": true,
             "is_experimental": false,
-            "runtime_identifier": "arrow",
+            "runtime_identifier": "snowball",
             "properties": {
                 "spimton:can_explode": {
                     "client_sync": false,
@@ -17,7 +17,7 @@
                     "client_sync": true,
                     "range": [
                         1,
-                        3
+                        4
                     ],
                     "default": 3,
                     "type": "int"
@@ -27,6 +27,28 @@
         "component_groups": {
             "spimton:desp": {
                 "minecraft:instant_despawn": {}
+            },
+            "spimton:ground_check": {
+                "minecraft:environment_sensor": {
+                    "triggers": {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "bool_property",
+                                    "domain": "spimton:can_explode",
+                                    "subject": "self",
+                                    "value": true
+                                },
+                                {
+                                    "test": "on_ground",
+                                    "subject": "self"
+                                }
+                            ]
+                        },
+                        "event": "minecraft:explode",
+                        "target": "self"
+                    }
+                }
             }
         },
         "components": {
@@ -68,7 +90,7 @@
                             "target": "self"
                         }
                     },
-                    "spawn_aoe_cloud": {
+                    /*"spawn_aoe_cloud": {
                         "affect_owner": false,
                         "duration": 6,
                         "potion": 36,
@@ -80,7 +102,7 @@
                         "num_particles": 1,
                         "on_entity_hit": true,
                         "on_other_hit": true
-                    },
+                    },*/
                     "impact_damage": {
                         "damage": [
                             12,
@@ -139,7 +161,12 @@
                             "value": 4
                         },
                         "queue_command": {
-                            "command": "scriptevent spimton:skull_fungus 3"
+                            "command": [
+                                "scriptevent spimton:skull_fungus 3",
+                                "particle spimton:deltarune_explosion_multiple",
+                                "playsound sfx.deltarune_boom",
+                                "summon spimton:weepersmoke ~ ~ ~ ~ ~ spimton:round_4"
+                            ]
                         }
                     },
                     {
@@ -149,7 +176,12 @@
                             "value": 3
                         },
                         "queue_command": {
-                            "command": "scriptevent spimton:skull_fungus 2"
+                            "command": [
+                                "scriptevent spimton:skull_fungus 2",
+                                "particle spimton:deltarune_explosion_multiple",
+                                "playsound sfx.deltarune_boom",
+                                "summon spimton:weepersmoke ~ ~ ~ ~ ~ spimton:round_3"
+                            ]
                         }
                     },
                     {
@@ -159,11 +191,32 @@
                             "value": 2
                         },
                         "queue_command": {
-                            "command": "scriptevent spimton:skull_fungus 1"
+                            "command": [
+                                "scriptevent spimton:skull_fungus 1",
+                                "particle spimton:deltarune_explosion_multiple",
+                                "playsound sfx.deltarune_boom",
+                                "summon spimton:weepersmoke ~ ~ ~ ~ ~ spimton:round_2"
+                            ]
                         }
                     },
                     {
-                        "trigger": "spimton:desp"
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:size",
+                            "value": 1
+                        },
+                        "queue_command": {
+                            "command": [
+                                "particle spimton:deltarune_explosion",
+                                "playsound sfx.deltarune_boom",
+                                "summon spimton:weepersmoke ~ ~ ~ ~ ~ spimton:round_1"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "spimton:desp"
+                        }
                     }
                 ]
             },
@@ -188,6 +241,11 @@
             "spimton:allow_splode": {
                 "set_property": {
                     "spimton:can_explode": true
+                },
+                "add": {
+                    "component_groups": [
+                        "spimton:ground_check"
+                    ]
                 }
             },
             "spimton:desp": {}

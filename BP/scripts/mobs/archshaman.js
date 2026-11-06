@@ -39,3 +39,16 @@ system.runInterval(() => {
 
     }
 }, ShamanConfig.randomBayInterval)
+
+world.afterEvents.projectileHitEntity.subscribe(data => {
+    console.warn("PROJECTILE HIT")
+    const { projectile } = data;
+    const hitEntity = data.getEntityHit().entity;
+    if (projectile.typeId === "spimton:fireball_spawner" && hitEntity.typeId === "spimton:arch_halo") {
+        projectile.remove();
+        console.warn("TRIGGER")
+
+        hitEntity.runCommand("say Deflected");
+    }
+
+})

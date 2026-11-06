@@ -13,7 +13,7 @@
                 "default": "geometry.fotns"
             },
             "animations": {
-                "move": "animation.sprojectile.face"
+                "move": "animation.fotns.rotate"
             },
             "scripts": {
                 "pre_animation": [

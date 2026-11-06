@@ -967,6 +967,14 @@
                     "hurt": "hit.basalt",
                     "death": "dig.basalt"
                 }
+            },
+            "spimton:arch_halo": {
+                "pitch": 1,
+                "volume": 1,
+                "events": {
+                    "hurt": "mob.blaze.hit",
+                    "death": "mob.blaze.death"
+                }
             }
         }
     },

@@ -21,5 +21,5 @@ execute at @e[type=spimton:obliterator_flame] run particle minecraft:basic_flame
 execute at @e[type=spimton:soul_bolt] run particle spimton:soul_trail ~ ~ ~
 execute at @e[type=spimton:weeper_heal] run particle spimton:bluestone_heal ~ ~ ~
 execute at @e[type=spimton:fist_of_the_north_star] run particle spimton:soulflame_emitter ~ ~ ~
-execute at @e[type=spimton:weeperball_6_neo] run particle minecraft:large_explosion ~ ~ ~
-execute at @e[type=spimton:weeperball_8_neo] run particle minecraft:huge_explosion_emitter ~ ~ ~
+#execute at @e[type=spimton:weeperball_6_neo] run particle minecraft:sonic_explosion ~ ~ ~
+#execute at @e[type=spimton:weeperball_8_neo] run particle minecraft:huge_explosion_emitter ~ ~ ~

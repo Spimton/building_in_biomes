@@ -218,7 +218,7 @@
                     }
                 },
                 "minecraft:behavior.fire_at_target": {
-                    "attack_cooldown": 1,
+                    "attack_cooldown": 0.66,
                     "attack_range": [
                         6,
                         60
@@ -528,32 +528,20 @@
                 "minecraft:damage_sensor": {
                     "triggers": [
                         {
-                            "cause": "block_explosion",
-                            "deals_damage": "no"
-                        },
-                        {
-                            "cause": "fall",
-                            "deals_damage": "no"
-                        },
-                        {
-                            "cause": "entity_explosion",
-                            "deals_damage": "no"
-                        },
-                        {
-                            "cause": "fire",
-                            "deals_damage": "no"
-                        },
-                        {
-                            "cause": "fire_tick",
+                            "cause": "all",
                             "deals_damage": "no"
                         }
                     ]
+                },
+                "minecraft:health": {
+                    "value": 300,
+                    "max": 300
                 },
                 "minecraft:pushable": {
                     "is_pushable": false
                 },
                 "minecraft:movement.fly": {
-                    "max_turn": 335
+                    "max_turn": 0
                 },
                 "minecraft:navigation.fly": {
                     "can_float": true
@@ -1993,14 +1981,39 @@
             },
             "spimton:jarona": {},
             "spimton:last_jarona": {
-                "queue_command": {
-                    "command": [
-                        "blastfungus 7 spimton:canned_jarate 0.3 5",
-                        "function mob/weeper/lja_dialog",
-                        "event entity @s spimton:jarona"
-                    ]
-                },
-                "trigger": "spimton:attack_selection"
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:armor_color",
+                            "value": 0
+                        },
+                        "queue_command": {
+                            "command": [
+                                "blastfungus 7 spimton:canned_jarate 0.3 5",
+                                "function mob/weeper/lja_dialog",
+                                "event entity @s spimton:jarona"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "int_property",
+                            "domain": "spimton:armor_color",
+                            "value": 2
+                        },
+                        "queue_command": {
+                            "command": [
+                                "blastfungus 4 spimton:weeperball_5_neo 0.66 4 135 spimton:face_based",
+                                "function mob/weeper/lja_dialog",
+                                "event entity @s spimton:jarona"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": "spimton:attack_selection"
+                    }
+                ]
             },
             "spimton:tnt_spiral": {},
             "spimton:tele_prep": {
@@ -2110,6 +2123,11 @@
             "spimton:vizier_rain_3": {
                 "queue_command": {
                     "command": "blastfungus 12 spimton:weeperball_5_neo 0.99 4 135"
+                }
+            },
+            "spimton:vizier_rain_secret": {
+                "queue_command": {
+                    "command": "blastfungus 2 spimton:weeperball_5_neo 0.66 4 135 spimton:face_based"
                 }
             },
             "spimton:ultimatus": {

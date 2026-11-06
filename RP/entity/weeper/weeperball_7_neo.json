@@ -6,13 +6,11 @@
             "min_engine_version": "1.10.0",
             "materials": {
                 "default": "entity_alphatest",
-                "armor": "wither_boss_armor"
+                "armor": "weeper_apotheosis_armor"
             },
             "textures": {
                 "default": "textures/entity/weeper",
-                "armor": "textures/entity/weeper_armor",
-                "armor_blue": "textures/entity/wither_boss/wither_armor_blue",
-                "armor_inv": "textures/entity/weeper_armor_invu"
+                "armor": "textures/entity/weeper_armor_grayscale"
             },
             "geometry": {
                 "default": "geometry.weeper_skull",
@@ -35,7 +33,7 @@
             },
             "render_controllers": [
                 "controller.render.creeper",
-                "controller.render.weeper_armor"
+                "controller.render.weeper_apotheosis"
             ]
         }
     }

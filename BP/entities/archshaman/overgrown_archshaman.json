@@ -1672,6 +1672,20 @@
 			}
 		},
 		"components": {
+			"minecraft:rideable": {
+				"family_types": [
+					"spimton:arch_halo"
+				],
+				"seats": {
+					"position": [
+						0,
+						2.5,
+						0
+					],
+					"lock_rider_rotation": 0
+				},
+				"seat_count": 1
+			},
 			"minecraft:conditional_bandwidth_optimization": {},
 			"minecraft:nameable": {},
 			"minecraft:type_family": {
@@ -1839,8 +1853,8 @@
 					"target": "self",
 					"command": [
 						"title @a[r=30] actionbar The Archshaman concentrated the lava into the SUN!",
-						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace lava",
-						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace flowing_lava",
+						"fill ~10 ~-3 ~10 ~-10 ~25 ~-10 air replace lava",
+						"fill ~10 ~-3 ~10 ~-10 ~25 ~-10 air replace flowing_lava",
 						"summon spimton:sun"
 					]
 				}
@@ -1849,10 +1863,10 @@
 				"queue_command": {
 					"target": "self",
 					"command": [
-						"title @a[r=30] actionbar The Archshaman evaporated the water! Made in Heaven cooldown increased!",
-						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace water",
-						"fill ~10 ~-5 ~10 ~-10 ~25 ~-10 air replace flowing_water",
-						"scoreboard players add @s mih_treshold 150"
+						"title @a[r=30] actionbar The Archshaman §mboiled§r the water! Made in Heaven cooldown increased!",
+						"fill ~10 ~-3 ~10 ~-10 ~25 ~-10 air replace water",
+						"fill ~10 ~-3 ~10 ~-10 ~25 ~-10 air replace flowing_water",
+						"scoreboard players add @s mih_treshold 50"
 					]
 				}
 			},
@@ -1879,7 +1893,8 @@
 				"queue_command": {
 					"command": [
 						"function mob/overgrown/endialog",
-						"kill @e[type=spimton:solar_flare]"
+						"kill @e[type=spimton:solar_flare]",
+						"kill @e[type=spimton:arch_halo,r=3]"
 					],
 					"target": "self"
 				}
@@ -1930,6 +1945,24 @@
 							"command": [
 								"title @a actionbar The time for heaven has arrived..."
 							]
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "rider_count",
+									"value": 0
+								},
+								{
+									"test": "int_property",
+									"domain": "spimton:phase",
+									"value": 3
+								}
+							]
+						},
+						"queue_command": {
+							"command": "ride @s summon_rider spimton:arch_halo"
 						}
 					}
 				]
@@ -2092,6 +2125,9 @@
 				},
 				"trigger": {
 					"event": "spimton:bossbar_3"
+				},
+				"queue_command": {
+					"command": "ride @s summon_rider spimton:arch_halo"
 				},
 				"add": {
 					"component_groups": [

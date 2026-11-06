@@ -1,0 +1,87 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.arch_halo.spinni": {
+			"particle_effects": {
+				"0.0": [
+					{
+						"locator": "particle_1",
+						"effect": "halo_flame"
+					},
+					{
+						"locator": "particle_2",
+						"effect": "halo_flame"
+					},
+					{
+						"locator": "particle_3",
+						"effect": "halo_flame"
+					},
+					{
+						"locator": "particle_4",
+						"effect": "halo_flame"
+					}
+				]
+			},
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"rotat": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							-360,
+							0
+						]
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [
+								0,
+								2,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [
+								0,
+								2,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	}
+}

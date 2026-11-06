@@ -54,7 +54,7 @@
                 "minecraft:movement": {
                     "value": 0.25
                 },
-                "minecraft:custom_hit_test": {
+                /*"minecraft:custom_hit_test": {
                     "hitboxes": [
                         {
                             "width": 2.0,
@@ -66,7 +66,7 @@
                             ]
                         }
                     ]
-                },
+                },*/
                 "minecraft:behavior.hurt_by_target": {
                     "priority": 0
                 },

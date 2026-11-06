@@ -307,8 +307,14 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
                             y: 0.06,
                             z: -z * WeeperConfig.arrivederciDist
                         });
-                        const location = entity.location
-                        entity.dimension.spawnEntity("spimton:cspore", location);
+                        const location = entity.location;
+                        const phaseW = entity.getComponent("health");
+                        if (phaseW.currentValue / phaseW.effectiveMax >= 0.5) {
+                            entity.dimension.spawnEntity("spimton:cspore", location);
+                        }
+                        else {
+                            entity.triggerEvent("spimton:vizier_rain_secret")
+                        }
 
                         arric++;
                     }
@@ -457,52 +463,87 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     }
     if (entity.typeId === "spimton:weeperball_5_neo") {
         if (eventId === "spimton:splode") {
-            let directions = entity.getProperty("spimton:armor_color") == 2 ? [
-                {
-                    x: 1.225,
-                    y: 0,
-                    z: 0
-                },
-                {
-                    x: -1.225,
-                    y: 0,
-                    z: 0
-                },
-                {
-                    x: 0,
-                    y: 0,
-                    z: 1.225
-                },
-                {
-                    x: 0,
-                    y: 0,
-                    z: -1.225
-                }
-            ] : [
-                {
-                    x: 0.866,
-                    y: 0,
-                    z: 0.866
-                },
-                {
-                    x: -0.866,
-                    y: 0,
-                    z: 0.866
-                },
-                {
-                    x: -0.866,
-                    y: 0,
-                    z: -0.866
-                },
-                {
-                    x: 0.866,
-                    y: 0,
-                    z: -0.866
-                }
-            ];
+            const armorcolor = entity.getProperty("spimton:armor_color");
+            let directions = [{}, {}, {}, {}];
+            switch (armorcolor) {
+                case 2:
+                    directions = [
+                        {
+                            x: 1.225,
+                            y: 0,
+                            z: 0
+                        },
+                        {
+                            x: -1.225,
+                            y: 0,
+                            z: 0
+                        },
+                        {
+                            x: 0,
+                            y: 0,
+                            z: 1.225
+                        },
+                        {
+                            x: 0,
+                            y: 0,
+                            z: -1.225
+                        }
+                    ];
+                    break;
+                case 1:
+                    directions = [
+                        {
+                            x: 0.866,
+                            y: 0,
+                            z: 0.866
+                        },
+                        {
+                            x: -0.866,
+                            y: 0,
+                            z: 0.866
+                        },
+                        {
+                            x: -0.866,
+                            y: 0,
+                            z: -0.866
+                        },
+                        {
+                            x: 0.866,
+                            y: 0,
+                            z: -0.866
+                        }
+                    ];
+                    break;
+                case 0:
+                    const ww = entity.getViewDirection();
+                    const length = Math.hypot(ww.x, ww.z);
+                    directions = [
+                        {
+                            x: (ww.x / length) * 1.225,
+                            y: 0,
+                            z: (ww.z / length) * 1.225
+                        },
+                        {
+                            x: (ww.z / length) * -1.225,
+                            y: 0,
+                            z: (ww.x / length) * 1.225
+                        },
+                        {
+                            x: (ww.z / length) * 1.225,
+                            y: 0,
+                            z: (ww.x / length) * -1.225
+                        },
+                        {
+                            x: (ww.x / length) * -1.225,
+                            y: 0,
+                            z: (ww.z / length) * -1.225
+                        }
+                    ]
+            };
             const { x, y, z } = entity.location;
             for (const direction of directions) {
                 const projectile = entity.dimension.spawnEntity("spimton:weeperball_6_neo", { x: x, y: y + 0.66, z: z })
+                projectile.setProperty("spimton:armor_color", armorcolor)
                 projectile.getComponent("projectile").shoot(direction)
             }
         }

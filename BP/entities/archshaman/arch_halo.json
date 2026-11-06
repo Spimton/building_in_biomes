@@ -1,0 +1,184 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:arch_halo",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "spimton:desp": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:cannot_be_attacked": {},
+            "minecraft:health": {
+                "value": 66,
+                "max": 66,
+                "min": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate",
+                    "spimton:arch_halo",
+                    "spimton:archshaman"
+                ]
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": true
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "height": 1.225,
+                        "pivot": [
+                            0,
+                            0.66,
+                            0
+                        ],
+                        "width": 1.225
+                    }
+                ]
+            },
+            /*"minecraft:entity_sensor": {
+                "relative_range": true,
+                "subsensors": [
+                    {
+                        "cooldown": -1,
+                        "minimum_count": 1,
+                        "range": [
+                            1,
+                            1
+                        ],
+                        "event_filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "spimton:halo_reflect"
+                        },
+                        "event": "spimton:halo_reflect"
+                    }
+                ]
+            },*/
+            /* "minecraft:timer": {
+                "looping": true,
+                "time": 0.05,
+                "time_down_event": {
+                    "event": "spimton:halo_reflect"
+                }
+            },*/
+            "minecraft:environment_sensor": {
+                "triggers": {
+                    "filters": {
+                        "test": "is_riding",
+                        "subject": "self",
+                        "value": false
+                    },
+                    "event": "spimton:desp"
+                }
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 0.1997
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:mark_variant": {
+                "value": 0
+            },
+            "minecraft:nameable": {},
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [
+                    "poison",
+                    "wither",
+                    "fatal_poison",
+                    "levitation"
+                ]
+            },
+            "minecraft:on_death": {
+                "event": "spimton:desp"
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "projectile",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "entity_attack",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "entity_explosion",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "magic",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fire_tick",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "fire",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "drowning",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "suffocation",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "sonic_boom",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "freezing",
+                        "deals_damage": "no"
+                    },
+                    {
+                        "cause": "mace_smash",
+                        "deals_damage": "yes"
+                    },
+                    {
+                        "cause": "charging",
+                        "deals_damage": "no"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "spimton:desp": {
+                "queue_command": {
+                    "command": [
+                        "particle spimton:deltarune_explosion_multiple ~ ~ ~",
+                        "playsound sfx.deltarune_boom",
+                        "event entity @s spimton:death"
+                    ],
+                    "target": "self"
+                }
+            },
+            "spimton:death": {
+                "add": {
+                    "component_groups": [
+                        "spimton:desp"
+                    ]
+                }
+            }
+        }
+    }
+}

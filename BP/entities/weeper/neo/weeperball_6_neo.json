@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.120",
+    "format_version": "1.21.130",
     "minecraft:entity": {
         "description": {
             "identifier": "spimton:weeperball_6_neo",
@@ -7,7 +7,17 @@
             "is_summonable": true,
             "is_experimental": false,
             "runtime_identifier": "snowball",
-            "properties": {}
+            "properties": {
+                "spimton:armor_color": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 2,
+                    "range": [
+                        0,
+                        2
+                    ]
+                }
+            }
         },
         "component_groups": {
             "spimton:desp": {
@@ -34,9 +44,9 @@
             },
             "minecraft:timer": {
                 "looping": true,
-                "time": 0.1225,
+                "time": 5,
                 "time_down_event": {
-                    "event": "spimton:splode"
+                    "event": "spimton:desp"
                 }
             },
             "minecraft:projectile": {
@@ -56,6 +66,23 @@
                 "reflect_on_hurt": false,
                 "catch_fire": false
             },
+            "minecraft:area_attack": {
+                "cause": "entity_explosion",
+                "damage_range": 0.66,
+                "damage_cooldown": 0.1,
+                "damage_per_tick": 48,
+                "entity_filter": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "value": "inanimate",
+                            "operator": "!=",
+                            "subject": "other"
+                        }
+                    ]
+                }
+            },
+            "minecraft:cannot_be_attacked": {},
             "minecraft:physics": {
                 "has_collision": false
             },
@@ -80,6 +107,21 @@
             }
         },
         "events": {
+            "spimton:color_0": {
+                "set_property": {
+                    "spimton:armor_color": 0
+                }
+            },
+            "spimton:color_1": {
+                "set_property": {
+                    "spimton:armor_color": 1
+                }
+            },
+            "spimton:color_2": {
+                "set_property": {
+                    "spimton:armor_color": 2
+                }
+            },
             "spimton:splode": {
                 "queue_command": {
                     "command": [
@@ -87,7 +129,13 @@
                     ]
                 }
             },
-            "spimton:desp": {}
+            "spimton:desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:desp"
+                    ]
+                }
+            }
         }
     }
 }

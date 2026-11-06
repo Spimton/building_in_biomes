@@ -54,11 +54,41 @@
 		},
 		"animation.projectile.particle": {
 			"loop": true,
-			"animation_length": 0.1225,
+			"animation_length": 0.1,
 			"particle_effects": {
 				"0.0": {
 					"locator": "root",
 					"effect": "projectile_effect"
+				}
+			}
+		},
+		"animation.weeperball6.color0": {
+			"loop": true,
+			"animation_length": 0.066,
+			"particle_effects": {
+				"0.0": {
+					"locator": "root",
+					"effect": "particle_0"
+				}
+			}
+		},
+		"animation.weeperball6.color1": {
+			"loop": true,
+			"animation_length": 0.066,
+			"particle_effects": {
+				"0.0": {
+					"locator": "root",
+					"effect": "particle_1"
+				}
+			}
+		},
+		"animation.weeperball6.color2": {
+			"loop": true,
+			"animation_length": 0.066,
+			"particle_effects": {
+				"0.0": {
+					"locator": "root",
+					"effect": "particle_2"
 				}
 			}
 		}

@@ -1,0 +1,242 @@
+{
+    "format_version": "1.21.120",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "spimton:weepersmoke",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "spimton:despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "spimton:round_1": {
+                "minecraft:mob_effect": {
+                    "cooldown_time": 0,
+                    "effect_range": 3,
+                    "effect_time": 5,
+                    "entity_filter": {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "inanimate"
+                            },
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "spimton:weeper"
+                            }
+                        ]
+                    },
+                    "mob_effect": "wither"
+                }
+            },
+            "spimton:round_2": {
+                "minecraft:mob_effect": {
+                    "cooldown_time": 0,
+                    "effect_range": 3,
+                    "effect_time": 10,
+                    "entity_filter": {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "inanimate"
+                            },
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "spimton:weeper"
+                            }
+                        ]
+                    },
+                    "mob_effect": "wither"
+                }
+            },
+            "spimton:round_3": {
+                "minecraft:mob_effect": {
+                    "cooldown_time": 0,
+                    "effect_range": 3,
+                    "effect_time": 15,
+                    "entity_filter": {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "inanimate"
+                            },
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "spimton:weeper"
+                            }
+                        ]
+                    },
+                    "mob_effect": "wither"
+                }
+            },
+            "spimton:round_4": {
+                "minecraft:mob_effect": {
+                    "cooldown_time": 0,
+                    "effect_range": 3,
+                    "effect_time": 20,
+                    "entity_filter": {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "inanimate"
+                            },
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "spimton:weeper"
+                            }
+                        ]
+                    },
+                    "mob_effect": "wither"
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 30,
+                "max": 30
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate"
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:cannot_be_attacked": {},
+            "minecraft:timer": {
+                "looping": true,
+                "time": 8,
+                "time_down_event": {
+                    "target": "self",
+                    "event": "spimton:effects"
+                }
+            },
+            "minecraft:mob_effect": {
+                "cooldown_time": 0,
+                "effect_range": 3,
+                "effect_time": 20,
+                "entity_filter": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "operator": "!=",
+                            "subject": "other",
+                            "value": "inanimate"
+                        },
+                        {
+                            "test": "is_family",
+                            "operator": "!=",
+                            "subject": "other",
+                            "value": "spimton:weeper"
+                        }
+                    ]
+                },
+                "mob_effect": "wither"
+            },
+            "minecraft:environment_sensor": {
+                "triggers": {
+                    "filters": {
+                        "test": "is_underwater"
+                    },
+                    "event": "desp"
+                }
+            },
+            "minecraft:knockback_resistance": {
+                "max": 1,
+                "value": 1
+            },
+            "minecraft:collision_box": {
+                "height": 0.1,
+                "width": 0.1
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "queue_command": {
+                    "command": "particle spimton:weepersmoke ~ ~ ~"
+                }
+            },
+            "spimton:effects": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            },
+            "spimton:round_1": {
+                "add": {
+                    "component_groups": [
+                        "spimton:round_1"
+                    ]
+                },
+                "trigger": "minecraft:entity_spawned"
+            },
+            "spimton:round_2": {
+                "add": {
+                    "component_groups": [
+                        "spimton:round_2"
+                    ]
+                },
+                "trigger": "minecraft:entity_spawned"
+            },
+            "spimton:round_3": {
+                "add": {
+                    "component_groups": [
+                        "spimton:round_3"
+                    ]
+                },
+                "trigger": "minecraft:entity_spawned"
+            },
+            "spimton:round_4": {
+                "add": {
+                    "component_groups": [
+                        "spimton:round_4"
+                    ]
+                },
+                "trigger": "minecraft:entity_spawned"
+            },
+            "spimton:kll": {
+                "queue_command": {
+                    "command": [
+                        "particle spimton:cloud ~ ~1 ~",
+                        "event entity @s desp"
+                    ]
+                }
+            },
+            "desp": {
+                "add": {
+                    "component_groups": [
+                        "spimton:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

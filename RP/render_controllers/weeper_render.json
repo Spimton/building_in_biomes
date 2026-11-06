@@ -130,6 +130,45 @@
             },
             "ignore_lighting": true
         },
+        "controller.render.weeper_apotheosis": {
+            "geometry": "Geometry.armor",
+            "is_hurt_color": {
+                "a": 0,
+                "b": 0,
+                "g": 0,
+                "r": 0
+            },
+            "materials": [
+                {
+                    "*": "Material.armor"
+                }
+            ],
+            "textures": [
+                "Texture.armor"
+            ],
+            "part_visibility": [
+                {
+                    "*": "query.property('spimton:armor')"
+                }
+            ],
+            "uv_anim": {
+                "offset": [
+                    "(query.property('spimton:armor') ? (Math.cos(query.life_time * 22.92) * 3) : 0.0)",
+                    "(query.property('spimton:armor') ? (query.life_time * 0.2) : 0.0)"
+                ],
+                "scale": [
+                    1.0,
+                    1.0
+                ]
+            },
+            "ignore_lighting": true,
+            "overlay_color": {
+                "r": "math.sin(query.anim_time * 5.0) * 0.5 + 0.5",
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            }
+        },
         "controller.render.weeper_neo": {
             "is_hurt_color": {
                 "r": 0.88,

@@ -127,10 +127,14 @@
                         "weight": 1,
                         "set_property": {
                             "spimton:armor_color": 1
-                        },
-                        "trigger": "spimton:desp"
+                        }
                     }
                 ]
+            },
+            "spimton:face_based": {
+                "set_property": {
+                    "spimton:armor_color": 0
+                }
             },
             "spimton:desp": {}
         }

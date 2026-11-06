@@ -5,6 +5,12 @@
             "+defines": [
                 "USE_UV_ANIM"
             ]
+        },
+        "weeper_apotheosis_armor:wither_boss_armor": {
+            "+defines": [
+                "USE_OVERLAY",
+                "USE_COLOR_MASK"
+            ]
         }
     }
 }

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:weeperball_8_neo",
+            "min_engine_version": "1.10.0",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/weeper_skull_wither"
+            },
+            "geometry": {
+                "default": "geometry.sparticle"
+            },
+            "scripts": {
+                "scale": "1",
+                "animate": [
+                    "color0"
+                ]
+            },
+            "particle_effects": {
+                "particle_0": "spimton:weeper_sonic_explosion_apotheosis"
+            },
+            "animations": {
+                "color0": "animation.weeperball6.color0"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

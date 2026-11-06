@@ -1,5 +1,5 @@
 {
-    "format_version": "1.26.30",
+    "format_version": "1.21.130",
     "minecraft:entity": {
         "description": {
             "identifier": "spimton:weeperball_8_neo",
@@ -34,9 +34,9 @@
             },
             "minecraft:timer": {
                 "looping": true,
-                "time": 0.1225,
+                "time": 6,
                 "time_down_event": {
-                    "event": "spimton:splode"
+                    "event": "spimton:desp"
                 }
             },
             "minecraft:projectile": {
@@ -56,29 +56,29 @@
                 "reflect_on_hurt": false,
                 "catch_fire": false
             },
-            "minecraft:physics": {
-                "has_collision": false
-            },
             "minecraft:area_attack": {
-                "use_self_as_damage_source": false,
                 "cause": "entity_explosion",
-                "damage_cooldown": 0.1225,
-                "damage_per_tick": 128,
-                "damage_range": 3,
+                "damage_range": 1.997,
+                "damage_cooldown": 0.1,
+                "damage_per_tick": 256,
                 "entity_filter": {
                     "all_of": [
                         {
                             "test": "is_family",
+                            "value": "inanimate",
                             "operator": "!=",
-                            "value": "inanimate"
-                        },
-                        {
-                            "test": "is_family",
-                            "operator": "!=",
-                            "value": "creeper"
+                            "subject": "other"
                         }
                     ]
                 }
+            },
+            "minecraft:cannot_be_attacked": {},
+            "minecraft:physics": {
+                "has_collision": false
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
             },
             "minecraft:knockback_resistance": {
                 "value": 1

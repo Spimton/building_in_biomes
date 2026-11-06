@@ -145,6 +145,7 @@
 			"minecraft:type_family": {
 				"family": [
 					"spimton:archshaman",
+					"spimton:halo_reflect",
 					"inanimate"
 				]
 			},

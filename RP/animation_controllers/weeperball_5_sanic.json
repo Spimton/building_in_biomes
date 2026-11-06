@@ -1,0 +1,58 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.weeper_sonic_blast": {
+            "initial_state": "color_0",
+            "states": {
+                "color_0": {
+                    "particle_effects": [
+                        {
+                            "locator": "root",
+                            "effect": "particle_0"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "color_1": "query.property('spimton:armor_color') == 1"
+                        },
+                        {
+                            "color_2": "query.property('spimton:armor_color') == 2"
+                        }
+                    ]
+                },
+                "color_1": {
+                    "particle_effects": [
+                        {
+                            "locator": "root",
+                            "effect": "particle_1"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "color_0": "query.property('spimton:armor_color') == 0"
+                        },
+                        {
+                            "color_2": "query.property('spimton:armor_color') == 2"
+                        }
+                    ]
+                },
+                "color_2": {
+                    "particle_effects": [
+                        {
+                            "locator": "root",
+                            "effect": "particle_2"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "color_1": "query.property('spimton:armor_color') == 1"
+                        },
+                        {
+                            "color_0": "query.property('spimton:armor_color') == 0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

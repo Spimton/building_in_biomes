@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "spimton:tastevin"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "spimton:electrum_ingot"
+            },
+            "@": {
+                "item": "spimton:silver_orb"
+            }
+        },
+        "pattern": [
+            "# #",
+            " @ "
+        ],
+        "result": {
+            "item": "spimton:tastevin"
+        }
+    }
+}

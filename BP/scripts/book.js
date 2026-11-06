@@ -1,7 +1,12 @@
 import { world } from "@minecraft/server"
 import { ActionFormData } from "@minecraft/server-ui"
 import { ModalFormData } from "@minecraft/server-ui"
-import { MessageFormData } from "@minecraft/server-ui"
+import {
+    MessageFormData,
+    CustomForm,
+    ObservableNumber
+} from "@minecraft/server-ui"
+
 
 world.afterEvents.itemUse.subscribe(event => {
     const item = event.itemStack.typeId
@@ -12,114 +17,65 @@ world.afterEvents.itemUse.subscribe(event => {
 })
 
 function Sculpt(player) {
-    let MennS = new ActionFormData()
-    MennS.title("Sculption Templates List")
-    MennS.body("Select the template to convert the Tablet to a Sculpture Template.\nBronze Statues require a block of bronze to be crafted and Mud ones require mud bricks")
-    MennS.button("§vBronze Statue§r: Sit")
-    MennS.button("§vBronze Statue§r: Player")
-    MennS.button("§vBronze Statue§r: Creeper")
-    MennS.button("§vBronze Statue§r: Scared")
-    MennS.button("§vBronze Statue§r: Dance")
-    MennS.button("§vBronze Statue§r: WRYYYYYYY")
-    MennS.button("§nMud Statue§r: Healthy")
-    MennS.button("§nMud Statue§r: Calm")
-    MennS.button("§nMud Statue§r: Brute")
-    MennS.button("§nMud Statue§r: Curious")
-    MennS.button("§nMud Statue§r: Tough")
-    MennS.button("§mCrimstone Statue§r: Healthy")
-    MennS.button("§mCrimstone Statue§r: Calm")
-    MennS.button("§mCrimstone Statue§r: Brute")
-    MennS.button("§mCrimstone Statue§r: Curious")
-    MennS.button("§mCrimstone Statue§r: Tough")
-    MennS.show(player).then(r => {
-        if (r.canceled) return
+    const templates = [
+        { name: "Bronze Statue: Sit", id: "sit_template" },
+        { name: "Bronze Statue: Player", id: "player_template" },
+        { name: "Bronze Statue: Creeper", id: "creeper_template" },
+        { name: "Bronze Statue: Scared", id: "scared_template" },
+        { name: "Bronze Statue: Dance", id: "dance_template" },
+        { name: "Bronze Statue: WRYYYYYYY", id: "wryyy_template" },
+        { name: "Bronze Statue: The Hero", id: "hero_template" },
+        { name: "Mud Statue: Healthy", id: "healthy_template" },
+        { name: "Mud Statue: Calm", id: "calm_template" },
+        { name: "Mud Statue: Brute", id: "brute_template" },
+        { name: "Mud Statue: Curious", id: "curious_template" },
+        { name: "Mud Statue: Tough", id: "tough_template" },
+        { name: "Crimstone Statue: Healthy", id: "healthy_template_c" },
+        { name: "Crimstone Statue: Calm", id: "calm_template_c" },
+        { name: "Crimstone Statue: Brute", id: "brute_template_c" },
+        { name: "Crimstone Statue: Curious", id: "curious_template_c" },
+        { name: "Crimstone Statue: Tough", id: "tough_template_c" }
+    ];
 
-        switch (r.selection) {
-            case 0:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:sit_template 1 0")
-                break
+    const selection = new ObservableNumber(0, {
+        clientWritable: true
+    });
 
-            case 1:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:player_template 1 0")
-                break
-            case 2:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:creeper_template 1 0")
-                break
-            case 3:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:scared_template 1 0")
-                break
-            case 4:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
+    new CustomForm(player, "Sculpture Templates")
+        .label(
+            "Select a template to convert your Ancient Tablet.\nBronze Statues require a block of bronze to craft; Mud Statues require mud bricks."
+        )
+        .dropdown(
+            "Choose a statue",
+            selection,
+            templates.map((template, index) => ({
+                label: template.name,
+                value: index
+            }))
+        )
+        .button("Confirm", () => {
+            const chosen = templates[selection.getData()];
+            if (!chosen) return;
 
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:dance_template 1 0")
-                break
-            case 5:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
+            const result = player.runCommand(
+                "clear @s spimton:ancient_tablet 0 1"
+            );
 
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:wryyy_template 1 0")
-                break
-            case 6:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:healthy_template 1 0")
-                break
-            case 7:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:calm_template 1 0")
-                break
-            case 8:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:brute_template 1 0")
-                break
-            case 9:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:curious_template 1 0")
-                break
-            case 10:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:tough_template 1 0")
-                break
-            case 11:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:healthy_template_c 1 0")
-                break
-            case 12:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:calm_template_c 1 0")
-                break
-            case 13:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:brute_template_c 1 0")
-                break
-            case 14:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:curious_template_c 1 0")
-                break
-            case 15:
-                player.runCommand("clear @s spimton:ancient_tablet 0 1")
-                player.playSound("random.anvil_break")
-                player.runCommand("give @s spimton:tough_template_c 1 0")
-                break
-        }
-    })
+            if (result.successCount < 1) {
+                player.sendMessage(
+                    "§cYou need an Ancient Tablet to do this!"
+                );
+                return;
+            }
+
+            player.playSound("random.anvil_break");
+            player.runCommand(
+                `give @s spimton:${chosen.id} 1 0`
+            );
+        })
+        .closeButton()
+        .show()
+        .catch(error => console.warn(`Sculpt UI error: ${error}`));
 }
 
 // Main Form

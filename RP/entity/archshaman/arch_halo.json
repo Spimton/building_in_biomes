@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:arch_halo",
+            "materials": {
+                "default": "spider"
+            },
+            "textures": {
+                "default": "textures/entity/arch_halo"
+            },
+            "geometry": {
+                "default": "geometry.arch_halo"
+            },
+            "scripts": {
+                "animate": [
+                    "spinny"
+                ]
+            },
+            "animations": {
+                "spinny": "animation.arch_halo.spinni"
+            },
+            "particle_effects": {
+                "halo_flame": "spimton:halo_flame"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

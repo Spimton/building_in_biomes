@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "spimton:weeperball_6_neo",
+            "min_engine_version": "1.10.0",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/weeper_skull_wither"
+            },
+            "geometry": {
+                "default": "geometry.sparticle"
+            },
+            "scripts": {
+                "scale": "1",
+                "animate": [
+                    {
+                        "color0": "query.property('spimton:armor_color') == 0"
+                    },
+                    {
+                        "color1": "query.property('spimton:armor_color') == 1"
+                    },
+                    {
+                        "color2": "query.property('spimton:armor_color') == 2"
+                    }
+                ]
+            },
+            "particle_effects": {
+                "particle_1": "spimton:weeper_sonic_explosion_1",
+                "particle_2": "spimton:weeper_sonic_explosion_2",
+                "particle_0": "spimton:weeper_sonic_explosion_0"
+            },
+            "animations": {
+                "color0": "animation.weeperball6.color0",
+                "color1": "animation.weeperball6.color1",
+                "color2": "animation.weeperball6.color2"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

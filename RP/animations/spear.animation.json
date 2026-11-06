@@ -40,6 +40,62 @@
 				}
 			}
 		},
+		"animation.fotns.rotate": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						"-q.body_x_rotation ",
+						"-q.body_y_rotation ",
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.weeperfive.rotate": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"q.body_y_rotation",
+						0
+					],
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.fotns.move": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							"-query.target_x_rotation",
+							"-query.body_y_rotation",
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
 		"animation.spear.spike": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,

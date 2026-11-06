@@ -5,7 +5,7 @@
             "identifier": "spimton:fist_of_the_north_star",
             "is_spawnable": false,
             "is_summonable": true,
-            "runtime_identifier": "arrow",
+            "runtime_identifier": "snowball",
             "properties": {
                 "spimton:powerup": {
                     "client_sync": true,

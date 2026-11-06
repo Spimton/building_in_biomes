@@ -4,7 +4,7 @@ import { shootAroundHead } from "./weeper.js";
 
 
 
-function blastFungus(location, dimension, count = 30, entity, speed, maxangle = 50) {
+function blastFungus(location, dimension, count, entity, speed, maxangle, triggerEvent) {
     for (let i = 0; i < count; i++) {
         const yaw = Math.random() * Math.PI * 2;
 
@@ -25,6 +25,10 @@ function blastFungus(location, dimension, count = 30, entity, speed, maxangle = 
             y: y * speed * 1.997,
             z: z * speed,
         });
+        if (triggerEvent === null) { }
+        else {
+            arrow.triggerEvent(triggerEvent)
+        }
     }
 }
 
@@ -240,14 +244,20 @@ system.beforeEvents.startup.subscribe((event) => {
                 {
                     name: "maxAngle",
                     type: CustomCommandParamType.Float,
+                },
+                {
+                    name: "triggerEvent",
+                    type: CustomCommandParamType.String,
                 }
             ]
         },
-        (origin, count, entityType, speed, yOffset, maxAngle) => {
+        (origin, count, entityType, speed, yOffset, maxAngle, triggerEvent) => {
 
             yOffset ??= 2.2;
 
             maxAngle ??= 50.0;
+
+            triggerEvent ??= null;
 
             const source = origin.sourceEntity;
 
@@ -264,7 +274,8 @@ system.beforeEvents.startup.subscribe((event) => {
                         count,
                         entityType,
                         speed,
-                        maxAngle
+                        maxAngle,
+                        triggerEvent
                     );
 
                 })
@@ -287,7 +298,8 @@ system.beforeEvents.startup.subscribe((event) => {
                         count,
                         entityType,
                         speed,
-                        maxAngle
+                        maxAngle,
+                        triggerEvent
                     );
 
                 })
@@ -498,10 +510,11 @@ system.afterEvents.scriptEventReceive.subscribe((data) => {
                 z: location.z,
             },
             sourceEntity.dimension,
-            round,
+            round + 2,
             "spimton:weeperball_4_neo",
             0.1997 + round * 0.1,
-            `spimton:round_${round}`
+            `spimton:round_${round}`,
+            88
 
         )
 
@@ -568,7 +581,8 @@ function skullFungus(
     count = 30,
     entity,
     speed,
-    event = "minecraft:entity_spawned"
+    event = "minecraft:entity_spawned",
+    maxAngle = 50
 ) {
     let fired = 0;
 
@@ -579,7 +593,7 @@ function skullFungus(
         }
 
         const yaw = Math.random() * Math.PI * 2;
-        const angle = Math.random() * (50 * Math.PI / 180);
+        const angle = Math.random() * (maxAngle * Math.PI / 180);
 
         const x = Math.sin(angle) * Math.cos(yaw);
         const y = Math.cos(angle);
