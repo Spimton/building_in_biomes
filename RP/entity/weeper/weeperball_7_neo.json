@@ -6,11 +6,11 @@
             "min_engine_version": "1.10.0",
             "materials": {
                 "default": "entity_alphatest",
-                "armor": "weeper_apotheosis_armor"
+                "armor": "wither_boss_armor"
             },
             "textures": {
                 "default": "textures/entity/weeper",
-                "armor": "textures/entity/weeper_armor_grayscale"
+                "armor": "textures/entity/weeper_armor_blue"
             },
             "geometry": {
                 "default": "geometry.weeper_skull",

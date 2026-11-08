@@ -10,8 +10,8 @@
         },
         "components": {
             "minecraft:emitter_rate_steady": {
-                "spawn_rate": 66,
-                "max_particles": 50
+                "spawn_rate": 11,
+                "max_particles": 25
             },
             "minecraft:emitter_lifetime_looping": {
                 "active_time": 0.4
@@ -29,8 +29,8 @@
             },
             "minecraft:particle_appearance_billboard": {
                 "size": [
-                    0.66,
-                    0.66
+                    1.225,
+                    1.225
                 ],
                 "facing_camera_mode": "lookat_xyz",
                 "uv": {

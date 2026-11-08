@@ -6,14 +6,15 @@
 			"min_engine_version": "1.10.0",
 			"materials": {
 				"default": "skeleton",
-				"piper_buff": "entity_alphatest"
+				"piper_buff": "piper_buff"
 			},
 			"textures": {
 				"default": "textures/entity/chevalier_hogrider",
-				"piper_buff": "textures/entity/piper_buff/piper_buff_chevalier"
+				"piper_buff": "textures/entity/piper_buff/piper_buff_grayscale"
 			},
 			"geometry": {
-				"default": "geometry.hollering"
+				"default": "geometry.hollering",
+				"piper_buff": "geometry.hollering_piperbuff"
 			},
 			"spawn_egg": {
 				"texture": "chevalier_spawn_egg"
@@ -31,6 +32,11 @@
 					{
 						"ride": "query.is_riding"
 					}
+				],
+				"initialize": [
+					"variable.piperbuff_red = 0;",
+					"variable.piperbuff_green = 0.753;",
+					"variable.piperbuff_blue = 1;"
 				]
 			},
 			"animations": {
@@ -48,7 +54,8 @@
 				"attack.controller": "controller.animation.skirmisher.attack"
 			},
 			"render_controllers": [
-				"controller.render.piper_buff"
+				"controller.render.piper_buff_neo",
+				"controller.render.default"
 			],
 			"enable_attachables": true
 		}

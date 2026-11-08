@@ -105,8 +105,8 @@
                     },*/
                     "impact_damage": {
                         "damage": [
-                            12,
-                            12
+                            22,
+                            22
                         ],
                         "knockback": true,
                         "should_bounce": true,

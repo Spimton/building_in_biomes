@@ -618,7 +618,7 @@
             },
             "spimton:tnt_rain_phase2": {
                 "minecraft:behavior.timer_flag_1": {
-                    "cooldown_range": 1.997,
+                    "cooldown_range": 1.225,
                     "duration_range": 0.66,
                     "priority": 3,
                     "on_start": {
@@ -1004,7 +1004,7 @@
                 }
             },
             "minecraft:behavior.hurt_by_target": {
-                "priority": 1
+                "priority": 6
             },
             "minecraft:physics": {
                 "has_collision": true,

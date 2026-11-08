@@ -510,7 +510,7 @@ system.afterEvents.scriptEventReceive.subscribe((data) => {
                 z: location.z,
             },
             sourceEntity.dimension,
-            round + 2,
+            6 - round,
             "spimton:weeperball_4_neo",
             0.1997 + round * 0.1,
             `spimton:round_${round}`,

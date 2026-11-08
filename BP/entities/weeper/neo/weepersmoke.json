@@ -12,7 +12,7 @@
             },
             "spimton:round_1": {
                 "minecraft:mob_effect": {
-                    "cooldown_time": 0,
+                    "cooldown_time": 2,
                     "effect_range": 3,
                     "effect_time": 5,
                     "entity_filter": {
@@ -36,7 +36,7 @@
             },
             "spimton:round_2": {
                 "minecraft:mob_effect": {
-                    "cooldown_time": 0,
+                    "cooldown_time": 2,
                     "effect_range": 3,
                     "effect_time": 10,
                     "entity_filter": {
@@ -60,7 +60,7 @@
             },
             "spimton:round_3": {
                 "minecraft:mob_effect": {
-                    "cooldown_time": 0,
+                    "cooldown_time": 2,
                     "effect_range": 3,
                     "effect_time": 15,
                     "entity_filter": {
@@ -84,7 +84,7 @@
             },
             "spimton:round_4": {
                 "minecraft:mob_effect": {
-                    "cooldown_time": 0,
+                    "cooldown_time": 2,
                     "effect_range": 3,
                     "effect_time": 20,
                     "entity_filter": {
@@ -135,7 +135,7 @@
                 }
             },
             "minecraft:mob_effect": {
-                "cooldown_time": 0,
+                "cooldown_time": 2,
                 "effect_range": 3,
                 "effect_time": 20,
                 "entity_filter": {

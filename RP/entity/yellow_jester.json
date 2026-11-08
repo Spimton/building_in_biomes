@@ -6,14 +6,15 @@
 			"min_engine_version": "1.10.0",
 			"materials": {
 				"default": "skeleton",
-				"piper_buff": "entity_alphatest"
+				"piper_buff": "piper_buff"
 			},
 			"textures": {
 				"default": "textures/entity/yellow_jester",
-				"piper_buff": "textures/entity/piper_buff/piper_buff_jester"
+				"piper_buff": "textures/entity/piper_buff/piper_buff_grayscale"
 			},
 			"geometry": {
-				"default": "geometry.mann"
+				"default": "geometry.mann",
+				"piper_buff": "geometry.mann_piperbuff"
 			},
 			"spawn_egg": {
 				"texture": "yellow_jester_egg"
@@ -21,6 +22,11 @@
 			"scripts": {
 				"pre_animation": [
 					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"initialize": [
+					"variable.piperbuff_red = 0;",
+					"variable.piperbuff_green = 0.753;",
+					"variable.piperbuff_blue = 1;"
 				],
 				"animate": [
 					"move.controller",
@@ -48,7 +54,8 @@
 				"attack.controller": "controller.animation.skirmisher.attack"
 			},
 			"render_controllers": [
-				"controller.render.piper_buff"
+				"controller.render.piper_buff_neo",
+				"controller.render.default"
 			],
 			"enable_attachables": true
 		}

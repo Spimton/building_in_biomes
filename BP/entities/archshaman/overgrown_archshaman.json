@@ -278,6 +278,9 @@
 					},
 					"duration_range": 6
 				},
+				"minecraft:mark_variant": {
+					"value": 1
+				},
 				"minecraft:timer": {
 					"looping": true,
 					"time": 5,
@@ -1817,6 +1820,12 @@
 		},
 		"events": {
 			"spimton:try_randomize": {
+				"filters": {
+					"test": "is_mark_variant",
+					"operator": "!=",
+					"subject": "self",
+					"value": 1
+				},
 				"randomize": [
 					{
 						"weight": 95

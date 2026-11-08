@@ -456,7 +456,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     if (entity.typeId === "spimton:weeperball_4_neo") {
         switch (eventId) {
             case "spimton:desp":
-                entity.dimension.createExplosion(entity.getHeadLocation(), entity.getProperty("spimton:size"), { breaksBlocks: false, source: entity });
+                // entity.dimension.createExplosion(entity.getHeadLocation(), entity.getProperty("spimton:size"), { breaksBlocks: false, source: entity });
                 entity.remove()
                 break;
         }

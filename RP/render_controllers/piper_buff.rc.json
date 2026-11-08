@@ -48,6 +48,86 @@
             },
             "light_color_multiplier": 1,
             "ignore_lighting": true
+        },
+        "controller.render.piper_buff_neo": {
+            "geometry": "geometry.piper_buff",
+            "part_visibility": [
+                {
+                    "*": "query.mark_variant == 1"
+                }
+            ],
+            "materials": [
+                {
+                    "*": "Material.piper_buff"
+                }
+            ],
+            "textures": [
+                "Texture.piper_buff"
+            ],
+            "overlay_color": {
+                "a": 0.88,
+                "b": "variable.piperbuff_blue",
+                "g": "variable.piperbuff_green",
+                "r": "variable.piperbuff_red"
+            },
+            "is_hurt_color": {
+                "a": 0.88,
+                "r": "math.abs(1 - variable.piperbuff_red)",
+                "b": "math.abs(1 - variable.piperbuff_blue)",
+                "g": "math.abs(1 - variable.piperbuff_green)"
+            },
+            "uv_anim": {
+                "offset": [
+                    "(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+                    "(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            //"light_color_multiplier": 1,
+            "ignore_lighting": true
+        },
+        "controller.render.piper_buff_champion": {
+            "geometry": "geometry.piper_buff",
+            "part_visibility": [
+                {
+                    "*": true
+                }
+            ],
+            "materials": [
+                {
+                    "*": "Material.piper_buff"
+                }
+            ],
+            "textures": [
+                "Texture.piper_buff"
+            ],
+            "overlay_color": {
+                "a": 0.88,
+                "b": "variable.piperbuff_blue",
+                "g": "variable.piperbuff_green",
+                "r": "variable.piperbuff_red"
+            },
+            "is_hurt_color": {
+                "a": 0.88,
+                "r": "math.abs(1 - variable.piperbuff_red)",
+                "b": "math.abs(1 - variable.piperbuff_blue)",
+                "g": "math.abs(1 - variable.piperbuff_green)"
+            },
+            "uv_anim": {
+                "offset": [
+                    "(math.floor(query.life_time*20)+query.frame_alpha)*-0.02",
+                    "(math.floor(query.life_time*20)+query.frame_alpha)*0.03"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            //"light_color_multiplier": 1,
+            "ignore_lighting": true
         }
     }
 }

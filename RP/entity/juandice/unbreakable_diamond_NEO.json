@@ -5,13 +5,16 @@
 			"identifier": "spimton:unbreakable_diamond",
 			"min_engine_version": "1.10.0",
 			"materials": {
-				"default": "entity_alphablend"
+				"default": "entity_alphablend",
+				"piper_buff": "piper_buff"
 			},
 			"textures": {
-				"default": "textures/entity/unbreakable_diamond"
+				"default": "textures/entity/champion",
+				"piper_buff": "textures/entity/piper_buff/piper_buff_grayscale_128"
 			},
 			"geometry": {
-				"default": "geometry.champion"
+				"default": "geometry.champion",
+				"piper_buff": "geometry.champion_piperbuff"
 			},
 			"scripts": {
 				"scale": "0.9375",
@@ -20,6 +23,11 @@
 					"controller_general",
 					"controller_attack",
 					"controller_summoner"
+				],
+				"initialize": [
+					"variable.piperbuff_red = 1;",
+					"variable.piperbuff_green = 0.722;",
+					"variable.piperbuff_blue = 0;"
 				]
 			},
 			"animations": {
@@ -47,7 +55,8 @@
 				"shoot": "minecraft:knockback_roar_particle"
 			},
 			"render_controllers": [
-				"controller.render.default"
+				"controller.render.default",
+				"controller.render.piper_buff_champion"
 			]
 		}
 	}

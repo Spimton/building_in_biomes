@@ -11,6 +11,11 @@
                 "USE_OVERLAY",
                 "USE_COLOR_MASK"
             ]
+        },
+        "piper_buff:entity_alphablend": {
+            "+defines": [
+                "USE_UV_ANIM"
+            ]
         }
     }
 }
